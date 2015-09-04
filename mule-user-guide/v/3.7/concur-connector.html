@@ -18,7 +18,7 @@
     <script src="/js/jquery.fancybox.pack.js"></script>
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
-    <link rel="canonical" href="mule-user-guide/v/3.7/concur-connector" />
+    <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/concur-connector" />
     <meta name="description" content="Standard The Concur Anypoint connector for Mule ESB and CloudHub is used as a bidirectional gateway between Concur and Mule applications. To use th..." />
     <meta class="swiftype" name="title" data-type="string" content="Concur Connector" />
 
@@ -848,8 +848,8 @@ _st('install','Y6NSC3YWFiMQgK63xPb7','2.0.0');
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>A Concur&nbsp;developer account - sign up for one at <a href="http://developer.concur.com/">developer.concur.com</a></p> </li> 
-    <li> <p>A consumer key assigned by Concur; refer to the detailed documentation on how to <a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">use the Concur connector to access an OAuth API</a>.</p> </li> 
+    <li> <p>A Concur&nbsp;developer account - Sign up for one at <a href="http://developer.concur.com/">developer.concur.com</a></p> </li> 
+    <li> <p>A consumer key assigned by Concur - Refer to the detailed documentation on how to <a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">use the Concur connector to access an OAuth API</a>.</p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
@@ -858,7 +858,7 @@ _st('install','Y6NSC3YWFiMQgK63xPb7','2.0.0');
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This document assumes that you are familiar with Mule, <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>, and the <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>. To increase your familiarity with Studio, consider completing one or more <a href="/mule-fundamentals/v/3.7/basic-studio-tutorial">Anypoint Studio Tutorials</a>. Further, this page assumes that you have a basic understanding of&nbsp;<a href="/mule-fundamentals/v/3.7/mule-concepts">Mule flows</a> and <a href="/mule-fundamentals/v/3.7/global-elements">Mule Global Elements</a>.&nbsp;</p> 
@@ -872,7 +872,7 @@ _st('install','Y6NSC3YWFiMQgK63xPb7','2.0.0');
  <h2 id="installing-concur-connector-in-anypoint-studio"><a class="anchor" href="#installing-concur-connector-in-anypoint-studio"></a>Installing Concur Connector in Anypoint Studio</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can "test drive" a connector in Anypoint Studio using the instructions in&nbsp;http://www.mulesoft.org/documentation/display/current/Anypoint+Exchange#AnypointExchange-InstallingaConnectorfromAnypointExchange[Installing a Connector from Anypoint Exchange].&nbsp;&nbsp;</p> 
+   <p>You can "test drive" a connector in Anypoint Studio using the instructions in&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>.&nbsp;&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
    <p>However, to use the&nbsp;Concur connector in a production environment, you must have either:</p> 
@@ -904,19 +904,19 @@ _st('install','Y6NSC3YWFiMQgK63xPb7','2.0.0');
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-ff33e" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-62411" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-bedf5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-a1394" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ff33e"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-bedf5"> 
      <div class="paragraph"> 
       <p>Follow these steps to create a global Concur configuration in a Mule application:</p> 
      </div> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Click the&nbsp;<strong>Global Elements</strong>&nbsp;tab at the base of the canvas, then click&nbsp;<strong>Create</strong>.</p> </li> 
-       <li> <p>In the <strong>Choose Global Type</strong> wizard, use the filter to locate, then select Concur<strong>,</strong> then click&nbsp;<strong>OK</strong>.</p> </li> 
+       <li> <p>In the <strong>Choose Global Type</strong> wizard, use the filter to locate, select <strong>Concur</strong>, and click&nbsp;<strong>OK</strong>.</p> </li> 
        <li> <p>Configure the parameters according to the table below.</p> 
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/ConcurGlobalElementProps.png" alt="ConcurGlobalElementProps"></span></p> 
@@ -1003,7 +1003,7 @@ _st('install','Y6NSC3YWFiMQgK63xPb7','2.0.0');
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-62411"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-a1394"> 
      <div class="paragraph"> 
       <p>First, ensure that you have included the Concur namespaces in your configuration file.</p> 
      </div> 
@@ -1243,21 +1243,21 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
  <h2 id="example-use-case"><a class="anchor" href="#example-use-case"></a>Example Use Case</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>As a Concur administrator, I would like to create and submit expense reports to Concur.</p> 
+   <p>As a Concur administrator, create and submit expense reports to Concur.</p> 
   </div> 
   <div class="panel panel-default no-padding"> 
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-6ac46" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-86b46" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-282b7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-8fdad" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6ac46"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-282b7"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>Drag an HTTP Endpoint into a new flow. Open the connector’s properties editor and Create a new <strong>Connector Configuration</strong> element by clicking the green plus sign.<br> &nbsp;</p> </li> 
+       <li> <p>Drag an HTTP Connector into a new flow. Open the connector’s properties editor and Create a new <strong>Connector Configuration</strong> element by clicking the green plus <strong>+</strong> sign.</p> </li> 
        <li> <p>Fill in the two required fields: <strong>Host</strong> and <strong>Port</strong>. Set&nbsp;the host to&nbsp; <code>localhost</code> and leave the port as the default value <code>8081</code>.</p> 
         <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
@@ -1285,8 +1285,8 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
           </tr> 
          </tbody> 
         </table> </li> 
-       <li> <p>Back in the connector’s properties editor, set the path to <code>submitreport</code><br> The new flow is then reachable through the path `http://localhost:8081/submitreport `</p> </li> 
-       <li> <p>Add a Set Payload transformer after the HTTP connector to set the payload to a predefined set of values that match the format that Concur expects</p> </li> 
+       <li> <p>Back in the connector’s properties editor, set the path to <code>submitreport</code><br> The new flow is then reachable through the path: `http://localhost:8081/submitreport `</p> </li> 
+       <li> <p>Add a Set Payload transformer after the HTTP connector to set the payload to a predefined set of values that match the format that Concur expects.</p> </li> 
        <li> <p>Configure the Set Payload transformer according to the table below.</p> 
         <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
@@ -1719,10 +1719,10 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-86b46"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-8fdad"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>Add a <strong>concur:config</strong> ** global element to your project, then configure its attributes according to the table below (see code below for a complete sample).</p> 
+       <li> <p>Add a <strong>concur:config</strong> global element to your project, then configure its attributes according to the table below (see code below for a complete sample).</p> 
         <div class="listingblock"> 
          <div class="content"> 
           <pre class="CodeRay highlight"><code data-lang="xml">
@@ -2193,7 +2193,7 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
        <li> <p>Configure the <strong>DataMapper</strong> element through Studio’s Visual Editor. Switch the view to&nbsp;<strong>Message Flow</strong> view, then click the DataMapper element to set its properties.<br></p> 
         <div class="olist loweralpha"> 
          <ol class="loweralpha" type="a"> 
-          <li> <p>In the <strong>Input type</strong>, select Map<strong>&lt;k,v&gt;</strong>, then select <strong>User Defined</strong>.</p> </li> 
+          <li> <p>In the <strong>Input type</strong>, select Map*&lt;k,v&gt;*, then select <strong>User Defined</strong>.</p> </li> 
           <li> <p>Click <strong>Create/Edit Structure</strong>. &nbsp;</p> </li> 
           <li> <p>Enter a name for the Map, then under <strong>Type</strong>, select <strong>Element</strong>.</p> </li> 
           <li> <p>Add fields to the input structure according to the table below.</p> 
@@ -2358,8 +2358,9 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Learn more about working with <a href="http://www.mulesoft.org/documentation/display/current/Anypoint+Connectors">Anypoint Connectors</a>.</p> </li> 
+    <li> <p>Learn more about working with <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>.</p> </li> 
     <li> <p>Access the <a href="/release-notes/concur-connector-release-notes">release notes</a> for the Concur Connector.</p> </li> 
+    <li> <p><a href="http://mulesoft.github.io/concur-connector">Additional Concur Connector information</a>.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -2368,7 +2369,7 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#installing-concur-connector-in-anypoint-studio">Installing Concur Connector in Anypoint Studio</a></li><li><a class="scroll-menu-link" href="#configuring-the-concur-connector">Configuring the Concur Connector</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#example-code">Example Code</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#installing-concur-connector-in-anypoint-studio">Installing Concur Connector in Anypoint Studio</a></li><li><a class="scroll-menu-link" href="#configuring-the-concur-connector">Configuring the Concur Connector</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#example-code">Example Code</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
