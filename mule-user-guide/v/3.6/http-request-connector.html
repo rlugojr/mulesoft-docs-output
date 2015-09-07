@@ -69,7 +69,7 @@
 
         <h2 class="block__title block-title">Main menu</h2>
 
-  <ul class="menu"><li class="menu__item is-leaf first leaf"><a href="/anypoint-platform" title="" class="menu__link">Platform</a></li>
+  <ul class="menu"><li class="menu__item is-leaf first leaf"><a href="https://developer.mulesoft.com/anypoint-platform" title="" class="menu__link">Platform</a></li>
 <li class="menu__item is-leaf leaf"><a href="https://developer.mulesoft.com/docs" title="" class="menu__link active">Documentation</a></li>
 <li class="menu__item is-leaf leaf"><a href="https://developer.mulesoft.com/community" title="" class="menu__link">Community</a></li>
 <li class="menu__item is-leaf last leaf"><a href="http://blog.mulesoft.com/" title="" class="menu__link">Blog</a></li>
@@ -779,7 +779,7 @@
 <li>
 <i></i>
 <a href="/release-notes/api-gateway-runtime">API Gateway Runtime Release Notes</a><ul>
-<li><i></i><a href="/release-notes/api-gateway-2.0-and-newer-version-faq">API Gateway 2.0 and Newer Version FAQ</a></li><li><i></i><a href="/release-notes/api-gateway-2.0.3-release-notes">API Gateway Runtime 2.0.3 Release Notes</a></li><li><i></i><a href="/release-notes/api-gateway-2.1.0-release-notes">API Gateway Runtime 2.1.0 Release Notes</a></li><li><i></i><a href="/release-notes/api-gateway-2.0.2-release-notes">API Gateway Runtime 2.0.2 Release Notes</a></li><li>
+<li><i></i><a href="/release-notes/api-gateway-2.0-and-newer-version-faq">API Gateway 2.0 and Newer Version FAQ</a></li><li><i></i><a href="/release-notes/api-gateway-2.1.0-release-notes">API Gateway Runtime 2.1.0 Release Notes</a></li><li><i></i><a href="/release-notes/api-gateway-2.0.3-release-notes">API Gateway Runtime 2.0.3 Release Notes</a></li><li><i></i><a href="/release-notes/api-gateway-2.0.2-release-notes">API Gateway Runtime 2.0.2 Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/api-gateway-2.0-release-notes">API Gateway Runtime 2.0 Release Notes</a><ul>
 <li><i></i><a href="/release-notes/migration-guide-to-api-gateway-2.0.0-or-later">Migration Guide to API Gateway 2.0.0 or later</a></li></ul></li>
@@ -849,12 +849,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-c650b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-92230" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-be9a7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-a4a24" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c650b"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-be9a7"> 
       <div class="sect4"> 
        <h5 id="minimum-configuration-for-the-connector-instance"><a class="anchor" href="#minimum-configuration-for-the-connector-instance"></a>Minimum Configuration for the Connector Instance</h5> 
        <div class="paragraph"> 
@@ -896,7 +896,7 @@
        </div> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-92230"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-a4a24"> 
       <div class="paragraph"> 
        <p>For example:</p> 
       </div> 
@@ -944,156 +944,369 @@
      </div> 
     </div> 
    </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>[tabs,title="Studio Visual Editor"]
-....
+   <div class="panel panel-default no-padding"> 
+    <div class="panel-heading no-padding"> 
+     <!-- Nav tabs --> 
+     <ul class="nav nav-tabs" role="tablist"> 
+      <li class="active"><a href="#studio-visual-editor-cc703" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-f0f67" role="tab" data-toggle="tab">XML Editor</a></li> 
+     </ul> 
+    </div> 
+    <div class="panel-body tab-content no-padding"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-cc703"> 
+      <div class="sect2"> 
+       <h3 id="http-connector-basic-configuration"><a class="anchor" href="#http-connector-basic-configuration"></a>HTTP Connector Basic Configuration</h3> 
+       <div class="paragraph"> 
+        <p>You need to provide a <strong>path</strong> and <strong>method</strong> for your requests, as well as reference a <strong>Connector Configuration</strong> global element. Note that the path field doesn’t define the full path, but rather the subpath, within the host and after the optional base path that can be specified in the Connector Configuration global element.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>You can also add as many parameters as you want, which can be headers, query parameters or uri parameters.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/minimum.png" alt="minimum"></span></p> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: 50%;"> 
+         <col style="width: 50%;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Property</th> 
+          <th class="tableblock halign-left valign-top">Description</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Display Name</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The name with which the element will be viewed in the flow.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Request Config</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to the Global Element. This field is required.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Path</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The path where the request will be sent (without including the optional <strong>base path</strong>) configured in the global element.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Method</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The type of HTTP request to send (GET, POST, DELETE, etc.). Optional, the default is GET.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Parameters</p></td> 
+          <td class="tableblock halign-left valign-top"> 
+           <div> 
+            <div class="paragraph"> 
+             <p>You can include additional parameters to the request, such as headers and query params by clicking the green plus sign at the top.<br></p> 
+            </div> 
+            <div class="paragraph"> 
+             <p>If the global element references a RAML file, the relevant parameters will be displayed according to the selected resource and method.</p> 
+            </div> 
+           </div></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <div class="admonitionblock tip"> 
+        <table> 
+         <tbody> 
+          <tr> 
+           <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+           <td class="content"> If you’ve referenced a RAML file in the global element, both the Path and Method fields will present you with a drop-down list of available options, based on what the RAML describes. Note that you’re also always free to write your own values in these fields. </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+      <div class="sect2"> 
+       <h3 id="global-element-basic-configuration"><a class="anchor" href="#global-element-basic-configuration"></a>Global Element Basic Configuration</h3> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/raml+library-w+data.png" alt="raml+library-w+data"></span></p> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Property</th> 
+          <th class="tableblock halign-left valign-top">Description</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;Name</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The name with which the configuration element will be referenced form instances of the connector.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Protocol</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Choose between HTTP and HTTPS</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Host</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The host to which to send requests. This field is required.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Port</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The port to which to send requests. This field is required.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Base Path</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">A base path within the host. Instances of the connector can then specify a subpath within this path.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">RAML Location</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Your connector can point to a RAML file, which makes it a lot easier to configure as Studio proactively offers intelligent suggestions based in the metadata defined in the RAML file.&nbsp;&nbsp;You can reference a RAML file on your local disk, one on an external URI, or you can pick one of the available ones in the Exchange by clicking <strong>Search RAML in Exchange</strong>.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Enable Datasense</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>Enable DataSense</strong> checkbox allows Studio to use <a href="/mule-user-guide/v/3.6/datasense">DataSense</a> to expose metadata from the RAML file and interact with it on other elements in Studio.</p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <div class="admonitionblock tip"> 
+        <table> 
+         <tbody> 
+          <tr> 
+           <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+           <td class="content"> If you complete the RAML Location field first, all of the other fields will be automatically populated based on what’s specified in the RAML. </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+       <div class="admonitionblock warning"> 
+        <table> 
+         <tbody> 
+          <tr> 
+           <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
+           <td class="content"> 
+            <div class="paragraph"> 
+             <p>The metadata from the RAML is obtained every time you open your project in Studio and then kept in cache until you close and reopen the project.</p> 
+            </div> 
+            <div class="paragraph"> 
+             <p>If the RAML file is modified, you can refresh the cache of it by clicking the button <strong>Reload RAML</strong>.</p> 
+            </div> 
+            <div class="paragraph"> 
+             <p>The metadata exposed by the connector to your flow may not be updated right away. In such a case, click the <strong>Refresh Metadata</strong> button in the metadata explorer.</p> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tab-pane fade no-padding" id="xml-editor-f0f67"> 
+      <div class="sect2"> 
+       <h3 id="http-connector-basic-configuration"><a class="anchor" href="#http-connector-basic-configuration"></a>HTTP Connector Basic Configuration</h3> 
+       <div class="paragraph"> 
+        <p>You need to provide a <strong>path</strong> and <strong>method</strong> for your requests, as well as reference a <strong>Connector Configuration</strong> global element. Note that the path field doesn’t define the full path, but rather the subpath, within the host and after the optional base path that can be specified in the Connector Configuration global element.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>As child elements of this connector, you can add as many parameters as you want, which may be headers, query parameters or uri parameters.</p> 
+       </div> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="xml">
+     
+              
+           <table class="CodeRay"> 
+            <tbody> 
+             <tr> 
+              <td class="line-numbers"><pre>1
+</pre></td> 
+              <td class="code"><pre><span class="entity">&amp;lt;</span>http:request config-ref="HTTP_Request_Configuration" path="test" method="POST" doc:name="HTTP"/<span class="entity">&amp;gt;</span></pre></td> 
+             </tr> 
+            </tbody> 
+           </table></code></pre> 
+        </div> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Property</th> 
+          <th class="tableblock halign-left valign-top">Description</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>doc:name</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The name with which the element will be viewed in the flow in Studio.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>config-ref</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a reusable Global Element that contains several configuration parameters. This property is required.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The path where the request will be sent (without including the <strong>base path</strong>) configured in the global element.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>method</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The type of HTTP request to send (GET, POST, DELETE, etc.). Optional, the default is GET.</p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <div class="paragraph"> 
+        <p>By default, GET, HEAD and OPTIONS methods will not send the payload in the request (the body of the HTTP request will be empty). The rest of the methods will send the message payload as the body of your request.</p> 
+       </div> 
+      </div> 
+      <div class="sect2"> 
+       <h3 id="global-element-basic-configuration"><a class="anchor" href="#global-element-basic-configuration"></a>Global Element Basic Configuration</h3> 
+       <div class="paragraph"> 
+        <p>Every HTTP Connector must reference a global configuration element that sits outside any flow in your project. This element encapsulates much of the common configuration parameters that can be reused by other connectors in your project and can be referenced by multiple instances of the connector. At the very least, you need to provide a <strong>host</strong> and a <strong>port</strong>:</p> 
+       </div> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="xml">
+     
+              
+           <table class="CodeRay"> 
+            <tbody> 
+             <tr> 
+              <td class="line-numbers"><pre>1
+</pre></td> 
+              <td class="code"><pre><span class="entity">&amp;lt;</span>http:request-config name="HTTP_Request_Configuration" host="example.com" port="8081" doc:name="HTTP Request Configuration"/<span class="entity">&amp;gt;</span></pre></td> 
+             </tr> 
+            </tbody> 
+           </table></code></pre> 
+        </div> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: 34%;"> 
+         <col style="width: 33%;"> 
+         <col style="width: 33%;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Property</th> 
+          <th class="tableblock halign-left valign-top">Description</th> 
+          <th class="tableblock halign-left valign-top">XML Sample</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the Global Element, used to reference inside connector instance.</p></td> 
+          <td class="tableblock halign-left valign-top"> 
+           <div> 
+            <div class="listingblock"> 
+             <div class="content"> 
+              <pre>name="HTTP_Request_Configuration"</pre> 
+             </div> 
+            </div> 
+           </div></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>protocol</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Choose between HTTP and HTTPS</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>protocol="HTTPS"</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>host</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Host to be used by all request elements that reference this config.</p></td> 
+          <td class="tableblock halign-left valign-top"> 
+           <div> 
+            <div class="listingblock"> 
+             <div class="content"> 
+              <pre>host="example.com"</pre> 
+             </div> 
+            </div> 
+           </div></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>port</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Port to be used by all request elements that reference this config.</p></td> 
+          <td class="tableblock halign-left valign-top"> 
+           <div> 
+            <div class="listingblock"> 
+             <div class="content"> 
+              <pre>port="8081"</pre> 
+             </div> 
+            </div> 
+           </div></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>basePath</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">The path to which requests will be sent. You can then specify subfolders below this path within the connector instance.</p></td> 
+          <td class="tableblock halign-left valign-top"> 
+           <div> 
+            <div class="listingblock"> 
+             <div class="content"> 
+              <pre>basePath="/api/v2"</pre> 
+             </div> 
+            </div> 
+           </div></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+        </colgroup> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Child Element</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>XML Sample</strong></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">RAML Location</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">If you have access to a RAML file describing the API you’re connecting to, indicate its location here.</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;http:raml-api-configuration location="t-shirt.raml"/&gt;</code></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <div class="paragraph"> 
+        <p>The above configuration will perform a GET request to <a href="http://www.example.com/test" class="bare">http://www.example.com/test</a></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>Below are two connectors sharing the same connector configuration:</p> 
+       </div> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="xml">
+     
+              
+           <table class="CodeRay"> 
+            <tbody> 
+             <tr> 
+              <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+              <td class="code"><pre><span class="entity">&amp;lt;</span>http:request-config name="HTTP_Request_Configuration" host="example.com" port="80" basePath="/api/v2" /<span class="entity">&amp;gt;</span>
 
-=== HTTP Connector Basic Configuration
-
-You need to provide a *path* and *method* for your requests, as well as reference a *Connector Configuration* global element. Note that the path field doesn't define the full path, but rather the subpath, within the host and after the optional base path that can be specified in the Connector Configuration global element.
-
-You can also add as many parameters as you want, which can be headers, query parameters or uri parameters.
-
-image:minimum.png[minimum]
-//image not shoing in preview
-
-[width="100%",cols="50%,50%",options="header"]
-|===
-|Property |Description
-|Display Name |The name with which the element will be viewed in the flow.
-|Request Config |A reference to the Global Element. This field is required.
-|Path |The path where the request will be sent (without including the optional *base path*) configured in the global element.
-|Method |The type of HTTP request to send (GET, POST, DELETE, etc.). Optional, the default is GET.
-|Parameters a|
-You can include additional parameters to the request, such as headers and query params by clicking the green plus sign at the top. +
-
-If the global element references a RAML file, the relevant parameters will be displayed according to the selected resource and method.
-
-|===
-
-[TIP]
-If you've referenced a RAML file in the global element, both the Path and Method fields will present you with a drop-down list of available options, based on what the RAML describes. Note that you're also always free to write your own values in these fields.
-
-=== Global Element Basic Configuration
-
-image:raml+library-w+data.png[raml+library-w+data]
-
-[cols=",",options="header"]
-|===
-|Property |Description
-|&nbsp;Name |The name with which the configuration element will be referenced form instances of the connector.
-|Protocol |Choose between HTTP and HTTPS
-|Host |The host to which to send requests. This field is required.
-|Port |The port to which to send requests. This field is required.
-|Base Path |A base path within the host. Instances of the connector can then specify a subpath within this path.
-|RAML Location |Your connector can point to a RAML file, which makes it a lot easier to configure as Studio proactively offers intelligent suggestions based in the metadata defined in the RAML file.&nbsp;&nbsp;You can reference a RAML file on your local disk, one on an external URI, or you can pick one of the available ones in the Exchange by clicking *Search RAML in Exchange*.
-|Enable Datasense |The *Enable DataSense* checkbox allows Studio to use link:/mule-user-guide/v/3.6/datasense[DataSense] to expose metadata from the RAML file and interact with it on other elements in Studio.
-|===
-
-[TIP]
-If you complete the RAML Location field first, all of the other fields will be automatically populated based on what's specified in the RAML.
-
-[WARNING]
-====
-The metadata from the RAML is obtained every time you open your project in Studio and then kept in cache until you close and reopen the project.
-
-If the RAML file is modified, you can refresh the cache of it by clicking the button *Reload RAML*.
-
-The metadata exposed by the connector to your flow may not be updated right away. In such a case, click the *Refresh Metadata* button in the metadata explorer.
-====
-
-....
-[tab,title="XML Editor"]
-....
-
-=== HTTP Connector Basic Configuration
-
-You need to provide a *path* and *method* for your requests, as well as reference a *Connector Configuration* global element. Note that the path field doesn't define the full path, but rather the subpath, within the host and after the optional base path that can be specified in the Connector Configuration global element.
-
-As child elements of this connector, you can add as many parameters as you want, which may be headers, query parameters or uri parameters.
-
-[source,xml, linenums]
-----
-&lt;http:request config-ref="HTTP_Request_Configuration" path="test" method="POST" doc:name="HTTP"/&gt;
-----
-
-[cols=",",options="header"]
-|===
-|Property |Description
-|`doc:name` |The name with which the element will be viewed in the flow in Studio.
-|`config-ref` |A reference to a reusable Global Element that contains several configuration parameters. This property is required.
-|`path` |The path where the request will be sent (without including the *base path*) configured in the global element.
-|`method` |The type of HTTP request to send (GET, POST, DELETE, etc.). Optional, the default is GET.
-|===
-
-By default, GET, HEAD and OPTIONS methods will not send the payload in the request (the body of the HTTP request will be empty). The rest of the methods will send the message payload as the body of your request.
-
-=== Global Element Basic Configuration
-
-Every HTTP Connector must reference a global configuration element that sits outside any flow in your project. This element encapsulates much of the common configuration parameters that can be reused by other connectors in your project and can be referenced by multiple instances of the connector. At the very least, you need to provide a *host* and a *port*:
-
-[source,xml, linenums]
-----
-&lt;http:request-config name="HTTP_Request_Configuration" host="example.com" port="8081" doc:name="HTTP Request Configuration"/&gt;
-----
-
-[width="100%",cols="34%,33%,33%",options="header"]
-|===
-|Property |Description |XML Sample
-|`name` |Name of the Global Element, used to reference inside connector instance. a|
-----
-
-name="HTTP_Request_Configuration"
-----
-
-|`protocol` |Choose between HTTP and HTTPS |`protocol="HTTPS"`
-|`host` |Host to be used by all request elements that reference this config. a|
-----
-
-host="example.com"
-----
-
-|`port` |Port to be used by all request elements that reference this config. a|
-----
-
-port="8081"
-----
-
-|`basePath` |The path to which requests will be sent. You can then specify subfolders below this path within the connector instance. a|
-----
-
-basePath="/api/v2"
-----
-
-|===
-
-[cols=",,",]
-|=======================
-|*Child Element* |*Description* |*XML Sample*
-|RAML Location |If you have access to a RAML file describing the API you're connecting to, indicate its location here. |`&lt;http:raml-api-configuration location="t-shirt.raml"/&gt;`
-|=======================
-
-The above configuration will perform a GET request to http://www.example.com/test
-
-Below are two connectors sharing the same connector configuration:
-
-[source,xml, linenums]
-----
-&lt;http:request-config name="HTTP_Request_Configuration" host="example.com" port="80" basePath="/api/v2" /&gt;
-
-&lt;flow name="test_flow"&gt;
+<span class="entity">&amp;lt;</span>flow name="test_flow"<span class="entity">&amp;gt;</span>
     ...
-    &lt;http:request config-ref="HTTP_Request_Configuration" path="customer" method="GET" /&gt;
+    <span class="entity">&amp;lt;</span>http:request config-ref="HTTP_Request_Configuration" path="customer" method="GET" /<span class="entity">&amp;gt;</span>
     ...
-    &lt;http:request config-ref="HTTP_Request_Configuration" path="item" method="POST" /&gt;
+    <span class="entity">&amp;lt;</span>http:request config-ref="HTTP_Request_Configuration" path="item" method="POST" /<span class="entity">&amp;gt;</span>
     ...
-&lt;/flow&gt;
-----
-
-The first connector in the example will send a GET request to http://www.example.com/api/v2/customer. The second connector will send a POST request to http://www.example.com/api/v2/item.
-
-....</pre> 
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
+             </tr> 
+            </tbody> 
+           </table></code></pre> 
+        </div> 
+       </div> 
+       <div class="paragraph"> 
+        <p>The first connector in the example will send a GET request to <a href="http://www.example.com/api/v2/customer" class="bare">http://www.example.com/api/v2/customer</a>. The second connector will send a POST request to <a href="http://www.example.com/api/v2/item" class="bare">http://www.example.com/api/v2/item</a>.</p> 
+       </div> 
+      </div> 
+     </div> 
     </div> 
    </div> 
   </div> 
@@ -1160,11 +1373,11 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#xml-editor-73b39" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#xml-editor-fce22" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="xml-editor-28c4c"> 
+    <div class="tab-pane in active fade no-padding" id="xml-editor-afb10"> 
      <div class="admonitionblock tip"> 
       <table> 
        <tbody> 
@@ -1354,7 +1567,7 @@ The first connector in the example will send a GET request to http://www.example
       </div> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-73b39"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-fce22"> 
      <div class="sect2"> 
       <h3 id="query-parameters"><a class="anchor" href="#query-parameters"></a>Query parameters</h3> 
       <div class="paragraph"> 
@@ -1929,12 +2142,12 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-c7890" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-b7b2a" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-df2f7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-072d2" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c7890"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-df2f7"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Select the <strong>advanced tab</strong> of the HTTP Request Connector</p> </li> 
@@ -1943,7 +2156,7 @@ The first connector in the example will send a GET request to http://www.example
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-b7b2a"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-072d2"> 
      <div class="paragraph"> 
       <p>For example:</p> 
      </div> 
@@ -2043,12 +2256,12 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-2981f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-72167" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-1fde7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-9efd8" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-2981f"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-1fde7"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Select the <strong>advanced tab</strong> of the HTTP Request Connector</p> </li> 
@@ -2057,7 +2270,7 @@ The first connector in the example will send a GET request to http://www.example
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-72167"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-9efd8"> 
      <div class="paragraph"> 
       <p>For example:</p> 
      </div> 
@@ -2172,17 +2385,17 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-461bc" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-d5a47" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-6fb49" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-b32a1" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-461bc"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6fb49"> 
      <div class="paragraph"> 
       <p>For example, GET requests usually do not contain a body, but some APIs require them to have one. In those cases, enter the <strong>Advanced</strong> settings pannel and set the <strong>Send Body</strong> field to <strong>ALWAYS</strong>.</p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-d5a47"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-b32a1"> 
      <div class="paragraph"> 
       <p>For example, GET requests usually do not contain a body, but some APIs require them to have one. In those cases, the&nbsp;<code>sendBodyMode</code> attribute should be specified to force this behavior:</p> 
      </div> 
@@ -2232,12 +2445,12 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-fff2a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-ef615" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-1210b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-3526b" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-fff2a"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-1210b"> 
      <table class="tableblock frame-all grid-all spread"> 
       <colgroup> 
        <col style="width: 50%;"> 
@@ -2301,7 +2514,7 @@ The first connector in the example will send a GET request to http://www.example
       <p>This will take the body of the request from an inbound property named "foo", and place the response of the request in an ountbound attachment named "bar".</p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-ef615"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-3526b"> 
      <table class="tableblock frame-all grid-all spread"> 
       <colgroup> 
        <col style="width: 50%;"> 
@@ -2389,17 +2602,17 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-ecafe" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-0f96c" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-3b8bb" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-9dec6" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ecafe"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-3b8bb"> 
      <div class="paragraph"> 
       <p>For example, if your input is a file inbound endpoint that set a stream as the payload of the Mule message but you want to disable streaming, enter the <strong>Advanced</strong> settings panel and set the <strong>Enable Streaming</strong> field to <strong>NEVER</strong>.</p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-0f96c"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-9dec6"> 
      <div class="paragraph"> 
       <p>The following example will make a POST request to <a href="http://www.example.com/test">www.example.com/test</a>, reading a file from the "input" directory, and sending its content as the body of the request. In this case, streaming will be used because the file inbound endpoint will set a stream as the payload of the Mule message that is generated. The generated HTTP request will be sent using <code>Transfer-Encoding: chunked</code>.</p> 
      </div> 
@@ -2476,12 +2689,12 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-fc40d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-c186f" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-f4bc2" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-11e3a" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-fc40d"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f4bc2"> 
      <div class="paragraph"> 
       <p>You can use Attachment transformers to add attachments to your message:</p> 
      </div> 
@@ -2492,7 +2705,7 @@ The first connector in the example will send a GET request to http://www.example
       <p>This will send a POST request with ContentType: multipart/form-data and with two parts: one with the first attachment, the other with the second one.</p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-c186f"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-11e3a"> 
      <div class="paragraph"> 
       <p>For example:</p> 
      </div> 
@@ -2555,17 +2768,17 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-f3e8b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-30807" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-290d6" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-ab05f" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f3e8b"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-290d6"> 
      <div class="paragraph"> 
       <p>In the connector’s Global Configuration Element, on the <strong>General</strong> tab, select the <strong>HTTPS</strong> radio button to select the Protocol.</p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-30807"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-ab05f"> 
      <div class="paragraph"> 
       <p>For example:</p> 
      </div> 
@@ -2608,12 +2821,12 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-bfe1d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-53ff5" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-6b9e9" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-c0b57" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-bfe1d"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6b9e9"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>In the connector’s Global Configuration Element, in the <strong>General</strong> tab, select the <strong>HTTPS</strong> radio button to select the Protocol.</p> </li> 
@@ -2632,7 +2845,7 @@ The first connector in the example will send a GET request to http://www.example
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-53ff5"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-c0b57"> 
      <div class="paragraph"> 
       <p>You can add your TLS credentials as a child element of the <code>http:request-config</code> element:</p> 
      </div> 
@@ -2729,12 +2942,12 @@ The first connector in the example will send a GET request to http://www.example
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-3bc01" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-41e70" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-ad534" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-31ed3" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-3bc01"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ad534"> 
      <div class="paragraph"> 
       <p>These attributes are available in the *Advanced*tab in the connectors properties editor.</p> 
      </div> 
@@ -2765,7 +2978,7 @@ The first connector in the example will send a GET request to http://www.example
       </tbody> 
      </table> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-41e70"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-31ed3"> 
      <div class="paragraph"> 
       <p>These attributes are available in the Advancedtab in the connectors properties editor.</p> 
      </div> 
@@ -2832,15 +3045,15 @@ The first connector in the example will send a GET request to http://www.example
 
             <h2 class="block__title block-title">Footer Menu</h2>
 
-      <ul class="menu"><li class="menu__item is-expanded first expanded"><a href="/anypoint-platform" title="" class="menu__link">Platform</a><ul class="menu"><li class="menu__item is-leaf first leaf"><a href="/anypoint-platform" title="" class="menu__link">Anypoint Platform Overview</a></li>
-    <li class="menu__item is-leaf leaf"><a href="/anypoint-platform#mule" title="" class="menu__link">Mule runtime engine</a></li>
-    <li class="menu__item is-leaf leaf"><a href="/anypoint-platform#studio" title="" class="menu__link">Studio</a></li>
-    <li class="menu__item is-leaf leaf"><a href="/anypoint-platform#apidesigner" title="" class="menu__link">API Designer</a></li>
-    <li class="menu__item is-leaf leaf"><a href="/anypoint-platform#apimanager" title="" class="menu__link">API Manager</a></li>
-    <li class="menu__item is-leaf leaf"><a href="/anypoint-platform#apianalytics" title="" class="menu__link">Analytics</a></li>
-    <li class="menu__item is-leaf leaf"><a href="/anypoint-platform#connectors" title="" class="menu__link">Connectors</a></li>
-    <li class="menu__item is-leaf leaf"><a href="/anypoint-platform#exchange" title="" class="menu__link">Exchange</a></li>
-    <li class="menu__item is-leaf last leaf"><a href="/anypoint-platform#aportal" title="" class="menu__link">API Portal</a></li>
+      <ul class="menu"><li class="menu__item is-expanded first expanded"><a href="https://developer.mulesoft.com/anypoint-platform" title="" class="menu__link">Platform</a><ul class="menu"><li class="menu__item is-leaf first leaf"><a href="https://developer.mulesoft.com/anypoint-platform" title="" class="menu__link">Anypoint Platform Overview</a></li>
+    <li class="menu__item is-leaf leaf"><a href="https://developer.mulesoft.com/anypoint-platform#mule" title="" class="menu__link">Mule runtime engine</a></li>
+    <li class="menu__item is-leaf leaf"><a href="https://developer.mulesoft.com/anypoint-platform#studio" title="" class="menu__link">Studio</a></li>
+    <li class="menu__item is-leaf leaf"><a href="https://developer.mulesoft.com/anypoint-platform#apidesigner" title="" class="menu__link">API Designer</a></li>
+    <li class="menu__item is-leaf leaf"><a href="https://developer.mulesoft.com/anypoint-platform#apimanager" title="" class="menu__link">API Manager</a></li>
+    <li class="menu__item is-leaf leaf"><a href="https://developer.mulesoft.com/anypoint-platform#apianalytics" title="" class="menu__link">Analytics</a></li>
+    <li class="menu__item is-leaf leaf"><a href="https://developer.mulesoft.com/anypoint-platform#connectors" title="" class="menu__link">Connectors</a></li>
+    <li class="menu__item is-leaf leaf"><a href="https://developer.mulesoft.com/anypoint-platform#exchange" title="" class="menu__link">Exchange</a></li>
+    <li class="menu__item is-leaf last leaf"><a href="https://developer.mulesoft.com/anypoint-platform#aportal" title="" class="menu__link">API Portal</a></li>
     </ul></li>
     <li class="menu__item is-expanded expanded"><a href="https://developer.mulesoft.com/docs" title="" class="menu__link">Documentation</a><ul class="menu"><li class="menu__item is-leaf first leaf"><a href="http://developer.mulesoft.com/docs/display/current/Mule+Fundamentals" title="" class="menu__link">Fundamentals</a></li>
     <li class="menu__item is-leaf leaf"><a href="http://developer.mulesoft.com/docs/display/current/Mule+User+Guide" title="" class="menu__link">Mule User Guide</a></li>
