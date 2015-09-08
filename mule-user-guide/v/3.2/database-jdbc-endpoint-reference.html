@@ -739,27 +739,23 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Decide where you want to place the Database endpoint within your Mule flow, then drag it from the Palette to the appropriate place in the sequence of building blocks that make up your Mule flow.</p> </li> 
-    <li> <p>If you place the Database endpoint at the beginning of the flow, it will act as a polling inbound endpoint (i.e., message source), triggering the flow by executing a query at intervals specified through the polling frequency field. This necessarily corresponds to a one-way exchange pattern for Inbound Endpoints.<br> +</p> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top"><span class="image"><img src="./_images/check.png" alt="check"></span></th> 
-        <th class="tableblock halign-left valign-top">For details about exchange patterns, see: <a href="/mule-user-guide/v/3.2/mule-studio-essentials">About Main Flows</a></th> 
-       </tr> 
-      </thead> 
-     </table> 
-     <div class="literalblock"> 
-      <div class="content"> 
-       <pre> +
-. If you place the JDBC building block in the middle of or at the end of the flow, it will serve as an outbound endpoint, which is to say, as a processor that executes SQL code. Different SQL statements return different data types. For example, queries return a list of maps, Store Procedures (available only for EE) return a map, while other update statements return nothing.
-. Configure the Database endpoint by providing values for the fields on the various tabs on the *Properties* pane, which you open by double-clicking on the JDBC icon on the Message Flow canvas.</pre> 
-      </div> 
-     </div> </li> 
+    <li> <p>If you place the Database endpoint at the beginning of the flow, it will act as a polling inbound endpoint (i.e., message source), triggering the flow by executing a query at intervals specified through the polling frequency field. This necessarily corresponds to a one-way exchange pattern for Inbound Endpoints.</p> </li> 
    </ol> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: %;"> 
+    <col style="width: %;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top"><span class="image"><img src="./_images/check.png" alt="check"></span></th> 
+     <th class="tableblock halign-left valign-top">For details about exchange patterns, see: <a href="/mule-user-guide/v/3.2/mule-studio-essentials">About Main Flows</a></th> 
+    </tr> 
+   </thead> 
+  </table> 
+  <div class="paragraph"> 
+   <p>+ <br> . If you place the JDBC building block in the middle of or at the end of the flow, it will serve as an outbound endpoint, which is to say, as a processor that executes SQL code. Different SQL statements return different data types. For example, queries return a list of maps, Store Procedures (available only for EE) return a map, while other update statements return nothing. . Configure the Database endpoint by providing values for the fields on the various tabs on the <strong>Properties</strong> pane, which you open by double-clicking on the JDBC icon on the Message Flow canvas.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The <strong>Database Endpoint Properties</strong> pane contains five tabs, as detailed below:</p> 

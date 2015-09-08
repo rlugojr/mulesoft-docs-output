@@ -885,78 +885,183 @@
  <div class="sectionbody"> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
-    <col style="width: 10%;"> 
-    <col style="width: 9%;"> 
-    <col style="width: 9%;"> 
-    <col style="width: 9%;"> 
-    <col style="width: 9%;"> 
-    <col style="width: 9%;"> 
-    <col style="width: 9%;"> 
-    <col style="width: 9%;"> 
-    <col style="width: 9%;"> 
-    <col style="width: 9%;"> 
-    <col style="width: 9%;"> 
+    <col style="width: 30%;"> 
+    <col style="width: 70%;"> 
    </colgroup> 
    <thead> 
     <tr> 
-     <th class="tableblock halign-left valign-top">Transport</th> 
-     <th class="tableblock halign-left valign-top">Doc</th> 
-     <th class="tableblock halign-left valign-top">Inbound</th> 
-     <th class="tableblock halign-left valign-top">Outbound</th> 
-     <th class="tableblock halign-left valign-top">Request</th> 
-     <th class="tableblock halign-left valign-top">Transactions</th> 
-     <th class="tableblock halign-left valign-top">Streaming</th> 
-     <th class="tableblock halign-left valign-top">Retries</th> 
-     <th class="tableblock halign-left valign-top">MEPs</th> 
-     <th class="tableblock halign-left valign-top">Default MEP</th> 
-     <th class="tableblock halign-left valign-top">Maven Artifact</th> 
+     <th class="tableblock halign-left valign-top">Area</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
     </tr> 
    </thead> 
    <tbody> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">VM</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.mulesoft.org/docs/site/current3/apidocs/org/mule/transport/vm/package-summary.html">JavaDoc</a> <a href="http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_vm/namespace-overview.html">SchemaDoc</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/check.png" alt="check"></span></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/check.png" alt="check"></span></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/check.png" alt="check"></span></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">XA</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="./_images/check.png" alt="check"></span></p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">one-way, request-response</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">one-way</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">org.mule.transports:mule-transport-vm</p></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Transport</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>VM - Lists the name or protocol of the transport</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Doc</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><a href="http://www.mulesoft.org/docs/site/current3/apidocs/org/mule/transport/vm/package-summary.html">JavaDoc</a> <a href="http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_vm/namespace-overview.html">SchemaDoc</a> - Links to the JavaDoc and SchemaDoc for the transport.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Inbound</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/check.png" alt="check"></span> - Whether the transport can receive inbound events and can be used for an inbound endpoint.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Outbound</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/check.png" alt="check"></span> - Whether the transport can produce outbound events and be used with an outbound endpoint.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Request</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/check.png" alt="check"></span> - Whether this endpoint can be queried directly with a request call.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Transactions</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><code>XA</code> - Whether transactions are supported by the transport. Transports that support transactions can be configured in either local or distributed two-phase commit (XA) transaction.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Streaming</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/check.png" alt="check"></span> - Whether this transport can process messages that come in on an input stream. This allows for very efficient processing of large data. For more information, see Streaming.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Retries</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Whether this transport supports retry policies. Note that all transports can be configured with Retry policies, but only the ones marked here are officially supported by MuleSoft.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>MEPs</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><code>one-way</code>, <code>request-response</code> - Message Exchange Patterns supported by this transport.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Default MEP</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><code>one-way</code> - The default MEP for endpoints that use this transport that do not explicitly configure a MEP</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Maven Artifact</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><code>org.mule.transports:mule-transport-vm</code> - The group name a artifact name for this transport in <a href="http://maven.apache.org/">Maven</a></p> 
+       </div> 
+      </div></td> 
     </tr> 
    </tbody> 
   </table> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>&nbsp;Legend</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p><strong>Transport</strong> - The name/protocol of the transport<br> <strong>Docs</strong> - Links to the JavaDoc and SchemaDoc for the transport<br> <strong>Inbound</strong> - Whether the transport can receive inbound events and can be used for an inbound endpoint<br> <strong>Outbound</strong> - Whether the transport can produce outbound events and be used with an outbound endpoint<br> <strong>Request</strong> - Whether this endpoint can be queried directly with a request call (via MuleClinet or the EventContext)<br> <strong>Transactions</strong> - Whether transactions are supported by the transport. Transports that support transactions can be configured in either local or distributed two-phase commit (XA) transaction.<br> <strong>Streaming</strong> - Whether this transport can process messages that come in on an input stream. This allows for very efficient processing of large data. For more information, see Streaming.<br> <strong>Retry</strong> - Whether this transport supports retry policies. Note that all transports can be configured with Retry policies, but only the ones marked here are officially supported by MuleSoft<br> <strong>MEPs</strong> - Message Exchange Patterns supported by this transport<br> <strong>Default MEP</strong> - The default MEP for endpoints that use this transport that do not explicitly configure a MEP<br> <strong>Maven Artifact</strong> - The group name a artifact name for this transport in <a href="http://maven.apache.org/">Maven</a></p> 
-  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
  <h2 id="namespace-and-syntax"><a class="anchor" href="#namespace-and-syntax"></a>Namespace and Syntax</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>XML namespace:</p> 
+   <p>XML Namespace:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre>xmlns:vm="http://www.mulesoft.org/schema/mule/vm"</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="xml">xmlns:vm="http://www.mulesoft.org/schema/mule/vm"</code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -1013,17 +1118,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">memory</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">memory</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -1036,17 +1131,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">out</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">out</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
    </div> 
   </div> 
   <div class="ulist"> 
@@ -1056,17 +1141,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://out</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://out</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></code></pre> 
    </div> 
   </div> 
  </div> 
@@ -1147,23 +1222,13 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
        <li> <p>Create a VM connector:</p> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">vmConnector</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
+          <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">vmConnector</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
          </div> 
+        </div> 
+        <div class="paragraph"> 
+         <p>If none is created, all VM endpoints use a default connector.</p> 
         </div> </li> 
       </ul> 
-     </div> 
-     <div class="paragraph"> 
-      <p>If none is created, all VM endpoints use a default connector.</p> 
      </div> </li> 
     <li> <p>Create VM endpoints.<br></p> 
      <div class="ulist"> 
@@ -1223,48 +1288,36 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
      <p>When requests come into a receiver for a flow that uses the VM transport, they are stored on a queue until threads from a thread pool can pick them up and process them. The receiver thread then releases back into the receiver thread pool so it can carry another incoming message. Each message waiting in the queue can be assigned a different thread from the pool of threads.</p> 
     </div> 
     <div class="paragraph"> 
-     <p>You can configure a queue for a VM transport through a queue profile. The queue profile specifies how the queue behaves. Typically, you do not need to configure the queue profile for performance, since the default configuration is usually sufficient, that is, the queue is not the bottleneck. (Performance is usually limited by the component or one of the endpoints). For other reasons, you still might want to specify a maximum queue size, or enable persistence on the queue (which is disabled by default).</p> 
+     <p>You can configure a queue for a VM transport through a queue profile. The queue profile specifies how the queue behaves. Typically, you do not need to configure the queue profile for performance, since the default configuration is usually sufficient, that is, the queue is not the bottleneck. (Performance is usually limited by the component or one of the endpoints.) For other reasons, you still might want to specify a maximum queue size, or enable persistence on the queue (which is disabled by default).</p> 
     </div> 
     <div class="paragraph"> 
      <p>You configure the queue profile using the &lt;queue-profile&gt; element. For a VM transport, you specify the &lt;queue-profile&gt; element on the connector.</p> 
     </div> 
     <div class="paragraph"> 
-     <p>Here are the attributes of the &lt;queue-profile&gt; element:</p> 
+     <p>Attributes of the &lt;queue-profile&gt; element:</p> 
     </div> 
-    <table class="tableblock frame-all grid-all spread"> 
-     <colgroup> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-      <col style="width: 20%;"> 
-     </colgroup> 
-     <thead> 
-      <tr> 
-       <th class="tableblock halign-left valign-top"><strong>Name</strong></th> 
-       <th class="tableblock halign-left valign-top"><strong>Type</strong></th> 
-       <th class="tableblock halign-left valign-top"><strong>Required</strong></th> 
-       <th class="tableblock halign-left valign-top"><strong>Default</strong></th> 
-       <th class="tableblock halign-left valign-top"><strong>Description</strong></th> 
-      </tr> 
-     </thead> 
-     <tbody> 
-      <tr> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>maxOutstandingMessages</code></p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the maximum number of messages that can be queued. The default, 0, means there is no limit on the number of messages that can be queued.</p></td> 
-      </tr> 
-      <tr> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>persistent</code></p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies whether Mule messages are persisted to a store. Primarily, this is used for persisting queued messages to disk so that the internal state of the server is mirrored on disk in case the server fails and needs to be restarted.</p></td> 
-      </tr> 
-     </tbody> 
-    </table> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Name: <code>maxOutstandingMessages</code>:</p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Type: integer</p> </li> 
+         <li> <p>Required: No</p> </li> 
+         <li> <p>Default: 0</p> </li> 
+         <li> <p>Defines the maximum number of messages that can be queued. The default, 0, means there is no limit on the number of messages that can be queued.</p> </li> 
+        </ul> 
+       </div> </li> 
+      <li> <p>Name: <code>persistent</code>:</p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Type: boolean</p> </li> 
+         <li> <p>Required: No</p> </li> 
+         <li> <p>Default: false</p> </li> 
+         <li> <p>Specifies whether Mule messages are persisted to a store. Primarily, this is used for persisting queued messages to disk so that the internal state of the server is mirrored on disk in case the server fails and needs to be restarted.</p> </li> 
+        </ul> 
+       </div> </li> 
+     </ul> 
+    </div> 
     <div class="paragraph"> 
      <p>Based on the persistent attribute value you specify, Mule chooses a persistence strategy to use for the queue. By default, Mule use two persistence strategies:</p> 
     </div> 
@@ -1286,17 +1339,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre><span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">out</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">out</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1304,17 +1347,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>vm://&lt;your_path_here&gt;</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="xml">vm://<span class="tag">&lt;your_path_here&gt;</span></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1477,263 +1510,108 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
     </table> 
    </div> 
   </div> 
- </div> 
-</div> 
-<h1 id="vm-transport" class="sect0"><a class="anchor" href="#vm-transport"></a>VM Transport</h1> 
-<div class="paragraph"> 
- <p>The VM transport is used for intra-VM communication between components managed by Mule. The transport provides options for configuring VM transient or persistent queues.</p> 
-</div> 
-<div class="sect1"> 
- <h2 id="connector"><a class="anchor" href="#connector"></a>Connector</h2> 
- <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="attributes-of-connector"><a class="anchor" href="#attributes-of-connector"></a>Attributes of &lt;connector…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">queueTimeout</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">positiveInteger</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout setting for the queue used for asynchronous endpoints</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <h3 id="vm-transport"><a class="anchor" href="#vm-transport"></a>VM Transport</h3> 
+   <div class="paragraph"> 
+    <p>The VM transport is used for intra-VM communication between components managed by Mule. The transport provides options for configuring VM transient or persistent queues.</p> 
+   </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-connector"><a class="anchor" href="#child-elements-of-connector"></a>Child Elements of &lt;connector…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">queueProfile</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">DEPRECATED. USE "&lt;queue-profile&gt;" instead.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">queue-profile</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Configures the properties of this connector’s queue (see [Configuring Queues]).</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="inbound-endpoint"><a class="anchor" href="#inbound-endpoint"></a>Inbound endpoint</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The endpoint on which this connector receives messages from the transport.</p> 
+   <h3 id="connector"><a class="anchor" href="#connector"></a>Connector</h3> 
+   <div class="paragraph"> 
+    <p>The following sections list attributes and child elements of the connector.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-connector"><a class="anchor" href="#attributes-of-connector"></a>Attributes of connector</h4> 
+    <div class="paragraph"> 
+     <p><code>queueTimeout</code>:</p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Type: <code>positiveInteger</code></p> </li> 
+      <li> <p>Required: Yes</p> </li> 
+      <li> <p>The timeout setting for the queue used for asynchronous endpoints</p> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-connector"><a class="anchor" href="#child-elements-of-connector"></a>Child Elements of connector</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>queueProfile, Cardinality: 0..1, DEPRECATED. USE "&lt;queue-profile&gt;" instead.</p> </li> 
+      <li> <p>queue-profile, Cardinality: 0..1, Configures the properties of this connector’s queue (see [Configuring Queues]).</p> </li> 
+     </ul> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of &lt;inbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The queue path, such as dispatchInQueue to create the address vm://dispatchInQueue.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <h3 id="inbound-endpoint"><a class="anchor" href="#inbound-endpoint"></a>Inbound Endpoint</h3> 
+   <div class="paragraph"> 
+    <p>The endpoint on which this connector receives messages from the transport.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of inbound-endpoint</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Name: path</p> </li> 
+      <li> <p>Type: string</p> </li> 
+      <li> <p>Required: No</p> </li> 
+      <li> <p>The queue path, such as dispatchInQueue to create the address vm://dispatchInQueue.</p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p>No child elements.</p> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-inbound-endpoint"><a class="anchor" href="#child-elements-of-inbound-endpoint"></a>Child Elements of &lt;inbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound endpoint</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The endpoint to which this connector sends messages.</p> 
+   <h3 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound Endpoint</h3> 
+   <div class="paragraph"> 
+    <p>The endpoint to which this connector sends messages.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-outbound-endpoint"><a class="anchor" href="#attributes-of-outbound-endpoint"></a>Attributes of outbound-endpoint</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Name: path</p> </li> 
+      <li> <p>Type: string</p> </li> 
+      <li> <p>Required: No</p> </li> 
+      <li> <p>The queue path, such as dispatchInQueue to create the address vm://dispatchInQueue.</p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p>No child elements.</p> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-outbound-endpoint"><a class="anchor" href="#attributes-of-outbound-endpoint"></a>Attributes of &lt;outbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The queue path, such as dispatchInQueue to create the address vm://dispatchInQueue.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <h3 id="endpoint"><a class="anchor" href="#endpoint"></a>Endpoint</h3> 
+   <div class="paragraph"> 
+    <p>An endpoint "template" that can be used to construct an inbound or outbound endpoint elsewhere in the configuration by referencing the endpoint name.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-endpoint"><a class="anchor" href="#attributes-of-endpoint"></a>Attributes of endpoint</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Name: path</p> </li> 
+      <li> <p>Type: string</p> </li> 
+      <li> <p>Required: No</p> </li> 
+      <li> <p>The queue path, such as dispatchInQueue to create the address vm://dispatchInQueue.</p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p>No child elements.</p> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-outbound-endpoint"><a class="anchor" href="#child-elements-of-outbound-endpoint"></a>Child Elements of &lt;outbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="endpoint"><a class="anchor" href="#endpoint"></a>Endpoint</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>An endpoint "template" that can be used to construct an inbound or outbound endpoint elsewhere in the configuration by referencing the endpoint name.</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="attributes-of-endpoint"><a class="anchor" href="#attributes-of-endpoint"></a>Attributes of &lt;endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The queue path, such as dispatchInQueue to create the address vm://dispatchInQueue.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-endpoint"><a class="anchor" href="#child-elements-of-endpoint"></a>Child Elements of &lt;endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="transaction"><a class="anchor" href="#transaction"></a>Transaction</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The transaction element configures a transaction. Transactions allow a series of operations to be grouped together so that they can be rolled back if a failure occurs. For more information, see <a href="/mule-user-guide/v/3.7/transaction-management">Transaction Management</a>.</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-transaction"><a class="anchor" href="#child-elements-of-transaction"></a>Child Elements of &lt;transaction…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <h3 id="transaction"><a class="anchor" href="#transaction"></a>Transaction</h3> 
+   <div class="paragraph"> 
+    <p>The transaction element configures a transaction. Transactions allow a series of operations to be grouped together so that they can be rolled back if a failure occurs. For more information, see <a href="/mule-user-guide/v/3.7/transaction-management">Transaction Management</a>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>No child elements.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1741,7 +1619,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
  <h2 id="schema"><a class="anchor" href="#schema"></a>Schema</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><a href="http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_vm/namespace-overview.html" class="bare">http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_vm/namespace-overview.html</a></p> 
+   <p><a href="http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_vm/namespace-overview.html">Schemadocs</a></p> 
   </div> 
  </div> 
 </div> 
@@ -1752,7 +1630,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
    <p>The Javadoc for this module can be found here:</p> 
   </div> 
   <div class="paragraph"> 
-   <p><a href="http://www.mulesoft.org/docs/site/current/apidocs/org/mule/transport/vm/package-summary.html">VM</a></p> 
+   <p><a href="http://www.mulesoft.org/docs/site/current/apidocs/org/mule/transport/vm/package-summary.html">VM Javadoc</a></p> 
   </div> 
  </div> 
 </div> 
@@ -1760,7 +1638,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
  <h2 id="maven"><a class="anchor" href="#maven"></a>Maven</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The In Memory Transport can be included with the following dependency:</p> 
+   <p>The In-Memory Transport can be included with the following dependency:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1810,7 +1688,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#transport-info">Transport Info</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#transformers">Transformers</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#using-transactions">Using Transactions</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#connector">Connector</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound endpoint</a></li><li><a class="scroll-menu-link" href="#endpoint">Endpoint</a></li><li><a class="scroll-menu-link" href="#transaction">Transaction</a></li><li><a class="scroll-menu-link" href="#schema">Schema</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#transport-info">Transport Info</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#transformers">Transformers</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#using-transactions">Using Transactions</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#schema">Schema</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

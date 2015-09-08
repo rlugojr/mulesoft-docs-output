@@ -939,17 +939,8 @@
   <div class="paragraph"> 
    <p>To prepare an application to use a Web Service as in one of the examples above, you must first add the Web service’s WSDL to your Mule project, then configure, at minimum, the required parameters for the Web Service Consumer element and a Global Web Service Consumer element. The diagram and section below describe how to address these requirements.</p> 
   </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>image:wsc_workflow2.png[wsc_workflow2] +</pre> 
-   </div> 
-  </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>+
-+
-+</pre> 
-   </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/wsc_workflow2.png" alt="wsc_workflow2"></span></p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
@@ -957,31 +948,26 @@
     <li> <p>If you are using a WSDL file, copy the file into the` src/main/resources` folder of your Studio project. (You can drag and drop the file to copy it to the folder.) If using a URL, there is no need to copy anything to your Studio project.</p> </li> 
     <li> <p>Drag a <strong>Web Service Consumer</strong> connector into a flow in your application. Click the Web Service Consumer icon to open its <strong>Properties Editor</strong>, then change the default value of the <strong>Display Name</strong> of the connector, if you wish.</p> </li> 
     <li> <p>Define the Global Configuration of the connector: click the plus sign next to the <strong>Global Configuration</strong> field.&nbsp;</p> </li> 
-    <li> <p>In the window that opens, begin by entering a value in the <strong>WSDL Location</strong> field. Populate this field first, with either the WSDL’s URL, or the filepath and filename of the WSDL file you copied into the <code>src/main/resources</code> folder of your project. Upon filling this field, you five Studio the opportunity to read the contents of the WSDL and automatically populate the remaining empty fields — <code>Service</code>, <code>Port</code> and <code>Address</code> — using information contained in the WSDL file. Alternatively, you can manually populate these fields with the appropriate information about the Web service.&nbsp;<br> + <span class="image"><img src="./_images/wsc_global.png" alt="wsc_global"></span><br></p> 
-     <div class="literalblock"> 
-      <div class="content"> 
-       <pre>  +
-  +
-. Confirm that the *Enable DataSense* box is checked, then click *OK* to save.
-. Notice that Studio auto-populates the following fields in the Properties Editor of the Web Service Consumer element in your flow: +
-* *Global Configuration* with the name of the Global Web Service Consumer you just created
-* *Operation* with the name of an operation the Web service supports for its consumers.&nbsp;</pre> 
-      </div> 
-     </div> 
-     <div class="literalblock"> 
-      <div class="content"> 
-       <pre> +
+    <li> <p>In the window that opens, begin by entering a value in the <strong>WSDL Location</strong> field. Populate this field first, with either the WSDL’s URL, or the filepath and filename of the WSDL file you copied into the <code>src/main/resources</code> folder of your project. Upon filling this field, you five Studio the opportunity to read the contents of the WSDL and automatically populate the remaining empty fields — <code>Service</code>, <code>Port</code> and <code>Address</code> — using information contained in the WSDL file. Alternatively, you can manually populate these fields with the appropriate information about the Web service.&nbsp;<br> <br> <span class="image"><img src="./_images/wsc_global.png" alt="wsc_global"></span></p> </li> 
+    <li> <p>Confirm that the <strong>Enable DataSense</strong> box is checked, then click <strong>OK</strong> to save.</p> </li> 
+    <li> <p>Notice that Studio auto-populates the following fields in the Properties Editor of the Web Service Consumer element in your flow:<br></p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><strong>Global Configuration</strong> with the name of the Global Web Service Consumer you just created</p> </li> 
+       <li> <p><strong>Operation</strong> with the name of an operation the Web service supports for its consumers.&nbsp;</p> 
+        <div class="literalblock"> 
+         <div class="content"> 
+          <pre> +
 . Adjust the Operation of the Web Service Consumer, if you wish (and if the SOAP Web service indeed offers more than one operation), then click inside the canvas to auto-save your configuration. +
  +
  image:wsc_local.png[wsc_local]</pre> 
-      </div> 
+         </div> 
+        </div> </li> 
+      </ul> 
      </div> </li> 
     <li> <p>Begin by acquiring the <strong>WSDL file</strong> for the SOAP Web service you intend to consume, or identifying the <strong>URL of the WSDL</strong>.</p> </li> 
     <li> <p>If you are using a WSDL file, copy the file into the` src/main/resources` folder of your Studio project. (You can drag and drop the file to copy it to the folder.) If using a URL, there is no need to copy anything to your Studio project.</p> </li> 
-    <li> <p>Above all the flows in your application, add a global ` ws:consumer-config ` element to your application. Configure its attributes according to the code sample below to define how to connect to the Web service you intend to consume. For a full list of elements, attributes and default values, consult&nbsp; Web Service Consumer Reference .<br> &nbsp;</p> 
-     <div class="paragraph"> 
-      <p>+ <br></p> 
-     </div> </li> 
+    <li> <p>Above all the flows in your application, add a global ` ws:consumer-config ` element to your application. Configure its attributes according to the code sample below to define how to connect to the Web service you intend to consume. For a full list of elements, attributes and default values, consult&nbsp; Web Service Consumer Reference . &nbsp;</p> </li> 
     <li> <p>Add a ` ws:consumer ` element to a flow in your application. Configure its attributes according to the code sample below to define the global Web Service Consumer to reference, and the operation to perform with a request to the Web service. For a full list of elements, attributes and default values, consult&nbsp; Web Service Consumer Reference .<br> &nbsp;</p> 
      <div class="paragraph"> 
       <p>== Web Service Consumer and DataMapper</p> 
@@ -1021,9 +1007,7 @@
      <li> <p>Because it is impossible to properly map "records" (on the left) &nbsp;to the three fields in the CSV file (on the right), you must change the element type of the records sObject. To do so, right-click the sObject, then select&nbsp;<strong>Change Element Type…</strong><br></p> 
       <div class="ulist"> 
        <ul> 
-        <li> <p>+</p> </li> 
         <li> <p>*<span class="image"><img src="./_images/change_element.png" alt="change_element"></span><br></p> </li> 
-        <li> <p>*<br> *</p> </li> 
        </ul> 
       </div> </li> 
      <li> <p>In the dialog box that appears, select a new element type, then click&nbsp;<strong>OK</strong>; the example would select "Contacts".</p> </li> 

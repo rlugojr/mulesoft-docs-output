@@ -1004,7 +1004,7 @@
    <p>The first time you try to add any of the SAP components to your Mule configuration file, the SAP dependencies that match the version of the project ESB runtime get added automatically. In case there is more than one SAP transport dependency for the ESB runtime configured in the project, then you will be prompted to select the one you want to use.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="/docs/download/attachments/122752065/select-SAP-connector-version.png?version=1&amp;modificationDate=1413382377696" alt="image"></span></p> 
+   <p><span class="image"><img src="./_images/sap-connector-version.png" alt="sap-connector-version"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>To add the SAP connector manually to the classpath, complete the following steps:</p> 
@@ -1018,7 +1018,7 @@
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/AddSAPlibrary.png" alt="AddSAPlibrary"></span></p> 
+   <p><span class="image"><img src="./_images/sap-add-library.png" alt="sap-add-library"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -1152,7 +1152,7 @@
      <p>Since Mule runtime version 3.5.0 and SAP connector version 2.2.2, Studio allows searching BAPIs or IDocs.</p> 
     </div> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="/docs/download/attachments/122752065/SAP-basic-settings.png?version=1&amp;modificationDate=1413382377570" alt="image"></span></p> 
+     <p><span class="image"><img src="./_images/SAP-basic-settings.png" alt="SAP-basic-settings"></span></p> 
     </div> 
     <div class="olist arabic"> 
      <ol class="arabic"> 
@@ -1162,13 +1162,16 @@
      </ol> 
     </div> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="/docs/download/attachments/122752065/search-sap-object.png?version=1&amp;modificationDate=1413382377677" alt="image"></span></p> 
+     <p><span class="image"><img src="./_images/search-sap-object.png" alt="search-sap-object"></span></p> 
     </div> 
     <div class="olist arabic"> 
      <ol class="arabic"> 
       <li> <p>Type a valid filter. (At least one character should be typed in.) You can use the wildcard '*' and by default the filter type will be 'starts with'.</p> </li> 
-      <li> <p>Once results are displayed, you can right-click&nbsp;each row to export the XML or XSD representation of the BAPI (XML version 1 or 2) or IDoc. When a row in the result is selected, you can then press the <strong>Select</strong> button to set the value of the <strong>Object Name</strong>. &nbsp; <span class="image"><img src="/docs/download/attachments/122752065/select-export-sap-object.png?version=1&amp;modificationDate=1413382377688" alt="image"></span></p> </li> 
+      <li> <p>Once results are displayed, you can right-click&nbsp;each row to export the XML or XSD representation of the BAPI (XML version 1 or 2) or IDoc. When a row in the result is selected, you can then press the <strong>Select</strong> button to set the value of the <strong>Object Name</strong>.</p> </li> 
      </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/select-export-sap-object.png" alt="select-export-sap-object"></span></p> 
     </div> 
    </div> 
   </div> 
@@ -1191,7 +1194,7 @@
    <p>These are available in the <strong>Transformers</strong> group on the Studio Palette. Entering <strong>SAP</strong> into the filter input box above the palette displays both the SAP Connector and the SAP Transformers (below):</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="/docs/download/attachments/122752065/SAPfilter.png?version=1&amp;modificationDate=1413382377669" alt="image"></span></p> 
+   <p><span class="image"><img src="./_images/SAPfilter.png" alt="SAPfilter"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>Click and drag the <strong>SAP Object to XML</strong> transformer <em>after</em> an SAP inbound endpoint (or a SAP outbound endpoint if the endpoint is a function and expects a response).</p> 
@@ -1257,7 +1260,7 @@
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>Port 3300 is predefined by SAP, so if you need to validate other port numbers based on your SAP instance number, you can check the complete list of <a href="http://www.mulesoft.org/documentation/display/MULE3USER/SAP+JCo+Server+Services+Configuration">service-to-port mappings</a>.</p> 
+   <p>Port 3300 is predefined by SAP, so if you need to validate other port numbers based on your SAP instance number, you can check the complete list of <a href="/mule-user-guide/v/3.7/sap-jco-server-services-configuration">SAP JCo Server Services Configuration for service-to-port mappings</a>.</p> 
   </div> 
   <div class="paragraph"> 
    <p>This configuration can be avoided if using the port (for example 3300) as the value of the&nbsp; <code>jcoGwService</code> attribute (or <code>jco.server.gwserv /jco.client.gwserv</code> properties).</p> 
@@ -1290,7 +1293,7 @@
     <p>Many SAP connection properties exist. For ease of use, the SAP connector only shows the most common properties as connector parameters. To configure a property that is not listed in the Properties pane, consult <a href="#extended-properties">Extended Properties</a>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="/docs/download/attachments/122752065/sap.global.elem.png?version=1&amp;modificationDate=1413382377646" alt="image"></span></p> 
+    <p><span class="image"><img src="./_images/sap_global_elem.png" alt="sap_global_elem"></span></p> 
    </div> 
    <div class="paragraph"> 
     <p>At a minimum, provide values for the following attributes:</p> 
@@ -1332,7 +1335,7 @@
     <p>To provide additional configuration properties, you can define a Spring bean global element representing a Map (<code>java.util.Map</code>) instance. This can be used to configure, among other properties, SCN (Secure Connections), or advanced pooling capabilities.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>In this case, you must know the configuration property <em>as defined by SAP</em>. You can check <a href="http://www.mulesoft.org/documentation/display/MULE3USER/SAP+JCo+Extended+Properties">the configuration properties list</a>.</p> 
+    <p>In this case, you must know the configuration property <em>as defined by SAP</em>. You can check <a href="/mule-user-guide/v/3.7/sap-jco-extended-properties">SAP JCo Extended Properties</a>.</p> 
    </div> 
    <div class="paragraph"> 
     <p>To define extended properties for the <strong>SAP global connector</strong>, complete the following steps:</p> 
@@ -1345,7 +1348,7 @@
     </ol> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="/docs/download/attachments/122752065/sap-connector-adv.png?version=1&amp;modificationDate=1413382377586" alt="image"></span></p> 
+    <p><span class="image"><img src="./_images/sap-connector-adv.png" alt="sap-connector-adv"></span></p> 
    </div> 
   </div> 
  </div> 
@@ -1361,7 +1364,7 @@
     <li> <p>Attributes defined at the <strong>SAP Inbound Endpoint</strong> and <strong>SAP Outbound Endpoint</strong> level, such as <strong>User</strong>, <strong>Password</strong>, <strong>Gateway Host</strong>, etc.</p> </li> 
     <li> <p>Properties in the <strong>Address</strong> attribute at the <strong>SAP Inbound Endpoint</strong> and <strong>SAP Outbound Endpoint</strong> levels. (However, MuleSoft does not recommend using the <strong>Address</strong> attribute for SAP connections.)</p> </li> 
     <li> <p>Properties inside the Map configured in the <strong>Extended Properties</strong> pane for the JCo client or server at the <strong>SAP Inbound Endpoint</strong> and <strong>SAP Outbound Endpoint</strong> levels.</p> </li> 
-    <li> <p>Attributes configured at the <strong>SAP Connector Configuration</strong> level (i.e., <strong>AS Host</strong>, <strong>User Password</strong>, <strong>SAP Client</strong>, etc.).</p> </li> 
+    <li> <p>Attributes configured at the <strong>SAP Connector Configuration</strong> level (that is, <strong>AS Host</strong>, <strong>User Password</strong>, <strong>SAP Client</strong>, etc.).</p> </li> 
     <li> <p>Properties inside the Map configured in the <strong>Extended Properties</strong> pane at the <strong>SAP Connector Configuration</strong> level.</p> </li> 
     <li> <p>Default values.</p> </li> 
    </ol> 
@@ -1376,7 +1379,7 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> With DataSense support, the recommended way to generate the XML definitions is using <a href="/mule-user-guide/v/3.3/datamapper-transformer-reference">DataMapper</a> (and XML version 2 for BAPIs/Functions). </td> 
+      <td class="content"> With DataSense support, the recommended way to generate the XML definitions is using <a href="/mule-user-guide/v/3.7/dataweave">DataWeave</a>. However if you are using a Mule 3.3 application, see <a href="/mule-user-guide/v/3.3/datamapper-transformer-reference">DataMapper</a> (and XML version 2 for BAPIs/Functions). </td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1403,7 +1406,7 @@
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="/docs/download/attachments/122752065/sap-endpoint-type.png?version=1&amp;modificationDate=1413382377608" alt="image"></span></p> 
+   <p><span class="image"><img src="./_images/sap-endpoint-type.png" alt="sap-endpoint-type"></span></p> 
   </div> 
   <div class="admonitionblock note"> 
    <table> 
@@ -2062,7 +2065,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>A Reference to <code>java.util.Map</code>, which contains additional JCo connection parameters. As necessary, consult the <a href="http://www.mulesoft.org/documentation/display/MULE3USER/SAP+JCo+Extended+Properties">complete list of parameters</a>.</p> 
+         <p>A Reference to <code>java.util.Map</code>, which contains additional JCo connection parameters. As necessary, consult the <a href="/mule-user-guide/v/3.7/sap-jco-extended-properties">SAP JCo Extended Properties</a>.</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 

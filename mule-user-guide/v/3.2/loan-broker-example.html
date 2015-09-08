@@ -759,7 +759,7 @@ This Mule ESB example application demonstrates the power of content-based routin
     <li> <p>borrower’s name</p> </li> 
     <li> <p>amount of the loan</p> </li> 
     <li> <p>repayment term of the loan</p> </li> 
-    <li> <p>borrower’s social security number (SSN)<br> +</p> </li> 
+    <li> <p>borrower’s social security number (SSN)<br></p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
@@ -951,7 +951,7 @@ This Mule ESB example application demonstrates the power of content-based routin
      <li> <p>Foreach consults the <code>banks</code> list variable to learn that it should send its second request to IndustrialGrowth.</p> </li> 
      <li> <p>Foreach invokes the LookupLoanQuote subflow.</p> </li> 
      <li> <p>The LookupLoanQuote subflow calls the <code>getLoanQuote</code> Web service to obtain an interest rate quote from IndustrialGrowth.</p> </li> 
-     <li> <p>The LookupLoanQuote subflow provides the Web service response to the Loan-Broker-Sync flow. .The message enricher inserts the interest rate quote from IndustrialGrown into the <code>quotes</code> list variable. .Foreach consults the <code>banks</code> list variable to find no more items on the list. It passes the message — now with a list containing two interest rate quotes — to the next message processor. Refer to the table below for a before-and-after comparison of message contents.<br> <br></p> 
+     <li> <p>The LookupLoanQuote subflow provides the Web service response to the Loan-Broker-Sync flow. .The message enricher inserts the interest rate quote from IndustrialGrown into the <code>quotes</code> list variable. .Foreach consults the <code>banks</code> list variable to find no more items on the list. It passes the message — now with a list containing two interest rate quotes — to the next message processor. Refer to the table below for a before-and-after comparison of message contents.</p> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
         <col style="width: %;"> 

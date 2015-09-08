@@ -876,7 +876,7 @@
    <p>To understand CloudHub’s approach to security and availability, it’s important to understand the architecture behind CloudHub. CloudHub includes three major components: the management console, the platform services, and the worker cloud. These three components work together to run your integration applications.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/image2014-10-25+0%3A25%3A28.png" alt="image2014-10-25+0%3A25%3A28"></span></p> 
+   <p><span class="image"><img src="./_images/architecture-diagram.png" alt="architecture-diagram"></span></p> 
   </div> 
   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
    <colgroup> 
@@ -1019,56 +1019,18 @@
    <div class="paragraph"> 
     <p>Each worker is a dedicated instance of Mule that runs your integration application. Workers may have a different memory capacity and processing power depending on how you configure them at application level. Workers can be scaled vertically by selecting one of the available worker sizes:</p> 
    </div> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 10%;"> 
-     <col style="width: 10%;"> 
-    </colgroup> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Worker Sizes</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>0.1 vCores + 500 MB Mem</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>0.2 vCores + 1 GB Mem</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>1 vCores + 1.5 GB Mem</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>2 vCores + 3.5 GB Mem</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>4 vCores + 7.5 GB Mem</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <div class="paragraph"> 
+    <p><strong>Worker Sizes:</strong></p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>0.1 vCores + 500 MB Memory</p> </li> 
+     <li> <p>0.2 vCores + 1 GB Memory</p> </li> 
+     <li> <p>1 vCores + 1.5 GB Memory</p> </li> 
+     <li> <p>2 vCores + 3.5 GB Memory</p> </li> 
+     <li> <p>4 vCores + 7.5 GB Memory</p> </li> 
+    </ul> 
+   </div> 
    <div class="admonitionblock note"> 
     <table> 
      <tbody> 
@@ -1139,7 +1101,7 @@
   <div class="sect2"> 
    <h3 id="cloudhub-fabric"><a class="anchor" href="#cloudhub-fabric"></a>CloudHub Fabric</h3> 
    <div class="paragraph"> 
-    <p>CloudHub Fabric provides scalability, workload distribution, and added reliability to CloudHub applications on a per-application basis. These capabilities are powered by CloudHub’s scalable load-balancing service,&nbsp;<a href="http://www.mulesoft.org/documentation/display/current/CloudHub+Fabric#CloudHubFabric-WorkerScaleout">worker scaleout</a>, and&nbsp;<a href="http://www.mulesoft.org/documentation/display/current/CloudHub+Fabric#CloudHubFabric-PersistentQueues">persistent queueing</a>&nbsp;features.</p> 
+    <p>CloudHub Fabric provides scalability, workload distribution, and added reliability to CloudHub applications on a per-application basis. These capabilities are powered by CloudHub’s scalable load-balancing service, <a href="/cloudhub/cloudhub-fabric#worker-scaleout">CloudHub Fabric worker scaleout</a>, and&nbsp;<a href="/cloudhub/cloudhub-fabric#persistent-queues">persistent queueing</a>&nbsp;features.</p> 
    </div> 
    <div class="sect3"> 
     <h4 id="worker-scale-out-and-data-center-redundancy"><a class="anchor" href="#worker-scale-out-and-data-center-redundancy"></a>Worker Scale-Out and Data Center Redundancy</h4> 
