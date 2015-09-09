@@ -881,16 +881,18 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="transport-info"><a class="anchor" href="#transport-info"></a>Transport Info</h2> 
+ <h2 id="vm-transport-info"><a class="anchor" href="#vm-transport-info"></a>VM Transport Info</h2> 
  <div class="sectionbody"> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
-    <col style="width: 30%;"> 
-    <col style="width: 70%;"> 
+    <col style="width: 20%;"> 
+    <col style="width: 20%;"> 
+    <col style="width: 60%;"> 
    </colgroup> 
    <thead> 
     <tr> 
      <th class="tableblock halign-left valign-top">Area</th> 
+     <th class="tableblock halign-left valign-top">Value</th> 
      <th class="tableblock halign-left valign-top">Description</th> 
     </tr> 
    </thead> 
@@ -905,7 +907,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p>VM - Lists the name or protocol of the transport</p> 
+        <p><code>VM</code></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Lists the name or protocol of the transport</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -919,7 +927,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><a href="http://www.mulesoft.org/docs/site/current3/apidocs/org/mule/transport/vm/package-summary.html">JavaDoc</a> <a href="http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_vm/namespace-overview.html">SchemaDoc</a> - Links to the JavaDoc and SchemaDoc for the transport.</p> 
+        <p><a href="http://www.mulesoft.org/docs/site/current3/apidocs/org/mule/transport/vm/package-summary.html">JavaDoc</a> <a href="http://www.mulesoft.org/docs/site/current3/schemadocs/namespaces/http_www_mulesoft_org_schema_mule_vm/namespace-overview.html">SchemaDoc</a></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Links to the JavaDoc and SchemaDoc for the transport.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -933,7 +947,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/check.png" alt="check"></span> - Whether the transport can receive inbound events and can be used for an inbound endpoint.</p> 
+        <p><span class="image"><img src="./_images/check.png" alt="check"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Whether the transport can receive inbound events and can be used for an inbound endpoint.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -947,7 +967,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/check.png" alt="check"></span> - Whether the transport can produce outbound events and be used with an outbound endpoint.</p> 
+        <p><span class="image"><img src="./_images/check.png" alt="check"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Whether the transport can produce outbound events and be used with an outbound endpoint.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -961,7 +987,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/check.png" alt="check"></span> - Whether this endpoint can be queried directly with a request call.</p> 
+        <p><span class="image"><img src="./_images/check.png" alt="check"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Whether this endpoint can be queried directly with a request call.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -975,7 +1007,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><code>XA</code> - Whether transactions are supported by the transport. Transports that support transactions can be configured in either local or distributed two-phase commit (XA) transaction.</p> 
+        <p><code>XA</code></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Whether transactions are supported by the transport. Transports that support transactions can be configured in either local or distributed two-phase commit (XA) transaction.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -989,7 +1027,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/check.png" alt="check"></span> - Whether this transport can process messages that come in on an input stream. This allows for very efficient processing of large data. For more information, see Streaming.</p> 
+        <p><span class="image"><img src="./_images/check.png" alt="check"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Whether this transport can process messages that come in on an input stream. This allows for very efficient processing of large data. For more information, see Streaming.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -1000,6 +1044,8 @@
         <p>Retries</p> 
        </div> 
       </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div></div></td> 
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
@@ -1017,7 +1063,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><code>one-way</code>, <code>request-response</code> - Message Exchange Patterns supported by this transport.</p> 
+        <p><code>one-way</code>, <code>request-response</code></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Message Exchange Patterns supported by this transport.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -1031,7 +1083,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><code>one-way</code> - The default MEP for endpoints that use this transport that do not explicitly configure a MEP</p> 
+        <p><code>one-way</code></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>The default MEP for endpoints that use this transport that do not explicitly configure a MEP</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -1045,7 +1103,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><code>org.mule.transports:mule-transport-vm</code> - The group name a artifact name for this transport in <a href="http://maven.apache.org/">Maven</a></p> 
+        <p>See text</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>The group name a artifact name for this transport in <a href="http://maven.apache.org/">Maven</a>. Value:<br> <code>org.mule.transports:mule-transport-vm</code></p> 
        </div> 
       </div></td> 
     </tr> 
@@ -1056,92 +1120,88 @@
 <div class="sect1"> 
  <h2 id="namespace-and-syntax"><a class="anchor" href="#namespace-and-syntax"></a>Namespace and Syntax</h2> 
  <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>XML Namespace:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">xmlns:vm="http://www.mulesoft.org/schema/mule/vm"</code></pre> 
+  <div class="sect2"> 
+   <h3 id="xml-namespace"><a class="anchor" href="#xml-namespace"></a>XML Namespace</h3> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">xmlns:vm="http://www.mulesoft.org/schema/mule/vm"</code></pre> 
+    </div> 
    </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>XML Schema Location:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+  <div class="sect2"> 
+   <h3 id="xml-schema-location"><a class="anchor" href="#xml-schema-location"></a>XML Schema Location</h3> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="code">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
 2
 </pre></td> 
-         <td class="code"><pre>http://www.mulesoft.org/schema/mule/vm
+          <td class="code"><pre>http://www.mulesoft.org/schema/mule/vm
 http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>Connector syntax:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>VM with persistent queues:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+  <div class="sect2"> 
+   <h3 id="connector-syntax"><a class="anchor" href="#connector-syntax"></a>Connector Syntax</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>VM with persistent queues:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
 2
 3
 4
 5
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">persistent</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+             <td class="code"><pre><span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">persistent</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;<span class="tag">&lt;vm:queue-profile</span> <span class="attribute-name">maxOutstandingMessages</span>=<span class="string"><span class="delimiter">"</span><span class="content">500</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;default-persistent-queue-store</span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;<span class="tag">&lt;/vm:queue-profile&gt;</span>
 <span class="tag">&lt;/vm:connector&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> </li> 
+     <li> <p>VM with in-memory queues:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">memory</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
+       </div> 
+      </div> </li> 
+    </ul> 
    </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>VM with in-memory queues:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">memory</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Endpoint Syntax:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Prefixed endpoint:</p> </li> 
-   </ul> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">out</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
-   </div> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Non-prefixed URI:</p> </li> 
-   </ul> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://out</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></code></pre> 
+  <div class="sect2"> 
+   <h3 id="endpoint-syntax"><a class="anchor" href="#endpoint-syntax"></a>Endpoint Syntax</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Prefixed endpoint:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">out</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+       </div> 
+      </div> </li> 
+     <li> <p>Non-prefixed URI:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://out</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></code></pre> 
+       </div> 
+      </div> </li> 
+    </ul> 
    </div> 
   </div> 
  </div> 
@@ -1688,7 +1748,7 @@ http://www.mulesoft.org/schema/mule/vm/3.6/mule-vm.xsd</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#transport-info">Transport Info</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#transformers">Transformers</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#using-transactions">Using Transactions</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#schema">Schema</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#vm-transport-info">VM Transport Info</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#transformers">Transformers</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#using-transactions">Using Transactions</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#schema">Schema</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

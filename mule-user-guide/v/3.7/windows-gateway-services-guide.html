@@ -893,7 +893,7 @@
  <h3 id="installing-the-windows-gateway-services"><a class="anchor" href="#installing-the-windows-gateway-services"></a>Installing the Windows Gateway Services</h3> 
  <div class="olist arabic"> 
   <ol class="arabic"> 
-   <li> <p>Download the Windows Gateway Services installer from&nbsp;https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/modules/anypoint-windows-gateway-service/1.6.0/anypoint-windows-gateway-service-1.6.0.zip[here]. Unzip the software distribution.</p> </li> 
+   <li> <p>Download the Windows Gateway Services installer from&nbsp;<a href="https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/modules/anypoint-windows-gateway-service/1.6.0/anypoint-windows-gateway-service-1.6.0.zip">here</a>. Unzip the software distribution.</p> </li> 
    <li> <p>Double-click the&nbsp;<code>AnyPoint-Windows-Gateway-Service.exe</code>&nbsp;file. &nbsp;</p> </li> 
    <li> <p>Click&nbsp;<strong>Options</strong>&nbsp;to change the installation location, or click&nbsp;<strong>Install</strong>&nbsp;to start the installation.&nbsp;</p> </li> 
    <li> <p>Copy the Authentication Token that displays for use when you configure the connection to the Gateway Service from Anypoint Studio.. For more information, see the&nbsp;<a href="/mule-user-guide/v/3.7/windows-powershell-connector-guide">Windows PowerShell Connector Guide.</a> After you copy the token, click <strong>Install</strong>.</p> </li> 
@@ -906,7 +906,7 @@
   <p><span class="image"><img src="./_images/AnypointGateway.png" alt="AnypointGateway"></span></p> 
  </div> 
  <div class="paragraph"> 
-  <p>To view the running service in Windows 7, when the Control Panel&nbsp;<strong>View by</strong>&nbsp;option is set to&nbsp;<strong>Small icons</strong>, click&nbsp;<strong>Control Panel&nbsp;</strong>&gt;*&nbsp;Administrative Tools&nbsp;<strong>&gt;</strong>&nbsp;Services*. The service appears as:</p> 
+  <p>To view the running service in Windows 7, when the Control Panel&nbsp;<strong>View by</strong>&nbsp;option is set to&nbsp;<strong>Small icons</strong>, click&nbsp;<strong>Control Panel</strong> &gt; <strong>Administrative Tools</strong> &gt; <strong>Services</strong>. The service appears as:</p> 
  </div> 
  <div class="paragraph"> 
   <p><span class="image"><img src="./_images/ServicesTool.png" alt="ServicesTool"></span></p> 
@@ -955,7 +955,7 @@
   <p><span class="image"><img src="./_images/MMC_Personal_Certs.png" alt="MMC_Personal_Certs"></span></p> 
  </div> 
  <div class="paragraph"> 
-  <p>Because the Windows service relies on&nbsp;<code>http.sys</code>&nbsp;for self-hosting the web server, any change in the port number or SSL certificate requires reconfiguring Windows. The&nbsp;<code>Register-SslCert.ps1</code>&nbsp;PowerShell script in the installation directory handles this task. If the port or certificate changes, run the following command from a&nbsp;http://en.wikipedia.org/wiki/Windows_PowerShell[PowerShell]&nbsp;console:</p> 
+  <p>Because the Windows service relies on&nbsp;<code>http.sys</code>&nbsp;for self-hosting the web server, any change in the port number or SSL certificate requires reconfiguring Windows. The&nbsp;<code>Register-SslCert.ps1</code>&nbsp;PowerShell script in the installation directory handles this task. If the port or certificate changes, run the following command from a&nbsp;<a href="http://en.wikipedia.org/wiki/Windows_PowerShell">PowerShell</a>&nbsp;console:</p> 
  </div> 
  <div class="paragraph"> 
   <p><code>Register-SslCert.ps1 &lt;certificate-thumbprint&gt; &lt;windows-account&gt; &lt;port&gt;</code></p> 
@@ -1169,9 +1169,9 @@ Mule-Api-Version: 1&lt;appSettings&gt;
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="event-tracing-for-windows-etw"><a class="anchor" href="#event-tracing-for-windows-etw"></a>Event Tracing for Windows (ETW)</h3> 
+   <h3 id="event-tracing-for-windows"><a class="anchor" href="#event-tracing-for-windows"></a>Event Tracing for Windows</h3> 
    <div class="paragraph"> 
-    <p>ETW is a very efficient built-in&nbsp;publish and subscribe mechanism for doing event tracing at the kernel level. There is little overhead in using this feature compared to other traditional tracing solutions that rely on I/O for storing the traces in persistence storage such as files or databases. As a built-in mechanism in Windows, many of the operating systems services and components use this feature as well. For that reason, not only can you troubleshoot the application but also many of the OS components involved in the same execution.</p> 
+    <p>Event Tracing for Windows (ETW) is a very efficient built-in&nbsp;publish and subscribe mechanism for doing event tracing at the kernel level. There is little overhead in using this feature compared to other traditional tracing solutions that rely on I/O for storing the traces in persistence storage such as files or databases. As a built-in mechanism in Windows, many of the operating systems services and components use this feature as well. For that reason, not only can you troubleshoot the application but also many of the OS components involved in the same execution.</p> 
    </div> 
    <div class="paragraph"> 
     <p>In ETW, there are applications publishing events in queues (or providers) and other applications consuming events from those queues in real-time through ETW sessions. When an event is published in a provider, it goes nowhere unless there is a session collecting events on that queue. (The events are not persisted).</p> 
@@ -1199,7 +1199,7 @@ Mule-Api-Version: 1&lt;appSettings&gt;
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>In the example, the session is associated with this identifier:&nbsp; <code>{47EA5BF3-802B-4351-9EED-7A96485323AC}</code></p> 
+    <p>In the example, the session is associated with this identifier:<br> <code>{47EA5BF3-802B-4351-9EED-7A96485323AC}</code></p> 
    </div> 
    <div class="sect3"> 
     <h4 id="collect-session-traces"><a class="anchor" href="#collect-session-traces"></a>Collect Session Traces</h4> 
@@ -1208,69 +1208,31 @@ Mule-Api-Version: 1&lt;appSettings&gt;
     </div> 
     <div class="olist arabic"> 
      <ol class="arabic"> 
-      <li> <p>Open a Windows console and run this command to start a new session:</p> </li> 
+      <li> <p>Open a Windows console and run this command to start a new session:</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="code">logman start mysession -p {47EA5BF3-802B-4351-9EED-7A96485323AC} -o etwtrace.etl -ets</code></pre> 
+        </div> 
+       </div> </li> 
+      <li> <p>Run this command to stop the session:</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="code">logman stop mysession -ets</code></pre> 
+        </div> 
+       </div> 
+       <div class="paragraph"> 
+        <p>This generates the&nbsp;<code>etwtrace.etl</code>&nbsp;file with the tracing session data.</p> 
+       </div> </li> 
+      <li> <p>Run this command to generate a human readable file:</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="code">tracerpt etwtrace.etl</code></pre> 
+        </div> 
+       </div> </li> 
      </ol> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-</pre></td> 
-           <td class="code"><pre>logman start mysession -p {47EA5BF3-802B-4351-9EED-7A96485323AC} -o etwtrace.etl -ets</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
-     </div> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Run this command to stop the session:</p> </li> 
-     </ol> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-</pre></td> 
-           <td class="code"><pre>logman stop mysession -ets</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
-     </div> 
     </div> 
     <div class="paragraph"> 
-     <p>This generates the&nbsp;<code>etwtrace.etl</code>&nbsp;file with the tracing session data.</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Run this command to generate a human readable file:</p> </li> 
-     </ol> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-</pre></td> 
-           <td class="code"><pre>tracerpt etwtrace.etl</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>This command transfers useful information into the&nbsp;<code>dumpfile.xml</code>&nbsp;text file. For more information, see&nbsp;http://technet.microsoft.com/en-us/library/cc732700.aspx[Tracerpt].</p> 
+     <p>This command transfers useful information into the&nbsp;<code>dumpfile.xml</code>&nbsp;text file. For more information, see&nbsp;<a href="http://technet.microsoft.com/en-us/library/cc732700.aspx">Tracerpt</a>.</p> 
     </div> 
    </div> 
   </div> 

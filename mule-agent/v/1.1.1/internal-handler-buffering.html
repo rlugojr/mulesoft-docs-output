@@ -878,21 +878,21 @@
    <div class="paragraph"> 
     <p>To implement a buffered internal handler, you need to extend the&nbsp;<code>BufferedHandler&lt;T&gt;</code> abstract class. The methods to overwrite are:</p> 
    </div> 
-   <div class="paragraph"> 
-    <p><strong><code>boolean canHandle(T message)</code></strong></p> 
-   </div> 
-   <div class="literalblock"> 
-    <div class="content"> 
-     <pre>&nbsp;&nbsp; Returns true if the message can be handled by the internal handler</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p><strong><code>boolean flush(Collection&lt;T&gt; collectionOfMessages)</code></strong></p> 
-   </div> 
-   <div class="literalblock"> 
-    <div class="content"> 
-     <pre>&nbsp;&nbsp; Provides the implementation to send the messages stored in the buffer to the external service</pre> 
-    </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><code>boolean canHandle(T message)</code></p> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>&nbsp;&nbsp; Returns true if the message can be handled by the internal handler</pre> 
+       </div> 
+      </div> </li> 
+     <li> <p><code>boolean flush(Collection&lt;T&gt; collectionOfMessages)</code></p> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>&nbsp;&nbsp; Provides the implementation to send the messages stored in the buffer to the external service</pre> 
+       </div> 
+      </div> </li> 
+    </ul> 
    </div> 
   </div> 
   <div class="sect2"> 
