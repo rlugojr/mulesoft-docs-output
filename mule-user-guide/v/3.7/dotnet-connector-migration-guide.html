@@ -864,7 +864,7 @@
           <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="developing">Developing</a>/<a href="anypoint-connectors">Anypoint Connectors</a>/<a href="dotnet-connector-guide">DotNet Connector Guide</a>/<a href="dotnet-connector-migration-guide" class="breadcrumb-active-link">DotNet Connector Migration Guide</a></div>
           <h1>DotNet Connector Migration Guide</h1>
           <div class="sect1"> 
- <h2 id="strong-upgrading-from-net-connector-version-1-0-strong"><a class="anchor" href="#strong-upgrading-from-net-connector-version-1-0-strong"></a><strong>Upgrading from .NET Connector version 1.0</strong></h2> 
+ <h2 id="upgrading-from-net-connector-version-1-0"><a class="anchor" href="#upgrading-from-net-connector-version-1-0"></a>Upgrading from .NET Connector Version 1.0</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Due to technical limitations, it is not possible to run applications using the .NET connector version 1.x and version 2.x side-by-side on a single Anypoint installation. The Anypoint Studio or ESB Server instance which has previously hosted applications using the .NET connector version 1.0 applications will have support files installed for the 1.0 version of the connector. These .NET support files must be upgraded by the process explained below before the .NET Connector version 2.0 will work correctly.</p> 
@@ -873,10 +873,13 @@
    <p>Additionally, if you are running applications using the .NET connector version 1.x, you must migrate all applications to use the .NET Connector version 2.x and configure the Anypoint installation that hosts these applications to allow the .NET Connector 2.x to run.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>To assist with this migration and upgrade process, the&nbsp;<strong><a href="/documentation/download/attachments/123339513/dotnet-connector-util.zip?version=1&amp;modificationDate=1422024182830">dotnet-connector-util</a></strong> tool is made available for download from the MuleSoft website.</p> 
+   <p>To assist with this migration and upgrade process, the&nbsp;<strong><a href="_attachments/dotnet-connector-util.zip">dotnet-connector-util.zip</a></strong> tool is made available for download from the MuleSoft website.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="strong-this-tool-will-strong"><a class="anchor" href="#strong-this-tool-will-strong"></a><strong>This tool will:</strong></h3> 
+   <h3 id="overview"><a class="anchor" href="#overview"></a>Overview</h3> 
+   <div class="paragraph"> 
+    <p>This tool provides these features:</p> 
+   </div> 
    <div class="ulist"> 
     <ul> 
      <li> <p>Identify which version of the .NET connector a Mule installation will support</p> </li> 
@@ -892,7 +895,7 @@
        <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
        <td class="content"> 
         <div class="paragraph"> 
-         <p>In addition to running the migrator tool against your Anypoint Studio instance, you must also ensure that the .NET connector 2.0 plugin is installed before you will see the .NET Connector available in the Studio palette.</p> 
+         <p>In addition to running the migrator tool against your Anypoint Studio instance, you must also ensure that the .NET connector 2.0 plugin is installed before you see the .NET Connector available in the Studio palette.</p> 
         </div> </td> 
       </tr> 
      </tbody> 
@@ -903,16 +906,16 @@
    <h3 id="usage"><a class="anchor" href="#usage"></a>Usage</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>The <strong>-analyze</strong> command will identify whether the Anypoint Studio or ESB Server instance must be upgraded, and if any Mule applications are using the .NET connector version 1.0 and must be migrated.<br> <strong>dotnet-connector-util -analyze c:\path\to\mule\or\studio\instance</strong></p> </li> 
-     <li> <p>The <strong>-upgrade</strong> command will remove the support files for the .NET connector 1.0, and configure an Anypoint Studio or ESB Server instance to host the .NET connector version 2.0 support files.<br> <strong>dotnet-connector-util -upgrade &lt;path-to-mule-or-studio-installation&gt;</strong></p> </li> 
-     <li> <p>The <strong>-migrate</strong> command will update the global element config of any Mule applications running on the specified ESB server instance (in-place migration) or the Mule project(s) in the specified workspace directory, allowing the application to take advantage of the .NET connector 2.0.<br> <strong>dotnet-connector-util -migrate &lt;path-to-esb-server-or-workspace-or-app&gt;</strong></p> </li> 
+     <li> <p>The <strong>-analyze</strong> command identifies whether the Anypoint Studio or Mule Server instance must be upgraded, and if any Mule applications are using the .NET connector version 1.0 and must be migrated.<br> <code>dotnet-connector-util -analyze c:\path\to\mule\or\studio\instance</code></p> </li> 
+     <li> <p>The <strong>-upgrade</strong> command removes the support files for the .NET connector 1.0, and configure an Anypoint Studio or ESB Server instance to host the .NET connector version 2.0 support files.<br> <code>dotnet-connector-util -upgrade &lt;path-to-mule-or-studio-installation&gt;</code></p> </li> 
+     <li> <p>The <strong>-migrate</strong> command updates the global element config of any Mule applications running on the specified ESB server instance (in-place migration) or the Mule project(s) in the specified workspace directory, allowing the application to take advantage of the .NET connector 2.0.<br> <code>dotnet-connector-util -migrate &lt;path-to-esb-server-or-workspace-or-app&gt;</code></p> </li> 
     </ul> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="strong-notes-strong"><a class="anchor" href="#strong-notes-strong"></a><strong>Notes:</strong></h3> 
+   <h3 id="notes"><a class="anchor" href="#notes"></a>Notes</h3> 
    <div class="paragraph"> 
-    <p>Once you have configured an Anypoint Studio or ESB Server instance to support the .NET connector 2.0, any application that uses the .NET connector version 1.0 will no longer run. You will see an error message such as the below when you attempt to run your application:</p> 
+    <p>Once you have configured an Anypoint Studio or ESB Server instance to support the .NET connector 2.0, any application that uses the .NET connector version 1.0 no longer runs. An error message such as the below displays when you attempt to run your application:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -963,7 +966,7 @@ net.sf.jni4net.CLRLoader:56 (null)</pre></td>
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="errors-when-trying-to-run-the-net-connector-version-2-0"><a class="anchor" href="#errors-when-trying-to-run-the-net-connector-version-2-0"></a>Errors when trying to run the .NET Connector version 2.0</h3> 
+   <h3 id="errors-when-running-net-connector-version-2-0"><a class="anchor" href="#errors-when-running-net-connector-version-2-0"></a>Errors when Running .NET Connector Version 2.0</h3> 
    <div class="paragraph"> 
     <p>If you see the following error when running an application that uses the .NET connector version 2.0, then the support files for the .NET connector 1.0 are still installed in the version of Anypoint Studio or ESB Server that you are running.</p> 
    </div> 
@@ -1000,7 +1003,7 @@ at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</pre></
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#strong-upgrading-from-net-connector-version-1-0-strong">Upgrading from .NET Connector version 1.0</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#upgrading-from-net-connector-version-1-0">Upgrading from .NET Connector Version 1.0</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/transaction-management" />
-    <meta name="description" content="Mule applies the concept of http://en.wikipedia.org/wiki/Transaction_processing[transactions] to operations in application for which the ..." />
+    <meta name="description" content="Mule applies the concept of transactions to operations in application for which the result cannot remain indeterminate.  In other wo..." />
     <meta class="swiftype" name="title" data-type="string" content="Transaction Management" />
 
 </head>
@@ -866,7 +866,7 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Mule applies the concept of&nbsp;http://en.wikipedia.org/wiki/Transaction_processing[transactions]&nbsp;to operations in application for which the result cannot remain indeterminate. &nbsp;In other words, where a series of steps in a flow must succeed or fail as one unit, Mule uses a transaction to demarcate such a unit. &nbsp;For example, you might use a transaction to encapsulate several steps in a flow for which the end result involves committing information to a database. &nbsp;In this type of scenario, the commit is either entirely complete and succeeds, or is incomplete and it fails. Even if partially complete, the commit – or transaction – fails. Where a transaction fails, Mule rolls back the operations within the transaction so that no one part results in partial completion.</p> 
+   <p>Mule applies the concept of&nbsp;<a href="http://en.wikipedia.org/wiki/Transaction_processing">transactions</a>&nbsp;to operations in application for which the result cannot remain indeterminate. &nbsp;In other words, where a series of steps in a flow must succeed or fail as one unit, Mule uses a transaction to demarcate such a unit. &nbsp;For example, you might use a transaction to encapsulate several steps in a flow for which the end result involves committing information to a database. &nbsp;In this type of scenario, the commit is either entirely complete and succeeds, or is incomplete and it fails. Even if partially complete, the commit – or transaction – fails. Where a transaction fails, Mule rolls back the operations within the transaction so that no one part results in partial completion.</p> 
   </div> 
   <div class="paragraph"> 
    <p>You can demarcate a transaction by applying a transaction to a connector. If a Mule flow begins with a transactional resource (such as an inbound connector), Mule can start a new transaction and&nbsp;manage the entire flow as a transaction. If your flow includes a transactional outbound connector, Mule manages the outgoing operation as a transaction. With both a transactional inbound and outbound connector, Mule executes the outgoing operation as part of the transaction initiated by the inbound connector.</p> 
@@ -1021,7 +1021,7 @@
         <p><strong>Multi-source vs. XA</strong><br></p> 
        </div> 
        <div class="paragraph"> 
-        <p>While&nbsp;http://stage.mulesoft.org/documentation/display/current/XA+Transactions[XA Transactions]&nbsp;offer similar functionality, <a href="/mule-user-guide/v/3.7/multiple-resource-transactions">Multiple Resource transactions</a> use less overhead. &nbsp;XA transactions are more reliable. Both can include JDBC resources. For a discussion of different approaches – including the&nbsp;1.5 phase commit concept which Multiple Resource transactions use –&nbsp;see the&nbsp;http://www.javaworld.com/javaworld/jw-01-2009/jw-01-spring-transactions.html[JavaWorld article on distributed transactions].</p> 
+        <p>While&nbsp;<a href="http://stage.mulesoft.org/documentation/display/current/XA+Transactions">XA Transactions</a>&nbsp;offer similar functionality, <a href="/mule-user-guide/v/3.7/multiple-resource-transactions">Multiple Resource transactions</a> use less overhead. &nbsp;XA transactions are more reliable. Both can include JDBC resources. For a discussion of different approaches – including the&nbsp;1.5 phase commit concept which Multiple Resource transactions use –&nbsp;see the&nbsp;<a href="http://www.javaworld.com/javaworld/jw-01-2009/jw-01-spring-transactions.html">JavaWorld article on distributed transactions</a>.</p> 
        </div> </td> 
      </tr> 
     </tbody> 
@@ -1071,12 +1071,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-b3698" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-or-standalone-xml-e700a" role="tab" data-toggle="tab">Studio or Standalone XML</a></li> 
+      <li class="active"><a href="#studio-visual-editor-af5c5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-or-standalone-xml-916cb" role="tab" data-toggle="tab">Studio or Standalone XML</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b3698"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-af5c5"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>In the connector’s properties editor, click the <strong>General</strong> tab to access the <strong>Transaction</strong> pane (see image below of the JMS connector).<br> <br> <span class="image"><img src="./_images/jms_transaction.png" alt="jms_transaction"></span></p> </li> 
@@ -1175,7 +1175,7 @@
        <p>Use <a href="/mule-user-guide/v/3.7/transactions-configuration-reference">Transactions Configuration Reference</a> for quick access to attribute configurations.</p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-or-standalone-xml-e700a"> 
+     <div class="tab-pane fade no-padding" id="studio-or-standalone-xml-916cb"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Add a <code>transactional</code> child element to the inbound connector you wish to make transactional.&nbsp;</p> 
@@ -1351,12 +1351,12 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-ce1b5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-or-standalone-xml-94648" role="tab" data-toggle="tab">Studio or Standalone XML</a></li> 
+      <li class="active"><a href="#studio-visual-editor-bc236" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-or-standalone-xml-6e2aa" role="tab" data-toggle="tab">Studio or Standalone XML</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ce1b5"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-bc236"> 
       <div class="paragraph"> 
        <p><strong><em>Enterprise</em></strong></p> 
       </div> 
@@ -1417,7 +1417,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-or-standalone-xml-94648"> 
+     <div class="tab-pane fade no-padding" id="studio-or-standalone-xml-6e2aa"> 
       <div class="paragraph"> 
        <p><em>*Enterprise*</em></p> 
       </div> 
@@ -1665,12 +1665,12 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-002a1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#studio-or-standalone-xml-65562" role="tab" data-toggle="tab">Studio or Standalone XML</a></li> 
+     <li class="active"><a href="#studio-visual-editor-d356a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#studio-or-standalone-xml-be1e6" role="tab" data-toggle="tab">Studio or Standalone XML</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-002a1"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d356a"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Add a *Transactiona*l scope to your flow (refer to steps above), then add building blocks within the scope to build a transaction.</p> </li> 
@@ -1682,7 +1682,7 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="studio-or-standalone-xml-65562"> 
+    <div class="tab-pane fade no-padding" id="studio-or-standalone-xml-be1e6"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Within your <code>transactional</code> scope, add an <code>exception-strategy</code> child element <em>at the bottom</em> of the scope.</p> 
@@ -1723,7 +1723,7 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
    <ul> 
     <li> <p>Read more about&nbsp;<a href="/mule-user-guide/v/3.7/single-resource-transactions">Single Resource Transactions</a>,&nbsp;<a href="/mule-user-guide/v/3.7/multiple-resource-transactions">Multiple Resource Transactions</a>, and&nbsp;<a href="/mule-user-guide/v/3.7/xa-transactions">XA Transactions</a>.&nbsp;</p> </li> 
     <li> <p>Read more about&nbsp;<a href="/mule-user-guide/v/3.7/error-handling">Exception Strategies</a>.</p> </li> 
-    <li> <p>Consider reading&nbsp;http://www.javaworld.com/javaworld/jw-01-2009/jw-01-spring-transactions.html[Distributed transactions in Spring, with and without XA],&nbsp;an article on distributed transactions using both XA and non-XA approaches.&nbsp;&nbsp;The multi-resource transaction support described in the example above is related to the Best Efforts 1PC pattern described in the article.</p> </li> 
+    <li> <p>Consider reading&nbsp;<a href="http://www.javaworld.com/javaworld/jw-01-2009/jw-01-spring-transactions.html">Distributed transactions in Spring, with and without XA</a>,&nbsp;an article on distributed transactions using both XA and non-XA approaches.&nbsp;&nbsp;The multi-resource transaction support described in the example above is related to the Best Efforts 1PC pattern described in the article.</p> </li> 
     <li> <p>Use the&nbsp;<a href="/mule-user-guide/v/3.7/transactions-configuration-reference">Transactions Configuration Reference</a>&nbsp;for quick reference to transactional attributes.</p> </li> 
    </ul> 
   </div> 
