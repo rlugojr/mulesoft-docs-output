@@ -876,8 +876,8 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>A Concur&nbsp;developer account - Sign up for one at <a href="http://developer.concur.com/">developer.concur.com</a></p> </li> 
-    <li> <p>A consumer key assigned by Concur - Refer to the detailed documentation on how to <a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">use the Concur connector to access an OAuth API</a>.</p> </li> 
+    <li> <p>A Concur&nbsp;developer account — Sign up for one at <a href="http://developer.concur.com/">developer.concur.com</a></p> </li> 
+    <li> <p>A consumer key assigned by Concur — Refer to the detailed documentation on how to <a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">use the Concur connector to access an OAuth API</a>.</p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
@@ -932,12 +932,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-0bfea" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-6240c" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-8cdb3" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-92ff6" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-0bfea"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-8cdb3"> 
      <div class="paragraph"> 
       <p>Follow these steps to create a global Concur configuration in a Mule application:</p> 
      </div> 
@@ -1031,7 +1031,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-6240c"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-92ff6"> 
      <div class="paragraph"> 
       <p>First, ensure that you have included the Concur namespaces in your configuration file.</p> 
      </div> 
@@ -1277,15 +1277,15 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-78d10" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-9191a" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-9bdeb" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-22d0f" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-78d10"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-9bdeb"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>Drag an HTTP Connector into a new flow. Open the connector’s properties editor and Create a new <strong>Connector Configuration</strong> element by clicking the green plus <strong>+</strong> sign.</p> </li> 
+       <li> <p>Drag an HTTP Connector into a new flow. Open the connector’s properties editor and Create a new <strong>Connector Configuration</strong> element by clicking the green plus sign.</p> </li> 
        <li> <p>Fill in the two required fields: <strong>Host</strong> and <strong>Port</strong>. Set&nbsp;the host to&nbsp; <code>localhost</code> and leave the port as the default value <code>8081</code>.</p> 
         <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
@@ -1313,7 +1313,7 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
           </tr> 
          </tbody> 
         </table> </li> 
-       <li> <p>Back in the connector’s properties editor, set the path to <code>submitreport</code><br> The new flow is then reachable through the path: `http://localhost:8081/submitreport `</p> </li> 
+       <li> <p>Back in the connector’s properties editor, set the path to <code>submitreport</code><br> The new flow is then reachable through the path: <code><a href="http://localhost:8081/submitreport" class="bare">http://localhost:8081/submitreport</a></code></p> </li> 
        <li> <p>Add a Set Payload transformer after the HTTP connector to set the payload to a predefined set of values that match the format that Concur expects.</p> </li> 
        <li> <p>Configure the Set Payload transformer according to the table below.</p> 
         <table class="tableblock frame-all grid-all spread"> 
@@ -1337,10 +1337,7 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
            <td class="tableblock halign-left valign-top"> 
             <div> 
              <div class="paragraph"> 
-              <p>#[['name':'April Expenses','purpose':'All expenses for April','comment':'This is a comment.','orgUnit1':'US','orgUnit2':'NW','orgUnit3':'Redmond','custom1':'Client','custo</p> 
-             </div> 
-             <div class="paragraph"> 
-              <p>m2':'Local','userDefinedDate':'2014-03-26 15:15:07.0']]</p> 
+              <p><code>#[['name':'April Expenses','purpose':'All expenses for April','comment':'This is a comment.','orgUnit1':'US','orgUnit2':'NW','orgUnit3':'Redmond','custom1':'Client','custom2':'Local','userDefinedDate':'2014-03-26 15:15:07.0']]</code></p> 
              </div> 
             </div></td> 
           </tr> 
@@ -1403,8 +1400,8 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
        <li> <p>Back in the properties editor of the Concur connector, configure the remaining parameters according to the table below.</p> 
         <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
-          <col style="width: %;"> 
-          <col style="width: %;"> 
+          <col style="width: 30%;"> 
+          <col style="width: 70%;"> 
          </colgroup> 
          <thead> 
           <tr> 
@@ -1433,31 +1430,31 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
               <p>Select <strong>Define Attributes</strong>, then enter the following:</p> 
              </div> 
              <div class="paragraph"> 
-              <p>Name: #[<strong>payload</strong>.name]</p> 
+              <p>Name: <code>#[payload.name]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>Purpose: #[<strong>payload</strong>.purpose]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> 
+              <p>Purpose: <code>#[payload.purpose]</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> 
              </div> 
              <div class="paragraph"> 
-              <p>Comment: #[<strong>payload</strong>.comment]</p> 
+              <p>Comment: <code>#[payload.comment]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>OrgUnit1: #[<strong>payload</strong>.orgUnit1]</p> 
+              <p>OrgUnit1: <code>#[payload.orgUnit1]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>OrgUnit2: #[<strong>payload</strong>.orgUnit2]</p> 
+              <p>OrgUnit2: <code>#[payload.orgUnit2]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>OrgUnit3: #[<strong>payload</strong>.orgUnit3]</p> 
+              <p>OrgUnit3: <code>#[payload.orgUnit3]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>Custom1: #[<strong>payload</strong>.custom1]</p> 
+              <p>Custom1: <code>#[payload.custom1]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>Custom2: #[<strong>payload</strong>.custom2]</p> 
+              <p>Custom2: <code>#[payload.custom2]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>User Defined Data: #[<strong>payload</strong>.userDefinedData]</p> 
+              <p>User Defined Data: <code>#[payload.userDefinedData]</code></p> 
              </div> 
             </div></td> 
           </tr> 
@@ -1557,7 +1554,7 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">Value</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[groovy:payload.reportDetailsUrl.tokenize('/')[-1]]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[groovy:payload.reportDetailsUrl.tokenize('/')[-1]]</code></p></td> 
           </tr> 
          </tbody> 
         </table> 
@@ -1595,8 +1592,8 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
        <li> <p>Configure the remaining parameters according to the table below.</p> 
         <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
-          <col style="width: %;"> 
-          <col style="width: %;"> 
+          <col style="width: 30%;"> 
+          <col style="width: 70%;"> 
          </colgroup> 
          <thead> 
           <tr> 
@@ -1629,25 +1626,25 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
               <p>Select <strong>Define Attributes</strong>, then enter the following:</p> 
              </div> 
              <div class="paragraph"> 
-              <p>Crn Code: #[<strong>payload</strong>.expense.crnCode]</p> 
+              <p>Crn Code: <code>#[payload.expense.crnCode]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>Exp Key: #[<strong>payload</strong>.expense.expKey]</p> 
+              <p>Exp Key: <code>#[payload.expense.expKey]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>Transaction Date: #[<strong>payload</strong>.expense.transactionDate]</p> 
+              <p>Transaction Date: <code>#[payload.expense.transactionDate]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>Transaction Amount: #[<strong>payload</strong>.expense.transactionAmount]</p> 
+              <p>Transaction Amount: <code>#[payload.expense.transactionAmount]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>Comment: #[<strong>payload</strong>.expense.comment]</p> 
+              <p>Comment: <code>#[payload.expense.comment]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>Vendor Description: #[<strong>payload</strong>.expense.vendorDescription]</p> 
+              <p>Vendor Description: <code>#[payload.expense.vendorDescription]</code></p> 
              </div> 
              <div class="paragraph"> 
-              <p>Is Personal: #[<strong>payload</strong>.expense.isPersonal]</p> 
+              <p>Is Personal: <code>#[payload.expense.isPersonal]</code></p> 
              </div> 
             </div></td> 
           </tr> 
@@ -1736,7 +1733,7 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">Report ID</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[flowVars['ReportID']]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[flowVars['ReportID']]</code></p></td> 
           </tr> 
          </tbody> 
         </table> 
@@ -1747,7 +1744,7 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-9191a"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-22d0f"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Add a <strong>concur:config</strong> global element to your project, then configure its attributes according to the table below (see code below for a complete sample).</p> 
@@ -1943,39 +1940,39 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
          <tbody> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[<strong>payload</strong>.name]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.name]</code></p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">Purpose</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[<strong>payload</strong>.purpose]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.purpose]</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">Comment</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[<strong>payload</strong>.comment]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.comment]</code></p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">OrgUnit1</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[<strong>payload</strong>.orgUnit1]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.orgUnit1]</code></p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">OrgUnit2</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[<strong>payload</strong>.orgUnit2]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.orgUnit2]</code></p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">OrgUnit3</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[<strong>payload</strong>.orgUnit3]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.orgUnit3]</code></p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">Custom1</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[<strong>payload</strong>.custom1]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.custom1]</code></p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">Custom2</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[<strong>payload</strong>.custom2]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.custom2]</code></p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">User Defined Data</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[<strong>payload</strong>.userDefinedData]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.userDefinedData]</code></p></td> 
           </tr> 
          </tbody> 
         </table> </li> 
@@ -2070,8 +2067,8 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
         </div> 
         <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
-          <col style="width: %;"> 
-          <col style="width: %;"> 
+          <col style="width: 30%;"> 
+          <col style="width: 70%;"> 
          </colgroup> 
          <thead> 
           <tr> 
@@ -2086,7 +2083,7 @@ http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd</pre></td>
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[groovy:payload.reportDetailsUrl.tokenize('/')[-1]]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[groovy:payload.reportDetailsUrl.tokenize('/')[-1]]</code></p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">doc:name</p></td> 
