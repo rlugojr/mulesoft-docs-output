@@ -869,7 +869,7 @@
    <p>The Generic connector provides a wide array of configuration options that let you code the protocol into the address of the endpoint.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Mule supports numerous protocols which can be configured as endpoints. Many, but not all, of the protocols included with Mule are already configured as endpoint-based connectors and are available as building blocks in the connectors category of the palette. These include FTP, HTTP, and Ajax, for example. The Generic Endpoint can also be used to specify these or additional endpoints. This is done by entering the full address in&nbsp;<strong>Address</strong>&nbsp;field, including the protocol designation within the address (<a href="ftp://foo" class="bare">ftp://foo</a>, vm://foo,&nbsp; <a href="https://foo,&nbsp;etc" class="bare">https://foo,&nbsp;etc</a>).</p> 
+   <p>Mule supports numerous protocols which can be configured as endpoints. Many, but not all, of the protocols included with Mule are already configured as endpoint-based connectors and are available as building blocks in the connectors category of the palette. These include FTP, HTTP, and Ajax, for example. The Generic Endpoint can also be used to specify these or additional endpoints. This is done by entering the full address in&nbsp;<strong>Address</strong>&nbsp;field, including the protocol designation within the address (<code>ftp://foo</code>, <code>vm://foo</code>, <code>https://foo</code>,&nbsp;etc.).</p> 
   </div> 
  </div> 
 </div> 
@@ -877,7 +877,7 @@
  <h2 id="installation"><a class="anchor" href="#installation"></a>Installation</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can install a connector in Anypoint Studio using the instructions in&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">installing a connector using Anypoint Exchange</a>. &nbsp;</p> 
+   <p>You can install a connector in Anypoint Studio using the instructions in&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>. &nbsp;</p> 
   </div> 
  </div> 
 </div> 
@@ -896,18 +896,16 @@
    <h3 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of &lt;inbound-endpoint…​&gt;</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
@@ -916,77 +914,66 @@
       <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the endpoint in the registry. There is no need to set the 'name' attribute on inbound or outbound endpoints, only on global endpoints.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">ref</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">responseTimeout</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout for a response if making a synchronous endpoint call</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">String encoding used for messages.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">connector-ref</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">transformer-refs</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the message before it is delivered to the component.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">responseTransformer-refs</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the synchronous response before it is returned via the transport.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">disableTransportTransformer</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">mime type</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The mime type, for example text/plain or application/json</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">exchange-pattern</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
@@ -996,9 +983,9 @@
    <h3 id="child-elements-of-inbound-endpoint"><a class="anchor" href="#child-elements-of-inbound-endpoint"></a>Child Elements of &lt;inbound-endpoint…​&gt;</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1098,18 +1085,16 @@
    <h3 id="attributes-of-the-outbound-endpoint"><a class="anchor" href="#attributes-of-the-outbound-endpoint"></a>Attributes of the Outbound Endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
@@ -1118,77 +1103,66 @@
       <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the endpoint in the registry. There is no need to set the 'name' attribute on inbound or outbound endpoints, only on global endpoints.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">ref</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">responseTimeout</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout for a response if making a synchronous endpoint call</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">String encoding used for messages.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">connector-ref</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">transformer-refs</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the message before it is delivered to the component.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">responseTransformer-refs</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the synchronous response before it is returned via the transport.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">disableTransportTransformer</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">mime type</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The mime type, for example text/plain or application/json</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">exchange-pattern</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
@@ -1198,9 +1172,9 @@
    <h3 id="child-elements-of-the-outbound-endpoint"><a class="anchor" href="#child-elements-of-the-outbound-endpoint"></a>Child Elements of the Outbound Endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1308,18 +1282,16 @@
    <h3 id="attributes-of-endpoint"><a class="anchor" href="#attributes-of-endpoint"></a>Attributes of &lt;endpoint…​&gt;</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
@@ -1328,77 +1300,66 @@
       <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the endpoint so that other elements can reference it. This name can also be referenced in the MuleClient.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">ref</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">responseTimeout</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout for a response if making a synchronous endpoint call</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">String encoding used for messages.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">connector-ref</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">transformer-refs</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the message before it is delivered to the component.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">responseTransformer-refs</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the synchronous response before it is returned via the transport.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">disableTransportTransformer</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">mime type</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">The mime type, for example, text/plain or application/json</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">exchange-pattern</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
@@ -1408,9 +1369,9 @@
    <h3 id="child-elements-of-endpoint"><a class="anchor" href="#child-elements-of-endpoint"></a>Child Elements of &lt;endpoint…​&gt;</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 

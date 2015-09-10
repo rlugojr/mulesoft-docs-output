@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/transactional" />
-    <meta name="description" content="Mule applies the concept of http://en.wikipedia.org/wiki/Transaction_processing[transactions] to operations in application for which the ..." />
+    <meta name="description" content="Mule applies the concept of transactions to operations in application for which the result cannot remain indeterminate.  In other wo..." />
     <meta class="swiftype" name="title" data-type="string" content="Transactional " />
 
 </head>
@@ -864,7 +864,7 @@
           <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="developing">Developing</a>/<a href="scopes">Scopes</a>/<a href="transactional" class="breadcrumb-active-link">Transactional</a></div>
           <h1>Transactional </h1>
           <div class="paragraph"> 
- <p>Mule applies the concept of&nbsp;http://en.wikipedia.org/wiki/Transaction_processing[transactions]&nbsp;to operations in application for which the result cannot remain indeterminate. &nbsp;In other words, where a series of steps in a flow must succeed or fail as one unit, Mule uses a transaction to demarcate such a unit. &nbsp;For example, you might use a transaction to encapsulate several steps in a flow for which the end result involves committing information to a database. &nbsp;In this type of scenario, the commit is either entirely complete and succeeds, or is incomplete and it fails. Even if partially complete, the commit – or transaction – fails. Where a transaction fails, Mule rolls back the operations within the transaction so that no one part results in partial completion.</p> 
+ <p>Mule applies the concept of&nbsp;<a href="http://en.wikipedia.org/wiki/Transaction_processing">transactions</a>&nbsp;to operations in application for which the result cannot remain indeterminate. &nbsp;In other words, where a series of steps in a flow must succeed or fail as one unit, Mule uses a transaction to demarcate such a unit. &nbsp;For example, you might use a transaction to encapsulate several steps in a flow for which the end result involves committing information to a database. &nbsp;In this type of scenario, the commit is either entirely complete and succeeds, or is incomplete and it fails. Even if partially complete, the commit – or transaction – fails. Where a transaction fails, Mule rolls back the operations within the transaction so that no one part results in partial completion.</p> 
 </div> 
 <div class="paragraph"> 
  <p>You can demarcate a transaction by applying a transaction to a connector. If a Mule flow begins with a transactional resource (such as an inbound connector), Mule can start a new transaction and&nbsp;manage the entire flow as a transaction. If your flow includes a transactional outbound connector, Mule manages the outgoing operation as a transaction. With both a transactional inbound and outbound connector, Mule executes the outgoing operation as part of the transaction initiated by the inbound connector.</p> 

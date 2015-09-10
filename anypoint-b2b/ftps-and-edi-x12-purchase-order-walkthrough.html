@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough" />
-    <meta name="description" content="This example shows how to leverage the Anypoint B2B Platform to manage and track B2B exchanges. The goal is to develop a Mule application, represen..." />
+    <meta name="description" content="This document is for a technical audience possessing basic knowledge of AS2, X12, and Anypoint Platform. Familiarity of FTPS Connector, X12 Module ..." />
     <meta class="swiftype" name="title" data-type="string" content="FTPS and EDI X12 Purchase Order Walkthrough" />
 
 </head>
@@ -864,10 +864,8 @@
           <h1>FTPS and EDI X12 Purchase Order Walkthrough</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>&nbsp;This document is aimed at a technical audience possessing basic knowledge of AS2, X12, and Anypoint Platform. Familiarity of link:http://modusintegration.github.io/mule-connector-ftps/readme.html[FTPS Connector], link:/anypoint-b2b/x12-module[X12 Module] and link:/mule-user-guide/v/3.7/datamapper-user-guide-and-reference[Anypoint DataMapper User Guide and Reference] is assumed.</pre> 
-   </div> 
+  <div class="paragraph"> 
+   <p>This document is for a technical audience possessing basic knowledge of AS2, X12, and Anypoint Platform. Familiarity of <a href="http://modusintegration.github.io/mule-connector-ftps/readme.html">FTPS Connector</a>, <a href="/anypoint-b2b/x12-module">X12 Module</a> and <a href="/mule-user-guide/v/3.7/datamapper-user-guide-and-reference">Anypoint DataMapper User Guide and Reference</a> is assumed.</p> 
   </div> 
  </div> 
 </div> 
@@ -882,29 +880,43 @@
   </ul> 
  </div> 
 </div> 
+<div class="sect2"> 
+ <h3 id="attachments"><a class="anchor" href="#attachments"></a>Attachments</h3> 
+ <div class="ulist"> 
+  <ul> 
+   <li> <p><a href="_attachments/ftps-doc.zip">ftps-doc.zip</a></p> </li> 
+   <li> <p><a href="_attachments/ftps-po.xml">ftps-po.xml</a></p> </li> 
+   <li> <p><a href="_attachments/ftps-po.xsd">ftps-po.xsd</a></p> </li> 
+  </ul> 
+ </div> 
+</div> 
 <div class="sect1"> 
  <h2 id="to-run-this-example-follow-the-steps-below"><a class="anchor" href="#to-run-this-example-follow-the-steps-below"></a>To run this example follow the steps below:</h2> 
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Download the application by clicking <a href="/docs/download/attachments/133267998/ftps-doc.zip?version=1&amp;modificationDate=1438632100118">here</a>, and unzip.</p> </li> 
-    <li> <p>Import the applicaiton in Studio by going to the File menu, clicking Import, selecting Anypoint Studio Project from External Location. Then click next, select the downloaded application, and click Finish.</p> </li> 
-    <li> <p>From your web browser, log on to the <a href="https://anypoint.mulesoft.com/b2b">Anypoint B2B Portal</a>, then click on your HomeOrg view and copy you API key (reference step 3.2.).</p> </li> 
-    <li> <p>In Anypoint, click on the file "customer.xml" in the app folder, and select the Global view tab. Then open the configurations of B2B, and insert the API Key you got from the B2B Portal.</p> </li> 
-    <li> <p>Right click on the imported project folder, "ftps-doc", select Run As, and click Mule Application.</p> </li> 
-    <li> <p>Inside the project is a file in src/test/resources called "po.xml". Create a copy and place it in the "outbox" folder.</p> </li> 
+    <li> <p>Download the application by clicking the<a href="_attachments/ftps-doc.zip">ftps-doc.zip</a>, and unzip.</p> </li> 
+    <li> <p>Import the application into Anypoint Studio from <strong>File</strong> &gt; <strong>Import</strong>, and selecting <strong>Anypoint Studio Project from External Location</strong>. Then click <strong>Next</strong>, select the downloaded application, and click <strong>Finish</strong>.</p> </li> 
+    <li> <p>From your web browser, log on to the <a href="https://anypoint.mulesoft.com/b2b">Anypoint B2B Portal</a>, then click your HomeOrg view and copy your API key (reference step 3.2.).</p> </li> 
+    <li> <p>In Anypoint, click the file "customer.xml" in the app folder, and select the Global view tab. Then open the configurations of B2B, and insert the API Key you got from the B2B Portal.</p> </li> 
+    <li> <p>Right-click the imported project folder, "ftps-doc", select <strong>Run As</strong>, and click <strong>Mule Application</strong>.</p> </li> 
+    <li> <p>Inside the project is a file in src/test/resources called "po.xml". Create a copy and place it in the "outbox" folder. The po.xml file is also available to download, and which you can rename from the <a href="_attachments/ftps-po.xml">ftps-po.xml</a> file.</p> </li> 
     <li> <p>The file should disappear from the directory since the File inbound endpoint deletes the file once it reads it.</p> </li> 
     <li> <p>Access the B2B Transmissions view in the B2B Portal to confirm that the AS2 and X12 transmissions have taken place.</p> </li> 
    </ol> 
   </div> 
  </div> 
 </div> 
-<h1 id="anypoint-b2b-platform-ftps-and-edi-x12-purchase-order-example" class="sect0"><a class="anchor" href="#anypoint-b2b-platform-ftps-and-edi-x12-purchase-order-example"></a>Anypoint B2B Platform FTPS and EDI X12 Purchase Order Example</h1> 
-<div class="paragraph"> 
- <p>This example shows how to leverage the Anypoint B2B Platform to manage and track B2B exchanges. The goal is to develop a Mule application, representing a customer, that transforms an XML purchase order read from the filesystem to an X12 850 and sends it to a supplier over FTPS. The supplier returns an X12 997 to a FTPS server the application is aware of in order to inform the customer whether the 850 was accepted or rejected. All B2B transactions are managed and recorded by Anypoint B2B Platform while the actual files exchanged are optionally stored in an Amazon S3 bucket.</p> 
-</div> 
-<div class="paragraph"> 
- <p><span class="image"><img src="./_images/b2b_ftps_walk_01.png" alt="b2b_ftps_01"></span></p> 
+<div class="sect1"> 
+ <h2 id="anypoint-b2b-platform-ftps-and-edi-x12-purchase-order-example"><a class="anchor" href="#anypoint-b2b-platform-ftps-and-edi-x12-purchase-order-example"></a>Anypoint B2B Platform FTPS and EDI X12 Purchase Order Example</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This example shows how to leverage the Anypoint B2B Platform to manage and track B2B exchanges. The goal is to develop a Mule application, represent a customer who transforms an XML purchase order read from the filesystem to an X12 850, and sends it to a supplier over FTPS. The supplier returns an X12 997 to a FTPS server that the application is aware of in order to inform the customer whether the 850 was accepted or rejected. Anypoint B2B Platform manages and records all B2B transactions while the actual files exchanged are optionally stored in an Amazon S3 bucket.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/b2b_ftps_walk_01.png" alt="b2b_ftps_01"></span></p> 
+  </div> 
+ </div> 
 </div> 
 <div class="sect1"> 
  <h2 id="1-partnership-set-up"><a class="anchor" href="#1-partnership-set-up"></a>1. Partnership Set Up</h2> 
@@ -916,21 +928,21 @@
    <h3 id="create-partnership"><a class="anchor" href="#create-partnership"></a>Create partnership</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Login into <a href="https://anypoint.mulesoft.com/b2b">Anypoint B2B Portal</a>:</p> 
+     <li> <p>Log in to <a href="https://anypoint.mulesoft.com/b2b">Anypoint B2B Portal</a>:</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/b2b_ftps_walk_02.png" alt="b2b_ftps_02"></span></p> 
       </div> </li> 
-     <li> <p>Click on <strong>Trading Partners</strong> found on the left hand side menu:</p> 
+     <li> <p>Click <strong>Trading Partners</strong> on the left side of the menu:</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/b2b_ftps_walk_02.png" alt="b2b_ftps_02"></span></p> 
       </div> </li> 
-     <li> <p>Press <strong>Create</strong> on the lower right hand side corner.</p> </li> 
+     <li> <p>Click <strong>Create</strong> in the lower right side corner.</p> </li> 
      <li> <p>Enter <em>My Supplier</em> as <strong>Company Name</strong> and press <strong>Save</strong>.</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/b2b_ftps_walk_03.png" alt="b2b_ftps_03"></span></p> 
       </div> 
       <div class="paragraph"> 
-       <p>With a partnership in place, we can set the runtime parameters in which the FTPS Connector and X12 Module operates when sending to the supplier or receiving from said supplier.</p> 
+       <p>With a partnership in place, set the runtime parameters in which the FTPS Connector and X12 Module operate when sending to the supplier or receiving from a supplier.</p> 
       </div> </li> 
     </ol> 
    </div> 
@@ -939,7 +951,7 @@
    <h3 id="specify-ftps-settings"><a class="anchor" href="#specify-ftps-settings"></a>Specify FTPS Settings</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Click the <strong>FTP/S</strong> transport settings on the left hand side menu.</p> </li> 
+     <li> <p>Click the <strong>FTP/S</strong> transport settings on the left side of the menu.</p> </li> 
      <li> <p>Enter the following values in the <strong>FTP Settings - Outbound</strong> sections:</p> 
       <div class="olist loweralpha"> 
        <ol class="loweralpha" type="a"> 
@@ -956,7 +968,7 @@
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/b2b_ftps_walk_04.png" alt="b2b_ftps_04"></span></p> 
       </div> </li> 
-     <li> <p>Press Save.</p> </li> 
+     <li> <p>Click Save.</p> </li> 
     </ol> 
    </div> 
   </div> 
@@ -966,16 +978,16 @@
     <p>The settings configured in the previous section are meant to be reused by all inbound and outbound transactions within the application. Now we need to create transactions for exchanging files with the supplier.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>In order to send the 850 to the supplier, we need to create an Outbound Transaction.</p> 
+    <p>To send the 850 to the supplier, create an Outbound Transaction:</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Click <strong>Transactions</strong> on the left hand side menu.</p> </li> 
-     <li> <p>Click <strong>New</strong> on the top right corner.</p> </li> 
-     <li> <p>In the <strong>Profile</strong> section, select <em>FTP</em>&nbsp;from <strong>Transport</strong> the drop down menu.</p> </li> 
-     <li> <p>Select <em>Outbound</em> in the <strong>Direction</strong> drop down menu.</p> </li> 
+     <li> <p>Click <strong>Transactions</strong> in the left side of the menu.</p> </li> 
+     <li> <p>Click <strong>New</strong> in the top right corner.</p> </li> 
+     <li> <p>In the <strong>Profile</strong> section, select <em>FTP</em>&nbsp;from <strong>Transport</strong> the drop-down menu.</p> </li> 
+     <li> <p>Select <em>Outbound</em> in the <strong>Direction</strong> drop-down menu.</p> </li> 
      <li> <p>Select <em>X12</em> as <strong>Format</strong> and 850&nbsp;as <strong>Transaction</strong>.</p> </li> 
-     <li> <p>Then enter the following details:</p> 
+     <li> <p>Enter the following details:</p> 
       <div class="ulist"> 
        <ul> 
         <li> <p>/demo/supplier-inbox/ as <strong>Path</strong></p> </li> 
@@ -986,12 +998,12 @@
       <div class="paragraph"> 
        <p>Now the inbound transaction for receiving the 997 file from the supplier needs to be created</p> 
       </div> </li> 
-     <li> <p>Click <strong>Transactions</strong> on the left hand side menu.</p> </li> 
+     <li> <p>Click <strong>Transactions</strong> on the left side of the menu.</p> </li> 
      <li> <p>Click <strong>New</strong> on the top right corner.</p> </li> 
-     <li> <p>In the <strong>Profile</strong> section, select <em>FTP</em>&nbsp;from <strong>Transport</strong> the drop down menu.</p> </li> 
-     <li> <p>Select <em>Inbound</em> in the <strong>Direction</strong> drop down menu.</p> </li> 
+     <li> <p>In the <strong>Profile</strong> section, select <em>FTP</em>&nbsp;from <strong>Transport</strong> the drop-down menu.</p> </li> 
+     <li> <p>Select <em>Inbound</em> in the <strong>Direction</strong> drop-down menu.</p> </li> 
      <li> <p>Select <em>X12</em> as <strong>Format</strong> and <em>997</em>&nbsp;as custom value for <strong>Transaction</strong>.</p> </li> 
-     <li> <p>Enter the following details</p> 
+     <li> <p>Enter the following details:</p> 
       <div class="ulist"> 
        <ul> 
         <li> <p><em>/demo/consumer-inbox/</em> as <strong>Path</strong></p> </li> 
@@ -1007,7 +1019,7 @@
    <h3 id="set-up-x12"><a class="anchor" href="#set-up-x12"></a>Set Up X12</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Return to the <strong>Trading Partners</strong> page and select the newly created <strong>My Supplier</strong> from your list of partners. Click on the X12 format settings found on the left hand side menu.</p> </li> 
+     <li> <p>Return to the <strong>Trading Partners</strong> page and select the newly created <strong>My Supplier</strong> from your list of partners. Click the X12 format settings found on the left side of the menu.</p> </li> 
      <li> <p>In the <strong>Outbound</strong> section, fill in the fields according to the table below:&nbsp;</p> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
@@ -1085,7 +1097,7 @@
         </tr> 
        </tbody> 
       </table> </li> 
-     <li> <p>Scroll down to the <strong>Inbound</strong> section and fill out the fields according to the table below:</p> 
+     <li> <p>Scroll down to the <strong>Inbound</strong> section and fill in the fields according to the table below:</p> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
         <col style="width: %;"> 
@@ -1179,8 +1191,8 @@
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Click on the <strong>Global Elements</strong> view. Go to <strong>Create</strong> → <strong>Connector Configuration</strong> → <strong>B2B</strong>.</p> </li> 
-     <li> <p>Enter your secret API key which is retrieved from your home organisation’s <strong>Contacts</strong> settings page in the B2B portal.</p> </li> 
+     <li> <p>Click the <strong>Global Elements</strong> view. Go to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B</strong>.</p> </li> 
+     <li> <p>Enter your secret API key which is retrieved from your home organization’s <strong>Contacts</strong> settings page in the B2B portal.</p> </li> 
     </ol> 
    </div> 
    <div class="paragraph"> 
@@ -1188,12 +1200,12 @@
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Click <strong>Trading Partners</strong> on the left</p> </li> 
-     <li> <p>Click the home icon on the right</p> 
+     <li> <p>Click <strong>Trading Partners</strong> on the left.</p> </li> 
+     <li> <p>Click the home icon on the right.</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/b2b_ftps_walk_07.png" alt="b2b_ftps_07"></span></p> 
       </div> </li> 
-     <li> <p>Copy the API Key that shows up on the top right</p> 
+     <li> <p>Copy the API Key that displays at the top right.</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/b2b_ftps_walk_08.png" alt="b2b_ftps_08"></span></p> 
       </div> </li> 
@@ -1209,7 +1221,7 @@
    <h3 id="create-ftps-connector-configs"><a class="anchor" href="#create-ftps-connector-configs"></a>Create FTPS Connector Configs</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Remain in the <strong>Global Elements <em>view</em></strong> to create a FTPS Connector config by going to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>FTPS</strong>. Name IT <em>b2b-based-ftps</em>.</p> </li> 
+     <li> <p>Remain in the <strong>Global Elements <em>view</em></strong> to create a FTPS Connector config by going to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>FTPS</strong>. Name it <em>b2b-based-ftps</em>.</p> </li> 
      <li> <p>Enable the <strong>Use B2B Provider</strong> option on configs to allow Anypoint B2B platform to manage the FTPS processors.</p> </li> 
     </ol> 
    </div> 
@@ -1224,52 +1236,64 @@
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/b2b_ftps_walk_10.png" alt="b2b_ftps_10"></span></p> 
       </div> </li> 
-     <li> <p>Set the interchange identifier attributes so that they correspond with the interchange identifiers you configured in the B2B Portal:</p> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p><strong>Self Identification</strong><br></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><strong>Interchange sender/receiver ID qualifier (ISA05/ISA07)</strong> = <em>ZZ</em></p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Interchange sender/receiver ID (ISA06/ISA08)* = <em>MOUNTAINOUT</em></p> 
-      <div class="literalblock"> 
+     <li> <p>Set the interchange identifier attributes so that they correspond with the interchange identifiers you configured in the B2B Portal:</p> 
+      <div class="paragraph"> 
+       <p>Self Identification:</p> 
+      </div> 
+      <div class="listingblock"> 
        <div class="content"> 
-        <pre>&nbsp;*Application sender/receiver code&nbsp;(GS02/GS03)* = _MOUNTAINOUT_</pre> 
+        <pre class="CodeRay highlight"><code data-lang="code">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+             <td class="code"><pre>Interchange sender/receiver ID qualifier (ISA05/ISA07) = _ZZ_
+Interchange sender/receiver ID (ISA06/ISA08) = _MOUNTAINOUT_
+Application sender/receiver code&nbsp;(GS02/GS03) = _MOUNTAINOUT_</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
+      </div> 
+      <div class="paragraph"> 
+       <p>Partner Identification:</p> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="code">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+             <td class="code"><pre>Interchange sender/receiver ID qualifier (ISA05/ISA07) = _ZZ_
+Interchange sender/receiver ID (ISA06/ISA08) = _MY-SUPPLIER_
+Application sender/receiver code&nbsp;(GS02/GS03) = _MY-SUPPLIER_</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+      <div class="paragraph"> 
+       <p>The interchange identifiers are the key for looking up the partnership to use for X12 processing.</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/b2b_ftps_walk_11.png" alt="b2b_ftps_11"></span></p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>The following screenshot should match what you have in the <strong>Global Elements</strong> view:</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/b2b_ftps_walk_12.png" alt="b2b_ftps_12"></span></p> 
       </div> </li> 
-     <li> <p>Partner Identification*<br></p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><strong>Interchange sender/receiver ID qualifier (ISA05/ISA07)</strong> = <em>ZZ</em></p> 
-   </div> 
-   <div class="literalblock"> 
-    <div class="content"> 
-     <pre>&nbsp;*Interchange sender/receiver ID (ISA06/ISA08)* = _MY-SUPPLIER_</pre> 
-    </div> 
-   </div> 
-   <div class="literalblock"> 
-    <div class="content"> 
-     <pre>&nbsp;*Application sender/receiver code&nbsp;(GS02/GS03)* = _MY-SUPPLIER_</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The interchange identifiers are the key for looking up the partnership to use for X12 processing.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/b2b_ftps_walk_11.png" alt="b2b_ftps_11"></span></p> 
-   </div> 
-   <div class="literalblock"> 
-    <div class="content"> 
-     <pre>&nbsp;The following screenshot should match what you have in the *Global Elements* view:</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/b2b_ftps_walk_12.png" alt="b2b_ftps_12"></span></p> 
+    </ol> 
    </div> 
   </div> 
  </div> 
@@ -1286,86 +1310,226 @@
     <li> <p>Drag a <strong>File</strong> inbound endpoint to the canvas to create a flow. Set the <strong>Path</strong> attribute to <em>outbox</em>.</p> </li> 
     <li> <p>Add a <strong>DataMapper</strong> next to the File message source.</p> </li> 
     <li> <p>Put an <strong>X12</strong> processor after the DataMapper. Set the <strong>Connector Configuration</strong> to the X12 config that you created in the previous section and select <strong>Write</strong> for the <strong>Operation</strong>.</p> </li> 
-    <li> <p>Go back to the DataMapper. Select for input type XML and use the schema po.xsd under src/test/resources to derive the structure to be mapped. Click on Create mapping.</p> </li> 
+    <li> <p>Go back to the DataMapper. Select for input type XML and use the schema po.xsd under src/test/resources to derive the structure to be mapped. Click <strong>Create mapping</strong>. You can download and rename a copy of <a href="_attachments/ftps-po.xsd">ftps-po.xsd</a>.</p> </li> 
     <li> <p>Perform the mapping from XML to X12 850 as follows:</p> 
      <table class="tableblock frame-all grid-all spread"> 
       <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
+       <col style="width: 30%;"> 
+       <col style="width: 70%;"> 
       </colgroup> 
       <tbody> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Source: XML</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Target: X12 850</strong></p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p><strong>Source: XML</strong></p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p><strong>Target: X12 850</strong></p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">PurchaserOrderNumber</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">BEG03 - Purchase Order Number</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>PurchaserOrderNumber</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>BEG03 - Purchase Order Number</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">'00'</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">BEG01 - Transaction Set Purpose Code</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>'00'</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>BEG01 - Transaction Set Purpose Code</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">'NE'</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">BEG02 - Purchase Order Type Code</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>'NE'</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>BEG02 - Purchase Order Type Code</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">OrderDate</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">BEG05 - Date</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>OrderDate</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>BEG05 - Date</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Quantity</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">PO102 - Quantity</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Quantity</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>PO102 - Quantity</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">USPrice</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">PO104 - Unit Price</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>USPrice</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>PO104 - Unit Price</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">PartNumber</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">PO107 - Produce/Service ID</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>PartNumber</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>PO107 - Produce/Service ID</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">City</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Heading → 3100 N1 → 3400 N4 → N401 - City Name</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>City</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Heading &gt; 3100 N1 &gt; 3400 N4 &gt; N401 - City Name</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">State</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Heading → 3100 N1 → 3400 N4 → N402 - State or Province Code</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>State</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Heading &gt; 3100 N1 &gt; 3400 N4 &gt; N402 - State or Province Code</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Zip</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Heading → 3100 N1 → 3400 N4 → N403 - Postal Code</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Zip</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Heading &gt; 3100 N1 &gt; 3400 N4 &gt; N403 - Postal Code</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Country</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Heading → 3100 N1 → 3400 N4 → N404 - Country Code</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Country</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Heading &gt; 3100 N1 &gt; 3400 N4 &gt; N404 - Country Code</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">TotalPrice</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Summary → 100 CTT → 0200 AMT → AMT02 - Monetary Amount</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>TotalPrice</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Summary &gt; 100 CTT &gt; 0200 AMT &gt; AMT02 - Monetary Amount</p> 
+          </div> 
+         </div></td> 
        </tr> 
        <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">'TT'</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Summary → 100 CTT → 0200 AMT → AMT01 - Amount Qualifier Code</p></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>TT</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Summary &gt; 100 CTT &gt; 0200 AMT &gt; AMT01 - Amount Qualifier Code</p> 
+          </div> 
+         </div></td> 
        </tr> 
       </tbody> 
      </table> </li> 
-    <li> <p>The last message processor in the flow is an FTPS processor that sends the 850. Set the <strong>operation</strong> to <strong>Write</strong>. Additionally, set <strong>SpecId</strong> in the <strong>B2B options</strong> section to the <strong>FTP/S Settings ID</strong> value of the in the <strong>Transactions</strong> section of the B2B Portal for the 850 transaction:</p> </li> 
+    <li> <p>The last message processor in the flow is an FTPS processor that sends the 850. Set the <strong>operation</strong> to <strong>Write</strong>. Additionally, set <strong>SpecId</strong> in the <strong>B2B options</strong> section to the <strong>FTP/S Settings ID</strong> value of the in the <strong>Transactions</strong> section of the B2B Portal for the 850 transaction:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/b2b_ftps_walk_13.png" alt="b2b_ftps_13"></span></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>Note that this identifier was configured in the B2B Portal. Copy and paste it into your FTPS processor:</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/b2b_ftps_walk_14.png" alt="b2b_ftps_14"></span></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/b2b_ftps_walk_15.png" alt="b2b_ftps_15"></span></p> 
+     </div> </li> 
    </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/b2b_ftps_walk_13.png" alt="b2b_ftps_13"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Note that this identifier was configured in the B2B Portal. Copy and paste it into your FTPS processor:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/b2b_ftps_walk_14.png" alt="b2b_ftps_14"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/b2b_ftps_walk_15.png" alt="b2b_ftps_15"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -1391,19 +1555,19 @@
       <p>Note that when using a B2B &nbsp;based configuration for FTPS all locally defined fields are ignored.</p> 
      </div> </li> 
     <li> <p>Drag a <strong>Byte Array to String</strong> transformer next to the FTPS source.</p> </li> 
-    <li> <p>Add an <strong>X12</strong> processor next to message source and select the <strong>Read</strong> operation. Point the <strong>Connector Configuration</strong> to the X12 Module config that you created in the previous section</p> </li> 
+    <li> <p>Add an <strong>X12</strong> processor next to message source and select the <strong>Read</strong> operation. Point the <strong>Connector Configuration</strong> to the X12 Module config that you created in the previous section</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/b2b_ftps_walk_18.png" alt="b2b_ftps_18"></span></p> 
+     </div> </li> 
    </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/b2b_ftps_walk_18.png" alt="b2b_ftps_18"></span></p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="6-develop-mock-supplier"><a class="anchor" href="#6-develop-mock-supplier"></a>6. Develop Mock Supplier</h2> 
+ <h2 id="6-develop-a-mock-supplier"><a class="anchor" href="#6-develop-a-mock-supplier"></a>6. Develop a Mock Supplier</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The mock supplier receives the 850 and generate a 997 to send back to the customer over FTPS:</p> 
+   <p>A mock supplier receives the 850 and generates a 997 to send back to the customer over FTPS:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
@@ -1423,7 +1587,7 @@
       </ul> 
      </div> </li> 
     <li> <p>Switch to the <strong>Message Flow</strong> view. Drag the FTPS processor to the canvas and select the <strong>Read</strong> operation. Make sure that <strong>Connector Configuration</strong> points to the mock supplier’s FTPS config (highlighted above).</p> </li> 
-    <li> <p>Enter <em>/demo/supplier-inbox/</em> as <strong>Path</strong> and <em>*.dat</em> in <strong>Filename</strong>. Note that we’re leaving the B2B options unset. The polling setting can be safely ignored by now.<br></p> 
+    <li> <p>Enter <em>/demo/supplier-inbox/</em> as <strong>Path</strong> and <em>*.dat</em> in <strong>Filename</strong>. Note that we’re leaving the B2B options unset. The polling setting can be safely ignored by now.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/b2b_ftps_walk_20.png" alt="b2b_ftps_20"></span></p> 
      </div> </li> 
@@ -1434,16 +1598,16 @@
       <p><span class="image"><img src="./_images/b2b_ftps_walk_21.png" alt="b2b_ftps_21"></span></p> 
      </div> </li> 
     <li> <p>Add Another <strong>X12</strong> processor to serialize the 997. Expand the <strong>Operation</strong> drop-down menu and select <strong>Write</strong>; set the <strong>Connector Configuration</strong> to <strong>X12_EDI</strong>.</p> </li> 
-    <li> <p>The last step in the flow to send the 997 over FTPS. Append a FTPS processor to the flow; select the same local FTPS global configuration for the FTPS message source of point 3, select the <strong>Write</strong> operation and enter <em>/demo/consumer-inbox/</em> in <strong>Path</strong>.</p> </li> 
+    <li> <p>The last step in the flow to send the 997 over FTPS. Append a FTPS processor to the flow; select the same local FTPS global configuration for the FTPS message source of point 3, select the <strong>Write</strong> operation and enter <em>/demo/consumer-inbox/</em> in <strong>Path</strong>.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/b2b_ftps_walk_22.png" alt="b2b_ftps_22"></span></p> 
+     </div> </li> 
    </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/b2b_ftps_walk_22.png" alt="b2b_ftps_22"></span></p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="7-run-application-when-s3-storage-is-disabled"><a class="anchor" href="#7-run-application-when-s3-storage-is-disabled"></a>7. Run Application when S3 storage is disabled</h2> 
+ <h2 id="7-run-application-after-disabling-s3-storage"><a class="anchor" href="#7-run-application-after-disabling-s3-storage"></a>7. Run Application After Disabling S3 Storage</h2> 
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
@@ -1458,29 +1622,29 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="8-run-application-when-s3-storage-is-enabled"><a class="anchor" href="#8-run-application-when-s3-storage-is-enabled"></a>8. Run Application when S3 storage is enabled</h2> 
+ <h2 id="8-run-application-after-enabling-s3-storage"><a class="anchor" href="#8-run-application-after-enabling-s3-storage"></a>8. Run Application After Enabling S3 Storage</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>If you have enabled S3 storage configured in the B2B Connector config, then you need to add the AWS and S3 parameters to the Mule application VM arguments.</p> 
+   <p>If you enabled S3 storage configured in the B2B Connector config, then you need to add the AWS and S3 parameters to the Mule application VM arguments.</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>From the <strong>Run As</strong> menu, select <strong>Mule Application (configure)</strong>.</p> </li> 
-    <li> <p>Click on the <strong>Arguments</strong> tab.</p> </li> 
-    <li> <p>Add the following parameters in the <strong>VM arguments</strong> text box:</p> </li> 
+    <li> <p>Click the <strong>Arguments</strong> tab.</p> </li> 
+    <li> <p>Add the following parameters in the <strong>VM arguments</strong> text box:</p> 
+     <div class="paragraph"> 
+      <p>-Daws.accessKeyId=<em>[Your access key]&nbsp;</em>-Daws.secretKey=<em>[Your secret key]</em></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>-Daws.s3.bucketName=<em>[Your bucket name]</em></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>The value of each property needs to be substituted with the required setting retrieved from your AWS Management Console.</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/b2b_ftps_walk_24.png" alt="b2b_ftps_24"></span></p> 
+     </div> </li> 
    </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>-Daws.accessKeyId=<em>[Your access key]&nbsp;</em>-Daws.secretKey=<em>[Your secret key]</em></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>-Daws.s3.bucketName=<em>[Your bucket name]</em></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The value of each property needs to be substituted with the required setting retrieved from your AWS Management Console.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/b2b_ftps_walk_24.png" alt="b2b_ftps_24"></span></p> 
   </div> 
  </div> 
 </div>
@@ -1488,7 +1652,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#to-run-this-example-follow-the-steps-below">To run this example follow the steps below:</a></li><li><a class="scroll-menu-link" href="#1-partnership-set-up">1. Partnership Set Up</a></li><li><a class="scroll-menu-link" href="#2-mule-project-set-up">2. Mule Project Set Up</a></li><li><a class="scroll-menu-link" href="#3-customer-connector-configs">3. Customer Connector Configs</a></li><li><a class="scroll-menu-link" href="#4-transform-and-send-850-over-ftps">4. Transform and Send 850 over FTPS</a></li><li><a class="scroll-menu-link" href="#5-receive-997-over-ftps">5. Receive 997 over FTPS</a></li><li><a class="scroll-menu-link" href="#6-develop-mock-supplier">6. Develop Mock Supplier</a></li><li><a class="scroll-menu-link" href="#7-run-application-when-s3-storage-is-disabled">7. Run Application when S3 storage is disabled</a></li><li><a class="scroll-menu-link" href="#8-run-application-when-s3-storage-is-enabled">8. Run Application when S3 storage is enabled</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#to-run-this-example-follow-the-steps-below">To run this example follow the steps below:</a></li><li><a class="scroll-menu-link" href="#anypoint-b2b-platform-ftps-and-edi-x12-purchase-order-example">Anypoint B2B Platform FTPS and EDI X12 Purchase Order Example</a></li><li><a class="scroll-menu-link" href="#1-partnership-set-up">1. Partnership Set Up</a></li><li><a class="scroll-menu-link" href="#2-mule-project-set-up">2. Mule Project Set Up</a></li><li><a class="scroll-menu-link" href="#3-customer-connector-configs">3. Customer Connector Configs</a></li><li><a class="scroll-menu-link" href="#4-transform-and-send-850-over-ftps">4. Transform and Send 850 over FTPS</a></li><li><a class="scroll-menu-link" href="#5-receive-997-over-ftps">5. Receive 997 over FTPS</a></li><li><a class="scroll-menu-link" href="#6-develop-a-mock-supplier">6. Develop a Mock Supplier</a></li><li><a class="scroll-menu-link" href="#7-run-application-after-disabling-s3-storage">7. Run Application After Disabling S3 Storage</a></li><li><a class="scroll-menu-link" href="#8-run-application-after-enabling-s3-storage">8. Run Application After Enabling S3 Storage</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
