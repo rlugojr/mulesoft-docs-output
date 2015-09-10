@@ -882,7 +882,7 @@
  <h2 id="database-used-in-the-examples"><a class="anchor" href="#database-used-in-the-examples"></a>Database Used in the Examples</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The examples in this page were written for MySQL. They use one database with two tables. If you wish to create this database and populate it with the sample data used in these examples, you can download and run this&nbsp;MySQL script. The script creates the database, database user and tables, and populates them with 102 rows of data.</p> 
+   <p>The examples in this page were written for MySQL. They use one database with two tables. If you wish to create this database and populate it with the sample data used in these examples, you can <a href="/documentation/download/attachments/122752067/create.sample.db.sql?version=1&amp;modificationDate=1421704803418">download this MySQL script</a>. The script creates the database, database user and tables, and populates them with 102 rows of data.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The table below lists the parameters for the database used by these examples. If you modify these parameters to suit your installation, bear in mind that you need to modify the SQL script to match your customized parameters.</p> 
@@ -898,12 +898,12 @@
   </div> 
   <div class="sect3"> 
    <h4 id="tables"><a class="anchor" href="#tables"></a>Tables</h4> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Table&nbsp;<code>employees</code>. Primary key:&nbsp;<code>no</code>&nbsp;(employee number).</p> </li> 
+    </ul> 
+   </div> 
    <table class="tableblock frame-all grid-all spread"> 
-    <caption class="title">
-      Table 1. Table&nbsp; 
-     <code>employees</code>. Primary key:&nbsp; 
-     <code>no</code>&nbsp;(employee number). 
-    </caption> 
     <colgroup> 
      <col style="width: %;"> 
      <col style="width: %;"> 
@@ -941,23 +941,21 @@
      </tr> 
     </tbody> 
    </table> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Table&nbsp;<code>roles</code>. Primary key:&nbsp;<code>id</code>&nbsp;(role ID).</p> </li> 
+    </ul> 
+   </div> 
    <table class="tableblock frame-all grid-all spread"> 
-    <caption class="title">
-      Table 2. Table&nbsp; 
-     <code>roles</code>. Primary key:&nbsp; 
-     <code>id</code>&nbsp;(role ID). 
-    </caption> 
     <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
     </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Column</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-     </tr> 
-    </thead> 
     <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Column</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td> 
+     </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td> 
@@ -1474,49 +1472,19 @@ INSERT INTO roles (emp_no,role) VALUES (1110,'Software Architect');</pre></td>
       <li> <p>Open a terminal and run the following command:</p> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
-</pre></td> 
-              <td class="code"><pre>mysql -u root -D mysql -p</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
+         <pre class="CodeRay highlight"><code data-lang="code">mysql -u root -D mysql -p</code></pre> 
         </div> 
        </div> </li> 
       <li> <p>You are prompted for the MySQL root user’s password. After you type the password, you should see a <strong>mysql</strong> prompt:</p> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
-</pre></td> 
-              <td class="code"><pre>mysql&gt;</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
+         <pre class="CodeRay highlight"><code data-lang="code">mysql&gt;</code></pre> 
         </div> 
        </div> </li> 
       <li> <p>Run the MySQL script with the following command, where&nbsp;<code>&lt;script&gt;</code> is the full path and filename to the script, such as&nbsp;<code>/home/joe/create.sample.db.sql</code>.</p> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
-</pre></td> 
-              <td class="code"><pre>source &lt;script&gt;;</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
+         <pre class="CodeRay highlight"><code data-lang="code">source &lt;script&gt;;</code></pre> 
         </div> 
        </div> </li> 
       <li> <p>MySQL creates the user, database and tables specified on the script. To verify the tables, run:</p> 
@@ -1596,24 +1564,14 @@ show tables;</pre></td>
    <p>The MySQL database&nbsp;<code>company</code>&nbsp;contains a table called&nbsp;<code>employees</code>, with employee information such as first and last names, birth dates, etc.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>*DBtestFlow.png[DBtestFlow]</p> 
+   <p><span class="image"><img src="./_images/DBtestFlow.png" alt="DBtestFlow"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>In the Mule application, an inbound&nbsp;<a href="/mule-user-guide/v/3.7/http-connector">HTTP connector</a>&nbsp;listens for HTTP GET requests with the form:&nbsp;<code><a href="http://<host>:8081/?lastname=<parameter>" class="bare">http://&lt;host&gt;:8081/?lastname=&lt;parameter&gt;</a>;</code>. The HTTP connector passes the value of&nbsp;<code>&lt;parameter&gt;</code>&nbsp;as one of the message properties to a database connector. The database connector is configured to extract this value and use it for the SQL query listed below.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre>select first_name from employees where last_name = #[message.inboundProperties['lastname']]</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">select first_name from employees where last_name = #[message.inboundProperties['lastname']]</code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -1634,51 +1592,54 @@ show tables;</pre></td>
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-2c6a9" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#standalone-xml-52268" role="tab" data-toggle="tab">Standalone XML</a></li> 
+     <li class="active"><a href="#studio-visual-editor-60640" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-eabec" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-2c6a9"> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Parameter</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-        <th class="tableblock halign-left valign-top">Properties Editor Image</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Database</code></p></td> 
-        <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><span class="image"><img src="./_images/db-ex-1.png" alt="db-ex-1"></span></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Config Reference</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MySQL_Configuration</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Select</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query Type</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Parameterized</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameterized SQL Statement</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>select first_name from employees where last_name = #[message.inboundProperties['lastname']]</code></p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-60640"> 
+     <div class="sect2"> 
+      <h3 id="properties-editor"><a class="anchor" href="#properties-editor"></a>Properties Editor</h3> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/db-ex-1.png" alt="db-ex-1"></span></p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Parameter</th> 
+         <th class="tableblock halign-left valign-top">Value</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Database</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Config Reference</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MySQL_Configuration</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Select</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query Type</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Parameterized</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameterized SQL Statement</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>select first_name from employees where last_name = #[message.inboundProperties['lastname']]</code></p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="standalone-xml-52268"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-eabec"> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1709,149 +1670,137 @@ show tables;</pre></td>
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-01c84" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#standalone-xml-c1672" role="tab" data-toggle="tab">Standalone XML</a></li> 
+     <li class="active"><a href="#studio-visual-editor-b3585" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-fb83f" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-01c84"> 
-     <div class="paragraph"> 
-      <p><strong>General Tab</strong></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/global_db_connector_example.png" alt="global_db_connector_example"></span></p> 
-     </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Parameter</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MySQL_Configuration</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Host</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Configure via Spring bean</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">No (unchecked)</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DataSource Reference</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>URL</strong></p></td> 
-        <td class="tableblock halign-left valign-top"> 
-         <div> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="code">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
-2
-</pre></td> 
-                 <td class="code"><pre>jdbc:mysql://xubuntu:3306/ company?user=generatedata&amp;amp;password=
-generatedata</pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b3585"> 
+     <div class="sect2"> 
+      <h3 id="general-tab"><a class="anchor" href="#general-tab"></a>General Tab</h3> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/global_db_connector_example.png" alt="global_db_connector_example"></span></p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Parameter</th> 
+         <th class="tableblock halign-left valign-top">Value</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MySQL_Configuration</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Host</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Configure via Spring bean</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">No (unchecked)</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DataSource Reference</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>URL</strong></p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="listingblock"> 
+            <div class="content"> 
+             <pre class="CodeRay highlight"><code data-lang="code">jdbc:mysql://xubuntu:3306/ company?user=generatedata&amp;amp;password=
+generatedata</code></pre> 
+            </div> 
            </div> 
-          </div> 
-         </div></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">True (default)</p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
-     <div class="paragraph"> 
-      <p><strong>Advanced Tab</strong></p> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">True (default)</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
      </div> 
-     <div class="paragraph"> 
-      <p>In this tab, all settings are at their default values.</p> 
+     <div class="sect2"> 
+      <h3 id="advanced-tab"><a class="anchor" href="#advanced-tab"></a>Advanced Tab</h3> 
+      <div class="paragraph"> 
+       <p>In this tab, all settings are at their default values.</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/global_db_conn_Advanced.png" alt="global_db_conn_Advanced"></span></p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Parameter</th> 
+         <th class="tableblock halign-left valign-top">Value</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use XA Transactions</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Login Timeout</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transaction isolation</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>NONE</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Pool Size:</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Min Pool Size:</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acquire Increment:</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prepared Statement Cache Size:</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Wait Millis</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
      </div> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/global_db_conn_Advanced.png" alt="global_db_conn_Advanced"></span></p> 
-     </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Parameter</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use XA Transactions</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Login Timeout</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transaction isolation</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>NONE</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Pool Size:</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Min Pool Size:</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acquire Increment:</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prepared Statement Cache Size:</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Wait Millis</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
     </div> 
-    <div class="tab-pane fade no-padding" id="standalone-xml-c1672"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-fb83f"> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1916,17 +1865,7 @@ generatedata</pre></td>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre>[{"first_name":"&lt;result&gt;"}]</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">[{"first_name":"&lt;result&gt;"}]</code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -1949,17 +1888,7 @@ generatedata</pre></td>
        </div> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
-</pre></td> 
-              <td class="code"><pre>curl http://&lt;host&gt;:8081/?lastname=&lt;parameter&gt;</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
+         <pre class="CodeRay highlight"><code data-lang="code">curl http://&lt;host&gt;:8081/?lastname=&lt;parameter&gt;</code></pre> 
         </div> 
        </div> 
        <div class="paragraph"> 
@@ -2008,51 +1937,54 @@ generatedata</pre></td>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-36982" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#standalone-xml-09fc2" role="tab" data-toggle="tab">Standalone XML</a></li> 
+      <li class="active"><a href="#studio-visual-editor-26148" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-d50b6" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-36982"> 
-      <table class="tableblock frame-all grid-all spread"> 
-       <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-       </colgroup> 
-       <thead> 
-        <tr> 
-         <th class="tableblock halign-left valign-top">Parameter</th> 
-         <th class="tableblock halign-left valign-top">Value</th> 
-         <th class="tableblock halign-left valign-top">Properties Editor Image</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Database</code></p></td> 
-         <td class="tableblock halign-left valign-top" rowspan="5"><p class="tableblock"><span class="image"><img src="./_images/example_2_db_gentab.png" alt="example_2_db_gentab"></span></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Config Reference</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MySQL_Configuration</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Select</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query Type</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Parameterized</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameterized SQL Statement</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SELECT no, first_name, last_name, role FROM employees INNER JOIN roles ON employees.no = roles.emp_no;</code></p></td> 
-        </tr> 
-       </tbody> 
-      </table> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-26148"> 
+      <div class="sect2"> 
+       <h3 id="properties-editor"><a class="anchor" href="#properties-editor"></a>Properties Editor</h3> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/example_2_db_gentab.png" alt="example_2_db_gentab"></span></p> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Parameter</th> 
+          <th class="tableblock halign-left valign-top">Value</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Database</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Config Reference</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MySQL_Configuration</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Select</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query Type</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Parameterized</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parameterized SQL Statement</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SELECT no, first_name, last_name, role FROM employees INNER JOIN roles ON employees.no = roles.emp_no;</code></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="standalone-xml-09fc2"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-d50b6"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -2079,161 +2011,139 @@ generatedata</pre></td>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-772d5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#standalone-xml-e95be" role="tab" data-toggle="tab">Standalone XML</a></li> 
+      <li class="active"><a href="#studio-visual-editor-4a6af" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-bad9c" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-772d5"> 
-      <div class="paragraph"> 
-       <p><strong>General Tab</strong></p> 
-      </div> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/global_db_connector_example.png" alt="global_db_connector_example"></span></p> 
-      </div> 
-      <table class="tableblock frame-all grid-all spread"> 
-       <colgroup> 
-        <col style="width: 50%;"> 
-        <col style="width: 50%;"> 
-       </colgroup> 
-       <thead> 
-        <tr> 
-         <th class="tableblock halign-left valign-top">Parameter</th> 
-         <th class="tableblock halign-left valign-top">Value</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MySQL_Configuration</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Host</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Configure via Spring bean</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">No (unchecked)</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DataSource Reference</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>URL</strong></p></td> 
-         <td class="tableblock halign-left valign-top"> 
-          <div> 
-           <div class="listingblock"> 
-            <div class="content"> 
-             <pre class="CodeRay highlight"><code data-lang="code">
-         
-                  
-               <table class="CodeRay"> 
-                <tbody> 
-                 <tr> 
-                  <td class="line-numbers"><pre>1
-</pre></td> 
-                  <td class="code"><pre>jdbc:mysql://xubuntu:3306/company?user=generatedata&amp;amp;password=generatedata&amp;amp;generateSimpleParameterMetadata=true</pre></td> 
-                 </tr> 
-                </tbody> 
-               </table></code></pre> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4a6af"> 
+      <div class="sect2"> 
+       <h3 id="general-tab"><a class="anchor" href="#general-tab"></a>General Tab</h3> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/global_db_connector_example.png" alt="global_db_connector_example"></span></p> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: 50%;"> 
+         <col style="width: 50%;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Parameter</th> 
+          <th class="tableblock halign-left valign-top">Value</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MySQL_Configuration</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Host</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Database</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Not set (defined in <strong>URL</strong>)</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Configure via Spring bean</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">No (unchecked)</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DataSource Reference</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>URL</strong></p></td> 
+          <td class="tableblock halign-left valign-top"> 
+           <div> 
+            <div class="listingblock"> 
+             <div class="content"> 
+              <pre class="CodeRay highlight"><code data-lang="code">jdbc:mysql://xubuntu:3306/company?user=generatedata&amp;amp;password=generatedata&amp;amp;generateSimpleParameterMetadata=true</code></pre> 
+             </div> 
             </div> 
-           </div> 
-          </div></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">True (default)</p></td> 
-        </tr> 
-       </tbody> 
-      </table> 
-      <div class="paragraph"> 
-       <p><strong>Advanced Tab</strong></p> 
+           </div></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">True (default)</p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
       </div> 
-      <div class="paragraph"> 
-       <p>In this tab, all settings are at their default values.</p> 
+      <div class="sect2"> 
+       <h3 id="advanced-tab"><a class="anchor" href="#advanced-tab"></a>Advanced Tab</h3> 
+       <div class="paragraph"> 
+        <p>In this tab, all settings are at their default values.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/global_db_conn_Advanced.png" alt="global_db_conn_Advanced"></span></p> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Parameter</th> 
+          <th class="tableblock halign-left valign-top">Value</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use XA Transactions</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Login Timeout</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transaction isolation</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>NONE</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Pool Size:</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Min Pool Size:</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acquire Increment:</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prepared Statement Cache Size:</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Wait Millis</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
       </div> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/global_db_conn_Advanced.png" alt="global_db_conn_Advanced"></span></p> 
-      </div> 
-      <table class="tableblock frame-all grid-all spread"> 
-       <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-       </colgroup> 
-       <thead> 
-        <tr> 
-         <th class="tableblock halign-left valign-top">Parameter</th> 
-         <th class="tableblock halign-left valign-top">Value</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use XA Transactions</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Login Timeout</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transaction isolation</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>NONE</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Pool Size:</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Min Pool Size:</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acquire Increment:</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prepared Statement Cache Size:</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max Wait Millis</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-        </tr> 
-       </tbody> 
-      </table> 
      </div> 
-     <div class="tab-pane fade no-padding" id="standalone-xml-e95be"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-bad9c"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml">
-    
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre><span class="entity">&amp;lt;</span>db:mysql-config name="MySQL_Configuration" url="jdbc:mysql://xubuntu:3306/company?user=generatedata<span class="entity">&amp;amp;</span>amp;password=generatedata<span class="entity">&amp;amp;</span>amp;generateSimpleParameterMetadata=true" doc:name="MySQL Configuration"/<span class="entity">&amp;gt;</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>db:mysql-config name="MySQL_Configuration" url="jdbc:mysql://xubuntu:3306/company?user=generatedata<span class="entity">&amp;amp;</span>amp;password=generatedata<span class="entity">&amp;amp;</span>amp;generateSimpleParameterMetadata=true" doc:name="MySQL Configuration"/<span class="entity">&amp;gt;</span></code></pre> 
        </div> 
       </div> 
      </div> 
@@ -2245,17 +2155,16 @@ generatedata</pre></td>
    <div class="paragraph"> 
     <p>The target database, called "company," contains two tables, "employees" and "roles." A snippet of each is shown below.</p> 
    </div> 
-   <div class="listingblock"> 
-    <div class="title">
-      Table "employees" 
-    </div> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+   <div class="sect3"> 
+    <h4 id="table-employees"><a class="anchor" href="#table-employees"></a>Table "employees"</h4> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="code">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2263,29 +2172,29 @@ generatedata</pre></td>
 6
 7
 </pre></td> 
-          <td class="code"><pre>+--------+------------+-------------+-----------+--------+------------+
+           <td class="code"><pre>+--------+------------+-------------+-----------+--------+------------+
 | emp_no | birth_date | first_name&nbsp; | last_name | gender | hire_date&nbsp; |
 +--------+------------+-------------+-----------+--------+------------+
 |&nbsp;&nbsp; 1010 | 1978-10-07 | Ross&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Rodgers&nbsp;&nbsp; | M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 2011-10-07 |
 |&nbsp;&nbsp; 1011 | 1985-09-02 | Chava&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Puckett&nbsp;&nbsp; | F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 2008-10-12 |
 |&nbsp;&nbsp; 1012 | 1971-12-03 | Christopher | Tillman&nbsp;&nbsp; | M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 2006-11-01 |
 ...</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
     </div> 
    </div> 
-   <div class="listingblock"> 
-    <div class="title">
-      Table "roles" 
-    </div> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+   <div class="sect3"> 
+    <h4 id="table-roles"><a class="anchor" href="#table-roles"></a>Table "roles"</h4> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="code">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2293,47 +2202,37 @@ generatedata</pre></td>
 6
 7
 </pre></td> 
-          <td class="code"><pre>+-----+--------+--------------------+
+           <td class="code"><pre>+-----+--------+--------------------+
 | id&nbsp; | emp_no | role&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 +-----+--------+--------------------+
 |&nbsp;&nbsp; 1 |&nbsp;&nbsp; 1011 | Sr. Developer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |&nbsp;&nbsp; 2 |&nbsp;&nbsp; 1012 | Office Manager&nbsp;&nbsp;&nbsp;&nbsp; |
 |&nbsp;&nbsp; 3 |&nbsp;&nbsp; 1013 | Secretary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 ...</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
     </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The database connector has been configured to perform the SQL query shown below.</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>SELECT no, first_name, last_name, role FROM employees INNER JOIN roles ON employees.no = roles.emp_no;</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+    <div class="paragraph"> 
+     <p>The database connector has been configured to perform the SQL query shown below.</p> 
     </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The query produces 100 rows of results with data from both tables. The first three rows are shown below.</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="code">SELECT no, first_name, last_name, role FROM employees INNER JOIN roles ON employees.no = roles.emp_no;</code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>The query produces 100 rows of results with data from both tables. The first three rows are shown below.</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="code">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2341,20 +2240,21 @@ generatedata</pre></td>
 6
 7
 </pre></td> 
-          <td class="code"><pre>+------+-------------+-----------+--------------------+
+           <td class="code"><pre>+------+-------------+-----------+--------------------+
 | no&nbsp;&nbsp; | first_name&nbsp; | last_name | role&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 +------+-------------+-----------+--------------------+
 | 1011 | Chava&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Puckett&nbsp;&nbsp; | Sr. Developer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | 1012 | Christopher | Tillman&nbsp;&nbsp; | Office Manager&nbsp;&nbsp;&nbsp;&nbsp; |
 | 1013 | Judith&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | David&nbsp;&nbsp;&nbsp;&nbsp; | Secretary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 ...</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
     </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>This resulting data will be transformed to CSV by the DataMapper transformer. The next section explains how to configure the DataMapper transformer while avoiding having to manually map the input/output fields.</p> 
+    <div class="paragraph"> 
+     <p>This resulting data will be transformed to CSV by the DataMapper transformer. The next section explains how to configure the DataMapper transformer while avoiding having to manually map the input/output fields.</p> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 

@@ -873,7 +873,7 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>In Mule 3.7 and newer, you can specify MEL expressions in connector fields. Additional attributes can be configured dynamically depending on the &nbsp;database configuration you use. For more information, see "Fields That Support MEL Expressions".</p> </li> 
+    <li> <p>In Mule 3.7 and newer, you can specify MEL expressions in connector fields. Additional attributes can be configured dynamically depending on the &nbsp;database configuration you use. For more information, see the <a href="#fields-that-support-mel-expressions">Fields That Support MEL Expressions</a> section.</p> </li> 
     <li> <p>The Database connector replaces the JDBC connector. As of Mule 3.5.0, the JDBC connector is deprecated.</p> </li> 
     <li> <p>Starting in Mule 3.7, database connector configurations enable the dynamic configuration of some of their connection attributes. This feature enables an application to support multi-tenant scenarios using the same configuration element, and changing the connection attributes based on, for example, information coming from each request.</p> </li> 
    </ul> 
@@ -887,7 +887,7 @@
  <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you are familiar with databases in general and with&nbsp;<a href="http://www.w3schools.com/sql/sql_syntax.asp">SQL syntax</a>.&nbsp;Furthermore, to complete the examples presented here, we assume that you have access to the database that you are to connect to, and that you have downloaded the proper&nbsp;"Adding the Database Driver For Database Engines Supported Out of the Box" for your database.</p> 
+   <p>This document assumes that you are familiar with databases in general and with&nbsp;<a href="http://www.w3schools.com/sql/sql_syntax.asp">SQL syntax</a>.&nbsp;Furthermore, to complete the examples presented here, we assume that you have access to the database that you are to connect to, and that you have downloaded the proper&nbsp;<a href="#adding-the-database-driver-for-database-engines-supported-out-of-the-box">database driver</a> for your database.</p> 
   </div> 
  </div> 
 </div> 
@@ -899,7 +899,7 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Check that your database engine corresponds to what is described in&nbsp;"Database Engines Supported Out of the Box"; if it is not, then add the database driver for your database engine.</p> </li> 
+    <li> <p>Check that your database engine corresponds to what is described in&nbsp;<a href="#database-engines-supported-out-of-the-box">Database Engines Supported Out of the Box</a>; if it is not, then add the database driver for your database engine.</p> </li> 
     <li> <p>Configure a Database Global Element where you define:</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
@@ -957,9 +957,9 @@
  <h2 id="fields-that-support-mel-expressions"><a class="anchor" href="#fields-that-support-mel-expressions"></a>Fields That Support MEL Expressions</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In Mule version 3.7 and newer, the following connector fields support MEL expressions. For a usage example, see&nbsp;"Example MEL Expression Database URL".</p> 
+   <p>In Mule version 3.7 and newer, the following connector fields support MEL expressions. For a usage example, see&nbsp;<a href="#example-mel-expression-database-url">Example MEL Expression Database URL</a>.</p> 
   </div> 
-  <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+  <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
     <col style="width: 25%;"> 
     <col style="width: 25%;"> 
@@ -1073,7 +1073,7 @@
    <div class="sect3"> 
     <h4 id="adding-the-database-driver-for-database-engines-supported-out-of-the-box"><a class="anchor" href="#adding-the-database-driver-for-database-engines-supported-out-of-the-box"></a>Adding the Database Driver For Database Engines Supported Out of the Box</h4> 
     <div class="paragraph"> 
-     <p>For database engines supported out of the box, the easiest way to add the database driver is to use the <strong>Add File</strong> button in the global element configuration window. The following is a brief summary of the steps required to create a global database connector and add the driver. For full configuration details including connection parameters and advanced settings, see "Configuring the Database Connector" below.</p> 
+     <p>For database engines supported out of the box, the easiest way to add the database driver is to use the <strong>Add File</strong> button in the global element configuration window. The following is a brief summary of the steps required to create a global database connector and add the driver. For full configuration details including connection parameters and advanced settings, see <a href="#configuring-the-global-database-connector-for-database-engines-supported-out-of-the-box">Configuring the Global Database Connector for Database Engines Supported Out of the Box</a> below.</p> 
     </div> 
     <div class="paragraph"> 
      <p>To add the database driver for a database engine supported out of the box:</p> 
@@ -1128,14 +1128,14 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-a7803" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-2a029" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-f53b8" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-c7582" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a7803"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f53b8"> 
      <div class="paragraph"> 
-      <p><strong>Required:</strong> &nbsp;The following table describes the attributes of the Global Database connector element that you&nbsp; <em>must</em> configure to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, see <a href="/mule-user-guide/v/3.7/database-connector">Database Connector Reference</a>. See also "Fields That Support MEL Expressions".&nbsp;</p> 
+      <p><strong>Required:</strong> &nbsp;The following table describes the attributes of the Global Database connector element that you&nbsp; <em>must</em> configure to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, see <a href="/mule-user-guide/v/3.7/database-connector">Database Connector Reference</a>. See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>.&nbsp;</p> 
      </div> 
      <div class="sect2"> 
       <h3 id="oracle"><a class="anchor" href="#oracle"></a>Oracle</h3> 
@@ -1220,7 +1220,7 @@
          <td class="tableblock halign-left valign-top"> 
           <div> 
            <div class="paragraph"> 
-            <p>Click <strong>Add File</strong> to add the database driver to your project. See "Adding the Database Driver For Database Engines Supported Out of the Box" above for details.</p> 
+            <p>Click <strong>Add File</strong> to add the database driver to your project. See <a href="#Adding the Database Driver For Database Engines Supported Out of the Box">Adding the Database Driver For Database Engines Supported Out of the Box</a> above for details.</p> 
            </div> 
           </div></td> 
         </tr> 
@@ -1282,7 +1282,7 @@
          <td class="tableblock halign-left valign-top"> 
           <div> 
            <div class="paragraph"> 
-            <p>Click <strong>Add File</strong> to add the database driver to your project. See "Adding the Database Driver For Database Engines Supported Out of the Box" above for details.</p> 
+            <p>Click <strong>Add File</strong> to add the database driver to your project. See <a href="#Adding the Database Driver For Database Engines Supported Out of the Box">Adding the Database Driver For Database Engines Supported Out of the Box</a> above for details.</p> 
            </div> 
           </div></td> 
         </tr> 
@@ -1340,7 +1340,7 @@
      <div class="sect2"> 
       <h3 id="general-tab"><a class="anchor" href="#general-tab"></a>General Tab</h3> 
       <div class="paragraph"> 
-       <p>This section and the next describe the attributes of the element that you&nbsp;can&nbsp; <em>optionally</em> &nbsp;configure to customize some functionality of the Global Database Connector. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also "Fields That Support MEL Expressions".</p> 
+       <p>This section and the next describe the attributes of the element that you&nbsp;can&nbsp; <em>optionally</em> &nbsp;configure to customize some functionality of the Global Database Connector. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>.</p> 
       </div> 
       <div class="paragraph"> 
        <p><strong>Enable DataSense</strong> - Use to "turn on" DataSense, which enables Mule to make use of message metadata during design time.</p> 
@@ -1463,7 +1463,7 @@
       </table> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-2a029"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-c7582"> 
      <table class="tableblock frame-all grid-all" style="width: 99%;"> 
       <colgroup> 
        <col style="width: 30%;"> 
@@ -1513,7 +1513,7 @@
            <p>Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p> 
           </div> 
           <div class="paragraph"> 
-           <p>See also "Fields That Support MEL Expressions". &nbsp;</p> 
+           <p>See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>. &nbsp;</p> 
           </div> 
          </div></td> 
        </tr> 
@@ -1646,7 +1646,7 @@
   <div class="sect2"> 
    <h3 id="database-engines-not-supported-out-of-the-box-generic-installation"><a class="anchor" href="#database-engines-not-supported-out-of-the-box-generic-installation"></a>Database Engines Not Supported Out of the Box - Generic Installation</h3> 
    <div class="paragraph"> 
-    <p>All databases that are not configured "Database Engines Supported Out of the Box" must be added through the generic database instalation, and then configured accordingly.</p> 
+    <p>All databases that are not configured <a href="#database-engines-supported-out-of-the-box">Database Engines Supported Out of the Box</a> must be added through the generic database instalation, and then configured accordingly.</p> 
    </div> 
    <div class="sect3"> 
     <h4 id="adding-the-database-driver-for-generic-db-configuration"><a class="anchor" href="#adding-the-database-driver-for-generic-db-configuration"></a>Adding the Database Driver for Generic DB Configuration</h4> 
@@ -1657,19 +1657,19 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-b4699" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#xml-editor-or-standalone-acd3a" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+       <li class="active"><a href="#studio-visual-editor-2e763" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-or-standalone-92980" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b4699"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-2e763"> 
        <div class="olist arabic"> 
         <ol class="arabic"> 
          <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available for&nbsp;<a href="http://dev.mysql.com/downloads/connector/j/">download</a> online. &nbsp;</p> </li> 
          <li> <p>Drag and drop the driver’s&nbsp;.<code>jar</code>&nbsp;file from your local drive to the&nbsp;<code>root</code>&nbsp;folder in your&nbsp;project.</p> </li> 
          <li> <p>Add the <code>.jar</code> file to the build path of your project. Right click the project name, then select&nbsp;<strong>Build Path</strong>&nbsp;&gt;&nbsp;<strong>Configure Build Path…</strong></p> </li> 
          <li> <p>In the wizard that appears, click the <strong>Libraries</strong> tab, then click <strong>Add Jars…</strong></p> </li> 
-         <li> <p>Navigate to the <code>root</code> folder in your project, then select the ` .jar` file for your database driver.&nbsp;</p> </li> 
+         <li> <p>Navigate to the <code>root</code> folder in your project, then select the <code>.jar</code> file for your database driver.&nbsp;</p> </li> 
          <li> <p>Click <strong>OK</strong> to save, then <strong>OK</strong> to exit the wizard. Notice that your project now has a new folder named <strong>Referenced Libraries</strong> in which your database driver <code>.jar</code> resides.&nbsp;</p> </li> 
         </ol> 
        </div> 
@@ -1677,7 +1677,7 @@
         <p><span class="image"><img src="./_images/pack_explorer.png" alt="pack_explorer"></span></p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-acd3a"> 
+      <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-92980"> 
        <div class="olist arabic"> 
         <ol class="arabic"> 
          <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available for&nbsp;<a href="http://dev.mysql.com/downloads/connector/j/">download</a> online. &nbsp;</p> </li> 
@@ -1698,14 +1698,14 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-48699" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#xml-editor-0668a" role="tab" data-toggle="tab">XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-ff81a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-326e7" role="tab" data-toggle="tab">XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-48699"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ff81a"> 
        <div class="paragraph"> 
-        <p><strong>Required:</strong>&nbsp;The following table describes the attributes of the Global Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also "Fields That Support MEL Expressions". &nbsp;</p> 
+        <p><strong>Required:</strong>&nbsp;The following table describes the attributes of the Global Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>. &nbsp;</p> 
        </div> 
        <div class="paragraph"> 
         <p><strong>Generic Database Configuration</strong></p> 
@@ -1739,12 +1739,12 @@
          </tr> 
          <tr> 
           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Driver Class Name</strong></p></td> 
-          <td class="tableblock halign-left valign-top"><p class="tableblock">Fully-qualified driver class name of the driver for your database, which must be already imported into your project. (For details on importing the driver, see "Adding the Database Driver For Database Engines Supported Out of the Box" above.) You can enter the full name in the empty field or click <strong>…​</strong> to browse the available driver classes. </p><p class="tableblock">When browsing the available driver classes, type the beginning of the driver class name (which you can check by clicking the driver file under Referenced Libraries in the Package Explorer). Studio displays the list of classes provided by the driver. </p><p class="tableblock">For a list of driver classes of commonly-used database engines, see "Common Driver Class Specifications" below.</p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Fully-qualified driver class name of the driver for your database, which must be already imported into your project. (For details on importing the driver, see <a href="#Adding the Database Driver For Database Engines Supported Out of the Box">Adding the Database Driver For Database Engines Supported Out of the Box</a> above.) You can enter the full name in the empty field or click <strong>…​</strong> to browse the available driver classes. </p><p class="tableblock">When browsing the available driver classes, type the beginning of the driver class name (which you can check by clicking the driver file under Referenced Libraries in the Package Explorer). Studio displays the list of classes provided by the driver. </p><p class="tableblock">For a list of driver classes of commonly-used database engines, see <a href="#Common Driver Class Specifications">Common Driver Class Specifications</a> below.</p></td> 
          </tr> 
         </tbody> 
        </table> 
        <div class="paragraph"> 
-        <p><strong>Optional:</strong>&nbsp;The following table describes the attributes of the element that you&nbsp;can&nbsp;<em>optionally</em>&nbsp;configure to customize some functionality of the Global Database Connector. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also "Fields That Support MEL Expressions". &nbsp;</p> 
+        <p><strong>Optional:</strong>&nbsp;The following table describes the attributes of the element that you&nbsp;can&nbsp;<em>optionally</em>&nbsp;configure to customize some functionality of the Global Database Connector. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>. &nbsp;</p> 
        </div> 
        <div class="paragraph"> 
         <p><strong>General tab</strong></p> 
@@ -1807,7 +1807,7 @@
         </tbody> 
        </table> 
       </div> 
-      <div class="tab-pane fade no-padding" id="xml-editor-0668a"> 
+      <div class="tab-pane fade no-padding" id="xml-editor-326e7"> 
        <table class="tableblock frame-all grid-all" style="width: 99%;"> 
         <colgroup> 
          <col style="width: 30%;"> 
@@ -1857,7 +1857,7 @@
              <p>Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p> 
             </div> 
             <div class="paragraph"> 
-             <p>See also "Fields That Support MEL Expressions". &nbsp;</p> 
+             <p>See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>. &nbsp;</p> 
             </div> 
            </div></td> 
          </tr> 
@@ -2054,7 +2054,7 @@
   <div class="sect2"> 
    <h3 id="configuring-a-database-connector-instance-inside-a-flow"><a class="anchor" href="#configuring-a-database-connector-instance-inside-a-flow"></a>Configuring a Database Connector Instance Inside a Flow</h3> 
    <div class="paragraph"> 
-    <p><strong>Required:</strong>&nbsp;The following table describes the attributes of the Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector">Database Connector Reference</a>.&nbsp;See also "Fields That Support MEL Expressions".</p> 
+    <p><strong>Required:</strong>&nbsp;The following table describes the attributes of the Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector">Database Connector Reference</a>.&nbsp;See also <a href="#fields-that-support-mel-expressions">Fields That Support MEL Expressions</a>.</p> 
    </div> 
    <div class="admonitionblock warning"> 
     <table> 
@@ -2350,7 +2350,7 @@
         <p><strong>Parameterized</strong> <em>(Recommended)</em> - Mule replaces all Mule Expression Language (MEL) expressions inside a query with "?" to create a prepared statement, then evaluates the MEL expressions using the current event so as to obtain the value for each parameter.</p> 
        </div> 
        <div class="paragraph"> 
-        <p>Refer to "Tips" section for tips on writing parameterized query statements.</p> 
+        <p>Refer to the <a href="#tips">Tips</a> section for tips on writing parameterized query statements.</p> 
        </div> 
       </div></td> 
      <td class="tableblock halign-left valign-top"> 
@@ -2431,12 +2431,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-eac06" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-or-standalone-3069d" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-1a0d5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-or-standalone-59561" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-eac06"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-1a0d5"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>From within the&nbsp;<strong>Properties Editor</strong>&nbsp;of the&nbsp;<strong>Database Connector</strong>&nbsp;element in your flow, use the drop-down next to <strong>Type</strong> to select <code>From Template</code>.&nbsp;</p> </li> 
@@ -2478,7 +2478,7 @@
        </div> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-3069d"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-59561"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>At the top of your project’s XML config file, above all flows, add a <code>db:template-query</code> element. Configure the attributes of the element according to the code sample below.</p> </li> 
@@ -2637,12 +2637,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-59d36" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-86e4f" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-66c15" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-ae624" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-59d36"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-66c15"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2656,7 +2656,7 @@
        <p><span class="image"><img src="./_images/dllexample2.png" alt="dllexample2"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-86e4f"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-ae624"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2764,12 +2764,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-b7db7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-e665c" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-4c935" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-bb905" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b7db7"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4c935"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2783,7 +2783,7 @@
        <p><span class="image"><img src="./_images/bulkex2.png" alt="bulkex2"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-e665c"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-bb905"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2889,7 +2889,7 @@
  <h2 id="example-mel-expression-database-url"><a class="anchor" href="#example-mel-expression-database-url"></a>Example MEL Expression Database URL</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The following example shows the Mule 3.7 and newer change where you can specify a MEL expression in the Database URL field.&nbsp;See also "Fields That Support MEL Expressions".</p> 
+   <p>The following example shows the Mule 3.7 and newer change where you can specify a MEL expression in the Database URL field.&nbsp;See also <a href="#fields-that-support-mel-expressions">Fields That Support MEL Expressions</a>.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -2942,7 +2942,7 @@
     <li> <p>Study several&nbsp;<a href="/mule-user-guide/v/3.7/database-connector">example applications</a>&nbsp;which utilize the Database connector.</p> </li> 
     <li> <p><a href="/mule-user-guide/v/3.7/database-connector">Database Connector Reference</a>.</p> </li> 
     <li> <p>Learn more about&nbsp;<a href="/mule-user-guide/v/3.7/database-connector">DataMapper</a>.</p> </li> 
-    <li> <p>See also "Fields That Support MEL Expressions".</p> </li> 
+    <li> <p>See also <a href="#fields-that-support-mel-expressions">Fields That Support MEL Expressions</a>.</p> </li> 
    </ul> 
   </div> 
  </div> 
