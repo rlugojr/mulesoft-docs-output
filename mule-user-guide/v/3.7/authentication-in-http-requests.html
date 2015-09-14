@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/authentication-in-http-requests" />
-    <meta name="description" content="The HTTP Request Connector supports four types of authentication: NTLM Authentication and Preemptive Basic Authentication are only suppor..." />
+    <meta name="description" content="The HTTP Request Connector supports five types of authentication: NTLM Authentication and Preemptive Basic Authentication are only suppor..." />
     <meta class="swiftype" name="title" data-type="string" content="Authentication in HTTP Requests" />
 
 </head>
@@ -819,7 +819,7 @@
 <li><i></i><a href="/release-notes/anypoint-platform-for-apis-release-notes">Anypoint Platform for APIs Release Notes</a></li><li><i></i><a href="/release-notes/anypoint-data-gateway-release-notes">Anypoint Data Gateway Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/anypoint-b2b-release-notes">Anypoint B2B Release Notes</a><ul>
-<li><i></i><a href="/release-notes/b2b-portal-july-2015-beta-release-notes">B2B Portal July 2015 Beta Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc1-release-notes">AS2 Connector 2.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc2-release-notes">AS2 Connector 2.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-1.0.0-release-notes">AS2 Connector 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-1-release-notes">EDI Module 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-2-release-notes">EDI Module 1.0-beta-2 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0-beta-1-release-notes">FTPS Connector 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc1-release-notes">FTPS Connector 1.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc2-release-notes">FTPS Connector 1.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-release-notes">X12 and EDIFACT Modules Release Notes</a></li></ul></li>
+<li><i></i><a href="/release-notes/b2b-portal-july-2015-beta-release-notes">B2B Portal July 2015 Beta Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc1-release-notes">AS2 Connector 2.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc2-release-notes">AS2 Connector 2.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-1.0.0-release-notes">AS2 Connector 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-1-release-notes">EDI Module 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-2-release-notes">EDI Module 1.0-beta-2 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0-beta-1-release-notes">FTPS Connector 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc1-release-notes">FTPS Connector 1.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc2-release-notes">FTPS Connector 1.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-1.0.0-rc2-release-notes">X12 and EDIFACT Modules 1.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-1.0.0-rc-release-notes">X12 and EDIFACT Modules 1.0.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-1.0-beta-3-release-notes">X12 and EDIFACT Modules 1.0-beta-3 Release Notes</a></li></ul></li>
 <li>
 <i></i>
 <a href="/release-notes/anypoint-connector-devkit-release-notes">Anypoint Connector DevKit Release Notes</a><ul>
@@ -866,17 +866,15 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The&nbsp;HTTP Request Connector&nbsp;supports four types of authentication:</p> 
+   <p>The&nbsp;HTTP Request Connector&nbsp;supports five types of authentication:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
     <li> <p><a href="#basic-authentication">Basic Authentication</a></p> </li> 
     <li> <p>NTLM authentication</p> </li> 
     <li> <p><a href="#digest-authentication">Digest Authentication</a></p> </li> 
-    <li> <p><strong>OAuth</strong>&nbsp;authorization with&nbsp;</p> </li> 
-    <li> <p><a href="#How the Authorization Code&nbsp;Grant Type&nbsp;Works - simplified">[How the Authorization Code&nbsp;Grant Type&nbsp;Works - simplified]</a>&nbsp;grant type</p> </li> 
-    <li> <p><strong>OAuth</strong>&nbsp;authorization with&nbsp;</p> </li> 
-    <li> <p><a href="#How the Client Credentials&nbsp;Grant Type&nbsp;Works - simplified">[How the Client Credentials&nbsp;Grant Type&nbsp;Works - simplified]</a> grant type</p> </li> 
+    <li> <p><strong>OAuth</strong>&nbsp;authorization with&nbsp; <a href="#How the Authorization Code&nbsp;Grant Type&nbsp;Works - simplified">Authorization Code</a>&nbsp;grant type</p> </li> 
+    <li> <p><strong>OAuth</strong>&nbsp;authorization with <a href="#How the Client Credentials&nbsp;Grant Type&nbsp;Works - simplified">Client Credentials</a> grant type</p> </li> 
    </ul> 
   </div> 
   <div class="admonitionblock warning"> 
@@ -907,25 +905,25 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-fc880" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-dc4ff" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-b9f2d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-45983" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-fc880"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b9f2d"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
        <li> <p>Select the <strong>Authentication</strong> tab</p> </li> 
        <li> <p>In the Protocol dropdown menu, pick <strong>Basic</strong></p> </li> 
-       <li> <p>Provide your Username and Password (or references to properties that contain them.</p> </li> 
+       <li> <p>Provide your <strong>Username</strong> and <strong>Password</strong> (or references to properties that contain them.</p> </li> 
       </ol> 
      </div> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="/docs/plugins/servlet/confluence/placeholder/unknown-attachment?locale=en_GB&amp;version=2" alt="image" title="preemptive basic auth.png"></span></p> 
+      <p><span class="image"><img src="./_images/basic+auth.png" alt="basic+auth"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-dc4ff"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-45983"> 
      <div class="paragraph"> 
       <p>Just add a child element to the global element, in it add the user and password attributes.</p> 
      </div> 
@@ -976,17 +974,17 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-f01d4" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-a7dfa" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-bf5ad" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-66137" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f01d4"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-bf5ad"> 
       <div class="paragraph"> 
        <p>When configuring the Basic Auth credentials of your connector, tick the <strong>Preemptive</strong> checkbox.</p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-a7dfa"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-66137"> 
       <div class="paragraph"> 
        <p>Add the attribute&nbsp;<code>preemptive="true"</code> on your&nbsp;`basic-authentication`element in the global configuration of the connector:</p> 
       </div> 
@@ -1020,18 +1018,18 @@
  <h2 id="ntlm"><a class="anchor" href="#ntlm"></a>NTLM</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In this example, a GET request is sent to&nbsp;www.example.com/test, adding an "Authorization" header with the provided username and password.</p> 
+   <p>In this example, a GET request is sent to&nbsp;<a href="http://www.example.com/test">www.example.com/test</a>, adding an "Authorization" header with the provided username and password.</p> 
   </div> 
   <div class="panel panel-default no-padding"> 
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-13852" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-d255c" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-4547b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-10fcd" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-13852"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4547b"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
@@ -1041,7 +1039,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-d255c"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-10fcd"> 
      <div class="paragraph"> 
       <p>NTML authentication is configured in the same way as Basic Authentication, just provide username and password in the attributes of the child element. The only difference is that the child element is differently named: "ntml-authentication" and that you can optionally add domain and workstation attributes.</p> 
      </div> 
@@ -1089,12 +1087,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-a7c16" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-fb369" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-72dcb" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-a941f" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a7c16"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-72dcb"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
@@ -1104,7 +1102,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-fb369"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-a941f"> 
      <div class="paragraph"> 
       <p>Digest authentication is configured in the same way as Basic Authentication, just provide username and password in the attributes of the child element. The only difference is that the child element is differently named: "digest-authentication".</p> 
      </div> 
@@ -1165,7 +1163,7 @@
     <p>The Client Application (<strong>CA</strong>) is the server that tries to access a protected resource that belongs to a resource owner and&nbsp;that is held in an OAuth authentication server. ex: a Mule Server trying to access the resources that belong to a Box user and that are held in a Box server.</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="/docs/plugins/servlet/confluence/placeholder/unknown-attachment?locale=en_GB&amp;version=2" alt="image" title="oauth danceposta.png"></span></p> 
+    <p><span class="image"><img src="./_images/oauth+danceposta.png" alt="oauth+danceposta"></span></p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
@@ -1204,12 +1202,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-fc162" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-83dcc" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-bd96c" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-f3fc9" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-fc162"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-bd96c"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
@@ -1249,7 +1247,7 @@
        <p>The Local Authorization URL field is used to define a URL in your application that listens for incoming requests and redirects them to the Authorization URL of the OAS. There, the user can login, and then an access token will be sent to the application. After you start your mule application, you can hit this URL and it will allow you to login to the application.</p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-83dcc"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-f3fc9"> 
       <div class="paragraph"> 
        <p>Within the global configuration of the connector, add an&nbsp;` oauth2:authorization-code-grant-type ` child element, include the following values in it:</p> 
       </div> 
@@ -1334,12 +1332,12 @@ scopes="access_user_details, read_user_files"<span class="entity">&amp;gt;</span
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-cfb27" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-784db" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-e317d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-0fdaa" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-cfb27"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-e317d"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
@@ -1350,7 +1348,7 @@ scopes="access_user_details, read_user_files"<span class="entity">&amp;gt;</span
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-784db"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-0fdaa"> 
       <div class="paragraph"> 
        <p>This example is very much like the previous, but it includes two <code>Oauth2:custom-parameter</code> child elements that define parameters that are specific to this API.</p> 
       </div> 
@@ -1419,12 +1417,12 @@ scopes="access_user_details, read_user_files"<span class="entity">&amp;gt;</span
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-c4405" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-a526e" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-a285d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-6bf66" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c4405"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a285d"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
@@ -1442,7 +1440,7 @@ scopes="access_user_details, read_user_files"<span class="entity">&amp;gt;</span
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-a526e"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-6bf66"> 
       <div class="paragraph"> 
        <p>This example is very much like the previous, but it includes two <code>Oauth2:custom-parameter</code> child elements that define parameters that are specific to this API.</p> 
       </div> 
@@ -1495,23 +1493,23 @@ scopes="access_user_details, read_user_files"<span class="entity">&amp;gt;</span
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-95d55" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-e7342" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-01e23" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-2880d" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-95d55"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-01e23"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
         <li> <p>Select the <strong>Authentication</strong> tab</p> </li> 
         <li> <p>In the Protocol dropdown menu, pick <strong>OAuth2 - Authorization Code</strong></p> </li> 
         <li> <p>Fill in the same fields as in the previous examples</p> </li> 
-        <li> <p>Fill in the <strong>Request Token When</strong> field with the following MEL expression: #[xpath3('/response/status/text()', payload, 'STRING') == ‘unauthorized’]</p> </li> 
+        <li> <p>Fill in the <strong>Request Token When</strong> field with the following MEL expression: #<code>[xpath3('/response/status/text()', payload, 'STRING') == ‘unauthorized’]</code></p> </li> 
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-e7342"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-2880d"> 
       <div class="paragraph"> 
        <p>To set when to perform a call to obtain a new access token, set a MEL expression for the attribute <code>refreshTokenwhen</code> in the <code>oauth2:token-request</code> element.</p> 
       </div> 
@@ -1560,12 +1558,12 @@ scopes="access_user_details, read_user_files"<span class="entity">&amp;gt;</span
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-4976b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-3a2aa" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-31fbf" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-474ae" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4976b"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-31fbf"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
@@ -1591,7 +1589,7 @@ scopes="access_user_details, read_user_files"<span class="entity">&amp;gt;</span
        <p>So if you hit <a href="http://localhost:8082/authorization?userId=john">http://localhost:8082/authorization?userId=john</a>, then the RO john can grant access to the CA on his behalf. If you hit <a href="http://localhost:8082/authorization?userId=peter">http://localhost:8082/authorization?userId=peter</a> then the RO peter can grant access to the CA on his behalf.</p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-3a2aa"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-474ae"> 
       <div class="paragraph"> 
        <p>Set <code>resourceOwnerId</code> to <code><mark>[flowVars.'userId']</mark></code> and <code>localAuthorizationUrlResourceOwnerId</code> to&nbsp; <code>[message.inboundProperties.'http.query.params'.userId]</code></p> 
       </div> 
@@ -1678,12 +1676,12 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-64a75" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-a61f5" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-67ccc" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-b6459" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-64a75"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-67ccc"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
@@ -1710,7 +1708,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
        </table> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-a61f5"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-b6459"> 
       <div class="paragraph"> 
        <p>Set &nbsp; <code>tlsContext-ref</code> to reference a TLS context element, provide your trust store and key store credentials in this element.</p> 
       </div> 
@@ -1784,7 +1782,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
     <p>In this case, the resource owner (RO) is also the CA. This means that the CA is implicitly authorized by the RO, which makes the whole procedure a lot simpler.</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="/docs/plugins/servlet/confluence/placeholder/unknown-attachment?locale=en_GB&amp;version=2" alt="image" title="oauth dance post a simple.png"></span></p> 
+    <p><span class="image"><img src="./_images/oauth+danceposta+simple.png" alt="oauth dance post a simple"></span></p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
@@ -1803,12 +1801,12 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-c9c1d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-af7f1" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-89fec" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-b4c3d" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c9c1d"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-89fec"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
@@ -1825,7 +1823,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-af7f1"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-b4c3d"> 
       <div class="paragraph"> 
        <p>You must include the following information:</p> 
       </div> 
@@ -1891,12 +1889,12 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-5b89d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-1cd06" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-ed61a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-79688" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5b89d"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ed61a"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Drag an HTTP Connector to your canvas, create a new Connector Configuration element for it</p> </li> 
@@ -1907,7 +1905,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-1cd06"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-79688"> 
      <div class="paragraph"> 
       <p>The tokenManager-ref attribute need to reference a token-manager-config element in the configuration.</p> 
      </div> 
@@ -1954,17 +1952,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>oauthContext(tokenManagerConfigName)</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="code">oauthContext(tokenManagerConfigName)</code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1980,17 +1968,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>oauthContext(tokenManagerConfigName, resourceOwnerId)</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="code">oauthContext(tokenManagerConfigName, resourceOwnerId)</code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -2050,10 +2028,8 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
       <tr> 
        <td class="tableblock halign-left valign-top"> 
         <div> 
-         <div class="literalblock"> 
-          <div class="content"> 
-           <pre>&nbsp; `oauthContext(‘Token_Manager_Config’).refreshToken`</pre> 
-          </div> 
+         <div class="paragraph"> 
+          <p><code>oauthContext(‘Token_Manager_Config’).refreshToken</code></p> 
          </div> 
         </div></td> 
        <td class="tableblock halign-left valign-top"> 
@@ -2095,12 +2071,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
        <td class="tableblock halign-left valign-top"> 
         <div> 
          <div class="paragraph"> 
-          <p><code>oauthContext(‘Token_Manager_Config’).</code></p> 
-         </div> 
-         <div class="literalblock"> 
-          <div class="content"> 
-           <pre>`tokenResponseParameters.‘a_custom_param_name’`</pre> 
-          </div> 
+          <p><code>oauthContext(‘Token_Manager_Config’).</code> <code>tokenResponseParameters.‘a_custom_param_name’</code></p> 
          </div> 
         </div></td> 
        <td class="tableblock halign-left valign-top"> 
@@ -2114,12 +2085,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
        <td class="tableblock halign-left valign-top"> 
         <div> 
          <div class="paragraph"> 
-          <p><code>oauthContext(‘Token_Manager_Config’, ‘Peter’).</code></p> 
-         </div> 
-         <div class="literalblock"> 
-          <div class="content"> 
-           <pre>`tokenResponseParameters.‘a_custom_param_name’`</pre> 
-          </div> 
+          <p><code>oauthContext(‘Token_Manager_Config’, ‘Peter’).</code> <code>tokenResponseParameters.‘a_custom_param_name’</code></p> 
          </div> 
         </div></td> 
        <td class="tableblock halign-left valign-top"> 
@@ -2142,12 +2108,12 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-f1226" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-47548" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-4b359" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-f9c4c" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f1226"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4b359"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an <strong>Invalidate OAuth Context</strong> element to your canvas.</p> </li> 
@@ -2155,7 +2121,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-47548"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-f9c4c"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -2189,21 +2155,21 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-e7bd0" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-bfb0c" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-790f7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-decd3" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-e7bd0"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-790f7"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an <strong>Invalidate OAuth Context</strong> element to your canvas.</p> </li> 
         <li> <p>In its properties editor, set up the <strong>Token Manager Configuration</strong> so that it points to the same <strong>Token Manager</strong> that your HTTP Request Connector references when handling OAuth authentication.</p> </li> 
-        <li> <p>Set the *Resource Owner Id*to an expression that points to the RO you want to clear. For example #[flowVars.'resourceOwnerId']</p> </li> 
+        <li> <p>Set the <strong>Resource Owner Id</strong> to an expression that points to the RO you want to clear. For example #<code>[flowVars.'resourceOwnerId']</code></p> </li> 
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-bfb0c"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-decd3"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -2243,7 +2209,7 @@ resourceOwnerId="#[flowVars.'userId']"<span class="entity">&amp;gt;</span>
    <ul> 
     <li> <p>HTTP Request Connector</p> </li> 
     <li> <p>HTTP Listener Connector</p> </li> 
-    <li> <p>See a&nbsp;<a href="/mule-user-guide/v/3.7/http-connector-reference">full Reference</a>&nbsp;of the available XML configurable options in this connector</p> </li> 
+    <li> <p>See a&nbsp;<a href="/mule-user-guide/v/3.7/http-connector-reference">full reference</a>&nbsp;of the available XML configurable options in this connector</p> </li> 
     <li> <p><a href="/mule-user-guide/v/3.7/migrating-to-the-new-http-connector">Migrating to the New HTTP Connector</a></p> </li> 
    </ul> 
   </div> 

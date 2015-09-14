@@ -818,7 +818,7 @@
 <li><i></i><a href="/release-notes/anypoint-platform-for-apis-release-notes">Anypoint Platform for APIs Release Notes</a></li><li><i></i><a href="/release-notes/anypoint-data-gateway-release-notes">Anypoint Data Gateway Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/anypoint-b2b-release-notes">Anypoint B2B Release Notes</a><ul>
-<li><i></i><a href="/release-notes/b2b-portal-july-2015-beta-release-notes">B2B Portal July 2015 Beta Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc1-release-notes">AS2 Connector 2.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc2-release-notes">AS2 Connector 2.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-1.0.0-release-notes">AS2 Connector 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-1-release-notes">EDI Module 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-2-release-notes">EDI Module 1.0-beta-2 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0-beta-1-release-notes">FTPS Connector 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc1-release-notes">FTPS Connector 1.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc2-release-notes">FTPS Connector 1.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-release-notes">X12 and EDIFACT Modules Release Notes</a></li></ul></li>
+<li><i></i><a href="/release-notes/b2b-portal-july-2015-beta-release-notes">B2B Portal July 2015 Beta Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc1-release-notes">AS2 Connector 2.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc2-release-notes">AS2 Connector 2.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-1.0.0-release-notes">AS2 Connector 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-1-release-notes">EDI Module 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-2-release-notes">EDI Module 1.0-beta-2 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0-beta-1-release-notes">FTPS Connector 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc1-release-notes">FTPS Connector 1.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc2-release-notes">FTPS Connector 1.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-1.0.0-rc2-release-notes">X12 and EDIFACT Modules 1.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-1.0.0-rc-release-notes">X12 and EDIFACT Modules 1.0.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-1.0-beta-3-release-notes">X12 and EDIFACT Modules 1.0-beta-3 Release Notes</a></li></ul></li>
 <li>
 <i></i>
 <a href="/release-notes/anypoint-connector-devkit-release-notes">Anypoint Connector DevKit Release Notes</a><ul>
@@ -865,7 +865,7 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The tutorial outlined in this document demonstrates the functionality of APIkit, and how you can use it to build REST APIs. After setting yourself up to meet a few dev-environment prerequisites, you can step through the quick tutorial to build yourself a working API.</p> 
+   <p>The tutorial outlined in this document demonstrates the functionality of APIkit, and how you can use it to build REST APIs. After setting yourself up to meet a few development environment prerequisites, you can step through the quick tutorial to build yourself a working API.</p> 
   </div> 
  </div> 
 </div> 
@@ -873,7 +873,7 @@
  <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes you are familiar with some of the design decisions and requirements for creating a REST API. It assumes you are familiar with <a href="/mule-fundamentals/v/3.6/first-30-minutes-with-mule">Anypoint Studio</a> and that you have a basic understanding of&nbsp;<a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>&nbsp;as a Web service paradigm. Further, it assumes that you have read&nbsp;<a href="/anypoint-platform-for-apis/apikit-basic-anatomy">APIkit Basic Anatomy</a> which offers an overview of its functionality.</p> 
+   <p>This document assumes you are familiar with some of the design decisions and requirements for creating a REST API. It assumes you are familiar with <a href="/mule-fundamentals/v/3.7/first-30-minutes-with-mule">Anypoint Studio</a> and that you have a basic understanding of&nbsp;<a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>&nbsp;as a Web service paradigm. Further, it assumes that you have read&nbsp;<a href="/anypoint-platform-for-apis/apikit-basic-anatomy">APIkit Basic Anatomy</a> which offers an overview of its functionality.</p> 
   </div> 
  </div> 
 </div> 
@@ -881,41 +881,44 @@
  <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This tutorial uses the specialized <strong>Gateway Runtime</strong>, which you can download and install follwoing instructions below. Nevertheless, you can also use any regular Mule runtime (as long as it’s version <strong>3.5.0</strong> or later) and perform the same steps identically.</p> 
+   <p>This tutorial uses the specialized <strong>Gateway Runtime</strong>, which you can download and install following instructions below. Nevertheless, you can also use any regular Mule runtime (as long as it’s version <strong>3.5.0</strong> or newer) and perform the same steps identically.</p> 
   </div> 
   <div class="admonitionblock warning"> 
    <table> 
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-      <td class="content"> If the version of Studio you are using is older than <strong>Anypoint Studio May 2014</strong>, please <a href="http://www.mulesoft.com/platform/mule-studio">download and install the latest GA version</a> to continue.<br> <br> Also note that, if you’re using the Gateway Runtime, certain Studio components will not be available for use in your flows. This is because the functionality of this runtime is limited to API platform specific capabilities. </td> 
+      <td class="content"> If the version of Studio you are using is older than <strong>Anypoint Studio May 2014</strong>, <a href="http://www.mulesoft.com/platform/mule-studio">download and install the latest GA version</a> to continue. </td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>Download and install the Gateway Runtime</p> 
+   <p>Also note that, if you’re using the Gateway Runtime, some Studio components are not available for use in your flows. This is because the functionality of this runtime is limited to API platform specific capabilities.</p> 
   </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>&nbsp;To install the Gateway Runtime, follow the steps below:</pre> 
-   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="download-and-install-the-gateway-runtime"><a class="anchor" href="#download-and-install-the-gateway-runtime"></a>Download and Install the Gateway Runtime</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>To install the Gateway Runtime:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>In Studio, Select <strong>Help &gt; Install New Software</strong><br></p> 
+    <li> <p>In Studio, Select <strong>Help</strong> &gt; <strong>Install New Software</strong></p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/install+new+software.jpeg" alt="install+new+software"></span><br></p> 
+      <p><span class="image"><img src="./_images/install+new+software.jpeg" alt="install+new+software"></span></p> 
      </div> </li> 
     <li> <p>In the field labeled <strong>Work with</strong>, copy the following update site address to the field and press Return. Note: The URL also works as <code>http://</code>…​<br></p> 
      <div class="paragraph"> 
-      <p><code><a href="https://studio.mulesoft.org.s3.amazonaws.com/r3/api-gateway" class="bare">https://studio.mulesoft.org.s3.amazonaws.com/r3/api-gateway</a></code></p> 
+      <p><code><a href="http://studio.mulesoft.org/r4/api-gateway/" class="bare">http://studio.mulesoft.org/r4/api-gateway/</a></code></p> 
      </div> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/install+new+software2.jpeg" alt="install+new+software2"></span></p> 
      </div> </li> 
-    <li> <p>A table below displays the different available elements in that update site, select the <strong>API Gateway Runtime</strong> to download it, then click next</p> </li> 
-    <li> <p>Follow through the rest of the wizard, accepting the terms and conditions. The gateway runtime will be downloaded and installed, Studio will need to restart when done.</p> </li> 
+    <li> <p>A table displays the different available elements in that update site, select the <strong>API Gateway Runtime</strong> to download it, then click <strong>Next</strong>.</p> </li> 
+    <li> <p>Follow through the rest of the wizard, accepting the terms and conditions. The gateway runtime downloads and installs, and Studio needs to restart when done.</p> </li> 
    </ol> 
   </div> 
  </div> 
@@ -935,7 +938,7 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>End Result</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">At the end of this tutorial, you’ll have a fully-functional API which you can run in Anypoint Studio, and with which you can interact via the Web console.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">At the end of this tutorial, you have a fully-functional API which you can run in Anypoint Studio, and with which you can interact via the Web console.</p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Learning Outcome</strong></p></td> 
@@ -973,19 +976,19 @@
   <div class="sect2"> 
    <h3 id="micro-procedures"><a class="anchor" href="#micro-procedures"></a>Micro Procedures</h3> 
    <div class="paragraph"> 
-    <p>Before diving into the procedures listed above, it’s worth pausing to take a look at the <a href="http://raml.org">RAML</a> file. While required for this quick tutorial, it is not the purpose of this tutorial to describe how to use RESTful API Modeling Language (RAML) to build an API interface. Though the micro procedures included in this tutorial do not describe how to define an API using RAML, it is worth briefly examining the contents of the RAML file so as to understand the structure from which Anypoint&nbsp;Studio generates flows.</p> 
+    <p>Before diving into the procedures listed above, it’s worth pausing to take a look at the <a href="http://raml.org">RAML</a> file. While required for this quick tutorial, it is not the purpose of this tutorial to describe how to use RESTful API Modeling Language (RAML) to build an API interface. Although the micro procedures included in this tutorial do not describe how to define an API using RAML, it is worth briefly examining the contents of the RAML file so as to understand the structure from which Anypoint&nbsp;Studio generates flows.</p> 
    </div> 
    <div class="paragraph"> 
     <p>There are two main parts that form the whole of an API definition in RAML:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>the <strong>Root</strong> section of the API definition contains API metadata and definitions of reusable definitions</p> </li> 
-     <li> <p>the <strong>Body</strong> section defines the resource-action pairings (i.e. resources and methods) the API exposes to consumers</p> </li> 
+     <li> <p>The <strong>Root</strong> section of the API definition contains API metadata and definitions of reusable definitions</p> </li> 
+     <li> <p>The <strong>Body</strong> section defines the resource-action pairings (that is, resources and methods) the API exposes to consumers</p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
-    <p>The table below briefly describes the elements within the Root and Body of the example <a href="/docs/download/attachments/122752391/api.raml?version=5&amp;modificationDate=1427723083931">api.raml</a> file. This table does not describe&nbsp;<em>all</em> elements of a RAML API definition, but does list several in use within the example. Access the full <a href="https://github.com/raml-org/raml-spec">RAML spec</a> for more details.</p> 
+    <p>The table below briefly describes the elements within the Root and Body of the example <a href="_attachments/api.raml">api.raml</a> file. This table does not describe&nbsp;<em>all</em> elements of a RAML API definition, but does list several in use within the example. Access the full <a href="https://github.com/raml-org/raml-spec">RAML spec</a> for more details.</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
@@ -1006,7 +1009,7 @@
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>title</code><br> <code>baseUri</code><br> <code>version</code><br> <code>mediaType</code><br> <code>documentation</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Offers information about the API (i.e. metadata), including the name and version of the API, its location (baseUri), media type, and documentation that describes the API in plain language.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Offers information about the API (such as metadata), including the name and version of the API, its location (baseUri), media type, and documentation that describes the API in plain language.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>title: Remote Vending API version: v1.0 baseUri: <a href="http://remote-vending/api" class="bare">http://remote-vending/api</a> mediaType: application/json</code></p></td> 
      </tr> 
      <tr> 
@@ -1023,7 +1026,7 @@
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>schemas</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Describes criteria against which requests to the API will be validated. Schemas are resource-action pairing specific (i.e. each schemas definition describes the expected input or output for a particular kind of call – GET, POST – to a particular resource).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Describes criteria against which requests to the API are validated. Schemas are resource-action pairing specific. Each <code>schemas</code> definition describes the expected input or output for a particular kind of call – GET, POST – to a particular resource.</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>schemas: &nbsp;&nbsp;- postsale: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"$schema": "http://json-schema.org/draft-04/schema#", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type" : "object", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"properties" : { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"machineId" : "string", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"trayId" : "string", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"dateAndTime" : "string", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"exchange" : { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type" : "object", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"properties" : { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"value" : "integer", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"in" : "integer", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"out" : "integer" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></p></td> 
      </tr> 
      <tr> 
@@ -1042,7 +1045,7 @@
     <h4 id="creating-a-new-project"><a class="anchor" href="#creating-a-new-project"></a>Creating a New Project</h4> 
     <div class="olist arabic"> 
      <ol class="arabic"> 
-      <li> <p>Download the example&nbsp;<a href="/docs/download/attachments/122752391/api.raml?version=5&amp;modificationDate=1427723083931">api.raml</a> file to your local drive.</p> 
+      <li> <p>Download the example&nbsp;<a href="_attachments/api.raml">api.raml</a> file to your local drive.</p> 
        <div class="admonitionblock note"> 
         <table> 
          <tbody> 
@@ -1060,7 +1063,7 @@
          <tbody> 
           <tr> 
            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-           <td class="content"> If you’re using the Gateway Runtime, certain studio components will not be available. This is because the functionality of this runtime is limited to API platform specific capabilities. </td> 
+           <td class="content"> If you’re using the Gateway Runtime, certain Studio components are not available. This is because the functionality of this runtime is limited to API platform specific capabilities. </td> 
           </tr> 
          </tbody> 
         </table> 
@@ -1069,7 +1072,10 @@
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/new+project.jpeg" alt="new+project"></span><br></p> 
        </div> </li> 
-      <li> <p>Click <strong>Finish</strong>. Studio launches the new project for you and opens a new flow on a fresh canvas. Notice that Studio creates a new hierarchy of folders labeled,&nbsp;<code>src/main/api</code>, into which it inserts the RAML file you imported.<br> <br> <span class="image"><img src="./_images/apikitt-pe.png" alt="apikitt-pe"></span></p> </li> 
+      <li> <p>Click <strong>Finish</strong>. Studio launches the new project for you and opens a new flow on a fresh canvas. Notice that Studio creates a new hierarchy of folders labeled,&nbsp;<code>src/main/api</code>, into which it inserts the RAML file you imported.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/apikitt-pe.png" alt="apikitt-pe"></span></p> 
+       </div> </li> 
      </ol> 
     </div> 
    </div> 
@@ -1080,24 +1086,24 @@
     </div> 
     <div class="ulist"> 
      <ul> 
-      <li> <p>a <strong>Main flow</strong> with an HTTP&nbsp;endpoint, an APIkit Router, and an exception strategy reference</p> </li> 
-      <li> <p>skeletal&nbsp;<strong>Backend flows</strong>, one<strong>&nbsp;</strong> for each resource-action pairing in the RAML file</p> </li> 
-      <li> <p>several global&nbsp;<strong>exception strategy mappings</strong></p> </li> 
+      <li> <p>A <strong>Main flow</strong> with an HTTP&nbsp;endpoint, an APIkit Router, and an exception strategy reference</p> </li> 
+      <li> <p>Skeletal&nbsp;<strong>Backend flows</strong>, one for each resource-action pairing in the RAML file</p> </li> 
+      <li> <p>Several global&nbsp;<strong>exception strategy mappings</strong></p> </li> 
      </ul> 
     </div> 
     <div class="paragraph"> 
-     <p>Studio generated a simple, standard <strong>Main flow</strong> with an HTTP endpoint, an APIkit Router, and reference to the APIkit exception strategy mappings.&nbsp;</p> 
+     <p>Studio generates a simple, standard <strong>Main flow</strong> with an HTTP endpoint, an APIkit Router, and reference to the APIkit exception strategy mappings.&nbsp;</p> 
     </div> 
     <div class="panel panel-default no-padding"> 
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-cfbbc" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-       <li><a href="#studio-xml-editor-8e900" role="tab" data-toggle="tab">STUDIO XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-3c81b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#studio-xml-editor-9d96d" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-cfbbc"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-3c81b"> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/apikitmainflow.png" alt="apikitmainflow"></span></p> 
        </div> 
@@ -1112,7 +1118,7 @@
         </table> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="studio-xml-editor-8e900"> 
+      <div class="tab-pane fade no-padding" id="studio-xml-editor-9d96d"> 
        <div class="listingblock"> 
         <div class="content"> 
          <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1128,10 +1134,10 @@
 5
 </pre></td> 
               <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="main"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://localhost:${http.port}/api" /<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:router config-ref="apiConfig" /<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>exception-strategy ref="apiKitGlobalExceptionMapping" /<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
+&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://localhost:${http.port}/api" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:router config-ref="apiConfig" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>exception-strategy ref="apiKitGlobalExceptionMapping" /<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
              </tr> 
             </tbody> 
            </table></code></pre> 
@@ -1151,7 +1157,7 @@
      </div> 
     </div> 
     <div class="paragraph"> 
-     <p>Studio generated&nbsp;<strong>Backend flows</strong> for each resource-action pairing in the RAML file, each pre-populated with one or more message processors.</p> 
+     <p>Studio generates&nbsp;<strong>Backend flows</strong> for each resource-action pairing in the RAML file, each pre-populated with one or more message processors.</p> 
     </div> 
     <div class="ulist"> 
      <ul> 
@@ -1166,17 +1172,17 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-01211" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-       <li><a href="#studio-xml-editor-7b73c" role="tab" data-toggle="tab">STUDIO XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-b706c" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#studio-xml-editor-f67bb" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-01211"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b706c"> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/backend.png" alt="backend"></span></p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="studio-xml-editor-7b73c"> 
+      <div class="tab-pane fade no-padding" id="studio-xml-editor-f67bb"> 
        <div class="listingblock"> 
         <div class="content"> 
          <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1219,43 +1225,86 @@
      </div> 
     </div> 
     <div class="paragraph"> 
-     <p>Studio generated several global <strong>exception strategy mappings</strong> that the Main flow references to send error responses in HTTP-status-code-friendly format. Defined at a global level within the project’s XML config, this standard set of exception strategy mappings ensure that anytime a backend flow throws an exception, the API responds to the caller with an HTTP-status code and corresponding plain-language message. Read more about <a href="/anypoint-platform-for-apis/apikit-beyond-the-basics">exception strategies for APIkit</a>.</p> 
+     <p>Studio generates several global <strong>exception strategy mappings</strong> that the Main flow references to send error responses in HTTP-status-code-friendly format. Defined at a global level within the project’s XML config, this standard set of exception strategy mappings ensure that anytime a backend flow throws an exception, the API responds to the caller with an HTTP-status code and corresponding plain-language message. Read more about <a href="/anypoint-platform-for-apis/apikit-beyond-the-basics">exception strategies for APIkit</a>.</p> 
     </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre>[tab,title="STUDIO XML Editor"]
-....
-[source,xml,linenums]
-----
-&lt;apikit:mapping-exception-strategy name="api-apiKitGlobalExceptionMapping"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:mapping statusCode="404"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:exception value="org.mule.module.apikit.exception.NotFoundException" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="Content-Type" value="application/json" doc:name="Property"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-payload value="{ &amp;quot;message&amp;quot;: &amp;quot;Resource not found&amp;quot; }" doc:name="Set Payload"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/apikit:mapping&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:mapping statusCode="405"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:exception value="org.mule.module.apikit.exception.MethodNotAllowedException" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="Content-Type" value="application/json" doc:name="Property"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-payload value="{ &amp;quot;message&amp;quot;: &amp;quot;Method not allowed&amp;quot; }" doc:name="Set Payload"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/apikit:mapping&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:mapping statusCode="415"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:exception value="org.mule.module.apikit.exception.UnsupportedMediaTypeException" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="Content-Type" value="application/json" doc:name="Property"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-payload value="{ &amp;quot;message&amp;quot;: &amp;quot;Unsupported media type&amp;quot; }" doc:name="Set Payload"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/apikit:mapping&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:mapping statusCode="406"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:exception value="org.mule.module.apikit.exception.NotAcceptableException" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="Content-Type" value="application/json" doc:name="Property"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-payload value="{ &amp;quot;message&amp;quot;: &amp;quot;Not acceptable&amp;quot; }" doc:name="Set Payload"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/apikit:mapping&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:mapping statusCode="400"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;apikit:exception value="org.mule.module.apikit.exception.BadRequestException" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="Content-Type" value="application/json" doc:name="Property"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-payload value="{ &amp;quot;message&amp;quot;: &amp;quot;Bad request&amp;quot; }" doc:name="Set Payload"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/apikit:mapping&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/apikit:mapping-exception-strategy&gt;
-----
-....</pre> 
+    <div class="panel panel-default no-padding"> 
+     <div class="panel-heading no-padding"> 
+      <!-- Nav tabs --> 
+      <ul class="nav nav-tabs" role="tablist"> 
+       <li class="active"><a href="#studio-xml-editor-cae40" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      </ul> 
+     </div> 
+     <div class="panel-body tab-content no-padding"> 
+      <div class="tab-pane in active fade no-padding" id="studio-xml-editor-cae40"> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="xml">
+    
+              
+           <table class="CodeRay"> 
+            <tbody> 
+             <tr> 
+              <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+</pre></td> 
+              <td class="code"><pre><span class="entity">&amp;lt;</span>apikit:mapping-exception-strategy name="api-apiKitGlobalExceptionMapping"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:mapping statusCode="404"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:exception value="org.mule.module.apikit.exception.NotFoundException" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-property propertyName="Content-Type" value="application/json" doc:name="Property"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="{ <span class="entity">&amp;amp;</span>quot;message<span class="entity">&amp;amp;</span>quot;: <span class="entity">&amp;amp;</span>quot;Resource not found<span class="entity">&amp;amp;</span>quot; }" doc:name="Set Payload"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/apikit:mapping<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:mapping statusCode="405"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:exception value="org.mule.module.apikit.exception.MethodNotAllowedException" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-property propertyName="Content-Type" value="application/json" doc:name="Property"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="{ <span class="entity">&amp;amp;</span>quot;message<span class="entity">&amp;amp;</span>quot;: <span class="entity">&amp;amp;</span>quot;Method not allowed<span class="entity">&amp;amp;</span>quot; }" doc:name="Set Payload"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/apikit:mapping<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:mapping statusCode="415"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:exception value="org.mule.module.apikit.exception.UnsupportedMediaTypeException" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-property propertyName="Content-Type" value="application/json" doc:name="Property"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="{ <span class="entity">&amp;amp;</span>quot;message<span class="entity">&amp;amp;</span>quot;: <span class="entity">&amp;amp;</span>quot;Unsupported media type<span class="entity">&amp;amp;</span>quot; }" doc:name="Set Payload"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/apikit:mapping<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:mapping statusCode="406"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:exception value="org.mule.module.apikit.exception.NotAcceptableException" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-property propertyName="Content-Type" value="application/json" doc:name="Property"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="{ <span class="entity">&amp;amp;</span>quot;message<span class="entity">&amp;amp;</span>quot;: <span class="entity">&amp;amp;</span>quot;Not acceptable<span class="entity">&amp;amp;</span>quot; }" doc:name="Set Payload"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/apikit:mapping<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:mapping statusCode="400"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>apikit:exception value="org.mule.module.apikit.exception.BadRequestException" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-property propertyName="Content-Type" value="application/json" doc:name="Property"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="{ <span class="entity">&amp;amp;</span>quot;message<span class="entity">&amp;amp;</span>quot;: <span class="entity">&amp;amp;</span>quot;Bad request<span class="entity">&amp;amp;</span>quot; }" doc:name="Set Payload"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/apikit:mapping<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/apikit:mapping-exception-strategy<span class="entity">&amp;gt;</span></pre></td> 
+             </tr> 
+            </tbody> 
+           </table></code></pre> 
+        </div> 
+       </div> 
+      </div> 
      </div> 
     </div> 
    </div> 
@@ -1263,23 +1312,23 @@
     <h4 id="configuring-details"><a class="anchor" href="#configuring-details"></a>Configuring Details</h4> 
     <div class="olist arabic"> 
      <ol class="arabic"> 
-      <li> <p>In the main flow, double-click the <strong>APIkit Router</strong> to open its properties editor in the console.&nbsp;In the APIkit Router properties, notice that you have the option of using a drop-down menu to adjust the <strong>Router configuration</strong>. Because you used Studio to auto-generate a skeletal structure of the backend flows that will support the requests sent to your API, you need not use this feature to customize the mapping between resource, action and backend flow; Studio has defined the mapping for you automatically. Read more details on <a href="/anypoint-platform-for-apis/apikit-beyond-the-basics">custom mapping</a>.</p> </li> 
+      <li> <p>In the main flow, double-click the <strong>APIkit Router</strong> to open its properties editor in the console.&nbsp;In the APIkit Router properties, notice that you have the option of using a drop-down menu to adjust the <strong>Router configuration</strong>. Because you used Studio to auto-generate a skeletal structure of the backend flows that supports the requests sent to your API, you need not use this feature to customize the mapping between resource, action and backend flow; Studio has defined the mapping for you automatically. Read more details on <a href="/anypoint-platform-for-apis/apikit-beyond-the-basics">custom mapping</a>.</p> </li> 
       <li> <p>In the main flow, double-click the <strong>HTTP connector</strong>&nbsp;to open its properties editor in the console, then click the <strong>Advanced</strong> tab. Notice that Studio has populated the <strong>Address</strong> field with a default value. Change the default value of Address to match the baseUri in the RAML file: <a href="http://localhost:8081/remote-vending/api" class="bare">http://localhost:8081/remote-vending/api</a></p> 
        <div class="panel panel-default no-padding"> 
         <div class="panel-heading no-padding"> 
          <!-- Nav tabs --> 
          <ul class="nav nav-tabs" role="tablist"> 
-          <li class="active"><a href="#studio-visual-editor-f6dad" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-          <li><a href="#studio-xml-editor-ef9bf" role="tab" data-toggle="tab">STUDIO XML Editor</a></li> 
+          <li class="active"><a href="#studio-visual-editor-8a3f9" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+          <li><a href="#studio-xml-editor-2079f" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
          </ul> 
         </div> 
         <div class="panel-body tab-content no-padding"> 
-         <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f6dad"> 
+         <div class="tab-pane in active fade no-padding" id="studio-visual-editor-8a3f9"> 
           <div class="paragraph"> 
            <p><span class="image"><img src="./_images/apikitt-http.png" alt="apikitt-http"></span></p> 
           </div> 
          </div> 
-         <div class="tab-pane fade no-padding" id="studio-xml-editor-ef9bf"> 
+         <div class="tab-pane fade no-padding" id="studio-xml-editor-2079f"> 
           <div class="listingblock"> 
            <div class="content"> 
             <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1318,13 +1367,22 @@
     <div class="olist arabic"> 
      <ol class="arabic"> 
       <li> <p>Right-click the project name in the <strong>Project Explorer</strong>, then select <strong>Run As</strong> &gt; <strong>Mule Application</strong>.&nbsp;Studio deploys the project.&nbsp;</p> </li> 
-      <li> <p>The <strong>APIkit Console</strong> launches below the canvas, displaying the resource-action pairs exposed by the API (see below).&nbsp;<br> <br> <span class="image"><img src="./_images/APIkitconsole-tutorial.png" alt="APIkitconsole-tutorial"></span><br></p> </li> 
-      <li> <p>Click <strong>DOCUMENTATION</strong> to view human-written details describing the API.&nbsp;The main&nbsp;<strong>Introduction</strong>&nbsp;title and sentence beneath it map&nbsp;to the contents of&nbsp;<code>documentation</code>&nbsp;in the root section of the RAML file.<br></p> 
+      <li> <p>The <strong>APIkit Console</strong> launches below the canvas, displaying the resource-action pairs exposed by the API (see below).&nbsp;</p> 
        <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/apikitconsole-documentation.png" alt="apikitconsole-documentation"></span><br></p> 
+        <p><span class="image"><img src="./_images/APIkitconsole-tutorial.png" alt="APIkitconsole-tutorial"></span></p> 
        </div> </li> 
-      <li> <p>Click <strong>API REFERENCE</strong> to return to the main console screen, then click&nbsp;<code>/machines</code> to expand the section. Click to expand <code>GET: /machines</code>, then click the tab labeled <strong>Try It</strong>. Click the <strong>GET</strong> button to send a test call to GET a list of machines.<br> <br> <span class="image"><img src="./_images/apikitt-get.png" alt="apikitt-get"></span><br></p> </li> 
-      <li> <p>The API returns the appropriate response: a list of machines (which is the payload set on the message by the <code>get:/machines:apiConfig</code> flow which, in turn, used the example content defined in the resource-action pairing in the RAML file).<br> <br> <span class="image"><img src="./_images/apikit-response.png" alt="apikit-response"></span></p> </li> 
+      <li> <p>Click <strong>DOCUMENTATION</strong> to view human-written details describing the API.&nbsp;The main&nbsp;<strong>Introduction</strong>&nbsp;title and sentence beneath it map&nbsp;to the contents of&nbsp;<code>documentation</code>&nbsp;in the root section of the RAML file.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/apikitconsole-documentation.png" alt="apikitconsole-documentation"></span></p> 
+       </div> </li> 
+      <li> <p>Click <strong>API REFERENCE</strong> to return to the main console screen, then click&nbsp;<code>/machines</code> to expand the section. Click to expand <code>GET: /machines</code>, then click the tab labeled <strong>Try It</strong>. Click the <strong>GET</strong> button to send a test call to GET a list of machines.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/apikitt-get.png" alt="apikitt-get"></span></p> 
+       </div> </li> 
+      <li> <p>The API returns the appropriate response: a list of machines (which is the payload set on the message by the <code>get:/machines:apiConfig</code> flow which, in turn, used the example content defined in the resource-action pairing in the RAML file).</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/apikit-response.png" alt="apikit-response"></span></p> 
+       </div> </li> 
      </ol> 
     </div> 
    </div> 
@@ -1408,7 +1466,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#tutorial">Tutorial </a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#download-and-install-the-gateway-runtime">Download and Install the Gateway Runtime</a></li><li><a class="scroll-menu-link" href="#tutorial">Tutorial </a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

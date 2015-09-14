@@ -818,7 +818,7 @@
 <li><i></i><a href="/release-notes/anypoint-platform-for-apis-release-notes">Anypoint Platform for APIs Release Notes</a></li><li><i></i><a href="/release-notes/anypoint-data-gateway-release-notes">Anypoint Data Gateway Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/anypoint-b2b-release-notes">Anypoint B2B Release Notes</a><ul>
-<li><i></i><a href="/release-notes/b2b-portal-july-2015-beta-release-notes">B2B Portal July 2015 Beta Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc1-release-notes">AS2 Connector 2.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc2-release-notes">AS2 Connector 2.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-1.0.0-release-notes">AS2 Connector 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-1-release-notes">EDI Module 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-2-release-notes">EDI Module 1.0-beta-2 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0-beta-1-release-notes">FTPS Connector 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc1-release-notes">FTPS Connector 1.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc2-release-notes">FTPS Connector 1.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-release-notes">X12 and EDIFACT Modules Release Notes</a></li></ul></li>
+<li><i></i><a href="/release-notes/b2b-portal-july-2015-beta-release-notes">B2B Portal July 2015 Beta Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc1-release-notes">AS2 Connector 2.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-2.0.0-rc2-release-notes">AS2 Connector 2.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/as2-connector-1.0.0-release-notes">AS2 Connector 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-1-release-notes">EDI Module 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/edi-module-1.0-beta-2-release-notes">EDI Module 1.0-beta-2 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0-beta-1-release-notes">FTPS Connector 1.0-beta-1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc1-release-notes">FTPS Connector 1.0.0-RC1 Release Notes</a></li><li><i></i><a href="/release-notes/ftps-connector-1.0.0-rc2-release-notes">FTPS Connector 1.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-1.0.0-rc2-release-notes">X12 and EDIFACT Modules 1.0.0-RC2 Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-1.0.0-rc-release-notes">X12 and EDIFACT Modules 1.0.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/x12-edifact-modules-1.0-beta-3-release-notes">X12 and EDIFACT Modules 1.0-beta-3 Release Notes</a></li></ul></li>
 <li class="expanded">
 <i></i>
 <a href="/release-notes/anypoint-connector-devkit-release-notes">Anypoint Connector DevKit Release Notes</a><ul style="display: block;">
@@ -901,48 +901,107 @@
      <li> <p>Extend from <strong>ConnectorTestCase</strong>. This class brings up methods such <strong>initializeTestRunMessage</strong>,&nbsp;<strong>runFlowAndGetPayload,</strong> or <strong>upsertOnTestRunMessage</strong>. These methods let you load test data through Spring beans, run a flow, get the resulting payload, and add data to a common test data container, respectively.</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">org.mule.modules.salesforce.automation.testcases</span>;
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">import</span> <span class="include">org.mule.modules.tests.ConnectorTestCase</span>;
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="directive">public</span> <span class="directive">abstract</span> <span class="type">class</span> <span class="class">AbstractTestCase</span> <span class="directive">extends</span> ConnectorTestCase {
-}</code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+             <td class="code"><pre><span class="keyword">package</span> <span class="namespace">org.mule.modules.salesforce.automation.testcases</span>;
+       <span class="keyword">import</span> <span class="include">org.mule.modules.tests.ConnectorTestCase</span>;
+       <span class="directive">public</span> <span class="directive">abstract</span> <span class="type">class</span> <span class="class">AbstractTestCase</span> <span class="directive">extends</span> ConnectorTestCase {
+}</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Load test data and set up the test context by loading test data through&nbsp;<strong>initializeTestRunMessage(springName)</strong>, running a particular flow by means of&nbsp;<strong>runFlowAndGetPayload(flowName)</strong>, and keeping the resulting value with <strong>upsertOnTestRunMessage(key,value)</strong>. These methods require a Spring bean definition file, normally called <strong>automationSpringBeans.xml</strong> and a Mule application flows file, normally called <strong>automation-test-flows.xml</strong>.</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">org.mule.modules.salesforce.automation.testcases</span>;
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+             <td class="code"><pre><span class="keyword">package</span> <span class="namespace">org.mule.modules.salesforce.automation.testcases</span>;
 <span class="error">&nbsp;</span>...
 public <span class="type">class</span> <span class="class">AbortJobTestCases</span> <span class="directive">extends</span> AbstractTestCase {
 <span class="annotation">@Before</span>
 <span class="directive">public</span> <span class="type">void</span> setUp() <span class="directive">throws</span> <span class="exception">Exception</span> {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>initializeTestRunMessage(<span class="string"><span class="delimiter">"</span><span class="content">abortJobTestData</span><span class="delimiter">"</span></span>);
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>JobInfo jobInfo = runFlowAndGetPayload(<span class="string"><span class="delimiter">"</span><span class="content">create-job</span><span class="delimiter">"</span></span>);
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>upsertOnTestRunMessage(<span class="string"><span class="delimiter">"</span><span class="content">jobId</span><span class="delimiter">"</span></span>, jobInfo.getId());
+      initializeTestRunMessage(<span class="string"><span class="delimiter">"</span><span class="content">abortJobTestData</span><span class="delimiter">"</span></span>);
+      JobInfo jobInfo = runFlowAndGetPayload(<span class="string"><span class="delimiter">"</span><span class="content">create-job</span><span class="delimiter">"</span></span>);
+      upsertOnTestRunMessage(<span class="string"><span class="delimiter">"</span><span class="content">jobId</span><span class="delimiter">"</span></span>, jobInfo.getId());
 }
-<span class="error">&nbsp;</span>...</code></pre> 
+<span class="error">&nbsp;</span>...</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Execute the test, where different flows can be called by means of <strong>runFlowAndGetPayload(flowName)</strong>,&nbsp;<strong>runFlowAndExpectProperty(flowName, propertyName, expectedObject),</strong> or&nbsp;<strong>runFlowWithPayloadAndExpect(flowName, expectedObject, payload)</strong>, among other available methods.</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Category</span>({RegressionTests.class})
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td> 
+             <td class="code"><pre><span class="annotation">@Category</span>({RegressionTests.class})
 <span class="annotation">@Test</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="directive">public</span> <span class="type">void</span> testAbortJob() {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">try</span> {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>JobInfo jobInfo = runFlowAndGetPayload(<span class="string"><span class="delimiter">"</span><span class="content">abort-job</span><span class="delimiter">"</span></span>);
+  <span class="directive">public</span> <span class="type">void</span> testAbortJob() {
+  <span class="keyword">try</span> {
+     JobInfo jobInfo = runFlowAndGetPayload(<span class="string"><span class="delimiter">"</span><span class="content">abort-job</span><span class="delimiter">"</span></span>);
 <span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>assertEquals(com.sforce.async.JobStateEnum.Aborted,<span class="error">&nbsp;</span> jobInfo.getState());
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>assertEquals(getTestRunMessageValue(<span class="string"><span class="delimiter">"</span><span class="content">jobId</span><span class="delimiter">"</span></span>).toString(), jobInfo.getId());<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>assertEquals(getTestRunMessageValue(<span class="string"><span class="delimiter">"</span><span class="content">concurrencyMode</span><span class="delimiter">"</span></span>).toString(),jobInfo.getConcurrencyMode().toString());
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>assertEquals(getTestRunMessageValue(<span class="string"><span class="delimiter">"</span><span class="content">operation</span><span class="delimiter">"</span></span>).toString(),jobInfo.getOperation().toString());
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>assertEquals(getTestRunMessageValue(<span class="string"><span class="delimiter">"</span><span class="content">contentType</span><span class="delimiter">"</span></span>).toString(),
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>jobInfo.getContentType().toString());
+    assertEquals(com.sforce.async.JobStateEnum.Aborted,<span class="error">&nbsp;</span> jobInfo.getState());
+    assertEquals(getTestRunMessageValue(<span class="string"><span class="delimiter">"</span><span class="content">jobId</span><span class="delimiter">"</span></span>).toString(), jobInfo.getId());<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>
+    assertEquals(getTestRunMessageValue(<span class="string"><span class="delimiter">"</span><span class="content">concurrencyMode</span><span class="delimiter">"</span></span>).toString(),jobInfo.getConcurrencyMode().toString());
+    assertEquals(getTestRunMessageValue(<span class="string"><span class="delimiter">"</span><span class="content">operation</span><span class="delimiter">"</span></span>).toString(),jobInfo.getOperation().toString());
+    assertEquals(getTestRunMessageValue(<span class="string"><span class="delimiter">"</span><span class="content">contentType</span><span class="delimiter">"</span></span>).toString(),
+    jobInfo.getContentType().toString());
 <span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>} <span class="keyword">catch</span> (<span class="exception">Exception</span> e) {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>fail(ConnectorTestUtils.getStackTrace(e));
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
-}</code></pre> 
+    } <span class="keyword">catch</span> (<span class="exception">Exception</span> e) {
+        fail(ConnectorTestUtils.getStackTrace(e));
+    }
+  }
+}</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
       </div> </li> 
     </ol> 
@@ -958,20 +1017,41 @@ public <span class="type">class</span> <span class="class">AbortJobTestCases</sp
      <li> <p>On the one hand, we have the test data in a Spring bean file, which normally looks like this:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;beans</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">...</span><span class="tag">&gt;</span>
+        <pre class="CodeRay highlight"><code data-lang="xml">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+</pre></td> 
+             <td class="code"><pre><span class="tag">&lt;beans</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
+<span class="attribute-name">...</span><span class="tag">&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;context:property-placeholder</span> <span class="attribute-name">location</span>=<span class="string"><span class="delimiter">"</span><span class="content">${CREDENTIALS}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;context:property-placeholder</span> <span class="attribute-name">location</span>=<span class="string"><span class="delimiter">"</span><span class="content">${CREDENTIALS}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;util:map</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">abortJobTestData</span><span class="delimiter">"</span></span> <span class="attribute-name">map-class</span>=<span class="string"><span class="delimiter">"</span><span class="content">java.util.HashMap</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">key-type</span>=<span class="string"><span class="delimiter">"</span><span class="content">java.lang.String</span><span class="delimiter">"</span></span> <span class="attribute-name">value-type</span>=<span class="string"><span class="delimiter">"</span><span class="content">java.lang.Object</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">concurrencyMode</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Parallel</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">contentType</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">XML</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">externalIdFieldName</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Id</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">operation</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">insert</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/util:map&gt;</span>
-<span class="tag">&lt;/beans&gt;</span></code></pre> 
+        <span class="tag">&lt;util:map</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">abortJobTestData</span><span class="delimiter">"</span></span> <span class="attribute-name">map-class</span>=<span class="string"><span class="delimiter">"</span><span class="content">java.util.HashMap</span><span class="delimiter">"</span></span> <span class="attribute-name">key-type</span>=<span class="string"><span class="delimiter">"</span><span class="content">java.lang.String</span><span class="delimiter">"</span></span> <span class="attribute-name">value-type</span>=<span class="string"><span class="delimiter">"</span><span class="content">java.lang.Object</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+              <span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">type</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+              <span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">concurrencyMode</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Parallel</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+              <span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">contentType</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">XML</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+              <span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">externalIdFieldName</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Id</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+              <span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">operation</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">insert</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/util:map&gt;</span>
+<span class="tag">&lt;/beans&gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
       </div> 
       <div class="paragraph"> 
@@ -982,19 +1062,37 @@ public <span class="type">class</span> <span class="class">AbortJobTestCases</sp
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span><span class="attribute-name">...</span><span class="tag">&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span><span class="attribute-name">...</span><span class="tag">&gt;</span>
 <span class="tag">&lt;context:property-placeholder</span> <span class="attribute-name">location</span>=<span class="string"><span class="delimiter">"</span><span class="content">CREDENTIALS</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;sfdc:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">configDocName</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${config.username}</span><span class="delimiter">"</span></span> <span class="attribute-name">...</span><span class="tag">&gt;</span>
 &nbsp;
 <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">create-job</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">create-job</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sfdc:create-job</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Create job</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.type]</span><span class="delimiter">"</span></span> <span class="attribute-name">concurrencyMode</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.concurrencyMode]</span><span class="delimiter">"</span></span> <span class="attribute-name">contentType</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.contentType]</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">externalIdFieldName</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.externalIdFieldName]</span><span class="delimiter">"</span></span> <span class="attribute-name">operation</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.operation]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/sfdc:create-job&gt;</span>
+     <span class="tag">&lt;sfdc:create-job</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Create job</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.type]</span><span class="delimiter">"</span></span> <span class="attribute-name">concurrencyMode</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.concurrencyMode]</span><span class="delimiter">"</span></span> <span class="attribute-name">contentType</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.contentType]</span><span class="delimiter">"</span></span> <span class="attribute-name">externalIdFieldName</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.externalIdFieldName]</span><span class="delimiter">"</span></span> <span class="attribute-name">operation</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.operation]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/sfdc:create-job&gt;</span>
 <span class="tag">&lt;/flow&gt;</span>
 <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">abort-job</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">abort-job</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sfdc:abort-job</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Abort job</span><span class="delimiter">"</span></span> <span class="attribute-name">jobId</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.jobId]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sfdc:abort-job&gt;</span>
-<span class="tag">&lt;/flow&gt;</span></code></pre> 
+       <span class="tag">&lt;sfdc:abort-job</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Salesforce</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Abort job</span><span class="delimiter">"</span></span> <span class="attribute-name">jobId</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.jobId]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+       <span class="tag">&lt;/sfdc:abort-job&gt;</span>
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1034,12 +1132,27 @@ public <span class="type">class</span> <span class="class">AbortJobTestCases</sp
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;groupId&gt;</span>org.mule.modules<span class="tag">&lt;/groupId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;artifactId&gt;</span>mule-connector-test<span class="tag">&lt;/artifactId&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;version&gt;</span>2.0.7<span class="tag">&lt;/version&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;scope&gt;</span>test<span class="tag">&lt;/scope&gt;</span>
-<span class="tag">&lt;/dependency&gt;</span></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;dependency&gt;</span>
+       <span class="tag">&lt;groupId&gt;</span>org.mule.modules<span class="tag">&lt;/groupId&gt;</span>
+       <span class="tag">&lt;artifactId&gt;</span>mule-connector-test<span class="tag">&lt;/artifactId&gt;</span>
+       <span class="tag">&lt;version&gt;</span>2.0.7<span class="tag">&lt;/version&gt;</span>
+       <span class="tag">&lt;scope&gt;</span>test<span class="tag">&lt;/scope&gt;</span>
+<span class="tag">&lt;/dependency&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1050,11 +1163,25 @@ public <span class="type">class</span> <span class="class">AbortJobTestCases</sp
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java">...
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+          <td class="code"><pre>...
 initializeTestRunMessage(<span class="string"><span class="delimiter">"</span><span class="content">sampleTestCaseData</span><span class="delimiter">"</span></span>);
 JobInfo jobInfo = runFlowAndGetPayload(<span class="string"><span class="delimiter">"</span><span class="content">create-job</span><span class="delimiter">"</span></span>);
 upsertOnTestRunMessage(<span class="string"><span class="delimiter">"</span><span class="content">jobId</span><span class="delimiter">"</span></span>, jobInfo.getId());
-...</code></pre> 
+...</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1065,8 +1192,19 @@ upsertOnTestRunMessage(<span class="string"><span class="delimiter">"</span><spa
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java">...
-JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">Id</span><span class="delimiter">"</span></span>, ContentType.XML, ConcurrencyMode.Parallel);</code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+</pre></td> 
+          <td class="code"><pre>...
+JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">Id</span><span class="delimiter">"</span></span>, ContentType.XML, ConcurrencyMode.Parallel);</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1083,14 +1221,35 @@ JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"
      <li> <p>If test objects are simple (String, Integers, etc.), just add to the test itself as in:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java">JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">Id</span><span class="delimiter">"</span></span>, ContentType.XML, ConcurrencyMode.Parallel);</code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+</pre></td> 
+             <td class="code"><pre>JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"><span class="delimiter">"</span><span class="content">Account</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">Id</span><span class="delimiter">"</span></span>, ContentType.XML, ConcurrencyMode.Parallel);</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>If test objects are complex such as Domain objects, implement a <strong>DataBuilder</strong> and use it as follows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">List</span>&lt;<span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Object</span>&gt;&gt; batchPayload = DataBuilder.createdBatchPayload();
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>batchInfo = connector.createBatch(jobInfo, batchPayload);</code></pre> 
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+</pre></td> 
+             <td class="code"><pre><span class="predefined-type">List</span>&lt;<span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Object</span>&gt;&gt; batchPayload = DataBuilder.createdBatchPayload();
+    batchInfo = connector.createBatch(jobInfo, batchPayload);</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
       </div> 
       <div class="paragraph"> 
@@ -1098,22 +1257,47 @@ JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"
       </div> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">import</span> ...
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+</pre></td> 
+             <td class="code"><pre><span class="keyword">import</span> ...
 <span class="include">public</span> <span class="include">class</span> <span class="include">TestDataBuilder</span> {
 <span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="include">public</span> <span class="include">TestDataBuilder</span>(){
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="include">ApplicationContext</span> <span class="include">context</span> = <span class="include">new</span> <span class="include">ClassPathXmlApplicationContext</span>(<span class="include">automationSpringBeans.xml</span>);
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
+      <span class="include">public</span> <span class="include">TestDataBuilder</span>(){
+          <span class="include">ApplicationContext</span> <span class="include">context</span> = <span class="include">new</span> <span class="include">ClassPathXmlApplicationContext</span>(<span class="include">automationSpringBeans.xml</span>);
+      }
 <span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="directive">public</span> <span class="directive">static</span> CustomObjectType createCustomTestData(){
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>CustomObjectType ret = (CustomObjectType) context.getBean(<span class="string"><span class="delimiter">"</span><span class="content">customObject</span><span class="delimiter">"</span></span>);
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">return</span> ret;
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
+      <span class="directive">public</span> <span class="directive">static</span> CustomObjectType createCustomTestData(){
+          CustomObjectType ret = (CustomObjectType) context.getBean(<span class="string"><span class="delimiter">"</span><span class="content">customObject</span><span class="delimiter">"</span></span>);
+          <span class="keyword">return</span> ret;
+      }
 <span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="directive">public</span> <span class="type">void</span> shutDownDataBuilder(){
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>((ConfigurableApplicationContext)context).close();
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
-}</code></pre> 
+      <span class="directive">public</span> <span class="type">void</span> shutDownDataBuilder(){
+      ((ConfigurableApplicationContext)context).close();
+      }
+}</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
       </div> </li> 
     </ul> 
@@ -1131,20 +1315,43 @@ JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">my-connector</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>)
+      <pre class="CodeRay highlight"><code data-lang="java">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+</pre></td> 
+           <td class="code"><pre><span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">my-connector</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnector</span>
-{<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="annotation">@Configurable</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="predefined-type">String</span> token;
-<span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="annotation">@Config</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>ConnectorConfiguration config;
-<span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="annotation">@Processor</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="directive">public</span> <span class="predefined-type">String</span> myProcessor(<span class="predefined-type">String</span> param) {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>...
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
-}</code></pre> 
+{
+    <span class="annotation">@Configurable</span>
+    <span class="predefined-type">String</span> token;
+
+    <span class="annotation">@Config</span>
+    ConnectorConfiguration config;
+
+    <span class="annotation">@Processor</span>
+    <span class="directive">public</span> <span class="predefined-type">String</span> myProcessor(<span class="predefined-type">String</span> param) {
+    ...
+    }
+}</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1155,31 +1362,65 @@ JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">my-connector</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>)
+      <pre class="CodeRay highlight"><code data-lang="java">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+</pre></td> 
+           <td class="code"><pre><span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">my-connector</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnector</span>
-{<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="annotation">@Config</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>ConnectorConfiguration config;
-<span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="annotation">@Processor</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="directive">public</span> <span class="predefined-type">String</span> myProcessor(<span class="predefined-type">String</span> param) {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>...
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
+{
+    <span class="annotation">@Config</span>
+    ConnectorConfiguration config;
+
+    <span class="annotation">@Processor</span>
+    <span class="directive">public</span> <span class="predefined-type">String</span> myProcessor(<span class="predefined-type">String</span> param) {
+    ...
+    }
 }
 <span class="error">&nbsp;</span>
 <span class="error">&nbsp;</span>
 <span class="annotation">@Configuration</span>(configElementName=<span class="string"><span class="delimiter">"</span><span class="content">config</span><span class="delimiter">"</span></span>,friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">Configuration</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">ConnectorConfiguration</span>
-{<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="annotation">@Configurable</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="predefined-type">String</span> token;
-<span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="comment">// More Configurable Fields</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">…</span>
-<span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span>
-}</code></pre> 
+{
+    <span class="annotation">@Configurable</span>
+    <span class="predefined-type">String</span> token;
+
+
+    <span class="comment">// More Configurable Fields</span>
+    <span class="error">…</span>
+
+
+}</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1202,15 +1443,33 @@ JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Inject</span>
+      <pre class="CodeRay highlight"><code data-lang="java">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+           <td class="code"><pre><span class="annotation">@Inject</span>
 <span class="annotation">@Processor</span>
 <span class="directive">public</span> <span class="type">boolean</span> parameterInjectionModule(MuleEvent event, MuleMessage message)
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="directive">throws</span> <span class="exception">Exception</span> {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">if</span>(event == <span class="predefined-constant">null</span> || message == <span class="predefined-constant">null</span>) {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">"</span><span class="content">MuleEvent or MuleMessage cannot be null</span><span class="delimiter">"</span></span>);
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">return</span> <span class="predefined-constant">true</span>;
-}</code></pre> 
+    <span class="directive">throws</span> <span class="exception">Exception</span> {
+    <span class="keyword">if</span>(event == <span class="predefined-constant">null</span> || message == <span class="predefined-constant">null</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">"</span><span class="content">MuleEvent or MuleMessage cannot be null</span><span class="delimiter">"</span></span>);
+    }
+    <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+}</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1221,14 +1480,31 @@ JobInfo jobInfo = connector.createJob(OperationEnum.insert, <span class="string"
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Processor</span>
+      <pre class="CodeRay highlight"><code data-lang="java">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+           <td class="code"><pre><span class="annotation">@Processor</span>
 <span class="directive">public</span> <span class="type">boolean</span> parameterInjectionModule(MuleEvent event, MuleMessage message)
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="directive">throws</span> <span class="exception">Exception</span> {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">if</span>(event == <span class="predefined-constant">null</span> || message == <span class="predefined-constant">null</span>) {
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">"</span><span class="content">MuleEvent or MuleMessage cannot be null</span><span class="delimiter">"</span></span>);
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">return</span> <span class="predefined-constant">true</span>;
-}</code></pre> 
+    <span class="directive">throws</span> <span class="exception">Exception</span> {
+    <span class="keyword">if</span>(event == <span class="predefined-constant">null</span> || message == <span class="predefined-constant">null</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">"</span><span class="content">MuleEvent or MuleMessage cannot be null</span><span class="delimiter">"</span></span>);
+    }
+    <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+}</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
