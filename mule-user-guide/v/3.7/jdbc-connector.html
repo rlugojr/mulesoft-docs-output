@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -1045,11 +1045,11 @@
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query Timeout</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><em>(Applies to outbound JDBC endpoints only)</em>. Specify how long (in ms) the JDBC endpoint waits for the SQL statement to return a response.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><em>(Applies to outbound JDBC endpoints only.)</em> Specify how long (in ms) the JDBC endpoint waits for the SQL statement to return a response.</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Polling Frequency</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><em>(Applies to inbound JDBC endpoints only)</em>. Specify how often to check for incoming messages. Default value is <strong>1000</strong> ms.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><em>(Applies to inbound JDBC endpoints only.)</em> Specify how often to check for incoming messages. Default value is <strong>1000</strong> ms.</p></td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1150,8 +1150,12 @@
    <div class="paragraph"> 
     <p>You can enter SQL queries for this endpoint, which consist of the following:</p> 
    </div> 
-   <div class="paragraph"> 
-    <p>• A key<br> • A value<br> • A value reference (optional)</p> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>A key</p> </li> 
+     <li> <p>A value</p> </li> 
+     <li> <p>A value reference (optional)</p> </li> 
+    </ul> 
    </div> 
   </div> 
  </div> 
@@ -1164,8 +1168,8 @@
     <li> <p><strong>DataMapper and iterative execution of SQL Statement:</strong>&nbsp;If you use a DataMapper to feed an ArrayList into a JDBC endpoint in your application, note that Mule executes your JDBC statement once for every item in the ArrayList that emerged from the DataMapper. This is&nbsp;expected behavior: when the payload is a List and the SQL statement contains parameters, Mule assumes the list contains the values to be inserted and employs the BatchUpdateSqlStatementStrategy. To more closely examine this behavior, access the following classes:</p> 
      <div class="ulist"> 
       <ul> 
-       <li> <p>com.mulesoft.mule.transport.jdbc.sqlstrategy.EESqlStatementStrategyFactory (creates a SqlStatementStrategy based on the type of SQL and the payload)</p> </li> 
-       <li> <p>com.mulesoft.mule.transport.jdbc.sqlstrategy.BatchUpdateSqlStatementStrategy</p> </li> 
+       <li> <p><code>com.mulesoft.mule.transport.jdbc.sqlstrategy.EESqlStatementStrategyFactory</code> (creates a SqlStatementStrategy based on the type of SQL and the payload)</p> </li> 
+       <li> <p><code>com.mulesoft.mule.transport.jdbc.sqlstrategy.BatchUpdateSqlStatementStrategy</code></p> </li> 
       </ul> 
      </div> </li> 
    </ul> 

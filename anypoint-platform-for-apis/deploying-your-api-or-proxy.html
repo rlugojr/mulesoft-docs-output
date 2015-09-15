@@ -197,7 +197,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -1009,14 +1009,14 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#on-prem-api-gateway-bcff6" role="tab" data-toggle="tab">On-Prem API Gateway</a></li> 
-      <li><a href="#on-prem-api-gateway-autodeploy-97e05" role="tab" data-toggle="tab">On-Prem API Gateway Autodeploy</a></li> 
-      <li><a href="#cloud-api-gateway-automatic-0f67c" role="tab" data-toggle="tab">Cloud API Gateway - Automatic</a></li> 
-      <li><a href="#cloud-api-gateway-manual-8d63d" role="tab" data-toggle="tab">Cloud API Gateway - Manual</a></li> 
+      <li class="active"><a href="#on-prem-api-gateway-06d85" role="tab" data-toggle="tab">On-Prem API Gateway</a></li> 
+      <li><a href="#on-prem-api-gateway-autodeploy-65d08" role="tab" data-toggle="tab">On-Prem API Gateway Autodeploy</a></li> 
+      <li><a href="#cloud-api-gateway-automatic-04950" role="tab" data-toggle="tab">Cloud API Gateway - Automatic</a></li> 
+      <li><a href="#cloud-api-gateway-manual-35329" role="tab" data-toggle="tab">Cloud API Gateway - Manual</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="on-prem-api-gateway-bcff6"> 
+     <div class="tab-pane in active fade no-padding" id="on-prem-api-gateway-06d85"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>If it is not already running, start your API Gateway in the command line by running:</p> </li> 
@@ -1108,7 +1108,7 @@
        <p>If you wish to update your application at runtime, you can drop a new&nbsp;.zip&nbsp;version of the app into&nbsp;the <code>&lt;MULE_HOME&gt;/apps</code>&nbsp;directory. The API Gateway will detect this as an existing app update and will ensure a clean redeployment of the application.</p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="on-prem-api-gateway-autodeploy-97e05"> 
+     <div class="tab-pane fade no-padding" id="on-prem-api-gateway-autodeploy-65d08"> 
       <div class="admonitionblock note"> 
        <table> 
         <tbody> 
@@ -1222,7 +1222,7 @@
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="cloud-api-gateway-automatic-0f67c"> 
+     <div class="tab-pane fade no-padding" id="cloud-api-gateway-automatic-04950"> 
       <div class="admonitionblock warning"> 
        <table> 
         <tbody> 
@@ -1291,7 +1291,7 @@
        </table> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="cloud-api-gateway-manual-8d63d"> 
+     <div class="tab-pane fade no-padding" id="cloud-api-gateway-manual-35329"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p><a href="https://cloudhub.io/login.html">Log in</a> to your CloudHub account.</p> </li> 
@@ -1398,12 +1398,12 @@ anypoint.platform.client_secret="[your organization's unique client secret]"</pr
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#on-prem-mule-esb-6f117" role="tab" data-toggle="tab">On-Prem Mule ESB</a></li> 
-      <li><a href="#cloud-mule-esb-500da" role="tab" data-toggle="tab">Cloud Mule ESB</a></li> 
+      <li class="active"><a href="#on-prem-mule-esb-71564" role="tab" data-toggle="tab">On-Prem Mule ESB</a></li> 
+      <li><a href="#cloud-mule-esb-5f157" role="tab" data-toggle="tab">Cloud Mule ESB</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="on-prem-mule-esb-6f117"> 
+     <div class="tab-pane in active fade no-padding" id="on-prem-mule-esb-71564"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>If it is not already running, start Mule in the command line by running: Windows: <code>&lt;MULE_HOME&gt;\bin\mule</code> Unix: &lt;`MULE_HOME&gt;/bin/mule`</p> </li> 
@@ -1494,7 +1494,7 @@ anypoint.platform.client_secret="[your organization's unique client secret]"</pr
        </table> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="cloud-mule-esb-500da"> 
+     <div class="tab-pane fade no-padding" id="cloud-mule-esb-5f157"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p><a href="https://cloudhub.io/login.html">Log in</a> to your CloudHub account.</p> </li> 

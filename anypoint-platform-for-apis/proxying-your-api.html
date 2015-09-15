@@ -197,7 +197,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -914,7 +914,7 @@
      </div> </li> 
     <li> <p>Click <strong>Configure endpoint</strong>&nbsp;in the <strong>API Status</strong> section.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/api+status+new+empty.png" alt="api+status+new+empty"></span></p> 
+      <p><span class="image"><img src="./_images/api-status-new-empty.png" alt="api-status-new-empty"></span></p> 
      </div> </li> 
     <li> <p>Configure parameters as follows:</p> 
      <div class="paragraph"> 
@@ -959,20 +959,26 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#cloudhub-automatic-f8ae1" role="tab" data-toggle="tab">CloudHub - Automatic</a></li> 
-      <li><a href="#manual-on-premises-or-cloudhub-67cff" role="tab" data-toggle="tab">Manual- On Premises or CloudHub</a></li> 
-      <li><a href="#automatic-on-premises-0683a" role="tab" data-toggle="tab">Automatic - On-Premises</a></li> 
+      <li class="active"><a href="#cloudhub-automatic-2087b" role="tab" data-toggle="tab">CloudHub - Automatic</a></li> 
+      <li><a href="#manual-on-premises-or-cloudhub-cf4eb" role="tab" data-toggle="tab">Manual- On Premises or CloudHub</a></li> 
+      <li><a href="#automatic-on-premises-d55d9" role="tab" data-toggle="tab">Automatic - On-Premises</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="cloudhub-automatic-f8ae1"> 
+     <div class="tab-pane in active fade no-padding" id="cloudhub-automatic-2087b"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
-        <li> <p>In the API Status section of the API version page, click <strong>Deploy proxy</strong> to deploy your proxy application to CloudHub.<br> <span class="image"><img src="./_images/ApiStatus20qa1.png" alt="ApiStatus20qa1"></span></p> </li> 
-        <li> <p>In the deploy menu, pick an application name that becomes the access name at cloudhub.io, choose an environment, and if needed, change the API Gateway version. By default, Mule uses the API name you chose when you created your API, but you can change the CloudHub application name as needed.<br> <span class="image"><img src="./_images/DeployProxyAccess20qa.png" alt="DeployProxyAccess20qa"></span></p> </li> 
+        <li> <p>In the API Status section of the API version page, click <strong>Deploy proxy</strong> to deploy your proxy application to CloudHub.</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/ApiStatus20qa1.png" alt="ApiStatus20qa1"></span></p> 
+         </div> </li> 
+        <li> <p>In the deploy menu, pick an application name that becomes the access name at cloudhub.io, choose an environment, and if needed, change the API Gateway version. By default, Mule uses the API name you chose when you created your API, but you can change the CloudHub application name as needed.</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/DeployProxyAccess20qa.png" alt="DeployProxyAccess20qa"></span></p> 
+         </div> </li> 
         <li> <p>The status of the API deployment is indicated by the marker in the API Status section of the API version page. While the app is starting, a spinner appears. After the API starts successfully, the light turns green.</p> 
          <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/api+status+new+configured+green.png" alt="api+status+new+configured+green"></span></p> 
+          <p><span class="image"><img src="./_images/api-status-new-conf-green.png" alt="api-status-new-conf-green"></span></p> 
          </div> 
          <div class="admonitionblock note"> 
           <table> 
@@ -990,10 +996,13 @@
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="manual-on-premises-or-cloudhub-67cff"> 
+     <div class="tab-pane fade no-padding" id="manual-on-premises-or-cloudhub-cf4eb"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
-        <li> <p>Click <strong>API Status</strong> &gt; <strong>Download proxy</strong>. Your API downloads by your browser as a .zip file. This .zip file is a deployable proxy application with all of the settings you have configured for your proxy. You can download the zip file for the latest or an earlier API Gateway version:<br> <span class="image"><img src="./_images/DownloadProxy20qa.png" alt="DownloadProxy20qa"></span></p> </li> 
+        <li> <p>Click <strong>API Status</strong> &gt; <strong>Download proxy</strong>. Your API downloads by your browser as a .zip file. This .zip file is a deployable proxy application with all of the settings you have configured for your proxy. You can download the zip file for the latest or an earlier API Gateway version:</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/DownloadProxy20qa.png" alt="DownloadProxy20qa"></span></p> 
+         </div> </li> 
         <li> <p>If needed, modify this zip file to adjust for port conflicts, use shared connector resources, or include custom code for logic that you wish to add to the proxy.</p> </li> 
         <li> <p>Now it’s time to <a href="/anypoint-platform-for-apis/deploying-your-api-or-proxy">deploy your proxy applicatio</a>n to the API Gateway.</p> 
          <div class="admonitionblock tip"> 
@@ -1007,12 +1016,12 @@
           </table> 
          </div> 
          <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/api+status+new+configured+green.png" alt="api+status+new+configured+green"></span></p> 
+          <p><span class="image"><img src="./_images/api-status-new-conf-green.png" alt="api-status-new-conf-green"></span></p> 
          </div> </li> 
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="automatic-on-premises-0683a"> 
+     <div class="tab-pane fade no-padding" id="automatic-on-premises-d55d9"> 
       <div class="admonitionblock note"> 
        <table> 
         <tbody> 
@@ -1025,26 +1034,28 @@
       </div> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
-        <li> <p>Register your server in Anypoint Management Center. To register your server, see the simplified instructions below, or the full instructions in the <strong>Add a Server</strong> section of <a href="/anypoint-platform-for-apis/copy-of-managing-applications-and-servers-in-the-cloud-and-on-premises">Managing Applications and Domains in the Cloud and On-Premises</a>.</p> 
-         <div class="paragraph"> 
-          <p>Register a server</p> 
-         </div> </li> 
+        <li> <p>Register your server in Anypoint Management Center. To register your server, see the simplified instructions below, or the full instructions in the <strong>Add a Server</strong> section of <a href="/anypoint-platform-for-apis/copy-of-managing-applications-and-servers-in-the-cloud-and-on-premises">Managing Applications and Domains in the Cloud and On-Premises</a>.</p> </li> 
+       </ol> 
+      </div> 
+      <div class="paragraph"> 
+       <p><strong>Register a Server</strong></p> 
+      </div> 
+      <div class="olist arabic"> 
+       <ol class="arabic"> 
         <li> <p>In Anypoint Management Center, go to <strong>CloudHub</strong>.</p> </li> 
         <li> <p>Click the <strong>Servers</strong> tab, then <strong>Add Servers</strong>.</p> </li> 
         <li> <p>The Add Servers screen displays a command which includes&nbsp; <em>*token*</em> specifically generated for your gateway. Copy this token to your clipboard.</p> </li> 
         <li> <p>In the server where your gateway resides, open a terminal and go to the gateway’s&nbsp;<code>bin</code> directory.</p> </li> 
         <li> <p>Run the following command:</p> 
          <div class="paragraph"> 
-          <p>+ Where &nbsp;<code>&lt;token&gt;</code> is the token displayed in the Add Servers screen, and <code>&lt;server name&gt;</code> is the name you select for your server.</p> 
+          <p>Where &nbsp;<code>&lt;token&gt;</code> is the token displayed in the Add Servers screen, and <code>&lt;server name&gt;</code> is the name you select for your server.</p> 
          </div> </li> 
         <li> <p>Start your gateway.</p> </li> 
-        <li> <p>If your gateway is not running, start it.</p> 
-         <div class="literalblock"> 
-          <div class="content"> 
-           <pre>&nbsp;Start your gateway</pre> 
-          </div> 
-         </div> </li> 
+        <li> <p>If your gateway is not running, start it.</p> </li> 
        </ol> 
+      </div> 
+      <div class="paragraph"> 
+       <p><strong>Start your Gateway</strong></p> 
       </div> 
       <div class="paragraph"> 
        <p>Windows: ` &lt;MULE_HOME&gt;\bin\gateway.bat`</p> 
@@ -1109,12 +1120,12 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>either in the communication between the proxy and the client app&nbsp;</p> </li> 
-    <li> <p>or in the communication between the proxy and your API.&nbsp;</p> </li> 
+    <li> <p>Either in the communication between the proxy and the client app.</p> </li> 
+    <li> <p>In the communication between the proxy and your API.&nbsp;</p> </li> 
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/proxyHTTPS+on+two+stages.png" alt="proxyHTTPS+on+two+stages"></span></p> 
+   <p><span class="image"><img src="./_images/proxyHTTPS-on-two-stages.png" alt="proxyHTTPS-on-two-stages"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>Both of these require different steps to be implemented in your proxy, it’s implementation also depends on if you’re going to deploy it on premises or to CloudHub.</p> 
@@ -1124,7 +1135,7 @@
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>In the Configure Endpoint menu, select HTTPS as a <strong>scheme</strong>&nbsp;on the dropdown menu.</p> </li> 
-     <li> <p>The generated proxy will have an inbound HTTP Listener connector that references an alternative HTTP Listener Configuration element in the Domain that uses HTTPS. This configuration element exists in the default Domain file in the API Gateway, but it’s commented out.<br></p> 
+     <li> <p>The generated proxy had an inbound HTTP Listener connector that references an alternative HTTP Listener Configuration element in the Domain that uses HTTPS. This configuration element exists in the default Domain file in the API Gateway, but it’s commented out.</p> 
       <div class="olist loweralpha"> 
        <ol class="loweralpha" type="a"> 
         <li> <p>In your API Gateway folder, open the file&nbsp;<code>domains/api-gateway/mule-domain-config.xml</code>. It should look like this:</p> 
@@ -1178,7 +1189,7 @@
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>In the Configure Endpoint menu, select HTTPS as a <strong>scheme</strong>&nbsp;on the dropdown menu.</p> </li> 
-     <li> <p>You will then have to download the proxy and <a href="#modifying-a-proxy-application">Modifying a Proxy Application</a> it in order to include an HTTPS Configuration element inside the proxy itself, together with necessary HTTPS credentials.&nbsp;</p> </li> 
+     <li> <p>Download the proxy and <a href="#modify-a-proxy-application">Modify a Proxy Application</a> to include an HTTPS Configuration element inside the proxy itself, together with necessary HTTPS credentials.&nbsp;</p> </li> 
      <li> <p>Include the following lines of code into your proxy’s&nbsp;<code>proxy.xml</code> file, include this outside any of the flows:</p> 
       <div class="listingblock"> 
        <div class="content"> 
@@ -1195,11 +1206,11 @@
 6
 </pre></td> 
              <td class="code"><pre><span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">https-lc-0.0.0.0-8082</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">0.0.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8082</span><span class="delimiter">"</span></span> <span class="attribute-name">protocol</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTPS</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tls:context</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tls-context-config</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tls:key-store</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">[replace_with_path_to_keystore_file]</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">[replace_with_store_password]</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">keyPassword</span>=<span class="string"><span class="delimiter">"</span><span class="content">[replace_with_key_password]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tls:context&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/http:listener-config&gt;</span></pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tls:context</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tls-context-config</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;tls:key-store</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">[replace_with_path_to_keystore_file]</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">[replace_with_store_password]</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">keyPassword</span>=<span class="string"><span class="delimiter">"</span><span class="content">[replace_with_key_password]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/tls:context&gt;</span>
+<span class="tag">&lt;/http:listener-config&gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1231,14 +1242,14 @@
    <h3 id="https-with-the-api"><a class="anchor" href="#https-with-the-api"></a>HTTPS with the API</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>In the Configure Endpoint menu, provide an implementation URI to an HTTPS address. Having an HTTPS address specified here modifies the proxy so that it supports HTTPS. By default, it will take your JMV’s default HTTPS credentials and sign requests with those, if this is enough for your security needs then your proxy is ready to be deployed.</p> </li> 
-     <li> <p>If the default certificate of your JMV is not enough and you need to include other HTTPS credentials, then you must now download the proxy and <a href="#modifying-a-proxy-application">Modifying a Proxy Application</a> it to include your own credentials.</p> 
+     <li> <p>In the Configure Endpoint menu, provide an implementation URI to an HTTPS address. Having an HTTPS address specified here modifies the proxy so that it supports HTTPS. By default, it takes your JMV’s default HTTPS credentials and sign requests with those, if this is enough for your security needs then your proxy is ready to be deployed.</p> </li> 
+     <li> <p>If the default certificate of your JMV is not enough and you need to include other HTTPS credentials, then you must now download the proxy and <a href="#Modifying a Proxy Application">[Modifying a Proxy Application]</a> it to include your own credentials.</p> 
       <div class="admonitionblock note"> 
        <table> 
         <tbody> 
          <tr> 
           <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-          <td class="content"> If you want to be able to deploy it in the Anypoint Studio engine – mostly for debugging purposes –, you will need to create a&nbsp; <a href="#configuring-a-proxy-domain">Configuring a Proxy Domain</a> &nbsp;project in Studio and reference it, or download and import <a href="/docs/download/attachments/131039906/api-gateway.zip?version=1&amp;modificationDate=1438021121689">this domain file</a>. </td> 
+          <td class="content"> If you want to be able to deploy it in the Anypoint Studio engine – mostly for debugging purposes –, you need to create a&nbsp; <a href="#configuring-a-proxy-domain">Configuring a Proxy Domain</a> &nbsp;project in Studio and reference it, or download and import <a href="/docs/download/attachments/131039906/api-gateway.zip?version=1&amp;modificationDate=1438021121689">this domain file</a>. </td> 
          </tr> 
         </tbody> 
        </table> 
@@ -1279,7 +1290,7 @@
     <p>Here’s what a basic REST proxy application looks like in Anypoint Studio’s GUI.</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/rest+proxy.png" alt="rest+proxy"></span></p> 
+    <p><span class="image"><img src="./_images/rest-proxy.png" alt="rest-proxy"></span></p> 
    </div> 
    <div class="paragraph"> 
     <p>The following example shows an XML configuration of the above REST API proxy:</p> 
@@ -1452,7 +1463,7 @@ http.port=8081</pre></td>
     <p>Here’s what a basic SOAP proxy application looks like in Anypoint Studio’s GUI.</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/soap+proxy.png" alt="soap+proxy"></span></p> 
+    <p><span class="image"><img src="./_images/soap-proxy.png" alt="soap-proxy"></span></p> 
    </div> 
    <div class="paragraph"> 
     <p>Here is the XML configuration of a basic SOAP API proxy.</p> 
@@ -1642,7 +1653,7 @@ wsdl.uri=http://baseUri.com/?wsdl</pre></td>
     <p>Here’s what a basic RAML proxy application looks like in Anypoint Studio’s GUI.</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/raml+proxy.png" alt="raml+proxy"></span></p> 
+    <p><span class="image"><img src="./_images/raml-proxy.png" alt="raml-proxy"></span></p> 
    </div> 
    <div class="paragraph"> 
     <p>Here is the XML configuration of a basic RAML API proxy.</p> 
@@ -1803,7 +1814,7 @@ raml.location=api.raml</pre></td>
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="modifying-a-proxy-application"><a class="anchor" href="#modifying-a-proxy-application"></a>Modifying a Proxy Application</h2> 
+ <h2 id="modify-a-proxy-application"><a class="anchor" href="#modify-a-proxy-application"></a>Modify a Proxy Application</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>For most cases, the auto-generated proxy should be good for deploying as it comes out of the box. However, you may wish to modify it to apply HTTPS credentials &nbsp;or to add additional functionality to the proxy with your own code. For example, you may want to log data to a file or send it to your Splunk account with the Anypoint Splunk Connector. You can modify the proxy application to perform this additional functionality, provided that you leave its essential structures in place.</p> 
@@ -1813,7 +1824,7 @@ raml.location=api.raml</pre></td>
     <li> <p>In Studio, select <strong>File</strong> &gt; <strong>Import</strong>.</p> </li> 
     <li> <p>In the Import dialog, expand the <strong>Mule</strong> node, and select <strong>Anypoint Studio Project from External Location</strong>. Click <strong>Next</strong>.</p> </li> 
     <li> <p>In the <strong>Project Root</strong> field, navigate to the proxy folder that you just downloaded from the Anypoint Platform.</p> </li> 
-    <li> <p>Edit the project <strong>Name</strong> to be unique, then select the <strong>API Gateway runtime</strong> from the Server Runtime dropdown. Don’t have it installed? See <a href="/anypoint-platform-for-apis/configuring-an-api-gateway">the instructions</a>.</p> </li> 
+    <li> <p>Edit the project <strong>Name</strong> to be unique, then select the <strong>API Gateway runtime</strong> from the Server Runtime dropdown. Don’t have it installed? See <a href="/anypoint-platform-for-apis/configuring-an-api-gateway">Configuring an API Gateway</a>.</p> </li> 
     <li> <p>Click <strong>Finish</strong>.</p> </li> 
    </ol> 
   </div> 
@@ -1825,13 +1836,13 @@ raml.location=api.raml</pre></td>
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
-      <td class="content"> When you load your proxy, Studio will display a message about a missing listener configuration, this is because the connector configuration is hosted in a domain – which is an abstraction useful for <a href="/mule-user-guide/v/3.7/shared-resources">sharing resources</a> between apps – that resides in CloudHub and in the on-premises Gateway. As this domain is not accessible in Anypoint Studio, you should build a domain project with the same name in order to be able to launch your app in studio. Follow the steps in the section below to achieve this. </td> 
+      <td class="content"> When you load your proxy, Studio displays a message about a missing listener configuration, this is because the connector configuration is hosted in a domain – which is an abstraction useful for <a href="/mule-user-guide/v/3.7/shared-resources">sharing resources</a> between apps – that resides in CloudHub and in the on-premises Gateway. As this domain is not accessible in Anypoint Studio, you should build a domain project with the same name in order to be able to launch your app in studio. Follow the steps in the section below to achieve this. </td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>When you’re done, you can export your project and then deploy it either on premises or to CloudHub. Keep in mind that you will only be exporting and deploying your proxy app, not the domain that you created for it.</p> 
+   <p>When you’re done, you can export your project and then deploy it either on premises or to CloudHub. Keep in mind that you are only exporting and deploying your proxy app, not the domain that you created for it.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="configuring-a-proxy-domain"><a class="anchor" href="#configuring-a-proxy-domain"></a>Configuring a Proxy Domain</h3> 
@@ -1839,12 +1850,12 @@ raml.location=api.raml</pre></td>
     <p>The auto-generated proxys are built to run in CloudHub or in the on-premises standalone API Gateway, in both cases they rely on a default domain, this domain is not available when you try to deploy your app to the built-in server in Anypoint Studio. Mule&nbsp;domains are a useful abstraction for&nbsp; <a href="/mule-user-guide/v/3.7/shared-resources">sharing resources</a> &nbsp;between apps.&nbsp; If you wish to deploy your app to the Studio server, you must first build a Domain project that replaces this default domain that exists in CloudHub and when deploying to the API Gateway on-premises, it must be named just like it and contain the same configuration elements.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>Follow these steps to have a default domain replica to link your projects to:<br></p> 
+    <p>Follow these steps to have a default domain replica to link your projects to:</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Download <a href="/docs/download/attachments/131039906/api-gateway.zip?version=1&amp;modificationDate=1438021121689">this file</a> that contains a copy of the default domain</p> </li> 
-     <li> <p>Import it into Studio through File → Import →&nbsp; <strong>Anypoint Studio Generated Deployable File (.zip)</strong></p> </li> 
+     <li> <p>Download <a href="_attachments/api-gateway.zip">the api-gateway.zip file</a> that contains a copy of the default domain.</p> </li> 
+     <li> <p>Import it into Studio through File &gt; Import &gt;&nbsp; <strong>Anypoint Studio Generated Deployable File (.zip)</strong></p> </li> 
     </ol> 
    </div> 
    <div class="paragraph"> 
@@ -1917,10 +1928,10 @@ raml.location=api.raml</pre></td>
        <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
        <td class="content"> 
         <div class="paragraph"> 
-         <p>Remember that this domain serves as a replacement of the default domain that exists in CloudHub and on the on-premises API Gateway. All of the names and configuration in the domain you create must be identical to what’s configured in the default domain, as the app will then use the default domain when deployed to CloudHub or on-premises.&nbsp;</p> 
+         <p>Remember that this domain serves as a replacement of the default domain that exists in CloudHub and on the on-premises API Gateway. All of the names and configuration in the domain you create must be identical to what’s configured in the default domain, as the app then uses the default domain when deployed to CloudHub or on-premises.&nbsp;</p> 
         </div> 
         <div class="paragraph"> 
-         <p>You can customise the default domain if you’re deploying on premises to match any changes you may want to make, but you can’t if you’re deploying to CloduHub.</p> 
+         <p>You can customise the default domain if you’re deploying on premises to match any changes you may want to make, but you can’t if you’re deploying to CloudHub.</p> 
         </div> </td> 
       </tr> 
      </tbody> 
@@ -1958,7 +1969,7 @@ raml.location=api.raml</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#autodeployment-gateway-2-0">Autodeployment (Gateway 2.0)</a></li><li><a class="scroll-menu-link" href="#generating-a-proxy">Generating a Proxy</a></li><li><a class="scroll-menu-link" href="#using-https">Using HTTPS</a></li><li><a class="scroll-menu-link" href="#understanding-the-proxy-application">Understanding the Proxy Application</a></li><li><a class="scroll-menu-link" href="#modifying-a-proxy-application">Modifying a Proxy Application</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#autodeployment-gateway-2-0">Autodeployment (Gateway 2.0)</a></li><li><a class="scroll-menu-link" href="#generating-a-proxy">Generating a Proxy</a></li><li><a class="scroll-menu-link" href="#using-https">Using HTTPS</a></li><li><a class="scroll-menu-link" href="#understanding-the-proxy-application">Understanding the Proxy Application</a></li><li><a class="scroll-menu-link" href="#modify-a-proxy-application">Modify a Proxy Application</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

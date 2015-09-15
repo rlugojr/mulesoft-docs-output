@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -1006,7 +1006,9 @@
        <p><span class="image"><img src="./_images/CRMproperties.png" alt="CRMproperties"></span></p> 
       </div> </li> 
      <li> <p>For&nbsp;<strong>Operation</strong>, click&nbsp;<strong>Retrieve multiple by query</strong>. <strong>Note</strong>: This option only appears if you were able to successfully contact the CRM server.&nbsp;</p> </li> 
-     <li> <p>For&nbsp;<strong>Query&nbsp;Language</strong>, click&nbsp;<strong>DataSense Query Language</strong>. <strong>Note</strong>: The Query section only appears for a query&nbsp;<strong>Operation</strong>.&nbsp; .Click&nbsp;<strong>Query Builder</strong>. .In the Query Builder window:<br></p> 
+     <li> <p>For&nbsp;<strong>Query&nbsp;Language</strong>, click&nbsp;<strong>DataSense Query Language</strong>. <strong>Note</strong>: The Query section only appears for a query&nbsp;<strong>Operation</strong>.&nbsp;</p> </li> 
+     <li> <p>Click&nbsp;<strong>Query Builder</strong>.</p> </li> 
+     <li> <p>In the Query Builder window:<br></p> 
       <div class="olist loweralpha"> 
        <ol class="loweralpha" type="a"> 
         <li> <p>In <strong>Types</strong>, click <strong>account</strong>.</p> </li> 
@@ -1209,7 +1211,7 @@ myrealm.com = MYREALM.COM</pre></td>
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>For more information on how to create the JAAS login configuration file for the Kerberos login module, see linK:http://docs.oracle.com/javase/7/docs/jre/api/security/jaas/spec/com/sun/security/auth/module/Krb5LoginModule.html[Class Krb5LoginModule].</p> 
+    <p>For more information on how to create the JAAS login configuration file for the Kerberos login module, see <a href="http://docs.oracle.com/javase/7/docs/jre/api/security/jaas/spec/com/sun/security/auth/module/Krb5LoginModule.html">Class Krb5LoginModule</a>.</p> 
    </div> 
    <div class="paragraph"> 
     <p>To reference the JAAS login configuration file for the Kerberos login module in a connector’s connection configuration:</p> 
@@ -1273,17 +1275,7 @@ myrealm.com = MYREALM.COM</pre></td>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>{http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice}UserNameWSTrustBinding_IWSTrust13Async}</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="code">{http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice}UserNameWSTrustBinding_IWSTrust13Async}</code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1882,17 +1874,7 @@ myrealm.com = MYREALM.COM</pre></td>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>to_referenceto_account, to_referenceto_contact, to_referenceto_lead, to_referenceto_queue or to_referenceto_systemuser</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="code">to_referenceto_account, to_referenceto_contact, to_referenceto_lead, to_referenceto_queue or to_referenceto_systemuser</code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 

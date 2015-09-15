@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -955,7 +955,7 @@
    <tbody> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gateway Service Address</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Required. Windows Gateway Service IP address. Format: <em>ip_addr:port.</em> URLs are not supported. Example: ` 203.0.113.42:9333 `</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Required. Windows Gateway Service IP address. Format: <em>ip_addr:port.</em> URLs are not supported. Example: <code>203.0.113.42:9333</code></p></td> 
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gateway Access Token</strong></p></td> 
@@ -985,17 +985,7 @@
     <li> <p>In the PowerShell connector properties, set the <strong>Script&nbsp;</strong>property to the following value:</p> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
-</pre></td> 
-            <td class="code"><pre>Get-Service -Name #[message.inboundProperties['http.query.params']['name']]</pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
+       <pre class="CodeRay highlight"><code data-lang="code">Get-Service -Name #[message.inboundProperties['http.query.params']['name']]</code></pre> 
       </div> 
      </div> 
      <div class="paragraph"> 
@@ -1330,7 +1320,7 @@ get-service <span class="predefined">$servicename</span></pre></td>
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>The connector uses HTTP headers with the prefix <strong>mule-ps-param-</strong> for sending command arguments, which are mapped to the expected parameters in the script. In the example above, the header <strong>mule-ps-param-servicename&nbsp;*is mapped to the parameter *servicename</strong>.</p> 
+   <p>The connector uses HTTP headers with the prefix <strong>mule-ps-param-</strong> for sending command arguments, which are mapped to the expected parameters in the script. In the example above, the header <strong>*mule-ps-param-servicename&nbsp;*is mapped to the parameter servicename</strong>.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The response is also returned as a JSON message.</p> 
@@ -1555,38 +1545,38 @@ param(
 <div class="sect1"> 
  <h2 id="frequently-asked-questions-faq"><a class="anchor" href="#frequently-asked-questions-faq"></a>Frequently Asked Questions - FAQ</h2> 
  <div class="sectionbody"> 
-  <div class="sect4"> 
-   <h5 id="what-can-i-do-with-the-powershell-connector"><a class="anchor" href="#what-can-i-do-with-the-powershell-connector"></a>What can I do with the PowerShell connector?</h5> 
+  <div class="sect3"> 
+   <h4 id="what-can-i-do-with-the-powershell-connector"><a class="anchor" href="#what-can-i-do-with-the-powershell-connector"></a>What can I do with the PowerShell connector?</h4> 
    <div class="paragraph"> 
     <p>Any arbitrary PowerShell script may be executed on a target Windows OS host, with the resultant object graph being returned to Mule for processing.</p> 
    </div> 
   </div> 
-  <div class="sect4"> 
-   <h5 id="can-i-use-the-powershell-connector-on-a-non-windows-platform"><a class="anchor" href="#can-i-use-the-powershell-connector-on-a-non-windows-platform"></a>Can I use the PowerShell connector on a non-Windows platform?</h5> 
+  <div class="sect3"> 
+   <h4 id="can-i-use-the-powershell-connector-on-a-non-windows-platform"><a class="anchor" href="#can-i-use-the-powershell-connector-on-a-non-windows-platform"></a>Can I use the PowerShell connector on a non-Windows platform?</h4> 
    <div class="paragraph"> 
     <p>Yes, the PowerShell connector passes the script contents to the <a href="/mule-user-guide/v/3.7/windows-gateway-services-guide">Windows Gateway Service</a> for execution so can be run on any platform.</p> 
    </div> 
   </div> 
-  <div class="sect4"> 
-   <h5 id="do-i-have-to-install-the-windows-gateway-service-on-each-machine-i-wish-to-run-powershell-scripts-on"><a class="anchor" href="#do-i-have-to-install-the-windows-gateway-service-on-each-machine-i-wish-to-run-powershell-scripts-on"></a>Do I have to install the Windows Gateway Service on each machine I wish to run PowerShell scripts on?</h5> 
+  <div class="sect3"> 
+   <h4 id="do-i-have-to-install-the-windows-gateway-service-on-each-machine-i-wish-to-run-powershell-scripts-on"><a class="anchor" href="#do-i-have-to-install-the-windows-gateway-service-on-each-machine-i-wish-to-run-powershell-scripts-on"></a>Do I have to install the Windows Gateway Service on each machine I wish to run PowerShell scripts on?</h4> 
    <div class="paragraph"> 
     <p>Yes, you must install the Windows Gateway Service on the machine you wish to execute PowerShell scripts on.</p> 
    </div> 
   </div> 
-  <div class="sect4"> 
-   <h5 id="how-do-i-consume-the-object-graph-returned-by-powershell-in-my-mule-application"><a class="anchor" href="#how-do-i-consume-the-object-graph-returned-by-powershell-in-my-mule-application"></a>How do I consume the object graph returned by PowerShell in my Mule application?</h5> 
+  <div class="sect3"> 
+   <h4 id="how-do-i-consume-the-object-graph-returned-by-powershell-in-my-mule-application"><a class="anchor" href="#how-do-i-consume-the-object-graph-returned-by-powershell-in-my-mule-application"></a>How do I consume the object graph returned by PowerShell in my Mule application?</h4> 
    <div class="paragraph"> 
     <p>Results from executing PowerShell scripts are serialized into a <code>Map&lt;string, string&gt;</code> making it simple to consume using MEL or DataMapper.</p> 
    </div> 
   </div> 
-  <div class="sect4"> 
-   <h5 id="can-i-use-parameterized-powershell-scripts-or-function-libraries"><a class="anchor" href="#can-i-use-parameterized-powershell-scripts-or-function-libraries"></a>Can I use parameterized PowerShell scripts or function libraries?</h5> 
+  <div class="sect3"> 
+   <h4 id="can-i-use-parameterized-powershell-scripts-or-function-libraries"><a class="anchor" href="#can-i-use-parameterized-powershell-scripts-or-function-libraries"></a>Can I use parameterized PowerShell scripts or function libraries?</h4> 
    <div class="paragraph"> 
     <p>Yes, parameters are supported and automatically map from the message properties if not manually supplied in the parameters collection.</p> 
    </div> 
   </div> 
-  <div class="sect4"> 
-   <h5 id="how-do-i-run-a-script-under-the-security-context-of-different-users"><a class="anchor" href="#how-do-i-run-a-script-under-the-security-context-of-different-users"></a>How do I run a script under the security context of different users?</h5> 
+  <div class="sect3"> 
+   <h4 id="how-do-i-run-a-script-under-the-security-context-of-different-users"><a class="anchor" href="#how-do-i-run-a-script-under-the-security-context-of-different-users"></a>How do I run a script under the security context of different users?</h4> 
    <div class="paragraph"> 
     <p>Specifying the username and password for impersonation lets you run a script as a specific user. By default, a script runs as the identity of the Windows Gateway Service agent.</p> 
    </div> 

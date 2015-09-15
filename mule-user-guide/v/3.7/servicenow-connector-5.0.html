@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -977,7 +977,7 @@
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/servicenow_new.png" alt="servicenow_new"></span></p> 
       </div> </li> 
-     <li> <p>If you plan to use Git, select&nbsp;<strong>Create a .gitignore file</strong>&nbsp;for the project with default ignores for Studio Projects, and then click&nbsp;<strong>Next</strong>.</p> </li> 
+     <li> <p>If you plan to use Git, select&nbsp;<strong>Create a .gitignore file</strong>&nbsp;for the project with default ignore settings for Studio Projects, and then click&nbsp;<strong>Next</strong>.</p> </li> 
      <li> <p>Click&nbsp;<strong>Finish</strong>&nbsp;to create the project.</p> </li> 
     </ol> 
    </div> 
@@ -997,12 +997,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-37c9b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-5e2ba" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-ef3d4" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-ae73d" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-37c9b"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ef3d4"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Click the&nbsp;<strong>Global Elements</strong>&nbsp;tab at the base of the canvas.</p> </li> 
@@ -1083,7 +1083,7 @@
               <td class="tableblock halign-left valign-top"> 
                <div> 
                 <div class="paragraph"> 
-                 <p>The URL of the ServiceNow instance. Format:` <a href="https://<instancename>.service-now.com`" class="bare">https://&lt;instancename&gt;.service-now.com`</a></p> 
+                 <p>The URL of the ServiceNow instance. Format: <code><a href="https://<instancename>.service-now.com" class="bare">https://&lt;instancename&gt;.service-now.com</a></code></p> 
                 </div> 
                </div></td> 
              </tr> 
@@ -1257,7 +1257,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-5e2ba"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-ae73d"> 
      <div class="paragraph"> 
       <p>To configure the ServiceNow global element:</p> 
      </div> 
@@ -1513,12 +1513,12 @@ http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd</pre>
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-66bda" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-f1e73" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-6b70c" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-cd94b" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-66bda"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6b70c"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/servicenow-getkeys-flow.jpg" alt="servicenow-getkeys-flow"></span></p> 
      </div> 
@@ -1529,7 +1529,7 @@ http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd</pre>
        <li> <p>Add a new HTTP Listener Configuration global element:</p> 
         <div class="olist loweralpha"> 
          <ol class="loweralpha" type="a"> 
-          <li> <p>In&nbsp;<strong>Connector Configuration</strong>, click the green plus <strong>+</strong> button:</p> 
+          <li> <p>In&nbsp;<strong>Connector Configuration</strong>, click the green plus button (<strong>+</strong>):</p> 
            <div class="paragraph"> 
             <p><span class="image"><img src="./_images/servicenow-http-conn-cfg.png" alt="servicenow-http-conn-cfg"></span></p> 
            </div> </li> 
@@ -1820,7 +1820,7 @@ http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd</pre>
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-f1e73"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-cd94b"> 
      <div class="admonitionblock note"> 
       <table> 
        <tbody> 
@@ -1916,12 +1916,12 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-1eb7b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-79714" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-97c71" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-7a05f" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-1eb7b"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-97c71"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/servicenow-get-records-flow.jpg" alt="servicenow-get-records-flow"></span></p> 
      </div> 
@@ -2163,7 +2163,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-79714"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-7a05f"> 
      <div class="admonitionblock note"> 
       <table> 
        <tbody> 

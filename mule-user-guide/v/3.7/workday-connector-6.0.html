@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -1115,12 +1115,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-11293" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-3c5e2" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-c349a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-d61a1" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-11293"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c349a"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Click the&nbsp;<strong>Global Elements</strong>&nbsp;tab at the base of the canvas.</p> </li> 
@@ -1341,7 +1341,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-3c5e2"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-d61a1"> 
      <div class="paragraph"> 
       <p>To configure the Workday global element:</p> 
      </div> 
@@ -1350,35 +1350,13 @@
        <li> <p>Ensure you have included the following namespace in your configuration file:</p> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre>xmlns:wd-connector="http://www.mulesoft.org/schema/mule/wd-connector"</pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
+          <pre class="CodeRay highlight"><code data-lang="xml">xmlns:wd-connector="http://www.mulesoft.org/schema/mule/wd-connector"</code></pre> 
          </div> 
         </div> </li> 
        <li> <p>Create a global Workday configuration outside and above your flows, using the following global configuration code:</p> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>wd-connector:config name="Workday_Connector__Configuration" username="${workday.username}" password="${workday.password}" tenantName="${workday.tenantname}" doc:name="Workday Connector: Configuration"/<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
+          <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>wd-connector:config name="Workday_Connector__Configuration" username="${workday.username}" password="${workday.password}" tenantName="${workday.tenantname}" doc:name="Workday Connector: Configuration"/<span class="entity">&amp;gt;</span></code></pre> 
          </div> 
         </div> </li> 
       </ol> 
@@ -1402,7 +1380,7 @@
      <li> <p>Drag the Workday Connector 6.0 onto the canvas, then select it to open the properties editor.</p> </li> 
      <li> <p>Configure the connector’s parameters:&nbsp;</p> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/wd6_connector.png" alt="wd6_connector"></span></p> 
+       <p><span class="image"><img src="./_images/wd6_connector1.png" alt="wd6_connector1"></span></p> 
       </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
@@ -1449,12 +1427,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-a75de" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-74a6a" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-2e824" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-74c78" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a75de"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-2e824"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Create a Mule project in your Anypoint Studio.</p> </li> 
@@ -1631,7 +1609,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-74a6a"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-74c78"> 
      <div class="admonitionblock note"> 
       <table> 
        <tbody> 

@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -906,7 +906,7 @@
  <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you are familiar with Anypoint Studio; review the chapter on&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a>&nbsp;to learn more about developing with Mule ESB’s graphical user interface. This document also assumes you are familiar&nbsp;with&nbsp;<a href="/mule-user-guide/v/3.7/dataweave">DataWeave</a>,&nbsp;<a href="/mule-fundamentals/v/3.7/global-elements">&nbsp;Global Elements&nbsp;</a>,&nbsp;and&nbsp;<a href="/mule-user-guide/v/3.7/datasense">&nbsp;DataSense&nbsp;</a>.</p> 
+   <p>This document assumes that you are familiar with Anypoint Studio; review the chapter on&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a>&nbsp;to learn more about developing with Mule ESB’s graphical user interface. This document also assumes you are familiar&nbsp;with&nbsp;<a href="/mule-user-guide/v/3.7/dataweave">DataWeave</a>,&nbsp;<a href="/mule-fundamentals/v/3.7/global-elements">&nbsp;Global Elements&nbsp;</a>,&nbsp;and&nbsp;<a href="/mule-user-guide/v/3.7/datasense">DataSense</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -914,7 +914,7 @@
  <h2 id="installation"><a class="anchor" href="#installation"></a>Installation</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can install a connector in Anypoint Studio using the instructions in <a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>..</p> 
+   <p>You can install a connector in Anypoint Studio using the instructions in <a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -972,12 +972,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-349d8" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-a214f" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-304c5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-5134f" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-349d8"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-304c5"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Begin by acquiring the <strong>WSDL file</strong> for the SOAP Web service you intend to consume, or identifying the <strong>URL of the WSDL</strong>.</p> </li> 
@@ -1007,7 +1007,7 @@
       <p><span class="image"><img src="./_images/wsc_local.png" alt="image"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-a214f"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-5134f"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Begin by acquiring the <strong>WSDL file</strong> for the SOAP Web service you intend to consume, or identifying the <strong>URL of the WSDL</strong>.</p> </li> 
@@ -1140,17 +1140,17 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-d7be4" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-8b965" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-90450" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-ade01" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d7be4"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-90450"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/properties_soap.jpg" alt="image"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-8b965"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-ade01"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1300,12 +1300,12 @@ MWYxMDk4ZDktNzkyOC00Z<span class="tag">&lt;/auth&gt;</span>"/<span class="error"
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-70326" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-914e8" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-f773f" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
+     <li><a href="#xml-editor-9c470" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-70326"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f773f"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Within the <strong>Global Web Service Consumer</strong> element’s <strong>Global Element Properties</strong> panel, click the <strong>Security</strong> tab</p> </li> 
@@ -1322,7 +1322,7 @@ MWYxMDk4ZDktNzkyOC00Z<span class="tag">&lt;/auth&gt;</span>"/<span class="error"
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-914e8"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-9c470"> 
      <div class="paragraph"> 
       <p>Add child elements to the global ws:consumer-config element you configured in your application. Configure the child elements' attributes according to the code sample below. For a full list of elements, attributes and default values, consult&nbsp;Web Service Consumer Reference.</p> 
      </div> 
@@ -1392,12 +1392,12 @@ MWYxMDk4ZDktNzkyOC00Z<span class="tag">&lt;/auth&gt;</span>"/<span class="error"
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-c3b00" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-1887f" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-6cbb3" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
+     <li><a href="#xml-editor-510e9" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c3b00"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6cbb3"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Enter the Web Service Consumer’s global configuration element</p> </li> 
@@ -1406,7 +1406,7 @@ MWYxMDk4ZDktNzkyOC00Z<span class="tag">&lt;/auth&gt;</span>"/<span class="error"
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-1887f"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-510e9"> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1443,12 +1443,12 @@ MWYxMDk4ZDktNzkyOC00Z<span class="tag">&lt;/auth&gt;</span>"/<span class="error"
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-a055f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-fd4cf" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-27380" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-335d6" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a055f"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-27380"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Click the Global Elements tab, below the canvas and create a new Global Element <span class="image"><img src="./_images/global_elements1.jpg" alt="image"></span></p> </li> 
@@ -1484,7 +1484,7 @@ MWYxMDk4ZDktNzkyOC00Z<span class="tag">&lt;/auth&gt;</span>"/<span class="error"
       <p><span class="image"><img src="./_images/adding_https_ref2.jpg" alt="image"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-fd4cf"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-335d6"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Add an <a href="/mule-user-guide/v/3.7/http-connector">HTTP Connector</a> global element in your project, configure it with the necessary security attributes</p> </li> 
@@ -1580,17 +1580,17 @@ MWYxMDk4ZDktNzkyOC00Z<span class="tag">&lt;/auth&gt;</span>"/<span class="error"
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-3e34d" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-e3637" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-91f5a" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-5d6ca" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-3e34d"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-91f5a"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/code_example.png" alt="image"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-e3637"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-5d6ca"> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="xml">

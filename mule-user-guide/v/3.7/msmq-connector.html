@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/msmq-connector" />
-    <meta name="description" content="*Standard* The MSMQ Connector allows you to send and receive data from MSMQ queues via the Anypoint Gateway for Windows. After reading this page yo..." />
+    <meta name="description" content="Standard The MSMQ Connector allows you to send and receive data from MSMQ queues via the Anypoint Gateway for Windows. After reading this page you ..." />
     <meta class="swiftype" name="title" data-type="string" content="MSMQ Connector" />
 
 </head>
@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -866,7 +866,7 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><em>*Standard*</em></p> 
+   <p><strong><em>Standard</em></strong></p> 
   </div> 
   <div class="paragraph"> 
    <p>The MSMQ Connector allows you to send and receive data from MSMQ queues via the Anypoint Gateway for Windows.</p> 
@@ -892,8 +892,8 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>Install the <a href="/mule-user-guide/v/3.7/windows-gateway-services-guide">Windows Gateway Service</a> first before installing and configuring MSMQ.</p> </li> 
-    <li> <p>.NET 4.0 ( <a href="http://www.microsoft.com/en-US/download/details.aspx?id=17851">http://www.microsoft.com/en-US/download/details.aspx?id=17851</a> )</p> </li> 
-    <li> <p>MSMQ Service ( <a href="http://technet.microsoft.com/en-us/library/cc730960.aspx">http://technet.microsoft.com/en-us/library/cc730960.aspx</a> )</p> </li> 
+    <li> <p><a href="http://www.microsoft.com/en-US/download/details.aspx?id=17851">.NET 4.0</a></p> </li> 
+    <li> <p><a href="http://technet.microsoft.com/en-us/library/cc730960.aspx">MSMQ Service</a></p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -914,7 +914,7 @@
     </table> 
    </div> 
    <div class="paragraph"> 
-    <p>To install a connector, see &nbsp; <a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>.</p> 
+    <p>To install a connector, see <a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>.</p> 
    </div> 
   </div> 
  </div> 
@@ -958,7 +958,7 @@
     </div> 
     <div class="olist arabic"> 
      <ol class="arabic"> 
-      <li> <p>Right click the <strong>msmq-demo&nbsp;*queue and click *Properties</strong>.</p> </li> 
+      <li> <p>Right click the <strong>msmq-demo</strong> queue and click <strong>Properties</strong>.</p> </li> 
       <li> <p>Click the Security Tab. For this demo, make sure that <strong>Everyone</strong> has permissions to the following:</p> 
        <div class="ulist"> 
         <ul> 
@@ -986,7 +986,7 @@
     <div class="olist arabic"> 
      <ol class="arabic"> 
       <li> <p>Go to <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>. &nbsp;</p> </li> 
-      <li> <p>In the <strong>New Mule Project</strong> configuration menu, provide a name for this project: ` msmq-demo ` . &nbsp;</p> </li> 
+      <li> <p>In the <strong>New Mule Project</strong> configuration menu, provide a name for this project: <code>msmq-demo</code> . &nbsp;</p> </li> 
       <li> <p>Click <strong>Finish</strong>.</p> </li> 
      </ol> 
     </div> 
@@ -997,10 +997,10 @@
      <ol class="arabic"> 
       <li> <p>Click the&nbsp;<strong>Global Elements</strong> tab. &nbsp;</p> </li> 
       <li> <p>Click <strong>Create</strong> to display the Global Type dialog box. &nbsp;</p> </li> 
-      <li> <p>Search for&nbsp;<strong>msmq</strong>. &nbsp;</p> </li> 
+      <li> <p>Search for&nbsp;<strong>msmq</strong>.</p> </li> 
       <li> <p>Select <strong>MSMQ</strong> from <strong>Cloud Connectors</strong> section and click <strong>OK</strong>. &nbsp;</p> </li> 
       <li> <p>Fill in <strong>Gateway Service Address</strong> using the format <em>machinename/ip address:port</em>. (For example, <strong>localhost:9333</strong>). Don’t use URLs as they are not supported.</p> </li> 
-      <li> <p>Fill in <strong>Gateway Access Token</strong>. You can find the configured token in the Windows Service configuration file (<code>c:\Program Files(x86)\Anypoint Gateway for Windows\Mule.SelfHost.exe.config</code>) under the <strong>mule-auth-token</strong> appSetting key.</p> </li> 
+      <li> <p>Fill in <strong>Gateway Access Token</strong>. You can find the configured token in the Windows Service configuration file (<code>C:\Program Files(x86)\Anypoint Gateway for Windows\Mule.SelfHost.exe.config</code>) under the <strong>mule-auth-token</strong> appSetting key.</p> </li> 
       <li> <p>Fill in the <strong>Queue name</strong> using the supported syntax by MSMQ. For example, <code>.\private$\msmq-demo</code> for the private queue created above. Because the required permissions have been granted to <strong>Everyone</strong>, you do not need to specify a UserName and Password for this demo.</p> </li> 
       <li> <p>If you are using a self-signed SSL certificate such as the one included out of the box, make sure <strong>Ignore SSL Warnings</strong> is checked.</p> </li> 
       <li> <p>Click <strong>Test Connection</strong> to make sure everything was set up correctly.</p> </li> 

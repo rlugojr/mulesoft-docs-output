@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -1036,12 +1036,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-20b27" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-b11ec" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-15d14" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-db999" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-20b27"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-15d14"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>From the&nbsp;<strong>Error Handling</strong>&nbsp;palette group, drag and drop the&nbsp;<strong>Rollback Exception Strategy</strong>&nbsp;icon into the footer bar of a flow.<br> Open the&nbsp;Rollback Exception Strategy’s <strong>Properties Editor</strong>, then configure the attributes according to the table below.</p> 
@@ -1183,7 +1183,7 @@
       </table> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-b11ec"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-db999"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>In your flow, below all the message processors, add a&nbsp;<strong><code>rollback-exception-strategy</code></strong>&nbsp;element. Refer to code below.</p> </li> 
@@ -1345,12 +1345,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-2c3ae" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-79453" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-01c59" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-63c2f" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-2c3ae"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-01c59"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>In the Global Elements tab, double-click to open the&nbsp;<strong>JMS Global Connector’s</strong> Global Element Properties panel, then click the&nbsp;<strong>Advanced</strong>&nbsp;tab.</p> </li> 
@@ -1364,7 +1364,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-79453"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-63c2f"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>To your global <code>jms:connector</code> element set above all the flows in your Mule project, add a <strong><code>maxRedelivery</code></strong> attribute and set the value to an integer to define the number of times you want the rollback exception strategy to rollback a message for reprocessing (see code below). Note that if you set the value of the attribute to&nbsp;<strong><code>-1</code></strong><code>,</code> the JMS global connector’s redelivery policy defers to your rollback exception strategy’s redelivery policy by default.</p> 
@@ -1467,12 +1467,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-ad465" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-01ca9" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-64ab4" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-51dcd" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ad465"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-64ab4"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>In the Global Elements tab, create a&nbsp;<strong>Rollack Exception Strategy</strong>.&nbsp;</p> </li> 
@@ -1485,7 +1485,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-01ca9"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-51dcd"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Above all the flows in your application, create a&nbsp;<code>rollback</code><strong><code>-exception-strategy</code></strong>&nbsp;element.</p> </li> 
@@ -1505,12 +1505,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-8c2c6" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-or-standalone-9833c" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-534f9" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-or-standalone-3ae1f" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-8c2c6"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-534f9"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>From the&nbsp;<strong>Error Handling</strong>&nbsp;palette group, drag and drop the&nbsp;<strong>Reference Exception Strategy</strong>&nbsp;icon into the footer bar of a flow.&nbsp;<br></p> </li> 
@@ -1536,7 +1536,7 @@
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-9833c"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-3ae1f"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>In your flow, below all the message processors, add a&nbsp;<strong><code>reference-exception-strategy</code></strong> element. Refer to code below.</p> </li> 

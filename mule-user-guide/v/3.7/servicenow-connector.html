@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -940,12 +940,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-c366f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-f9b4f" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-bbb4e" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-7c9d0" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c366f"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-bbb4e"> 
      <div class="paragraph"> 
       <p>Follow these steps to create a global ServiceNow configuration in a Mule application:</p> 
      </div> 
@@ -1038,7 +1038,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-f9b4f"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-7c9d0"> 
      <div class="paragraph"> 
       <p>First, ensure that you have included the ServiceNow namespaces in your configuration file.</p> 
      </div> 
@@ -1113,7 +1113,7 @@ http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd</pre>
        </tr> 
        <tr> 
         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>serviceEndpoint</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The URL of the ServiceNow instance.<br> Format: `https://&lt;instancename&gt;.service-now.com `</p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">The URL of the ServiceNow instance.<br> Format: <code><a href="https://<instancename>.service-now.com" class="bare">https://&lt;instancename&gt;.service-now.com</a></code></p></td> 
        </tr> 
       </tbody> 
      </table> 
@@ -1217,12 +1217,12 @@ http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd</pre>
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-67a10" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-e87c6" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-9d77e" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-890dc" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-67a10"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-9d77e"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Drag an HTTP connector into a new flow. Open the connector’s properties editor. Set the exchange pattern to&nbsp;<code>one-way</code> and the Path to <code>onboard</code>.</p> 
@@ -1515,12 +1515,12 @@ http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd</pre>
          </tbody> 
         </table> </li> 
        <li> <p>Save and run the project as a Mule Application.</p> </li> 
-       <li> <p>From a browser, navigate to <code><a href="http://localhost:8081/onboard" class="bare">http://localhost:8081/onboard</a> `and enter the user’s first name, last name, email address, and department in the form query parameters: `http://localhost:8081/onboard?fname=&lt;user’s first name&gt;&amp;lname=&lt;user’s last name&gt; &amp;email= &lt;user’s email address&gt;&amp;dept=&lt;department of the user&gt;</code></p> </li> 
+       <li> <p>From a browser, navigate to <code><a href="http://localhost:8081/onboard" class="bare">http://localhost:8081/onboard</a></code> and enter the user’s first name, last name, email address, and department in the form query parameters: <code><a href="http://localhost:8081/onboard?fname=<user’s" class="bare">http://localhost:8081/onboard?fname=&lt;user’s</a> first name&gt;&amp;lname=&lt;user’s last name&gt; &amp;email= &lt;user’s email address&gt;&amp;dept=&lt;department of the user&gt;</code></p> </li> 
        <li> <p>Mule performs the query and creates the user record in ServiceNow, then assigns Blackberry phone if the user is a developer.</p> </li> 
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-e87c6"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-890dc"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Add a <strong>servicenow:config</strong> global element to your project, then configure its attributes according to the table below (see code below for a complete sample).</p> 

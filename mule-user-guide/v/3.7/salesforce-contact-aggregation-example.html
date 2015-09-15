@@ -198,7 +198,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-examples">AMQP Connector Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amqp-connector-reference">AMQP Connector Reference</a></li></ul></li>
@@ -874,7 +874,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This document assumes that you are familiar with Mule, the&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>,&nbsp;<a href="/mule-fundamentals/v/3.7/global-elements">Global Elements</a>,&nbsp;<a href="/mule-user-guide/v/3.7/datasense">DataSense</a>, and the <a href="/mule-user-guide/v/3.7/datamapper-user-guide-and-reference">DataMapper transformer</a>. Further, it is&nbsp;assumed that you are familiar with Salesforce and have a&nbsp;<a href="http://developer.force.com/">developerforce</a>&nbsp;account. Learn more about <a href="/mule-fundamentals/v/3.7/flows-and-subflows">flows and subflows</a> to gain more insight into the design of this example.</p> 
@@ -979,17 +979,17 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-6cdde" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-or-standalone-b66cd" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-b239b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-76c25" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6cdde"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b239b"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/gatherDataFlow.png" alt="gatherDataFlow"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-b66cd"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-76c25"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1039,55 +1039,58 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-db8d1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#standalone-xml-e5d43" role="tab" data-toggle="tab">Standalone XML</a></li> 
+      <li class="active"><a href="#studio-visual-editor-823de" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-337a7" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-db8d1"> 
-      <table class="tableblock frame-all grid-all spread"> 
-       <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-       </colgroup> 
-       <thead> 
-        <tr> 
-         <th class="tableblock halign-left valign-top">Parameter</th> 
-         <th class="tableblock halign-left valign-top">Value</th> 
-         <th class="tableblock halign-left valign-top">Properties Editor Image</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>query all contacts from SalesForce instance A</code></p></td> 
-         <td class="tableblock halign-left valign-top" rowspan="6"><p class="tableblock"><span class="image"><img src="./_images/sfdcconfiguration1.png" alt="sfdcconfiguration1"></span></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SalesforceA</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Query</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Language</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DataSense Query Language</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query Text</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SELECT Name, Email, Id&nbsp; FROM Contact</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fetch Size</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>100</code></p></td> 
-        </tr> 
-       </tbody> 
-      </table> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-823de"> 
+      <div class="sect2"> 
+       <h3 id="properties-editor"><a class="anchor" href="#properties-editor"></a>Properties Editor</h3> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/sfdcconfiguration1.png" alt="sfdcconfiguration1"></span></p> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Parameter</th> 
+          <th class="tableblock halign-left valign-top">Value</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>query all contacts from SalesForce instance A</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SalesforceA</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Query</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Language</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DataSense Query Language</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query Text</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SELECT Name, Email, Id&nbsp; FROM Contact</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fetch Size</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>100</code></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="standalone-xml-e5d43"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-337a7"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1201,185 +1204,188 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-46af7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-7882e" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-46af7"> 
-     <div class="paragraph"> 
-      <p><strong>General Tab</strong></p> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-7882e"> 
+     <div class="sect2"> 
+      <h3 id="general-tab"><a class="anchor" href="#general-tab"></a>General Tab</h3> 
+      <div class="sect3"> 
+       <h4 id="properties-editor"><a class="anchor" href="#properties-editor"></a>Properties Editor</h4> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/SFglobalelem.png" alt="SFglobalelem"></span></p> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Parameter</th> 
+          <th class="tableblock halign-left valign-top">Value</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SalesforceA</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Username</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Redacted. Use the appropriate user ID for your Salesforce instance.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Redacted. Use the appropriate password for your Salesforce instance.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Security Token</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Redacted. Use the appropriate security token for your Salesforce instance.</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Url</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Redacted. Use the appropriate URL for your Salesforce instance, such as <code><a href="https://salesforce.com/services/Soap/u/30.0" class="bare">https://salesforce.com/services/Soap/u/30.0</a></code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Proxy Host</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Proxy Port</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Proxy Username</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Proxy Password</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Session Id</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Service Endpoint</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Time Ojbect Store Reference</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assignment Rule Id</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client Id</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Batch Sobject Max Depth</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5</code> (default)</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Allow Field Truncation Support</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use Default Rule</strong></p></td> 
+          <td class="tableblock halign-left valign-top"></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
      </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Parameter</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-        <th class="tableblock halign-left valign-top">Properties Editor</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SalesforceA</code></p></td> 
-        <td class="tableblock halign-left valign-top" rowspan="18"><p class="tableblock"><span class="image"><img src="./_images/SFglobalelem.png" alt="SFglobalelem"></span></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Username</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Redacted. Use the appropriate user ID for your Salesforce instance.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Redacted. Use the appropriate password for your Salesforce instance.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Security Token</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Redacted. Use the appropriate security token for your Salesforce instance.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Url</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Redacted. Use the appropriate URL for your Salesforce instance, such as ` <a href="https://salesforce.com/services/Soap/u/30.0" class="bare">https://salesforce.com/services/Soap/u/30.0</a> `</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Proxy Host</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Proxy Port</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Proxy Username</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Proxy Password</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Session Id</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Service Endpoint</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Enable DataSense</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Time Ojbect Store Reference</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assignment Rule Id</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client Id</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Batch Sobject Max Depth</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5</code> (default)</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Allow Field Truncation Support</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use Default Rule</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-       </tr> 
-      </tbody> 
-     </table> 
-     <div class="paragraph"> 
-      <p><strong>Pooling Profile Tab</strong></p> 
+     <div class="sect2"> 
+      <h3 id="pooling-profile-tab"><a class="anchor" href="#pooling-profile-tab"></a>Pooling Profile Tab</h3> 
+      <div class="paragraph"> 
+       <p>In this tab, all settings reflect their default values.</p> 
+      </div> 
+      <div class="sect3"> 
+       <h4 id="properties-editor-2"><a class="anchor" href="#properties-editor-2"></a>Properties Editor</h4> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/SFglobalelem-connpooltab.png" alt="SFglobalelem-connpooltab"></span></p> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Parameter</th> 
+          <th class="tableblock halign-left valign-top">Value</th> 
+          <th class="tableblock halign-left valign-top"></th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max active</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max idle</strong></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Initialisation policy</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>INITIALISE_ONE</code></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exhausted action</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>WHEN_EXHAUSTED_GROW</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max wait</strong></p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5</code></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Min eviction (ms)</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1800000</code></p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
      </div> 
-     <div class="paragraph"> 
-      <p>In this tab, all settings reflect their default values.</p> 
+     <div class="sect2"> 
+      <h3 id="reconnection-tab"><a class="anchor" href="#reconnection-tab"></a>Reconnection Tab</h3> 
+      <div class="paragraph"> 
+       <p>In this tab, all settings reflect their default values.</p> 
+      </div> 
+      <div class="sect3"> 
+       <h4 id="properties-editor-3"><a class="anchor" href="#properties-editor-3"></a>Properties Editor</h4> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/SFglobalelem-reconntab.png" alt="SFglobalelem-reconntab"></span></p> 
+       </div> 
+       <table class="tableblock frame-all grid-all spread"> 
+        <colgroup> 
+         <col style="width: %;"> 
+         <col style="width: %;"> 
+        </colgroup> 
+        <thead> 
+         <tr> 
+          <th class="tableblock halign-left valign-top">Parameter</th> 
+          <th class="tableblock halign-left valign-top">Value</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Do not use a Reconnection strategy</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Checked</p></td> 
+         </tr> 
+         <tr> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Run the reconnection in a separated thread</strong></p></td> 
+          <td class="tableblock halign-left valign-top"><p class="tableblock">Unchecked</p></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
      </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Parameter</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-        <th class="tableblock halign-left valign-top">Properties Editor</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max active</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5</code></p></td> 
-        <td class="tableblock halign-left valign-top" rowspan="7"><p class="tableblock"><span class="image"><img src="./_images/SFglobalelem-connpooltab.png" alt="SFglobalelem-connpooltab"></span></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max idle</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Initialisation policy</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>INITIALISE_ONE</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exhausted action</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>WHEN_EXHAUSTED_GROW</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max wait</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Min eviction (ms)</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1800000</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Eviction check interval (ms)</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>-1</code></p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
-     <div class="paragraph"> 
-      <p><strong>Reconnection Tab</strong></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>In this tab, all settings reflect their default values.</p> 
-     </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Parameter</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-        <th class="tableblock halign-left valign-top">Properties Editor</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Do not use a Reconnection strategy</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Checked</p></td> 
-        <td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><span class="image"><img src="./_images/SFglobalelem-reconntab.png" alt="SFglobalelem-reconntab"></span></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Run the reconnection in a separated thread</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Unchecked</p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
     </div> 
    </div> 
   </div> 
@@ -1403,7 +1409,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#understanding-the-flows">Understanding the Flows</a></li><li><a class="scroll-menu-link" href="#salesforce-global-elements">Salesforce Global Elements</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#understanding-the-flows">Understanding the Flows</a></li><li><a class="scroll-menu-link" href="#salesforce-global-elements">Salesforce Global Elements</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
