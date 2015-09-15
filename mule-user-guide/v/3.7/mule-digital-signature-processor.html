@@ -970,12 +970,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-f630f" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-be359" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-5057b" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-e1133" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f630f"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5057b"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Add a global <strong>Signature</strong> message processor to your application, applying a unique <strong>Name</strong> for the element and keeping the default value, <code>JCE_SIGNER</code>, in the <strong>Default Signer</strong> field (see image below, left).</p> </li> 
@@ -1124,7 +1124,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-be359"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-e1133"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Add a global <code>signature:config</code> element to your application, set above all the flows in your application.</p> </li> 
@@ -1398,197 +1398,704 @@
   <div class="paragraph"> 
    <p>The following procedure describes how to apply XML digital signatures to messages processed in a Mule flow.</p> 
   </div> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-c74fc" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-8e6fc" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+    </ul> 
+   </div> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c74fc"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Add a global&nbsp;<strong>Signature</strong>&nbsp;message processor to your application, applying a unique&nbsp;<strong>Name</strong>&nbsp;for the element and change the default value,&nbsp;<code>JCE_SIGNER</code>, in the&nbsp;<strong>Default Signer</strong>&nbsp;field &nbsp;to XML_SIGNER (see image below, left).</p> </li> 
+       <li> <p>Click the&nbsp;<strong>XML&nbsp;Signer</strong>&nbsp;tab (see image below, right), then configure the message processor’s attributes according to the table below. Note that while the&nbsp;<strong>Keystore Path</strong>&nbsp;and&nbsp;<strong>Keystore Password</strong>&nbsp;are optional, this global element is the only place you can define a them&nbsp;for your Signature element.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/global_XML_Signer_Both.png" alt="global_XML_Signer_Both"></span></p> 
+        </div> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: 34%;"> 
+          <col style="width: 33%;"> 
+          <col style="width: 33%;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">Field</th> 
+           <th class="tableblock halign-left valign-top">Req’d</th> 
+           <th class="tableblock halign-left valign-top">Value</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">A unique name for your global element.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Default Signer</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">XML_SIGNER</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reference or Expression</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">If selected, in the&nbsp;<strong>Jce Signer Reference</strong>, use an expression to reference attributes you have defined elsewhere in the XML configuration of your applications, or to reference the configurations defined in a bean.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Define Attributes</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">If selected, enter values in the following nine fields.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Digest Method Algorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to encrypt the digest:<br> RIPEMD160<br> SHA1<br> SHA256 (<em>Default</em>)<br> SHA512</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Canonicalization Algorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses for XML canonicalization:<br> EXCLUSIVE (<em>Default</em>)<br> EXCLUSIVE WITH COMMENTS<br> INCLUSIVE<br> INCLUSIVE WITH COMMENTS</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signature Method Algorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to protect the message from tampering:<br> RSA_SHA1 (<em>Default</em>)<br> DSA_SHA1<br> HMAC_SHA1</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signature Type</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the signature applies to:<br> • data outside its containing document (DETACHED)<br> • a part of its containing document (ENVELOPED) (<em>Default</em>)<br> • data it contains within itself (ENVELOPING)</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reference Uri</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">External URI reference for messages with a Detached signature type.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Unique key that encrypts and decrypts message; or, if using keystore, the name of the specific key within the keystore.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Keystore Path</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the location (i.e. filepath) of the keystore file, required if using keystore.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Keystore Password</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the password to read the key stored in the keystore, required if using keystore.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key Password</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Password to read the key within the keystore; required only if the specific keys within the keystore have their own passwords.</p></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <div class="admonitionblock note"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+            <td class="content"> 
+             <div class="paragraph"> 
+              <p>If you are using a <strong>Keystore</strong>, you must also define a <strong>Key</strong> to specify which key within the keystore the application should invoke. The key can be configured either on the Global Element Properties window or in the Pattern Properties window.&nbsp;</p> 
+             </div> 
+             <div class="paragraph"> 
+              <p>+ * If configured in the Global Element Properties window, that key will be invoked for all building blocks which refer to that global element — unless there is a different key specified in the local Pattern Properties window for that building block, because local configuration overrides global configurations.&nbsp; * If configured in the local Pattern Properties window, that key will be invoked only for that building block, so any other building blocks in the same flow that also refer to that global element would need a key configured in their Pattern Properties windows.</p> 
+             </div> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> </li> 
+       <li> <p>Add a&nbsp;<strong>Signature</strong>&nbsp;message processor to your flow.</p> </li> 
+       <li> <p>Configure the message processor’s fields according to the table below.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/signature+1.png" alt="signature+1"></span></p> 
+        </div> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: 34%;"> 
+          <col style="width: 33%;"> 
+          <col style="width: 33%;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">Field</th> 
+           <th class="tableblock halign-left valign-top">Req’d</th> 
+           <th class="tableblock halign-left valign-top">Value</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">A unique name for your message processor.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Config Reference</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Use the name of the global element you created above.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Sign xml</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Input</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Identify the part of the message payload to which you want to apply the signature. This value must be in byte array format. By default, Mule signs the entire message payload.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Unique key that encrypts and decrypts message; or, if using keystore, the name of the specific key within the keystore.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key Password</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Password to read the key within the keystore; required only if the specific keys within the keystore have their own passwords.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reference Uri</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">External URI reference for messages with a Detached signature type.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Canonicalization Algorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses for XML canonicalization:<br> EXCLUSIVE<br> EXCLUSIVE WITH COMMENTS<br> INCLUSIVE<br> INCLUSIVE WITH COMMENTS</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Digest Method Algorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to encrypt the digest:<br> RIPEMD160<br> SHA1<br> SHA256<br> SHA512</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signature Method Algorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to protect the message from tampering:<br> RSA_SHA1<br> DSA_SHA1<br> HMAC_SHA1</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signature Type</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the signature applies to:<br> • data outside its containing document (DETACHED)<br> • a part of its containing document (ENVELOPED)<br> • data it contains within itself (ENVELOPING)</p></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ol> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-8e6fc"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Add a global <code>signature:config</code> element to your application, set above all the flows in your application.</p> </li> 
+       <li> <p>Configure the global element’s attributes and child element according to the table below. Note that while the&nbsp;<code>keystorePath</code>&nbsp;and&nbsp;<code>keystorePassword</code>&nbsp;are optional, this global element is the only place you can define a them&nbsp;for your Signature element.</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+               <td class="code"><pre><span class="entity">&amp;lt;</span>signature:config name="Global_XML_Signature" doc:name="Signature" defaultSigner="XML_SIGNER"<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>signature:xml-signer-config digestMethodAlgorithm="SHA512" key="1@s9bl<span class="entity">&amp;amp;</span>gt;1LOJ94z4"/<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/signature:config<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: 34%;"> 
+          <col style="width: 33%;"> 
+          <col style="width: 33%;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">Attribute</th> 
+           <th class="tableblock halign-left valign-top">Req’d</th> 
+           <th class="tableblock halign-left valign-top">Value</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">A unique name for your global element.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>defaultSigner</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">XML_SIGNER</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">A display name for the element in Studio’s Visual Editor. Not applicable for Standalone.</p></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: %;"> 
+          <col style="width: %;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">Child Element</th> 
+           <th class="tableblock halign-left valign-top">Req’d</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signature:xml-signer-config</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: %;"> 
+          <col style="width: %;"> 
+          <col style="width: %;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">Child Element Attributes</th> 
+           <th class="tableblock halign-left valign-top">Req’d</th> 
+           <th class="tableblock halign-left valign-top">Value</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>digestMethodAlgorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to encrypt the digest:<br> RIPEMD160<br> SHA1<br> SHA256<br> SHA512</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>canonicalizationAlgorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses for XML canonicalization:<br> EXCLUSIVE<br> EXCLUSIVE WITH COMMENTS<br> INCLUSIVE<br> INCLUSIVE WITH COMMENTS</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signatureMethodAlgorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to protect the message from tampering:<br> RSA_SHA1<br> DSA_SHA1<br> HMAC_SHA1</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signatureType</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the signature applies to:<br> • data outside its containing document (DETACHED)<br> • a part of its containing document (ENVELOPED)<br> • data it contains within itself (ENVELOPING)</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>referenceUri</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">External URI reference for messages with a Detached signature type.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>key</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Unique key that encrypts and decrypts message; or, if using keystore, the name of the specific key within the keystore.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>keystorePath</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the location (i.e. filepath) of the keystore file, required if using keystore.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>keystorePassword</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the password to read the key stored in the keystore, required if using keystore.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>keyPassword</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Password to read the key within the keystore; required only if the specific keys within the keystore have their own passwords.</p></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>Add a <code>signature:sign</code> element to your flow.</p> </li> 
+       <li> <p>Configure the element’s attributes according to the tables below.</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
+</pre></td> 
+               <td class="code"><pre><span class="entity">&amp;lt;</span>signature:sign-xml config-ref="Global_XML_Signature" doc:name="XML_Signature"/<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: 34%;"> 
+          <col style="width: 33%;"> 
+          <col style="width: 33%;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">Attribute</th> 
+           <th class="tableblock halign-left valign-top">Req’d</th> 
+           <th class="tableblock halign-left valign-top">Value</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>config-ref</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Use the name of the global element you created above.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">A display name for the element in Studio’s Visual Editor. Not applicable for Standalone.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>canonicalizationAlgorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses for XML canonicalization:<br> EXCLUSIVE<br> EXCLUSIVE WITH COMMENTS<br> INCLUSIVE<br> INCLUSIVE WITH COMMENTS</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>digestMethodAlgorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to encrypt the digest:<br> RIPEMD160<br> SHA1<br> SHA256<br> SHA512</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>input</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Identify the part of the message payload to which you want to apply the signature. This value must be in byte array format. By default, Mule signs the entire message payload.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>key</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Unique key that encrypts and decrypts message; or, if using keystore, the name of the specific key within the keystore.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>keyPassword</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Password to read the key within the keystore; required only if the specific keys within the keystore have their own passwords.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>referenceUri</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">External URI reference for messages with a Detached signature type.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signatureMethodAlgorithm</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to protect the message from tampering:<br> RSA_SHA1<br> DSA_SHA1<br> HMAC_SHA1</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signatureType</strong></p></td> 
+           <td class="tableblock halign-left valign-top"></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the signature applies to:<br> • data outside its containing document (DETACHED)<br> • a part of its containing document (ENVELOPED)<br> • data it contains within itself (ENVELOPING)</p></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ol> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="example-of-a-signed-payload"><a class="anchor" href="#example-of-a-signed-payload"></a>Example of a Signed Payload</h3> 
+   <div class="paragraph"> 
+    <p>What follows are examples of a message payloads: one <em>without</em> a digital signature (below, top), and one <em>with</em> an XML digital signature (below, bottom).</p> 
+   </div> 
+   <div class="literalblock"> 
+    <div class="content"> 
+     <pre>&nbsp;View the XML Without Digital Signature</pre> 
+    </div> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;PurchaseOrder&gt;</span>
+ <span class="tag">&lt;Item</span> <span class="attribute-name">number</span>=<span class="string"><span class="delimiter">"</span><span class="content">130046593231</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;Description&gt;</span>Video Game<span class="tag">&lt;/Description&gt;</span>
+  <span class="tag">&lt;Price&gt;</span>10.29<span class="tag">&lt;/Price&gt;</span>
+ <span class="tag">&lt;/Item&gt;</span>
+ <span class="tag">&lt;Buyer</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">8492340</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;Name&gt;</span>My Name<span class="tag">&lt;/Name&gt;</span>
+  <span class="tag">&lt;Address&gt;</span>
+   <span class="tag">&lt;Street&gt;</span>One Network Drive<span class="tag">&lt;/Street&gt;</span>
+   <span class="tag">&lt;Town&gt;</span>Burlington<span class="tag">&lt;/Town&gt;</span>
+   <span class="tag">&lt;State&gt;</span>MA<span class="tag">&lt;/State&gt;</span>
+   <span class="tag">&lt;Country&gt;</span>United States<span class="tag">&lt;/Country&gt;</span>
+   <span class="tag">&lt;PostalCode&gt;</span>01803<span class="tag">&lt;/PostalCode&gt;</span>
+  <span class="tag">&lt;/Address&gt;</span>
+ <span class="tag">&lt;/Buyer&gt;</span>
+<span class="tag">&lt;/PurchaseOrder&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="literalblock"> 
+    <div class="content"> 
+     <pre>&nbsp;View the XML With Digital Signature</pre> 
+    </div> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;PurchaseOrder&gt;</span>
+ <span class="tag">&lt;Item</span> <span class="attribute-name">number</span>=<span class="string"><span class="delimiter">"</span><span class="content">130046593231</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;Description&gt;</span>Video Game<span class="tag">&lt;/Description&gt;</span>
+  <span class="tag">&lt;Price&gt;</span>10.29<span class="tag">&lt;/Price&gt;</span>
+ <span class="tag">&lt;/Item&gt;</span>
+ <span class="tag">&lt;Buyer</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">8492340</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;Name&gt;</span>My Name<span class="tag">&lt;/Name&gt;</span>
+  <span class="tag">&lt;Address&gt;</span>
+   <span class="tag">&lt;Street&gt;</span>One Network Drive<span class="tag">&lt;/Street&gt;</span>
+   <span class="tag">&lt;Town&gt;</span>Burlington<span class="tag">&lt;/Town&gt;</span>
+   <span class="tag">&lt;State&gt;</span>MA<span class="tag">&lt;/State&gt;</span>
+   <span class="tag">&lt;Country&gt;</span>United States<span class="tag">&lt;/Country&gt;</span>
+   <span class="tag">&lt;PostalCode&gt;</span>01803<span class="tag">&lt;/PostalCode&gt;</span>
+  <span class="tag">&lt;/Address&gt;</span>
+ <span class="tag">&lt;/Buyer&gt;</span>
+<span class="tag">&lt;Signature</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2000/09/xmldsig#</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;SignedInfo&gt;</span><span class="tag">&lt;CanonicalizationMethod</span> <span class="attribute-name">Algorithm</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/10/xml-exc-c14n#</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span><span class="tag">&lt;SignatureMethod</span> <span class="attribute-name">Algorithm</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2000/09/xmldsig#rsa-sha1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span><span class="tag">&lt;Reference</span> <span class="attribute-name">URI</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;Transforms&gt;</span><span class="tag">&lt;Transform</span> <span class="attribute-name">Algorithm</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2000/09/xmldsig#enveloped-signature</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span><span class="tag">&lt;/Transforms&gt;</span><span class="tag">&lt;DigestMethod</span> <span class="attribute-name">Algorithm</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/04/xmlenc#sha256</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span><span class="tag">&lt;DigestValue&gt;</span>tkrLEansVMTKqAOuW6b8Dx+OUNWk9bVpW6RFvfuEmM8=<span class="tag">&lt;/DigestValue&gt;</span><span class="tag">&lt;/Reference&gt;</span><span class="tag">&lt;/SignedInfo&gt;</span><span class="tag">&lt;SignatureValue&gt;</span>PeeHVw+XvZkkhhPlEopRp1PBDfTcR9U2IBimTTo1gOMF5cWq1tFqZ0B4ScNBiZVtd0yS4j06xl3W
+B2Q87oobwA==<span class="tag">&lt;/SignatureValue&gt;</span><span class="tag">&lt;KeyInfo&gt;</span><span class="tag">&lt;KeyValue&gt;</span><span class="tag">&lt;RSAKeyValue&gt;</span><span class="tag">&lt;Modulus&gt;</span>i8OP+VX/EORWwHiHiqLmMgpXz4IubPv2y+gHdiSCUzKoFfUYD6wFGBwi6vVmRSrmNbNZvZ9DFvST
+PZJEyUhn5w==<span class="tag">&lt;/Modulus&gt;</span><span class="tag">&lt;Exponent&gt;</span>AQAB<span class="tag">&lt;/Exponent&gt;</span><span class="tag">&lt;/RSAKeyValue&gt;</span><span class="tag">&lt;/KeyValue&gt;</span><span class="tag">&lt;/KeyInfo&gt;</span><span class="tag">&lt;/Signature&gt;</span><span class="tag">&lt;/PurchaseOrder&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="signing-part-of-a-message-payload"><a class="anchor" href="#signing-part-of-a-message-payload"></a>Signing Part of a Message Payload</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>By default, Mule signs the entire message payload when you apply a signature. However, you can use a Mule Expression to sign a specific part of a message payload rather than the whole payload. Enter a Mule expression in the <strong>Input Reference</strong> field of a JCE or XML Signature message processor to define the specific part(s) of the payload you wish to sign.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="applying-a-signature-using-mel"><a class="anchor" href="#applying-a-signature-using-mel"></a>Applying a Signature Using MEL</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>As described above, to apply a digital signature to a message in Mule, you normally need two ingredients:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>a <strong>Global Signature</strong> element which defines all, or some, of the signature attributes</p> </li> 
+    <li> <p>a <strong>Signature</strong> message processor in a Mule flow which defines all, or some, of the signature attributes</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>However, you can also add a signature to a message without adding a Signature message processor to a Mule flow. To do so, you need:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>a <strong>Global Signature</strong> element which defines all of the signature attributes</p> </li> 
+    <li> <p>a <strong>Mule expression</strong> appended to a message processor as <strong>message attribute</strong>, which references the Global Signature element to apply a signature to the message</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To reference a Global Signature element via Mule expression in another element, you must first set the Global Signature element’s <strong>Enable Language</strong> attribute to true (below, left), then apply all the Global Signature attributes (below, right).</p> 
+  </div> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-53c56" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-79bfb" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+    </ul> 
+   </div> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-53c56"> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/enable_language3.png" alt="enable_language3"></span></p> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-79bfb"> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+    
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+            <td class="code"><pre><span class="entity">&amp;lt;</span>signature:config name="hmacPlain" enableLanguage="true"<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>signature:jce-signer-config algorithm="HmacMD5" key="JLfl5sER3kt4oVkzP2d39UQrUxrEK63LjmXAO45b6cU="/<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/signature:config<span class="entity">&amp;gt;</span></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Then, add a <strong>message attribute</strong> to an element in your flow, a Logger, for example, to apply a digital signature according to the configurations in the Global Signature element.&nbsp;</p> 
+  </div> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-48548" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-33597" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+    </ul> 
+   </div> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-48548"> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/logger1.png" alt="logger1"></span></p> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-33597"> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+    
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+            <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="testHmacPlain"<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>logger level="ERROR" message="##"/<span class="entity">&amp;gt;</span>
+ <span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="verifying-a-digital-signature"><a class="anchor" href="#verifying-a-digital-signature"></a>Verifying a Digital Signature</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>In addition to signing a message, Mule also uses a Signature message processor to verify the identity of a message’s sender as legitimate. Where Mule discovers an invalid signature, it discards the message, processing it no further.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Mule verifies the signature on the message payload according to the configurations of any of the optional attributes if explicitly defined (see lists above for JCE- and XML-specific attributes).</p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> This topic introduces the idea of Global Elements; if you are unfamiliar with this functionality, access <a href="/mule-fundamentals/v/3.7/global-elements">Global Elements</a> to learn more before proceeding. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To verify JCE or XML signatures on messages in a Mule flow, you must, at minimum, create:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>a <strong>Global Signature</strong> element</p> </li> 
+    <li> <p>a <strong>Signature</strong> message processor in your Mule flow</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The following procedure describes how to verify digital signatures on messages a Mule flow receives.</p> 
+  </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Add a global&nbsp;<strong>Signature</strong>&nbsp;message processor to your application, applying a unique&nbsp;<strong>Name</strong>&nbsp;for the element and change the default value,&nbsp;<code>JCE_SIGNER</code>, in the&nbsp;<strong>Default Signer</strong>&nbsp;field &nbsp;to XML_SIGNER (see image below, left).</p> </li> 
-    <li> <p>Click the&nbsp;<strong>XML&nbsp;Signer</strong>&nbsp;tab (see image below, right), then configure the message processor’s attributes according to the table below. Note that while the&nbsp;<strong>Keystore Path</strong>&nbsp;and&nbsp;<strong>Keystore Password</strong>&nbsp;are optional, this global element is the only place you can define a them&nbsp;for your Signature element.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/global_XML_Signer_Both.png" alt="global_XML_Signer_Both"></span></p> 
-     </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: 34%;"> 
-       <col style="width: 33%;"> 
-       <col style="width: 33%;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Field</th> 
-        <th class="tableblock halign-left valign-top">Req’d</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">A unique name for your global element.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Default Signer</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">XML_SIGNER</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reference or Expression</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">If selected, in the&nbsp;<strong>Jce Signer Reference</strong>, use an expression to reference attributes you have defined elsewhere in the XML configuration of your applications, or to reference the configurations defined in a bean.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Define Attributes</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">If selected, enter values in the following nine fields.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Digest Method Algorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to encrypt the digest:<br> RIPEMD160<br> SHA1<br> SHA256 (<em>Default</em>)<br> SHA512</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Canonicalization Algorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses for XML canonicalization:<br> EXCLUSIVE (<em>Default</em>)<br> EXCLUSIVE WITH COMMENTS<br> INCLUSIVE<br> INCLUSIVE WITH COMMENTS</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signature Method Algorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to protect the message from tampering:<br> RSA_SHA1 (<em>Default</em>)<br> DSA_SHA1<br> HMAC_SHA1</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signature Type</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the signature applies to:<br> • data outside its containing document (DETACHED)<br> • a part of its containing document (ENVELOPED) (<em>Default</em>)<br> • data it contains within itself (ENVELOPING)</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reference Uri</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">External URI reference for messages with a Detached signature type.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Unique key that encrypts and decrypts message; or, if using keystore, the name of the specific key within the keystore.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Keystore Path</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the location (i.e. filepath) of the keystore file, required if using keystore.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Keystore Password</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the password to read the key stored in the keystore, required if using keystore.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key Password</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Password to read the key within the keystore; required only if the specific keys within the keystore have their own passwords.</p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
-     <div class="admonitionblock note"> 
-      <table> 
-       <tbody> 
-        <tr> 
-         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-         <td class="content"> 
-          <div class="paragraph"> 
-           <p>If you are using a <strong>Keystore</strong>, you must also define a <strong>Key</strong> to specify which key within the keystore the application should invoke. The key can be configured either on the Global Element Properties window or in the Pattern Properties window.&nbsp;</p> 
-          </div> 
-          <div class="paragraph"> 
-           <p>+ * If configured in the Global Element Properties window, that key will be invoked for all building blocks which refer to that global element — unless there is a different key specified in the local Pattern Properties window for that building block, because local configuration overrides global configurations.&nbsp; * If configured in the local Pattern Properties window, that key will be invoked only for that building block, so any other building blocks in the same flow that also refer to that global element would need a key configured in their Pattern Properties windows.</p> 
-          </div> </td> 
-        </tr> 
-       </tbody> 
-      </table> 
+    <li> <p>In your Mule flow, add a <strong>Signature</strong> message processor early in your flow in Studio to verify signatures on messages that arrive to be processed.</p> </li> 
+    <li> <p>In the <strong>Operations field</strong>, select <code>Verify Signature</code>. Alternatively, add a Signature element to your flow, configured to verify signatures (see code, below).</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;signature:verify-signature</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Signature</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
      </div> </li> 
-    <li> <p>Add a&nbsp;<strong>Signature</strong>&nbsp;message processor to your flow.</p> </li> 
-    <li> <p>Configure the message processor’s fields according to the table below.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/signature+1.png" alt="signature+1"></span></p> 
-     </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: 34%;"> 
-       <col style="width: 33%;"> 
-       <col style="width: 33%;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Field</th> 
-        <th class="tableblock halign-left valign-top">Req’d</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">A unique name for your message processor.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Config Reference</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Use the name of the global element you created above.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Sign xml</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Input</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Identify the part of the message payload to which you want to apply the signature. This value must be in byte array format. By default, Mule signs the entire message payload.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Unique key that encrypts and decrypts message; or, if using keystore, the name of the specific key within the keystore.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key Password</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Password to read the key within the keystore; required only if the specific keys within the keystore have their own passwords.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reference Uri</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">External URI reference for messages with a Detached signature type.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Canonicalization Algorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses for XML canonicalization:<br> EXCLUSIVE<br> EXCLUSIVE WITH COMMENTS<br> INCLUSIVE<br> INCLUSIVE WITH COMMENTS</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Digest Method Algorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to encrypt the digest:<br> RIPEMD160<br> SHA1<br> SHA256<br> SHA512</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signature Method Algorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to protect the message from tampering:<br> RSA_SHA1<br> DSA_SHA1<br> HMAC_SHA1</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Signature Type</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the signature applies to:<br> • data outside its containing document (DETACHED)<br> • a part of its containing document (ENVELOPED)<br> • data it contains within itself (ENVELOPING)</p></td> 
-       </tr> 
-      </tbody> 
-     </table> </li> 
-   </ol> 
-  </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>[tab,title="XML Editor or Standalone"]</pre> 
-   </div> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Add a global <code>signature:config</code> element to your application, set above all the flows in your application.</p> </li> 
-    <li> <p>Configure the global element’s attributes and child element according to the table below. Note that while the&nbsp;<code>keystorePath</code>&nbsp;and&nbsp;<code>keystorePassword</code>&nbsp;are optional, this global element is the only place you can define a them&nbsp;for your Signature element.</p> 
+    <li> <p>Use the <strong>Using</strong> field (or <code>using</code> attribute in XML) to indicate the type of signature:` JCE_SIGNER` or <code>XML_SIGNER</code>.</p> </li> 
+    <li> <p>Optionally, enter a Mule expression in the <strong>Input Reference</strong> field to indicate the part of the message payload to which the signature applies. In other words, a signature may apply to only part of the message payload.</p> </li> 
+    <li> <p>In the <strong>Expected Signature</strong> field, enter a Mule expression that Mule can use to compare and verify that the signature on a message it received is authentic.</p> </li> 
+    <li> <p>Configure any other attributes of the local Signature message processor. Refer to the JCE Signer and XML Signer sections above for attribute configuration details. Also, refer to the Global vs. Local tip to decide which attributes to configure locally, on the Signature message processor, and which attributes to configure in the Global Signature element.</p> </li> 
+    <li> <p>Configure any other attributes of a Global Signature element. Again, refer to the JCE Signer and XML Signer sections above for attribute configuration details.</p> </li> 
+    <li> <p>Configure the Signature message processor to reference the Global Signature element.</p> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1599,437 +2106,107 @@
             <td class="line-numbers"><pre>1
 2
 3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
 </pre></td> 
-            <td class="code"><pre><span class="tag">&lt;signature:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Global_XML_Signature</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Signature</span><span class="delimiter">"</span></span> <span class="attribute-name">defaultSigner</span>=<span class="string"><span class="delimiter">"</span><span class="content">XML_SIGNER</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;signature:xml-signer-config</span> <span class="attribute-name">digestMethodAlgorithm</span>=<span class="string"><span class="delimiter">"</span><span class="content">SHA512</span><span class="delimiter">"</span></span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">1@s9bl</span><span class="entity">&amp;gt;</span><span class="content">1LOJ94z4</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/signature:config&gt;</span></pre></td> 
+            <td class="code"><pre><span class="tag">&lt;signature:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Signature</span><span class="delimiter">"</span></span>  <span class="attribute-name">enableLanguage</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Signature</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;signature:jce-signer-config</span> <span class="attribute-name">algorithm</span>=<span class="string"><span class="delimiter">"</span><span class="content">HmacMD5</span><span class="delimiter">"</span></span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">JLfl5sER3kt4oVkzP2d39UQrUxrEK63LjmXAO45b6cU=</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/signature:config&gt;</span>
+<span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HttpListenerConfiguration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+ <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Get_CC_information</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Get_CC_information</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Connector</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;signature:verify-signature</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Signature</span><span class="delimiter">"</span></span> <span class="attribute-name">input-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.'http.query.params'.user]</span><span class="delimiter">"</span></span> <span class="attribute-name">expectedSignature</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.'http.query.params'.token.]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Verify User Signature</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:description</span>=<span class="string"><span class="delimiter">"</span><span class="content">Verify if the Signature is correct, so we can validate the User</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[new String(</span><span class="entity">&amp;quot;</span><span class="entity">&amp;lt;</span><span class="content">user</span><span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span><span class="content">name</span><span class="entity">&amp;gt;</span><span class="content">Royal Bank of Canada</span><span class="entity">&amp;lt;</span><span class="content">/name</span><span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span><span class="content">id</span><span class="entity">&amp;gt;</span><span class="content">Royal_Bank_Of_Canada</span><span class="entity">&amp;lt;</span><span class="content">/id</span><span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span><span class="content">cc</span><span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span><span class="content">company</span><span class="entity">&amp;gt;</span><span class="content">Visa</span><span class="entity">&amp;lt;</span><span class="content">/company</span><span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span><span class="content">number</span><span class="entity">&amp;gt;</span><span class="content">1234567890</span><span class="entity">&amp;lt;</span><span class="content">/number</span><span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span><span class="content">secret</span><span class="entity">&amp;gt;</span><span class="content">123</span><span class="entity">&amp;lt;</span><span class="content">/secret</span><span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span><span class="content">/cc</span><span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span><span class="content">/user</span><span class="entity">&amp;gt;</span><span class="entity">&amp;quot;</span><span class="content">)]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Payload</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;encryption:encrypt</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">plainXml</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Encrypt the XML (only th CC Info)</span><span class="delimiter">"</span></span> <span class="attribute-name">using</span>=<span class="string"><span class="delimiter">"</span><span class="content">XML_ENCRYPTER</span><span class="delimiter">"</span></span> <span class="attribute-name">input-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.toString()]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/flow&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
       </div> 
-     </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: 34%;"> 
-       <col style="width: 33%;"> 
-       <col style="width: 33%;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Attribute</th> 
-        <th class="tableblock halign-left valign-top">Req’d</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">A unique name for your global element.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>defaultSigner</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">XML_SIGNER</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">A display name for the element in Studio’s Visual Editor. Not applicable for Standalone.</p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Child Element</th> 
-        <th class="tableblock halign-left valign-top">Req’d</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signature:xml-signer-config</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Child Element Attributes</th> 
-        <th class="tableblock halign-left valign-top">Req’d</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>digestMethodAlgorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to encrypt the digest:<br> RIPEMD160<br> SHA1<br> SHA256<br> SHA512</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>canonicalizationAlgorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses for XML canonicalization:<br> EXCLUSIVE<br> EXCLUSIVE WITH COMMENTS<br> INCLUSIVE<br> INCLUSIVE WITH COMMENTS</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signatureMethodAlgorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to protect the message from tampering:<br> RSA_SHA1<br> DSA_SHA1<br> HMAC_SHA1</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signatureType</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the signature applies to:<br> • data outside its containing document (DETACHED)<br> • a part of its containing document (ENVELOPED)<br> • data it contains within itself (ENVELOPING)</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>referenceUri</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">External URI reference for messages with a Detached signature type.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>key</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Unique key that encrypts and decrypts message; or, if using keystore, the name of the specific key within the keystore.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>keystorePath</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the location (i.e. filepath) of the keystore file, required if using keystore.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>keystorePassword</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the password to read the key stored in the keystore, required if using keystore.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>keyPassword</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Password to read the key within the keystore; required only if the specific keys within the keystore have their own passwords.</p></td> 
-       </tr> 
-      </tbody> 
-     </table> </li> 
-    <li> <p>Add a <code>signature:sign</code> element to your flow.</p> </li> 
-    <li> <p>Configure the element’s attributes according to the tables below.</p> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="xml">
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
-</pre></td> 
-            <td class="code"><pre><span class="tag">&lt;signature:sign-xml</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Global_XML_Signature</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">XML_Signature</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
-      </div> 
-     </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: 34%;"> 
-       <col style="width: 33%;"> 
-       <col style="width: 33%;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Attribute</th> 
-        <th class="tableblock halign-left valign-top">Req’d</th> 
-        <th class="tableblock halign-left valign-top">Value</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>config-ref</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Use the name of the global element you created above.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">A display name for the element in Studio’s Visual Editor. Not applicable for Standalone.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>canonicalizationAlgorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses for XML canonicalization:<br> EXCLUSIVE<br> EXCLUSIVE WITH COMMENTS<br> INCLUSIVE<br> INCLUSIVE WITH COMMENTS</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>digestMethodAlgorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to encrypt the digest:<br> RIPEMD160<br> SHA1<br> SHA256<br> SHA512</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>input</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Identify the part of the message payload to which you want to apply the signature. This value must be in byte array format. By default, Mule signs the entire message payload.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>key</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Unique key that encrypts and decrypts message; or, if using keystore, the name of the specific key within the keystore.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>keyPassword</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Password to read the key within the keystore; required only if the specific keys within the keystore have their own passwords.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>referenceUri</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">External URI reference for messages with a Detached signature type.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signatureMethodAlgorithm</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The algorithm Mule uses to protect the message from tampering:<br> RSA_SHA1<br> DSA_SHA1<br> HMAC_SHA1</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>signatureType</strong></p></td> 
-        <td class="tableblock halign-left valign-top"></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Defines whether the signature applies to:<br> • data outside its containing document (DETACHED)<br> • a part of its containing document (ENVELOPED)<br> • data it contains within itself (ENVELOPING)</p></td> 
-       </tr> 
-      </tbody> 
-     </table> </li> 
+     </div> </li> 
    </ol> 
   </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>------
-
-=== Example of a Signed Payload
-
-What follows are examples of a message payloads: one _without_ a digital signature (below, top), and one _with_ an XML digital signature (below, bottom).
-
-&nbsp;View the XML Without Digital Signature
-
-[source, xml, linenums]
-----
-&lt;PurchaseOrder&gt;
- &lt;Item number="130046593231"&gt;
-  &lt;Description&gt;Video Game&lt;/Description&gt;
-  &lt;Price&gt;10.29&lt;/Price&gt;
- &lt;/Item&gt;
- &lt;Buyer id="8492340"&gt;
-  &lt;Name&gt;My Name&lt;/Name&gt;
-  &lt;Address&gt;
-   &lt;Street&gt;One Network Drive&lt;/Street&gt;
-   &lt;Town&gt;Burlington&lt;/Town&gt;
-   &lt;State&gt;MA&lt;/State&gt;
-   &lt;Country&gt;United States&lt;/Country&gt;
-   &lt;PostalCode&gt;01803&lt;/PostalCode&gt;
-  &lt;/Address&gt;
- &lt;/Buyer&gt;
-&lt;/PurchaseOrder&gt;
-----
-
-&nbsp;View the XML With Digital Signature
-
-[source, xml, linenums]
-----
-&lt;PurchaseOrder&gt;
- &lt;Item number="130046593231"&gt;
-  &lt;Description&gt;Video Game&lt;/Description&gt;
-  &lt;Price&gt;10.29&lt;/Price&gt;
- &lt;/Item&gt;
- &lt;Buyer id="8492340"&gt;
-  &lt;Name&gt;My Name&lt;/Name&gt;
-  &lt;Address&gt;
-   &lt;Street&gt;One Network Drive&lt;/Street&gt;
-   &lt;Town&gt;Burlington&lt;/Town&gt;
-   &lt;State&gt;MA&lt;/State&gt;
-   &lt;Country&gt;United States&lt;/Country&gt;
-   &lt;PostalCode&gt;01803&lt;/PostalCode&gt;
-  &lt;/Address&gt;
- &lt;/Buyer&gt;
-&lt;Signature xmlns="http://www.w3.org/2000/09/xmldsig#"&gt;&lt;SignedInfo&gt;&lt;CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/&gt;&lt;SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/&gt;&lt;Reference URI=""&gt;&lt;Transforms&gt;&lt;Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/&gt;&lt;/Transforms&gt;&lt;DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/&gt;&lt;DigestValue&gt;tkrLEansVMTKqAOuW6b8Dx+OUNWk9bVpW6RFvfuEmM8=&lt;/DigestValue&gt;&lt;/Reference&gt;&lt;/SignedInfo&gt;&lt;SignatureValue&gt;PeeHVw+XvZkkhhPlEopRp1PBDfTcR9U2IBimTTo1gOMF5cWq1tFqZ0B4ScNBiZVtd0yS4j06xl3W
-B2Q87oobwA==&lt;/SignatureValue&gt;&lt;KeyInfo&gt;&lt;KeyValue&gt;&lt;RSAKeyValue&gt;&lt;Modulus&gt;i8OP+VX/EORWwHiHiqLmMgpXz4IubPv2y+gHdiSCUzKoFfUYD6wFGBwi6vVmRSrmNbNZvZ9DFvST
-PZJEyUhn5w==&lt;/Modulus&gt;&lt;Exponent&gt;AQAB&lt;/Exponent&gt;&lt;/RSAKeyValue&gt;&lt;/KeyValue&gt;&lt;/KeyInfo&gt;&lt;/Signature&gt;&lt;/PurchaseOrder&gt;
-----
-
-== Signing Part of a Message Payload
-
-By default, Mule signs the entire message payload when you apply a signature. However, you can use a Mule Expression to sign a specific part of a message payload rather than the whole payload. Enter a Mule expression in the *Input Reference* field of a JCE or XML Signature message processor to define the specific part(s) of the payload you wish to sign.
-
-== Applying a Signature Using MEL
-
-As described above, to apply a digital signature to a message in Mule, you normally need two ingredients:
-
-* a *Global Signature* element which defines all, or some, of the signature attributes
-* a *Signature* message processor in a Mule flow which defines all, or some, of the signature attributes
-
-However, you can also add a signature to a message without adding a Signature message processor to a Mule flow. To do so, you need:
-
-* a *Global Signature* element which defines all of the signature attributes
-* a *Mule expression* appended to a message processor as *message attribute*, which references the Global Signature element to apply a signature to the message
-
-To reference a Global Signature element via Mule expression in another element, you must first set the Global Signature element's *Enable Language* attribute to true (below, left), then apply all the Global Signature attributes (below, right).
-
-[tabs]
-------
-[tab,title="STUDIO Visual Editor"]</pre> 
-   </div> 
-  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="next-steps"><a class="anchor" href="#next-steps"></a>Next Steps</h2> 
+ <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/enable_language3.png" alt="enable_language3"></span></p> 
+   <p>Examine the <a href="/mule-user-guide/v/3.7/anypoint-enterprise-security-example-application">Anypoint Enterprise Security Example Application</a> which illustrates how to verify the digital signature of a message.</p> 
   </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>[tab,title="XML Editor or Standalone"]</pre> 
-   </div> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;signature:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">hmacPlain</span><span class="delimiter">"</span></span> <span class="attribute-name">enableLanguage</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;signature:jce-signer-config</span> <span class="attribute-name">algorithm</span>=<span class="string"><span class="delimiter">"</span><span class="content">HmacMD5</span><span class="delimiter">"</span></span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">JLfl5sER3kt4oVkzP2d39UQrUxrEK63LjmXAO45b6cU=</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/signature:config&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>------
-
-Then, add a *message attribute* to an element in your flow, a Logger, for example, to apply a digital signature according to the configurations in the Global Signature element.&nbsp;
-
-[tabs]
-------
-[tab,title="STUDIO Visual Editor"]</pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/logger1.png" alt="logger1"></span></p> 
-  </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>[tab,title="XML Editor or Standalone"]</pre> 
-   </div> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">testHmacPlain</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;logger</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">ERROR</span><span class="delimiter">"</span></span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">##</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
- <span class="tag">&lt;/flow&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>------
-
-
-== Verifying a Digital Signature
-
-In addition to signing a message, Mule also uses a Signature message processor to verify the identity of a message’s sender as legitimate. Where Mule discovers an invalid signature, it discards the message, processing it no further.
-
-Mule verifies the signature on the message payload according to the configurations of any of the optional attributes if explicitly defined (see lists above for JCE- and XML-specific attributes).
-
-[NOTE]
-This topic introduces the idea of Global Elements; if you are unfamiliar with this functionality, access link:/mule-fundamentals/v/3.7/global-elements[Global Elements] to learn more before proceeding.
-
-To verify JCE or XML signatures on messages in a Mule flow, you must, at minimum, create:
-
-* a *Global Signature* element
-* a *Signature* message processor in your Mule flow
-
-The following procedure describes how to verify digital signatures on messages a Mule flow receives.
-
-. In your Mule flow, add a *Signature* message processor early in your flow in Studio to verify signatures on messages that arrive to be processed.
-. In the *Operations field*, select `Verify Signature`. Alternatively, add a Signature element to your flow, configured to verify signatures (see code, below).
-+
-[source, xml, linenums]
-----
-&lt;signature:verify-signature config-ref="" doc:name="Signature"/&gt;
-----
-
-. Use the *Using* field (or `using` attribute in XML) to indicate the type of signature:` JCE_SIGNER` or `XML_SIGNER`.
-. Optionally, enter a Mule expression in the *Input Reference* field to indicate the part of the message payload to which the signature applies. In other words, a signature may apply to only part of the message payload.
-. In the *Expected Signature* field, enter a Mule expression that Mule can use to compare and verify that the signature on a message it received is authentic.
-. Configure any other attributes of the local Signature message processor. Refer to the JCE Signer and XML Signer sections above for attribute configuration details. Also, refer to the Global vs. Local tip to decide which attributes to configure locally, on the Signature message processor, and which attributes to configure in the Global Signature element.
-. Configure any other attributes of a Global Signature element. Again, refer to the JCE Signer and XML Signer sections above for attribute configuration details.
-. Configure the Signature message processor to reference the Global Signature element.
-+
-[source, xml, linenums]
-----
-&lt;signature:config name="Signature"  enableLanguage="true" doc:name="Signature"&gt;
-    &lt;signature:jce-signer-config algorithm="HmacMD5" key="JLfl5sER3kt4oVkzP2d39UQrUxrEK63LjmXAO45b6cU="/&gt;
-&lt;/signature:config&gt;
-&lt;http:listener-config name="HttpListenerConfiguration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/&gt;
-
- &lt;flow name="Get_CC_information" doc:name="Get_CC_information"&gt;
-        &lt;http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP Connector"/&gt;
-        &lt;signature:verify-signature config-ref="Signature" input-ref="#[message.inboundProperties.'http.query.params'.user]" expectedSignature="#[message.inboundProperties.'http.query.params'.token.]" doc:name="Verify User Signature" doc:description="Verify if the Signature is correct, so we can validate the User"/&gt;
-        &lt;set-payload value="#[new String(&amp;quot;&amp;lt;user&amp;gt;&amp;lt;name&amp;gt;Royal Bank of Canada&amp;lt;/name&amp;gt;&amp;lt;id&amp;gt;Royal_Bank_Of_Canada&amp;lt;/id&amp;gt;&amp;lt;cc&amp;gt;&amp;lt;company&amp;gt;Visa&amp;lt;/company&amp;gt;&amp;lt;number&amp;gt;1234567890&amp;lt;/number&amp;gt;&amp;lt;secret&amp;gt;123&amp;lt;/secret&amp;gt;&amp;lt;/cc&amp;gt;&amp;lt;/user&amp;gt;&amp;quot;)]" doc:name="Set Payload"/&gt;
-        &lt;encryption:encrypt config-ref="plainXml" doc:name="Encrypt the XML (only th CC Info)" using="XML_ENCRYPTER" input-ref="#[payload.toString()]"/&gt;
-  &lt;/flow&gt;
-----
-
-
-== Next Steps
-
-Examine the link:/mule-user-guide/v/3.7/anypoint-enterprise-security-example-application[Anypoint Enterprise Security Example Application] which illustrates how to verify the digital signature of a message.
-
-== Appendix
-
-[width="100%",cols="100%",options="header",]
-|===
-|JCE Signer Available Algorithms
-|HmacMD5
-|HmacSHA1
-|HmacSHA256
-|HmacSHA384
-|HmacSHA512
-|MD2WithRSAEncryption
-|MD4WithRSAEncryption
-|MD5WithRSAEncryption
-|RIPEMD128WithRSAEncryption
-|RIPEMD160WithRSAEncryption
-|RIPEMD256WithRSAEncryption
-|SHA1WithRSAEncryption
-|SHA224WithRSAEncryption
-|SHA256WithRSAEncryption
-|===</pre> 
-   </div> 
-  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="appendix"><a class="anchor" href="#appendix"></a>Appendix</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 100%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">JCE Signer Available Algorithms</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">HmacMD5</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">HmacSHA1</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">HmacSHA256</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">HmacSHA384</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">HmacSHA512</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">MD2WithRSAEncryption</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">MD4WithRSAEncryption</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">MD5WithRSAEncryption</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">RIPEMD128WithRSAEncryption</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">RIPEMD160WithRSAEncryption</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">RIPEMD256WithRSAEncryption</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">SHA1WithRSAEncryption</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">SHA224WithRSAEncryption</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">SHA256WithRSAEncryption</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
  </div> 
 </div>
         </div>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#adding-a-digital-jce-signature-to-a-message">Adding a Digital JCE Signature to a Message</a></li><li><a class="scroll-menu-link" href="#adding-a-digital-xml-signature-to-a-message">Adding a Digital XML Signature to a Message</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#adding-a-digital-jce-signature-to-a-message">Adding a Digital JCE Signature to a Message</a></li><li><a class="scroll-menu-link" href="#adding-a-digital-xml-signature-to-a-message">Adding a Digital XML Signature to a Message</a></li><li><a class="scroll-menu-link" href="#signing-part-of-a-message-payload">Signing Part of a Message Payload</a></li><li><a class="scroll-menu-link" href="#applying-a-signature-using-mel">Applying a Signature Using MEL</a></li><li><a class="scroll-menu-link" href="#verifying-a-digital-signature">Verifying a Digital Signature</a></li><li><a class="scroll-menu-link" href="#next-steps">Next Steps</a></li><li><a class="scroll-menu-link" href="#appendix">Appendix</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
