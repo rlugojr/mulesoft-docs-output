@@ -945,24 +945,504 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
     <li> <p>Service overrides</p> </li> 
    </ul> 
   </div> 
-  <div class="admonitionblock important"> 
-   <table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="receiver-threading-profile"><a class="anchor" href="#receiver-threading-profile"></a>Receiver threading profile</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The threading profile to use when a connector receives messages.</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="attributes-of-receiver-threading-profile"><a class="anchor" href="#attributes-of-receiver-threading-profile"></a>Attributes of receiver-threading-profile</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 15%;"> 
+     <col style="width: 10%;"> 
+     <col style="width: 10%;"> 
+     <col style="width: 10%;"> 
+     <col style="width: 55%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Name</th> 
+      <th class="tableblock halign-left valign-top">Type</th> 
+      <th class="tableblock halign-left valign-top">Required</th> 
+      <th class="tableblock halign-left valign-top">Default</th> 
+      <th class="tableblock halign-left valign-top">Description</th> 
+     </tr> 
+    </thead> 
     <tbody> 
      <tr> 
-      <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>xslt: Unexpected program error: java.lang.NullPointerException</p> 
-       </div> 
-       <div class="paragraph"> 
-        <p>xslt: Unexpected program error: java.lang.NullPointerException</p> 
-       </div> 
-       <div class="paragraph"> 
-        <p>xslt: Unexpected program error: java.lang.NullPointerException</p> 
-       </div> </td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>maxThreadsActive</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>integer</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>no</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>The maximum number of threads to use.</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>maxThreadsIdle</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>integer</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>no</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>The maximum number of idle or inactive threads that can be in the pool before they are destroyed.</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>doThreading</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>boolean</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>no</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>true</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Whether threading should be used (default is true).</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>threadTTL</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>integer</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>no</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Determines how long an inactive thread is kept in the pool before being discarded.</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>poolExhaustedAction</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>enumeration</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>no</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>When the maximum pool size or queue size is bounded, this value determines how to handle incoming tasks. Possible values are: WAIT (wait until a thread becomes available; don’t use this value if the minimum number of threads is zero, in which case a thread may never become available), DISCARD (throw away the current request and return), DISCARD_OLDEST (throw away the oldest request and return), ABORT (throw a RuntimeException), and RUN (the default; the thread making the execute request runs the task itself, which helps guard against lockup).</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>threadWaitTimeout</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>integer</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>no</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>How long to wait in milliseconds when the pool exhausted action is WAIT. If the value is negative, it will wait indefinitely.</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>maxBufferSize</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>integer</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>no</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Determines how many requests are queued when the pool is at maximum usage capacity and the pool exhausted action is WAIT. The buffer is used as an overflow.</p> 
+        </div> 
+       </div></td> 
      </tr> 
     </tbody> 
    </table> 
+   <div class="paragraph"> 
+    <p>No child elements.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="dispatcher-threading-profile"><a class="anchor" href="#dispatcher-threading-profile"></a>Dispatcher threading profile</h3> 
+   <div class="paragraph"> 
+    <p>The threading profile to use when a connector dispatches messages.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-dispatcher-threading-profile"><a class="anchor" href="#attributes-of-dispatcher-threading-profile"></a>Attributes of dispatcher-threading-profile</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 15%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Type</th> 
+       <th class="tableblock halign-left valign-top">Required</th> 
+       <th class="tableblock halign-left valign-top">Default</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>maxThreadsActive</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>integer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The maximum number of threads to use.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>maxThreadsIdle</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>integer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The maximum number of idle or inactive threads that can be in the pool before they are destroyed.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>doThreading</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>boolean</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>true</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Whether threading should be used (default is true).</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>threadTTL</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>integer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Determines how long an inactive thread is kept in the pool before being discarded.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>poolExhaustedAction</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>enumeration</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>When the maximum pool size or queue size is bounded, this value determines how to handle incoming tasks. Possible values are: WAIT (wait until a thread becomes available; don’t use this value if the minimum number of threads is zero, in which case a thread may never become available), DISCARD (throw away the current request and return), DISCARD_OLDEST (throw away the oldest request and return), ABORT (throw a RuntimeException), and RUN (the default; the thread making the execute request runs the task itself, which helps guard against lockup).</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>threadWaitTimeout</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>integer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>How long to wait in milliseconds when the pool exhausted action is WAIT. If the value is negative, it will wait indefinitely.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>maxBufferSize</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>integer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Determines how many requests are queued when the pool is at maximum usage capacity and the pool exhausted action is WAIT. The buffer is used as an overflow.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p>No child elements.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="service-overrides"><a class="anchor" href="#service-overrides"></a>Service Overrides</h3> 
+   <div class="paragraph"> 
+    <p>Service overrides allow the connector to be further configured/customized by allowing parts of the transport implementation to be overridden, for example, the message receiver or dispatcher implementation, or the message adaptor that is used.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-service-overrides"><a class="anchor" href="#attributes-of-service-overrides"></a>Attributes of service-overrides</h4> 
+    <div class="paragraph"> 
+     <p>There are no defaults or descriptions for these attributes. All attributes are strings and none are required. There are no child elements for service-overrides.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Attributes:</p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>defaultExchangePattern</p> </li> 
+      <li> <p>dispatcherFactory</p> </li> 
+      <li> <p>endpointBuilder</p> </li> 
+      <li> <p>inboundExchangePatterns</p> </li> 
+      <li> <p>inboundTransformer</p> </li> 
+      <li> <p>messageFactory</p> </li> 
+      <li> <p>messageReceiver</p> </li> 
+      <li> <p>outboundExchangePatterns</p> </li> 
+      <li> <p>outboundTransformer</p> </li> 
+      <li> <p>responseTransformer</p> </li> 
+      <li> <p>serviceFinder</p> </li> 
+      <li> <p>sessionHandler</p> </li> 
+      <li> <p>transactedMessageReceiver</p> </li> 
+      <li> <p>xaTransactedMessageReceiver</p> </li> 
+     </ul> 
+    </div> 
+   </div> 
   </div> 
  </div> 
 </div>
@@ -970,7 +1450,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#common-connector-properties">Common Connector Properties</a></li><li><a class="scroll-menu-link" href="#setting-spring-properties-on-connectors">Setting Spring Properties on Connectors</a></li><li><a class="scroll-menu-link" href="#retry-policies">Retry Policies</a></li><li><a class="scroll-menu-link" href="#creating-your-own-transport">Creating Your Own Transport</a></li><li><a class="scroll-menu-link" href="#detailed-configuration-information">Detailed Configuration Information</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#common-connector-properties">Common Connector Properties</a></li><li><a class="scroll-menu-link" href="#setting-spring-properties-on-connectors">Setting Spring Properties on Connectors</a></li><li><a class="scroll-menu-link" href="#retry-policies">Retry Policies</a></li><li><a class="scroll-menu-link" href="#creating-your-own-transport">Creating Your Own Transport</a></li><li><a class="scroll-menu-link" href="#detailed-configuration-information">Detailed Configuration Information</a></li><li><a class="scroll-menu-link" href="#receiver-threading-profile">Receiver threading profile</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
