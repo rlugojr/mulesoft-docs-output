@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/release-notes/anypoint-studio-5.3-with-3.7.2-runtime-release-notes" />
-    <meta name="description" content="September 17, 2015 Build ID: TBD ESB Runtime Version: 3.7.2 EE Anypoint Studio Version: 5.3 Build Id: TBD APIkit Versions: 1.6.2 - 1.7.2 SAP Connec..." />
+    <meta name="description" content="September 17, 2015 Build ID: TBD Mule Runtime Version: 3.7.2 EE Anypoint Studio Version: 5.3 Build Id: TBD APIkit Versions: 1.6.2 - 1.7.2 SAP Conne..." />
     <meta class="swiftype" name="title" data-type="string" content="Anypoint Studio 5.3.0 With Mule Runtime 3.7.2 Release Notes" />
 
 </head>
@@ -390,11 +390,7 @@
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/debugging">Debugging</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/studio-visual-debugger">Studio Visual Debugger</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.7/troubleshooting">Troubleshooting</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/configuring-mule-stacktraces">Configuring Mule Stacktraces</a></li><li><i></i><a href="/mule-user-guide/v/3.7/debugging-outside-studio">Debugging Outside Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.7/logging">Logging</a></li></ul></li>
-</ul></li>
+<li><i></i><a href="/mule-user-guide/v/3.7/studio-visual-debugger">Studio Visual Debugger</a></li><li><i></i><a href="/mule-user-guide/v/3.7/configuring-mule-stacktraces">Configuring Mule Stacktraces</a></li><li><i></i><a href="/mule-user-guide/v/3.7/debugging-outside-studio">Debugging Outside Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.7/logging">Logging</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/testing">Testing</a><ul>
@@ -870,10 +866,10 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="enterprise-runtime"><a class="anchor" href="#enterprise-runtime"></a>Enterprise Runtime</h2> 
+ <h2 id="compatibility"><a class="anchor" href="#compatibility"></a>Compatibility</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><strong>ESB Runtime</strong><br> Version: 3.7.2 EE</p> 
+   <p><strong>Mule Runtime</strong><br> Version: 3.7.2 EE</p> 
   </div> 
   <div class="paragraph"> 
    <p><strong>Anypoint Studio</strong><br> Version: 5.3<br> Build Id: TBD</p> 
@@ -885,7 +881,7 @@
    <p><strong>SAP Connector</strong><br> Versions: 2.1.2 - 2.2.7</p> 
   </div> 
   <div class="paragraph"> 
-   <p><strong>DataWeave</strong><br> Version 1.2<br> See <a href="#dataweavern">DataWeave Version 1.2 Release Notes</a></p> 
+   <p><strong>DataWeave</strong><br> Version 1.2</p> 
   </div> 
  </div> 
 </div> 
@@ -895,50 +891,10 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>A new Validations Module allows you to easily validate Mule messages using a variety of built in validators.</p> </li> 
-    <li> <p>Users can now attach sources for JARs bundled inside Mule runtime containers on the classpath and Anypoint Studio remembers the settings.</p> </li> 
-    <li> <p>Added preference pane which allows users to manage the location of their Mule source zip files and attach them to Mule runtimes.</p> </li> 
+    <li> <p>You can now attach sources for JARs bundled inside Mule runtime containers on the classpath, and Anypoint Studio remembers the settings. You can also reference Mule flows contained in JARs on the classpath.</p> </li> 
+    <li> <p>Added preference pane that allows users to manage the location of their Mule source zip files and attach them to Mule runtimes.</p> </li> 
     <li> <p>Anypoint Studio now auto-creates a project with the API Gateway default domain that contains a shared HTTP listener configuration for all your APIs.</p> </li> 
-    <li> <p>You can now reference Mule flows that are contained in JARs on the classpath.</p> </li> 
    </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="known-issues"><a class="anchor" href="#known-issues"></a>Known Issues</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Custom Metadata Types are not saved properly when the <strong>Wrap Element</strong> checkbox is selected. (STUDIO-6937)</p> </li> 
-    <li> <p>Error highlighting in the XML view sometimes does not properly refresh until you go to the Message Flow view and back to the XML view. (STUDIO-7027)</p> </li> 
-   </ul> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="dataweave-known-issues"><a class="anchor" href="#dataweave-known-issues"></a>DataWeave Known Issues</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>None. See <a href="#dataweavern">DataWeave Version 1.2 Release Notes</a>.</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="migration-information"><a class="anchor" href="#migration-information"></a>Migration Information</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>From the previous version of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1 to 5.3.0 there is no special migration needed, but when opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the New Metadata Manager can handle the types and to show the types in your project.</p> </li> 
-   </ul> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> Studio as an Eclipse plugin only works with Eclipse 4.3 or 4.4 due to an SWT dependency. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
   </div> 
  </div> 
 </div> 
@@ -957,21 +913,55 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="known-issues"><a class="anchor" href="#known-issues"></a>Known Issues</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Custom Metadata Types are not saved properly when the <strong>Wrap Element</strong> checkbox is selected. (STUDIO-6937)</p> </li> 
+    <li> <p>Error highlighting in the XML view sometimes does not properly refresh until you go to the Message Flow view and back to the XML view. (STUDIO-7027)</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="migration-guide"><a class="anchor" href="#migration-guide"></a>Migration Guide</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>From the previous version of Studio 5.1.0, 5.1.1, 5.2.0, 5.2.1, to 5.3.0 there is no special migration needed, but when opening a previous Workspace with projects that were created with Studio 5.1.0 or older, and which has metadata stored in disk, Studio asks you to perform an update to all the projects so that the New Metadata Manager can handle the types and to show the types in your project.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> Studio as an Eclipse plugin only works with Eclipse 4.3 or 4.4 due to an SWT dependency. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="support"><a class="anchor" href="#support"></a>Support</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="http://forums.mulesoft.com/">MuleSoft’s Forum</a></p> </li> 
+    <li> <p><a href="https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription">MuleSoft Support</a></p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="deprecated-in-this-release"><a class="anchor" href="#deprecated-in-this-release"></a>Deprecated in this Release</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Nothing was deprecated in this release.</p> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="studio-5-3-release-notes"><a class="anchor" href="#studio-5-3-release-notes"></a>Studio 5.3 Release Notes</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The following release notes are for Anypoint Studio version 5.3.</p> 
-  </div> 
   <div class="sect2"> 
-   <h3 id="studio-5-3-bug-fixes"><a class="anchor" href="#studio-5-3-bug-fixes"></a>Studio 5.3 Bug Fixes</h3> 
+   <h3 id="bug-fixes"><a class="anchor" href="#bug-fixes"></a>Bug Fixes</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: 30%;"> 
@@ -2024,7 +2014,7 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="studio-5-3-new-features"><a class="anchor" href="#studio-5-3-new-features"></a>Studio 5.3 New Features</h3> 
+   <h3 id="new-features"><a class="anchor" href="#new-features"></a>New Features</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: 30%;"> 
@@ -2167,7 +2157,7 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="studio-5-3-new-stories"><a class="anchor" href="#studio-5-3-new-stories"></a>Studio 5.3 New Stories</h3> 
+   <h3 id="new-stories"><a class="anchor" href="#new-stories"></a>New Stories</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: 30%;"> 
@@ -2226,7 +2216,7 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="studio-5-3-new-tasks"><a class="anchor" href="#studio-5-3-new-tasks"></a>Studio 5.3 New Tasks</h3> 
+   <h3 id="new-tasks"><a class="anchor" href="#new-tasks"></a>New Tasks</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: 30%;"> 
@@ -2326,414 +2316,14 @@
     </tbody> 
    </table> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="dataweavern"><a class="anchor" href="#dataweavern"></a>DataWeave Version 1.2 Release Notes</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The following release notes are for DataWeave version 1.2.</p> 
-  </div> 
   <div class="sect2"> 
-   <h3 id="dataweave-version-1-2-bug-fixes"><a class="anchor" href="#dataweave-version-1-2-bug-fixes"></a>DataWeave Version 1.2 Bug Fixes</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 30%;"> 
-     <col style="width: 70%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Issue</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-45</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Pesos sign inside a quoted String is being taken as if you were accessing a variable</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-77</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Value selector inside functions cannot use namespace prefix</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-85</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Attributes are lost after using the <strong>using</strong> operation</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-86</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>DataWeave Writer should escape keys when required</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-92</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Problem with Dates formats</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-93</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>NPE On filter selector over null operand</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-98</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Java Writer does not allow to assign fields of type byte</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-99</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Java Writer does not support "java.sql.Timestamp" and "java.sql.Time"</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-100</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>DataWeave does not convert array to set for JavaWriter</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-101</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>DataWeave cannot coerce :null to :string when it should work</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-102</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>No control characters support for literal string</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-103</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>JSON Writer should complain if root element is not an object or an array</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-104</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Mule DateTime needs to be supported for reader and writer</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-105</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Null Safe node is not working with enclosed expression</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-106</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>DataWeave cannot handle MessageCollection</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-108</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>JsonObjectSeq cannot be cast to ArraySeq</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-109</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Getting <code>Expected a value of type :object, got :array :`</code> when using the filter function</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-111</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Column number is not calculated correctly</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-112</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>DistinctBy doesn’t work with custom types</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-113</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Index Out of bound on JSON writer</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-114</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Invalid internationalization message error</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-115</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Value selectors over Java objects looses metadata</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-116</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>NullPayload should be handle as null</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-117</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Lookup Function Should pass flowvars and properties</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>MDF-120</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>A Regression was introduced when fixing the JSON writer</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <h3 id="known-issues-2"><a class="anchor" href="#known-issues-2"></a>Known Issues</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>When API Gateway runtime version 2.0.0 and newer is not installed in Studio, you cannot choose between 1.3.2 Gateway or 3.7.2 Mule runtimes. (STUDIO-7064)</p> </li> 
+    </ul> 
+   </div> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="dataweave-version-1-2-new-feature"><a class="anchor" href="#dataweave-version-1-2-new-feature"></a>DataWeave Version 1.2 New Feature</h2> 
- <div class="sectionbody"> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: 30%;"> 
-    <col style="width: 70%;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Issue</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>MDF-43</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Add support for escaping sequence in regular expressions</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-   </tbody> 
-  </table> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -2756,7 +2346,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#enterprise-runtime">Enterprise Runtime</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#known-issues">Known Issues</a></li><li><a class="scroll-menu-link" href="#migration-information">Migration Information</a></li><li><a class="scroll-menu-link" href="#hardware-and-software-system-requirements">Hardware and Software System Requirements</a></li><li><a class="scroll-menu-link" href="#deprecated-in-this-release">Deprecated in this Release</a></li><li><a class="scroll-menu-link" href="#studio-5-3-release-notes">Studio 5.3 Release Notes</a></li><li><a class="scroll-menu-link" href="#dataweavern">DataWeave Version 1.2 Release Notes</a></li><li><a class="scroll-menu-link" href="#dataweave-version-1-2-new-feature">DataWeave Version 1.2 New Feature</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#hardware-and-software-system-requirements">Hardware and Software System Requirements</a></li><li><a class="scroll-menu-link" href="#known-issues">Known Issues</a></li><li><a class="scroll-menu-link" href="#migration-guide">Migration Guide</a></li><li><a class="scroll-menu-link" href="#support">Support</a></li><li><a class="scroll-menu-link" href="#deprecated-in-this-release">Deprecated in this Release</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

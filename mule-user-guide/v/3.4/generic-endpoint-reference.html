@@ -776,14 +776,1292 @@
 <div class="sect1"> 
  <h2 id="configuration-reference"><a class="anchor" href="#configuration-reference"></a>Configuration Reference</h2> 
  <div class="sectionbody"> 
-  <div class="exampleblock"> 
-   <div class="content"> 
-    <div class="paragraph"> 
-     <p>xslt: Unexpected program error: java.lang.NullPointerException</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>xslt: Unexpected program error: java.lang.NullPointerException</p> 
-    </div> 
+  <div class="sect2"> 
+   <h3 id="inbound-endpoint"><a class="anchor" href="#inbound-endpoint"></a>Inbound endpoint</h3> 
+   <div class="paragraph"> 
+    <p>An inbound endpoint receives messages via the associated transport. As with global endpoints, each transport implements its own inbound endpoint element.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of &lt;inbound-endpoint…​&gt;</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 15%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Type</th> 
+       <th class="tableblock halign-left valign-top">Required</th> 
+       <th class="tableblock halign-left valign-top">Default</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>name</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>name (no spaces)</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Identifies the endpoint in the registry. There is no need to set the 'name' attribute on inbound or outbound endpoints, only on global endpoints.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>address</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>responseTimeout</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>integer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The timeout for a response if making a synchronous endpoint call</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>encoding</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>String encoding used for messages.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>connector-ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>transformer-refs</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>list of names</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A list of the transformers to apply (in order) to the message before it is delivered to the component.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>responseTransformer-refs</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>list of names</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A list of the transformers to apply (in order) to the synchronous response before it is returned via the transport.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>disableTransportTransformer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>boolean</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>mimeType</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The MIME type, such as text/plain or application/json</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>exchange-pattern</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>enumeration</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-inbound-endpoint"><a class="anchor" href="#child-elements-of-inbound-endpoint"></a>Child Elements of inbound-endpoint</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-reconnection-strategy</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for a reconnection strategy element. Reconnection strategies define how Mule should attempt to handle a connection failure.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-multi-transaction</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for multi-transaction elements. Multi-transactions allow a series of operations to be grouped together spanning different transports, such as JMS and JDBC, but without the overhead of XA. The trade-off is that XA reliability guarantees aren’t available, and services must be ready to handle duplicates. This is very similar to a 1.5 PC concept. EE-only feature.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>response</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-redelivery-policy</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for a redelivery policy. Redelivery policies determine what action to take when the same message is redelivered repeatedly.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-transaction</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for transaction elements. Transactions allow a series of operations to be grouped together.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-transformer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for transformer elements. Transformers convert message payloads.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-filter</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for filter elements, which control which messages are handled.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-security-filter</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for security filter elements, which control access to the system.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-intercepting-message-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for intercepting router elements.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-observer-message-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for message processors that observe the message but do not mutate it used for exmaple for logging.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A reference to a message processor defined elsewhere.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>custom-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-mixed-content-message-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for message processor elements.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>property</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..*</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Sets a Mule property. This is a name/value pair that can be set on components, services, etc., and which provide a generic way of configuring the system. Typically, you shouldn’t need to use a generic property like this, since almost all functionality is exposed via dedicated elements. However, it can be useful in configuring obscure or overlooked options and in configuring transports from the generic endpoint elements.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>properties</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A map of Mule properties.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound endpoint</h3> 
+   <div class="paragraph"> 
+    <p>An outbound endpoint sends messages via the associated transport. As with global endpoints, each transport implements its own outbound endpoint element.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-outbound-endpoint"><a class="anchor" href="#attributes-of-outbound-endpoint"></a>Attributes of outbound-endpoint</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 10%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 57%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Type</th> 
+       <th class="tableblock halign-left valign-top">Required</th> 
+       <th class="tableblock halign-left valign-top">Default</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>name</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>name (no spaces)</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Identifies the endpoint in the registry. There is not need to set the 'name' attribute on inbound or outbound endpoints, only on global endpoints.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>address</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>responseTimeout</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>integer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The timeout for a response if making a synchronous endpoint call</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>encoding</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>String encoding used for messages.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>connector-ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>transformer-refs</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>list of names</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A list of the transformers to apply (in order) to the message before it is delivered to the component.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>responseTransformer-refs</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>list of names</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A list of the transformers to apply (in order) to the synchronous response before it is returned via the transport.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>disableTransportTransformer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>boolean</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>mimeType</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The MIME type, such as text/plain or application/json</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>exchange-pattern</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>enumeration</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-outbound-endpoint"><a class="anchor" href="#child-elements-of-outbound-endpoint"></a>Child Elements of outbound-endpoint</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-reconnection-strategy</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for a reconnection strategy element. Reconnection strategies define how Mule should attempt to handle a connection failure.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-multi-transaction</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for multi-transaction elements. Multi-transactions allow a series of operations to be grouped ogether spanning different transports, such as JMS and JDBC, but without the overhead of XA. The trade-off is that XA reliability guarantees aren’t available, and services must be ready to handle duplicates. This is very similar to a 1.5 PC concept. EE-only feature.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>response</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-redelivery-policy</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for a redelivery policy. Redelivery policies determine what action to take when the same message s redelivered repeatedly.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-transaction</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for transaction elements. Transactions allow a series of operations to be grouped together.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-transformer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for transformer elements. Transformers convert message payloads.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-filter</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for filter elements, which control which messages are handled.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-security-filter</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for security filter elements, which control access to the system.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-intercepting-message-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for intercepting router elements.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-observer-message-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for message processors that observe the message but do not mutate it, used for example for logging.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A reference to a message processor defined elsewhere.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>custom-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-mixed-content-message-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for message processor elements.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>property</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..*</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Sets a Mule property. This is a name/value pair that can be set on components, services, etc., and which provide a generic way of onfiguring the system. Typically, you shouldn’t need to use a generic property like this, since almost all functionality is exposed via dedicated elements. However, it can be useful in configuring obscure or overlooked options and in configuring transports from the generic endpoint elements.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>properties</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A map of Mule properties.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
   </div> 
  </div> 
@@ -794,11 +2072,628 @@
   <div class="paragraph"> 
    <p>In XML only, you can also define a global generic endpoint and reference it from specific endpoints within your flows.</p> 
   </div> 
-  <div class="exampleblock"> 
-   <div class="content"> 
-    <div class="paragraph"> 
-     <p>xslt: Unexpected program error: java.lang.NullPointerException</p> 
-    </div> 
+  <div class="sect2"> 
+   <h3 id="endpoint"><a class="anchor" href="#endpoint"></a>Endpoint</h3> 
+   <div class="paragraph"> 
+    <p>A global endpoint, which acts as a template that can be used to construct an inbound or outbound endpoint elsewhere in the configuration by referencing the global endpoint name. Each transport implements its own endpoint element, with a more friendly syntax, but this generic element can be used with any transport by supplying the correct address URI. For example, "vm://foo" describes a VM transport endpoint.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-endpoint"><a class="anchor" href="#attributes-of-endpoint"></a>Attributes of endpoint</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 15%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Type</th> 
+       <th class="tableblock halign-left valign-top">Required</th> 
+       <th class="tableblock halign-left valign-top">Default</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>name</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>name (no spaces)</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>yes</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Identifies the endpoint so that other elements can reference it. This name can also be referenced in the MuleClient.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>address</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. lternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>responseTimeout</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>integer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The timeout for a response if making a synchronous endpoint call</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>encoding</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>String encoding used for messages.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>connector-ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>transformer-refs</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>list of names</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A list of the transformers to apply (in order) to the message before it is delivered to the component. responseTransformer-refs</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>list of names</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A list of the transformers to apply (in order) to the synchronous response before it is returned via the transport.</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>disableTransportTransformer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>boolean</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>mimeType</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>string</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>no</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The MIME type, such as text/plain or application/json</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>exchange-pattern</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>enumeration</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-endpoint"><a class="anchor" href="#child-elements-of-endpoint"></a>Child Elements of endpoint</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-reconnection-strategy</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for a reconnection strategy element. Reconnection strategies define how Mule should attempt o handle a connection failure.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-multi-transaction</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for multi-transaction elements. Multi-transactions allow a series of operations to be grouped ogether spanning different transports, e.g. JMS and JDBC, but without the overhead of XA. The trade-off is that XA reliability guarantees aren’t available, and services must be ready to handle duplicates. This is very similar to a 1.5 PC concept. EE-only feature.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>response</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-redelivery-policy</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for a redelivery policy. Redelivery policies determine what action to take when the same message is redelivered repeatedly.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-transaction</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for transaction elements. Transactions allow a series of operations to be grouped together.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-transformer</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for transformer elements. Transformers convert message payloads.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-filter</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for filter elements, which control which messages are handled.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-security-filter</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for security filter elements, which control access to the system.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-intercepting-message-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for intercepting router elements.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-observer-message-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for message processors that observe the message but do not mutate it. Used, for example for logging.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A reference to a message processor defined elsewhere.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>custom-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-mixed-content-message-processor</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A placeholder for message processor elements.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>property</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..*</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Sets a Mule property. This is a name/value pair that can be set on components, services, etc., and which provide a generic way of configuring the system. Typically, you shouldn’t need to use a generic property like this, since almost all functionality is exposed via dedicated elements. However, it can be useful in configuring obscure or overlooked options and in configuring transports from the generic endpoint elements.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>properties</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A map of Mule properties.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
   </div> 
  </div> 

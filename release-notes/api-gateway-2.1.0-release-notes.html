@@ -390,11 +390,7 @@
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/debugging">Debugging</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/studio-visual-debugger">Studio Visual Debugger</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.7/troubleshooting">Troubleshooting</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/configuring-mule-stacktraces">Configuring Mule Stacktraces</a></li><li><i></i><a href="/mule-user-guide/v/3.7/debugging-outside-studio">Debugging Outside Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.7/logging">Logging</a></li></ul></li>
-</ul></li>
+<li><i></i><a href="/mule-user-guide/v/3.7/studio-visual-debugger">Studio Visual Debugger</a></li><li><i></i><a href="/mule-user-guide/v/3.7/configuring-mule-stacktraces">Configuring Mule Stacktraces</a></li><li><i></i><a href="/mule-user-guide/v/3.7/debugging-outside-studio">Debugging Outside Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.7/logging">Logging</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/testing">Testing</a><ul>
@@ -930,6 +926,23 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="troubleshooting"><a class="anchor" href="#troubleshooting"></a>Troubleshooting</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><code>com.mulesoft.module.client.autodiscovery.AutoDiscoveryDeploymentListener: "uriTemplate" parameter is null.</code>: When using an older version of the wrapper.conf, one of the 3 URLs for connecting to Anypoint Platform might be missing (In 2.1.0 they are required). Check the wrapper.conf file and make sure that the following properties are set as follows (default distribution configuration):</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><code>wrapper.java.additional.15=-Danypoint.platform.platform_base_uri=https://anypoint.mulesoft.com/apiplatform</code></p> </li> 
+       <li> <p><code>wrapper.java.additional.16=-Danypoint.platform.coreservice_base_uri=https://anypoint.mulesoft.com/accounts</code></p> </li> 
+       <li> <p><code>wrapper.java.additional.17=-Danypoint.platform.analytics_base_uri=https://analytics-ingest.anypoint.mulesoft.com</code></p> </li> 
+      </ul> 
+     </div> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="ulist"> 
@@ -944,7 +957,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#new-features">New Features</a></li><li><a class="scroll-menu-link" href="#fixed-in-this-release">Fixed in This Release</a></li><li><a class="scroll-menu-link" href="#migration-guide-from-1-3-x">Migration Guide From 1.3.x</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#new-features">New Features</a></li><li><a class="scroll-menu-link" href="#fixed-in-this-release">Fixed in This Release</a></li><li><a class="scroll-menu-link" href="#migration-guide-from-1-3-x">Migration Guide From 1.3.x</a></li><li><a class="scroll-menu-link" href="#troubleshooting">Troubleshooting</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

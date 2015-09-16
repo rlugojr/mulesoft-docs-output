@@ -390,11 +390,7 @@
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/debugging">Debugging</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/studio-visual-debugger">Studio Visual Debugger</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.7/troubleshooting">Troubleshooting</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/configuring-mule-stacktraces">Configuring Mule Stacktraces</a></li><li><i></i><a href="/mule-user-guide/v/3.7/debugging-outside-studio">Debugging Outside Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.7/logging">Logging</a></li></ul></li>
-</ul></li>
+<li><i></i><a href="/mule-user-guide/v/3.7/studio-visual-debugger">Studio Visual Debugger</a></li><li><i></i><a href="/mule-user-guide/v/3.7/configuring-mule-stacktraces">Configuring Mule Stacktraces</a></li><li><i></i><a href="/mule-user-guide/v/3.7/debugging-outside-studio">Debugging Outside Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.7/logging">Logging</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/testing">Testing</a><ul>
@@ -898,186 +894,389 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#gateway-runtime-2.0-or-newer-a9481" role="tab" data-toggle="tab">Gateway Runtime 2.0 or Newer</a></li> 
-     <li><a href="#gateway-runtime-1.3.2-or-older-02bc7" role="tab" data-toggle="tab">Gateway Runtime 1.3.2 or older</a></li> 
+     <li class="active"><a href="#current-version-6f559" role="tab" data-toggle="tab">Current Version</a></li> 
+     <li><a href="#older-versions-47409" role="tab" data-toggle="tab">Older Versions</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="gateway-runtime-2.0-or-newer-a9481"> 
-     <div class="paragraph"> 
-      <p>The&nbsp;<code>api-platform-gw</code> Global Element contains the needed information for registering your API to the Anypoint Platform, it also references the flow to register.</p> 
-     </div> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>api-platform-gw:api id="myAPI" apiName="myAPI" version=“1.0.0” flowRef=“flow_api"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:description<span class="entity">&amp;gt;</span>This is a test API<span class="entity">&amp;lt;</span>/api-platform-gw:description<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:tag<span class="entity">&amp;gt;</span>tag1<span class="entity">&amp;lt;</span>/api-platform-gw:tag<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:tag<span class="entity">&amp;gt;</span>tag2<span class="entity">&amp;lt;</span>/api-platform-gw:tag<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/api-platform-gw:api<span class="entity">&amp;gt;</span></code></pre> 
-      </div> 
-     </div> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Global Element</th> 
-        <th class="tableblock halign-left valign-top">Description</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="http://api-platform-gwapi">api-platform-gw:api</a></strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">A global element which declares essential information about the service version necessary for the automatic registration of the service version and/or its endpoints in the Anypoint Platform for APIs.</p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Attribute</th> 
-        <th class="tableblock halign-left valign-top">Required</th> 
-        <th class="tableblock halign-left valign-top">Description</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>id</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The id of the global element, which you reference in the api-ref attribute in your endpoint.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>apiName</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The friendly API name.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>version</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The version number.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>flowRef</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to the main flow of your project. It triggers the agent to "discover" this flow and use it when performing the auto-registration.</p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">Nested Element</th> 
-        <th class="tableblock halign-left valign-top">Required</th> 
-        <th class="tableblock halign-left valign-top">Description</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><strong>api-platform-gw</strong>:description</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">A description of the API.</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><strong>api-platform-gw</strong>:tag</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Tags are searchable metadata in the&nbsp;Anypoint Platform for APIs web application and API.</p></td> 
-       </tr> 
-      </tbody> 
-     </table> 
-    </div> 
-    <div class="tab-pane fade no-padding" id="gateway-runtime-1.3.2-or-older-02bc7"> 
+    <div class="tab-pane in active fade no-padding" id="current-version-6f559"> 
      <div class="sect2"> 
-      <h3 id="creating-the-global-element"><a class="anchor" href="#creating-the-global-element"></a>Creating the Global Element</h3> 
+      <h3 id="api-gateway-version-2-0-and-newer"><a class="anchor" href="#api-gateway-version-2-0-and-newer"></a>API Gateway Version 2.0 and Newer</h3> 
       <div class="paragraph"> 
-       <p>A Global Element contains the needed information for registering your API to the Anypoint Platform, Global Elements must then be referenced by one or more endpoints.</p> 
+       <p>The&nbsp;<code>api-platform-gw</code> Global Element contains the information you need to register your API in the Anypoint Platform, and it references the flow to register.</p> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+     
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>api-platform-gw:api id="myAPI" apiName="myAPI" version=“1.0.0” flowRef=“flow_api"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:description<span class="entity">&amp;gt;</span>This is a test API<span class="entity">&amp;lt;</span>/api-platform-gw:description<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:tag<span class="entity">&amp;gt;</span>tag1<span class="entity">&amp;lt;</span>/api-platform-gw:tag<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:tag<span class="entity">&amp;gt;</span>tag2<span class="entity">&amp;lt;</span>/api-platform-gw:tag<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/api-platform-gw:api<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
       </div> 
       <div class="paragraph"> 
-       <p>As of version 1.3 of the API Gateway, if you need your endpoint to be tracked, then you must explicitly indicate the required information directly in the GE’s attributes.</p> 
+       <p><strong>Global element:</strong></p> 
       </div> 
-      <div class="admonitionblock note"> 
-       <table> 
-        <tbody> 
-         <tr> 
-          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-          <td class="content"> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 30%;"> 
+        <col style="width: 70%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Global Element</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
            <div class="paragraph"> 
-            <p>If you’re using an API Gateway version older than 1.3 and you’re using the APIkit Studio extension, you can also simply reference the API’s RAML definition file and let the auto-discovery feature retrieve details about your API from there. This can also be done in versions newer than 1.3, but when doing so you will not have that endpoint tracked, so it’s not recommended if you want to manage the endpoint.</p> 
+            <p><strong>api-platform-gw:api</strong></p> 
            </div> 
-           <div class="literalblock"> 
-            <div class="content"> 
-             <pre>&nbsp;With Gateway versions older than 1.3</pre> 
-            </div> 
-           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
            <div class="paragraph"> 
-            <p>If your application is an <strong>APIkit project</strong>, you can use the <a href="http://apikitconfig">apikit:config</a> global element to implement auto-discovery.</p> 
+            <p>A global element which declares essential information about the service version necessary for the automatic registration of the service version and/or its endpoints in the Anypoint Platform for APIs.</p> 
            </div> 
-           <div class="listingblock"> 
-            <div class="content"> 
-             <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>apikit:config name="myAPI" raml="myAPI.raml"/<span class="entity">&amp;gt;</span></code></pre> 
-            </div> 
-           </div> 
-           <table class="tableblock frame-all grid-all spread"> 
-            <colgroup> 
-             <col style="width: %;"> 
-             <col style="width: %;"> 
-            </colgroup> 
-            <thead> 
-             <tr> 
-              <th class="tableblock halign-left valign-top">Global Element</th> 
-              <th class="tableblock halign-left valign-top">Description</th> 
-             </tr> 
-            </thead> 
-            <tbody> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="http://apikitconfig">apikit:config</a></strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">A global element which retrieves essential information from the API’s RAML about the service version necessary for the automatic registration of the service version and/or its endpoints in the Anypoint Platform for APIs.</p></td> 
-             </tr> 
-            </tbody> 
-           </table> 
-           <table class="tableblock frame-all grid-all spread"> 
-            <colgroup> 
-             <col style="width: %;"> 
-             <col style="width: %;"> 
-             <col style="width: %;"> 
-            </colgroup> 
-            <thead> 
-             <tr> 
-              <th class="tableblock halign-left valign-top">Attribute</th> 
-              <th class="tableblock halign-left valign-top">Required</th> 
-              <th class="tableblock halign-left valign-top">Description</th> 
-             </tr> 
-            </thead> 
-            <tbody> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">The friendly API name.</p></td> 
-             </tr> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>raml</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">Location of the API’s RAML definition file.</p></td> 
-             </tr> 
-            </tbody> 
-           </table> 
+          </div></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <div class="paragraph"> 
+       <p><strong>Attributes:</strong></p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 33%;"> 
+        <col style="width: 33%;"> 
+        <col style="width: 33%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Attribute</th> 
+         <th class="tableblock halign-left valign-top">Required</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
            <div class="paragraph"> 
-            <p>==== Full Example</p> 
+            <p><strong>id</strong></p> 
            </div> 
-           <div class="listingblock"> 
-            <div class="content"> 
-             <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Yes</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>The ID of the global element, which you reference in the <code>api-ref</code> attribute in your endpoint.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>apiName</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Yes</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>The friendly API name.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>version</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Yes</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>The version number.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>flowRef</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Yes</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>A reference to the main flow of your project. It triggers the agent to "discover" this flow and use it when performing the auto-registration.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <div class="paragraph"> 
+       <p><strong>Nested elements:</strong></p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 34%;"> 
+        <col style="width: 33%;"> 
+        <col style="width: 33%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Nested Element</th> 
+         <th class="tableblock halign-left valign-top">Required</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>api-platform-gw:description</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>No</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>A description of the API.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>api-platform-gw:tag</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>No</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Tags are searchable metadata in the&nbsp;Anypoint Platform for APIs web application and API.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="older-versions-47409"> 
+     <div class="sect2"> 
+      <h3 id="api-gateway-version-1-3-2-or-older"><a class="anchor" href="#api-gateway-version-1-3-2-or-older"></a>API Gateway Version 1.3.2 or Older</h3> 
+      <div class="sect3"> 
+       <h4 id="creating-the-global-element"><a class="anchor" href="#creating-the-global-element"></a>Creating the Global Element</h4> 
+       <div class="paragraph"> 
+        <p>A Global Element contains the needed information for registering your API to the Anypoint Platform, Global Elements must then be referenced by one or more endpoints.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>As of version 1.3 of the API Gateway, if you need your endpoint to be tracked, then you must explicitly indicate the required information directly in the GE’s attributes.</p> 
+       </div> 
+       <div class="admonitionblock note"> 
+        <table> 
+         <tbody> 
+          <tr> 
+           <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+           <td class="content"> If you’re using an API Gateway version older than 1.3 and you’re using the APIkit Studio extension, you can also reference the API’s RAML definition file and let the auto-discovery feature retrieve details about your API from there. This can also be done in versions newer than 1.3, but when doing so, does not track that endpoint, so it’s not recommended if you want to manage the endpoint. </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect2"> 
+      <h3 id="gateway-versions-older-than-1-3"><a class="anchor" href="#gateway-versions-older-than-1-3"></a>Gateway Versions Older Than 1.3</h3> 
+      <div class="paragraph"> 
+       <p>If your application is an <strong>APIkit project</strong>, you can use the <code>apikit:config</code> global element to implement auto-discovery.</p> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>apikit:config name="myAPI" raml="myAPI.raml"/<span class="entity">&amp;gt;</span></code></pre> 
+       </div> 
+      </div> 
+      <div class="paragraph"> 
+       <p><strong>Global element:</strong></p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 30%;"> 
+        <col style="width: 70%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Global Element</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>apikit:config</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>A global element which retrieves essential information from the API’s RAML about the service version necessary for the automatic registration of the service version and/or its endpoints in the Anypoint Platform for APIs.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <div class="paragraph"> 
+       <p><strong>Attributes:</strong></p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 34%;"> 
+        <col style="width: 33%;"> 
+        <col style="width: 33%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Attribute</th> 
+         <th class="tableblock halign-left valign-top">Required</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>name</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Yes</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>The friendly API name.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>raml</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Yes</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Location of the API’s RAML definition file.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="sect2"> 
+      <h3 id="example-for-gateway-versions-older-than-1-3"><a class="anchor" href="#example-for-gateway-versions-older-than-1-3"></a>Example for Gateway Versions Older than 1.3</h3> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+     
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>mule xmlns="http://www.mulesoft.org/schema/mule/core"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:api-platform-gw="http://www.mulesoft.org/schema/mule/api-platform-gw"
@@ -1097,34 +1296,53 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/http:inbound-endpoint<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Test" /<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></code></pre> 
-            </div> 
-           </div> 
-           <div class="paragraph"> 
-            <p>In either case you can aso explicitly reference the API attributes as explained below.</p> 
-           </div> </td> 
-         </tr> 
-        </tbody> 
-       </table> 
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+      <div class="paragraph"> 
+       <p>In either case you can also explicitly reference the API attributes as explained below.</p> 
       </div> 
       <div class="paragraph"> 
        <p>Use the following structure for your auto-discovery code.</p> 
       </div> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>api-platform-gw:api id="myAPI" apiName="My New API" version="1.0.0" environment="Development"<span class="entity">&amp;gt;</span>
+        <pre class="CodeRay highlight"><code data-lang="xml">
+     
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>api-platform-gw:api id="myAPI" apiName="My New API" version="1.0.0" environment="Development"<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:description<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description of the API goes here.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/api-platform-gw:description<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:tag<span class="entity">&amp;gt;</span>tag1<span class="entity">&amp;lt;</span>/api-platform-gw:tag<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:tag<span class="entity">&amp;gt;</span>tag2<span class="entity">&amp;lt;</span>/api-platform-gw:tag<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/api-platform-gw:api<span class="entity">&amp;gt;</span></code></pre> 
+<span class="entity">&amp;lt;</span>/api-platform-gw:api<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
+      </div> 
+      <div class="paragraph"> 
+       <p><strong>Global element:</strong></p> 
       </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
+        <col style="width: 30%;"> 
+        <col style="width: 70%;"> 
        </colgroup> 
        <thead> 
         <tr> 
@@ -1134,16 +1352,29 @@
        </thead> 
        <tbody> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>api-platform-gw:api</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">A global element which declares essential information about the service version necessary for the automatic registration of the service version and/or its endpoints in the Anypoint Platform for APIs.</p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>api-platform-gw:api</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>A global element which declares essential information about the service version necessary for the automatic registration of the service version and/or its endpoints in the Anypoint Platform for APIs.</p> 
+           </div> 
+          </div></td> 
         </tr> 
        </tbody> 
       </table> 
+      <div class="paragraph"> 
+       <p><strong>Attributes:</strong></p> 
+      </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
+        <col style="width: 34%;"> 
+        <col style="width: 33%;"> 
+        <col style="width: 33%;"> 
        </colgroup> 
        <thead> 
         <tr> 
@@ -1154,27 +1385,75 @@
        </thead> 
        <tbody> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>id</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">The id of the global element, which you reference in the api-ref attribute in your endpoint.</p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>id</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Yes</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>The ID of the global element, which you reference in the api-ref attribute in your endpoint.</p> 
+           </div> 
+          </div></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>apiName</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">The friendly API name.</p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>apiName</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Yes</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>The friendly API name.</p> 
+           </div> 
+          </div></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>version</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">The version number.</p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>version</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Yes</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>The version number.</p> 
+           </div> 
+          </div></td> 
         </tr> 
        </tbody> 
       </table> 
+      <div class="paragraph"> 
+       <p><strong>Nested elements:</strong></p> 
+      </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
+        <col style="width: 34%;"> 
+        <col style="width: 33%;"> 
+        <col style="width: 33%;"> 
        </colgroup> 
        <thead> 
         <tr> 
@@ -1185,14 +1464,44 @@
        </thead> 
        <tbody> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><strong>api-platform-gw</strong>:description</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">A description of the API.</p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>api-platform-gw:description</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>No</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>A description of the API.</p> 
+           </div> 
+          </div></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><strong>api-platform-gw</strong>:tag</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Tags are searchable metadata in the&nbsp;Anypoint Platform for APIs web application and API.</p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>api-platform-gw:tag</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>No</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Tags are searchable metadata in the&nbsp;Anypoint Platform for APIs web application and API.</p> 
+           </div> 
+          </div></td> 
         </tr> 
        </tbody> 
       </table> 
@@ -1200,19 +1509,35 @@
      <div class="sect2"> 
       <h3 id="referencing-your-global-element-in-your-endpoint"><a class="anchor" href="#referencing-your-global-element-in-your-endpoint"></a>Referencing Your Global Element in Your Endpoint</h3> 
       <div class="paragraph"> 
-       <p>You must now reference that global element in the inbound endpoint that you wish to register in the Anypoint Platform for APIs. Do this by adding a nested element in the inbound endpoint that includes an&nbsp;<code>api-ref</code> or <code>apikit-ref</code> that references the global element by name or id.</p> 
+       <p>You must now reference that global element in the inbound endpoint that you wish to register in the Anypoint Platform for APIs. Do this by adding a nested element in the inbound endpoint that includes an&nbsp;<code>api-ref</code> or <code>apikit-ref</code> that references the global element by name or ID.</p> 
       </div> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:inbound-endpoint host="some_host" port="some_port" path="some_path"<span class="entity">&amp;gt;</span>
+        <pre class="CodeRay highlight"><code data-lang="xml">
+     
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>http:inbound-endpoint host="some_host" port="some_port" path="some_path"<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>api-platform-gw:register-as api-ref="myAPI"/<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/http:inbound-endpoint<span class="entity">&amp;gt;</span>&nbsp;</code></pre> 
+<span class="entity">&amp;lt;</span>/http:inbound-endpoint<span class="entity">&amp;gt;</span>&nbsp;</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
+      </div> 
+      <div class="paragraph"> 
+       <p><strong>Nested elements:</strong></p> 
       </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
-        <col style="width: 50%;"> 
-        <col style="width: 50%;"> 
+        <col style="width: 30%;"> 
+        <col style="width: 70%;"> 
        </colgroup> 
        <thead> 
         <tr> 
@@ -1222,15 +1547,28 @@
        </thead> 
        <tbody> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><strong>api-platform-gw</strong>:register-as</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Triggers the agent to "discover" this application and perform the auto-registration.</p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>api-platform-gw:register-as</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Triggers the agent to "discover" this application and perform the auto-registration.</p> 
+           </div> 
+          </div></td> 
         </tr> 
        </tbody> 
       </table> 
+      <div class="paragraph"> 
+       <p><strong>Attributes:</strong></p> 
+      </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
+        <col style="width: 30%;"> 
+        <col style="width: 70%;"> 
        </colgroup> 
        <thead> 
         <tr> 
@@ -1240,12 +1578,32 @@
        </thead> 
        <tbody> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>api-ref</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">References the&nbsp;<code>api-platform-gw:api</code> global element that includes the information that the agent needs to register the API and/or endpoint.</p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>api-ref</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>References the&nbsp;<code>api-platform-gw:api</code> global element that includes the information that the agent needs to register the API and/or endpoint.</p> 
+           </div> 
+          </div></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>apikit-ref</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">References the <code>apikit:config</code> global element that includes the information that the agent needs to register the API and/or endpoint.</p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>apikit-ref</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>References the <code>apikit:config</code> global element that includes the information that the agent needs to register the API and/or endpoint.</p> 
+           </div> 
+          </div></td> 
         </tr> 
        </tbody> 
       </table> 
@@ -1262,15 +1620,47 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#api-gateway-2.0-or-newer-ef93b" role="tab" data-toggle="tab">API Gateway 2.0 or newer</a></li> 
-     <li><a href="#api-gateway-1.3.2-or-older-f4d25" role="tab" data-toggle="tab">API Gateway 1.3.2 or older</a></li> 
+     <li class="active"><a href="#current-version-9c5db" role="tab" data-toggle="tab">Current Version</a></li> 
+     <li><a href="#older-versions-cd1e4" role="tab" data-toggle="tab">Older Versions</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="api-gateway-2.0-or-newer-ef93b"> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
+    <div class="tab-pane in active fade no-padding" id="current-version-9c5db"> 
+     <div class="sect2"> 
+      <h3 id="api-gateway-version-2-0-and-newer"><a class="anchor" href="#api-gateway-version-2-0-and-newer"></a>API Gateway Version 2.0 and Newer</h3> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+     
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>mule xmlns="http://www.mulesoft.org/schema/mule/core"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:api-platform-gw="http://www.mulesoft.org/schema/mule/api-platform-gw"
@@ -1292,14 +1682,50 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path=“api"/<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Test" /<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></code></pre> 
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
       </div> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="api-gateway-1.3.2-or-older-f4d25"> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
+    <div class="tab-pane fade no-padding" id="older-versions-cd1e4"> 
+     <div class="sect2"> 
+      <h3 id="api-gateway-version-1-3-2-or-older"><a class="anchor" href="#api-gateway-version-1-3-2-or-older"></a>API Gateway Version 1.3.2 or Older</h3> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+     
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>mule xmlns="http://www.mulesoft.org/schema/mule/core"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:api-platform-gw="http://www.mulesoft.org/schema/mule/api-platform-gw"
@@ -1321,7 +1747,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/http:inbound-endpoint<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Test" /<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></code></pre> 
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
       </div> 
      </div> 
     </div> 
@@ -1336,7 +1766,7 @@
    <p>When you deploy applications to an API Gateway paired with the Anypoint Platform for APIs, the agent will perform the following steps to auto-discover and register your service version and/or endpoints in the Anypoint Platform for APIs.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>First, the agent will only initiate auto-discovery if prompted to do so by the existence of an <code>api-platform-gw:register-as</code>&nbsp;nested element in the inbound endpoint of the application:</p> 
+   <p>First, the agent only initiates auto-discovery if prompted to do so by the existence of an <code>api-platform-gw:register-as</code>&nbsp;nested element in the inbound endpoint of the application:</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/autodiscoveryyesorno.png" alt="autodiscoveryyesorno"></span></p> 

@@ -391,11 +391,7 @@
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/debugging">Debugging</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/studio-visual-debugger">Studio Visual Debugger</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.7/troubleshooting">Troubleshooting</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/configuring-mule-stacktraces">Configuring Mule Stacktraces</a></li><li><i></i><a href="/mule-user-guide/v/3.7/debugging-outside-studio">Debugging Outside Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.7/logging">Logging</a></li></ul></li>
-</ul></li>
+<li><i></i><a href="/mule-user-guide/v/3.7/studio-visual-debugger">Studio Visual Debugger</a></li><li><i></i><a href="/mule-user-guide/v/3.7/configuring-mule-stacktraces">Configuring Mule Stacktraces</a></li><li><i></i><a href="/mule-user-guide/v/3.7/debugging-outside-studio">Debugging Outside Studio</a></li><li><i></i><a href="/mule-user-guide/v/3.7/logging">Logging</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/testing">Testing</a><ul>
@@ -929,31 +925,44 @@
       <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
       <td class="content"> 
        <div class="paragraph"> 
-        <p>Adding&nbsp;<a href="https://repository.apache.org/content/repositories/releases/org/apache/activemq/activemq-all/">ActiveMq-all.jar</a> will create conflicts with other dependencies, so please add only the jar files you need in relation to what you need ActiveMQ for:</p> 
+        <p>The usage of&nbsp;<a href="https://repository.apache.org/content/repositories/releases/org/apache/activemq/activemq-all/">activemq-all-x.x.x.jar</a> creates conflicts with other dependencies, most notably with log4j, so please only add the jar files required by the deployment mode you have chosen for ActiveMQ:</p> 
        </div> 
        <div class="paragraph"> 
         <p><strong>JARs for Embedded ActiveMQ</strong>:</p> 
        </div> 
-       <div class="paragraph"> 
-        <p>apache-activemq-5.8.0/lib/activemq-kahadb-store-5.8.0.jar</p> 
-       </div> 
-       <div class="paragraph"> 
-        <p>apache-activemq-5.8.0/lib/activemq-protobuf-1.1.jar apache-activemq-5.8.0/lib/activemq-openwire-legacy-5.8.0.jar apache-activemq-5.8.0/lib/hawtbuf-1.9.jar apache-activemq-5.8.0/lib/activemq-broker-5.8.0.jar apache-activemq-5.8.0/lib/activemq-client-5.8.0.jar</p> 
+       <div class="literalblock"> 
+        <div class="content"> 
+         <pre>apache-activemq-5.12.0/lib/activemq-broker-5.12.0.jar
+apache-activemq-5.12.0/lib/activemq-client-5.12.0.jar
+apache-activemq-5.12.0/lib/activemq-kahadb-store-5.12.0.jar
+apache-activemq-5.12.0/lib/activemq-openwire-legacy-5.12.0.jar
+apache-activemq-5.12.0/lib/activemq-protobuf-1.1.jar
+apache-activemq-5.12.0/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
+apache-activemq-5.12.0/lib/hawtbuf-1.11.jar</pre> 
+        </div> 
        </div> 
        <div class="paragraph"> 
         <p><strong>JARs for External ActiveMQ</strong>:</p> 
        </div> 
-       <div class="paragraph"> 
-        <p>apache-activemq-5.8.0/lib/activemq-client-5.8.0.jar apache-activemq-5.8.0/lib/hawtbuf-1.9.jar</p> 
+       <div class="literalblock"> 
+        <div class="content"> 
+         <pre>apache-activemq-5.12.0/lib/activemq-client-5.12.0.jar
+apache-activemq-5.12.0/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
+apache-activemq-5.12.0/lib/hawtbuf-1.11.jar</pre> 
+        </div> 
        </div> 
        <div class="paragraph"> 
         <p><strong>JARs for Failover ActiveMQ</strong>:</p> 
        </div> 
-       <div class="paragraph"> 
-        <p>apache-activemq-5.8.0/lib/activemq-client-5.8.0.jar apache-activemq-5.8.0/lib/hawtbuf-1.9.jar</p> 
+       <div class="literalblock"> 
+        <div class="content"> 
+         <pre>apache-activemq-5.12.0/lib/activemq-client-5.12.0.jar
+apache-activemq-5.12.0/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
+apache-activemq-5.12.0/lib/hawtbuf-1.11.jar</pre> 
+        </div> 
        </div> 
        <div class="paragraph"> 
-        <p>To include these .jar files in your project, simply right-click on your project and select <strong>build path</strong> &gt; <strong>add external archives</strong>.</p> 
+        <p>To include these .jar files in your project, simply right-click on your project and select <strong>Build Path</strong> &gt; <strong>Add External Archives…​</strong></p> 
        </div> </td> 
      </tr> 
     </tbody> 
