@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sending Data from ARM to External Software // MuleSoft Documentation </title>
+    <title>Connecting ARM to Splunk Tutorial // MuleSoft Documentation </title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/asciidoctor.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
@@ -19,8 +19,8 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-platform-on-premises/v/1.0/connecting-arm-to-splunk-tutorial" />
-    <meta name="description" content="By simply configuring a few settings on the Anypoint Runtime Manager (ARM), the event notifications produced by your running Mule Applications can ..." />
-    <meta class="swiftype" name="title" data-type="string" content="Sending Data from ARM to External Software" />
+    <meta name="description" content="The objective of this demo is to show different alternatives to the use for how business events (phase #1) and api analytics (phase #2) can be cons..." />
+    <meta class="swiftype" name="title" data-type="string" content="Connecting ARM to Splunk Tutorial" />
 
 </head>
 <body>
@@ -831,7 +831,7 @@
 <i></i>
 <a href="/release-notes/api-gateway-2.0-release-notes">API Gateway Runtime 2.0 Release Notes</a><ul>
 <li><i></i><a href="/release-notes/migration-guide-to-api-gateway-2.0.0-or-later">Migration Guide to API Gateway 2.0.0 or later</a></li></ul></li>
-<li><i></i><a href="/release-notes/api-gateway-1.3.2-release-notes">API Gateway Runtime 1.3.2 Release Notes</a></li><li><i></i><a href="/release-notes/api-gateway-1.3.1-release-notes">API Gateway Runtime 1.3.1 Release Notes</a></li><li><i></i><a href="/release-notes/api-gateway-1.0.1-release-notes">API Gateway Runtime 1.0.1 Release Notes</a></li><li><i></i><a href="/release-notes/mule-agent-1.1.1-release-notes">Mule Agent 1.1.1 Release Notes</a></li></ul></li>
+<li><i></i><a href="/release-notes/api-gateway-1.3.2-release-notes">API Gateway Runtime 1.3.2 Release Notes</a></li><li><i></i><a href="/release-notes/api-gateway-1.3.1-release-notes">API Gateway Runtime 1.3.1 Release Notes</a></li><li><i></i><a href="/release-notes/api-gateway-1.0.1-release-notes">API Gateway Runtime 1.0.1 Release Notes</a></li><li><i></i><a href="/release-notes/mule-agent-1.2.0-release-notes">Mule Agent 1.2.0 Release Notes</a></li><li><i></i><a href="/release-notes/mule-agent-1.1.1-release-notes">Mule Agent 1.1.1 Release Notes</a></li></ul></li>
 <li><i></i><a href="/release-notes/anypoint-exchange-release-notes">Anypoint Exchange Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/cloudhub-release-notes">CloudHub Release Notes</a><ul>
@@ -862,460 +862,120 @@
         <!-- START article content -->
         <div class="article-content col-md-7">
           
-          <h1>Sending Data from ARM to External Software</h1>
+          <h1>Connecting ARM to Splunk Tutorial</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>By simply configuring a few settings on the Anypoint Runtime Manager (ARM), the event notifications produced by your running Mule Applications can be easily sent out to your existing monitoring and analytics third party software.</p> 
+   <p>The objective of this demo is to show different alternatives to the use for how business events (phase #1) and api analytics (phase #2) can be consumed when using on premise installations.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>You can currently send data out to any of the following:</p> 
+   <p>In order to provide a real life demo, we reused the APILed Workshop Order Tracking application which is an RAML based API for creating order to buy products that also contains an API proxy on top that we will use in Phase #2 to extract analytics.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The following diagram is an overview on the entire API Led Demo:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/arm_tutorial_big_picture.png" alt="ARM Tutorial Big Picture"></span></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="api-led-demo-summary"><a class="anchor" href="#api-led-demo-summary"></a>API Led Demo Summary</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This demo shows an order system following an API Led approach as shown in the diagram where an user can create orders using a mobile application (simulator) and query the status of the orders he created. When creating an order, the user needs to complete the order form and depending on the values of those fields different business flows called.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The most important one is the country:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Splunk</p> </li> 
-    <li> <p>ELK (as an example for anything that consumes system Logs)</p> </li> 
+    <li> <p><strong>country = United States</strong> implies that once the order gets created, a message in a queue is created for all the listeners to consume it.</p> </li> 
+    <li> <p><strong>country = Other</strong> implies that once the order just gets created.</p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>Future releases will also feature integrating with other third party systems.</p> 
+   <p>This is the demo main flow.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>The goal of this document to enable you to integrate ARM with a third party tool such as Splunk or ELK.</p> 
+   <p><span class="image"><img src="./_images/arm_tutorial_full_flow.png" alt="full flow"></span></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Since the initial objective of this demo is to show how Business Events, both default and custom ones, can be monitored and consumed using Splunk, we slightly modified the demo in order to created business events when: * a new order is placed ** if the country is United States, another additional event gets created, showing the confirmation that the message was put into the queue. * a existing order is queried to get the status</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="basic-architecture"><a class="anchor" href="#basic-architecture"></a>Basic Architecture</h2> 
+ <h2 id="environment-configuration"><a class="anchor" href="#environment-configuration"></a>Environment Configuration</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Anypoint Runtime Manager (ARM) exists both as a component of the <a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform</a> and as an <a href="/arm/installing-anypoint-runtime-manager-on-premise">application that can be installed on premise</a>. The on premise version of ARM manages applications that are deployed on premise, the Cloud version of ARM allows you manage applications deployed to <a href="/cloudhub/index">CloudHub</a> as well as applications that are deployed on premise. Users of ARM, using the Cloud and On-Prem version, are able to monitor their applications. Applications deployed on Cloud can use Insights, MuleSoft’s Analytics &amp; Monitoring feature, and Apps deployed on CloudHub have the ability to integrate into third party monitoring applications for a unified view of monitoring and analytics.</p> 
+   <p>Since we will be using an on premise ESB, we created an Windows AWS instance to the ESB where the demo application is running. * <strong>For Splunk</strong>, we are using an instance provided to us by engineering. * <strong>For ARM</strong> we are using a Staging version since the release it’s not out yet.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>You have the ability to leverage both options to monitor business events, custom business events, logs, and – in the case of apps deployed to an <a href="/anypoint-platform-for-apis/api-gateway-101">API Gateway</a> Runtime – API Analytics and governance.</p> 
+   <p>All the information about hosts and users is listed below:</p> 
   </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/arm_big_picture.png" alt="image"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>At a closer level of detail, the integration between ARM and third party monitoring and analytics software looks like the diagram below:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/amc_onprem_diagram_detail.jpg" alt="image"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>In between ARM and the external services is the <a href="/docs/display/current/The+Mule+Agent">Mule Agent</a>, a module of Mule ESB that enables easy integration and sends event notifications to third party monitoring tools.</p> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><strong>AWS Instance</strong></p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>host: 54.209.14.145:443</p> </li> 
+       <li> <p>user: msps</p> </li> 
+       <li> <p>pass: Anypoint1357!</p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p><strong>Staging ARM</strong></p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>host: <a href="https://stg.anypoint.mulesoft.com/" class="bare">https://stg.anypoint.mulesoft.com/</a></p> </li> 
+       <li> <p>user: arm-demo</p> </li> 
+       <li> <p>pass: Mule1379</p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p><strong>Splunk instance</strong></p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>host: <a href="https://ec2-52-88-188-182.us-west-2.compute.amazonaws.com" class="bare">https://ec2-52-88-188-182.us-west-2.compute.amazonaws.com</a></p> </li> 
+       <li> <p>user: admin</p> </li> 
+       <li> <p>pass: Muleftw1!</p> </li> 
+      </ul> 
+     </div> </li> 
+   </ul> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
+ <h2 id="how-to-run-the-demo"><a class="anchor" href="#how-to-run-the-demo"></a>How to Run the Demo</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Please make sure you have the following software installed: * Mule ESB – Version 3.6 or above * API Gateway Standalone – Version 2.1.0 or above (optional in case you want to deal with apps that are built with the API Gateway Runtime)</p> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> Mule Agent 1.2.1 or above is required, the steps to install and configure it are provided below. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="installation-and-setup-of-arm-with-a-third-party-monitoring-tool"><a class="anchor" href="#installation-and-setup-of-arm-with-a-third-party-monitoring-tool"></a>Installation and Setup of ARM with a third party monitoring tool</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>In order to have ARM send data to an external monitoring tool, you must follow these steps, which are explained in detail further down.</p> 
+   <p>This demo can be used to show that a user can integrate their onprem systems (like Splunk, ELK or any other third party systems) to consume information produced by Mule such as Business Events, API analytics, logs, etc.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/steps-for-external-logs.png" alt="steps"></span></p> 
+   <p>Depending on what you want to position is how you should run the demo. The demo consists on:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Running the business use case</p> </li> 
+    <li> <p>Running the integration section</p> 
+     <div class="olist loweralpha"> 
+      <ol class="loweralpha" type="a"> 
+       <li> <p>Business events: show business events integration with Splunk</p> </li> 
+       <li> <p>Analytics: show API analytics events integration with Splunk.</p> </li> 
+      </ol> 
+     </div> </li> 
+    <li> <p>Running the agent configuration section.</p> </li> 
+   </ol> 
   </div> 
   <div class="sect2"> 
-   <h3 id="install-the-mule-agent"><a class="anchor" href="#install-the-mule-agent"></a>Install the Mule Agent</h3> 
-   <div class="paragraph"> 
-    <p>First you must install the Mule Agent, which is in charge of sending messages out of mule. In order to send event information to third party software, you need to have version <strong>1.2.0</strong> or newer of the Mule Agent. See <a href="/mule-agent/v/1.2.0/installing-mule-agent">Installing the Mule Agent</a>.</p> 
-   </div> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>Although the Mule Agent exists by default bundled with the Mule ESB download as of version 3.7, all ESB versions older than version 3.7.2 contain an old version of the Mule Agent that doesn’t support this feature. If this is your case, you must download the latest version of the Mule Agent separatley.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><strong>Download it from <a href="https://s3.amazonaws.com/mulesoft-fileshare/hybrid/agent-setup-onPrem.jar">here</a></strong></p> 
-        </div> </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="register-the-mule-agent"><a class="anchor" href="#register-the-mule-agent"></a>Register the Mule Agent</h3> 
-   <div class="admonitionblock tip"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> Before you can register the agent, you must first undeploy all of your running apps and remove them from your&nbsp;<code>{MULE HOME}/apps</code> folder. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Place the agent file in your <code>MULE HOME}/bin</code> folder, and then you must register it to ARM by running a command in the terminal. Depending on wether you wish to use ARM on-prem or through the cloud platform, you must pass this command a different set of arguments to register it. To obtain the basic command that you must run (complete with your ARM instance ID) you must do the following:</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To obtain this code, you must do the following:</p> 
-   </div> 
+   <h3 id="running-the-business-use-case"><a class="anchor" href="#running-the-business-use-case"></a>Running the business use case</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Log in to your ARM account</p> 
-      <div class="admonitionblock tip"> 
-       <table> 
-        <tbody> 
-         <tr> 
-          <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-          <td class="content"> To open ARM On Premise, make sure you’ve already initiated ARM. If you haven’t then you must boot it by running docker. Once initiated, you can access it by navigating to <a href="https://localhost" class="bare">https://localhost</a> in a browser. </td> 
-         </tr> 
-        </tbody> 
-       </table> 
-      </div> </li> 
-     <li> <p>Navigate to <code>CloudHub - &gt; Servers</code></p> </li> 
-     <li> <p>Click <code>Add Server</code>. Without needing to actually add a new server, a sample command will be displayed in a popup window that includes the code for your particular organization. Copy this command, depending on where you wish to deploy, you may need to add extra arguments to it.</p> 
+     <li> <p>Connect to the AWS instance using Remote Desktop</p> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/org_code.jpg" alt="image"></span></p> 
+       <p><span class="image"><img src="./_images/arm_demo_remote_desktop.png" alt="remote desktop"></span></p> 
       </div> </li> 
     </ol> 
    </div> 
-   <div class="panel panel-default no-padding"> 
-    <div class="panel-heading no-padding"> 
-     <!-- Nav tabs --> 
-     <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#arm-cloud-35ab4" role="tab" data-toggle="tab">ARM Cloud</a></li> 
-      <li><a href="#arm-on-premise-175fb" role="tab" data-toggle="tab">ARM On Premise</a></li> 
-     </ul> 
-    </div> 
-    <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="arm-cloud-35ab4"> 
-      <div class="paragraph"> 
-       <p>When using ARM as part of the Anypoint Platform, launch the agent with exactly the same command that you found on the ARM UI:</p> 
-      </div> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="linenums">amc_setup -H 361755d7-c619-42ce-9187-19db7a6d94a0---2 MyMuleAgent</code></pre> 
-       </div> 
-      </div> 
-      <div class="paragraph"> 
-       <p>or on Windows:</p> 
-      </div> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="linenums">amc_setup.bat -H 361755d7-c619-42ce-9187-19db7a6d94a0---2 MyMuleAgent</code></pre> 
-       </div> 
-      </div> 
-      <div class="paragraph"> 
-       <p>The argument <code>-H</code> is an id that references your organization in the Anypoint platform and ARM on premise installation.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>The final argument of this command is the name that you assign for your Mule Agent instance, in the above example, <code>MyMuleAgent</code>. This name will then be visible when interacting with the agent from your ARM console.</p> 
-      </div> 
-     </div> 
-     <div class="tab-pane fade no-padding" id="arm-on-premise-175fb"> 
-      <div class="paragraph"> 
-       <p>When using ARM as an on premise application, launch the agent with the following arguments:</p> 
-      </div> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="linenums">amc_setup -A http://localhost:8080/hybrid/api/v1 -W wss://localhost:8443/mule -C https://dev.anypoint.mulesoft.com/accounts -H 361755d7-c619-42ce-9187-19db7a6d94a0---2 MyMuleAgent</code></pre> 
-       </div> 
-      </div> 
-      <div class="paragraph"> 
-       <p>or on Windows:</p> 
-      </div> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="linenums">amc_setup.bat -A http://localhost:8080/hybrid/api/v1 -W wss://localhost:8443/mule -C https://dev.anypoint.mulesoft.com/accounts -H 361755d7-c619-42ce-9187-19db7a6d94a0---2 MyMuleAgent</code></pre> 
-       </div> 
-      </div> 
-      <div class="paragraph"> 
-       <p>The argument <code>-H</code> is an id that references your organization in the Anypoint platform and ARM on premise installation.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>The final argument of this command is the name that you assign for your Mule Agent instance, in the above example, <code>MyMuleAgent</code>. This name will then be visible when interacting with the agent from your ARM console.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>Note that three extra arguments must be added to what you copied from the ARM UI: -A, -W and -C. * <strong>A</strong> sets the AMC host address * <strong>C</strong> sets the Core Services host address * <strong>W</strong> sets the Mule Communicatiosn Manager (MCM) host address</p> 
-      </div> 
-     </div> 
-    </div> 
-   </div> 
-   <div class="admonitionblock tip"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> For more information on how to install the Mule Agent, see <a href="/mule-agent/v/1.2.0/installing-mule-agent">Installing the Mule Agent</a> </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/agent_server.jpg" alt="image"></span></p> 
-   </div> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> Creating multiple agents within a single server is not supported. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="verifying-agent-registration"><a class="anchor" href="#verifying-agent-registration"></a>Verifying Agent Registration</h4> 
-    <div class="paragraph"> 
-     <p>After running the above command, open&nbsp;ARM to verify that the agent has been registered successfully:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Log in to ARM with your credentials</p> </li> 
-      <li> <p>Go to <code>CloudHub - &gt; Servers</code>. You should now see that one of those servers is your Agent instance, named with the name you provided when installing it:</p> </li> 
-     </ol> 
-    </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/verify_agent.jpg" alt="image"></span></p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="configure-mule-custom-events"><a class="anchor" href="#configure-mule-custom-events"></a>Configure Mule Custom Events</h3> 
-   <div class="paragraph"> 
-    <p>You can configure AMC to send out Mule Events to external software, this includes flow executions, exceptions raised, etc. This works with apps deployed to any runtime, and for both AMC in the cloud and the AMC that can be downloaded on premise.</p> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="integrating-to-splunk"><a class="anchor" href="#integrating-to-splunk"></a>Integrating to Splunk</h4> 
-    <div class="paragraph"> 
-     <p>With <a href="http://www.splunk.com/">Splunk</a> you can capture and index Mule event notification data into a searchable repository from which you can then generate graphs, reports, alerts, dashboards and visualizations.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/amc_onprem_diagram_detail_splunk.jpg" alt="image"></span></p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>To direct information to your Splunk account, you must do the following:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Select the server who’s information you want to send out</p> </li> 
-      <li> <p>In the menu on the right, select <strong>Agent Plugins</strong></p> 
-       <div class="paragraph"> 
-        <p>image:log_menu.jpg</p> 
-       </div> </li> 
-      <li> <p>Select the kind of information that you want to send out in the <strong>Level</strong> dropdown menu</p> 
-       <div class="paragraph"> 
-        <p>image:track_type.jpg</p> 
-       </div> </li> 
-      <li> <p>Activate the <strong>Splunk</strong> switch, this will open a pop up menu where you can provide your Splunk user data and the address where Splunk is hosted.</p> 
-       <div class="paragraph"> 
-        <p>image:splunk_config.jpg</p> 
-       </div> </li> 
-      <li> <p>Optionally, you can open the advanced menu and set up certain formatting properties of the data that will be sent out</p> 
-       <div class="paragraph"> 
-        <p>image:splunk_config_advanced.jpg</p> 
-       </div> </li> 
-     </ol> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="integrating-to-an-elk-stack"><a class="anchor" href="#integrating-to-an-elk-stack"></a>Integrating to an ELK Stack</h4> 
-    <div class="paragraph"> 
-     <p>ELK combines three open source tools&nbsp;(Elasticsearch, Logstash, Kibana) that work together to help you store, search and analyze log data. You can output the Mule event notifications as generic system logs, which can be handled by your ELK stack.&nbsp;Logstash captures and indexes the data into the log, from which you can then use Elastisearch and Kibana to generate graphs, reports, alerts, dashboards and visualizations. The Agent helps helps you store all of the Event Notifications produced from the Mule ESB flows into a configurable log file with a rolling file policy.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/amc_onprem_diagram_detail_elk.jpg" alt="image"></span></p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>To direct information to the folder where your ELK stack reads from, you must do the following:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Select the server who’s information you want to send out</p> </li> 
-      <li> <p>In the menu on the right, select <strong>Agent Plugins</strong></p> 
-       <div class="paragraph"> 
-        <p>image:log_menu.jpg</p> 
-       </div> </li> 
-      <li> <p>Select the kind of information that you want to send out in the <strong>Level</strong> dropdown menu</p> 
-       <div class="paragraph"> 
-        <p>image:track_type.jpg</p> 
-       </div> </li> 
-      <li> <p>Activate the <strong>ELK</strong> switch, this will open a pop up menu where you can provide the address to the folder where you keep the log files that your ELK stack reads.</p> 
-       <div class="paragraph"> 
-        <p>image:elk_config.jpg</p> 
-       </div> </li> 
-      <li> <p>Optionally, you can open the advanced menu and set up certain formatting properties of the data you send out and how the information is archived.</p> 
-       <div class="paragraph"> 
-        <p>image:elk_config_advanced.jpg</p> 
-       </div> </li> 
-     </ol> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="configure-api-analytics"><a class="anchor" href="#configure-api-analytics"></a>Configure API Analytics</h3> 
-   <div class="paragraph"> 
-    <p>Before you can set up the connection to external software through the ARM UI, you must first make some changes to the API Gateway to prepare it for this.</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>In your API Gateway Standalone directory, look for the <code>conf/wrapper.conf</code> file</p> </li> 
-     <li> <p>In it find the following line and make sure that the property is set to "true"</p> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre>wrapper.java.additional.&lt;n&gt;=-Danypoint.platform.analytics_enabled=<span class="predefined-constant">true</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
-       </div> 
-      </div> </li> 
-     <li> <p>Look for this other line:</p> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre>wrapper.java.additional.&lt;n&gt;=-Danypoint.platform.analytics_base_uri=https:<span class="comment">//analytics-ingest.anypoint.mulesoft.com</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
-       </div> 
-      </div> </li> 
-     <li> <p>Remove the URL in it, so that it looks like this:</p> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre>wrapper.java.additional.&lt;n&gt;=-Danypoint.platform.analytics_base_uri=</pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
-       </div> 
-      </div> </li> 
-     <li> <p>When using ARM On premises, there’s one more parameter you need to change:</p> 
-      <div class="listingblock"> 
-       <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="java">
-             
-          <table class="CodeRay"> 
-           <tbody> 
-            <tr> 
-             <td class="line-numbers"><pre>1
-</pre></td> 
-             <td class="code"><pre>wrapper.java.additional.&lt;n&gt;=-Danypoint.platform.on_prem=<span class="predefined-constant">true</span></pre></td> 
-            </tr> 
-           </tbody> 
-          </table></code></pre> 
-       </div> 
-      </div> 
-      <div class="paragraph"> 
-       <p><code>anypoint.platfrom.on_prem</code> is set to <code>false</code> by default. To manage it through AMC on premise, you must set it to <code>true</code>. To manage it throguh AMC in the cloud, leave it as <code>false</code>.</p> 
-      </div> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Once you have set up your Stand Alone API Gateway, the steps for connecting to Splunk and ELK are identical to those when dealing with Mule Custom Events, except that you should set them up via the corresponding switches.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>image:arm_api_analytics_settings.png</p> 
-   </div> 
-   <div class="admonitionblock warning"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-       <td class="content"> If you modify your <code>wrapper.conf</code> file as described above but don’t assign an external destination for your data (as you can do via the ARM UI), then this analytics data will be stored in a queue in the server where the API Gateway is being run and could pile up to the point of crashing the system. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="encrypting-passwords"><a class="anchor" href="#encrypting-passwords"></a>Encrypting Passwords</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>It’s recommended that you assign a master password to your Mule ESB instance or your API Gateway Standalone instance when launching these. If you don’t, then when setting up your credentials for external applications via the ARM UI, these will be stored as plain text in a .yaml file in the Mule Agent’s folders. This is not recommendable for security reasons.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Instead, what you should do is launch Mule ESB or API Gateway with an extra argument that is then used to encrypt these passwords when storing them in this .yaml file.</p> 
-  </div> 
-  <div class="panel panel-default no-padding"> 
-   <div class="panel-heading no-padding"> 
-    <!-- Nav tabs --> 
-    <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#mule-esb-10246" role="tab" data-toggle="tab">Mule ESB</a></li> 
-     <li><a href="#api-gateway-standalone-fb296" role="tab" data-toggle="tab">API Gateway Standalone</a></li> 
-    </ul> 
-   </div> 
-   <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="mule-esb-10246"> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code>{MULE_HOME}/bin/mule -M-Dmule.agent.configuration.encryption.password=myMasterPassword</code></pre> 
-      </div> 
-     </div> 
-     <div class="paragraph"> 
-      <p>or on Windows:</p> 
-     </div> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code>{MULE_HOME}\bin\mule.bat -M-Dmule.agent.configuration.encryption.password=myMasterPassword</code></pre> 
-      </div> 
-     </div> 
-    </div> 
-    <div class="tab-pane fade no-padding" id="api-gateway-standalone-fb296"> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code>{MULE_HOME}/bin/gateway -M-Dmule.agent.configuration.encryption.password=myMasterPassword</code></pre> 
-      </div> 
-     </div> 
-     <div class="paragraph"> 
-      <p>or on windows:</p> 
-     </div> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code>{MULE_HOME}\bin\gateway.bat -M-Dmule.agent.configuration.encryption.password=myMasterPassword</code></pre> 
-      </div> 
-     </div> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Note that, in order to have access to these encrypted passwords when you start Mule ESB and API Gateway again, you must assign the same master password you used when generating them.</p> 
   </div> 
  </div> 
 </div>
@@ -1323,7 +983,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#basic-architecture">Basic Architecture</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#installation-and-setup-of-arm-with-a-third-party-monitoring-tool">Installation and Setup of ARM with a third party monitoring tool</a></li><li><a class="scroll-menu-link" href="#encrypting-passwords">Encrypting Passwords</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#api-led-demo-summary">API Led Demo Summary</a></li><li><a class="scroll-menu-link" href="#environment-configuration">Environment Configuration</a></li><li><a class="scroll-menu-link" href="#how-to-run-the-demo">How to Run the Demo</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
