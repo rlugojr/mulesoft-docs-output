@@ -836,7 +836,7 @@
 <i></i>
 <a href="/release-notes/cloudhub-release-notes">CloudHub Release Notes</a><ul>
 <li><i></i><a href="/release-notes/cloudhub-r40-migration-guide">CloudHub R40 Migration Guide</a></li></ul></li>
-<li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li>
+<li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.0-release-notes">Mule Maven Plugin 2.0 Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/deprecated-products">Deprecated Products</a><ul>
 <li>
@@ -880,7 +880,7 @@
    <p><strong>Mule Management Console (MMC)</strong>&nbsp;centralizes management and monitoring functions for all your Mule ESB Enterprise deployments, whether they are running as standalone instances, as a cluster, or embedded in application servers.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
-   <p>After software developer teams create Mule applications using&nbsp;<a href="/docs/display/34X/Getting+Started+with+Mule+Studio">Mule Studio</a>&nbsp;or another IDE, they typically pass the Mule application to another team who deploys the application in a simulated environment for more rigorous testing. Afterwards, the application is run in production with strict requirements to be constantly available, performing at a certain rate, and continually working as expected. Moreover, additional Mule instances and applications may be introduced into the infrastructure, increasing the level of complexity inherent to managing and monitoring all systems.</p> 
+   <p>After software developer teams create Mule applications using&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio</a>&nbsp;or another IDE, they typically pass the Mule application to another team who deploys the application in a simulated environment for more rigorous testing. Afterwards, the application is run in production with strict requirements to be constantly available, performing at a certain rate, and continually working as expected. Moreover, additional Mule instances and applications may be introduced into the infrastructure, increasing the level of complexity inherent to managing and monitoring all systems.</p> 
   </div> 
   <div class="paragraph"> 
    <p><strong>This is where MMC comes in.</strong>&nbsp;MMC is an enterprise management and monitoring tool designed specifically for Mule ESB instances. MMC provides a comprehensive set of functionality for managing and monitoring running Mule instances, Mule clusters, applications within Mule instances, and the flows within those applications. It also provides ways of looking at specific transactions through pre-defined business events, as well as transactions in flight.</p> 
@@ -914,101 +914,165 @@
 <div class="sect1"> 
  <h2 id="key-features"><a class="anchor" href="#key-features"></a>Key Features</h2> 
  <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/icon-government-blue-big.png" alt="icon-government-blue-big"></span></p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="centralized-management-and-monitoring"><a class="anchor" href="#centralized-management-and-monitoring"></a>Centralized Management and Monitoring</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Check the health of ESB resources via an easy-to-navigate visual interface</p> </li> 
-     <li> <p>Access intuitive charts that reveal system performance and resource consumption</p> </li> 
-     <li> <p>Manage multiple runtime environments, grouped by location, business function, or other criteria</p> </li> 
-     <li> <p>Define and subscribe to Mule alerts</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/icon-datamapper-blue-big.png" alt="icon-datamapper-blue-big"></span></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="fine-grained-esb-control"><a class="anchor" href="#fine-grained-esb-control"></a>Fine-Grained ESB Control</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Start, stop, and restart ESB resources</p> </li> 
-     <li> <p>Remotely access, update, or replace any file or configuration on a Mule ESB server</p> </li> 
-     <li> <p>View resource consumption and dynamically tune flows in real time</p> </li> 
-     <li> <p>Dynamically configure thread pools</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/icon-lock-blue-big%281%29.png" alt="icon-lock-blue-big%281%29"></span></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="enterprise-level-security"><a class="anchor" href="#enterprise-level-security"></a>Enterprise-Level Security</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Support for enterprise authenticaton (LDAP)</p> </li> 
-     <li> <p>Set up fine-grained role-based access control</p> </li> 
-     <li> <p>Secure your runtime communications using certificates and HTTPS</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/icon-dashboard-blue-big.png" alt="icon-dashboard-blue-big"></span></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="deep-diagnostics-and-auditing"><a class="anchor" href="#deep-diagnostics-and-auditing"></a>Deep Diagnostics and Auditing</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>View detailed information on memory utilization, threads, system resources, and server configuration</p> </li> 
-     <li> <p>Audit message traffic and associated properties for both the inbound and outbound sides of flows</p> </li> 
-     <li> <p>Turn flow level auditing on or off to capture just enough data to diagnose an issue without impacting performance</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/icon-alert-blue-big%281%29.png" alt="icon-alert-blue-big%281%29"></span></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="intelligent-alerting"><a class="anchor" href="#intelligent-alerting"></a>Intelligent Alerting</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Receive notifications when critical metrics cross thresholds</p> </li> 
-     <li> <p>Monitor events at the individual server level or system level</p> </li> 
-     <li> <p>Escalate alerts to administrators or an external monitoring system</p> </li> 
-     <li> <p>Customize alerts using alert scripts</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/icon-graph-blue-big.png" alt="icon-graph-blue-big"></span></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="flexible-cluster-management"><a class="anchor" href="#flexible-cluster-management"></a>Flexible Cluster Management</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Create, disband, or add nodes to clusters as conditions dictate</p> </li> 
-     <li> <p>Monitor cluster status – get detailed information about cluster-based flows and memory usage</p> </li> 
-     <li> <p>Deploy apps to a cluster for enhanced availability, scalability, and performance</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/icon-stopwatch-blue-big.png" alt="icon-stopwatch-blue-big"></span></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="in-depth-event-visualization"><a class="anchor" href="#in-depth-event-visualization"></a>In-Depth Event Visualization</h3> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Track key events in the flow of business transactions</p> </li> 
-     <li> <p>Analyze the flow and disposition of particular messages within a business transaction</p> </li> 
-     <li> <p>Drill into event data to identify failure points or bottlenecks</p> </li> 
-     <li> <p>Test flows for compliance with business procedures and standards</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 25%;"> 
+    <col style="width: 75%;"> 
+   </colgroup> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/icon-government-blue-100px.png" alt="icon-government-blue-100px"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Centralized Management and Monitoring</strong></p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Check the health of ESB resources via an easy-to-navigate visual interface</p> </li> 
+         <li> <p>Access intuitive charts that reveal system performance and resource consumption</p> </li> 
+         <li> <p>Manage multiple runtime environments, grouped by location, business function, or other criteria</p> </li> 
+         <li> <p>Define and subscribe to Mule alerts</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/icon-datamapper-blue-100px.png" alt="icon-datamapper-blue-100px"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Fine-Grained ESB Control</strong></p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Start, stop, and restart ESB resources</p> </li> 
+         <li> <p>Remotely access, update, or replace any file or configuration on a Mule ESB server</p> </li> 
+         <li> <p>View resource consumption and dynamically tune flows in real time</p> </li> 
+         <li> <p>Dynamically configure thread pools</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/icon-lock-blue-big-100px.png" alt="icon-lock-blue-big-100px"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Enterprise-Level Security</strong></p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Support for enterprise authenticaton (LDAP)</p> </li> 
+         <li> <p>Set up fine-grained role-based access control</p> </li> 
+         <li> <p>Secure your runtime communications using certificates and HTTPS</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/icon-dashboard-blue-100px.png" alt="icon-dashboard-blue-100px"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Deep Diagnostics and Auditing</strong></p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>View detailed information on memory utilization, threads, system resources, and server configuration</p> </li> 
+         <li> <p>Audit message traffic and associated properties for both the inbound and outbound sides of flows</p> </li> 
+         <li> <p>Turn flow level auditing on or off to capture just enough data to diagnose an issue without impacting performance</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/icon-alert-blue-100px.png" alt="icon-alert-blue-100px"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Intelligent Alerting</strong></p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Receive notifications when critical metrics cross thresholds</p> </li> 
+         <li> <p>Monitor events at the individual server level or system level</p> </li> 
+         <li> <p>Escalate alerts to administrators or an external monitoring system</p> </li> 
+         <li> <p>Customize alerts using alert scripts</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/icon-graph-blue-100px.png" alt="icon-graph-blue-100px"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>Flexible Cluster Management</strong></p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Create, disband, or add nodes to clusters as conditions dictate</p> </li> 
+         <li> <p>Monitor cluster status – get detailed information about cluster-based flows and memory usage</p> </li> 
+         <li> <p>Deploy apps to a cluster for enhanced availability, scalability, and performance</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/icon-stopwatch-blue-100px.png" alt="icon-stopwatch-blue-100px"></span></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>In-Depth Event Visualization</strong></p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>Track key events in the flow of business transactions</p> </li> 
+         <li> <p>Analyze the flow and disposition of particular messages within a business transaction</p> </li> 
+         <li> <p>Drill into event data to identify failure points or bottlenecks</p> </li> 
+         <li> <p>Test flows for compliance with business procedures and standards</p> </li> 
+        </ul> 
+       </div> 
+      </div></td> 
+    </tr> 
+   </tbody> 
+  </table> 
  </div> 
 </div> 
 <div class="sect1"> 

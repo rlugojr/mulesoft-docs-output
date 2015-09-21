@@ -836,7 +836,7 @@
 <i></i>
 <a href="/release-notes/cloudhub-release-notes">CloudHub Release Notes</a><ul>
 <li><i></i><a href="/release-notes/cloudhub-r40-migration-guide">CloudHub R40 Migration Guide</a></li></ul></li>
-<li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li>
+<li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.0-release-notes">Mule Maven Plugin 2.0 Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/deprecated-products">Deprecated Products</a><ul>
 <li>
@@ -869,10 +869,10 @@
    <p>Your service probably enforces some kind of authentication in order for applications to talk to your service on behalf of a user.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><strong>Note</strong>: DevKit lets you create more than one authentication method for your connector using multiple&nbsp;@ConnectionStrategy annotations.</p> 
+   <p><strong>Note</strong>: DevKit lets you create more than one authentication method for your connector using multiple&nbsp;<code>@ConnectionStrategy</code> annotations.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>On the client side, many Mule applications need to manage multiple connections to the same target – for example, a developer of an application interacting with an e-commerce site on behalf of thousands of users need sto efficiently manage the many connections that might be live at any given moment.</p> 
+   <p>On the client side, many Mule applications need to manage multiple connections to the same target – for example, a developer of an application interacting with an e-commerce site on behalf of thousands of users need to efficiently manage the many connections that might be live at any given moment.</p> 
   </div> 
   <div class="paragraph"> 
    <p>In DevKit, connection management and authentication support are closely related. While a general purpose connection management framework is available for most protocols, OAuth authentication handles connection management differently.&nbsp;If you are not familiar with OAuth, refer to <a href="http://www.cubrid.org/blog/dev-platform/dancing-with-oauth-understanding-how-authorization-works/">Dancing with OAuth: Understanding How Authentication Works</a>, a widely-cited and accessible overview of how the different flavors of OAuth work. &nbsp;</p> 
@@ -891,7 +891,7 @@
  <h2 id="basic-authentication-using-the-connection-management-framework"><a class="anchor" href="#basic-authentication-using-the-connection-management-framework"></a>Basic Authentication Using the Connection Management Framework</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Anypoint DevKit makes it easy to add username and password connection management authentication functionality to connectors by applying the @ConnectionManagement&nbsp;annotation at the&nbsp;@Connector class level.&nbsp;Connection management with basic username and password authentication (most common) can be easily generalized to other non-OAuth protocols such as SAML, Kerberos, LDAP, NTLM, or to create a custom connection.</p> 
+   <p>Anypoint DevKit makes it easy to add username and password connection management authentication functionality to connectors by applying the <code>@ConnectionManagement</code>&nbsp;annotation at the&nbsp;<code>@Connector</code> class level.&nbsp;Connection management with basic username and password authentication (most common) can be easily generalized to other non-OAuth protocols such as SAML, Kerberos, LDAP, NTLM, or to create a custom connection.</p> 
   </div> 
   <div class="paragraph"> 
    <p>This framework&nbsp;provides the following benefits,&nbsp;with minimal effort on the part of the connector developer:</p> 
@@ -912,7 +912,7 @@
  <h2 id="http-basic-authentication"><a class="anchor" href="#http-basic-authentication"></a>HTTP Basic Authentication</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>DevKit provides support for HTTP Authentication as described in <a href="https://www.ietf.org/rfc/rfc2617.txt">RFC-2617</a>. &nbsp;You can implement HTTP Authentication as a @ConnectionStrategy in your @Connector class, and DevKit transparently manages the authentication for your requests.</p> 
+   <p>DevKit provides support for HTTP Authentication as described in <a href="https://www.ietf.org/rfc/rfc2617.txt">RFC-2617</a>. &nbsp;You can implement HTTP Authentication as a <code>@ConnectionStrategy</code> in your <code>@Connector</code> class, and DevKit transparently manages the authentication for your requests.</p> 
   </div> 
   <div class="paragraph"> 
    <p>For more information, see the <a href="/anypoint-connector-devkit/v/3.7/http-basic-authentication">HTTP Basic Authentication</a> guide.</p> 
@@ -923,7 +923,7 @@
  <h2 id="oauth-v1"><a class="anchor" href="#oauth-v1"></a>OAuth V1</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Anypoint DevKit makes the implementation of the OAuth V1 on your connector rather straightforward. By simply implementing &nbsp;OAuth V1 in your @Connector class, DevKit manages all of the requests to the target service.&nbsp;</p> 
+   <p>Anypoint DevKit makes the implementation of the OAuth V1 on your connector rather straightforward. By simply implementing &nbsp;OAuth V1 in your <code>@Connector</code> class, DevKit manages all of the requests to the target service.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
    <p>For more information, see the&nbsp;<a href="/anypoint-connector-devkit/v/3.7/oauth-v1">OAuth V1</a> guide.</p> 
@@ -934,10 +934,10 @@
  <h2 id="oauth-v2"><a class="anchor" href="#oauth-v2"></a>OAuth V2</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>DevKit support for OAuth V2 includes its own form of connection management support. Implement OAuth2 in your&nbsp;@Connector class, and DevKit transparently manages multiple connections, including maintaining access tokens for multiple connections to the target service.&nbsp;</p> 
+   <p>DevKit support for OAuth V2 includes its own form of connection management support. Implement OAuth2 in your&nbsp;<code>@Connector</code> class, and DevKit transparently manages multiple connections, including maintaining access tokens for multiple connections to the target service.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
-   <p>For more information, see the&nbsp; <a href="/anypoint-connector-devkit/v/3.7/oauth-v2">OAuth V2</a> guide.</p> 
+   <p>For more information, see the <a href="/anypoint-connector-devkit/v/3.7/oauth-v2">OAuth V2</a> guide.</p> 
   </div> 
  </div> 
 </div> 
@@ -948,7 +948,7 @@
    <p>Anypoint DevKit makes the connection management framework available, providing credentials management for multiple simultaneous connections, pooling connection instances to allow for efficient connection re-use, and providing automated handling for invalidating lost connections and reconnecting when needed.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><a href="/anypoint-connector-devkit/v/3.7/connection-management">Connection Management</a> describes how to apply connection management to your connector using annotations to&nbsp;@Connector class methods. The example describes using the annotations with basic username/password authentication, but the same methods apply for other methods as well.</p> 
+   <p><a href="/anypoint-connector-devkit/v/3.7/connection-management">Connection Management</a> describes how to apply connection management to your connector using annotations to&nbsp;<code>@Connector</code> class methods. The example describes using the annotations with basic username/password authentication, but the same methods apply for other methods as well.</p> 
   </div> 
   <div class="paragraph"> 
    <p>You can also apply connection management to connectors that use no authentication at all. For details on implementing connection management in a connector with no authentication, see the <a href="/anypoint-connector-devkit/v/3.7/creating-a-connector-for-a-soap-service-via-cxf-client">Connector to SOAP Service via CXF Client Example</a>.</p> 
