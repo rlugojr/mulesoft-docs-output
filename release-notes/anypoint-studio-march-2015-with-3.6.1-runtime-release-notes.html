@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/release-notes/anypoint-studio-march-2015-with-3.6.1-runtime-release-notes" />
-    <meta name="description" content="Skip to Migration Guide March 16, 2015 This March 2015 release is an update to the Studio March 2015 with 3.6.1 runtime. This release also supports..." />
+    <meta name="description" content="Skip to Migration Guide March 16, 2015 This March 2015 release is an update to the Anypoint Studio March 2015 with 3.6.1 runtime. TIP - Upgrading f..." />
     <meta class="swiftype" name="title" data-type="string" content="Anypoint Studio March 2015 with 3.6.1 Runtime Release Notes" />
 
 </head>
@@ -871,7 +871,7 @@
    <p><strong>March 16, 2015</strong></p> 
   </div> 
   <div class="paragraph"> 
-   <p>This March 2015 release is an update to the Studio March 2015 with 3.6.1 runtime.</p> 
+   <p>This March 2015 release is an update to the Anypoint Studio March 2015 with 3.6.1 runtime.</p> 
   </div> 
  </div> 
 </div> 
@@ -898,7 +898,7 @@
      <td class="tableblock halign-left valign-top"><p class="tableblock">3.6.1 CC</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Studio</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Anypoint Studio</p></td> 
      <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Version: March 2015 with 3.6.1 Runtime<br> Build Number:&nbsp; n/a</p></td> 
     </tr> 
     <tr> 
@@ -907,7 +907,7 @@
      <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Mule DevKit</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Anypoint Connector DevKit</p></td> 
      <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">3.6.1</p></td> 
     </tr> 
     <tr> 
@@ -930,15 +930,8 @@
     <li> <p>Undo is now supported in script component editors.</p> </li> 
    </ul> 
   </div> 
-  <div class="admonitionblock tip"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-      <td class="content"> Upgrading from an existing instance of Anypoint Studio or previous Mule runtime version? Refer to the&nbsp;<a href="#migration-guide">Migration Guide</a>. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
+  <div class="paragraph"> 
+   <p>TIP - Upgrading from an existing instance of Anypoint Studio or previous Mule runtime version? Refer to the&nbsp;<a href="#migration-guide">Migration Guide</a>.</p> 
   </div> 
   <div class="paragraph"> 
    <p>This release also supports the Mule ESB 3.6.1 runtime which addresses a critical security issue.</p> 
@@ -949,7 +942,7 @@
  <h2 id="migration-guide"><a class="anchor" href="#migration-guide"></a>Migration Guide</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This section presents configuration considerations you may want to adjust when migrating from a previous version of a Mule runtime, or previous version of Studio.&nbsp;<a href="mailto:support@mulesoft.com">Contact MuleSoft</a>&nbsp;if you have a question about a specific migration activity or concern.</p> 
+   <p>This section presents configuration considerations you may want to adjust when migrating from a previous version of a Mule runtime, or previous version of Studio.&nbsp;<a href="mailto:support@mulesoft.com">Contact MuleSoft</a> -&nbsp;if you have a question about a specific migration activity or concern.</p> 
   </div> 
   <div class="admonitionblock note"> 
    <table> 
@@ -970,8 +963,11 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>Mule ESB 3.6.1 only works in Anypoint Studio March 2015 Release or older. Older Mule ESB runtimes can still be installed in the new Anypoint Studio release.</p> </li> 
-    <li> <p>APIkit 1.5.1 only works in runtimes whose versions are less than 3.6.0. APIkit 1.6.0 works in the 3.6.0 runtime and above (see&nbsp;<a href="https://www.mulesoft.org/jira/browse/STUDIO-5955">JIRA STUDIO-5955</a>).</p> </li> 
-    <li> <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">Java 7&nbsp;</a>is required for Anypoint Studio. If you are deploying to Java 6 runtimes, you can continue to configure Java 6 as the Java runtime for your project.</p> </li> 
+    <li> <p>APIkit 1.5.1 only works in runtimes whose versions are less than 3.6.0. APIkit 1.6.0 works in the 3.6.0 runtime and newer.</p> </li> 
+    <li> <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">Java 7</a> - is required for Anypoint Studio. If you are deploying to Java 6 runtimes, you can continue to configure Java 6 as the Java runtime for your project.</p> 
+     <div class="paragraph"> 
+      <p><strong>Note</strong>: If you are installing Anypoint Studio on a new computer or a fresh installation, you must also download and install <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html">JDK 1.6</a>, which provides important libraries for later JDK versions. Install JDK 1.6 first and then install JDK 1.7.</p> 
+     </div> </li> 
    </ul> 
   </div> 
   <div class="admonitionblock tip"> 
@@ -979,13 +975,13 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-      <td class="content"> To replace the deprecated HTTP connector for the new <a href="/mule-user-guide/v/3.7/migrating-to-the-new-http-connector">high-performance HTTP Connector</a>, refer to <a href="/mule-user-guide/v/3.7/migrating-to-the-new-http-connector">Migrating to the New HTTP Connector</a>. </td> 
+      <td class="content"> To replace the deprecated HTTP connector for the new HTTP connector, refer to <a href="/mule-user-guide/v/3.7/migrating-to-the-new-http-connector">Migrating to the New HTTP Connector</a>. </td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>If you wish to install a previous runtime or a community runtime, follow the instructions to&nbsp;<a href="/mule-user-guide/v/3.7/adding-community-runtime">add additional runtimes</a>&nbsp;to your new instance of Studio.</p> 
+   <p>If you wish to install a previous runtime or a community runtime, follow the instructions to&nbsp;<a href="/mule-user-guide/v/3.7/adding-community-runtime">add additional runtimes</a> -&nbsp;to your new instance of Studio.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="apikit-considerations"><a class="anchor" href="#apikit-considerations"></a>APIkit Considerations</h3> 
@@ -1017,7 +1013,7 @@
         <p><strong>Important</strong></p> 
        </div> 
        <div class="paragraph"> 
-        <p>This version of Anypoint Studio requires Java 7. Java 6 is not supported, and Java 8 is not supported by the Mule 3.6.0 Runtime or later.</p> 
+        <p>This version of Anypoint Studio requires Java 7. Java 6 is not supported, and Java 8 is not supported by the Mule 3.6.0 Runtime or later. <strong>Note</strong>: If you are installing Anypoint Studio on a new computer or a fresh installation, you must also download and install <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html">JDK 1.6</a>, which provides important libraries for later JDK versions. Install JDK 1.6 first and then install JDK 1.7. Note that while Java 6 is not supported for applications, you still need the libraries in a fresh installation to ensure that JDK 1.7 installs correctly.</p> 
        </div> </td> 
      </tr> 
     </tbody> 
@@ -1043,12 +1039,12 @@
    <h3 id="new-features-and-functionality-2"><a class="anchor" href="#new-features-and-functionality-2"></a>New Features and Functionality</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5956">STUDIO-5956</a>] - [DataSense in Background] Improve cache locking.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5957">STUDIO-5957</a>] - [DataSense in Background] Create a serial background process queue for DataSense jobs</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5959">STUDIO-5959</a>] - [DataSense in Background] Error handling</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5960">STUDIO-5960</a>] - [DataSense in Background] UI feedback</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6013">STUDIO-6013</a>] - Sign in to platform for exchange and CloudHub</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6025">STUDIO-6025</a>] - Labels for fields don’t render in DataSense Explorer</p> </li> 
+     <li> <p>STUDIO-5956 - DataSense in Background - Improve cache locking.</p> </li> 
+     <li> <p>STUDIO-5957 - DataSense in Background - Create a serial background process queue for DataSense jobs</p> </li> 
+     <li> <p>STUDIO-5959 - DataSense in Background - Error handling</p> </li> 
+     <li> <p>STUDIO-5960 - DataSense in Background - UI feedback</p> </li> 
+     <li> <p>STUDIO-6013 - Sign in to platform for exchange and CloudHub</p> </li> 
+     <li> <p>STUDIO-6025 - Labels for fields don’t render in DataSense Explorer</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -1056,62 +1052,62 @@
    <h3 id="bug-fixes"><a class="anchor" href="#bug-fixes"></a>Bug Fixes</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-459">STUDIO-459</a>] - Unable to add a response when creating a second flow in the same mflow</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-3092">STUDIO-3092</a>] - "Message Chunk Splitter" description is from "Collection Splitter"</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5553">STUDIO-5553</a>] - [New Launcher] Re-deploy fails</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5859">STUDIO-5859</a>] - 3.6 Studio Help provides incorrect info</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5870">STUDIO-5870</a>] - Deploy to CloudHub :: Some fields are not cleaned after changing project</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5872">STUDIO-5872</a>] - Deploy to CloudHub :: Environment behaviour is not clear</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5876">STUDIO-5876</a>] - HTTP connector configuration is reset when changing display name by using the direct edit</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5946">STUDIO-5946</a>] - New Containers: I can drag and drop a flow inside of the Source area of another flow</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5948">STUDIO-5948</a>] - Undo doesn’t work in script editors</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5968">STUDIO-5968</a>] - DataMapper is not being added automatically to the pom file when project is Maven based</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5971">STUDIO-5971</a>] - When adding dependencies automatically to the pom file the &lt;inclusion&gt; element is not added</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5973">STUDIO-5973</a>] - src/main/api directory isn’t being added as resource folder in Maven projects with APIkit</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5984">STUDIO-5984</a>] - HTTP request :: RAMLs with custom baseUriParameters are not supported. Only {version} is correctly processed</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5985">STUDIO-5985</a>] - HTTP request :: Set RAML fields to blank when changing RAML</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5993">STUDIO-5993</a>] - Subflows are not given unique names when dragged to canvas</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5995">STUDIO-5995</a>] - HTTP request :: NPE when clicking OK in configuration without filling any field</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6001">STUDIO-6001</a>] - Debugger :: When deleting a MP with breakpoints, they end up in the next MP</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6007">STUDIO-6007</a>] - Poll :: No Polling option selected by default when opening the editor the first time</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6010">STUDIO-6010</a>] - Debugger :: Evaluate Mule expression window :: Remember Location and Size do not work</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6017">STUDIO-6017</a>] - HTTP request :: Default Host and Port only populated after clicking in BROWSE button</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6023">STUDIO-6023</a>] - "Refresh metadata" throws NullPointerException</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6040">STUDIO-6040</a>] - Studio deletes all SQL queries in a project</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6049">STUDIO-6049</a>] - Support deploying new Siebel connector</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6052">STUDIO-6052</a>] - Global configuration :: Connector config is not created in the selected project</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6055">STUDIO-6055</a>] - Cannot launch applications using Maven deployment</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6098">STUDIO-6098</a>] - Import/Export :: Last Export destination path saved in the exported project</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6102">STUDIO-6102</a>] - [DataSense in Background] Query builder :: Empty first time is opened before fetching metadata</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6103">STUDIO-6103</a>] - HTTP connector :: Clicking on the Refresh metadata link does nothing when the editor has empty fields.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6105">STUDIO-6105</a>] - [DataSense in Background] NPE when Changing Operation</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6118">STUDIO-6118</a>] - [DataSense in Background] When an editor is opened error message is displayed in wrong place</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6119">STUDIO-6119</a>] - [DataSense in Background] Error message is displayed more than once</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6120">STUDIO-6120</a>] - [DS in Background] Fix SAP Metadata retrieval</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6121">STUDIO-6121</a>] - NPE when launching an application with old server</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6123">STUDIO-6123</a>] - [DataMapper] Generating wrong input metadata for datasense when using a collection of Pojos as input.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6126">STUDIO-6126</a>] - [Studio Login] Register Now link doesn’t work</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6129">STUDIO-6129</a>] - [DataSense in Background] Domain XML config changed to project XML config after editing connector from error message</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6133">STUDIO-6133</a>] - Metadata propagation isn’t working across sub flows</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6135">STUDIO-6135</a>] - Studio UI contains dialog to add interceptors but JSON schema validator doesn’t support them</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6139">STUDIO-6139</a>] - [DataSense in Background] Error notifications dialog loses buttons when the message is too long.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6145">STUDIO-6145</a>] - [DataSense in Background] When changing Metadata tree focus NPE is displayed</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6146">STUDIO-6146</a>] - HTTP Inbound endpoint :: After editing configuration port is downloaded to XML</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6153">STUDIO-6153</a>] - [Datasense] Problem when comparing Datatypes of actual and expected Metadata Propagation.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6154">STUDIO-6154</a>] - [Datasense] Problem when comparing Datatypes of actual and expected Metadata Propagation.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6155">STUDIO-6155</a>] - Import/Export NPE when exporting projects</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6157">STUDIO-6157</a>] - [DataSense in Background] MP’s that use metadata cache for autocompletion are not refreshed after fetching metadata</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6162">STUDIO-6162</a>] - [Metadata Propagation] StackOverflow exception when filtering metadata coming from batch in the metadata tree</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6163">STUDIO-6163</a>] - Query builder :: Fields not recognized after clearing metadata cache</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6165">STUDIO-6165</a>] - cache TTL incorrectly noted as being in seconds</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6177">STUDIO-6177</a>] - [Studio Login] NPE when deploying to CloudHub using a domain with 2 letters</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6185">STUDIO-6185</a>] - [Login] Support for custom URLs in the preferences</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6186">STUDIO-6186</a>] - Inbound endpoint API gateway: After editing configuration port is downloaded to XML</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6193">STUDIO-6193</a>] - [Studio Login] Domain criteria is not displayed completely in CloudHub deploy</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6195">STUDIO-6195</a>] - [Studio Login] Add a message to the URL preferences to prevent errors</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6196">STUDIO-6196</a>] - [Studio Login] Login is requested several times in CloudHub dialog</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6198">STUDIO-6198</a>] - [Studio Login] Remove support for custom URLs in preferences</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6204">STUDIO-6204</a>] - [Studio Login] CloudHub preferences are not displayed anymore</p> </li> 
+     <li> <p>STUDIO-459 - Unable to add a response when creating a second flow in the same mflow</p> </li> 
+     <li> <p>STUDIO-3092 - "Message Chunk Splitter" description is from "Collection Splitter"</p> </li> 
+     <li> <p>STUDIO-5553 - New Launcher - Re-deploy fails</p> </li> 
+     <li> <p>STUDIO-5859 - 3.6 Studio Help provides incorrect info</p> </li> 
+     <li> <p>STUDIO-5870 - Deploy to CloudHub - Some fields are not cleaned after changing project</p> </li> 
+     <li> <p>STUDIO-5872 - Deploy to CloudHub - Environment behavior is not clear</p> </li> 
+     <li> <p>STUDIO-5876 - HTTP connector configuration is reset when changing display name by using the direct edit</p> </li> 
+     <li> <p>STUDIO-5946 - New Containers: I can drag and drop a flow inside of the Source area of another flow</p> </li> 
+     <li> <p>STUDIO-5948 - Undo doesn’t work in script editors</p> </li> 
+     <li> <p>STUDIO-5968 - DataMapper is not being added automatically to the pom file when project is Maven based</p> </li> 
+     <li> <p>STUDIO-5971 - When adding dependencies automatically to the pom file the &lt;inclusion&gt; element is not added</p> </li> 
+     <li> <p>STUDIO-5973 - src/main/api directory isn’t being added as resource folder in Maven projects with APIkit</p> </li> 
+     <li> <p>STUDIO-5984 - HTTP request - RAMLs with custom baseUriParameters are not supported. Only {version} is correctly processed</p> </li> 
+     <li> <p>STUDIO-5985 - HTTP request - Set RAML fields to blank when changing RAML</p> </li> 
+     <li> <p>STUDIO-5993 - Subflows are not given unique names when dragged to canvas</p> </li> 
+     <li> <p>STUDIO-5995 - HTTP request - NPE when clicking OK in configuration without filling any field</p> </li> 
+     <li> <p>STUDIO-6001 - Debugger - When deleting a MP with breakpoints, they end up in the next MP</p> </li> 
+     <li> <p>STUDIO-6007 - Poll - No Polling option selected by default when opening the editor the first time</p> </li> 
+     <li> <p>STUDIO-6010 - Debugger - Evaluate Mule expression window - Remember Location and Size do not work</p> </li> 
+     <li> <p>STUDIO-6017 - HTTP request - Default Host and Port only populated after clicking in BROWSE button</p> </li> 
+     <li> <p>STUDIO-6023 - "Refresh metadata" throws NullPointerException</p> </li> 
+     <li> <p>STUDIO-6040 - Studio deletes all SQL queries in a project</p> </li> 
+     <li> <p>STUDIO-6049 - Support deploying new Siebel connector</p> </li> 
+     <li> <p>STUDIO-6052 - Global configuration - Connector config is not created in the selected project</p> </li> 
+     <li> <p>STUDIO-6055 - Cannot launch applications using Maven deployment</p> </li> 
+     <li> <p>STUDIO-6098 - Import/Export - Last Export destination path saved in the exported project</p> </li> 
+     <li> <p>STUDIO-6102 - DataSense in Background - Query builder - Empty first time is opened before fetching metadata</p> </li> 
+     <li> <p>STUDIO-6103 - HTTP connector - Clicking on the Refresh metadata link does nothing when the editor has empty fields.</p> </li> 
+     <li> <p>STUDIO-6105 - DataSense in Background - NPE when Changing Operation</p> </li> 
+     <li> <p>STUDIO-6118 - DataSense in Background - When an editor is opened error message is displayed in wrong place</p> </li> 
+     <li> <p>STUDIO-6119 - DataSense in Background - Error message is displayed more than once</p> </li> 
+     <li> <p>STUDIO-6120 - DS in Background - Fix SAP Metadata retrieval</p> </li> 
+     <li> <p>STUDIO-6121 - NPE when launching an application with old server</p> </li> 
+     <li> <p>STUDIO-6123 - DataMapper - Generating wrong input metadata for datasense when using a collection of Pojos as input.</p> </li> 
+     <li> <p>STUDIO-6126 - Studio Login - Register Now link doesn’t work</p> </li> 
+     <li> <p>STUDIO-6129 - DataSense in Background - Domain XML config changed to project XML config after editing connector from error message</p> </li> 
+     <li> <p>STUDIO-6133 - Metadata propagation isn’t working across sub flows</p> </li> 
+     <li> <p>STUDIO-6135 - Studio UI contains dialog to add interceptors but JSON schema validator doesn’t support them</p> </li> 
+     <li> <p>STUDIO-6139 - DataSense in Background - Error notifications dialog loses buttons when the message is too long.</p> </li> 
+     <li> <p>STUDIO-6145 - DataSense in Background - When changing Metadata tree focus NPE is displayed</p> </li> 
+     <li> <p>STUDIO-6146 - HTTP Inbound endpoint - After editing configuration port is downloaded to XML</p> </li> 
+     <li> <p>STUDIO-6153 - Datasense - Problem when comparing Datatypes of actual and expected Metadata Propagation.</p> </li> 
+     <li> <p>STUDIO-6154 - Datasense - Problem when comparing Datatypes of actual and expected Metadata Propagation.</p> </li> 
+     <li> <p>STUDIO-6155 - Import/Export NPE when exporting projects</p> </li> 
+     <li> <p>STUDIO-6157 - DataSense in Background - MP’s that use metadata cache for autocompletion are not refreshed after fetching metadata</p> </li> 
+     <li> <p>STUDIO-6162 - Metadata Propagation - StackOverflow exception when filtering metadata coming from batch in the metadata tree</p> </li> 
+     <li> <p>STUDIO-6163 - Query builder - Fields not recognized after clearing metadata cache</p> </li> 
+     <li> <p>STUDIO-6165 - cache TTL incorrectly noted as being in seconds</p> </li> 
+     <li> <p>STUDIO-6177 - Studio Login - NPE when deploying to CloudHub using a domain with 2 letters</p> </li> 
+     <li> <p>STUDIO-6185 - Login - Support for custom URLs in the preferences</p> </li> 
+     <li> <p>STUDIO-6186 - Inbound endpoint API gateway: After editing configuration port is downloaded to XML</p> </li> 
+     <li> <p>STUDIO-6193 - Studio Login - Domain criteria is not displayed completely in CloudHub deploy</p> </li> 
+     <li> <p>STUDIO-6195 - Studio Login - Add a message to the URL preferences to prevent errors</p> </li> 
+     <li> <p>STUDIO-6196 - Studio Login - Login is requested several times in CloudHub dialog</p> </li> 
+     <li> <p>STUDIO-6198 - Studio Login - Remove support for custom URLs in preferences</p> </li> 
+     <li> <p>STUDIO-6204 - Studio Login - CloudHub preferences are not displayed anymore</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -1119,31 +1115,31 @@
    <h3 id="improvements"><a class="anchor" href="#improvements"></a>Improvements</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-781">STUDIO-781</a>] - Would save time to be given the option to create a class in addition to selecting an existing class inside a widget dialog box (e.g., Component)</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-2462">STUDIO-2462</a>] - The Service class field should be moved to the JAX-WS client group</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-3205">STUDIO-3205</a>] - Connections View usability improvements</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-3852">STUDIO-3852</a>] - Property editor should open for new components dropped into workspace</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-4227">STUDIO-4227</a>] - DataMapper: Deleting a filter in visual map leaves the folder collapsed</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-4493">STUDIO-4493</a>] - Flow Ref: Display name should display name of referenced flow.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5645">STUDIO-5645</a>] - WS Consumer support for the new HTTP connector</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5804">STUDIO-5804</a>] - Feedback icon should be place over the arrow</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5907">STUDIO-5907</a>] - Remove 'connector' word from global TCP Connector and WMQ XA Connector</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5926">STUDIO-5926</a>] - Change response arrow color</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5933">STUDIO-5933</a>] - Change icon for "Mule Properties View" Tab (unselected state)</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5949">STUDIO-5949</a>] - Remove "View" from Properties and Debugger Tab Titles</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5982">STUDIO-5982</a>] - HTTP request :: root RAML should be detected automatically</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-5998">STUDIO-5998</a>] - Add drag and drop functionality for ClassNameField editors.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6008">STUDIO-6008</a>] - Ability to select MP in visual editor and bring up its XML code</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6035">STUDIO-6035</a>] - Studio should warn you or save automatically if you run an unsaved Mule project</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6041">STUDIO-6041</a>] - [DataSense in Background] Cancel all jobs if first one fails (for a given set of credentials)</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6043">STUDIO-6043</a>] - [DataSense in Background] Automatically refresh DataSense explorer when the user changes the object type</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6046">STUDIO-6046</a>] - [DataSense in Background] Show visual cue on types drop down if something fails</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6071">STUDIO-6071</a>] - [Studio Login] Login Web Window</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6072">STUDIO-6072</a>] - [Studio Login] Preference page</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6073">STUDIO-6073</a>] - [Studio Login] Deploy to CloudHub</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6140">STUDIO-6140</a>] - [DataSense in Background] Make error text selectable.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6149">STUDIO-6149</a>] - [DataSense in Background] Make the DataSense explorer tree refresh every time a job finishes.</p> </li> 
-     <li> <p>[<a href="https://www.mulesoft.org/jira/browse/STUDIO-6150">STUDIO-6150</a>] - [DataSense in Background] Make the DataMapper editor refresh on job completion</p> </li> 
+     <li> <p>STUDIO-781 - Would save time to be given the option to create a class in addition to selecting an existing class inside a widget dialog box (for example, Component)</p> </li> 
+     <li> <p>STUDIO-2462 - The Service class field should be moved to the JAX-WS client group</p> </li> 
+     <li> <p>STUDIO-3205 - Connections View usability improvements</p> </li> 
+     <li> <p>STUDIO-3852 - Property editor should open for new components dropped into workspace</p> </li> 
+     <li> <p>STUDIO-4227 - DataMapper: Deleting a filter in visual map leaves the folder collapsed</p> </li> 
+     <li> <p>STUDIO-4493 - Flow Ref: Display name should display name of referenced flow.</p> </li> 
+     <li> <p>STUDIO-5645 - WS Consumer support for the new HTTP connector</p> </li> 
+     <li> <p>STUDIO-5804 - Feedback icon should be place over the arrow</p> </li> 
+     <li> <p>STUDIO-5907 - Remove 'connector' word from global TCP Connector and WMQ XA Connector</p> </li> 
+     <li> <p>STUDIO-5926 - Change response arrow color</p> </li> 
+     <li> <p>STUDIO-5933 - Change icon for "Mule Properties View" Tab (unselected state)</p> </li> 
+     <li> <p>STUDIO-5949 - Remove "View" from Properties and Debugger Tab Titles</p> </li> 
+     <li> <p>STUDIO-5982 - HTTP request - root RAML should be detected automatically</p> </li> 
+     <li> <p>STUDIO-5998 - Add drag and drop functionality for ClassNameField editors.</p> </li> 
+     <li> <p>STUDIO-6008 - Ability to select MP in visual editor and bring up its XML code</p> </li> 
+     <li> <p>STUDIO-6035 - Studio should warn you or save automatically if you run an unsaved Mule project</p> </li> 
+     <li> <p>STUDIO-6041 - DataSense in Background - Cancel all jobs if first one fails (for a given set of credentials)</p> </li> 
+     <li> <p>STUDIO-6043 - DataSense in Background - Automatically refresh DataSense explorer when the user changes the object type</p> </li> 
+     <li> <p>STUDIO-6046 - DataSense in Background - Show visual cue on types drop down if something fails</p> </li> 
+     <li> <p>STUDIO-6071 - Studio Login - Login Web Window</p> </li> 
+     <li> <p>STUDIO-6072 - Studio Login - Preference page</p> </li> 
+     <li> <p>STUDIO-6073 - Studio Login - Deploy to CloudHub</p> </li> 
+     <li> <p>STUDIO-6140 - DataSense in Background - Make error text selectable.</p> </li> 
+     <li> <p>STUDIO-6149 - DataSense in Background - Make the DataSense explorer tree refresh every time a job finishes.</p> </li> 
+     <li> <p>STUDIO-6150 - DataSense in Background - Make the DataMapper editor refresh on job completion</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -1155,9 +1151,9 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>For further details on Anypoint Studio with 3.6.1 Runtime, see the <a href="/release-notes/mule-esb-3.6.1-release-notes">Mule ESB 3.6.1 Release Notes</a></p> </li> 
-    <li> <p>Refer to MuleSoft’s <a href="http://www.mulesoft.org/documentation/display/current/Home">MuleSoft Documentation</a> for instructions on how to use the new features and improved functionality in Anypoint Studio with 3.6.1 Runtime.</p> </li> 
-    <li> <p>Access MuleSoft’s&nbsp;http://forum.mulesoft.org/mulesoft[forum]&nbsp;to pose questions and get help from Mule’s broad community of users.</p> </li> 
-    <li> <p>To access MuleSoft’s expert support team,&nbsp;http://www.mulesoft.com/mule-esb-subscription[subscribe]&nbsp;to Mule ESB Enterprise and log in to MuleSoft’s&nbsp;http://www.mulesoft.com/support-login[Customer Portal].</p> </li> 
+    <li> <p>Refer to MuleSoft’s <a href="https://docs.mulesoft.com/">documentation</a> - for instructions on how to use the new features and improved functionality in Anypoint Studio with 3.6.1 Runtime.</p> </li> 
+    <li> <p>Access MuleSoft’s&nbsp;<a href="http://forums.mulesoft.com">MuleSoft Forums</a> -&nbsp;to pose questions and get help from Mule’s broad community of users.</p> </li> 
+    <li> <p>To access MuleSoft’s expert support team,&nbsp;<a href="http://www.mulesoft.com/mule-esb-subscription">subscribe -&nbsp;to Mule ESB Enterprise</a> and log in to MuleSoft’s&nbsp;<a href="http://www.mulesoft.com/support-login">Customer Portal</a>.</p> </li> 
    </ul> 
   </div> 
  </div> 
