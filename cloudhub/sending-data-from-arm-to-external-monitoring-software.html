@@ -990,7 +990,7 @@
      <li> <p>Navigate to <code>CloudHub - &gt; Servers</code></p> </li> 
      <li> <p>Click <code>Add Server</code>. Without needing to actually add a new server, a sample command will be displayed in a popup window that includes the code for your particular organization. Copy this command, depending on where you wish to deploy, you may need to add extra arguments to it.</p> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/org_code.jpg" alt="image"></span></p> 
+       <p><span class="image"><img src="./_images/org_code.png" alt="image"></span></p> 
       </div> </li> 
     </ol> 
    </div> 
@@ -998,12 +998,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#arm-cloud-3ed29" role="tab" data-toggle="tab">ARM Cloud</a></li> 
-      <li><a href="#arm-on-premises-edition-5b05e" role="tab" data-toggle="tab">ARM On-Premises Edition</a></li> 
+      <li class="active"><a href="#arm-cloud-19ade" role="tab" data-toggle="tab">ARM Cloud</a></li> 
+      <li><a href="#arm-on-premises-edition-edfe3" role="tab" data-toggle="tab">ARM On-Premises Edition</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="arm-cloud-3ed29"> 
+     <div class="tab-pane in active fade no-padding" id="arm-cloud-19ade"> 
       <div class="paragraph"> 
        <p>When using ARM as part of the Anypoint Platform, launch the agent with exactly the same command that you found on the ARM UI:</p> 
       </div> 
@@ -1027,7 +1027,7 @@
        <p>The final argument of this command is the name that you assign for your Mule Agent instance, in the above example, <code>myServer</code>. This name will then be visible when interacting with the agent from your ARM console.</p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="arm-on-premises-edition-5b05e"> 
+     <div class="tab-pane fade no-padding" id="arm-on-premises-edition-edfe3"> 
       <div class="paragraph"> 
        <p>When using ARM as an on premise application, launch the agent with the following arguments:</p> 
       </div> 
@@ -1274,6 +1274,20 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="integrating-api-analytics-to-splunk-and-elk"><a class="anchor" href="#integrating-api-analytics-to-splunk-and-elk"></a>Integrating API Analytics to Splunk and ELK</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Once you’ve configured your API Gateway, you can now return to ARM and see that your servers that run on API Gateway runtime have some additional options in their menu.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>image:arm_api_analytics_settings.png</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>You can now set up the sending of API analytics to both Splunk and ELK, you configure exactly in the same way as you do when sending business events to them. See <a href="#integrating-to-an-elk-stack">Integrating to an ELK Stack</a> and <a href="#integrating-to-splunk">Integrating to Splunk</a>.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="encrypting-passwords"><a class="anchor" href="#encrypting-passwords"></a>Encrypting Passwords</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -1286,12 +1300,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#mule-esb-aa28e" role="tab" data-toggle="tab">Mule ESB</a></li> 
-     <li><a href="#api-gateway-standalone-7f35c" role="tab" data-toggle="tab">API Gateway Standalone</a></li> 
+     <li class="active"><a href="#mule-esb-c3d1d" role="tab" data-toggle="tab">Mule ESB</a></li> 
+     <li><a href="#api-gateway-standalone-e9fbe" role="tab" data-toggle="tab">API Gateway Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="mule-esb-aa28e"> 
+    <div class="tab-pane in active fade no-padding" id="mule-esb-c3d1d"> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code>{MULE_HOME}/bin/mule -M-Dmule.agent.configuration.password=myMasterPassword</code></pre> 
@@ -1306,7 +1320,7 @@
       </div> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="api-gateway-standalone-7f35c"> 
+    <div class="tab-pane fade no-padding" id="api-gateway-standalone-e9fbe"> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code>{MULE_HOME}/bin/gateway -M-Dmule.agent.configuration.password=myMasterPassword</code></pre> 
@@ -1332,7 +1346,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#basic-architecture">Basic Architecture</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#installation-and-setup-of-arm-with-a-third-party-monitoring-tool">Installation and Setup of ARM with a third party monitoring tool</a></li><li><a class="scroll-menu-link" href="#encrypting-passwords">Encrypting Passwords</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#basic-architecture">Basic Architecture</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#installation-and-setup-of-arm-with-a-third-party-monitoring-tool">Installation and Setup of ARM with a third party monitoring tool</a></li><li><a class="scroll-menu-link" href="#integrating-api-analytics-to-splunk-and-elk">Integrating API Analytics to Splunk and ELK</a></li><li><a class="scroll-menu-link" href="#encrypting-passwords">Encrypting Passwords</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

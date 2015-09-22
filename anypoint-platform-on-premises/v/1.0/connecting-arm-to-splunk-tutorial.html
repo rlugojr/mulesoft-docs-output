@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-platform-on-premises/v/1.0/connecting-arm-to-splunk-tutorial" />
-    <meta name="description" content="The objective of this demo is to show different alternatives to the use for how business events (phase #1) and api analytics (phase #2) can be cons..." />
+    <meta name="description" content="This document walks you through the integration of ARM On-Premise Edition with Splunk in order to send business events and API Analytics. In order ..." />
     <meta class="swiftype" name="title" data-type="string" content="Connecting ARM to Splunk Tutorial" />
 
 </head>
@@ -866,10 +866,10 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The objective of this demo is to show different alternatives to the use for how business events (phase #1) and api analytics (phase #2) can be consumed when using on premise installations.</p> 
+   <p>This document walks you through the integration of ARM On-Premise Edition with Splunk in order to send business events and API Analytics.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>In order to provide a real life demo, we reused the APILed Workshop Order Tracking application which is an RAML based API for creating order to buy products that also contains an API proxy on top that we will use in Phase #2 to extract analytics.</p> 
+   <p>In order to provide a real life demo, this demo uses an existing RAML based API for creating orders to buy products that also contains an API proxy, which will then be used to extract analytics.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The following diagram is an overview on the entire API Led Demo:</p> 
@@ -883,7 +883,7 @@
  <h2 id="api-led-demo-summary"><a class="anchor" href="#api-led-demo-summary"></a>API Led Demo Summary</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This demo shows an order system following an API Led approach. This system is modeled to allow a user to create orders using a mobile application (or emulator) and query the status of previously created orders. When creating an order, the user needs to complete a form and, depending on the values of those fields, different business flows are called. The most important field among these is the country:</p> 
+   <p>This demo shows an order system that follows an API Led approach. This system is modeled to allow a user to create orders using a mobile application (or emulator) and query the status of previously created orders. When creating an order, the user needs to complete a form and, depending on the values of those fields, different business flows are called. The most important field among these is the country:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
@@ -892,13 +892,13 @@
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>Below is the demo main flow.</p> 
+   <p>Below is the demo’s main flow:</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/arm_tutorial_full_flow.png" alt="full flow"></span></p> 
   </div> 
   <div class="paragraph"> 
-   <p>The main objective of this demo is to show how Business Events – both default and custom events – can be monitored and consumed using Splunk. We therefore slightly modified the demo in order to create business events when: * a new order is placed ** if the country is <code>United States</code>, another additional event gets created, confirming that the message was put into the queue. * an existing order is queried to get the status</p> 
+   <p>The main objective of this demo is to show how Business Events – both default and custom events – can be monitored and consumed using Splunk. Business events are created when: * a new order is placed ** if the country is <code>United States</code>, another additional event gets created, confirming that the message was put into the queue. * an existing order is queried to get the status</p> 
   </div> 
  </div> 
 </div> 
@@ -906,7 +906,7 @@
  <h2 id="environment-configuration"><a class="anchor" href="#environment-configuration"></a>Environment Configuration</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Since we will be using an on premise ESB, we created an Windows AWS instance to the ESB where the demo application is running. * <strong>For Splunk</strong>, we are using an instance provided to us by engineering. * <strong>For ARM</strong> we are using a Staging version since the release it’s not out yet.</p> 
+   <p>Since this demo uses an on premise ESB, a Windows AWS instance needs to be created on the ESB where the demo application is running.</p> 
   </div> 
   <div class="paragraph"> 
    <p>All the information about hosts and users is listed below:</p> 
@@ -945,10 +945,10 @@
  <h2 id="how-to-run-the-demo"><a class="anchor" href="#how-to-run-the-demo"></a>How to Run the Demo</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This demo can be used to show that a user can integrate their onprem systems (like Splunk, ELK or any other third party systems) to consume information produced by Mule such as Business Events, API analytics, logs, etc.</p> 
+   <p>This demo can be used to show that you can integrate your onprem systems (like Splunk, ELK or any other third party systems) to consume information produced by Mule such as Business Events, API analytics, logs, etc.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Depending on what you want to position is how you should run the demo. The demo consists on:</p> 
+   <p>The demo consists on:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
@@ -989,8 +989,7 @@
        </ol> 
       </div> </li> 
      <li> <p>Scroll down and create the order. When the order gets created, a business event containing the <strong>order id</strong> and the <strong>count</strong> gets generated and pushed to Splunk.</p> </li> 
-     <li> <p>Click on the order you just created in order to check the order status. Once again, a business events gets created and pushed to Splunk.</p> </li> 
-     <li> <p>This concludes the business use case.</p> </li> 
+     <li> <p>Click on the order you just created in order to check the order status. Once again, a business event is created and pushed to Splunk. This concludes the business use case.</p> </li> 
     </ol> 
    </div> 
   </div> 
@@ -1001,10 +1000,10 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Now let’s go to Splunk and see the business events. We created a report to show both default business events per integration flow and custom business events generated by the user.</p> 
+    <li> <p>You can now enter the Splunk account and see the business events that these actions genrated represented there. A report is already provided to show both default business events per integration flow and custom business events generated by the user.</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
-       <li> <p>You can see the actual report in Splunk through <a href="http://ec2-52-88-188-182.us-west-2.compute.amazonaws.com/en-US/app/search/demo__business_events_dashboard?earliest=0&amp;latest=">this url</a>. The report looks like this:</p> 
+       <li> <p>You can see this report in Splunk through <a href="http://ec2-52-88-188-182.us-west-2.compute.amazonaws.com/en-US/app/search/demo__business_events_dashboard?earliest=0&amp;latest=">this url</a>. The report looks like this:</p> 
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/arm_tutorial_activity.png" alt="activity"></span></p> 
         </div> </li> 
@@ -1017,7 +1016,7 @@
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/arm_tutorial_event2.png" alt="event"></span></p> 
      </div> </li> 
-    <li> <p>Keep in mind that this is just a sample of all the information that we can push to Splunk. Other useful information, like server metrics, could be imported as well by using <a href="http://blogs.mulesoft.com/dev/mule-dev/intro-mule-agent-architecture/">other internal handlers</a> such as JMX.</p> </li> 
+    <li> <p>Keep in mind that this is just a sample of all the information that you can push to Splunk. Other useful information, like server metrics, could be imported as well by using <a href="http://blogs.mulesoft.com/dev/mule-dev/intro-mule-agent-architecture/">other internal handlers</a> such as JMX.</p> </li> 
    </ol> 
   </div> 
  </div> 
@@ -1025,41 +1024,44 @@
 <div class="sect1"> 
  <h2 id="gateway-analytics-integration"><a class="anchor" href="#gateway-analytics-integration"></a>Gateway Analytics Integration</h2> 
  <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Before you can send API Analytics data to Splunk, you must configure your API Gateway installation accordingly. To do so, follow the steps in <a href="cloudhub/sending-data-from-arm-to-external-monitoring-software#configure-api-analytics">Configure API Gateway</a>.</p> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
  <h2 id="agent-configuration"><a class="anchor" href="#agent-configuration"></a>Agent Configuration</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>An important part of this demo, is to show how the integration must be setup. All that needs to be done to achieve this is to configure the <a href="/mule-agent/v/1.2.0/index">The Mule Agent</a> to use the Splunk Internal Handler to push information into Splunk. The handler configuration for both Business Events or Analytics, can be configured through the ARM UI. Here are the steps to do this:</p> 
+   <p>An important part of this demo is to show how the integration must be setup. All that needs to be done to achieve this is to configure the <a href="/mule-agent/v/1.2.0/index">The Mule Agent</a> to use the Splunk Internal Handler to push information into Splunk. The handler configuration for both Business Events or Analytics, can be configured through the ARM UI. Here are the steps to do this:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Let’s login to ARM using the provided credentials.</p> </li> 
+    <li> <p>Login to ARM using the provided credentials.</p> </li> 
     <li> <p>Click on the Servers tab to see all the servers – both with ESB and API Gateway runtimes – currently managed by ARM</p> </li> 
-    <li> <p>For purposes of the demo, let’s use the gateway as the server where we will show the agent configuration. Click on the <code>arm-demo-gateway</code> server, the server details page will then display on the right:</p> 
+    <li> <p>Click on the <code>arm-demo-gateway</code> server, as this is the only one that runs on the API Gateway, the server details page will then display on the right:</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/arm_ui_activate_agent.png" alt="agent"></span></p> 
      </div> </li> 
-    <li> <p>There are two tabs on this menu: Applications and Agent Plugins. Click on Agent Plugins and to see the following configuration:</p> 
+    <li> <p>There are two tabs on this menu: Applications and Agent Plugins. Click on <code>Agent Plugins</code> to see the following configuration menu:</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/arm_ui_splunk_api.png" alt="agent"></span></p> 
      </div> </li> 
-    <li> <p>From this menu, we can configure all of the plugins for the agent. Once we make a change, ARM will update your local instance of API Gateway (or ESB) using the Agent Rest API.</p> </li> 
-    <li> <p>Let’s click on the Splunk Plugin to see its configuration parameters.</p> 
+    <li> <p>From this menu, you can configure all of the plugins for the agent. If you’ve changed any fields, ARM updates your local instance of API Gateway (or ESB) using the Agent Rest API.</p> </li> 
+    <li> <p>Click on the Splunk Plugin to see its configuration parameters.</p> 
      <div class="admonitionblock tip"> 
       <table> 
        <tbody> 
         <tr> 
          <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-         <td class="content"> We could also configure ELK in the same way that we configured Splunk in this tutorial. </td> 
+         <td class="content"> You could also configure ELK in the same way as is shown for Splunk in this tutorial. </td> 
         </tr> 
        </tbody> 
       </table> 
      </div> </li> 
-    <li> <p>Once we click on the configuration button, we can modify any of the parameters on the Splunk plugin, like: user credentials, indexes, etc.</p> 
+    <li> <p>Once you click on the configuration button, you can modify any of the parameters on the Splunk plugin, like: user credentials, indexes, etc.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/arm_ui_configure_splunk.png" alt="agent"></span> .We can also manage the agent configuration at a cluster level, this configuration would then be replicated automatically to all of its nodes.</p> 
+      <p><span class="image"><img src="./_images/arm_ui_configure_splunk.png" alt="agent"></span> .You can also manage the agent configuration at a cluster level, this configuration would then be replicated automatically to all of its nodes.</p> 
      </div> </li> 
    </ol> 
   </div> 

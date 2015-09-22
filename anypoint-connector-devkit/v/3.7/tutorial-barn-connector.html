@@ -910,7 +910,7 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Create your initial Barn connector. Use <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Anypoint Connector Project</strong>. Name the connector <strong>Barn</strong>. You can leave all other fields the same. Click <strong>Finish</strong>. You can ignore any warning messages in the Studio Console.</p> </li> 
+    <li> <p>Create your initial Barn connector. Use <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong> &gt; <strong>Anypoint Connector Project</strong>. Name the connector <strong>Barn</strong>. You can leave all other fields the same. Click <strong>Finish</strong>. You can ignore any warning messages in the Studio Console.</p> </li> 
     <li> <p>Review the scaffolded connector:&nbsp;</p> 
      <div class="listingblock"> 
       <div class="content"> 
@@ -1067,10 +1067,10 @@
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/BarnJava.png" alt="BarnJava"></span></p> 
      </div> </li> 
-    <li> <p>Paste&nbsp;the following code in the connector class, before the final closing curly brackets, and after the existing @Processor block:</p> 
+    <li> <p>Paste&nbsp;the following code in the connector class, before the final closing curly brackets, and after the existing <code>@Processor</code> block:</p> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="java">
             
          <table class="CodeRay"> 
           <tbody> 
@@ -1089,29 +1089,29 @@
 12
 13
 </pre></td> 
-            <td class="code"><pre>/**
+            <td class="code"><pre><span class="comment">/**
 &nbsp;* Custom processor that places an animal in the barn.
 &nbsp;*
 &nbsp;* {@sample.xml ../../../doc/barn-connector.xml.sample barn:putInBarn}
 &nbsp;*
 &nbsp;* @param animal Name of the animal to be place in the barn
 &nbsp;* @return returns processed message
-&nbsp;*/
-@Processor(friendlyName="Put an animal in the barn")
-public String putInBarn(@Placement(group="Parameters")
-&nbsp;&nbsp;@FriendlyName("The animal's name") String animal) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return animal + " has been placed in the barn";
-&nbsp;&nbsp;&nbsp;&nbsp;}</pre></td> 
+&nbsp;*/</span>
+<span class="annotation">@Processor</span>(friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">Put an animal in the barn</span><span class="delimiter">"</span></span>)
+<span class="directive">public</span> <span class="predefined-type">String</span> putInBarn(<span class="annotation">@Placement</span>(group=<span class="string"><span class="delimiter">"</span><span class="content">Parameters</span><span class="delimiter">"</span></span>)
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="annotation">@FriendlyName</span>(<span class="string"><span class="delimiter">"</span><span class="content">The animal's name</span><span class="delimiter">"</span></span>) <span class="predefined-type">String</span> animal) {
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">return</span> animal + <span class="string"><span class="delimiter">"</span><span class="content"> has been placed in the barn</span><span class="delimiter">"</span></span>;
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}</pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
       </div> 
      </div> 
      <div class="paragraph"> 
-      <p>The path name in the <code>@Sample</code> statement&nbsp;indicates the path to the Javadoc *.xml.sample file in&nbsp;Studio–it’s not a filesystem path. For each Javadoc sample file in your connector, specify corresponding statements in the xml.sample file.<br> <br> The line starting with @Processor&nbsp;identifies the processor function, which specifies the user interface for the connector.<br> The line starting with @FriendlyName&nbsp;indicates what the UI elements that display in the browser when the connector runs in Anypoint Studio.&nbsp;</p> 
+      <p>The path name in the <code>@Sample</code> statement&nbsp;indicates the path to the Javadoc *.xml.sample file in&nbsp;Studio–it’s not a filesystem path. For each Javadoc sample file in your connector, specify corresponding statements in the xml.sample file.<br> <br> The line starting with <code>@Processor</code>&nbsp;identifies the processor function, which specifies the user interface for the connector.<br> The line starting with <code>@FriendlyName</code>&nbsp;indicates what the UI elements that display in the browser when the connector runs in Anypoint Studio.&nbsp;</p> 
      </div> 
      <div class="paragraph"> 
-      <p>This code changes the operation name to "Put an animal in the barn", and changes the Animal prompt to "The animal’s name".&nbsp;After inserting, @ Placement and @FriendlyName are underscored as an error condition.&nbsp;Mouse over each annotation and select the <strong>import</strong> command from the popup menu to add import commands to your connector:</p> 
+      <p>This code changes the operation name to "Put an animal in the barn", and changes the Animal prompt to "The animal’s name".&nbsp;After inserting, <code>@Placement</code> and <code>@FriendlyName</code> are underscored as an error condition.&nbsp;Mouse over each annotation and select the <strong>import</strong> command from the popup menu to add import commands to your connector:</p> 
      </div> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/BarnImportAnno2.png" alt="BarnImportAnno2"></span><br></p> 
@@ -1142,7 +1142,7 @@ public String putInBarn(@Placement(group="Parameters")
             </table></code></pre> 
          </div> 
         </div> </li> 
-       <li> <p>Include one BEGIN/END block for each @Processor statement block in your connector. For the second&nbsp; @Processor statement block, add these lines:</p> 
+       <li> <p>Include one BEGIN/END block for each <code>@Processor</code> statement block in your connector. For the second&nbsp;<code>@Processor</code> statement block, add these lines:</p> 
         <div class="listingblock"> 
          <div class="content"> 
           <pre class="CodeRay highlight"><code data-lang="code">
@@ -1350,10 +1350,10 @@ public String putInBarn(@Placement(group="Parameters")
  <h2 id="identifying-your-connector-in-studio"><a class="anchor" href="#identifying-your-connector-in-studio"></a>Identifying Your Connector in Studio</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>When you create an Anypoint Connector Project, Studio creates the&nbsp;@Connector annotation containing a name, schema version, and friendly name.&nbsp;</p> 
+   <p>When you create an Anypoint Connector Project, Studio creates the&nbsp;<code>@Connector</code> annotation containing a name, schema version, and friendly name.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Connectors use the&nbsp;@Connector annotation to describe the contents of a connector. The&nbsp;<code>friendlyName</code> parameter defines the connector’s label in the Studio palette. &nbsp;</p> 
+   <p>Connectors use the&nbsp;<code>@Connector</code> annotation to describe the contents of a connector. The&nbsp;<code>friendlyName</code> parameter defines the connector’s label in the Studio palette. &nbsp;</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 

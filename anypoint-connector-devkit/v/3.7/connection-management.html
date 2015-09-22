@@ -872,7 +872,7 @@
    <p>This document describes the Connection Management framework, the Java annotations through which it is exposed, and how to implement Basic Authentication&nbsp;support in your connector to authenticate with your service. Examples in this discussion show the use of Basic Authentication&nbsp;with basic username and password authentication (most common), but they can easily be generalized to other non-OAuth protocols such as SAML, Kerberos, LDAP, NTLM, or to create a custom connection.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>For OAuth-based authentication DevKit provides functionality using OAuth-related annotations. See <a href="/anyoint-connector-devkit/v/3.7/oauth-v1">OAuth V1</a> and <a href="/anyoint-connector-devkit/v/3.7/oauth-v2">OAuth V2</a> for details.</p> 
+   <p>For OAuth-based authentication DevKit provides functionality using OAuth-related annotations. See <a href="/anypoint-connector-devkit/v/3.7/oauth-v1">OAuth V1</a> and <a href="/anypoint-connector-devkit/v/3.7/oauth-v2">OAuth V2</a> for details.</p> 
   </div> 
  </div> 
 </div> 
@@ -903,7 +903,7 @@
     <p>You can use the&nbsp;Connection Management framework&nbsp;in conjunction with most authentication protocols, such as username and password authentication (most common), SAML, Kerberos, LDAP, and NTLM.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>For OAuth-based authentication DevKit provides functionality using OAuth-related annotations. See <a href="/anyoint-connector-devkit/v/3.7/oauth-v1">OAuth V1</a> and <a href="/anyoint-connector-devkit/v/3.7/oauth-v2">OAuth V2</a> for details.</p> 
+    <p>For OAuth-based authentication DevKit provides functionality using OAuth-related annotations. See <a href="/anypoint-connector-devkit/v/3.7/oauth-v1">OAuth V1</a> and <a href="/anypoint-connector-devkit/v/3.7/oauth-v2">OAuth V2</a> for details.</p> 
    </div> 
   </div> 
  </div> 
@@ -1168,7 +1168,7 @@
   <div class="sect2"> 
    <h3 id="connectionkey-and-connection-pooling"><a class="anchor" href="#connectionkey-and-connection-pooling"></a>@ConnectionKey and Connection Pooling</h3> 
    <div class="paragraph"> 
-    <p>In the Example above, the username parameter in the <code>@Connect</code> method is annotated with <code>@ConnectionKey</code>. If pools are enabled (see <a href="/anyoint-connector-devkit/v/3.7/basicauth">Connection Pooling</a> below), Mule keeps a pool of simultaneous connections which are used as needed to make calls.</p> 
+    <p>In the Example above, the username parameter in the <code>@Connect</code> method is annotated with <code>@ConnectionKey</code>. If pools are enabled (see <a href="/anypoint-connector-devkit/v/3.7/basicauth">Connection Pooling</a> below), Mule keeps a pool of simultaneous connections which are used as needed to make calls.</p> 
    </div> 
    <div class="paragraph"> 
     <p>The <code>@ConnectionKey</code> annotation marks that this field is used as the key for this particular connection within the connection pool, so once a connection for this username has been created and added to the pool, it is reused rather than recreated for each request.  </p> 
@@ -1248,7 +1248,7 @@
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>If the connector currently has a connection open, this code calls <code>connection.logout()</code>,&nbsp; a client method that explicitly de-authenticates and closes the connection. The finally block ensures that, if the logout fails for any reason, the connection is still set to null, so the connector does not again try to reference that connector instance.</p> 
+    <p>If the connector currently has a connection open, this code calls <code>connection.logout()</code>,&nbsp; a client method that explicitly de-authenticates and closes the connection. The final block ensures that, if the logout fails for any reason, the connection is still set to null, so the connector does not again try to reference that connector instance.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -1350,7 +1350,7 @@
     <p>This annotation deprecates <code>@InvalidateConnectionOn</code> annotation. It now receives a list of exceptions instead of just a single exception, and can be used at both the class and processor levels.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>This annotation is used for exception handling related to connections. It can be used at class level or at a method level. If the Connector or Processor throws an exception of this class, <code>@ReconnectOn</code> automatically invalidates the connection. <code>@ReconnectOn</code> receives a list containing the classes of the exceptions to be caught (see below for an example). When an exception occurs, the <code>@ReconnectOn</code> behavior is based on the configured reconnection strategy. See <a href="/anyoint-connector-devkit/v/3.7/configuring-reconnection-strategies">Configuring Reconnection Strategies</a> for more details.</p> 
+    <p>This annotation is used for exception handling related to connections. It can be used at class level or at a method level. If the Connector or Processor throws an exception of this class, <code>@ReconnectOn</code> automatically invalidates the connection. <code>@ReconnectOn</code> receives a list containing the classes of the exceptions to be caught (see below for an example). When an exception occurs, the <code>@ReconnectOn</code> behavior is based on the configured reconnection strategy. See <a href="/anypoint-connector-devkit/v/3.7/configuring-reconnection-strategies">Configuring Reconnection Strategies</a> for more details.</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 

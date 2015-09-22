@@ -874,7 +874,7 @@
  <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes you are familiar with the&nbsp; <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Connector Essentials</a> &nbsp;and are ready to implement authentication on your connector. It assumes you are familiar with the various&nbsp; <a href="/anypoint-connector-devkit/v/3.7/authentication-methods">authentication methods</a> &nbsp;and may be using OAuth V1 to authenticate with your API.</p> 
+   <p>This document assumes you are familiar with the&nbsp; <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Connector Essentials</a> &nbsp;and are ready to implement authentication on your connector. It assumes you are familiar with the various&nbsp; <a href="/anypoint-connector-devkit/v/3.7/authentication-methods">authentication methods</a> and may be using OAuth V1 to authenticate with your API.</p> 
   </div> 
   <div class="paragraph"> 
    <p>If you are not familiar with OAuth V1 authentication, what it is or how it works, we recommend visiting link: <a href="http://tools.ietf.org/html/rfc5849">OAuth 1.0 protocol/RFC-5849</a>. Also see <a href="/anypoint-connector-devkit/v/3.7/oauth-v1">OAuth V1</a>.</p> 
@@ -912,14 +912,14 @@
   <div class="sect2"> 
    <h3 id="oauth2-annotation"><a class="anchor" href="#oauth2-annotation"></a>@OAuth2&nbsp;Annotation</h3> 
    <div class="paragraph"> 
-    <p>To implement OAuth V2 authentication on your Connector you need to create a new @ConnectionStrategy. Create a new class and annotate it with the the @OAuth2 annotation.</p> 
+    <p>To implement OAuth V2 authentication on your Connector you need to create a new <code>@ConnectionStrategy</code>. Create a new class and annotate it with the the <code>@OAuth2</code> annotation.</p> 
    </div> 
    <div class="admonitionblock note"> 
     <table> 
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> During the building process, a connector annotated with @OAuth2 gets two additional&nbsp;auto-generated @Processor methods&nbsp;called&nbsp; <code>authorize</code> &nbsp;and&nbsp; <code>unauthorize</code> . These message&nbsp;processors are in charge of initiating and ending the OAuth session. </td> 
+       <td class="content"> During the building process, a connector annotated with <code>@OAuth2</code> gets two additional&nbsp;auto-generated <code>@Processor</code> methods&nbsp;called&nbsp; <code>authorize</code> &nbsp;and&nbsp; <code>unauthorize</code> . These message&nbsp;processors are in charge of initiating and ending the OAuth session. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -930,9 +930,9 @@
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
+     <col style="width: 50%;"> 
+     <col style="width: 10%;"> 
+     <col style="width: 15%;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1042,11 +1042,6 @@
 8
 9
 <strong>10</strong>
-11
-12
-13
-14
-15
 </pre></td> 
              <td class="code"><pre><span class="annotation">@Connector</span>(name = <span class="string"><span class="delimiter">"</span><span class="content">oauth2connector</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnector</span>
@@ -1057,60 +1052,80 @@
     <span class="comment">/**
     * YOUR CODE GOES HERE
     */</span>
-}
-----<span class="error">&nbsp;</span>
-
-. Add the OAuth access <span class="predefined-type">URL</span>, access token <span class="predefined-type">URL</span>, and the OAuth strategy:
-
-[source,java, linenums]</pre></td> 
+}</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
        </div> 
-      </div> 
-      <div class="paragraph"> 
-       <p>@OAuth2(authorizationUrl = "http://someUrl", accessTokenUrl = "http://someOtherUrl") public class OAuth2Strategy { /**</p> 
-      </div> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p>The OAuth2 consumer key */ @Configurable @OAuthConsumerKey private String consumerKey;</p> 
-         <div class="literalblock"> 
-          <div class="content"> 
-           <pre>/**
- * The OAuth2 consumer secret
- */
-@Configurable
-@OAuthConsumerSecret
-private String consumerSecret;</pre> 
-          </div> 
-         </div> 
-         <div class="literalblock"> 
-          <div class="content"> 
-           <pre>    /**
-    * YOUR CODE GOES HERE
-    */
-}</pre> 
-          </div> 
-         </div> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre></pre> 
-          </div> 
-         </div> </li> 
-       </ul> 
       </div> </li> 
+     <li> <p>Add the OAuth access URL, access token URL, and the OAuth strategy:</p> </li> 
     </ol> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@OAuth2</span>(authorizationUrl = <span class="string"><span class="delimiter">"</span><span class="content">http://someUrl</span><span class="delimiter">"</span></span>, accessTokenUrl = <span class="string"><span class="delimiter">"</span><span class="content">http://someOtherUrl</span><span class="delimiter">"</span></span>)
+<span class="directive">public</span> <span class="type">class</span> <span class="class">OAuth2Strategy</span>
+{
+    <span class="comment">/**
+     * The OAuth2 consumer key
+     */</span>
+    <span class="annotation">@Configurable</span>
+    <span class="annotation">@OAuthConsumerKey</span>
+    <span class="directive">private</span> <span class="predefined-type">String</span> consumerKey;
+
+    <span class="comment">/**
+     * The OAuth2 consumer secret
+     */</span>
+    <span class="annotation">@Configurable</span>
+    <span class="annotation">@OAuthConsumerSecret</span>
+    <span class="directive">private</span> <span class="predefined-type">String</span> consumerSecret;
+
+    <span class="comment">/**
+    * YOUR CODE GOES HERE
+    */</span>
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="oauth2-class-properties"><a class="anchor" href="#oauth2-class-properties"></a>@OAuth2&nbsp;Class Properties</h3> 
    <div class="paragraph"> 
-    <p>Your Strategy class needs @Configurable&nbsp;instance properties to allow the user to specify their private consumer key and secret when using the connector as shown above:</p> 
+    <p>Your Strategy class needs <code>@Configurable</code>&nbsp;instance properties to allow the user to specify their private consumer key and secret when using the connector as shown above:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>@OAuthConsumerKey to hold the OAuth consumer key</p> </li> 
-     <li> <p>@OAuthConsumerSecret to hold the OAuth consumer secret</p> </li> 
+     <li> <p><code>@OAuthConsumerKey</code> to hold the OAuth consumer key</p> </li> 
+     <li> <p><code>@OAuthConsumerSecret</code> to hold the OAuth consumer secret</p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
@@ -1357,7 +1372,7 @@ private String consumerSecret;</pre>
   <div class="ulist"> 
    <ul> 
     <li> <p><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTPS Transport Reference</a></p> </li> 
-    <li> <p><a href="/anyoint-connector-devkit/v/3.7/tls-configuration">HTTPS Examples</a></p> </li> 
+    <li> <p><a href="/anypoint-connector-devkit/v/3.7/tls-configuration">HTTPS Examples</a></p> </li> 
    </ul> 
   </div> 
  </div> 
