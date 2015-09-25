@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/mule-maven-plugin" />
-    <meta name="description" content="The mule-maven-plugin allows you to deploy Mule applications to different kind of servers: Standalone (both Community and Enterprise), clustered, A..." />
+    <meta name="description" content="The mule-maven-plugin allows you to deploy Mule applications to different kinds of servers: Standalone (both Community and Enterprise), clustered, ..." />
     <meta class="swiftype" name="title" data-type="string" content="Mule Plugin for Maven" />
 
 </head>
@@ -870,7 +870,7 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The <code>mule-maven-plugin</code> allows you to deploy Mule applications to different kind of servers: Standalone (both Community and Enterprise), clustered, Anypoint Runtime Manager and CloudHub. It is part of the framework for developing Mule applications with Maven, an overview of which you can find in <a href="/mule-user-guide/v/3.7/using-maven-with-mule">Using Maven with Mule</a>. The most important capabilities provided by the plugin are running integration tests, and deploying applications to different environments.</p> 
+   <p>The <code>mule-maven-plugin</code> allows you to deploy Mule applications to different kinds of servers: Standalone (both Community and Enterprise), clustered, Anypoint Runtime Manager and CloudHub. It is part of the framework for developing Mule applications with Maven, an overview of which you can find in <a href="/mule-user-guide/v/3.7/using-maven-with-mule">Using Maven with Mule</a>. The most important capabilities provided by the plugin are running integration tests, and deploying applications to different environments.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The plugin allows you to:</p> 
@@ -921,7 +921,7 @@
           <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
   <span class="tag">&lt;groupId&gt;</span>org.mule.tools<span class="tag">&lt;/groupId&gt;</span>
   <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-  <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
+  <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/plugin&gt;</span></pre></td> 
          </tr> 
         </tbody> 
@@ -1012,45 +1012,55 @@
 16
 17
 18
-19
-<strong>20</strong>
-21
-22
-23
-24
-25
-26
-27
-28
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;plugins&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-app-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>1.1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;extensions&gt;</span>true<span class="tag">&lt;/extensions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.tools<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;configuration&gt;</span>
-            <span class="tag">&lt;deployment&gt;</span>
-                <span class="tag">&lt;type&gt;</span>standalone<span class="tag">&lt;/type&gt;</span>
-            <span class="tag">&lt;/deployment&gt;</span>
-            <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>
-        <span class="tag">&lt;/configuration&gt;</span>
-        <span class="tag">&lt;executions&gt;</span>
-            <span class="tag">&lt;execution&gt;</span>
-                <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
-                <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
-                <span class="tag">&lt;goals&gt;</span>
-                    <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
-                <span class="tag">&lt;/goals&gt;</span>
-            <span class="tag">&lt;/execution&gt;</span>
-        <span class="tag">&lt;/executions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-<span class="tag">&lt;/plugins&gt;</span></pre></td> 
+         <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;configuration&gt;</span>
+        <span class="tag">&lt;deploymentType&gt;</span>standalone<span class="tag">&lt;/deploymentType&gt;</span>
+        <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>
+    <span class="tag">&lt;/configuration&gt;</span>
+    <span class="tag">&lt;executions&gt;</span>
+        <span class="tag">&lt;execution&gt;</span>
+            <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
+            <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
+            <span class="tag">&lt;goals&gt;</span>
+                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
+            <span class="tag">&lt;/goals&gt;</span>
+        <span class="tag">&lt;/execution&gt;</span>
+    <span class="tag">&lt;/executions&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>This example will also trigger the default deploy goal of the maven-deploy-plugin. If you are not deploying to a Maven repository as part of your build, you can prevent plugin execution by using:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
+  <span class="tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/groupId&gt;</span>
+  <span class="tag">&lt;artifactId&gt;</span>maven-deploy-plugin<span class="tag">&lt;/artifactId&gt;</span>
+  <span class="tag">&lt;configuration&gt;</span>
+    <span class="tag">&lt;skip&gt;</span>true<span class="tag">&lt;/skip&gt;</span>
+  <span class="tag">&lt;/configuration&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1093,51 +1103,29 @@
 <strong>20</strong>
 21
 22
-23
-24
-25
-26
-27
-28
-29
-<strong>30</strong>
-31
-32
-33
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;plugins&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-app-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>1.1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;extensions&gt;</span>true<span class="tag">&lt;/extensions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.tools<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;configuration&gt;</span>
-            <span class="tag">&lt;deployment&gt;</span>
-                <span class="tag">&lt;type&gt;</span>arm<span class="tag">&lt;/type&gt;</span>
-            <span class="tag">&lt;/deployment&gt;</span>
-            <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>
-            <span class="tag">&lt;username&gt;</span>myUsername<span class="tag">&lt;/username&gt;</span>
-            <span class="tag">&lt;password&gt;</span>myPassword<span class="tag">&lt;/password&gt;</span>
-            <span class="tag">&lt;target&gt;</span>server-name<span class="tag">&lt;/target&gt;</span>
-            <span class="tag">&lt;targetType&gt;</span>server<span class="tag">&lt;/targetType&gt;</span>             <span class="comment">&lt;!-- One of: server, serverGroup, cluster --&gt;</span>
-            <span class="tag">&lt;environment&gt;</span>Production<span class="tag">&lt;/environment&gt;</span>
-        <span class="tag">&lt;/configuration&gt;</span>
-        <span class="tag">&lt;executions&gt;</span>
-            <span class="tag">&lt;execution&gt;</span>
-                <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
-                <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
-                <span class="tag">&lt;goals&gt;</span>
-                    <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
-                <span class="tag">&lt;/goals&gt;</span>
-            <span class="tag">&lt;/execution&gt;</span>
-        <span class="tag">&lt;/executions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-<span class="tag">&lt;/plugins&gt;</span></pre></td> 
+         <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;configuration&gt;</span>
+        <span class="tag">&lt;deploymentType&gt;</span>arm<span class="tag">&lt;/deploymentType&gt;</span>
+        <span class="tag">&lt;username&gt;</span>myUsername<span class="tag">&lt;/username&gt;</span>
+        <span class="tag">&lt;password&gt;</span>myPassword<span class="tag">&lt;/password&gt;</span>
+        <span class="tag">&lt;target&gt;</span>server-name<span class="tag">&lt;/target&gt;</span>
+        <span class="tag">&lt;targetType&gt;</span>server<span class="tag">&lt;/targetType&gt;</span>             <span class="comment">&lt;!-- One of: server, serverGroup, cluster --&gt;</span>
+        <span class="tag">&lt;environment&gt;</span>Production<span class="tag">&lt;/environment&gt;</span>
+    <span class="tag">&lt;/configuration&gt;</span>
+    <span class="tag">&lt;executions&gt;</span>
+        <span class="tag">&lt;execution&gt;</span>
+            <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
+            <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
+            <span class="tag">&lt;goals&gt;</span>
+                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
+            <span class="tag">&lt;/goals&gt;</span>
+        <span class="tag">&lt;/execution&gt;</span>
+    <span class="tag">&lt;/executions&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1180,49 +1168,29 @@
 <strong>20</strong>
 21
 22
-23
-24
-25
-26
-27
-28
-29
-<strong>30</strong>
-31
-32
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;plugins&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-app-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>1.1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;extensions&gt;</span>true<span class="tag">&lt;/extensions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.toos<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;configuration&gt;</span>
-            <span class="tag">&lt;deployment&gt;</span>
-                <span class="tag">&lt;type&gt;</span>cloudhub<span class="tag">&lt;/type&gt;</span>
-            <span class="tag">&lt;/deployment&gt;</span>
-            <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>
-            <span class="tag">&lt;username&gt;</span>myUsername<span class="tag">&lt;/username&gt;</span>
-            <span class="tag">&lt;password&gt;</span>myPassword<span class="tag">&lt;/password&gt;</span>
-            <span class="tag">&lt;redeploy&gt;</span>true<span class="tag">&lt;/redeploy&gt;</span>
-            <span class="tag">&lt;environment&gt;</span>Production<span class="tag">&lt;/environment&gt;</span>
-        <span class="tag">&lt;/configuration&gt;</span>
-        <span class="tag">&lt;executions&gt;</span>
-            <span class="tag">&lt;execution&gt;</span>
-                <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
-                <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
-                <span class="tag">&lt;goals&gt;</span>
-                    <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
-                <span class="tag">&lt;/goals&gt;</span>
-            <span class="tag">&lt;/execution&gt;</span>
-        <span class="tag">&lt;/executions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-<span class="tag">&lt;/plugins&gt;</span></pre></td> 
+         <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;configuration&gt;</span>
+        <span class="tag">&lt;deploymentType&gt;</span>cloudhub<span class="tag">&lt;/deploymentType&gt;</span>
+        <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>               <span class="comment">&lt;!-- This is the runtime version as it appears on the CloudHub interface --&gt;</span>
+        <span class="tag">&lt;username&gt;</span>myUsername<span class="tag">&lt;/username&gt;</span>
+        <span class="tag">&lt;password&gt;</span>myPassword<span class="tag">&lt;/password&gt;</span>
+        <span class="tag">&lt;redeploy&gt;</span>true<span class="tag">&lt;/redeploy&gt;</span>
+        <span class="tag">&lt;environment&gt;</span>Production<span class="tag">&lt;/environment&gt;</span>
+    <span class="tag">&lt;/configuration&gt;</span>
+    <span class="tag">&lt;executions&gt;</span>
+        <span class="tag">&lt;execution&gt;</span>
+            <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
+            <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
+            <span class="tag">&lt;goals&gt;</span>
+                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
+            <span class="tag">&lt;/goals&gt;</span>
+        <span class="tag">&lt;/execution&gt;</span>
+    <span class="tag">&lt;/executions&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1261,45 +1229,25 @@
 16
 17
 18
-19
-<strong>20</strong>
-21
-22
-23
-24
-25
-26
-27
-28
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;plugins&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-app-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>1.1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;extensions&gt;</span>true<span class="tag">&lt;/extensions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.tools<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;configuration&gt;</span>
-            <span class="tag">&lt;deployment&gt;</span>
-                <span class="tag">&lt;type&gt;</span>standalone<span class="tag">&lt;/type&gt;</span>
-            <span class="tag">&lt;/deployment&gt;</span>
-            <span class="tag">&lt;muleHome&gt;</span>/path/to/mule/server<span class="tag">&lt;/muleHome&gt;</span>
-        <span class="tag">&lt;/configuration&gt;</span>
-        <span class="tag">&lt;executions&gt;</span>
-            <span class="tag">&lt;execution&gt;</span>
-                <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
-                <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
-                <span class="tag">&lt;goals&gt;</span>
-                    <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
-                <span class="tag">&lt;/goals&gt;</span>
-            <span class="tag">&lt;/execution&gt;</span>
-        <span class="tag">&lt;/executions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-<span class="tag">&lt;/plugins&gt;</span></pre></td> 
+         <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;configuration&gt;</span>
+        <span class="tag">&lt;deploymentType&gt;</span>standalone<span class="tag">&lt;/deploymentType&gt;</span>
+        <span class="tag">&lt;muleHome&gt;</span>/path/to/mule/server<span class="tag">&lt;/muleHome&gt;</span>
+    <span class="tag">&lt;/configuration&gt;</span>
+    <span class="tag">&lt;executions&gt;</span>
+        <span class="tag">&lt;execution&gt;</span>
+            <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
+            <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
+            <span class="tag">&lt;goals&gt;</span>
+                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
+            <span class="tag">&lt;/goals&gt;</span>
+        <span class="tag">&lt;/execution&gt;</span>
+    <span class="tag">&lt;/executions&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1338,45 +1286,25 @@
 16
 17
 18
-19
-<strong>20</strong>
-21
-22
-23
-24
-25
-26
-27
-28
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;plugins&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-app-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>1.1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;extensions&gt;</span>true<span class="tag">&lt;/extensions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-    <span class="tag">&lt;plugin&gt;</span>
-        <span class="tag">&lt;groupId&gt;</span>org.mule.toos<span class="tag">&lt;/groupId&gt;</span>
-        <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
-        <span class="tag">&lt;configuration&gt;</span>
-            <span class="tag">&lt;deployment&gt;</span>
-                <span class="tag">&lt;type&gt;</span>agent<span class="tag">&lt;/type&gt;</span>
-            <span class="tag">&lt;/deployment&gt;</span>
-            <span class="tag">&lt;uri&gt;</span>http://localhost:9999/<span class="tag">&lt;/uri&gt;</span>
-        <span class="tag">&lt;/configuration&gt;</span>
-        <span class="tag">&lt;executions&gt;</span>
-            <span class="tag">&lt;execution&gt;</span>
-                <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
-                <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
-                <span class="tag">&lt;goals&gt;</span>
-                    <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
-                <span class="tag">&lt;/goals&gt;</span>
-            <span class="tag">&lt;/execution&gt;</span>
-        <span class="tag">&lt;/executions&gt;</span>
-    <span class="tag">&lt;/plugin&gt;</span>
-<span class="tag">&lt;/plugins&gt;</span></pre></td> 
+         <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;configuration&gt;</span>
+        <span class="tag">&lt;deploymentType&gt;</span>agent<span class="tag">&lt;/deploymentType&gt;</span>
+        <span class="tag">&lt;uri&gt;</span>http://localhost:9999/<span class="tag">&lt;/uri&gt;</span>
+    <span class="tag">&lt;/configuration&gt;</span>
+    <span class="tag">&lt;executions&gt;</span>
+        <span class="tag">&lt;execution&gt;</span>
+            <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
+            <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
+            <span class="tag">&lt;goals&gt;</span>
+                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
+            <span class="tag">&lt;/goals&gt;</span>
+        <span class="tag">&lt;/execution&gt;</span>
+    <span class="tag">&lt;/executions&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1453,57 +1381,53 @@
 44
 45
 46
-47
-48
 </pre></td> 
-         <td class="code"><pre>        <span class="tag">&lt;plugins&gt;</span>
-            <span class="tag">&lt;plugin&gt;</span>
-                <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
-                <span class="tag">&lt;artifactId&gt;</span>mule-app-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-                <span class="tag">&lt;version&gt;</span>1.1<span class="tag">&lt;/version&gt;</span>
-                <span class="tag">&lt;extensions&gt;</span>true<span class="tag">&lt;/extensions&gt;</span>
-            <span class="tag">&lt;/plugin&gt;</span>
-            <span class="tag">&lt;plugin&gt;</span>
-                <span class="tag">&lt;groupId&gt;</span>org.mule.tools<span class="tag">&lt;/groupId&gt;</span>
-                <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-                <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
-                <span class="tag">&lt;configuration&gt;</span>
-                    <span class="tag">&lt;deployment&gt;</span>
-                        <span class="tag">&lt;type&gt;</span>standalone<span class="tag">&lt;/type&gt;</span>
-                    <span class="tag">&lt;/deployment&gt;</span>
-                    <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>
-                <span class="tag">&lt;/configuration&gt;</span>
-                <span class="tag">&lt;executions&gt;</span>
-                    <span class="tag">&lt;execution&gt;</span>
-                        <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
-                        <span class="tag">&lt;phase&gt;</span>pre-integration-test<span class="tag">&lt;/phase&gt;</span>
-                        <span class="tag">&lt;goals&gt;</span>
-                            <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
-                        <span class="tag">&lt;/goals&gt;</span>
-                    <span class="tag">&lt;/execution&gt;</span>
-                    <span class="tag">&lt;execution&gt;</span>
-                        <span class="tag">&lt;id&gt;</span>undeploy<span class="tag">&lt;/id&gt;</span>
-                        <span class="tag">&lt;phase&gt;</span>post-integration-test<span class="tag">&lt;/phase&gt;</span>
-                        <span class="tag">&lt;goals&gt;</span>
-                            <span class="tag">&lt;goal&gt;</span>undeploy<span class="tag">&lt;/goal&gt;</span>
-                        <span class="tag">&lt;/goals&gt;</span>
-                    <span class="tag">&lt;/execution&gt;</span>
-                <span class="tag">&lt;/executions&gt;</span>
-            <span class="tag">&lt;/plugin&gt;</span>
-            <span class="tag">&lt;plugin&gt;</span>
-                <span class="tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/groupId&gt;</span>
-                <span class="tag">&lt;artifactId&gt;</span>maven-failsafe-plugin<span class="tag">&lt;/artifactId&gt;</span>
-                <span class="tag">&lt;executions&gt;</span>
-                    <span class="tag">&lt;execution&gt;</span>
-                        <span class="tag">&lt;id&gt;</span>integration-test<span class="tag">&lt;/id&gt;</span>
-                        <span class="tag">&lt;goals&gt;</span>
-                            <span class="tag">&lt;goal&gt;</span>integration-test<span class="tag">&lt;/goal&gt;</span>
-                            <span class="tag">&lt;goal&gt;</span>verify<span class="tag">&lt;/goal&gt;</span>
-                        <span class="tag">&lt;/goals&gt;</span>
-                    <span class="tag">&lt;/execution&gt;</span>
-                <span class="tag">&lt;/executions&gt;</span>
-            <span class="tag">&lt;/plugin&gt;</span>
-        <span class="tag">&lt;/plugins&gt;</span></pre></td> 
+         <td class="code"><pre><span class="tag">&lt;plugins&gt;</span>
+    <span class="tag">&lt;plugin&gt;</span>
+        <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
+        <span class="tag">&lt;artifactId&gt;</span>mule-app-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+        <span class="tag">&lt;version&gt;</span>1.1<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;extensions&gt;</span>true<span class="tag">&lt;/extensions&gt;</span>
+    <span class="tag">&lt;/plugin&gt;</span>
+    <span class="tag">&lt;plugin&gt;</span>
+        <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
+        <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+        <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;configuration&gt;</span>
+            <span class="tag">&lt;deploymentType&gt;</span>standalone<span class="tag">&lt;/deploymentType&gt;</span>
+            <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>
+        <span class="tag">&lt;/configuration&gt;</span>
+        <span class="tag">&lt;executions&gt;</span>
+            <span class="tag">&lt;execution&gt;</span>
+                <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
+                <span class="tag">&lt;phase&gt;</span>pre-integration-test<span class="tag">&lt;/phase&gt;</span>
+                <span class="tag">&lt;goals&gt;</span>
+                    <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
+                <span class="tag">&lt;/goals&gt;</span>
+            <span class="tag">&lt;/execution&gt;</span>
+            <span class="tag">&lt;execution&gt;</span>
+                <span class="tag">&lt;id&gt;</span>undeploy<span class="tag">&lt;/id&gt;</span>
+                <span class="tag">&lt;phase&gt;</span>post-integration-test<span class="tag">&lt;/phase&gt;</span>
+                <span class="tag">&lt;goals&gt;</span>
+                    <span class="tag">&lt;goal&gt;</span>undeploy<span class="tag">&lt;/goal&gt;</span>
+                <span class="tag">&lt;/goals&gt;</span>
+            <span class="tag">&lt;/execution&gt;</span>
+        <span class="tag">&lt;/executions&gt;</span>
+    <span class="tag">&lt;/plugin&gt;</span>
+    <span class="tag">&lt;plugin&gt;</span>
+        <span class="tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/groupId&gt;</span>
+        <span class="tag">&lt;artifactId&gt;</span>maven-failsafe-plugin<span class="tag">&lt;/artifactId&gt;</span>
+        <span class="tag">&lt;executions&gt;</span>
+            <span class="tag">&lt;execution&gt;</span>
+                <span class="tag">&lt;id&gt;</span>integration-test<span class="tag">&lt;/id&gt;</span>
+                <span class="tag">&lt;goals&gt;</span>
+                    <span class="tag">&lt;goal&gt;</span>integration-test<span class="tag">&lt;/goal&gt;</span>
+                    <span class="tag">&lt;goal&gt;</span>verify<span class="tag">&lt;/goal&gt;</span>
+                <span class="tag">&lt;/goals&gt;</span>
+            <span class="tag">&lt;/execution&gt;</span>
+        <span class="tag">&lt;/executions&gt;</span>
+    <span class="tag">&lt;/plugin&gt;</span>
+<span class="tag">&lt;/plugins&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1571,46 +1495,42 @@
 37
 38
 39
-<strong>40</strong>
-41
 </pre></td> 
          <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
-    <span class="tag">&lt;groupId&gt;</span>org.mule.tools<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;configuration&gt;</span>
-        <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>                 <i class="conum" data-value="1"></i><b>(1)</b>
-        <span class="tag">&lt;deployment&gt;</span>
-            <span class="tag">&lt;type&gt;</span>standalone<span class="tag">&lt;/type&gt;</span>
-        <span class="tag">&lt;/deployment&gt;</span>
+        <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>                 (1)
+        <span class="tag">&lt;deploymentType&gt;</span>standalone<span class="tag">&lt;/deploymentType&gt;</span>
         <span class="tag">&lt;applications&gt;</span>
-            <span class="tag">&lt;application&gt;</span>${app.location}<span class="tag">&lt;/application&gt;</span>   <i class="conum" data-value="2"></i><b>(2)</b>
+            <span class="tag">&lt;application&gt;</span>${app.location}<span class="tag">&lt;/application&gt;</span>   (2)
         <span class="tag">&lt;/applications&gt;</span>
         <span class="tag">&lt;libs&gt;</span>
           <span class="tag">&lt;lib&gt;</span>${basedir}/activemq-all-5.5.0.jar<span class="tag">&lt;/lib&gt;</span>
-          <span class="tag">&lt;lib&gt;</span>${basedir}/activemq-core.jar<span class="tag">&lt;/lib&gt;</span>        <i class="conum" data-value="3"></i><b>(3)</b>
+          <span class="tag">&lt;lib&gt;</span>${basedir}/activemq-core.jar<span class="tag">&lt;/lib&gt;</span>        (3)
         <span class="tag">&lt;/libs&gt;</span>
         <span class="tag">&lt;arguments&gt;</span>
             <span class="tag">&lt;argument&gt;</span>-M-Dport.1=1337<span class="tag">&lt;/argument&gt;</span>
-            <span class="tag">&lt;argument&gt;</span>-M-Dport.2=1338<span class="tag">&lt;/argument&gt;</span>         <i class="conum" data-value="4"></i><b>(4)</b>
+            <span class="tag">&lt;argument&gt;</span>-M-Dport.2=1338<span class="tag">&lt;/argument&gt;</span>         (4)
         <span class="tag">&lt;/arguments&gt;</span>
-        <span class="tag">&lt;domain&gt;</span>${project.basedir}/domain<span class="tag">&lt;/domain&gt;</span>       <i class="conum" data-value="5"></i><b>(5)</b>
-        <span class="tag">&lt;script&gt;</span><span class="inline"><span class="predefined">$</span>{basedir}/script.groovy</span><span class="tag">&lt;/script&gt;</span>        <i class="conum" data-value="6"></i><b>(6)</b>
-        <span class="tag">&lt;community&gt;</span>false<span class="tag">&lt;/community&gt;</span>                     <i class="conum" data-value="7"></i><b>(7)</b>
+        <span class="tag">&lt;domain&gt;</span>${project.basedir}/domain<span class="tag">&lt;/domain&gt;</span>       (5)
+        <span class="tag">&lt;script&gt;</span><span class="inline"><span class="predefined">$</span>{basedir}/script.groovy</span><span class="tag">&lt;/script&gt;</span>        (6)
+        <span class="tag">&lt;community&gt;</span>false<span class="tag">&lt;/community&gt;</span>                     (7)
     <span class="tag">&lt;/configuration&gt;</span>
     <span class="tag">&lt;executions&gt;</span>
         <span class="tag">&lt;execution&gt;</span>
             <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
             <span class="tag">&lt;phase&gt;</span>pre-integration-test<span class="tag">&lt;/phase&gt;</span>
             <span class="tag">&lt;goals&gt;</span>
-                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>                      <i class="conum" data-value="8"></i><b>(8)</b>
+                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>                      (8)
             <span class="tag">&lt;/goals&gt;</span>
         <span class="tag">&lt;/execution&gt;</span>
         <span class="tag">&lt;execution&gt;</span>
             <span class="tag">&lt;id&gt;</span>undeploy<span class="tag">&lt;/id&gt;</span>
             <span class="tag">&lt;phase&gt;</span>post-integration-test<span class="tag">&lt;/phase&gt;</span>
             <span class="tag">&lt;goals&gt;</span>
-                <span class="tag">&lt;goal&gt;</span>undeploy<span class="tag">&lt;/goal&gt;</span>                    <i class="conum" data-value="9"></i><b>(9)</b>
+                <span class="tag">&lt;goal&gt;</span>undeploy<span class="tag">&lt;/goal&gt;</span>                    (9)
             <span class="tag">&lt;/goals&gt;</span>
         <span class="tag">&lt;/execution&gt;</span>
     <span class="tag">&lt;/executions&gt;</span>
@@ -1709,19 +1629,15 @@
 33
 34
 35
-36
-37
 </pre></td> 
          <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
-    <span class="tag">&lt;groupId&gt;</span>org.mule.tools<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;configuration&gt;</span>
         <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>
-        <span class="tag">&lt;deployment&gt;</span>
-            <span class="tag">&lt;type&gt;</span>cluster<span class="tag">&lt;/type&gt;</span>
-        <span class="tag">&lt;/deployment&gt;</span>
-        <span class="tag">&lt;size&gt;</span>2<span class="tag">&lt;/size&gt;</span>                                          <i class="conum" data-value="1"></i><b>(1)</b>
+        <span class="tag">&lt;deploymentType&gt;</span>cluster<span class="tag">&lt;/deploymentType&gt;</span>
+        <span class="tag">&lt;size&gt;</span>2<span class="tag">&lt;/size&gt;</span>                                          (1)
         <span class="tag">&lt;application&gt;</span>${app.1.location}<span class="tag">&lt;/application&gt;</span>
         <span class="tag">&lt;libs&gt;</span>
           <span class="tag">&lt;lib&gt;</span>${basedir}/activemq-all-5.5.0.jar<span class="tag">&lt;/lib&gt;</span>
@@ -1737,14 +1653,14 @@
             <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
             <span class="tag">&lt;phase&gt;</span>pre-integration-test<span class="tag">&lt;/phase&gt;</span>
             <span class="tag">&lt;goals&gt;</span>
-                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>                              <i class="conum" data-value="2"></i><b>(2)</b>
+                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>                              (2)
             <span class="tag">&lt;/goals&gt;</span>
         <span class="tag">&lt;/execution&gt;</span>
         <span class="tag">&lt;execution&gt;</span>
             <span class="tag">&lt;id&gt;</span>undeploy<span class="tag">&lt;/id&gt;</span>
             <span class="tag">&lt;phase&gt;</span>post-integration-test<span class="tag">&lt;/phase&gt;</span>
             <span class="tag">&lt;goals&gt;</span>
-                <span class="tag">&lt;goal&gt;</span>undeploy<span class="tag">&lt;/goal&gt;</span>                            <i class="conum" data-value="3"></i><b>(3)</b>
+                <span class="tag">&lt;goal&gt;</span>undeploy<span class="tag">&lt;/goal&gt;</span>                            (3)
             <span class="tag">&lt;/goals&gt;</span>
         <span class="tag">&lt;/execution&gt;</span>
     <span class="tag">&lt;/executions&gt;</span>
@@ -1830,18 +1746,14 @@
 49
 <strong>50</strong>
 51
-52
-53
 </pre></td> 
          <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
-    <span class="tag">&lt;groupId&gt;</span>org.mule.tools<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>2.0-RC1<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>2.0<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;configuration&gt;</span>
         <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>
-        <span class="tag">&lt;deployment&gt;</span>
-            <span class="tag">&lt;type&gt;</span>standalone<span class="tag">&lt;/type&gt;</span>
-        <span class="tag">&lt;/deployment&gt;</span>
+        <span class="tag">&lt;deploymentType&gt;</span>standalone<span class="tag">&lt;/deploymentType&gt;</span>
     <span class="tag">&lt;/configuration&gt;</span>
     <span class="tag">&lt;executions&gt;</span>
         <span class="tag">&lt;execution&gt;</span>
@@ -1924,17 +1836,13 @@
 16
 17
 18
-19
-<strong>20</strong>
 </pre></td> 
          <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
-    <span class="tag">&lt;groupId&gt;</span>org.mule.tools<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
     <span class="tag">&lt;configuration&gt;</span>
         <span class="tag">&lt;muleVersion&gt;</span>3.7.0<span class="tag">&lt;/muleVersion&gt;</span>
-        <span class="tag">&lt;deployment&gt;</span>
-            <span class="tag">&lt;type&gt;</span>standalone<span class="tag">&lt;/type&gt;</span>
-        <span class="tag">&lt;/deployment&gt;</span>
+        <span class="tag">&lt;deploymentType&gt;</span>standalone<span class="tag">&lt;/deploymentType&gt;</span>
         <span class="tag">&lt;skip&gt;</span>${skipTests}<span class="tag">&lt;/skip&gt;</span>
     <span class="tag">&lt;/configuration&gt;</span>
     <span class="tag">&lt;executions&gt;</span>
