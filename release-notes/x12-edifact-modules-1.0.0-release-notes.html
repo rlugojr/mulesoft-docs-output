@@ -900,7 +900,29 @@
  <h2 id="migration-guide"><a class="anchor" href="#migration-guide"></a>Migration Guide</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>All of your transformations and expressions that references parts of the EDI message structure must be updated for the following changes: * The "Transactions" list has been changed to "TransactionSets" and now has an additional level for the version of the transactions. <strong> Example: payload.Transactions."850" now becomes payload.TransactionSets.v5010."850" * All keys no longer have spaces - instead they have underscores </strong> Example: payload."0100 PO1" becomes payload."0100_PO1" * Any segment that is a loop ** Example: payload.Detail."0100 PO1" becomes payload.Detail."0100_PO1_Loop"</p> 
+   <p>All of your transformations and expressions that references parts of the EDI message structure must be updated for the following changes:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>The "Transactions" list has been changed to "TransactionSets" and now has an additional level for the version of the transactions.</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Example: payload.Transactions."850" now becomes payload.TransactionSets.v5010."850"</p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p>All keys no longer have spaces - instead they have underscores</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Example: payload."0100 PO1" becomes payload."0100_PO1"</p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p>Any segment that is a loop</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Example: payload.Detail."0100 PO1" becomes payload.Detail."0100_PO1_Loop"</p> </li> 
+      </ul> 
+     </div> </li> 
+   </ul> 
   </div> 
  </div> 
 </div> 

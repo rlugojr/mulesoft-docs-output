@@ -874,15 +874,15 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>verify a digital signature</p> </li> 
-    <li> <p>encrypt part of a message payload</p> </li> 
-    <li> <p>decrypt a message payload</p> </li> 
+    <li> <p>Verify a digital signature</p> </li> 
+    <li> <p>Encrypt part of a message payload</p> </li> 
+    <li> <p>Decrypt a message payload</p> </li> 
    </ul> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This document assumes that you have <a href="/mule-user-guide/v/3.7/installing-anypoint-enterprise-security">installed the Anypoint Enterprise Security</a> extensions.</p> 
@@ -900,7 +900,7 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Download the <strong><a href="/documentation/download/attachments/122752330/anypoint-enterprise-security-example.zip?version=1&amp;modificationDate=1382718892640">Anypoint Enterprise Security Example Application</a>.</strong></p> </li> 
+    <li> <p>Download the <strong><a href="_attachments/anypoint-enterprise-security-example.zip">Anypoint Enterprise Security Example Application</a>.</strong></p> </li> 
     <li> <p>Launch <strong>Anypoint Studio</strong>.</p> </li> 
     <li> <p>Under the <strong>File</strong> menu, select <strong>Import…​</strong></p> </li> 
     <li> <p>Studio opens an Import wizard. Expand the <strong>Mule</strong> folder in the wizard, then select <strong>Anypoint Studio generated Deployable Archive (.zip)</strong>. Click <strong>Next</strong>.</p> 
@@ -1054,7 +1054,7 @@
 <span class="content">http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd</span>
 <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
 <span class="content">http://www.mulesoft.org/schema/mule/secure-property-placeholder http://www.mulesoft.org/schema/mule/secure-property-placeholder/current/mule-secure-property-placeholder.xsd</span>
-<span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.6.0</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.7.0</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;signature:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Signature</span><span class="delimiter">"</span></span> <span class="attribute-name">enableLanguage</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Signature</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;signature:jce-signer-config</span> <span class="attribute-name">algorithm</span>=<span class="string"><span class="delimiter">"</span><span class="content">HmacMD5</span><span class="delimiter">"</span></span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">JLfl5sER3kt4oVkzP2d39UQrUxrEK63LjmXAO45b6cU=</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
@@ -1140,7 +1140,7 @@
      <p>Upon receipt of an HTTP request, this flow passes it through a filter that uses a MEL expression to verify that it contains both a user and a token in its query parameters.</p> 
     </div> 
     <div class="paragraph"> 
-     <p>Then it uses a Mule Digital Signature Processor to verify the identity of the message’s sender. Mule evaluates the token it receives as a parameter of the request (i.e. the token in the URL of the request). The table below describes the configurations of the Digital Signature Processor.</p> 
+     <p>Then it uses a Mule Digital Signature Processor to verify the identity of the message’s sender. Mule evaluates the token it receives as a parameter of the request (the token in the URL of the request). The table below describes the configurations of the Digital Signature Processor.</p> 
     </div> 
     <table class="tableblock frame-all grid-all spread"> 
      <colgroup> 
@@ -1272,9 +1272,9 @@
      <div class="ulist"> 
       <ul> 
        <li> <p>Enable Language</p> </li> 
-       <li> <p>key (i.e. encryption key)</p> </li> 
+       <li> <p>key (the encryption key)</p> </li> 
        <li> <p>xpath expression which indicates the fields in the payload to encrypt</p> </li> 
-       <li> <p>algorithm (i.e. encryption algorithm)<br></p> 
+       <li> <p>algorithm (the encryption algorithm)<br></p> 
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/global_XML_encrypt.png" alt="global_XML_encrypt"></span></p> 
         </div> </li> 
@@ -1426,9 +1426,9 @@
     <div class="ulist"> 
      <ul> 
       <li> <p>Enable Language</p> </li> 
-      <li> <p>key (i.e. encryption key)</p> </li> 
+      <li> <p>key (the encryption key)</p> </li> 
       <li> <p>xpath expression which indicates the fields in the payload to decrypt</p> </li> 
-      <li> <p>algorithm (i.e. encryption algorithm)</p> </li> 
+      <li> <p>algorithm (the encryption algorithm)</p> </li> 
      </ul> 
     </div> 
    </div> 
@@ -1480,7 +1480,7 @@
      <p>From a browser, an end user submits a request via the URL to the Mule application to decrypt the contents of a particular file, then display the decrypted contents to the user. To submit this request, open your browser and type the following in the address bar:&nbsp;</p> 
     </div> 
     <div class="paragraph"> 
-     <p><a href="http://localhost:8081/getFile?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==" class="bare">http://localhost:8081/getFile?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==</a></p> 
+     <p><code><a href="http://localhost:8081/getFile?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==" class="bare">http://localhost:8081/getFile?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==</a></code></p> 
     </div> 
    </div> 
    <div class="sect3"> 
@@ -1512,8 +1512,8 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>For more information on encryption in Mule, refer to <a href="/mule-user-guide/v/3.7/mule-message-encryption-processor">Mule Message Encryption Processor</a>.</p> </li> 
-    <li> <p>For more information on signatures in Mule, refer to <a href="/mule-user-guide/v/3.7/mule-digital-signature-processor">Mule Digital Signature Processor</a>.</p> </li> 
+    <li> <p>For more information on encryption in Mule, see <a href="/mule-user-guide/v/3.7/mule-message-encryption-processor">Mule Message Encryption Processor</a>.</p> </li> 
+    <li> <p>For more information on signatures in Mule, see <a href="/mule-user-guide/v/3.7/mule-digital-signature-processor">Mule Digital Signature Processor</a>.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1522,7 +1522,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#importing-the-application">Importing the Application</a></li><li><a class="scroll-menu-link" href="#setting-up-then-running-the-application">Setting Up, Then Running the Application</a></li><li><a class="scroll-menu-link" href="#how-it-works">How it Works</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#importing-the-application">Importing the Application</a></li><li><a class="scroll-menu-link" href="#setting-up-then-running-the-application">Setting Up, Then Running the Application</a></li><li><a class="scroll-menu-link" href="#how-it-works">How it Works</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
