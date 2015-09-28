@@ -741,7 +741,7 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Download the <a href="/docs/download/attachments/87687509/anypoint-enterprise-security-example.zip?version=1&amp;modificationDate=1380733660116"><strong>Anypoint Enterprise Security Example Application</strong></a>.</p> </li> 
+    <li> <p>Download the <strong><a href="_attachments/anypoint-enterprise-security-example.zip">Anypoint Enterprise Security Example Application</a></strong>.</p> </li> 
     <li> <p>Launch <strong>Mule Studio</strong>.</p> </li> 
     <li> <p>Under the <strong>File</strong> menu, select <strong>Import…​</strong></p> </li> 
     <li> <p>Studio opens an Import wizard. Expand the <strong>Mule</strong> folder in the wizard, then select <strong>Mule Studio generated Deployable Archive (.zip)</strong>. Click <strong>Next</strong>.</p> 
@@ -972,13 +972,13 @@
      <p>From a browser, an end user submits a request via the URL to the Mule application to acquire a customer’s credit card information. To submit this request, open your browser and type the following in the address bar:</p> 
     </div> 
     <div class="paragraph"> 
-     <p>` <a href="http://localhost:8081/?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==`" class="bare">http://localhost:8081/?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==`</a></p> 
+     <p><code><a href="http://localhost:8081/?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==" class="bare">http://localhost:8081/?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==</a></code></p> 
     </div> 
    </div> 
    <div class="sect3"> 
     <h4 id="processing"><a class="anchor" href="#processing"></a>Processing</h4> 
     <div class="paragraph"> 
-     <p>Upon receipt of an HTTP request, this flow uses a Mule Digital Signature Processor to verify the identity of the message’s sender. Mule evaluates the token it receives as a parameter of the request (i.e. the token in the URL of the request). The table below describes the configurations of the Digital Signature Processor.</p> 
+     <p>Upon receipt of an HTTP request, this flow uses a Mule Digital Signature Processor to verify the identity of the message’s sender. Mule evaluates the token it receives as a parameter of the request (that is, the token in the URL of the request). The table below describes the configurations of the Digital Signature Processor.</p> 
     </div> 
     <table class="tableblock frame-all grid-all" style="width: 99%;"> 
      <colgroup> 
@@ -1004,10 +1004,8 @@
       </tr> 
      </tbody> 
     </table> 
-    <div class="imageblock" style="text-align: center"> 
-     <div class="content"> 
-      <img src="/docs/download/attachments/87687509/verify_signature1.png?version=1&amp;modificationDate=1350508330031" alt="image"> 
-     </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/verify-signature.png" alt="verify-signature"></span></p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
@@ -1046,7 +1044,7 @@
           <p>In this example, the code which specifies the encryption strategy, the algorithm and the key does not exist within the Reservations flow; rather, that code resides in a global element at the top of the application’s XML configuration file (and in the <strong>Global Elements</strong> tab in Mule Studio — see image below). The Verify User Signature element in the Get_CC_Information flow references and uses the configurations defined within this global element (see code in expandable section below).</p> 
          </div> 
          <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/global_signature.png" alt="global_signature"></span></p> 
+          <p><span class="image"><img src="./_images/global-signature.png" alt="global-signature"></span></p> 
          </div> </td> 
        </tr> 
       </tbody> 
@@ -1104,10 +1102,8 @@
       </tr> 
      </tbody> 
     </table> 
-    <div class="imageblock" style="text-align: center"> 
-     <div class="content"> 
-      <img src="/docs/download/attachments/122752330/encrypt1.png?version=1&amp;modificationDate=1399071875173" alt="image"> 
-     </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/encrypt.png" alt="encrypt"></span></p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
@@ -1130,11 +1126,11 @@
     <div class="ulist"> 
      <ul> 
       <li> <p>Enable Language</p> </li> 
-      <li> <p>key (i.e. encryption key)</p> </li> 
+      <li> <p>key (that is, encryption key)</p> </li> 
       <li> <p>xpath expression which indicates the fields in the payload to encrypt</p> </li> 
-      <li> <p>algorithm (i.e. encryption algorithm)</p> 
+      <li> <p>algorithm (that is, encryption algorithm)</p> 
        <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/global_XML_encrypt.png" alt="global_XML_encrypt"></span></p> 
+        <p><span class="image"><img src="./_images/global-xml-encrypt.png" alt="global-xml-encrypt"></span></p> 
        </div> </li> 
      </ul> 
     </div> 
@@ -1144,10 +1140,8 @@
     <div class="paragraph"> 
      <p>Finally, Mule uses the HTTP endpoint to pass the response — encrypted credit card information — to the end user’s browser. The highlighted content in the image below provides the encrypted credit card information.</p> 
     </div> 
-    <div class="imageblock" style="text-align: center"> 
-     <div class="content"> 
-      <img src="/docs/download/attachments/87687509/get_cc_info_response.png?version=1&amp;modificationDate=1350508414815" alt="image"> 
-     </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/get-cc-info-response.png" alt="get-cc-info-response"></span></p> 
     </div> 
    </div> 
   </div> 
@@ -1188,44 +1182,62 @@
     <div class="paragraph"> 
      <p>Using an XML encryption strategy, Mule decrypts the message payload before logging the decryption activity. Mule then returns a response to the caller, which contains the unencrypted credit card data. The table below describes the configurations of the decrypter.</p> 
     </div> 
-    <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+    <table class="tableblock frame-all grid-all spread"> 
      <colgroup> 
       <col style="width: 21%;"> 
       <col style="width: 78%;"> 
      </colgroup> 
      <tbody> 
       <tr> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">Config Reference</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">References the <strong>plainXML</strong> global encryption element</p></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Config Reference</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>References the <strong>plainXML</strong> global encryption element</p> 
+         </div> 
+        </div></td> 
       </tr> 
       <tr> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">Operation</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates that the element decrypts, rather than encrypt a message</p></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Operation</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Indicates that the element decrypts, rather than encrypt a message</p> 
+         </div> 
+        </div></td> 
       </tr> 
       <tr> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">Encrypter to use</p></td> 
-       <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the encryption strategy</p></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Encrypter to use</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Indicates the encryption strategy</p> 
+         </div> 
+        </div></td> 
       </tr> 
      </tbody> 
     </table> 
-    <div class="imageblock" style="text-align: center"> 
-     <div class="content"> 
-      <img src="/docs/download/attachments/87687509/decrypt_XML.png?version=1&amp;modificationDate=1350508430499" alt="image"> 
-     </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/decrypt-xml.png" alt="decrypt-xml"></span></p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-</pre></td> 
-           <td class="code"><pre><span class="tag">&lt;encryption:decrypt</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">plainXml</span><span class="delimiter">"</span></span> <span class="attribute-name">using</span>=<span class="string"><span class="delimiter">"</span><span class="content">XML_ENCRYPTER</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Decrypt the xml payload</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;encryption:decrypt</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">plainXml</span><span class="delimiter">"</span></span> <span class="attribute-name">using</span>=<span class="string"><span class="delimiter">"</span><span class="content">XML_ENCRYPTER</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Decrypt the xml payload</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1234,9 +1246,9 @@
     <div class="ulist"> 
      <ul> 
       <li> <p>Enable Language</p> </li> 
-      <li> <p>key (i.e. encryption key)</p> </li> 
+      <li> <p>key (that is, encryption key)</p> </li> 
       <li> <p>xpath expression which indicates the fields in the payload to decrypt</p> </li> 
-      <li> <p>algorithm (i.e. encryption algorithm)</p> </li> 
+      <li> <p>algorithm (that is, encryption algorithm)</p> </li> 
      </ul> 
     </div> 
    </div> 
@@ -1291,7 +1303,7 @@
      <p>Finally, Mule uses the HTTP endpoint to pass the response — the decrypted message in the <code>encrypted.txt</code> file — to the end user’s browser (see image below).</p> 
     </div> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/get_secret_file_response.png" alt="get_secret_file_response"></span></p> 
+     <p><span class="image"><img src="./_images/get-secret-file-response.png" alt="get-secret-file-response"></span></p> 
     </div> 
    </div> 
   </div> 

@@ -814,9 +814,9 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>verify a digital signature</p> </li> 
-    <li> <p>encrypt part of a message payload</p> </li> 
-    <li> <p>decrypt a message payload</p> </li> 
+    <li> <p>Verify a digital signature</p> </li> 
+    <li> <p>Encrypt part of a message payload</p> </li> 
+    <li> <p>Decrypt a message payload</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -825,10 +825,10 @@
  <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you have <a href="/docs/display/34X/Mule+Studio+Essentials">Mule Studio</a> interface. To increase your familiarity with Studio, consider completing one or more <a href="/docs/display/34X/Getting+Started+with+Mule+Studio/">Mule Studio Tutorials</a>.</p> 
+   <p>This document assumes that you have <a href="/mule-fundamentals/v/3.5/anypoint-studio-essentials">Anypoint Studio Essentials</a> interface. To increase your familiarity with Studio, consider completing one or more <a href="/mule-fundamentals/v/3.5/basic-studio-tutorial">Basic Studio Tutorials</a>.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>This document describes the details of the example within the context of Mule Studio, Mule ESB’s graphical user interface (GUI). Where appropriate, the XML configuration follows the Studio interface screenshot.</p> 
+   <p>This document describes the details of the example within the context of Anypoint Studio, Mule’s graphical user interface (GUI). Where appropriate, the XML configuration follows the Studio interface screenshot.</p> 
   </div> 
  </div> 
 </div> 
@@ -837,7 +837,7 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Download the <strong><a href="/docs/download/attachments/122752330/anypoint-enterprise-security-example.zip?version=1&amp;modificationDate=1382718892640">Anypoint Enterprise Security Example Application</a>.</strong></p> </li> 
+    <li> <p>Download the <strong><a href="_attachments/anypoint-enterprise-security-example.zip">Anypoint Enterprise Security Example Application</a>.</strong></p> </li> 
     <li> <p>Launch <strong>Anypoint Studio</strong>.</p> </li> 
     <li> <p>Under the <strong>File</strong> menu, select <strong>Import…​</strong></p> </li> 
     <li> <p>Studio opens an Import wizard. Expand the <strong>Mule</strong> folder in the wizard, then select <strong>Anypoint Studio generated Deployable Archive (.zip)</strong>. Click <strong>Next</strong>.</p> 
@@ -886,10 +886,7 @@
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/full+example+flow.png" alt="full+example+flow"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/mule_enterprise_security_example.png" alt="mule_enterprise_security_example"></span></p> 
+   <p><span class="image"><img src="./_images/full-example-flow.png" alt="full-example-flow"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/mule_enterprise_security_example.png" alt="mule_enterprise_security_example"></span></p> 
@@ -1076,13 +1073,13 @@
      <p>From a browser, an end user submits a request via the URL to the Mule application to acquire a customer’s credit card information. To submit this request, open your browser and type the following in the address bar:&nbsp;</p> 
     </div> 
     <div class="paragraph"> 
-     <p><a href="http://localhost:8081/?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==" class="bare">http://localhost:8081/?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==</a></p> 
+     <p><code><a href="http://localhost:8081/?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==" class="bare">http://localhost:8081/?user=Royal_Bank_of_Canada&amp;token=z/TKVFswDDOQw2kjW9Y4jQ==</a></code></p> 
     </div> 
    </div> 
    <div class="sect3"> 
     <h4 id="processing"><a class="anchor" href="#processing"></a>Processing</h4> 
     <div class="paragraph"> 
-     <p>Upon receipt of an HTTP request, this flow uses a Mule Digital Signature Processor to verify the identity of the message’s sender. Mule evaluates the token it receives as a parameter of the request (i.e. the token in the URL of the request). The table below describes the configurations of the Digital Signature Processor.</p> 
+     <p>Upon receipt of an HTTP request, this flow uses a Mule Digital Signature Processor to verify the identity of the message’s sender. Mule evaluates the token it receives as a parameter of the request (that is, the token in the URL of the request). The table below describes the configurations of the Digital Signature Processor.</p> 
     </div> 
     <table class="tableblock frame-all grid-all spread"> 
      <colgroup> 
@@ -1109,7 +1106,7 @@
      </tbody> 
     </table> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/example+signature+1.png" alt="example+signature+1"></span></p> 
+     <p><span class="image"><img src="./_images/example-signature-1.png" alt="example-signature-1"></span></p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
@@ -1212,9 +1209,9 @@
     <div class="ulist"> 
      <ul> 
       <li> <p>Enable Language</p> </li> 
-      <li> <p>key (i.e. encryption key)</p> </li> 
+      <li> <p>key (that is, encryption key)</p> </li> 
       <li> <p>xpath expression which indicates the fields in the payload to encrypt</p> </li> 
-      <li> <p>algorithm (i.e. encryption algorithm)<br> <br> <span class="image"><img src="./_images/global_XML_encrypt.png" alt="global_XML_encrypt"></span></p> </li> 
+      <li> <p>algorithm (that is, encryption algorithm)<br> <br> <span class="image"><img src="./_images/global_XML_encrypt.png" alt="global_XML_encrypt"></span></p> </li> 
      </ul> 
     </div> 
     <div class="listingblock"> 
@@ -1325,9 +1322,9 @@
     <div class="ulist"> 
      <ul> 
       <li> <p>Enable Language</p> </li> 
-      <li> <p>key (i.e. encryption key)</p> </li> 
+      <li> <p>key (that is, encryption key)</p> </li> 
       <li> <p>xpath expression which indicates the fields in the payload to decrypt</p> </li> 
-      <li> <p>algorithm (i.e. encryption algorithm)</p> </li> 
+      <li> <p>algorithm (that is, encryption algorithm)</p> </li> 
      </ul> 
     </div> 
    </div> 

@@ -850,15 +850,15 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>verify a digital signature</p> </li> 
-    <li> <p>encrypt part of a message payload</p> </li> 
-    <li> <p>decrypt a message payload</p> </li> 
+    <li> <p>Verify a digital signature</p> </li> 
+    <li> <p>Encrypt part of a message payload</p> </li> 
+    <li> <p>Decrypt a message payload</p> </li> 
    </ul> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This document assumes that you have <a href="/mule-user-guide/v/3.6/installing-anypoint-enterprise-security">installed the Anypoint Enterprise Security</a> extensions.</p> 
@@ -876,7 +876,7 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Download the <strong><a href="/documentation/download/attachments/122752330/anypoint-enterprise-security-example.zip?version=1&amp;modificationDate=1382718892640">Anypoint Enterprise Security Example Application</a>.</strong></p> </li> 
+    <li> <p>Download the <strong><a href="_attachments/anypoint-enterprise-security-example.zip">Anypoint Enterprise Security Example Application</a>.</strong></p> </li> 
     <li> <p>Launch <strong>Anypoint Studio</strong>.</p> </li> 
     <li> <p>Under the <strong>File</strong> menu, select <strong>Import…​</strong></p> </li> 
     <li> <p>Studio opens an Import wizard. Expand the <strong>Mule</strong> folder in the wizard, then select <strong>Anypoint Studio generated Deployable Archive (.zip)</strong>. Click <strong>Next</strong>.</p> 
@@ -923,7 +923,7 @@
     <li> <p><strong>Decrypt_The_Request</strong> decrypts messages it receives, logs the decryption activity, then returns the unencrypted message contents — in this case, credit card information — to the caller. (See image below, middle.)</p> </li> 
     <li> <p><strong>Get_secret_file</strong> decrypts, upon request, the contents of a file, then returns a response to the caller that displays the decrypted contents of the file. (See image below, bottom.)</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/full+example+flow.png" alt="full+example+flow"></span></p> 
+      <p><span class="image"><img src="./_images/full-example-flow.png" alt="full-example-flow"></span></p> 
      </div> </li> 
    </ul> 
   </div> 
@@ -1116,7 +1116,7 @@
      <p>Upon receipt of an HTTP request, this flow passes it through a filter that uses a MEL expression to verify that it contains both a user and a token in its query parameters.</p> 
     </div> 
     <div class="paragraph"> 
-     <p>Then it uses a Mule Digital Signature Processor to verify the identity of the message’s sender. Mule evaluates the token it receives as a parameter of the request (i.e. the token in the URL of the request). The table below describes the configurations of the Digital Signature Processor.</p> 
+     <p>Then it uses a Mule Digital Signature Processor to verify the identity of the message’s sender. Mule evaluates the token it receives as a parameter of the request (that is, the token in the URL of the request). The table below describes the configurations of the Digital Signature Processor.</p> 
     </div> 
     <table class="tableblock frame-all grid-all spread"> 
      <colgroup> 
@@ -1143,7 +1143,7 @@
      </tbody> 
     </table> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/example+signature+1.png" alt="example+signature+1"></span></p> 
+     <p><span class="image"><img src="./_images/example-signature-1.png" alt="example-signature-1"></span></p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
@@ -1248,9 +1248,9 @@
      <div class="ulist"> 
       <ul> 
        <li> <p>Enable Language</p> </li> 
-       <li> <p>key (i.e. encryption key)</p> </li> 
+       <li> <p>key (that is, encryption key)</p> </li> 
        <li> <p>xpath expression which indicates the fields in the payload to encrypt</p> </li> 
-       <li> <p>algorithm (i.e. encryption algorithm)<br></p> 
+       <li> <p>algorithm (that is, encryption algorithm)</p> 
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/global_XML_encrypt.png" alt="global_XML_encrypt"></span></p> 
         </div> </li> 
@@ -1402,9 +1402,9 @@
     <div class="ulist"> 
      <ul> 
       <li> <p>Enable Language</p> </li> 
-      <li> <p>key (i.e. encryption key)</p> </li> 
+      <li> <p>key (that is, encryption key)</p> </li> 
       <li> <p>xpath expression which indicates the fields in the payload to decrypt</p> </li> 
-      <li> <p>algorithm (i.e. encryption algorithm)</p> </li> 
+      <li> <p>algorithm (that is, encryption algorithm)</p> </li> 
      </ul> 
     </div> 
    </div> 
@@ -1498,7 +1498,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#importing-the-application">Importing the Application</a></li><li><a class="scroll-menu-link" href="#setting-up-then-running-the-application">Setting Up, Then Running the Application</a></li><li><a class="scroll-menu-link" href="#how-it-works">How it Works</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#importing-the-application">Importing the Application</a></li><li><a class="scroll-menu-link" href="#setting-up-then-running-the-application">Setting Up, Then Running the Application</a></li><li><a class="scroll-menu-link" href="#how-it-works">How it Works</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

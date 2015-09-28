@@ -968,102 +968,88 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Download the distribution from <a href="/docs/download/attachments/122752486/cloudhub-cli-1.0.1.zip?version=1&amp;modificationDate=1341700530210">here</a>.</p> </li> 
+    <li> <p>Install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java Development Kit</a> on your computer. Set the JAVA_HOME environment variable to where you installed Java on your computer.</p> </li> 
+    <li> <p>Download the CloudHub distribution <a href="_attachments/cloudhub-cli-1.0.1.zip">cloudhub-cli-1.0.1.zip</a> file.</p> </li> 
     <li> <p>Unzip/extract the distribution in a location on your local machine.</p> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="bash">
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
-</pre></td> 
-            <td class="code"><pre>$ unzip cloudhub-cli-1.0.1.zip</pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
+       <pre class="CodeRay highlight"><code data-lang="bash">$ unzip cloudhub-cli-1.0.1.zip</code></pre> 
       </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>The zip file creates the <code>cloudhub-cli-18-SNAPSHOT</code> directory.</p> 
      </div> </li> 
+    <li> <p>If you are using a Mac or Linux computer, ensure that the <code>cloudhub-</code> commands are executable by using a command such as <code>chmod 700 cloudhub-*</code>.</p> </li> 
     <li> <p>Add the bin directory to your PATH.</p> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="bash">
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
-</pre></td> 
-            <td class="code"><pre>$ export PATH=/path/to/cloudhub-cli-1.0.1.zip/bin:$PATH</pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
+       <pre class="CodeRay highlight"><code data-lang="bash">$ export PATH=/path/to/cloudhub-cli-18-SNAPSHOT/bin:$PATH</code></pre> 
       </div> 
      </div> </li> 
+    <li> <p>Optionally set the following environment variables to make invoking the commands easier:</p> 
+     <table class="tableblock frame-all grid-all spread"> 
+      <colgroup> 
+       <col style="width: 50%;"> 
+       <col style="width: 50%;"> 
+      </colgroup> 
+      <thead> 
+       <tr> 
+        <th class="tableblock halign-left valign-top">Environment Variable</th> 
+        <th class="tableblock halign-left valign-top">Description</th> 
+       </tr> 
+      </thead> 
+      <tbody> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>CLOUDHUB_USERNAME</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Your CloudHub username</p> 
+          </div> 
+         </div></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>CLOUDHUB_PASSWORD</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Your CloudHub password</p> 
+          </div> 
+         </div></td> 
+       </tr> 
+       <tr> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>CLOUDHUB_DOMAIN</p> 
+          </div> 
+         </div></td> 
+        <td class="tableblock halign-left valign-top"> 
+         <div> 
+          <div class="paragraph"> 
+           <p>Your CloudHub application domain</p> 
+          </div> 
+         </div></td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p>You can optionally set the following environment variables to make invoking the commands easier:</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: 50%;"> 
-    <col style="width: 50%;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Environment Variable</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>CLOUDHUB_USERNAME</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Your CloudHub username</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>CLOUDHUB_PASSWORD</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Your CloudHub password</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>CLOUDHUB_DOMAIN</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Your CloudHub application domain</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-   </tbody> 
-  </table> 
-  <div class="paragraph"> 
    <p>This makes the domain, username, and password arguments optional in the commands below.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Note</strong>: Use the <code>--help</code> parameter with a command to see what options are available.</p> 
   </div> 
  </div> 
 </div> 
@@ -1083,19 +1069,8 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="bash">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-</pre></td> 
-         <td class="code"><pre>$ cloudhub-list
-hello: STARTED</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="bash">$ cloudhub-list
+hello: STARTED</code></pre> 
    </div> 
   </div> 
  </div> 
@@ -1144,17 +1119,7 @@ Application uploaded!</pre></td>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="bash">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre>cloudhub-update</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="bash">cloudhub-update</code></pre> 
    </div> 
   </div> 
  </div> 
@@ -1167,17 +1132,7 @@ Application uploaded!</pre></td>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="bash">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre>$ cloudhub-delete -d app</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="bash">$ cloudhub-delete -d app</code></pre> 
    </div> 
   </div> 
  </div> 
@@ -1193,21 +1148,9 @@ Application uploaded!</pre></td>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="bash">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-         <td class="code"><pre>$ cloudhub-logs
+    <pre class="CodeRay highlight"><code data-lang="bash">$ cloudhub-logs
 ...
-INFO&nbsp;&nbsp;&nbsp; 11-04-05 07:21:41&nbsp;&nbsp; [ApplicationServiceImpl] Successfully deployed [test]</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+INFO&nbsp;&nbsp;&nbsp; 11-04-05 07:21:41&nbsp;&nbsp; [ApplicationServiceImpl] Successfully deployed [test]</code></pre> 
    </div> 
   </div> 
  </div> 

@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/datasense" />
-    <meta name="description" content="DataSense uses message metadata to facilitate application design. With this functionality, Anypoint Studio proactively acquires information su..." />
+    <meta name="description" content="DataSense uses message metadata to facilitate application design. With this functionality, Anypoint Studio proactively acquires information such as..." />
     <meta class="swiftype" name="title" data-type="string" content="DataSense" />
 
 </head>
@@ -870,10 +870,10 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><strong>DataSense</strong>&nbsp;uses message metadata to facilitate application design. With this functionality, Anypoint Studio proactively acquires information such as data type and structure, in order to prescribe how to accurately map or use this data in your application.</p> 
+   <p><strong>DataSense</strong> uses message metadata to facilitate application design. With this functionality, Anypoint Studio proactively acquires information such as data type and structure, in order to prescribe how to accurately map or use this data in your application.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Rather than forcing you to manually discover information about the data your internal and external resources employ, Mule intelligently discovers this information and uses it to make application design suggestions. For example, if your application connects to Twitter, DataSense captures information about the type and structure of data that Twitter employs, then uses the information to advise you of the type of data you should send to, or expect to receive from Twitter. &nbsp;</p> 
+   <p>Rather than forcing you to manually discover information about the data your internal and external resources employ, Mule intelligently discovers this information and uses it to make application design suggestions. For example, if your application connects to Twitter, DataSense captures information about the type and structure of data that Twitter employs, then uses the information to advise you of the type of data you should send to, or expect to receive from Twitter.</p> 
   </div> 
  </div> 
 </div> 
@@ -881,32 +881,32 @@
  <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you are familiar with the <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Visual Editor in Anypoint Studio</a>, the&nbsp;<a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>, and the <a href="/mule-user-guide/v/3.7/datamapper-user-guide-and-reference">Anypoint DataMapper</a>&nbsp;transformer that you can use to create applications in Studio. Further, this document references <a href="/mule-user-guide/v/3.7/connecting-using-transports">Connectors</a> and <a href="/mule-fundamentals/v/3.7/global-elements">Global Elements.</a>&nbsp;</p> 
+   <p>This document assumes that you are familiar with the <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Visual Editor in Anypoint Studio</a>, the <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>, and the <a href="/mule-user-guide/v/3.7/dataweave">DataWeave</a> transformer that you can use to create applications in Studio. Further, this document references <a href="/mule-user-guide/v/3.7/connecting-using-transports">Connectors</a> and <a href="/mule-fundamentals/v/3.7/global-elements">Global Elements.</a></p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="datasense-functionality"><a class="anchor" href="#datasense-functionality"></a>DataSense&nbsp;Functionality</h2> 
+ <h2 id="datasense-functionality"><a class="anchor" href="#datasense-functionality"></a>DataSense Functionality</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Studio offers these DataSense features to support proactive discovery of metadata from external resources:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Perceptive Flow Design&nbsp;</p> </li> 
+    <li> <p>Perceptive Flow Design</p> </li> 
     <li> <p>DataSense Explorer</p> </li> 
    </ul> 
   </div> 
   <div class="sect3"> 
    <h4 id="perceptive-flow-design"><a class="anchor" href="#perceptive-flow-design"></a>Perceptive Flow Design</h4> 
    <div class="paragraph"> 
-    <p>Mule takes one more step to make designing your application easier with Perceptive Flow Design. If you model a flow to include an Anypoint Connector with a working configuration selected, preceded or followed by an Anypoint DataMapper transformer, Mule uses the working connection to the resource – a SaaS provider, for example, to retrieve metadata about message payload and properties. Capturing the data type and structure that a SaaS employs, Mule feeds that data into the DataMapper, thereby providing DataMapper with the expected input or output.&nbsp; This functionality facilitates mapping of data from one data format and structure to another which saves you the development time you would otherwise spend trying to discover the structure and format yourself.&nbsp;</p> 
+    <p>Mule takes one more step to make designing your application easier with Perceptive Flow Design. If you model a flow to include an Anypoint Connector with a working configuration selected, preceded or followed by a DataWeave (Transform Message) component, Mule uses the working connection to the resource – a SaaS provider, for example, to retrieve metadata about message payload and properties. Capturing the data type and structure that a SaaS employs, Mule feeds that data into DataWeave, thereby providing DataWeave with the expected input or output. This functionality facilitates mapping of data from one data format and structure to another which saves you the development time you would otherwise spend trying to discover the structure and format yourself.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>For example, imagine you are tasked with the job of connecting your organization’s Salesforce accounts with Twitter to publicize specific performance indicators. One of your first tasks would be to examine the available documentation from both SaaS providers to determine what type of data structures they use so that you can, eventually, figure out how to map one structure to the other. Rather than plod through that exhausting exercise, you can utilize Perceptive Flow Design. Drop two&nbsp;connectors onto your&nbsp;Studio canvas – Salesforce and Twitter – then configure them, making sure to test the connection for Salesforce. After confirming connectivity, simply drop a DataMapper Transformer between the connectors. Open DataMapper to find that Mule has intelligently captured the data type and structure information from each SaaS provider, and prescribed the input and output for your data mapping. With the prescription in place, all you need to do is configure the mapping.</p> 
+    <p>For example, imagine you are tasked with the job of connecting your organization’s Salesforce accounts with Twitter to publicize specific performance indicators. One of your first tasks would be to examine the available documentation from both SaaS providers to determine what type of data structures they use so that you can, eventually, figure out how to map one structure to the other. Rather than plod through that exhausting exercise, you can utilize Perceptive Flow Design. Drop two connectors onto your Studio canvas – Salesforce and Twitter – then configure them, making sure to test the connection for Salesforce. After confirming connectivity, simply drop a DataWeave Transformer between the connectors. Open DataWeave to find that Mule has intelligently captured the data type and structure information from each SaaS provider, and prescribed the input and output for your data mapping. With the prescription in place, all you need to do is configure the mapping, filling in the blanks of the <a href="link:/mule-user-guide/v/3.7/dataweave">DataWeave</a> code.</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/datamapper-1.png" alt="datamapper-1"></span></p> 
+    <p><span class="image"><img src="./_images/dataweave-1.png" alt="dataweave-1"></span></p> 
    </div> 
    <div class="paragraph"> 
     <p>As an even simpler example, imagine you are obtaining status update data from a Twitter connector and that you want to log the tweet text but you aren’t familiar with the property names used by this connector. Instead of having to look up Twitter’s documentation to find out what arbitrary name they picked for the property you need, you can just place a Logger message processor right after the Twitter connector and write in it. If you start writing <strong><code>#[payload.</code></strong> in the logger’s Message field, and then press <strong>ctrl + space bar</strong>, you will get a list of all the properties and methods associated to the payload, including the properties returned by the request that you’re performing on the Twitter connector.</p> 
@@ -943,14 +943,14 @@
     <li> <p>Add an HTTP connector into your flow through which data flows into, and out of, your application. For example, add an HTTP connector, followed by another connector.</p> </li> 
     <li> <p>Configure the endpoints and connectors — and the global configurations they reference — so that, where possible, you can establish connections and use DataSense to extract any metadata about the expected input or output with the external source.</p> </li> 
     <li> <p>Insert other elements into your flow to enrich the message, set, copy or remove variable or properties, route messages, etc.</p> </li> 
-    <li> <p>Lastly, insert DataMapper transformers into your flow to adjust the format or structure of the message so that each connector receives the input it expects.</p> </li> 
+    <li> <p>Lastly, insert DataWeave transformers into your flow to adjust the format or structure of the message so that each connector receives the input it expects.</p> </li> 
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p>The objective of this design-time strategy is to set the pieces of the integration puzzle in place, then "glue them together" with DataMappers. Rather than designing a flow sequentially, this type of "align, then glue together" strategy ensures that you are utilizing DataSense, wherever possible, to pre-populate the information about the structure and format of the input or output data into a DataMapper.&nbsp;&nbsp;</p> 
+   <p>The objective of this design-time strategy is to set the pieces of the integration puzzle in place, then "glue them together" with DataWeave transformers. Rather than designing a flow sequentially, this type of "align, then glue together" strategy ensures that you are utilizing DataSense, wherever possible, to pre-populate the information about the structure and format of the input or output data into a DataWeave transformer.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>For example, if you configure a Salesforce connector in your application, then drop a DataMapper after it, the DataMapper uses the information that DataSense extracted to pre-populate the input values for mapping, so that you only need to confirm (or adjust) the input selections, then proceed to mapping to your desired output.&nbsp; In other words, DataSense makes sure that DataMapper <em>knows</em> the data format and structure with which it must work so you don’t have to figure it out manually. Whenever you can use DataSense, you are taking a development shortcut, removing the hassle of manually discovering the format and structure of data contained within a message.&nbsp;</p> 
+   <p>For example, if you configure a Salesforce connector in your application, then drop a DataMapper after it, the DataMapper uses the information that DataSense extracted to pre-populate the input values for mapping, so that you only need to confirm (or adjust) the input selections, then proceed to mapping to your desired output. In other words, DataSense makes sure that DataMapper <em>knows</em> the data format and structure with which it must work so you don’t have to figure it out manually. Whenever you can use DataSense, you are taking a development shortcut, removing the hassle of manually discovering the format and structure of data contained within a message.</p> 
   </div> 
  </div> 
 </div> 
@@ -970,7 +970,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#datasense-functionality">DataSense Functionality</a></li><li><a class="scroll-menu-link" href="#datasense-best-practices">DataSense Best Practices</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#datasense-functionality">DataSense Functionality</a></li><li><a class="scroll-menu-link" href="#datasense-best-practices">DataSense Best Practices</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
