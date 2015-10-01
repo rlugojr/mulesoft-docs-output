@@ -760,7 +760,7 @@
 <a href="/anypoint-connector-devkit/v/3.7/adding-datasense">Adding DataSense</a><ul>
 <li><i></i><a href="/anypoint-connector-devkit/v/3.7/multiple-level-datasense-support">Multiple Level DataSense Support</a></li></ul></li>
 <li><i></i><a href="/anypoint-connector-devkit/v/3.7/adding-datasense-query-language">Adding DataSense Query Language</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/adding-query-pagination-support">Adding Query Pagination Support</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/building-a-batch-enabled-connector">Building a Batch Enabled Connector</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/shading-libraries">Shading Libraries</a></li></ul></li>
-<li><i></i><a href="/anypoint-connector-devkit/v/3.7/connector-reference-documentation">Connector Reference Documentation</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/packaging-your-connector-for-release">Packaging Your Connector for Release</a></li><li>
+<li><i></i><a href="/anypoint-connector-devkit/v/3.7/connector-reference-documentation">Connector Reference Documentation</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/packaging-your-connector-for-release">Packaging Your Connector for Release</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/connector-certification-program-guidelines">Connector Certification Program Guidelines</a></li><li>
 <i></i>
 <a href="/anypoint-connector-devkit/v/3.7/anypoint-connector-examples">Anypoint Connector Examples</a><ul>
 <li><i></i><a href="/anypoint-connector-devkit/v/3.7/tutorial-barn-connector">Tutorial - Barn Connector</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/creating-a-connector-using-a-java-sdk">Creating a Connector Using a Java SDK</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/creating-a-connector-for-a-soap-service-via-cxf-client">Creating a Connector for a SOAP Service Via CXF Client</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/creating-a-connector-for-a-restful-api-using-jersey">Creating a Connector for a RESTful API Using Jersey</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/creating-a-connector-for-a-restful-api-using-restcall-annotations">Creating a Connector for a RESTful API using @RestCall Annotations</a></li></ul></li>
@@ -874,7 +874,7 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This page provides details on the process components you configure for BPM. Some of this information is pulled directly from <code>mule-bpm.xsd</code> and is cached. For more information on BPM, see <a href="/mule-user-guide/v/3.7/bpm-module-reference">BPM Module Reference</a>. Information on jBPM is available at&nbsp;http://www.jbpm.org.</p> 
+   <p>This page provides details on the process components you configure for BPM. Some of this information is pulled directly from <code>mule-bpm.xsd</code> and is cached. For more information on BPM, see <a href="/mule-user-guide/v/3.7/bpm-module-reference">BPM Module Reference</a>. Information on jBPM is available at&nbsp;link:http://www.jbpm.org.</p> 
   </div> 
  </div> 
 </div> 
@@ -886,71 +886,39 @@
   </div> 
   <div class="sect2"> 
    <h3 id="attributes-of-process"><a class="anchor" href="#attributes-of-process"></a>Attributes of &lt;process…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">bpms-ref</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An optional reference to the underlying BPMS. This is used to disambiguate in the case where more than one BPMS is available.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bpms-ref</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An optional reference to the underlying BPMS. Disambiguates in the case where more than one BPMS is available.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">processName</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The logical name of the process. This is used to look up the running process instance from the BPMS.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>processName</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The logical name of the process. Looks up the running process instance from the BPMS.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">processDefinition</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The resource containing the process definition, this will be used to deploy the process to the BPMS. The resource type depends on the BPMS being used.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>processDefinition</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The resource containing the process definition, this deploys the process to the BPMS. The resource type depends on the BPMS being used.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">processIdField</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">This field will be used to correlate Mule messages with processes. If not specified, it will default to MULE_BPM_PROCESS_ID.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>processIdField</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">This field correlates Mule messages with processes. If not specified, the default is MULE_BPM_PROCESS_ID.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-process"><a class="anchor" href="#child-elements-of-process"></a>Child Elements of &lt;process…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
-    <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>process</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -958,65 +926,36 @@
  <h2 id="jbpm"><a class="anchor" href="#jbpm"></a>Jbpm</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="attributes-of-jbpm"><a class="anchor" href="#attributes-of-jbpm"></a>Attributes of &lt;jbpm…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <h3 id="attributes-of-jbpm"><a class="anchor" href="#attributes-of-jbpm"></a>Attributes of jbpm</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An optional name for this BPMS. Refer to this from the "bpms-ref" field of your process in case you have more than one BPMS available.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An optional name for this BPMS. Refer to this from the <code>bpms-ref</code> field of your process in case you have more than one BPMS available.<br> <strong>Type</strong>: name (no spaces)<br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">configurationResource</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The configuration file for jBPM, default is "jbpm.cfg.xml" if not specified.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>configurationResource</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The configuration file for jBPM, default is <code>jbpm.cfg.xml</code> if not specified.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">processEngine-ref</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to the already-initialized jBPM ProcessEngine. This is useful if you use Spring to configure your jBPM instance. Note that the "configurationResource" attribute will be ignored in this case.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>processEngine-ref</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to the already-initialized jBPM ProcessEngine. This is useful if you use Spring to configure your jBPM instance. Note that the "configurationResource" attribute is ignored in this case.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-jbpm"><a class="anchor" href="#child-elements-of-jbpm"></a>Child Elements of &lt;jbpm…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
-    <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>jbpm</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
