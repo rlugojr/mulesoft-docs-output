@@ -879,7 +879,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="default-exception-strategy"><a class="anchor" href="#default-exception-strategy"></a>Default exception strategy</h2> 
+ <h2 id="default-exception-strategy"><a class="anchor" href="#default-exception-strategy"></a>Default Exception Strategy</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Provides default exception handling.</p> 
@@ -891,47 +891,29 @@
    <colgroup> 
     <col style="width: %;"> 
     <col style="width: %;"> 
-    <col style="width: %;"> 
-    <col style="width: %;"> 
-    <col style="width: %;"> 
    </colgroup> 
    <thead> 
     <tr> 
      <th class="tableblock halign-left valign-top">Name</th> 
-     <th class="tableblock halign-left valign-top">Type</th> 
-     <th class="tableblock halign-left valign-top">Required</th> 
-     <th class="tableblock halign-left valign-top">Default</th> 
      <th class="tableblock halign-left valign-top">Description</th> 
     </tr> 
    </thead> 
    <tbody> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">enableNotifications</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Determines whether ExceptionNotifications will be fired from this strategy when an exception occurs. Default is true.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>enableNotifications</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Determines whether <code>ExceptionNotifications</code> are fired from this strategy when an exception occurs. Default is true.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>true</code></p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the exception strategy that will be used in ref attribute of 'exception-strategy' element</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the exception strategy used in ref attribute of 'exception-strategy' element.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">when</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The expression that will be evaluated to determine if this exception strategy should be executed. This should always be a boolean expression.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>when</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The expression to be evaluated to determine if this exception strategy should be executed. This should always be a boolean expression.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">stopMessageProcessing</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Stop the flow/service when an exception occurs. You will need to restart the flow/service manually after this (e.g, using JMX).</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>stopMessageProcessing</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Stop the flow/service when an exception occurs. Restart the flow/service manually after this (for example, using JMX).<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>false</code></p></td> 
     </tr> 
    </tbody> 
   </table> 
@@ -953,27 +935,27 @@
    </thead> 
    <tbody> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">commit-transaction</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>commit-transaction</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">These exceptions will be considered "delivered" after handling by the exception strategy. Any exception not accepted by this filter will be redelivered/rolled back. You can set a comma-separated list of wildcard patterns that will be matched against the fully qualified class name of the current exception.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">These exceptions are considered "delivered" after handling by the exception strategy. Any exception not accepted by this filter is redelivered/rolled back. You can set a comma-separated list of wildcard patterns that’s matched against the fully qualified class name of the current exception.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">rollback-transaction</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rollback-transaction</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">These exceptions will be redelivered/rolled back after handling by the exception strategy. You can set a comma-separated list of wildcard patterns that will be matched against the fully qualified class name of the current exception.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">These exceptions are redelivered/rolled back after handling by the exception strategy. You can set a comma-separated list of wildcard patterns that’s matched against the fully qualified class name of the current exception.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-message-processor</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-message-processor</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">A message processor A placeholder for message processor elements.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-outbound-endpoint</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-outbound-endpoint</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">An outbound endpoint A placeholder for outbound endpoint elements. Outbound endpoints dispatch messages to the underlying transport.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-mixed-content-message-processor</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-mixed-content-message-processor</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for message processor elements.</p></td> 
     </tr> 
@@ -982,7 +964,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="custom-exception-strategy"><a class="anchor" href="#custom-exception-strategy"></a>Custom exception strategy</h2> 
+ <h2 id="custom-exception-strategy"><a class="anchor" href="#custom-exception-strategy"></a>Custom Exception Strategy</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>A user-defined exception strategy.</p> 
@@ -994,47 +976,29 @@
    <colgroup> 
     <col style="width: %;"> 
     <col style="width: %;"> 
-    <col style="width: %;"> 
-    <col style="width: %;"> 
-    <col style="width: %;"> 
    </colgroup> 
    <thead> 
     <tr> 
      <th class="tableblock halign-left valign-top">Name</th> 
-     <th class="tableblock halign-left valign-top">Type</th> 
-     <th class="tableblock halign-left valign-top">Required</th> 
-     <th class="tableblock halign-left valign-top">Default</th> 
      <th class="tableblock halign-left valign-top">Description</th> 
     </tr> 
    </thead> 
    <tbody> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">enableNotifications</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Determines whether ExceptionNotifications will be fired from this strategy when an exception occurs. Default is true.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>enableNotifications</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Determines whether ExceptionNotifications are fired from this strategy when an exception occurs. Default is true.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>true</code></p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the exception strategy that will be used in ref attribute of 'exception-strategy' element</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the exception strategy that’s used in ref attribute of 'exception-strategy' element.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">when</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">The expression that will be evaluated to determine if this exception strategy should be executed. This should always be a boolean expression.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>when</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">The expression that’s evaluated to determine if this exception strategy should be executed. This should always be a boolean expression.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-     <td class="tableblock halign-left valign-top"></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">A class that implements the ExceptionListener interface. In addition, if an 'outbound-endpoint' element is specified, it is set as an "endpoint" bean property.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">A class that implements the ExceptionListener interface. In addition, if an 'outbound-endpoint' element is specified, it is set as an "endpoint" bean property.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: <code>true</code></p></td> 
     </tr> 
    </tbody> 
   </table> 
@@ -1056,32 +1020,32 @@
    </thead> 
    <tbody> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">commit-transaction</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>commit-transaction</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">These exceptions will be considered "delivered" after handling by the exception strategy. Any exception not accepted by this filter will be redelivered/rolled back. You can set a comma-separated list of wildcard patterns that will be matched against the fully qualified class name of the current exception.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">These exceptions are considered "delivered" after handling by the exception strategy. Any exception not accepted by this filter is redelivered/rolled back. You can set a comma-separated list of wildcard patterns that are matched against the fully qualified class name of the current exception.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">rollback-transaction</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rollback-transaction</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">These exceptions will be redelivered/rolled back after handling by the exception strategy. You can set a comma-separated list of wildcard patterns that will be matched against the fully qualified class name of the current exception.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">These exceptions are redelivered/rolled back after handling by the exception strategy. You can set a comma-separated list of wildcard patterns that is matched against the fully qualified class name of the current exception.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-message-processor</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-message-processor</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">A message processor A placeholder for message processor elements.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-outbound-endpoint</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-outbound-endpoint</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">An outbound endpoint A placeholder for outbound endpoint elements. Outbound endpoints dispatch messages to the underlying transport.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-mixed-content-message-processor</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-mixed-content-message-processor</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for message processor elements.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">spring:property</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>spring:property</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">Spring-style property element for custom configuration.</p></td> 
     </tr> 
@@ -1093,7 +1057,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#default-exception-strategy">Default exception strategy</a></li><li><a class="scroll-menu-link" href="#custom-exception-strategy">Custom exception strategy</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#default-exception-strategy">Default Exception Strategy</a></li><li><a class="scroll-menu-link" href="#custom-exception-strategy">Custom Exception Strategy</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

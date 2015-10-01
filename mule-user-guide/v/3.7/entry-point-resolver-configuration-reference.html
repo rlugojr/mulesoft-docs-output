@@ -884,7 +884,7 @@
   <div class="paragraph"> 
    <p>An extensible set of entry point resolvers. These determine how a message is passed to a component in Java. Each entry point resolver is tried in turn until one succeeds in delivering the message to the component. This element can be set on the model or component; the model value provides a default that individual component values can override.</p> 
   </div> 
-  <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+  <table class="tableblock frame-all grid-all spread"> 
    <caption class="title">
      Table 1. Child Elements of &lt;entry-point-resolver-set…​&gt; 
    </caption> 
@@ -902,18 +902,18 @@
    </thead> 
    <tbody> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-entry-point-resolver</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-entry-point-resolver</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for an entry point resolver element. Entry point resolvers define how payloads are delivered to Java code by choosing the method to call.</p></td> 
     </tr> 
    </tbody> 
   </table> 
   <div class="sect2"> 
-   <h3 id="legacy-entry-point-resolver-set"><a class="anchor" href="#legacy-entry-point-resolver-set"></a>Legacy entry point resolver set</h3> 
+   <h3 id="legacy-entry-point-resolver-set"><a class="anchor" href="#legacy-entry-point-resolver-set"></a>Legacy Entry Point Resolver Set</h3> 
    <div class="paragraph"> 
     <p>An extensible set of entry point resolvers (which determine how a message is passed to a component in Java) that already contains resolvers to implement the standard logic. This is already provided by default and is only needed explicitly if it needs to be extended with other entry point resolvers. This element can be set on the model or component; the model value provides a default that individual component values can override.</p> 
    </div> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 2. Child Elements of &lt;legacy-entry-point-resolver-set…​&gt; 
     </caption> 
@@ -931,7 +931,7 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-entry-point-resolver</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-entry-point-resolver</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for an entry point resolver element. Entry point resolvers define how payloads are delivered to Java code by choosing the method to call.</p></td> 
      </tr> 
@@ -949,37 +949,28 @@
    <div class="paragraph"> 
     <p>A custom entry point resolver. This allows user-supplied code to determine how a message is passed to a component in Java. This element can be set on the model or component; the model value provides a default that individual component values can override. This element can also be used directly or as part of a set of resolvers; the resolvers in a set are used in turn until one is successful.</p> 
    </div> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 3. Attributes of &lt;custom-entry-point-resolver…​&gt; 
     </caption> 
     <colgroup> 
      <col style="width: %;"> 
      <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the EntryPointResolver interface.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the EntryPointResolver interface.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 4. Child Elements of &lt;custom-entry-point-resolver…​&gt; 
     </caption> 
@@ -997,7 +988,7 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">spring:property</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>spring:property</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Spring-style property element for custom configuration.</p></td> 
      </tr> 
@@ -1005,84 +996,63 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="property-entry-point-resolver"><a class="anchor" href="#property-entry-point-resolver"></a>Property entry point resolver</h3> 
+   <h3 id="property-entry-point-resolver"><a class="anchor" href="#property-entry-point-resolver"></a>Property Entry Point Resolver</h3> 
    <div class="paragraph"> 
     <p>Uses a message property to select the component method to be called. This element can be set on the model or component; the model value provides a default that individual component values can override. This element can also be used directly or as part of a set of resolvers; the resolvers in a set are used in turn until one is successful.</p> 
    </div> 
-   <table class="tableblock frame-all grid-all" style="width: 80%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 5. Attributes of &lt;property-entry-point-resolver…​&gt; 
     </caption> 
     <colgroup> 
      <col style="width: %;"> 
      <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">acceptVoidMethods</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">property</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the message property used to select a method on the component.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the message property used to select a method on the component.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="method-entry-point-resolver"><a class="anchor" href="#method-entry-point-resolver"></a>Method entry point resolver</h3> 
+   <h3 id="method-entry-point-resolver"><a class="anchor" href="#method-entry-point-resolver"></a>Method Entry point Resolver</h3> 
    <div class="paragraph"> 
     <p>Delivers the message to a named method. This element can be set on the model or component; the model value provides a default that individual component values can override. This element can also be used directly or as part of a set of resolvers; the resolvers in a set are used in turn until one is successful.</p> 
    </div> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 6. Attributes of &lt;method-entry-point-resolver…​&gt; 
     </caption> 
     <colgroup> 
      <col style="width: %;"> 
      <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">acceptVoidMethods</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>acceptVoidMethods</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 7. Child Elements of &lt;method-entry-point-resolver…​&gt; 
     </caption> 
@@ -1100,7 +1070,7 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">include-entry-point</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>include-entry-point</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">1..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A possible method for delivery.</p></td> 
      </tr> 
@@ -1108,41 +1078,32 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="reflection-entry-point-resolver"><a class="anchor" href="#reflection-entry-point-resolver"></a>Reflection entry point resolver</h3> 
+   <h3 id="reflection-entry-point-resolver"><a class="anchor" href="#reflection-entry-point-resolver"></a>Reflection Entry Point Resolver</h3> 
    <div class="paragraph"> 
     <p>Generates a list of candidate methods from the component via reflections. This element can be set on the model or component; the model value provides a default that individual component values can override. This element can also be used directly or as part of a set of resolvers; the resolvers in a set are used in turn until one is successful.</p> 
    </div> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 8. Attributes of &lt;reflection-entry-point-resolver…​&gt; 
     </caption> 
     <colgroup> 
      <col style="width: %;"> 
      <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">acceptVoidMethods</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>acceptVoidMethods</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-   <table class="tableblock frame-all grid-all" style="width: 70%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 9. Child Elements of &lt;reflection-entry-point-resolver…​&gt; 
     </caption> 
@@ -1160,12 +1121,12 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exclude-object-methods</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exclude-object-methods</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">If specified, methods in the Java Object interface are not included in the list of possible methods that can receive the message.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exclude-entry-point</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exclude-entry-point</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Explicitly excludes a named method from receiving the message.</p></td> 
      </tr> 
@@ -1173,48 +1134,36 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="array-entry-point-resolver"><a class="anchor" href="#array-entry-point-resolver"></a>Array entry point resolver</h3> 
+   <h3 id="array-entry-point-resolver"><a class="anchor" href="#array-entry-point-resolver"></a>Array Entry Point Resolver</h3> 
    <div class="paragraph"> 
     <p>Delivers the message to a method that takes a single array as argument. This element can be set on the model or component; the model value provides a default that individual component values can override. This element can also be used directly or as part of a set of resolvers; the resolvers in a set are used in turn until one is successful.</p> 
    </div> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 10. Attributes of &lt;array-entry-point-resolver…​&gt; 
     </caption> 
     <colgroup> 
      <col style="width: %;"> 
      <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">acceptVoidMethods</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>acceptVoidMethods</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">hether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enableDiscovery</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If no method names are configured, attempts to discover the method to invoke based on the inbound message type.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>enableDiscovery</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If no method names are configured, attempts to discover the method to invoke based on the inbound message type.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>true</code></p></td> 
      </tr> 
     </tbody> 
    </table> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 11. Child Elements of &lt;array-entry-point-resolver…​&gt; 
     </caption> 
@@ -1232,17 +1181,17 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exclude-object-methods</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exclude-object-methods</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">If specified, methods in the Java Object interface are not included in the list of possible methods that can receive the message.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exclude-entry-point</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exclude-entry-point</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Explicitly excludes a named method from receiving the message.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">include-entry-point</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>include-entry-point</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A possible method for delivery.</p></td> 
      </tr> 
@@ -1250,48 +1199,36 @@
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="no-arguments-entry-point-resolver"><a class="anchor" href="#no-arguments-entry-point-resolver"></a>No arguments entry point resolver</h3> 
+   <h3 id="no-arguments-entry-point-resolver"><a class="anchor" href="#no-arguments-entry-point-resolver"></a>No Arguments Entry Point Resolver</h3> 
    <div class="paragraph"> 
     <p>Calls a method without arguments (the message is not passed to the component).</p> 
    </div> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 12. Attributes of &lt;no-arguments-entry-point-resolver…​&gt; 
     </caption> 
     <colgroup> 
      <col style="width: %;"> 
      <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">acceptVoidMethods</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>acceptVoidMethods</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the resolver should call void methods. By default, void methods are not considered as possible candidates for message delivery.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enableDiscovery</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If no method names are configured, attempts to discover the method to invoke based on the inbound message type.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>enableDiscovery</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If no method names are configured, attempts to discover the method to invoke based on the inbound message type.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>true</code></p></td> 
      </tr> 
     </tbody> 
    </table> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 13. Child Elements of &lt;no-arguments-entry-point-resolver…​&gt; 
     </caption> 
@@ -1309,17 +1246,17 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exclude-object-methods</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exclude-object-methods</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">If specified, methods in the Java Object interface are not included in the list of possible methods that can receive the message.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exclude-entry-point</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exclude-entry-point</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Explicitly excludes a named method from receiving the message.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">include-entry-point</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>include-entry-point</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A possible method for delivery.</p></td> 
      </tr> 
@@ -1331,33 +1268,24 @@
    <div class="paragraph"> 
     <p>A possible method for delivery.</p> 
    </div> 
-   <table class="tableblock frame-all grid-all" style="width: 90%;"> 
+   <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
       Table 14. Attributes of &lt;include-entry-point…​&gt; 
     </caption> 
     <colgroup> 
      <col style="width: %;"> 
      <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the method.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>method</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the method.<br> <strong>Type</strong>: <code>name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 

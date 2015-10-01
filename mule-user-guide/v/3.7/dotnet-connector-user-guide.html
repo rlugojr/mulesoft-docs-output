@@ -960,8 +960,8 @@
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 50%;"> 
-     <col style="width: 50%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -971,88 +971,28 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><code>MessagePart.FromQuery</code></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Query strings collection</p> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MessagePart.FromQuery</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Query strings collection</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><code>MessagePart.FromBody</code></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Mule message’s payload</p> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MessagePart.FromBody</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule message’s payload</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><code>MessagePart.FromInboundProperty</code></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Inbound property collection</p> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MessagePart.FromInboundProperty</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Inbound property collection</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><code>MessagePart.FromInvocationProperty</code></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Invocation property collection</p> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MessagePart.FromInvocationProperty</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Invocation property collection</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><code>MessagePart.FromOutboundProperty</code></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Outbound property collection</p> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MessagePart.FromOutboundProperty</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Outbound property collection</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><code>MessagePart.FromSessionProperty</code></p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Session property collection</p> 
-        </div> 
-       </div></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MessagePart.FromSessionProperty</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Session property collection</p></td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1162,13 +1102,19 @@
    <div class="sect3"> 
     <h4 id="packaged-assemblies"><a class="anchor" href="#packaged-assemblies"></a>Packaged Assemblies</h4> 
     <div class="paragraph"> 
-     <p>For packaged assemblies, the deployment strategy is a bit different. Replace the existing .NET assembly located under the folder <code>AnypointStudio/.mule/apps/[applicationName]/classes</code> with the new version. Use the new assembly version after redeploying the application in Mule.</p> 
+     <p>For packaged assemblies, the deployment strategy is a bit different. Replace the existing .NET assembly located under the folder <code>AnypointStudio/.mule/apps/applicationName/classes</code> is with the new version. (Substitute your application’s name for <em>applicationName</em>.) Use the new assembly version after redeploying the application in Mule.</p> 
     </div> 
     <div class="paragraph"> 
      <p>Log the following message:</p> 
     </div> 
     <div class="paragraph"> 
-     <p>NET assembly location:<br> <code>[path to Anypoint Studio]/.mule/apps/[applicationName]/classes/[assembly name]</code></p> 
+     <p>NET assembly location:</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p><code>/studio_path/.mule/apps/application_name/classes/assembly_name</code></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Substitute <em>studio_path</em>, <em>application_name</em>, <em>assembly_name</em> with the path to where you installed Anypoint Studio, the name of your application, and the name of your assembly.</p> 
     </div> 
     <div class="paragraph"> 
      <p>Use this path to deploy the new .NET assembly.</p> 
@@ -1187,7 +1133,7 @@
  <h2 id="assembly-configuration"><a class="anchor" href="#assembly-configuration"></a>Assembly Configuration</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>For .NET assemblies that you reference from within a Mule flow, you can access configuration settings defined in .NET configuration files using the standard&nbsp;<code>System.Configuration</code>&nbsp;classes such as ConfigurationManager. The naming of configuration files for assemblies follows the convention for class libraries, where the name is in the form:&nbsp;<code>[AssemblyName].dll.config</code>.</p> 
+   <p>For .NET assemblies that you reference from within a Mule flow, you can access configuration settings defined in .NET configuration files using the standard&nbsp;<code>System.Configuration</code>&nbsp;classes such as ConfigurationManager. The naming of configuration files for assemblies follows the convention for class libraries, where the name is in the form:&nbsp;<code>assembly_name.dll.config</code> - replace <em>assembly_name</em> with the name of your assembly.</p> 
   </div> 
   <div class="paragraph"> 
    <p>If you use a configuration file for your assembly, add the configuration file to the <code>resources</code> folder for the Mule application (<code>src/main/resources</code>). This is the same location to which you deploy the assembly itself if you choose the package deployment model. When referencing an assembly hosted in the Global Assembly Cache (GAC), Mule also checks the resources directory for a matching assembly configuration file:&nbsp;</p> 
@@ -1222,16 +1168,12 @@
      <li> <p><strong>Package</strong>: An assembly embedded as an application resource. Add the assembly as an application resource by copying it to the <code>src/main/resources</code> folder under the application directory:</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/assembly_reference.png" alt="assembly_reference"></span></p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>Specify the assembly’s partial name <code>[Namespace.ClassName], [Assembly]</code> and the name of the assembly as the <strong>Assembly Path</strong>.</p> 
       </div> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Specify the assembly’s partial name <code>[Namespace.ClassName], [Assembly]</code> and the name of the assembly as the <strong>Assembly Path</strong>.</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
      <li> <p><strong>External</strong> : You can reference an external assembly. Specify the Assembly partial name <code>[Namespace.ClassName], [Assembly]</code> and the absolute path to the external assembly as the <strong>Assembly Path</strong>.</p> </li> 
-     <li> <p><strong>GAC</strong> : Assembly installed in the GAC (Global Assembly Cache). To reference an assembly installed in the GAC, use the <code>Assembly Fully Qualified Name: [Namespace.ClassName], [Assembly], [Version], [Culture], [PublicKey]</code> and leave the assembly path empty.&nbsp;For more information, see: <a href="http://msdn.microsoft.com/en-us/library/dkkx7f79%28v=vs.110%29.aspx">http://msdn.microsoft.com/en-us/library/dkkx7f79(v=vs.110).aspx</a></p> </li> 
+     <li> <p><strong>GAC</strong> : Assembly installed in the GAC (Global Assembly Cache). To reference an assembly installed in the GAC, use the <code>Assembly Fully Qualified Name: [Namespace.ClassName], [Assembly], [Version], [Culture], [PublicKey]</code> and leave the assembly path empty.&nbsp;For more information, see: <a href="http://msdn.microsoft.com/en-us/library/dkkx7f79%28v=vs.110%29.aspx">How to: Install an Assembly into the Global Assembly Cache</a></p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -1241,7 +1183,7 @@
  <h2 id="creating-a-net-global-element"><a class="anchor" href="#creating-a-net-global-element"></a>Creating a .NET Global Element</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A Mule <a href="/mule-fundamentals/v/3.7/global-elements">Global Element</a> allows you to define connector parameters once, then reference the same set of parameters from any number of individual connectors in your application. In this example, we create a .NET global element which will be referenced by the .NET connector in our application’s flow.</p> 
+   <p>A Mule <a href="/mule-fundamentals/v/3.7/global-elements">Global Element</a> allows you to define connector parameters once, then reference the same set of parameters from any number of individual connectors in your application. In this example, we create a .NET global element which is referenced by the .NET connector in our application’s flow.</p> 
   </div> 
   <div class="paragraph"> 
    <p>To create and configure a .NET global element, follow these steps:</p> 
@@ -1254,11 +1196,14 @@
     <li> <p>There are four types of Global Elements available for the .NET connector. &nbsp;Enter the values for the required parameters as described below.</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
-       <li> <p><strong>GAC Assembly:</strong> Used for selecting an assembly installed in the GAC <strong>(<a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">http://msdn.microsoft.com/en-us/library/yf1d93sz(v=vs.110).aspx</a>).</strong> Enter the values for the element as shown below:</p> 
+       <li> <p><strong>GAC Assembly:</strong> Used for selecting an assembly installed in the GAC (<a href="http://msdn.microsoft.com/en-us/library/yf1d93sz%28v=vs.110%29.aspx">Global Assembly Cache</a>.</p> 
+        <div class="paragraph"> 
+         <p>Enter the values for the element as shown below:</p> 
+        </div> 
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/GAC.png" alt="GAC"></span></p> 
         </div> 
-        <table class="tableblock frame-all grid-all" style="width: 80%;"> 
+        <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
           <col style="width: %;"> 
           <col style="width: %;"> 
@@ -1300,7 +1245,7 @@
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/Legacy.png" alt="Legacy"></span></p> 
         </div> 
-        <table class="tableblock frame-all grid-all" style="width: 50%;"> 
+        <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
           <col style="width: %;"> 
           <col style="width: %;"> 
@@ -1346,7 +1291,7 @@
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/External_Assembly_1.png" alt="External_Assembly_1"></span></p> 
         </div> 
-        <table class="tableblock frame-all grid-all" style="width: 50%;"> 
+        <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
           <col style="width: %;"> 
           <col style="width: %;"> 
@@ -1385,7 +1330,7 @@
          </tbody> 
         </table> </li> 
        <li> <p><strong>Project Resource</strong>: Used for selecting a project embedded as an assembly external to the application.&nbsp;Enter the values for the element as shown below:&nbsp; <br> <span class="image"><img src="./_images/project_resource.png" alt="project_resource"></span></p> 
-        <table class="tableblock frame-all grid-all" style="width: 50%;"> 
+        <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
           <col style="width: %;"> 
           <col style="width: %;"> 
@@ -1485,8 +1430,18 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p><strong>Mule Runtime 3.5</strong>: Uses log4j and logging is enabled and configured using the standard <em>log4j.properties</em> file that should be placed in the same directory as your Mule application. Add the DotNet Connector to the log4j.properties file and set it to “debug”: <em>log4j.logger.org.mule.modules.dotnet.jni.DotNetBridge=debug</em></p> </li> 
-     <li> <p><strong>Mule Runtime 3.6:</strong> Uses log4j2 and logging is enabled and configured using the log4j2.xml file that should be placed in the same directory as your Mule application. Add the DotNet Connector to the log4j2.xml file and set it to “debug”:&nbsp; &lt;Logger name="org.mule.modules.dotnet.jni.DotNetBridge" level="DEBUG"&gt; &lt;/Logger&gt;</p> </li> 
+     <li> <p><strong>Mule Runtime 3.5</strong>: Uses log4j and logging is enabled and configured using the standard <em>log4j.properties</em> file that should be placed in the same directory as your Mule application. Add the DotNet Connector to the log4j.properties file and set it to “debug”:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="code">log4j.logger.org.mule.modules.dotnet.jni.DotNetBridge=debug</code></pre> 
+       </div> 
+      </div> </li> 
+     <li> <p><strong>Mule Runtime 3.6:</strong> Uses log4j2 and logging is enabled and configured using the log4j2.xml file that should be placed in the same directory as your Mule application. Add the DotNet Connector to the log4j2.xml file and set it to “debug”:&nbsp;</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;Logger</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.modules.dotnet.jni.DotNetBridge</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">DEBUG</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> <span class="tag">&lt;/Logger&gt;</span></code></pre> 
+       </div> 
+      </div> </li> 
     </ul> 
    </div> 
    <div class="admonitionblock warning"> 
@@ -1498,15 +1453,35 @@
         <div class="paragraph"> 
          <p>In this case we’re using the Appender named Console which writes to the Mule Console. You can add it to the Appenders section:</p> 
         </div> 
-        <div class="paragraph"> 
-         <p>&lt;Appenders&gt;<br> &lt;Console name="Console" target="SYSTEM_OUT"&gt;<br> &lt;PatternLayout pattern="%-5p %d [%t] %c: %m%n"/&gt;<br> &lt;/Console&gt;<br> &lt;/Appenders&gt;</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+               <td class="code"><pre><span class="tag">&lt;Appenders&gt;</span>
+<span class="tag">&lt;Console</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Console</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">SYSTEM_OUT</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;PatternLayout</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">%-5p %d [%t] %c: %m%n</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/Console&gt;</span>
+<span class="tag">&lt;/Appenders&gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
         </div> </td> 
       </tr> 
      </tbody> 
     </table> 
    </div> 
    <div class="paragraph"> 
-    <p><strong>Using the MuleLogger in your .NET code:</strong><br> You can access the MuleLogger through the <em>MuleContext.Current.Logger</em> property.&nbsp;The MuleLogger provides 2 methods for writing logs:</p> 
+    <p><strong>Using the MuleLogger in your .NET code:</strong><br> You can access the MuleLogger through the <code>MuleContext.Current.Logger</code> property.&nbsp;The MuleLogger provides 2 methods for writing logs:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
@@ -1524,56 +1499,90 @@
     <p>To enable notifications you must add the &lt;notifications&gt; element in your Mule configuration file:&nbsp;</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The .NET connector only fires notifications when an instance of the <em>DotNetConnectorNotificationListener</em> is registered. You must create your own Notification Listener and extend the DotNetConnectorNotificationListener.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The DotNetNotification contain the following registered actions:</p> 
+    <p>The .NET connector only fires notifications when an instance of the <code>DotNetConnectorNotificationListener</code> is registered. You must create your own Notification Listener and extend <code>DotNetConnectorNotificationListener</code>. <code>DotNetNotification</code> contains the following registered actions:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p><strong>DOTNET_ARGUMENT_MAPPING_START</strong> : Fired when the argument mapping strategy has started</p> </li> 
-     <li> <p><strong>DOTNET_ARGUMENT_MAPPING_STOP</strong> : Fired when the argument mapping strategy has ended</p> </li> 
-     <li> <p><strong>DOTNET_METHOD_START</strong> : Fired when the execution of the .NET has started</p> </li> 
-     <li> <p><strong>DOTNET_METHOD_STOP</strong> : Fired when the execution of the .NET has ended&nbsp;</p> </li> 
+     <li> <p><code>DOTNET_ARGUMENT_MAPPING_START</code>: Fired when the argument mapping strategy starts</p> </li> 
+     <li> <p><code>DOTNET_ARGUMENT_MAPPING_STOP</code>: Fired when the argument mapping strategy ends</p> </li> 
+     <li> <p><code>DOTNET_METHOD_START</code>: Fired when the .NET execution starts</p> </li> 
+     <li> <p><code>DOTNET_METHOD_STOP</code>: Fired when the .NET execution ends</p> </li> 
     </ul> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="dataweave"><a class="anchor" href="#dataweave"></a>DataWeave</h3> 
    <div class="paragraph"> 
-    <p>The .NET connector supports data weave allowing the user to transform the output to any kind of format (XML, CSV, JSON, Pojos, Maps, etc).</p> 
+    <p>The .NET connector supports DataWeave allowing the user to transform the output to any kind of format (XML, CSV, JSON, Pojos, Maps, etc).</p> 
    </div> 
    <div class="paragraph"> 
-    <p><strong>The .NET Connector describes its output as a Map:</strong></p> 
+    <p>The .NET connector describes its output as a <code>Map</code>:</p> 
    </div> 
    <div class="paragraph"> 
-    <p>+ <span class="image"><img src="./_images/dotnet_output.png" alt="dotnet_output"></span></p> 
+    <p><span class="image"><img src="./_images/dotnet_output.png" alt="dotnet_output"></span></p> 
    </div> 
    <div class="paragraph"> 
-    <p>+</p> 
+    <p>Use the .NET connector’s output in DataWeave to transform the message’s payload:</p> 
    </div> 
    <div class="paragraph"> 
-    <p><strong>Use the .NET Connector’s output in Data Weave to transform the message’s payload:</strong></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>+ <span class="image"><img src="./_images/dotnet_dataweave.png" alt="dotnet_dataweave"></span></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>+</p> 
+    <p><span class="image"><img src="./_images/dotnet_dataweave.png" alt="dotnet_dataweave"></span></p> 
    </div> 
    <div class="paragraph"> 
     <p><strong>Transformed output:</strong></p> 
    </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 100%;"> 
-    </colgroup> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;?xml version='1.0' encoding='UTF-8'?&gt;<br> &lt;weather&gt; &lt;item id="1"&gt; &lt;name&gt;Thunder Storms&lt;/name&gt; &lt;icon&gt;<a href="http://ws.cdyne.com/WeatherWS/Images/thunderstorms.gif</icon>" class="bare">http://ws.cdyne.com/WeatherWS/Images/thunderstorms.gif&lt;/icon&gt;</a>; &lt;/item&gt; &lt;item id="2"&gt; &lt;name&gt;Partly Cloudy&lt;/name&gt; &lt;icon&gt;<a href="http://ws.cdyne.com/WeatherWS/Images/partlycloudy.gif</icon>" class="bare">http://ws.cdyne.com/WeatherWS/Images/partlycloudy.gif&lt;/icon&gt;</a>; &lt;/item&gt; &lt;item id="3"&gt; &lt;name&gt;Mostly Cloudy&lt;/name&gt; &lt;icon&gt;<a href="http://ws.cdyne.com/WeatherWS/Images/mostlycloudy.gif</icon>" class="bare">http://ws.cdyne.com/WeatherWS/Images/mostlycloudy.gif&lt;/icon&gt;</a>; &lt;/item&gt; &lt;item id="4"&gt; &lt;name&gt;Sunny&lt;/name&gt; &lt;icon&gt;<a href="http://ws.cdyne.com/WeatherWS/Images/sunny.gif</icon>" class="bare">http://ws.cdyne.com/WeatherWS/Images/sunny.gif&lt;/icon&gt;</a>; &lt;/item&gt; …​ &lt;/weather&gt;</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version='1.0' encoding='UTF-8'?&gt;</span> +
+<span class="tag">&lt;weather&gt;</span>
+  <span class="tag">&lt;item</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;name&gt;</span>Thunder Storms<span class="tag">&lt;/name&gt;</span>
+    <span class="tag">&lt;icon&gt;</span>http://ws.cdyne.com/WeatherWS/Images/thunderstorms.gif<span class="tag">&lt;/icon&gt;</span>
+  <span class="tag">&lt;/item&gt;</span>
+  <span class="tag">&lt;item</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">2</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;name&gt;</span>Partly Cloudy<span class="tag">&lt;/name&gt;</span>
+    <span class="tag">&lt;icon&gt;</span>http://ws.cdyne.com/WeatherWS/Images/partlycloudy.gif<span class="tag">&lt;/icon&gt;</span>
+  <span class="tag">&lt;/item&gt;</span>
+  <span class="tag">&lt;item</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">3</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;name&gt;</span>Mostly Cloudy<span class="tag">&lt;/name&gt;</span>
+    <span class="tag">&lt;icon&gt;</span>http://ws.cdyne.com/WeatherWS/Images/mostlycloudy.gif<span class="tag">&lt;/icon&gt;</span>
+  <span class="tag">&lt;/item&gt;</span>
+  <span class="tag">&lt;item</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">4</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;name&gt;</span>Sunny<span class="tag">&lt;/name&gt;</span>
+    <span class="tag">&lt;icon&gt;</span>http://ws.cdyne.com/WeatherWS/Images/sunny.gif<span class="tag">&lt;/icon&gt;</span>
+  <span class="tag">&lt;/item&gt;</span>
+  ...
+<span class="tag">&lt;/weather&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
  </div> 
 </div> 
