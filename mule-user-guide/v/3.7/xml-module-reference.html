@@ -888,10 +888,10 @@
    <p>In 2013, the World Wide Web Consotium (<a href="http://www.w3.org">W3C</a>) published a new spec for version 3.0 of the XPath XQuery and XSLT standards. The new version of the standards is at "last call" status, and therefore highly unlikely to undergo major changes.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Mule 3.6.0 and later versions provide basic support for version 3.0 of the standards. "Basic support" means that any feature of the spec is supported as long as it doesn’t rely on schema awareness, high order functions, or streaming.</p> 
+   <p>Mule 3.6.0 and newer versions provide basic support for version 3.0 of the standards. "Basic support" means that any feature of the spec is supported as long as it doesn’t rely on schema awareness, high order functions, or streaming.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Mule 3.6.0 and later versions also provide improved support for XPath 2.0, XSLT 2.0 and XQuery 1.0.</p> 
+   <p>Mule 3.6.0 and newer versions also provide improved support for XPath 2.0, XSLT 2.0 and XQuery 1.0.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="important-changes-in-mule-3-6-0"><a class="anchor" href="#important-changes-in-mule-3-6-0"></a>Important Changes in Mule 3.6.0</h3> 
@@ -901,60 +901,26 @@
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 40%;"> 
+     <col style="width: 80%;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Component</th> 
-      <th class="tableblock halign-left valign-top">Version</th> 
-      <th class="tableblock halign-left valign-top">Supported</th> 
       <th class="tableblock halign-left valign-top">Changes in Mule 3.6.0</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-center valign-top" rowspan="3"><p class="tableblock">XPath</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td> 
-      <td class="tableblock halign-center valign-top" rowspan="3"><p class="tableblock">Deprecated in 3.6.0 (supported until Mule 4.0): * <code>xpath2()</code> function, superseded by the <a href="/mule-user-guide/v/3.7/xpath">xpath3()</a> function * JXPath extractor * JXPath filter * Jaxen filter New function: <a href="/mule-user-guide/v/3.7/xpath">xpath3()</a>, which includes improved return type handling. For details, see <a href="/mule-user-guide/v/3.7/xpath">XPath</a>.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">XPath</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated in Mule 3.6.0 (supported until Mule 4.0):<br> </p><p class="tableblock">- <code>xpath2()</code> function, superseded by the <a href="/mule-user-guide/v/3.7/xpath">xpath3()</a> function<br> - <code>JXPath</code> extractor<br> - <code>JXPath</code> filter<br> - <code>Jaxen</code> filter<br> </p><p class="tableblock">New function: <a href="/mule-user-guide/v/3.7/xpath">xpath3()</a>, which includes improved return type handling. For details, see <a href="/mule-user-guide/v/3.7/xpath">XPath</a>.<br> <strong>Version 1</strong> - Not Supported<br> <strong>Version 2</strong> - Supported<br> <strong>Version 3</strong> - Supported</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">XQuery</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The&nbsp;<a href="/mule-user-guide/v/3.7/xslt-transformer">XSLT Transformer</a> now supports XSLT 3.0. The transformer’s behavior and syntax remain unaltered, and you can manually select which XSLT version your transformer should use. For details, see the&nbsp;<a href="/mule-user-guide/v/3.7/xslt-transformer">XSLT Transformer</a> documentation.<br> <strong>Version 1</strong> - Supported<br> <strong>Version 2</strong> - Supported<br> <strong>Version 3</strong> - Supported</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-center valign-top" rowspan="3"><p class="tableblock">XQuery</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-      <td class="tableblock halign-center valign-top" rowspan="3"><p class="tableblock">The&nbsp;<a href="/mule-user-guide/v/3.7/xslt-transformer">XSLT Transformer</a> now supports XSLT 3.0. The transformer’s behavior and syntax remain unaltered, and you can manually select which XSLT version your transformer should use. For details, see the&nbsp;<a href="/mule-user-guide/v/3.7/xslt-transformer">XSLT Transformer</a> documentation.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-center valign-top" rowspan="3"><p class="tableblock">XSLT</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-      <td class="tableblock halign-center valign-top" rowspan="3"><p class="tableblock">The <a href="/mule-user-guide/v/3.7/xquery-transformer">XQuery Transformer</a> now supports XQuery 3.0. The transformer’s behavior and syntax remain unaltered, and you can manually select which XQuery version your transformer should use. For details, see <a href="/mule-user-guide/v/3.7/xquery-transformer">XQuery Transformer</a> and <a href="/mule-user-guide/v/3.7/xquery-support">XQuery Support</a>.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">XSLT</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="/mule-user-guide/v/3.7/xquery-transformer">XQuery Transformer</a> now supports XQuery 3.0. The transformer’s behavior and syntax remain unaltered, and you can manually select which XQuery version your transformer should use. For details, see <a href="/mule-user-guide/v/3.7/xquery-transformer">XQuery Transformer</a> and <a href="/mule-user-guide/v/3.7/xquery-support">XQuery Support</a>.<br> <strong>Version 1</strong> - Supported<br> <strong>Version 2</strong> - Supported<br> <strong>Version 3</strong> - Supported</p></td> 
      </tr> 
     </tbody> 
    </table> 
@@ -979,7 +945,7 @@
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>Any transformer that accepts XML as an input will also understand these types.</p> 
+   <p>Any transformer that accepts XML as an input also understands these types.</p> 
   </div> 
  </div> 
 </div> 
@@ -1047,11 +1013,30 @@
    <div class="paragraph"> 
     <p>For example, here is an XSLT transformer set up to use DelayedResult:</p> 
    </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;mxml:xslt-transformer</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">transform-in</span><span class="delimiter">"</span></span>
+ <span class="attribute-name">xsl-file</span>=<span class="string"><span class="delimiter">"</span><span class="content">xslt/transform.xslt</span><span class="delimiter">"</span></span>
+ <span class="attribute-name">returnClass</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.module.xml.transformer.DelayedResult</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
    <div class="paragraph"> 
     <p>If the result of this transformation were being sent to an HTTP client, the HTTP client would ask Mule for an OutputHandler and pass in the OutputStream to it. Only then would Mule perform the transformation, writing the output directly to the OutputStream.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>If DelayedResult were not used, the XML result would first be written to an in-memory buffer before being written to the OutputStream. This will cause your XML processing to be slower.</p> 
+    <p>If DelayedResult were not used, the XML result would first be written to an in-memory buffer before being written to the OutputStream. This causes your XML processing to be slower.</p> 
    </div> 
   </div> 
  </div> 
@@ -1080,6 +1065,37 @@
    <div class="paragraph"> 
     <p>The following configuration routes messages to the "vm://echo" endpoint when the value of "/e:purchaseOrder/e:shipTo/@country" is "US".</p> 
    </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;outbound&gt;</span>
+  <span class="tag">&lt;filtering-router&gt;</span>
+    <span class="tag">&lt;outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://echo</span><span class="delimiter">"</span></span> <span class="attribute-name">synchronous</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;mule-xml:xpath-filter</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">/e:purchaseOrder/e:shipTo/@country</span><span class="delimiter">"</span></span> <span class="attribute-name">expectedValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">US</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;mule-xml:namespace</span> <span class="attribute-name">prefix</span>=<span class="string"><span class="delimiter">"</span><span class="content">e</span><span class="delimiter">"</span></span> <span class="attribute-name">uri</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.example.com</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/mule-xml:xpath-filter&gt;</span>
+  <span class="tag">&lt;/filtering-router&gt;</span>
+  ...
+<span class="tag">&lt;/outbound&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="schema-validation-filter"><a class="anchor" href="#schema-validation-filter"></a>Schema Validation Filter</h3> 
@@ -1087,13 +1103,28 @@
     <p>The schema validation filter uses the JAXP libraries to validate your message against a schema.&nbsp;</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The following configuration will validate your message against a schema called <code>schema.xsd</code> and a schema called <code>anotherSchema.xsd</code>.</p> 
+    <p>The following configuration validates your message against a schema called <code>schema.xsd</code> and a schema called <code>anotherSchema.xsd</code>.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;mule-xml:schema-validation-filter</span> <span class="attribute-name">schemaLocations</span>=<span class="string"><span class="delimiter">"</span><span class="content">com/myapp/schemas/schema.xsd, com/myapp/schemas/anotherSchema.xsd</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="jaxen-filter"><a class="anchor" href="#jaxen-filter"></a>Jaxen Filter</h3> 
    <div class="paragraph"> 
-    <p><em>*Deprecated*</em></p> 
+    <p><strong><em>Deprecated</em></strong></p> 
    </div> 
    <div class="admonitionblock note"> 
     <table> 
@@ -1117,11 +1148,42 @@
    <div class="paragraph"> 
     <p>The following configuration routes messages to the "vm://echo" endpoint when the value of "/e:purchaseOrder/e:shipTo/@country" is "US".</p> 
    </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;outbound&gt;</span>
+  <span class="tag">&lt;filtering-router&gt;</span>
+    <span class="tag">&lt;outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://echo</span><span class="delimiter">"</span></span> <span class="attribute-name">synchronous</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;mule-xml:jaxen-filter</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">/e:purchaseOrder/e:shipTo/@country</span><span class="delimiter">"</span></span> <span class="attribute-name">expectedValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">US</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;mule-xml:namespace</span> <span class="attribute-name">prefix</span>=<span class="string"><span class="delimiter">"</span><span class="content">e</span><span class="delimiter">"</span></span> <span class="attribute-name">uri</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.example.com</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/mule-xml:jaxen-filter&gt;</span>
+  <span class="tag">&lt;/filtering-router&gt;</span>
+  ...
+<span class="tag">&lt;/outbound&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="jxpath-filter"><a class="anchor" href="#jxpath-filter"></a>JXPath Filter</h3> 
    <div class="paragraph"> 
-    <p><em>*Deprecated*</em></p> 
+    <p><strong><em>Deprecated</em></strong></p> 
    </div> 
    <div class="admonitionblock note"> 
     <table> 
@@ -1141,6 +1203,39 @@
    </div> 
    <div class="paragraph"> 
     <p>The JXPath filter is very similar to the Jaxen filter. It is still used for historical purposes (it existed before the Jaxen filter).</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;outbound&gt;</span>
+  <span class="tag">&lt;filtering-router&gt;</span>
+    <span class="tag">&lt;outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://echo</span><span class="delimiter">"</span></span> <span class="attribute-name">synchronous</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;mule-xml:jxpath-filter</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">/e:purchaseOrder/e:shipTo/@country</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">expectedValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">US</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;mule-xml:namespace</span> <span class="attribute-name">prefix</span>=<span class="string"><span class="delimiter">"</span><span class="content">e</span><span class="delimiter">"</span></span> <span class="attribute-name">uri</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.example.com</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/mule-xml:jxpath-filter&gt;</span>
+  <span class="tag">&lt;/filtering-router&gt;</span>
+    ...
+<span class="tag">&lt;/outbound&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
   </div> 
  </div> 

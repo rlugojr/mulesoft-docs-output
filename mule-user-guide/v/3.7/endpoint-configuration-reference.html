@@ -880,7 +880,7 @@
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
       <td class="content"> 
        <div class="paragraph"> 
-        <p>This page discusses the configuration of the flow-level inbound and outbound endpoints, which are the flow-level elements of endpoint-based Anypoint Connectors. Note that none of the information on this page applies for operation-based connectors. Please see <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a> for more information about connectors in general.</p> 
+        <p>This page discusses the configuration of the flow-level inbound and outbound endpoints, which are the flow-level elements of endpoint-based Anypoint Connectors. Note that none of the information on this page applies for operation-based connectors. See <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a> for more information about connectors in general.</p> 
        </div> </td> 
      </tr> 
     </tbody> 
@@ -906,7 +906,7 @@
    </colgroup> 
    <thead> 
     <tr> 
-     <th class="tableblock halign-left valign-top"><strong>URI-style Endpoints</strong></th> 
+     <th class="tableblock halign-left valign-top"><strong>URI-Style Endpoints</strong></th> 
     </tr> 
    </thead> 
    <tbody> 
@@ -953,7 +953,7 @@
    </colgroup> 
    <thead> 
     <tr> 
-     <th class="tableblock halign-left valign-top"><strong>Transport-specific Endpoints</strong></th> 
+     <th class="tableblock halign-left valign-top"><strong>Transport-Specific Endpoints</strong></th> 
     </tr> 
    </thead> 
    <tbody> 
@@ -1084,7 +1084,7 @@
    </colgroup> 
    <thead> 
     <tr> 
-     <th class="tableblock halign-left valign-top"><strong>Specifying a connector</strong></th> 
+     <th class="tableblock halign-left valign-top"><strong>Specifying a Connector</strong></th> 
     </tr> 
    </thead> 
    <tbody> 
@@ -1126,7 +1126,7 @@
    </colgroup> 
    <thead> 
     <tr> 
-     <th class="tableblock halign-left valign-top"><strong>Setting properties</strong></th> 
+     <th class="tableblock halign-left valign-top"><strong>Setting Properties</strong></th> 
     </tr> 
    </thead> 
    <tbody> 
@@ -1180,7 +1180,7 @@
    </colgroup> 
    <thead> 
     <tr> 
-     <th class="tableblock halign-left valign-top"><strong>Transaction example</strong></th> 
+     <th class="tableblock halign-left valign-top"><strong>Transaction Example</strong></th> 
     </tr> 
    </thead> 
    <tbody> 
@@ -1224,7 +1224,7 @@
    </colgroup> 
    <thead> 
     <tr> 
-     <th class="tableblock halign-left valign-top"><strong>Encoding example</strong></th> 
+     <th class="tableblock halign-left valign-top"><strong>Encoding Example</strong></th> 
     </tr> 
    </thead> 
    <tbody> 
@@ -1233,17 +1233,7 @@
       <div> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="xml">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
-</pre></td> 
-              <td class="code"><pre><span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcp://localhost:65432</span><span class="delimiter">"</span></span> <span class="attribute-name">encoding</span>=<span class="string"><span class="delimiter">"</span><span class="content">iso-8859-1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
+         <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcp://localhost:65432</span><span class="delimiter">"</span></span> <span class="attribute-name">encoding</span>=<span class="string"><span class="delimiter">"</span><span class="content">iso-8859-1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
         </div> 
        </div> 
       </div></td> 
@@ -1256,7 +1246,7 @@
  <h2 id="mimetype"><a class="anchor" href="#mimetype"></a>MimeType</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This is the mime type associated with an endpoint’s messages. When set on an inbound endpoint, it indicates the type of message expected for incoming messages. Receiving a message with a different mime type will result in an exception. When set on an outbound endpoint, the result is to set that mime type on all outgoing messages.</p> 
+   <p>This is the MIME type associated with an endpoint’s messages. When set on an inbound endpoint, it indicates the type of message expected for incoming messages. Receiving a message with a different mime type results in an exception. When set on an outbound endpoint, the result is to set that mime type on all outgoing messages.</p> 
   </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
@@ -1264,7 +1254,7 @@
    </colgroup> 
    <thead> 
     <tr> 
-     <th class="tableblock halign-left valign-top"><strong>MimeType example</strong></th> 
+     <th class="tableblock halign-left valign-top"><strong>MimeType Example</strong></th> 
     </tr> 
    </thead> 
    <tbody> 
@@ -1273,17 +1263,7 @@
       <div> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="xml">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
-</pre></td> 
-              <td class="code"><pre><span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcp://localhost:65432</span><span class="delimiter">"</span></span> <span class="attribute-name">mimeType</span>=<span class="string"><span class="delimiter">"</span><span class="content">text/xml</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
+         <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcp://localhost:65432</span><span class="delimiter">"</span></span> <span class="attribute-name">mimeType</span>=<span class="string"><span class="delimiter">"</span><span class="content">text/xml</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
         </div> 
        </div> 
       </div></td> 
@@ -1304,7 +1284,7 @@
    </colgroup> 
    <thead> 
     <tr> 
-     <th class="tableblock halign-left valign-top"><strong>MimeType example</strong></th> 
+     <th class="tableblock halign-left valign-top"><strong>MimeType Example</strong></th> 
     </tr> 
    </thead> 
    <tbody> 
@@ -1347,7 +1327,7 @@
    </tbody> 
   </table> 
   <div class="paragraph"> 
-   <p>If something later in the flow throws an exception, the file won’t be consumed, and will be reprocessed. The idempotent-redelivery-policy ensures that it won’t be reprocessed more then 3 times; after that, it will be send to <code>vm:error-queue</code>, where it can be handled as an error case.</p> 
+   <p>If something later in the flow throws an exception, the file won’t be consumed, and is reprocessed. The idempotent-redelivery-policy ensures that it won’t be reprocessed more then 3 times; after that, it’s sent to <code>vm:error-queue</code>, where it can be handled as an error case.</p> 
   </div> 
  </div> 
 </div> 
@@ -1368,13 +1348,13 @@
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>You can put any number of these message processors as child elements on an endpoint (inbound or outbound), and they will get applied in the order in which they are listed to any message passing through that endpoint.</p> 
+   <p>You can put any number of these message processors as child elements on an endpoint (inbound or outbound), and they get applied in the order in which they are listed to any message passing through that endpoint.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>In the case of a synchronous outbound endpoint, there is a response message involved, and so any number of message processors can also be put inside a response wrapper and will get applied to the response message in the order in which they are listed.</p> 
+   <p>In the case of a synchronous outbound endpoint, there is a response message involved, and so any number of message processors can also be put inside a response wrapper and get applied to the response message in the order in which they are listed.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Note that any of these elements could be declared locally (i.e., in-line in the endpoint) or globally (and referenced via a ref="foo" attribute).</p> 
+   <p>Note that any of these elements could be declared locally (that is, in-line in the endpoint) or globally (and referenced via a ref="foo" attribute).</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="transformers"><a class="anchor" href="#transformers"></a>Transformers</h3> 
@@ -1385,10 +1365,10 @@
     <p>Transformers are configured on endpoints using child elements. When configured on an inbound endpoint they are used to transform the message received by the endpoint, and when configured on an outbound endpoint they are used to transform the message before it is sent.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>Response transformers can be configured inside the nested <code>&lt;response&gt;</code> element. When configured on an inbound endpoint these transformer will be applied to the message just before it is sent back over the transport, and when configured on an outbound endpoint they are applied on the message received from the invocation of the outbound endpoint if there is one.</p> 
+    <p>Response transformers can be configured inside the nested <code>&lt;response&gt;</code> element. When configured on an inbound endpoint these transformers are applied to the message just before it is sent back over the transport, and when configured on an outbound endpoint they are applied on the message received from the invocation of the outbound endpoint if there is one.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>As will all message processors configured on endpoints, the order in which they are configured is the order in which they are executed.</p> 
+    <p>As with all message processors configured on endpoints, the order in which they are configured is the order in which they are executed.</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1420,7 +1400,7 @@
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>In the above example you can see two request transformers configured, one of which will be executed before the expression filter and the other one after. The custom transformer configured in the <code>&lt;response&gt;</code> element will be applied to the response message.</p> 
+    <p>In the above example you can see two request transformers configured, one of which executes before the expression filter and the other one after. The custom transformer configured in the <code>&lt;response&gt;</code> element is applied to the response message.</p> 
    </div> 
    <div class="paragraph"> 
     <p>Although globally defined transformers can be referenced from endpoints using the &lt;transformer ref=""/&gt; element, as seen in the above example, endpoints also support a shortcut notification.</p> 
@@ -1444,13 +1424,13 @@
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>Any transformers referenced in this way will be added to the end of the list of message processors configured a child elements and will therefore be executed last. If you need them to be executed before something else like a filter or need to use global endpoints in conjunction with locally defined endpoints in a specific order then you’ll need to use <code>&lt;transformer&gt;</code> elements instead.</p> 
+    <p>Any transformers referenced in this way is added to the end of the list of message processors configured a child elements and therefore be executes last. If you need them to execute before something else like a filter or need to use global endpoints in conjunction with locally defined endpoints in a specific order, then use <code>&lt;transformer&gt;</code> elements instead.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="filters"><a class="anchor" href="#filters"></a>Filters</h3> 
    <div class="paragraph"> 
-    <p>An endpoint can contain a filter to selectively ignore certain messages. The filter can be transport-specific such as a JMS selector or file filter or can be a general-purpose filter such as JXPath. Filtering is not supported by all transports, and setting a filter on an endpoint using some transports results in an UnsupportedOperationException. For more information, see Using Filters.</p> 
+    <p>An endpoint can contain a filter to selectively ignore certain messages. The filter can be transport-specific such as a JMS selector or file filter or can be a general-purpose filter such as JXPath. Filtering is not supported by all transports, and setting a filter on an endpoint using some transports results in an <code>UnsupportedOperationException</code>. For more information, see Using Filters.</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
@@ -1458,7 +1438,7 @@
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-top"><strong>Filter example</strong></th> 
+      <th class="tableblock halign-left valign-top"><strong>Filter Example</strong></th> 
      </tr> 
     </thead> 
     <tbody> 
@@ -1618,107 +1598,68 @@
    <p>An inbound endpoint receives messages via the associated transport. As with global endpoints, each transport implements its own inbound endpoint element.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of &lt;inbound-endpoint…​&gt;</h3> 
+   <h3 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of inbound-endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the endpoint in the registry. There is no need to set the 'name' attribute on inbound or outbound endpoints, only on global endpoints.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the endpoint in the registry. There is no need to set the 'name' attribute on inbound or outbound endpoints, only on global endpoints.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">ref</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ref</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>address</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">responseTimeout</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout for a response if making a synchronous endpoint call</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>responseTimeout</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout for a response if making a synchronous endpoint call<br> <strong>Type</strong>: <code>integer</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">String encoding used for messages.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>encoding</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String encoding used for messages.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">connector-ref</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>connector-ref</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">transformer-refs</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers that will be applied (in order) to the message before it is delivered to the component.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>transformer-refs</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers that is applied (in order) to the message before it is delivered to the component.<br> <strong>Type</strong>: <code>list of names</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">responseTransformer-refs</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers that will be applied (in order) to the synchronous response before it is returned via the transport.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>responseTransformer-refs</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers that are applied (in order) to the synchronous response before it is returned via the transport.<br> <strong>Type</strong>: <code>list of names</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">disableTransportTransformer</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>disableTransportTransformer</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">mimeType</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The mime type, e.g. text/plain or application/json</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mimeType</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The MIME type, for example, <code>text/plain</code> or <code>application/json</code><br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exchange-pattern</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exchange-pattern</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type</strong>: <code>enumeration</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-inbound-endpoint"><a class="anchor" href="#child-elements-of-inbound-endpoint"></a>Child Elements of &lt;inbound-endpoint…​&gt;</h3> 
+   <h3 id="child-elements-of-inbound-endpoint"><a class="anchor" href="#child-elements-of-inbound-endpoint"></a>Child Elements of inbound-endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: %;"> 
@@ -1734,77 +1675,77 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-reconnection-strategy</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-reconnection-strategy</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for a reconnection strategy element. Reconnection strategies define how Mule should attempt to handle a connection failure.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-multi-transaction</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-multi-transaction</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for multi-transaction elements. Multi-transactions allow a series of operations to be grouped together spanning different transports, e.g. JMS and JDBC, but without the overhead of XA. The trade-off is that XA reliability guarantees aren’t available, and services must be ready to handle duplicates. This is very similar to a 1.5 PC concept. EE-only feature.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">response</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>response</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-redelivery-policy</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-redelivery-policy</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for a redelivery policy. Redelivery policies determine what action to take when the same message is redelivered repeatedly.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-transaction</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-transaction</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for transaction elements. Transactions allow a series of operations to be grouped together.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-transformer</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-transformer</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for transformer elements. Transformers convert message payloads.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-filter</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-filter</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for filter elements, which control which messages are handled.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-security-filter</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-security-filter</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for security filter elements, which control access to the system.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-intercepting-message-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-intercepting-message-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for intercepting router elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-observer-message-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-observer-message-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for message processors that observe the message but do not mutate it used for exmaple for logging.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a message processor defined elsewhere.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">custom-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>custom-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-mixed-content-message-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-mixed-content-message-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for message processor elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">property</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>property</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Sets a Mule property. This is a name/value pair that can be set on components, services, etc., and which provide a generic way of configuring the system. Typically, you shouldn’t need to use a generic property like this, since almost all functionality is exposed via dedicated elements. However, it can be useful in configuring obscure or overlooked options and in configuring transports from the generic endpoint elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">properties</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>properties</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A map of Mule properties.</p></td> 
      </tr> 
@@ -1814,118 +1755,79 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound endpoint</h2> 
+ <h2 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound Endpoint</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>An outbound endpoint sends messages via the associated transport. As with global endpoints, each transport implements its own outbound endpoint element.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-outbound-endpoint"><a class="anchor" href="#attributes-of-outbound-endpoint"></a>Attributes of &lt;outbound-endpoint…​&gt;</h3> 
+   <h3 id="attributes-of-outbound-endpoint"><a class="anchor" href="#attributes-of-outbound-endpoint"></a>Attributes of outbound-endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the endpoint in the registry. There is not need to set the 'name' attribute on inbound or outbound endpoints, only on global endpoints.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the endpoint in the registry. There is not need to set the 'name' attribute on inbound or outbound endpoints, only on global endpoints.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">ref</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ref</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>address</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">responseTimeout</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout for a response if making a synchronous endpoint call</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>responseTimeout</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout for a response if making a synchronous endpoint call<br> <strong>Type</strong>: <code>integer</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">String encoding used for messages.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>encoding</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String encoding used for messages.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">connector-ref</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>connector-ref</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">transformer-refs</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers that will be applied (in order) to the message before it is delivered to the component.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>transformer-refs</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the message before it is delivered to the component.<br> <strong>Type</strong>: <code>list of names</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">responseTransformer-refs</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers that will be applied (in order) to the synchronous response before it is returned via the transport.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>responseTransformer-refs</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the synchronous response before it is returned via the transport.<br> <strong>Type</strong>: <code>list of names</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">disableTransportTransformer</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>disableTransportTransformer</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">mimeType</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The mime type, e.g. text/plain or application/json</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mimeType</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The MIME type, for example, <code>text/plain</code> or <code>application/json</code><br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exchange-pattern</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exchange-pattern</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type</strong>: <code>enumeration</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-outbound-endpoint"><a class="anchor" href="#child-elements-of-outbound-endpoint"></a>Child Elements of &lt;outbound-endpoint…​&gt;</h3> 
+   <h3 id="child-elements-of-outbound-endpoint"><a class="anchor" href="#child-elements-of-outbound-endpoint"></a>Child Elements of outbound-endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1936,77 +1838,77 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-reconnection-strategy</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-reconnection-strategy</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for a reconnection strategy element. Reconnection strategies define how Mule should attempt to handle a connection failure.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-multi-transaction</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-multi-transaction</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for multi-transaction elements. Multi-transactions allow a series of operations to be grouped together spanning different transports, e.g. JMS and JDBC, but without the overhead of XA. The trade-off is that XA reliability guarantees aren’t available, and services must be ready to handle duplicates. This is very similar to a 1.5 PC concept. EE-only feature.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for multi-transaction elements. Multi-transactions allow a series of operations to be grouped together spanning different transports, for example, JMS and JDBC, but without the overhead of XA. The trade-off is that XA reliability guarantees aren’t available, and services must be ready to handle duplicates. This is very similar to a 1.5 PC concept. EE-only feature.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">response</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>response</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-redelivery-policy</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-redelivery-policy</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for a redelivery policy. Redelivery policies determine what action to take when the same message is redelivered repeatedly.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-transaction</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-transaction</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for transaction elements. Transactions allow a series of operations to be grouped together.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-transformer</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-transformer</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for transformer elements. Transformers convert message payloads.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-filter</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-filter</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for filter elements, which control which messages are handled.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-security-filter</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-security-filter</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for security filter elements, which control access to the system.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-intercepting-message-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-intercepting-message-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for intercepting router elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-observer-message-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-observer-message-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for message processors that observe the message but do not mutate it used for exmaple for logging.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a message processor defined elsewhere.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">custom-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>custom-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-mixed-content-message-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-mixed-content-message-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for message processor elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">property</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>property</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Sets a Mule property. This is a name/value pair that can be set on components, services, etc., and which provide a generic way of configuring the system. Typically, you shouldn’t need to use a generic property like this, since almost all functionality is exposed via dedicated elements. However, it can be useful in configuring obscure or overlooked options and in configuring transports from the generic endpoint elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">properties</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>properties</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A map of Mule properties.</p></td> 
      </tr> 
@@ -2022,107 +1924,68 @@
    <p>A global endpoint, which acts as a template that can be used to construct an inbound or outbound endpoint elsewhere in the configuration by referencing the global endpoint name. Each transport implements its own endpoint element, with a more friendly syntax, but this generic element can be used with any transport by supplying the correct address URI. For example, "vm://foo" describes a VM transport endpoint.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-endpoint"><a class="anchor" href="#attributes-of-endpoint"></a>Attributes of &lt;endpoint…​&gt;</h3> 
+   <h3 id="attributes-of-endpoint"><a class="anchor" href="#attributes-of-endpoint"></a>Attributes of endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the endpoint so that other elements can reference it. This name can also be referenced in the MuleClient.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the endpoint so that other elements can reference it. This name can also be referenced in the MuleClient.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">ref</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ref</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a global endpoint, which is used as a template to construct this endpoint. A template fixes the address (protocol, path, host, etc.), and may specify initial values for various properties, but further properties can be defined locally (as long as they do not change the address in any way).<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>address</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The generic address for this endpoint. If this attribute is used, the protocol must be specified as part of the URI. Alternatively, most transports provide their own attributes for specifying the address (path, host, etc.). Note that the address attribute cannot be combined with 'ref' or with the transport-provided alternative attributes.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">responseTimeout</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout for a response if making a synchronous endpoint call</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>responseTimeout</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The timeout for a response if making a synchronous endpoint call<br> <strong>Type</strong>: <code>integer</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">String encoding used for messages.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>encoding</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">String encoding used for messages.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">connector-ref</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>connector-ref</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the connector associated with this endpoint. This must be specified if more than one connector is defined for this transport.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">transformer-refs</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers that will be applied (in order) to the message before it is delivered to the component.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>transformer-refs</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the message before it is delivered to the component.<br> <strong>Type</strong>: <code>list of names</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">responseTransformer-refs</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">list of names</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers that will be applied (in order) to the synchronous response before it is returned via the transport.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>responseTransformer-refs</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A list of the transformers to apply (in order) to the synchronous response before it is returned via the transport.<br> <strong>Type</strong>: <code>list of names</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">disableTransportTransformer</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>disableTransportTransformer</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Don’t use the default inbound/outbound/response transformer which corresponds to this endpoint’s transport, if any.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">mimeType</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The mime type, e.g. text/plain or application/json</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mimeType</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The MIME type, for example, <code>text/plain</code> or <code>application/json</code><br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exchange-pattern</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exchange-pattern</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">+ <strong>Type</strong>: <code>enumeration</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-endpoint"><a class="anchor" href="#child-elements-of-endpoint"></a>Child Elements of &lt;endpoint…​&gt;</h3> 
+   <h3 id="child-elements-of-endpoint"><a class="anchor" href="#child-elements-of-endpoint"></a>Child Elements of endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: %;"> 
@@ -2138,17 +2001,17 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-reconnection-strategy</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-reconnection-strategy</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for a reconnection strategy element. Reconnection strategies define how Mule should attempt to handle a connection failure.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-multi-transaction</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-multi-transaction</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for multi-transaction elements. Multi-transactions allow a series of operations to be grouped together spanning different transports, e.g. JMS and JDBC, but without the overhead of XA. The trade-off is that XA reliability guarantees aren’t available, and services must be ready to handle duplicates. This is very similar to a 1.5 PC concept. EE-only feature.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for multi-transaction elements. Multi-transactions allow a series of operations to be grouped together spanning different transports, for example, JMS and JDBC, but without the overhead of XA. The trade-off is that XA reliability guarantees aren’t available, and services must be ready to handle duplicates. This is very similar to a 1.5 PC concept. EE-only feature.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">response</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>response</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
      </tr> 
@@ -2158,12 +2021,12 @@
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for a redelivery policy. Redelivery policies determine what action to take when the same message is redelivered repeatedly.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-transaction</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-transaction</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for transaction elements. Transactions allow a series of operations to be grouped together.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-transformer</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-transformer</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for transformer elements. Transformers convert message payloads.</p></td> 
      </tr> 
@@ -2173,42 +2036,42 @@
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for filter elements, which control which messages are handled.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-security-filter</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-security-filter</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for security filter elements, which control access to the system.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-intercepting-message-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-intercepting-message-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for intercepting router elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-observer-message-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-observer-message-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for message processors that observe the message but do not mutate it used for example for logging.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a message processor defined elsewhere.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">custom-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>custom-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-mixed-content-message-processor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-mixed-content-message-processor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for message processor elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">property</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>property</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Sets a Mule property. This is a name/value pair that can be set on components, services, etc., and which provide a generic way of configuring the system. Typically, you shouldn’t need to use a generic property like this, since almost all functionality is exposed via dedicated elements. However, it can be useful in configuring obscure or overlooked options and in configuring transports from the generic endpoint elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">properties</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>properties</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A map of Mule properties.</p></td> 
      </tr> 
@@ -2221,7 +2084,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#basic-configuration">Basic Configuration</a></li><li><a class="scroll-menu-link" href="#dynamic-endpoints">Dynamic Endpoints</a></li><li><a class="scroll-menu-link" href="#global-connection-configuration">Global Connection Configuration</a></li><li><a class="scroll-menu-link" href="#properties">Properties</a></li><li><a class="scroll-menu-link" href="#transactions">Transactions</a></li><li><a class="scroll-menu-link" href="#encoding">Encoding</a></li><li><a class="scroll-menu-link" href="#mimetype">MimeType</a></li><li><a class="scroll-menu-link" href="#redelivery-policy">Redelivery Policy</a></li><li><a class="scroll-menu-link" href="#embedding-message-processors-inside-an-endpoint">Embedding Message Processors Inside an Endpoint</a></li><li><a class="scroll-menu-link" href="#global-endpoints">Global Endpoints</a></li><li><a class="scroll-menu-link" href="#custom-message-sources">Custom Message Sources</a></li><li><a class="scroll-menu-link" href="#generic-endpoint-reference">Generic Endpoint Reference</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound endpoint</a></li><li><a class="scroll-menu-link" href="#endpoint">Endpoint</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#basic-configuration">Basic Configuration</a></li><li><a class="scroll-menu-link" href="#dynamic-endpoints">Dynamic Endpoints</a></li><li><a class="scroll-menu-link" href="#global-connection-configuration">Global Connection Configuration</a></li><li><a class="scroll-menu-link" href="#properties">Properties</a></li><li><a class="scroll-menu-link" href="#transactions">Transactions</a></li><li><a class="scroll-menu-link" href="#encoding">Encoding</a></li><li><a class="scroll-menu-link" href="#mimetype">MimeType</a></li><li><a class="scroll-menu-link" href="#redelivery-policy">Redelivery Policy</a></li><li><a class="scroll-menu-link" href="#embedding-message-processors-inside-an-endpoint">Embedding Message Processors Inside an Endpoint</a></li><li><a class="scroll-menu-link" href="#global-endpoints">Global Endpoints</a></li><li><a class="scroll-menu-link" href="#custom-message-sources">Custom Message Sources</a></li><li><a class="scroll-menu-link" href="#generic-endpoint-reference">Generic Endpoint Reference</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound Endpoint</a></li><li><a class="scroll-menu-link" href="#endpoint">Endpoint</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

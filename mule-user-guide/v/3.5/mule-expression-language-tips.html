@@ -1234,7 +1234,7 @@
  <h2 id="xpath-support"><a class="anchor" href="#xpath-support"></a>XPath Support</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>XPath helper functions return DOM4J nodes. By default the XPath expression is evaluated on <code>message.payload</code> unless an xmlElement is specified:</p> 
+   <p>XPath3 helper functions return DOM4J nodes. By default the XPath3 expression is evaluated on <code>message.payload</code> unless an xmlElement is specified:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1245,7 +1245,7 @@
         <tr> 
          <td class="line-numbers"><pre>1
 </pre></td> 
-         <td class="code"><pre>#[xpath(xPathExpression [, xmlElement])]</pre></td> 
+         <td class="code"><pre>#[xpath3(xPathExpression [, xmlElement])]</pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1264,8 +1264,8 @@
          <td class="line-numbers"><pre>1
 2
 </pre></td> 
-         <td class="code"><pre>#[xpath('//title').text]
-#[xpath('//title/@id').value]</pre></td> 
+         <td class="code"><pre>#[xpath3('//title').text]
+#[xpath3('//title/@id').value]</pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 

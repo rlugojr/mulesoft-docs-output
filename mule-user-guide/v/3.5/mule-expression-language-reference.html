@@ -1308,13 +1308,13 @@
  <h2 id="xpath-and-regex"><a class="anchor" href="#xpath-and-regex"></a>XPath and Regex</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A MEL expression in Mule always resolves to a single value. You can use <strong>XPath</strong> and <strong>regex</strong> functions to extract information which doesn’t already exist as a single value.</p> 
+   <p>A MEL expression in Mule always resolves to a single value. You can use <strong>XPath3</strong> and <strong>regex</strong> functions to extract information which doesn’t already exist as a single value.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><strong>XPath</strong></p> 
+   <p><strong>XPath3</strong></p> 
   </div> 
   <div class="paragraph"> 
-   <p><a href="http://www.w3.org/TR/xpath/">XPath</a> is a language for addressing parts of an XML document. The MEL <strong>XPath</strong> function allows you to evaluate XPath expressions.</p> 
+   <p><a href="http://www.w3.org/TR/xpath-31/">XPath</a> is a language for addressing parts of an XML document. The MEL <strong>XPath3</strong> function allows you to evaluate XPath expressions.</p> 
   </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
@@ -1331,14 +1331,19 @@
    </thead> 
    <tbody> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[xpath(xPathExpression)]</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[xpath3(xPathExpression)]</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">Applies the XPath expression to the message payload (an XML document) and returns the specified content. The example returns the first order from the message payload.</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">xpath(\'/orders/order[0]')</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">xpath3(\'/orders/order[0]')</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[xpath(xPathExpression, xmlElement)]</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[xpath3(xPathExpression, xmlElement)]</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">Applies the XPath expression to the XML element specified by the MEL expression appearing as the second argument, and returns the specified content. The example returns the first order from the order element in the current message’s inbound attachment map.</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">xpath(\'/orders/order[0]', message.inboundAttachments.order)</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">xpath3(\'/orders/order[0]', message.inboundAttachments.order)</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[xpath3(xPathExpression, xmlElement, returnType)]</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Applies the XPath expression to the XML element specified by the MEL expression appearing as the second argument, and returns something of the required type. Accepted types are boolean, string, number, node and nodeset. The example returns true if a fourth element exists in the current message’s inbound attachment map, or false otherwise.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">xpath3(\'/orders/order[3]', message.inboundAttachments.order, boolean)</p></td> 
     </tr> 
    </tbody> 
   </table> 

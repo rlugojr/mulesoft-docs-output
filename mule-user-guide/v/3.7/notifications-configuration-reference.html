@@ -885,42 +885,33 @@
    <p>Registers listeners for notifications and associates interfaces with particular events.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-notifications"><a class="anchor" href="#attributes-of-notifications"></a>Attributes of &lt;notifications…​&gt;</h3> 
+   <h3 id="attributes-of-notifications"><a class="anchor" href="#attributes-of-notifications"></a>Attributes of Notifications</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">dynamic</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If the notification manager is dynamic, listeners can be registered dynamically at runtime via the MuleContext, and the configured notification can be changed. Otherwise, some parts of Mule will cache notification configuration for efficiency and will not generate events for newly enabled notifications or listeners. The default value is false.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dynamic</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If the notification manager is dynamic, listeners can be registered dynamically at runtime via the MuleContext, and the configured notification can be changed. Otherwise, some parts of Mule cache notification configurations for efficiency and do not generate events for newly enabled notifications or listeners.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>false</code></p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-notifications"><a class="anchor" href="#child-elements-of-notifications"></a>Child Elements of &lt;notifications…​&gt;</h3> 
+   <h3 id="child-elements-of-notifications"><a class="anchor" href="#child-elements-of-notifications"></a>Child Elements of Notifications</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -931,19 +922,19 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">notification</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>notification</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Associates an event with an interface. Listeners that implement the interface will receive instances of the event.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Associates an event with an interface. Listeners that implement the interface receives instances of the event.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">disable-notification</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>disable-notification</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Blocks the association of an event with a particular interface. This filters events after the association with a particular interface (and so takes precedence).</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">notification-listener</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>notification-listener</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Registers a bean as a listener with the notification system. Events are dispatched by reflection - the listener will receive all events associated with any interfaces it implements. The relationship between interfaces and events is configured by the notification and disable-notification elements.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Registers a bean as a listener with the notification system. Events are dispatched by reflection - the listener receives all events associated with any interfaces it implements. The relationship between interfaces and events is configured by the notification and disable-notification elements.</p></td> 
      </tr> 
     </tbody> 
    </table> 
@@ -957,156 +948,92 @@
    <p>Associates an event with an interface. Listeners that implement the interface will receive instances of the event.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-notification"><a class="anchor" href="#attributes-of-notification"></a>Attributes of &lt;notification…​&gt;</h3> 
+   <h3 id="attributes-of-notification"><a class="anchor" href="#attributes-of-notification"></a>Attributes of Notification</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">event-class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The class associated with a notification event that will be delivered to the interface. This can be used instead of the 'event' attribute to specify a custom class.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>event-class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The class associated with a notification event to deliver to the interface. This can be used instead of the 'event' attribute to specify a custom class.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">event</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">notificationTypes</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The notification event to deliver.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The notification event to deliver.<br> <strong>Type</strong>: <code>notificationTypes</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interface-class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface (class name) that will receive the notification event.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interface-class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface (class name) that receives the notification event.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interface</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">notificationTypes</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface that will receive the notification event.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interface</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface that receives the notification event.<br> <strong>Type</strong>: <code>notificationTypes</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-notification"><a class="anchor" href="#child-elements-of-notification"></a>Child Elements of &lt;notification…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>notification</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="disable-notification"><a class="anchor" href="#disable-notification"></a>Disable notification</h2> 
+ <h2 id="disable-notification"><a class="anchor" href="#disable-notification"></a>Disable Notification</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Blocks the association of an event with a particular interface. This filters events after the association with a particular interface (and so takes precedence).</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-disable-notification"><a class="anchor" href="#attributes-of-disable-notification"></a>Attributes of &lt;disable-notification…​&gt;</h3> 
+   <h3 id="attributes-of-disable-notification"><a class="anchor" href="#attributes-of-disable-notification"></a>Attributes of disable-notification</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">event-class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The class associated with an event that will no longer be delivered to any interface. This can be used instead of the 'event' attribute to specify a custom class.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>event-class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The class associated with an event that no longer is delivered to any interface. This can be used instead of the 'event' attribute to specify a custom class.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">event</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">notificationTypes</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The event you no longer want to deliver.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The event you no longer want to deliver.<br> <strong>Type</strong>: <code>notificationTypes</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interface-class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface (class name) that will no longer receive the event.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interface-class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface (class name) that no longer receives the event.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interface</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">notificationTypes</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface that will no longer receive the event.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interface</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface that no longer receives the event.<br> <strong>Type</strong>: <code>notificationTypes</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-disable-notification"><a class="anchor" href="#child-elements-of-disable-notification"></a>Child Elements of &lt;disable-notification…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>disable-notification</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="notification-listener"><a class="anchor" href="#notification-listener"></a>Notification listener</h2> 
+ <h2 id="notification-listener"><a class="anchor" href="#notification-listener"></a>Notification Listener</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Registers a bean as a listener with the notification system. Events are dispatched by reflection - the listener will receive all events associated with any interfaces it implements. The relationship between interfaces and events is configured by the notification and disable-notification elements.</p> 
+   <p>Registers a bean as a listener with the notification system. Events are dispatched by reflection - the listener receives all events associated with any interfaces it implements. The relationship between interfaces and events is configured by the notification and disable-notification elements.</p> 
   </div> 
  </div> 
 </div> 
@@ -1143,7 +1070,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#notifications">Notifications</a></li><li><a class="scroll-menu-link" href="#notification">Notification</a></li><li><a class="scroll-menu-link" href="#disable-notification">Disable notification</a></li><li><a class="scroll-menu-link" href="#notification-listener">Notification listener</a></li><li><a class="scroll-menu-link" href="#notification-types">Notification Types</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#notifications">Notifications</a></li><li><a class="scroll-menu-link" href="#notification">Notification</a></li><li><a class="scroll-menu-link" href="#disable-notification">Disable Notification</a></li><li><a class="scroll-menu-link" href="#notification-listener">Notification Listener</a></li><li><a class="scroll-menu-link" href="#notification-types">Notification Types</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

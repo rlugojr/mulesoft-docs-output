@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/filters-configuration-reference" />
-    <meta name="description" content="For more information on filters, see Using Filters. A filter that is defined elsewhere (at the global level, or as a Spring bean). Inverts the encl..." />
+    <meta name="description" content="For more information on filters, see Using Filters. A filter that is defined elsewhere (at the global level, or as a Spring bean). No child element..." />
     <meta class="swiftype" name="title" data-type="string" content="Filters Configuration Reference" />
 
 </head>
@@ -885,97 +885,65 @@
    <p>A filter that is defined elsewhere (at the global level, or as a Spring bean).</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-filter"><a class="anchor" href="#attributes-of-filter"></a>Attributes of &lt;filter…​&gt;</h3> 
+   <h3 id="attributes-of-filter"><a class="anchor" href="#attributes-of-filter"></a>Attributes of filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">ref</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the filter to use.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ref</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the filter to use.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-filter"><a class="anchor" href="#child-elements-of-filter"></a>Child Elements of &lt;filter…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>filter</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="not-filter"><a class="anchor" href="#not-filter"></a>Not filter</h2> 
+ <h2 id="not-filter"><a class="anchor" href="#not-filter"></a>Not Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Inverts the enclosed filter. For example, if the filter would normally return true for a specific message, it will now return false, and vice versa.</p> 
+   <p>Inverts the enclosed filter. For example, if the filter would normally return true for a specific message, it now returns false, and vice versa.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-not-filter"><a class="anchor" href="#attributes-of-not-filter"></a>Attributes of &lt;not-filter…​&gt;</h3> 
+   <h3 id="attributes-of-not-filter"><a class="anchor" href="#attributes-of-not-filter"></a>Attributes of not-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-not-filter"><a class="anchor" href="#child-elements-of-not-filter"></a>Child Elements of &lt;not-filter…​&gt;</h3> 
+   <h3 id="child-elements-of-not-filter"><a class="anchor" href="#child-elements-of-not-filter"></a>Child Elements of not-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -986,7 +954,7 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-filter</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-filter</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for filter elements, which control which messages are handled.</p></td> 
      </tr> 
@@ -996,48 +964,39 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="and-filter"><a class="anchor" href="#and-filter"></a>And filter</h2> 
+ <h2 id="and-filter"><a class="anchor" href="#and-filter"></a>And Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Returns true only if all the enclosed filters return true.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-and-filter"><a class="anchor" href="#attributes-of-and-filter"></a>Attributes of &lt;and-filter…​&gt;</h3> 
+   <h3 id="attributes-of-and-filter"><a class="anchor" href="#attributes-of-and-filter"></a>Attributes of and-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-and-filter"><a class="anchor" href="#child-elements-of-and-filter"></a>Child Elements of &lt;and-filter…​&gt;</h3> 
+   <h3 id="child-elements-of-and-filter"><a class="anchor" href="#child-elements-of-and-filter"></a>Child Elements of and-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1048,7 +1007,7 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-filter</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-filter</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">2..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for filter elements, which control which messages are handled.</p></td> 
      </tr> 
@@ -1058,48 +1017,39 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="or-filter"><a class="anchor" href="#or-filter"></a>Or filter</h2> 
+ <h2 id="or-filter"><a class="anchor" href="#or-filter"></a>Or Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Returns true if any of the enclosed filters returns true.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-or-filter"><a class="anchor" href="#attributes-of-or-filter"></a>Attributes of &lt;or-filter…​&gt;</h3> 
+   <h3 id="attributes-of-or-filter"><a class="anchor" href="#attributes-of-or-filter"></a>Attributes of or-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-or-filter"><a class="anchor" href="#child-elements-of-or-filter"></a>Child Elements of &lt;or-filter…​&gt;</h3> 
+   <h3 id="child-elements-of-or-filter"><a class="anchor" href="#child-elements-of-or-filter"></a>Child Elements of or-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1110,7 +1060,7 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-filter</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-filter</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">2..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for filter elements, which control which messages are handled.</p></td> 
      </tr> 
@@ -1120,476 +1070,287 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="wildcard-filter"><a class="anchor" href="#wildcard-filter"></a>Wildcard filter</h2> 
+ <h2 id="wildcard-filter"><a class="anchor" href="#wildcard-filter"></a>Wildcard Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A filter that matches string messages against wildcards. It performs matches with "<strong>", for example, "jms.events.</strong>" would catch "jms.events.customer" and "jms.events.receipts". This filter accepts a comma-separated list of patterns, so more than one filter pattern can be matched for a given argument: "jms.events.<strong>, jms.actions.</strong>" will match "jms.events.system" and "jms.actions" but not "jms.queue".</p> 
+   <p>A filter that matches string messages against wildcards. It performs matches with "<strong>", for example, "jms.events.</strong>" would catch "jms.events.customer" and "jms.events.receipts". This filter accepts a comma-separated list of patterns, so more than one filter pattern can be matched for a given argument: "jms.events.<strong>, jms.actions.</strong>" matches "jms.events.system" and "jms.actions" but not "jms.queue".</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-wildcard-filter"><a class="anchor" href="#attributes-of-wildcard-filter"></a>Attributes of &lt;wildcard-filter…​&gt;</h3> 
+   <h3 id="attributes-of-wildcard-filter"><a class="anchor" href="#attributes-of-wildcard-filter"></a>Attributes of wildcard-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">pattern</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The property name and optionally a value to use when matching. If the expression is just a property name, the filter will check that the property exists. Users can also use '=' and '!=' to determine a specific value for a property.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The property name and optionally a value to use when matching. If the expression is just a property name, the filter checks that the property exists. Users can also use '=' and '!=' to determine a specific value for a property.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">caseSensitive</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If false, the comparison ignores case.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If false, the comparison ignores case.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>true</code></p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-wildcard-filter"><a class="anchor" href="#child-elements-of-wildcard-filter"></a>Child Elements of &lt;wildcard-filter…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>wildcard-filter</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="expression-filter"><a class="anchor" href="#expression-filter"></a>Expression filter</h2> 
+ <h2 id="expression-filter"><a class="anchor" href="#expression-filter"></a>Expression Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>A filter that can evaluate a range of expressions. It supports some base expression types such as header, payload (payload type), regex, and wildcard.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-expression-filter"><a class="anchor" href="#attributes-of-expression-filter"></a>Attributes of &lt;expression-filter…​&gt;</h3> 
+   <h3 id="attributes-of-expression-filter"><a class="anchor" href="#attributes-of-expression-filter"></a>Attributes of expression-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">evaluator</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">expressionFilterEvaluators</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The expression evaluator to use. The expression filter supports some types such as header, payload, exception, wildcard, and regex, that are built-in filters not registered with the ExpressionEvaluatorManager. All others are registered with the ExpressionEvaluatorManager. Where XPath, bean, and ONGL are used, the expression should be a boolean expression.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>evaluator</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The expression evaluator to use. The expression filter supports some types such as header, payload, exception, wildcard, and regex, that are built-in filters not registered with the ExpressionEvaluatorManager. All others are registered with the ExpressionEvaluatorManager. Where XPath, bean, and ONGL are used, the expression should be a boolean expression.<br> <strong>Type</strong>: <code>expressionFilterEvaluators</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">expression</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The expression that will be evaluated. This should always be a boolean expression. The syntax of the expression will be determined by the expression language being used.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>expression</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The expression to evaluate. This should always be a boolean expression. The syntax of the expression determines the expression language being used.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">customEvaluator</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Must be set if the evaluator is set to custom. The custom evaluator must be registered with the ExpressionEvaluatorManager if it is to be used here.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>customEvaluator</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Must be set if the evaluator is set to custom. The custom evaluator must be registered with the ExpressionEvaluatorManager if it is to be used here.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">nullReturnsTrue</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the filter should return true if the specified expression returns null.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nullReturnsTrue</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the filter should return true if the specified expression returns null.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-expression-filter"><a class="anchor" href="#child-elements-of-expression-filter"></a>Child Elements of &lt;expression-filter…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>expression-filter</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="regex-filter"><a class="anchor" href="#regex-filter"></a>Regex filter</h2> 
+ <h2 id="regex-filter"><a class="anchor" href="#regex-filter"></a>Regex Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>A filter that matches string messages against a regular expression. The Java regular expression engine (java.util.regex.Pattern) is used.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-regex-filter"><a class="anchor" href="#attributes-of-regex-filter"></a>Attributes of &lt;regex-filter…​&gt;</h3> 
+   <h3 id="attributes-of-regex-filter"><a class="anchor" href="#attributes-of-regex-filter"></a>Attributes of regex-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">pattern</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The property name and optionally a value to use when matching. If the expression is just a property name, the filter will check that the property exists. Users can also use '=' and '!=' to determine a specific value for a property.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The property name and optionally a value to use when matching. If the expression is just a property name, the filter checks that the property exists. Users can also use '=' and '!=' to determine a specific value for a property.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">flags</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Comma-separated list of flags for compiling the pattern. Valid values are CASE_INSENSITIVE, MULTILINE, DOTALL, UNICODE_CASE and CANON_EQ.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>flags</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Comma-separated list of flags for compiling the pattern. Valid values are CASE_INSENSITIVE, MULTILINE, DOTALL, UNICODE_CASE and CANON_EQ.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-regex-filter"><a class="anchor" href="#child-elements-of-regex-filter"></a>Child Elements of &lt;regex-filter…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>regex-filter</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="message-property-filter"><a class="anchor" href="#message-property-filter"></a>Message property filter</h2> 
+ <h2 id="message-property-filter"><a class="anchor" href="#message-property-filter"></a>Message Property Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A filter that matches properties on a message. This can be very useful, as the message properties represent all the meta information about the message from the underlying transport, so for a message received over HTTP, you can check for HTTP headers and so forth. The pattern should be expressed as a key/value pair, such as "propertyName=value". If you want to compare more than one property, you can use the logic filters for And, Or, and Not expressions. By default, the comparison is case sensitive, which you can override with the 'caseSensitive' property.</p> 
+   <p>A filter that matches properties on a message. This can be very useful, as the message properties represent all the meta information about the message from the underlying transport, so for a message received over HTTP, you can check for HTTP headers and so forth. The pattern should be expressed as a key/value pair, such as <code>propertyName=value</code>. If you want to compare more than one property, you can use the logic filters for And, Or, and Not expressions. By default, the comparison is case sensitive, which you can override with the 'caseSensitive' property.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-message-property-filter"><a class="anchor" href="#attributes-of-message-property-filter"></a>Attributes of &lt;message-property-filter…​&gt;</h3> 
+   <h3 id="attributes-of-message-property-filter"><a class="anchor" href="#attributes-of-message-property-filter"></a>Attributes of message-property-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">pattern</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The property name and optionally a value to use when matching. If the expression is just a property name, the filter will check that the property exists. Users can also use '=' and '!=' to determine a specific value for a property.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The property name and optionally a value to use when matching. If the expression is just a property name, the filter checks that the property exists. Users can also use '=' and '!=' to determine a specific value for a property.<br> <strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">caseSensitive</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If false, the comparison ignores case.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>caseSensitive</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">If false, the comparison ignores case.<br> <strong>Type</strong>: <code>boolean</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>true</code></p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">scope</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>scope</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">outbound</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Property scope to lookup the value from (default: outbound)</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-message-property-filter"><a class="anchor" href="#child-elements-of-message-property-filter"></a>Child Elements of &lt;message-property-filter…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for message-property-filter.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="exception-type-filter"><a class="anchor" href="#exception-type-filter"></a>Exception type filter</h2> 
+ <h2 id="exception-type-filter"><a class="anchor" href="#exception-type-filter"></a>Exception Type Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>A filter that matches the type of an exception.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-exception-type-filter"><a class="anchor" href="#attributes-of-exception-type-filter"></a>Attributes of &lt;exception-type-filter…​&gt;</h3> 
+   <h3 id="attributes-of-exception-type-filter"><a class="anchor" href="#attributes-of-exception-type-filter"></a>Attributes of exception-type-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">expectedType</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The expected class used in the comparison.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>expectedType</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The expected class used in the comparison.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-exception-type-filter"><a class="anchor" href="#child-elements-of-exception-type-filter"></a>Child Elements of &lt;exception-type-filter…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for exception-type-filter.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="payload-type-filter"><a class="anchor" href="#payload-type-filter"></a>Payload type filter</h2> 
+ <h2 id="payload-type-filter"><a class="anchor" href="#payload-type-filter"></a>Payload Type Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>A filter that matches the type of the payload.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-payload-type-filter"><a class="anchor" href="#attributes-of-payload-type-filter"></a>Attributes of &lt;payload-type-filter…​&gt;</h3> 
+   <h3 id="attributes-of-payload-type-filter"><a class="anchor" href="#attributes-of-payload-type-filter"></a>Attributes of payload-type-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">expectedType</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The expected class used in the comparison.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>expectedType</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The expected class used in the comparison.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-payload-type-filter"><a class="anchor" href="#child-elements-of-payload-type-filter"></a>Child Elements of &lt;payload-type-filter…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for payload-type-filter.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="custom-filter"><a class="anchor" href="#custom-filter"></a>Custom filter</h2> 
+ <h2 id="custom-filter"><a class="anchor" href="#custom-filter"></a>Custom Filter</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>A user-implemented filter.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-custom-filter"><a class="anchor" href="#attributes-of-custom-filter"></a>Attributes of &lt;custom-filter…​&gt;</h3> 
+   <h3 id="attributes-of-custom-filter"><a class="anchor" href="#attributes-of-custom-filter"></a>Attributes of custom-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Identifies the filter so that other elements can reference it. Required if the filter is defined at the global level.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the Filter interface.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the Filter interface.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-custom-filter"><a class="anchor" href="#child-elements-of-custom-filter"></a>Child Elements of &lt;custom-filter…​&gt;</h3> 
+   <h3 id="child-elements-of-custom-filter"><a class="anchor" href="#child-elements-of-custom-filter"></a>Child Elements of custom-filter</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1600,7 +1361,7 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">spring:property</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>spring:property</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Spring-style property element for custom configuration.</p></td> 
      </tr> 
@@ -1613,7 +1374,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#filter">Filter</a></li><li><a class="scroll-menu-link" href="#not-filter">Not filter</a></li><li><a class="scroll-menu-link" href="#and-filter">And filter</a></li><li><a class="scroll-menu-link" href="#or-filter">Or filter</a></li><li><a class="scroll-menu-link" href="#wildcard-filter">Wildcard filter</a></li><li><a class="scroll-menu-link" href="#expression-filter">Expression filter</a></li><li><a class="scroll-menu-link" href="#regex-filter">Regex filter</a></li><li><a class="scroll-menu-link" href="#message-property-filter">Message property filter</a></li><li><a class="scroll-menu-link" href="#exception-type-filter">Exception type filter</a></li><li><a class="scroll-menu-link" href="#payload-type-filter">Payload type filter</a></li><li><a class="scroll-menu-link" href="#custom-filter">Custom filter</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#filter">Filter</a></li><li><a class="scroll-menu-link" href="#not-filter">Not Filter</a></li><li><a class="scroll-menu-link" href="#and-filter">And Filter</a></li><li><a class="scroll-menu-link" href="#or-filter">Or Filter</a></li><li><a class="scroll-menu-link" href="#wildcard-filter">Wildcard Filter</a></li><li><a class="scroll-menu-link" href="#expression-filter">Expression Filter</a></li><li><a class="scroll-menu-link" href="#regex-filter">Regex Filter</a></li><li><a class="scroll-menu-link" href="#message-property-filter">Message Property Filter</a></li><li><a class="scroll-menu-link" href="#exception-type-filter">Exception Type Filter</a></li><li><a class="scroll-menu-link" href="#payload-type-filter">Payload Type Filter</a></li><li><a class="scroll-menu-link" href="#custom-filter">Custom Filter</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

@@ -882,45 +882,36 @@
  <h2 id="component"><a class="anchor" href="#component"></a>Component</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A simple POJO (Plain Old Java Object) component that will be invoked by Mule when a message is received. The class or object instance to be used can be specified using a child object factory element, or via the 'class' attribute. If the 'class' attribute is used, an object factory cannot be configured as well. Using the 'class' attribute is equivilant to using the propotype object factory ('prototype-object' child element).</p> 
+   <p>A simple POJO (Plain Old Java Object) component that’s invoked by Mule when a message is received. The class or object instance to be used can be specified using a child object factory element, or via the 'class' attribute. If the 'class' attribute is used, an object factory cannot be configured as well. Using the 'class' attribute is equivilant to using the propotype object factory ('prototype-object' child element).</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-component"><a class="anchor" href="#attributes-of-component"></a>Attributes of &lt;component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 80%;"> 
+   <h3 id="attributes-of-component"><a class="anchor" href="#attributes-of-component"></a>Attributes of component</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a component class. This is a shortcut that is equivalent to providing a 'prototype-object' element.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a component class. This is a shortcut that is equivalent to providing a 'prototype-object' element.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-component"><a class="anchor" href="#child-elements-of-component"></a>Child Elements of &lt;component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <h3 id="child-elements-of-component"><a class="anchor" href="#child-elements-of-component"></a>Child Elements of component</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -931,37 +922,37 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-interceptor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-interceptor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for an interceptor element.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interceptor-stack</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interceptor-stack</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a stack of interceptors defined globally.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-object-factory</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-object-factory</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Object factory used to obtain the object instance that will be used for the component implementation. The object factory is responsible for object creation and may implement different patterns, such as singleton or prototype, or look up an instance from other object containers.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Object factory used to obtain the object instance that is used for the component implementation. The object factory is responsible for object creation and may implement different patterns, such as singleton or prototype, or look up an instance from other object containers.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-lifecycle-adapter-factory</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-lifecycle-adapter-factory</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">binding</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>binding</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A binding associates a Mule endpoint with an injected Java interface. This is like using Spring to inject a bean, but instead of calling a method on the bean, a message is sent to an endpoint.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-entry-point-resolver-set</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-entry-point-resolver-set</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for entry point resolver set elements. These combine a group of entry point resolvers, trying them in turn until one succeeds.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-entry-point-resolver</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">`abstract-entry-point-resolver `</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for an entry point resolver element. Entry point resolvers define how payloads are delivered to Java code by choosing the method to call.</p></td> 
      </tr> 
@@ -974,45 +965,36 @@
  <h2 id="pooled-component"><a class="anchor" href="#pooled-component"></a>Pooled component</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A pooled POJO (Plain Old Java Object) component that will be invoked by Mule when a message is received. The instance can be specified via a factory or a class.</p> 
+   <p>A pooled POJO (Plain Old Java Object) component to invoke by Mule when a message is received. The instance can be specified via a factory or a class.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-pooled-component"><a class="anchor" href="#attributes-of-pooled-component"></a>Attributes of &lt;pooled-component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <h3 id="attributes-of-pooled-component"><a class="anchor" href="#attributes-of-pooled-component"></a>Attributes of pooled-component</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a component class. This is a shortcut that is equivalent to providing a 'prototype-object' element.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies a component class. This is a shortcut that is equivalent to providing a 'prototype-object' element.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-pooled-component"><a class="anchor" href="#child-elements-of-pooled-component"></a>Child Elements of &lt;pooled-component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <h3 id="child-elements-of-pooled-component"><a class="anchor" href="#child-elements-of-pooled-component"></a>Child Elements of pooled-component</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1023,42 +1005,42 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-interceptor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-interceptor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for an interceptor element.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interceptor-stack</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interceptor-stack</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a stack of interceptors defined globally.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-object-factory</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-object-factory</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Object factory used to obtain the object instance that will be used for the component implementation. The object factory is responsible for object creation and may implement different patterns, such as singleton or prototype, or look up an instance from other object containers.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Object factory used to obtain the object instance to use for the component implementation. The object factory is responsible for object creation and may implement different patterns, such as singleton or prototype, or look up an instance from other object containers.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-lifecycle-adapter-factory</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-lifecycle-adapter-factory</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">binding</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>binding</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A binding associates a Mule endpoint with an injected Java interface. This is like using Spring to inject a bean, but instead of calling a method on the bean, a message is sent to an endpoint.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-entry-point-resolver-set</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-entry-point-resolver-set</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for entry point resolver set elements. These combine a group of entry point resolvers, trying them in turn until one succeeds.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-entry-point-resolver</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-entry-point-resolver</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for an entry point resolver element. Entry point resolvers define how payloads are delivered to Java code by choosing the method to call.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-pooling-profile</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-pooling-profile</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics of the object pool.</p></td> 
      </tr> 
@@ -1068,133 +1050,179 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="pooling-profile"><a class="anchor" href="#pooling-profile"></a>Pooling profile</h2> 
+ <h2 id="pooling-profile"><a class="anchor" href="#pooling-profile"></a>Pooling Profile</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="attributes-of-pooling-profile"><a class="anchor" href="#attributes-of-pooling-profile"></a>Attributes of &lt;pooling-profile…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <h3 id="attributes-of-pooling-profile"><a class="anchor" href="#attributes-of-pooling-profile"></a>Attributes of pooling-profile</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
      <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: 80%;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">maxActive</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Controls the maximum number of Mule components that can be borrowed from a session at one time. When set to a negative value, there is no limit to the number of components that may be active at one time. When maxActive is exceeded, the pool is said to be exhausted.</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>maxActive</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Controls the maximum number of Mule components that can be borrowed from a session at one time. When set to a negative value, there is no limit to the number of components that may be active at one time. When maxActive is exceeded, the pool is said to be exhausted.</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">maxIdle</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Controls the maximum number of Mule components that can sit idle in the pool at any time. When set to a negative value, there is no limit to the number of Mule components that may be idle at one time.</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>maxIdle</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Controls the maximum number of Mule components that can sit idle in the pool at any time. When set to a negative value, there is no limit to the number of Mule components that may be idle at one time.</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">initialisationPolicy</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">INITIALISE_ONE</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Determines how components in a pool should be initialized. The possible values are: INITIALISE_NONE (will not load any components into the pool on startup), INITIALISE_ONE (will load one initial component into the pool on startup), or INITIALISE_ALL (will load all components in the pool on startup)</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>initialisationPolicy</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Determines how components in a pool should be initialized.<br> Possible values are:</p> 
+        </div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><code>INITIALISE_NONE</code> - Does not load components into the pool on startup</p> </li> 
+          <li> <p><code>INITIALISE_ONE</code> - Loads one initial component into the pool on startup</p> </li> 
+          <li> <p><code>INITIALISE_ALL</code> - Loads all components in the pool on startup</p> </li> 
+         </ul> 
+        </div> 
+        <div class="paragraph"> 
+         <p><strong>Type</strong>: <code>enumeration</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>INITIALISE_ONE</code></p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exhaustedAction</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">WHEN_EXHAUSTED_GROW</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the behavior of the Mule component pool when the pool is exhausted. Possible values are: "WHEN_EXHAUSTED_FAIL", which will throw a NoSuchElementException, "WHEN_EXHAUSTED_WAIT", which will block by invoking Object.wait(long) until a new or idle object is available, or WHEN_EXHAUSTED_GROW, which will create a new Mule instance and return it, essentially making maxActive meaningless. If a positive maxWait value is supplied, it will block for at most that many milliseconds, after which a NoSuchElementException will be thrown. If maxThreadWait is a negative value, it will block indefinitely.</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>exhaustedAction</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Specifies the behavior of the Mule component pool when the pool is exhausted.<br> Possible values are:</p> 
+        </div> 
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><code>WHEN_EXHAUSTED_FAIL</code> - Throws a NoSuchElementException</p> </li> 
+          <li> <p><code>WHEN_EXHAUSTED_WAIT</code> - Blocks by invoking Object.wait(long) until a new or idle object is available</p> </li> 
+          <li> <p><code>WHEN_EXHAUSTED_GROW</code> - Creates a new Mule instance and return it, essentially making maxActive meaningless. If a positive maxWait value is supplied, it blocks for at most that many milliseconds, after which a <code>NoSuchElementException</code> is thrown. If <code>maxThreadWait</code> is a negative value, it blocks indefinitely.</p> </li> 
+         </ul> 
+        </div> 
+        <div class="paragraph"> 
+         <p><strong>Type</strong>: <code>enumeration</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: <code>WHEN_EXHAUSTED_GROW</code></p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">maxWait</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the number of milliseconds to wait for a pooled component to become available when the pool is exhausted and the exhaustedAction is set to WHEN_EXHAUSTED_WAIT.</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>maxWait</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Specifies the number of milliseconds to wait for a pooled component to become available when the pool is exhausted and the exhaustedAction is set to <code>WHEN_EXHAUSTED_WAIT</code>.</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">evictionCheckIntervalMillis</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the number of milliseconds between runs of the object evictor. When non-positive, no object evictor is executed..</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>evictionCheckIntervalMillis</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Specifies the number of milliseconds between runs of the object evictor. When non-positive, no object evictor is executed.</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">minEvictionMillis</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Determines the minimum amount of time an object may sit idle in the pool before it is eligible for eviction. When non-positive, no objects will be evicted from the pool due to idle time alone.</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>minEvictionMillis</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Determines the minimum amount of time an object may sit idle in the pool before it is eligible for eviction. When non-positive, no objects are evicted from the pool due to idle time alone.</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><strong>Type</strong>: <code>string</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p> 
+        </div> 
+       </div></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-pooling-profile"><a class="anchor" href="#child-elements-of-pooling-profile"></a>Child Elements of &lt;pooling-profile…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
-    <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements of <code>pooling-profile</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="echo-component"><a class="anchor" href="#echo-component"></a>Echo component</h2> 
+ <h2 id="echo-component"><a class="anchor" href="#echo-component"></a>Echo Component</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Logs the message and returns the payload as the result.</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="attributes-of-echo-component"><a class="anchor" href="#attributes-of-echo-component"></a>Attributes of &lt;echo-component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+  <div class="paragraph"> 
+   <p>No attributes of <code>echo-component</code>.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-echo-component"><a class="anchor" href="#child-elements-of-echo-component"></a>Child Elements of &lt;echo-component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 70%;"> 
+   <h3 id="child-elements-of-echo-component"><a class="anchor" href="#child-elements-of-echo-component"></a>Child Elements of echo-component</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1205,12 +1233,12 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-interceptor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-interceptor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for an interceptor element.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interceptor-stack</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interceptor-stack</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a stack of interceptors defined globally.</p></td> 
      </tr> 
@@ -1220,39 +1248,21 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="log-component"><a class="anchor" href="#log-component"></a>Log component</h2> 
+ <h2 id="log-component"><a class="anchor" href="#log-component"></a>Log Component</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Logs the message content (or content length if it is a large message).</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="attributes-of-log-component"><a class="anchor" href="#attributes-of-log-component"></a>Attributes of &lt;log-component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+  <div class="paragraph"> 
+   <p>No attributes of <code>log-component</code>.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-log-component"><a class="anchor" href="#child-elements-of-log-component"></a>Child Elements of &lt;log-component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 80%;"> 
+   <h3 id="child-elements-of-log-component"><a class="anchor" href="#child-elements-of-log-component"></a>Child Elements of log-component</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1263,12 +1273,12 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-interceptor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-interceptor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for an interceptor element.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interceptor-stack</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interceptor-stack</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a stack of interceptors defined globally.</p></td> 
      </tr> 
@@ -1278,34 +1288,16 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="null-component"><a class="anchor" href="#null-component"></a>Null component</h2> 
+ <h2 id="null-component"><a class="anchor" href="#null-component"></a>Null Component</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Throws an exception if it receives a message.</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="attributes-of-null-component"><a class="anchor" href="#attributes-of-null-component"></a>Attributes of &lt;null-component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+  <div class="paragraph"> 
+   <p>No attributes of <code>null-component</code>.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-null-component"><a class="anchor" href="#child-elements-of-null-component"></a>Child Elements of &lt;null-component…​&gt;</h3> 
+   <h3 id="child-elements-of-null-component"><a class="anchor" href="#child-elements-of-null-component"></a>Child Elements of null-component</h3> 
    <table class="tableblock frame-all grid-all" style="width: 80%;"> 
     <colgroup> 
      <col style="width: 33%;"> 
@@ -1321,12 +1313,12 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-interceptor</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-interceptor</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for an interceptor element.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interceptor-stack</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interceptor-stack</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A reference to a stack of interceptors defined globally.</p></td> 
      </tr> 
@@ -1336,45 +1328,36 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="spring-object"><a class="anchor" href="#spring-object"></a>Spring object</h2> 
+ <h2 id="spring-object"><a class="anchor" href="#spring-object"></a>Spring Object</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="attributes-of-spring-object"><a class="anchor" href="#attributes-of-spring-object"></a>Attributes of &lt;spring-object…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 80%;"> 
+   <h3 id="attributes-of-spring-object"><a class="anchor" href="#attributes-of-spring-object"></a>Attributes of spring-object</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">bean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Name of Spring bean to look up.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bean</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Name of Spring bean to look up.<br> <strong>Type</strong>: <code>name (no spaces)</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-spring-object"><a class="anchor" href="#child-elements-of-spring-object"></a>Child Elements of &lt;spring-object…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <h3 id="child-elements-of-spring-object"><a class="anchor" href="#child-elements-of-spring-object"></a>Child Elements of spring-object</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1385,12 +1368,12 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">property</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>property</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Sets a Mule property. This is a name/value pair that can be set on components, services, etc., and which provide a generic way of configuring the system. Typically, you shouldn’t need to use a generic property like this, since almost all functionality is exposed via dedicated elements. However, it can be useful in configuring obscure or overlooked options and in configuring transports from the generic endpoint elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">properties</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>properties</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A map of Mule properties.</p></td> 
      </tr> 
@@ -1400,45 +1383,36 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="singleton-object"><a class="anchor" href="#singleton-object"></a>Singleton object</h2> 
+ <h2 id="singleton-object"><a class="anchor" href="#singleton-object"></a>Singleton Object</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="attributes-of-singleton-object"><a class="anchor" href="#attributes-of-singleton-object"></a>Attributes of &lt;singleton-object…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
+   <h3 id="attributes-of-singleton-object"><a class="anchor" href="#attributes-of-singleton-object"></a>Attributes of singleton-object</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Class name</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Class name<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-singleton-object"><a class="anchor" href="#child-elements-of-singleton-object"></a>Child Elements of &lt;singleton-object…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <h3 id="child-elements-of-singleton-object"><a class="anchor" href="#child-elements-of-singleton-object"></a>Child Elements of singleton-object</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1449,12 +1423,12 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">property</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>property</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Sets a Mule property. This is a name/value pair that can be set on components, services, etc., and which provide a generic way of configuring the system. Typically, you shouldn’t need to use a generic property like this, since almost all functionality is exposed via dedicated elements. However, it can be useful in configuring obscure or overlooked options and in configuring transports from the generic endpoint elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">properties</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>properties</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A map of Mule properties.</p></td> 
      </tr> 
@@ -1464,45 +1438,36 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="prototype-object"><a class="anchor" href="#prototype-object"></a>Prototype object</h2> 
+ <h2 id="prototype-object"><a class="anchor" href="#prototype-object"></a>Prototype Object</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="attributes-of-prototype-object"><a class="anchor" href="#attributes-of-prototype-object"></a>Attributes of &lt;prototype-object…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <h3 id="attributes-of-prototype-object"><a class="anchor" href="#attributes-of-prototype-object"></a>Attributes of prototype-object</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Class name</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Class name<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-prototype-object"><a class="anchor" href="#child-elements-of-prototype-object"></a>Child Elements of &lt;prototype-object…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+   <h3 id="child-elements-of-prototype-object"><a class="anchor" href="#child-elements-of-prototype-object"></a>Child Elements of prototype-object</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1513,12 +1478,12 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">property</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>property</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Sets a Mule property. This is a name/value pair that can be set on components, services, etc., and which provide a generic way of configuring the system. Typically, you shouldn’t need to use a generic property like this, since almost all functionality is exposed via dedicated elements. However, it can be useful in configuring obscure or overlooked options and in configuring transports from the generic endpoint elements.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">properties</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>properties</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A map of Mule properties.</p></td> 
      </tr> 
@@ -1528,45 +1493,36 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="custom-lifecycle-adapter-factory"><a class="anchor" href="#custom-lifecycle-adapter-factory"></a>Custom lifecycle adapter factory</h2> 
+ <h2 id="custom-lifecycle-adapter-factory"><a class="anchor" href="#custom-lifecycle-adapter-factory"></a>Custom Lifecycle Adapter Factory</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="attributes-of-custom-lifecycle-adapter-factory"><a class="anchor" href="#attributes-of-custom-lifecycle-adapter-factory"></a>Attributes of &lt;custom-lifecycle-adapter-factory…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
+   <h3 id="attributes-of-custom-lifecycle-adapter-factory"><a class="anchor" href="#attributes-of-custom-lifecycle-adapter-factory"></a>Attributes of custom-lifecycle-adapter-factory</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the LifecycleAdapter interface.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An implementation of the <code>LifecycleAdapter</code> interface.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-custom-lifecycle-adapter-factory"><a class="anchor" href="#child-elements-of-custom-lifecycle-adapter-factory"></a>Child Elements of &lt;custom-lifecycle-adapter-factory…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
+   <h3 id="child-elements-of-custom-lifecycle-adapter-factory"><a class="anchor" href="#child-elements-of-custom-lifecycle-adapter-factory"></a>Child Elements of custom-lifecycle-adapter-factory</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1577,7 +1533,7 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">spring:property</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>spring:property</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Spring-style property element for custom configuration.</p></td> 
      </tr> 
@@ -1593,49 +1549,37 @@
    <p>A binding associates a Mule endpoint with an injected Java interface. This is like using Spring to inject a bean, but instead of calling a method on the bean, a message is sent to an endpoint.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-binding"><a class="anchor" href="#attributes-of-binding"></a>Attributes of &lt;binding…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 80%;"> 
+   <h3 id="attributes-of-binding"><a class="anchor" href="#attributes-of-binding"></a>Attributes of Binding</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">interface</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface to be injected. A proxy will be created that implements this interface by calling out to the endpoint.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>interface</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The interface to be injected. A proxy is created that implements this interface by calling out to the endpoint.<br> <strong>Type</strong>: <code>class name</code><br> <strong>Required</strong>: yes<br> <strong>Default</strong>: none</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The method on the interface that should be used. This can be omitted if the interface has a single method.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>method</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">The method on the interface that should be used. This can be omitted if the interface has a single method.<br> <strong>Type</strong>: none<br> <strong>Required</strong>: no<br> <strong>Default</strong>: none</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-binding"><a class="anchor" href="#child-elements-of-binding"></a>Child Elements of &lt;binding…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 80%;"> 
+   <h3 id="child-elements-of-binding"><a class="anchor" href="#child-elements-of-binding"></a>Child Elements of Binding</h3> 
+   <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1646,7 +1590,7 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-outbound-endpoint</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-outbound-endpoint</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">1..*</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for outbound endpoint elements. Outbound endpoints dispatch messages to the underlying transport.</p></td> 
      </tr> 
@@ -1675,7 +1619,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#component">Component</a></li><li><a class="scroll-menu-link" href="#pooled-component">Pooled component</a></li><li><a class="scroll-menu-link" href="#pooling-profile">Pooling profile</a></li><li><a class="scroll-menu-link" href="#echo-component">Echo component</a></li><li><a class="scroll-menu-link" href="#log-component">Log component</a></li><li><a class="scroll-menu-link" href="#null-component">Null component</a></li><li><a class="scroll-menu-link" href="#spring-object">Spring object</a></li><li><a class="scroll-menu-link" href="#singleton-object">Singleton object</a></li><li><a class="scroll-menu-link" href="#prototype-object">Prototype object</a></li><li><a class="scroll-menu-link" href="#custom-lifecycle-adapter-factory">Custom lifecycle adapter factory</a></li><li><a class="scroll-menu-link" href="#binding">Binding</a></li><li><a class="scroll-menu-link" href="#interceptors">Interceptors</a></li><li><a class="scroll-menu-link" href="#entry-point-resolvers">Entry Point Resolvers</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#component">Component</a></li><li><a class="scroll-menu-link" href="#pooled-component">Pooled component</a></li><li><a class="scroll-menu-link" href="#pooling-profile">Pooling Profile</a></li><li><a class="scroll-menu-link" href="#echo-component">Echo Component</a></li><li><a class="scroll-menu-link" href="#log-component">Log Component</a></li><li><a class="scroll-menu-link" href="#null-component">Null Component</a></li><li><a class="scroll-menu-link" href="#spring-object">Spring Object</a></li><li><a class="scroll-menu-link" href="#singleton-object">Singleton Object</a></li><li><a class="scroll-menu-link" href="#prototype-object">Prototype Object</a></li><li><a class="scroll-menu-link" href="#custom-lifecycle-adapter-factory">Custom Lifecycle Adapter Factory</a></li><li><a class="scroll-menu-link" href="#binding">Binding</a></li><li><a class="scroll-menu-link" href="#interceptors">Interceptors</a></li><li><a class="scroll-menu-link" href="#entry-point-resolvers">Entry Point Resolvers</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
