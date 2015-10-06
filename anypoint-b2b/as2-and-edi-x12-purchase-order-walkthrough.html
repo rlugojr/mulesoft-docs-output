@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough" />
-    <meta name="description" content="This document is for a technical audience possessing basic knowledge of DataMapper, AS2 Connector, X12 Module, and Anypoint Platform. To run this e..." />
+    <meta name="description" content="This document is aimed at a technical audience possessing basic knowledge of DataMapper, AS2 Connector, X12 Module, and Anypoint Platform. To run t..." />
     <meta class="swiftype" name="title" data-type="string" content="AS2 and EDI X12 Purchase Order WalkThrough" />
 
 </head>
@@ -722,7 +722,7 @@
 <li><i></i><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a></li><li><i></i><a href="/anypoint-b2b/x12-module">X12 Module</a></li><li><i></i><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a></li><li class="expanded">
 <i></i>
 <a href="/anypoint-b2b/anypoint-partner-manager">Anypoint Partner Manager</a><ul style="display: block;">
-<li class="active"><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking">Transmission Tracking Walkthrough</a></li></ul></li>
+<li class="active"><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
 <li><i></i><a href="/anypoint-b2b/as2-connector">AS2 Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector-2.0.0-rc">AS2 Connector 2.0.0 RC</a></li><li><i></i><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a></li><li><i></i><a href="/anypoint-b2b/edi-x12-order-processing-example">EDI X12 Order Processing Example</a></li><li><i></i><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></li></ul></li>
 <li>
 <i></i>
@@ -873,7 +873,7 @@
           <div class="sect2"> 
  <h3 id="audience"><a class="anchor" href="#audience"></a>Audience</h3> 
  <div class="paragraph"> 
-  <p>This document is for a technical audience possessing basic knowledge of <a href="/mule-user-guide/v/3.7/Datamapper-User-Guide-and-Reference">DataMapper</a>, <a href="http://modusintegration.github.io/mule-connector-as2/quickstart.html">AS2 Connector</a>, <a href="/anypoint-b2b/x12-module">X12 Module</a>, and Anypoint Platform.</p> 
+  <p>This document is aimed at a technical audience possessing basic knowledge of <a href="/mule-user-guide/v/3.7/Datamapper-User-Guide-and-Reference">DataMapper</a>, <a href="http://modusintegration.github.io/mule-connector-as2/quickstart.html">AS2 Connector</a>, <a href="/anypoint-b2b/x12-module">X12 Module</a>, and Anypoint Platform.</p> 
  </div> 
 </div> 
 <div class="sect2"> 
@@ -907,12 +907,14 @@
    <ol class="arabic"> 
     <li> <p>Download the <a href="_attachments/as2-x12-doc.zip">as2-x12-doc.zip application</a>, and unzip.</p> </li> 
     <li> <p>Import the application in Anypoint Studio: click <strong>File</strong> &gt; <strong>Import</strong> &gt; <strong>Anypoint Studio Project from External Location</strong>. Click <strong>Next</strong>, select the downloaded application, and click <strong>Finish</strong>.</p> </li> 
-    <li> <p>From your web browser, log in to the Anypoint Partner Manager and then click the home organization view in the top right corner. Copy your API key (reference step 3.2.).</p> </li> 
-    <li> <p>In Anypoint Studio, click the file <em>customer.xml</em> in the app directory, and select the Global view tab. Double-click the B2B global element configuration and insert the API key you got from the Anypoint Partner Manager.</p> </li> 
+    <li> <p>From your web browser, log into Anypoint Partner Manager (see your Mulesoft account manager for this URL).</p> </li> 
+    <li> <p>Create an account and sign in.</p> </li> 
+    <li> <p>Click the home organization view in the top right corner. Copy your API key (reference step 3.2.).</p> </li> 
+    <li> <p>In Anypoint Studio, click the file <em>customer.xml</em> in the app directory, and select the Global view tab. Double-click the B2B global element configuration and insert the API key you got from Anypoint Partner Manager.</p> </li> 
     <li> <p>Right-click on the imported project directory <em>as2-x12-doc</em>. Select <strong>Run As</strong> and click <strong>Mule Application</strong>.</p> </li> 
     <li> <p>Inside the project is a file in <em>src/test/resources</em> called <a href="_attachments/as2-x12-po.xml">po.xml</a>. Create a copy and place it in the <em>outbox</em> directory.</p> </li> 
     <li> <p>The file should disappear from the directory since the File message source deletes the file once it reads it.</p> </li> 
-    <li> <p>Access the B2B Transmissions view in the Anypoint Partner Manager to confirm that the AS2 and X12 transmissions have taken place.</p> </li> 
+    <li> <p>Access the B2B Transmissions view in Anypoint Partner Manager to confirm that the AS2 and X12 transmissions have taken place.</p> </li> 
    </ol> 
   </div> 
  </div> 
@@ -921,7 +923,7 @@
  <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This example shows how to leverage the Anypoint B2B Platform to manage and track B2B exchanges. The goal is to develop a Mule application, representing a customer, that transforms an XML purchase order read from the filesystem to an X12 850 and sends it to a supplier over AS2. The supplier returns an X12 997 to an AS2 endpoint the application is listening on in order to inform the customer whether the 850 was accepted or rejected. All B2B transactions are managed and recorded by Anypoint B2B Platform while the actual files exchanged are stored in an Amazon S3 bucket.</p> 
+   <p>This example shows how to leverage Anypoint B2B Platform to manage and track B2B exchanges. The goal is to develop a Mule application, representing a customer, that transforms an XML purchase order read from the filesystem to an X12 850 and sends it to a supplier over AS2. The supplier returns an X12 997 to an AS2 endpoint the application is listening on in order to inform the customer whether the 850 was accepted or rejected. All B2B transactions are managed and recorded by Anypoint B2B Platform while the actual files exchanged are stored in an Amazon S3 bucket.</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/B2B_AS2EDI_01.png" alt="B2B_AS2EDI_01"></span></p> 
@@ -932,7 +934,7 @@
  <h2 id="partnership-set-up"><a class="anchor" href="#partnership-set-up"></a>Partnership Set Up</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The first stage of the solution is to create a partnership between your organization and the supplier from the Anypoint Partner Manager. A partnership establishes the context in which B2B data can be exchanged between you and your partner. Furthermore, it allows this data to be tracked and viewed from the Anypoint Partner Manager.</p> 
+   <p>The first stage of the solution is to create a partnership between your organization and the supplier from Anypoint Partner Manager. A partnership establishes the context in which B2B data can be exchanged between you and your partner. Furthermore, it allows this data to be tracked and viewed from Anypoint Partner Manager.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="create-partnership"><a class="anchor" href="#create-partnership"></a>Create Partnership</h3> 
@@ -1133,17 +1135,17 @@
  <h2 id="customer-connector-configs"><a class="anchor" href="#customer-connector-configs"></a>Customer Connector Configs</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Create the customer’s connector configs in the customer Mule config file before proceeding to build the customer flows.</p> 
+   <p>In this section, go through the next steps to create the customer’s connector configs in the customer Mule config file before proceeding to build the customer flows.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="create-b2b-connector-config"><a class="anchor" href="#create-b2b-connector-config"></a>Create B2B Connector Config</h3> 
    <div class="paragraph"> 
-    <p>The B2B Connector acts like a bridge between Mule and Anypoint‘s B2B services. It allows the AS2 Connector and EDI Module to fetch partnerships and record transmissions.</p> 
+    <p>The B2B Connector acts like a bridge between Mule and Anypoint‘s B2B services. It allows the AS2 Connector and the X12 module to fetch partnerships and record transmissions.</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>Click the <strong>Global Elements</strong> view. Go to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B</strong>.</p> </li> 
-     <li> <p>Enter your secret API key which is retrieved from your home organization’s <strong>Contacts</strong> settings page in the Anypoint Partner Manager. Remember, the home organization settings is accessed by clicking on the home organization settings link on the upper right corner, next to the home icon:</p> 
+     <li> <p>Enter your secret API key which is retrieved from your home organization’s <strong>Contacts</strong> settings page in Anypoint Partner Manager. Remember, the home organization settings is accessed by clicking on the home organization settings link on the upper right corner, next to the home icon:</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/B2B_AS2EDI_11.png" alt="B2B_AS2EDI_11"></span></p> 
       </div> 
@@ -1192,7 +1194,7 @@
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/B2B_AS2EDI_14.png" alt="B2B_AS2EDI_14"></span></p> 
       </div> </li> 
-     <li> <p>Set the interchange identifier attributes so that they correspond with the interchange identifiers you configured in the Anypoint Partner Manager:</p> 
+     <li> <p>Set the interchange identifier attributes so that they correspond with the interchange identifiers you configured in Anypoint Partner Manager:</p> 
       <div class="paragraph"> 
        <p>Self identification:</p> 
       </div> 
@@ -1335,7 +1337,7 @@ AS2-To = _MY-SUPPLIER_</pre></td>
       </div> 
      </div> 
      <div class="paragraph"> 
-      <p>Note that these identifiers were configured in the Anypoint Partner Manager. The AS2 identifiers are the key for looking up the partnership to use for sending AS2 messages.</p> 
+      <p>Note that these identifiers were configured in Anypoint Partner Manager. The AS2 identifiers are the key for looking up the partnership to use for sending AS2 messages.</p> 
      </div> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/B2B_AS2EDI_17.png" alt="B2B_AS2EDI_17"></span></p> 
@@ -1427,7 +1429,7 @@ AS2-To = _MOUNTAINOUT_</pre></td>
    <ol class="arabic"> 
     <li> <p>Run the application as a <strong>Mule Application</strong>. On startup, the application creates the <em>outbox</em> directory in the project’s root directory. If the <em>outbox</em> directory isn’t visible, try refreshing the project in the <strong>Package Explorer</strong> view.</p> </li> 
     <li> <p>Drop the purchase order file po.xml, included with this document, in the outbox directory. The file should disappear from the directory since the <strong>File</strong> inbound endpoint deletes the file after it reads it.</p> </li> 
-    <li> <p>Access the B2B Transmissions view in the Anypoint Partner Manager to confirm that the AS2 and X12 transmissions have taken place.</p> 
+    <li> <p>Access the B2B Transmissions view in Anypoint Partner Manager to confirm that the AS2 and X12 transmissions have taken place.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/B2B_AS2EDI_22.png" alt="B2B_AS2EDI_22"></span></p> 
      </div> </li> 
