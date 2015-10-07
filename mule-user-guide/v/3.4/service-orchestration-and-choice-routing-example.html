@@ -908,20 +908,20 @@ INFO&nbsp; 2012-06-12 22:33:01,348 [main] org.mortbay.jetty: Started SelectChann
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-37eaf" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-0a95d" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-ef476" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-a9f11" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-37eaf"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ef476"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/orderServiceFlow.png" alt="orderServiceFlow"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-0a95d"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-a9f11"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -953,31 +953,31 @@ INFO&nbsp; 2012-06-12 22:33:01,348 [main] org.mortbay.jetty: Started SelectChann
 24
 25
 </pre></td> 
-             <td class="code"><pre>&amp;lt;flow name="orderService" doc:name="orderService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="1080" path="orders" doc:name="/orders" doc:description="Process HTTP reqests or responses." connector-ref="HttpConnector"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="com.mulesoft.se.orders.IProcessOrder" doc:name="Order WebService" doc:description="Make a web service available via CXF"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-session-variable variableName="totalValue" value="0" doc:name="totalValue = 0"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;foreach collection="#[payload.orderItems]" doc:name="For each Order Item"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher target="#[rootMessage.payload.orderItems[counter - 1].purchaseReceipt]" doc:name="Enrich with purchase receipt"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice doc:name="Choice"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="#[payload.manufacturer == 'Samsung']"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;vm:outbound-endpoint exchange-pattern="request-response" path="samsungOrder" doc:name="Dispatch to samsungOrder"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jms:outbound-endpoint exchange-pattern="request-response" queue="inhouseOrder" connector-ref="Active_MQ" doc:name="Dispatch to inhouseOrder"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/foreach&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;vm:outbound-endpoint exchange-pattern="one-way" path="audit" responseTimeout="10000" mimeType="text/plain" doc:name="Dispatch to audit"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
-&amp;lt;/flow&amp;gt;</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="orderService" doc:name="orderService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="1080" path="orders" doc:name="/orders" doc:description="Process HTTP reqests or responses." connector-ref="HttpConnector"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="com.mulesoft.se.orders.IProcessOrder" doc:name="Order WebService" doc:description="Make a web service available via CXF"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-session-variable variableName="totalValue" value="0" doc:name="totalValue = 0"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>foreach collection="#[payload.orderItems]" doc:name="For each Order Item"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher target="#[rootMessage.payload.orderItems[counter - 1].purchaseReceipt]" doc:name="Enrich with purchase receipt"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="#[payload.manufacturer == 'Samsung']"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>vm:outbound-endpoint exchange-pattern="request-response" path="samsungOrder" doc:name="Dispatch to samsungOrder"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jms:outbound-endpoint exchange-pattern="request-response" queue="inhouseOrder" connector-ref="Active_MQ" doc:name="Dispatch to inhouseOrder"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/foreach<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>vm:outbound-endpoint exchange-pattern="one-way" path="audit" responseTimeout="10000" mimeType="text/plain" doc:name="Dispatch to audit"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1026,20 +1026,20 @@ INFO&nbsp; 2012-06-12 22:33:01,348 [main] org.mortbay.jetty: Started SelectChann
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-60fda" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-or-standalone-37707" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-4b5c3" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-or-standalone-137bf" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-60fda"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4b5c3"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/samsungOrder.png" alt="samsungOrder"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-37707"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-137bf"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1065,25 +1065,25 @@ INFO&nbsp; 2012-06-12 22:33:01,348 [main] org.mortbay.jetty: Started SelectChann
 18
 19
 </pre></td> 
-             <td class="code"><pre>&amp;lt;flow name="samsungOrder" doc:name="samsungOrder"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;vm:inbound-endpoint exchange-pattern="request-response" path="samsungOrder" doc:name="samsungOrder"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="OrderItemToOrderRequest" doc:name="OrderItem to OrderRequest"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="samsungWebServiceClient" doc:name="Invoke Samsung WebService"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;message-filter throwOnUnaccepted="true" doc:name="Filter on 200 OK"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;message-property-filter pattern="http.status=200" caseSensitive="true" scope="inbound"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/message-filter&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-session-variable variableName="totalValue" value="#[totalValue + payload.price]" doc:name="totalValue += price"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="OrderResponseToPurchaseReceipt" doc:name="OrderResponse to PurchaseReceipt"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:transformer doc:name="Create REJECTED PurchaseReceipt"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:script engine="groovy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:text&amp;gt;&amp;lt;![CDATA[def receipt = new com.mulesoft.se.orders.PurchaseReceipt();
+             <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="samsungOrder" doc:name="samsungOrder"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>vm:inbound-endpoint exchange-pattern="request-response" path="samsungOrder" doc:name="samsungOrder"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="OrderItemToOrderRequest" doc:name="OrderItem to OrderRequest"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="samsungWebServiceClient" doc:name="Invoke Samsung WebService"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>message-filter throwOnUnaccepted="true" doc:name="Filter on 200 OK"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>message-property-filter pattern="http.status=200" caseSensitive="true" scope="inbound"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/message-filter<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-session-variable variableName="totalValue" value="#[totalValue + payload.price]" doc:name="totalValue += price"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="OrderResponseToPurchaseReceipt" doc:name="OrderResponse to PurchaseReceipt"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:transformer doc:name="Create REJECTED PurchaseReceipt"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:script engine="groovy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:text<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[def receipt = new com.mulesoft.se.orders.PurchaseReceipt();
 receipt.setStatus(com.mulesoft.se.orders.Status.REJECTED); receipt.setTotalPrice(0);
-return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:script&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:transformer&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
-&amp;lt;/flow&amp;gt;</pre></td> 
+return receipt;]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/scripting:text<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:script<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:transformer<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1114,20 +1114,20 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-c53bb" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-or-standalone-53ec7" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-96526" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-or-standalone-e21b8" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c53bb"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-96526"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/inhouseOrder.png" alt="inhouseOrder"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-53ec7"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-e21b8"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1164,36 +1164,36 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
 29
 <strong>30</strong>
 </pre></td> 
-             <td class="code"><pre>&amp;lt;flow name="inhouseOrder" doc:name="inhouseOrder"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jms:inbound-endpoint queue="inhouseOrder" connector-ref="Active_MQ" doc:name="inhouseOrder"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;xa-transaction action="ALWAYS_BEGIN"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/jms:inbound-endpoint&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="price" value="0" doc:name="Initialise Price"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher target="#[price]" doc:name="Enrich with price"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;ee:cache cachingStrategy-ref="Caching_Strategy" doc:name="Cache the Price"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9999" path="api/prices/#[payload.productId]" method="GET" disableTransportTransformer="true" doc:name="Invoke Price Service"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;core:object-to-string-transformer doc:name="Object to String"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/ee:cache&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jdbc-ee:outbound-endpoint exchange-pattern="one-way" queryKey="insertOrder" queryTimeout="-1" connector-ref="JDBCConnector" doc:name="Save Order Item"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;xa-transaction action="ALWAYS_JOIN"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jdbc-ee:query key="insertOrder" value="insert into orders (product_id, name, manufacturer, quantity, price) values (#[payload.productId], #[payload.name], #[payload.manufacturer], #[payload.quantity], #[price])"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/jdbc-ee:outbound-endpoint&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="totalPrice" value="#[price * payload.quantity]" doc:name="totalPrice = price * payload.quantity"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-session-variable variableName="totalValue" value="#[totalValue + totalPrice]" doc:name="totalValue += totalPrice"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:transformer doc:name="Groovy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:script engine="Groovy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:text&amp;gt;&amp;lt;![CDATA[receipt = new com.mulesoft.se.orders.PurchaseReceipt(); receipt.setStatus(com.mulesoft.se.orders.Status.ACCEPTED); receipt.setTotalPrice(Float.valueOf(message.getInvocationProperty('totalPrice')));
-return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:script&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:transformer&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;rollback-exception-strategy maxRedeliveryAttempts="3" doc:name="Rollback Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger message="#[payload:]" level="INFO" doc:name="Logger"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;on-redelivery-attempts-exceeded&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/on-redelivery-attempts-exceeded&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/rollback-exception-strategy&amp;gt;
-&amp;lt;/flow&amp;gt;</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="inhouseOrder" doc:name="inhouseOrder"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jms:inbound-endpoint queue="inhouseOrder" connector-ref="Active_MQ" doc:name="inhouseOrder"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>xa-transaction action="ALWAYS_BEGIN"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/jms:inbound-endpoint<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="price" value="0" doc:name="Initialise Price"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher target="#[price]" doc:name="Enrich with price"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>ee:cache cachingStrategy-ref="Caching_Strategy" doc:name="Cache the Price"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9999" path="api/prices/#[payload.productId]" method="GET" disableTransportTransformer="true" doc:name="Invoke Price Service"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>core:object-to-string-transformer doc:name="Object to String"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/ee:cache<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jdbc-ee:outbound-endpoint exchange-pattern="one-way" queryKey="insertOrder" queryTimeout="-1" connector-ref="JDBCConnector" doc:name="Save Order Item"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>xa-transaction action="ALWAYS_JOIN"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jdbc-ee:query key="insertOrder" value="insert into orders (product_id, name, manufacturer, quantity, price) values (#[payload.productId], #[payload.name], #[payload.manufacturer], #[payload.quantity], #[price])"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/jdbc-ee:outbound-endpoint<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="totalPrice" value="#[price * payload.quantity]" doc:name="totalPrice = price * payload.quantity"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-session-variable variableName="totalValue" value="#[totalValue + totalPrice]" doc:name="totalValue += totalPrice"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:transformer doc:name="Groovy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:script engine="Groovy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:text<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[receipt = new com.mulesoft.se.orders.PurchaseReceipt(); receipt.setStatus(com.mulesoft.se.orders.Status.ACCEPTED); receipt.setTotalPrice(Float.valueOf(message.getInvocationProperty('totalPrice')));
+return receipt;]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/scripting:text<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:script<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:transformer<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>rollback-exception-strategy maxRedeliveryAttempts="3" doc:name="Rollback Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="#[payload:]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>on-redelivery-attempts-exceeded<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/on-redelivery-attempts-exceeded<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/rollback-exception-strategy<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1229,20 +1229,20 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-6a1a8" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-or-standalone-74a97" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-14c30" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-or-standalone-b9ad9" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6a1a8"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-14c30"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/priceServiceFlow.png" alt="priceServiceFlow"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-74a97"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-b9ad9"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1255,12 +1255,12 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
 5
 6
 </pre></td> 
-             <td class="code"><pre>&amp;lt;flow name="priceService" doc:name="priceService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="9999" path="api" doc:name="/prices" connector-ref="HttpConnector"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jersey:resources doc:name="Price Service"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component class="com.mulesoft.se.orders.ProductPrice"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/jersey:resources&amp;gt;
-&amp;lt;/flow&amp;gt;</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="priceService" doc:name="priceService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="9999" path="api" doc:name="/prices" connector-ref="HttpConnector"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jersey:resources doc:name="Price Service"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component class="com.mulesoft.se.orders.ProductPrice"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/jersey:resources<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1285,20 +1285,20 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-49971" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-or-standalone-dd240" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-13241" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-or-standalone-2549f" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-49971"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-13241"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/samsungServiceFlow.png" alt="samsungServiceFlow"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-dd240"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-2549f"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1310,11 +1310,11 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
 4
 5
 </pre></td> 
-             <td class="code"><pre>&amp;lt;flow name="samsungService" doc:name="samsungService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="9090" path="samsung/orders" doc:name="/samsung/orders" doc:description="Process HTTP reqests or responses." connector-ref="HttpConnector"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="com.mulesoft.se.samsung.SamsungService" doc:name="Order WebService" doc:description="Make a web service available via CXF"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component class="com.mulesoft.se.samsung.SamsungServiceImpl" doc:name="Samsung Service Impl"/&amp;gt;
-&amp;lt;/flow&amp;gt;</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="samsungService" doc:name="samsungService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="9090" path="samsung/orders" doc:name="/samsung/orders" doc:description="Process HTTP reqests or responses." connector-ref="HttpConnector"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="com.mulesoft.se.samsung.SamsungService" doc:name="Order WebService" doc:description="Make a web service available via CXF"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component class="com.mulesoft.se.samsung.SamsungServiceImpl" doc:name="Samsung Service Impl"/<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1336,20 +1336,20 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-a4335" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-7a695" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-4b9ee" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-45f1e" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a4335"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4b9ee"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/auditServiceFlow.png" alt="auditServiceFlow"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-7a695"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-45f1e"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1371,21 +1371,21 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
 14
 15
 </pre></td> 
-             <td class="code"><pre>&amp;lt;flow name="auditService" doc:name="auditService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;vm:inbound-endpoint exchange-pattern="one-way" path="audit" responseTimeout="10000" mimeType="text/plain" doc:name="audit"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;xa-transaction action="ALWAYS_BEGIN"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/vm:inbound-endpoint&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jdbc-ee:outbound-endpoint exchange-pattern="one-way" queryKey="insertOrderSummary" responseTimeout="10000" mimeType="text/plain" queryTimeout="-1" connector-ref="JDBCConnector" doc:name="Save OrderSummary"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;xa-transaction action="ALWAYS_JOIN"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jdbc-ee:query key="insertOrderSummary" value="insert into order_audits values(default, #[payload.orderId], #[totalValue])"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/jdbc-ee:outbound-endpoint&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice-exception-strategy doc:name="Choice Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;rollback-exception-strategy when="#[sessionVars['totalValue'] &amp;amp;gt; 5000" doc:name="Rollback Exception Strategy"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice-exception-strategy&amp;gt;
-&amp;lt;/flow&amp;gt;</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="auditService" doc:name="auditService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>vm:inbound-endpoint exchange-pattern="one-way" path="audit" responseTimeout="10000" mimeType="text/plain" doc:name="audit"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>xa-transaction action="ALWAYS_BEGIN"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/vm:inbound-endpoint<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jdbc-ee:outbound-endpoint exchange-pattern="one-way" queryKey="insertOrderSummary" responseTimeout="10000" mimeType="text/plain" queryTimeout="-1" connector-ref="JDBCConnector" doc:name="Save OrderSummary"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>xa-transaction action="ALWAYS_JOIN"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jdbc-ee:query key="insertOrderSummary" value="insert into order_audits values(default, #[payload.orderId], #[totalValue])"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/jdbc-ee:outbound-endpoint<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice-exception-strategy doc:name="Choice Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>rollback-exception-strategy when="#[sessionVars['totalValue'] <span class="entity">&amp;amp;</span>gt; 5000" doc:name="Rollback Exception Strategy"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice-exception-strategy<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1408,20 +1408,20 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
        <div class="panel-heading no-padding"> 
         <!-- Nav tabs --> 
         <ul class="nav nav-tabs" role="tablist"> 
-         <li class="active"><a href="#studio-visual-editor-84300" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-         <li><a href="#studio-xml-editor-or-standalone-af12b" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+         <li class="active"><a href="#studio-visual-editor-3e12a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+         <li><a href="#studio-xml-editor-or-standalone-02725" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
         </ul> 
        </div> 
        <div class="panel-body tab-content no-padding"> 
-        <div class="tab-pane in active fade no-padding" id="studio-visual-editor-84300"> 
+        <div class="tab-pane in active fade no-padding" id="studio-visual-editor-3e12a"> 
          <div class="paragraph"> 
           <p><span class="image"><img src="./_images/defaultErrorHandler.png" alt="defaultErrorHandler"></span></p> 
          </div> 
         </div> 
-        <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-af12b"> 
+        <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-02725"> 
          <div class="listingblock"> 
           <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="code">
+           <pre class="CodeRay highlight"><code data-lang="xml">
     
                 
              <table class="CodeRay"> 
@@ -1434,12 +1434,12 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
 5
 6
 </pre></td> 
-                <td class="code"><pre>&amp;lt;sub-flow name="defaultErrorHandler" doc:name="defaultErrorHandler"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger message="Error occurred: #[payload]" level="INFO"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Log Error" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;smtp:outbound-endpoint host="localhost"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;responseTimeout="10000" doc:name="Send Email to Operations" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;&nbsp;</pre></td> 
+                <td class="code"><pre><span class="entity">&amp;lt;</span>sub-flow name="defaultErrorHandler" doc:name="defaultErrorHandler"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="Error occurred: #[payload]" level="INFO"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Log Error" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>smtp:outbound-endpoint host="localhost"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;responseTimeout="10000" doc:name="Send Email to Operations" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>&nbsp;</pre></td> 
                </tr> 
               </tbody> 
              </table></code></pre> 
@@ -1460,20 +1460,20 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-8856c" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-or-standalone-b250c" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-f22a5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-or-standalone-085c6" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-8856c"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f22a5"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/dbInitializeFlow.png" alt="dbInitializeFlow"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-b250c"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-085c6"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1496,22 +1496,22 @@ return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
 15
 16
 </pre></td> 
-             <td class="code"><pre>&amp;lt;flow name="databaseInitialisation" doc:name="databaseInitialisation"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8091" path="populate" doc:name="HTTP" connector-ref="HttpConnector"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:component doc:name="Create Tables"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:script engine="Groovy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:text&amp;gt;&amp;lt;![CDATA[jdbcConnector = muleContext.getRegistry().lookupConnector("JDBCConnector");
+             <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="databaseInitialisation" doc:name="databaseInitialisation"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="8091" path="populate" doc:name="HTTP" connector-ref="HttpConnector"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:component doc:name="Create Tables"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:script engine="Groovy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:text<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[jdbcConnector = muleContext.getRegistry().lookupConnector("JDBCConnector");
 qr = jdbcConnector.getQueryRunner();
 conn = jdbcConnector.getConnection();
 qr.update(conn, "CREATE TABLE orders (i int generated always as identity, product_id varchar(256), name varchar(256), manufacturer varchar(256), quantity integer, price integer)");
 qr.update(conn, "CREATE TABLE order_audits (i int generated always as identity, order_id varchar(256), total_value integer)");
-return "db populated";]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:script&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:component&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-payload value="table already populated" doc:name="'table already populated'"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
-&amp;lt;/flow&amp;gt;</pre></td> 
+return "db populated";]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/scripting:text<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:script<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:component<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="table already populated" doc:name="'table already populated'"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1530,20 +1530,20 @@ return "db populated";]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-d7256" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-or-standalone-366cc" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-f2b35" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-or-standalone-b0101" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d7256"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f2b35"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/order_processing.png" alt="order_processing"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-366cc"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-b0101"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1816,9 +1816,9 @@ return "db populated";]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
 265
 266
 </pre></td> 
-             <td class="code"><pre>&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
+             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 &nbsp;
-&amp;lt;mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+<span class="entity">&amp;lt;</span>mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
 &nbsp;
@@ -1868,220 +1868,220 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 &nbsp;
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 &nbsp;
-http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd "&amp;gt;
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd "<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:connector name="HttpConnector" doc:name="HTTP\HTTPS" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jms:activemq-xa-connector name="Active_MQ"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brokerURL="vm://localhost" validateConnections="true" doc:name="Active MQ" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:configuration initializeStaticBusInstance="false"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="CXF Configuration" doc:description="Global CXF Configuration" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="OrderItemToOrderRequest"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transformationGraphPath="orderitemtoorderrequest_1.grf" doc:name="DataMapper" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="OrderResponseToPurchaseReceipt"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transformationGraphPath="orderresponsetopurchasereceipt.grf" doc:name="DataMapper" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;spring:beans&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;spring:bean id="Derby_Data_Source"
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:connector name="HttpConnector" doc:name="HTTP\HTTPS" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jms:activemq-xa-connector name="Active_MQ"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brokerURL="vm://localhost" validateConnections="true" doc:name="Active MQ" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:configuration initializeStaticBusInstance="false"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="CXF Configuration" doc:description="Global CXF Configuration" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="OrderItemToOrderRequest"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transformationGraphPath="orderitemtoorderrequest_1.grf" doc:name="DataMapper" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="OrderResponseToPurchaseReceipt"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transformationGraphPath="orderresponsetopurchasereceipt.grf" doc:name="DataMapper" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>spring:beans<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>spring:bean id="Derby_Data_Source"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class="org.enhydra.jdbc.standard.StandardXADataSource"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destroy-method="shutdown"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;spring:property name="driverName"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="org.apache.derby.jdbc.EmbeddedDriver" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;spring:property name="url"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="jdbc:derby:muleEmbeddedDB;create=true" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/spring:bean&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/spring:beans&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jdbc-ee:connector name="JDBCConnector"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destroy-method="shutdown"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>spring:property name="driverName"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="org.apache.derby.jdbc.EmbeddedDriver" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>spring:property name="url"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="jdbc:derby:muleEmbeddedDB;create=true" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/spring:bean<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/spring:beans<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jdbc-ee:connector name="JDBCConnector"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataSource-ref="Derby_Data_Source" validateConnections="true"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queryTimeout="-1" pollingFrequency="0" doc:name="Database" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jbossts:transaction-manager doc:name="Transaction Manager"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;property key="com.arjuna.ats.arjuna.coordinator.defaultTimeout"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="600"&amp;gt;&amp;lt;/property&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;property key="com.arjuna.ats.arjuna.coordinator.txReaperTimeout"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="1000000"&amp;gt;&amp;lt;/property&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/jbossts:transaction-manager&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;ee:object-store-caching-strategy
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queryTimeout="-1" pollingFrequency="0" doc:name="Database" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jbossts:transaction-manager doc:name="Transaction Manager"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>property key="com.arjuna.ats.arjuna.coordinator.defaultTimeout"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="600"<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/property<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>property key="com.arjuna.ats.arjuna.coordinator.txReaperTimeout"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="1000000"<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/property<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/jbossts:transaction-manager<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>ee:object-store-caching-strategy
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="Caching_Strategy" keyGenerationExpression="#[payload.productId]"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Caching Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;in-memory-store /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/ee:object-store-caching-strategy&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:namespace-manager
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;includeConfigNamespaces="true"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:namespace prefix="soap"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uri="http://schemas.xmlsoap.org/soap/envelope/" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:namespace prefix="ord"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uri="http://orders.se.mulesoft.com/" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/mulexml:namespace-manager&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="orderService" doc:name="orderService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Caching Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>in-memory-store /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/ee:object-store-caching-strategy<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:namespace-manager
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;includeConfigNamespaces="true"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:namespace prefix="soap"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uri="http://schemas.xmlsoap.org/soap/envelope/" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:namespace prefix="ord"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uri="http://orders.se.mulesoft.com/" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/mulexml:namespace-manager<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="orderService" doc:name="orderService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="1080" path="orders" doc:name="/orders"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:description="Process HTTP reqests or responses." connector-ref="HttpConnector" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="com.mulesoft.se.orders.IProcessOrder"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Order WebService" doc:description="Make a web service available via CXF" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-session-variable variableName="totalValue"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="0" doc:name="totalValue=0" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;foreach collection="#[payload.orderItems]" doc:name="For each Order Item"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:description="Process HTTP reqests or responses." connector-ref="HttpConnector" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="com.mulesoft.se.orders.IProcessOrder"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Order WebService" doc:description="Make a web service available via CXF" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-session-variable variableName="totalValue"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="0" doc:name="totalValue=0" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>foreach collection="#[payload.orderItems]" doc:name="For each Order Item"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target="#[rootMessage.payload.orderItems[counter - 1].purchaseReceipt]"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Enrich with purchase receipt"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice doc:name="Choice"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="#[payload.manufacturer == 'Samsung']"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;vm:outbound-endpoint exchange-pattern="request-response"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="samsungOrder" doc:name="Dispatch to samsungOrder" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jms:outbound-endpoint exchange-pattern="request-response"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue="inhouseOrder" connector-ref="Active_MQ" doc:name="Dispatch to inhouseOrder" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/foreach&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;vm:outbound-endpoint exchange-pattern="one-way"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="audit" responseTimeout="10000" mimeType="text/plain" doc:name="Dispatch to audit" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="samsungOrder" doc:name="samsungOrder"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;vm:inbound-endpoint exchange-pattern="request-response"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="samsungOrder" doc:name="samsungOrder" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="OrderItemToOrderRequest"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="OrderItem to OrderRequest" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="samsungWebServiceClient" doc:name="Invoke Samsung WebService" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;message-filter throwOnUnaccepted="true" doc:name="Filter on 200 OK"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;message-property-filter pattern="http.status=200"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caseSensitive="true" scope="inbound" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/message-filter&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-session-variable variableName="totalValue"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="#[totalValue + payload.price]" doc:name="totalValue += price" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="OrderResponseToPurchaseReceipt"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="OrderResponse to PurchaseReceipt" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:transformer doc:name="Create REJECTED PurchaseReceipt"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:script engine="groovy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:text&amp;gt;&amp;lt;![CDATA[def receipt = new com.mulesoft.se.orders.PurchaseReceipt();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Enrich with purchase receipt"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="#[payload.manufacturer == 'Samsung']"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>vm:outbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="samsungOrder" doc:name="Dispatch to samsungOrder" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jms:outbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue="inhouseOrder" connector-ref="Active_MQ" doc:name="Dispatch to inhouseOrder" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/foreach<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>vm:outbound-endpoint exchange-pattern="one-way"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="audit" responseTimeout="10000" mimeType="text/plain" doc:name="Dispatch to audit" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="samsungOrder" doc:name="samsungOrder"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>vm:inbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="samsungOrder" doc:name="samsungOrder" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="OrderItemToOrderRequest"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="OrderItem to OrderRequest" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="samsungWebServiceClient" doc:name="Invoke Samsung WebService" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>message-filter throwOnUnaccepted="true" doc:name="Filter on 200 OK"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>message-property-filter pattern="http.status=200"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caseSensitive="true" scope="inbound" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/message-filter<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-session-variable variableName="totalValue"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="#[totalValue + payload.price]" doc:name="totalValue += price" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="OrderResponseToPurchaseReceipt"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="OrderResponse to PurchaseReceipt" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:transformer doc:name="Create REJECTED PurchaseReceipt"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:script engine="groovy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:text<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[def receipt = new com.mulesoft.se.orders.PurchaseReceipt();
 receipt.setStatus(com.mulesoft.se.orders.Status.REJECTED); receipt.setTotalPrice(0);
-return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:script&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:transformer&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+return receipt;]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/scripting:text<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:script<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:transformer<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="samsungWebServiceClient" doc:name="samsungWebServiceClient"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-client operation="purchase"
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="samsungWebServiceClient" doc:name="samsungWebServiceClient"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-client operation="purchase"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clientClass="com.mulesoft.se.samsung.SamsungServiceService" port="SamsungServicePort"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Samsung Webservice Client" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:outbound-endpoint exchange-pattern="request-response"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="9090" path="samsung/orders" doc:name="/samsung/orders" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Samsung Webservice Client" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:outbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="9090" path="samsung/orders" doc:name="/samsung/orders" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="inhouseOrder" doc:name="inhouseOrder"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jms:inbound-endpoint queue="inhouseOrder"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connector-ref="Active_MQ" doc:name="inhouseOrder"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;xa-transaction action="ALWAYS_BEGIN" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/jms:inbound-endpoint&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="price" value="0"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Initialise Price" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher target="#[price]" doc:name="Enrich with price"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;ee:cache cachingStrategy-ref="Caching_Strategy" doc:name="Cache the Price"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:outbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="inhouseOrder" doc:name="inhouseOrder"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jms:inbound-endpoint queue="inhouseOrder"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connector-ref="Active_MQ" doc:name="inhouseOrder"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>xa-transaction action="ALWAYS_BEGIN" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/jms:inbound-endpoint<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="price" value="0"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Initialise Price" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher target="#[price]" doc:name="Enrich with price"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>ee:cache cachingStrategy-ref="Caching_Strategy" doc:name="Cache the Price"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:outbound-endpoint exchange-pattern="request-response"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="9999" path="api/prices/#[payload.productId]"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method="GET" disableTransportTransformer="true" doc:name="Invoke Price Service" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;object-to-string-transformer doc:name="Object to String" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/ee:cache&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jdbc-ee:outbound-endpoint exchange-pattern="one-way"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method="GET" disableTransportTransformer="true" doc:name="Invoke Price Service" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>object-to-string-transformer doc:name="Object to String" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/ee:cache<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jdbc-ee:outbound-endpoint exchange-pattern="one-way"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queryKey="insertOrder" queryTimeout="-1" connector-ref="JDBCConnector"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Save Order Item"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;xa-transaction action="ALWAYS_JOIN" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jdbc-ee:query key="insertOrder"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="insert into orders (product_id, name, manufacturer, quantity, price) values (#[payload.productId], #[payload.name], #[payload.manufacturer], #[payload.quantity], #[price])" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/jdbc-ee:outbound-endpoint&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="totalPrice" value="#[price * payload.quantity]"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="totalPrice = price * payload.quantity" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-session-variable variableName="totalValue"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="#[totalValue + totalPrice]" doc:name="totalValue += totalPrice" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:transformer doc:name="Groovy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:script engine="Groovy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:text&amp;gt;&amp;lt;![CDATA[receipt = new com.mulesoft.se.orders.PurchaseReceipt(); receipt.setStatus(com.mulesoft.se.orders.Status.ACCEPTED); receipt.setTotalPrice(Float.valueOf(message.getInvocationProperty('totalPrice')));
-return receipt;]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:script&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:transformer&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;rollback-exception-strategy
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxRedeliveryAttempts="3" doc:name="Rollback Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger message="#[payload:]" level="INFO" doc:name="Logger" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;on-redelivery-attempts-exceeded
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Redelivery exhausted"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/on-redelivery-attempts-exceeded&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/rollback-exception-strategy&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Save Order Item"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>xa-transaction action="ALWAYS_JOIN" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jdbc-ee:query key="insertOrder"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="insert into orders (product_id, name, manufacturer, quantity, price) values (#[payload.productId], #[payload.name], #[payload.manufacturer], #[payload.quantity], #[price])" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/jdbc-ee:outbound-endpoint<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="totalPrice" value="#[price * payload.quantity]"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="totalPrice = price * payload.quantity" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-session-variable variableName="totalValue"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="#[totalValue + totalPrice]" doc:name="totalValue += totalPrice" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:transformer doc:name="Groovy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:script engine="Groovy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:text<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[receipt = new com.mulesoft.se.orders.PurchaseReceipt(); receipt.setStatus(com.mulesoft.se.orders.Status.ACCEPTED); receipt.setTotalPrice(Float.valueOf(message.getInvocationProperty('totalPrice')));
+return receipt;]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/scripting:text<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:script<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:transformer<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>rollback-exception-strategy
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxRedeliveryAttempts="3" doc:name="Rollback Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="#[payload:]" level="INFO" doc:name="Logger" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>on-redelivery-attempts-exceeded
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Redelivery exhausted"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/on-redelivery-attempts-exceeded<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/rollback-exception-strategy<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="auditService" doc:name="auditService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;vm:inbound-endpoint exchange-pattern="one-way"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="audit" responseTimeout="10000" mimeType="text/plain" doc:name="audit"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;xa-transaction action="ALWAYS_BEGIN" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/vm:inbound-endpoint&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jdbc-ee:outbound-endpoint exchange-pattern="one-way"
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="auditService" doc:name="auditService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>vm:inbound-endpoint exchange-pattern="one-way"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="audit" responseTimeout="10000" mimeType="text/plain" doc:name="audit"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>xa-transaction action="ALWAYS_BEGIN" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/vm:inbound-endpoint<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jdbc-ee:outbound-endpoint exchange-pattern="one-way"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queryKey="insertOrderSummary" responseTimeout="10000" mimeType="text/plain"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queryTimeout="-1" connector-ref="JDBCConnector" doc:name="Save OrderSummary"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;xa-transaction action="ALWAYS_JOIN" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jdbc-ee:query key="insertOrderSummary"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="insert into order_audits values(default, #[payload.orderId], #[totalValue])" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/jdbc-ee:outbound-endpoint&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice-exception-strategy doc:name="Choice Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;rollback-exception-strategy when="#[sessionVars['totalValue'] &amp;amp;gt; 5000"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Rollback Exception Strategy" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice-exception-strategy&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queryTimeout="-1" connector-ref="JDBCConnector" doc:name="Save OrderSummary"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>xa-transaction action="ALWAYS_JOIN" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jdbc-ee:query key="insertOrderSummary"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="insert into order_audits values(default, #[payload.orderId], #[totalValue])" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/jdbc-ee:outbound-endpoint<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice-exception-strategy doc:name="Choice Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>rollback-exception-strategy when="#[sessionVars['totalValue'] <span class="entity">&amp;amp;</span>gt; 5000"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Rollback Exception Strategy" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="defaultErrorHandler" doc:name="Invoke defaultErrorHandler" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice-exception-strategy<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="priceService" doc:name="priceService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="priceService" doc:name="priceService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="9999" path="api" doc:name="/prices"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connector-ref="HttpConnector" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;jersey:resources doc:name="Price Service"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component class="com.mulesoft.se.orders.ProductPrice" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/jersey:resources&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connector-ref="HttpConnector" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>jersey:resources doc:name="Price Service"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component class="com.mulesoft.se.orders.ProductPrice" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/jersey:resources<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="samsungService" doc:name="samsungService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="samsungService" doc:name="samsungService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="9090" path="samsung/orders" doc:name="/samsung/orders"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:description="Process HTTP reqests or responses." connector-ref="HttpConnector" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="com.mulesoft.se.samsung.SamsungService"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Order WebService" doc:description="Make a web service available via CXF" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component class="com.mulesoft.se.samsung.SamsungServiceImpl"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Samsung Service Impl" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:description="Process HTTP reqests or responses." connector-ref="HttpConnector" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="com.mulesoft.se.samsung.SamsungService"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Order WebService" doc:description="Make a web service available via CXF" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component class="com.mulesoft.se.samsung.SamsungServiceImpl"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Samsung Service Impl" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="defaultErrorHandler" doc:name="defaultErrorHandler"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger message="Error occurred: #[payload]" level="INFO"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Log Error" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;smtp:outbound-endpoint host="localhost"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;responseTimeout="10000" doc:name="Send Email to Operations" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="defaultErrorHandler" doc:name="defaultErrorHandler"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="Error occurred: #[payload]" level="INFO"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Log Error" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>smtp:outbound-endpoint host="localhost"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;responseTimeout="10000" doc:name="Send Email to Operations" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="databaseInitialisation" doc:name="databaseInitialisation"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="databaseInitialisation" doc:name="databaseInitialisation"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="8091" path="populate" doc:name="HTTP"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connector-ref="HttpConnector" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:component doc:name="Create Tables"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:script engine="Groovy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;scripting:text&amp;gt;&amp;lt;![CDATA[jdbcConnector = muleContext.getRegistry().lookupConnector("JDBCConnector");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connector-ref="HttpConnector" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:component doc:name="Create Tables"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:script engine="Groovy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:text<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[jdbcConnector = muleContext.getRegistry().lookupConnector("JDBCConnector");
 qr = jdbcConnector.getQueryRunner();
 conn = jdbcConnector.getConnection();
 qr.update(conn, "CREATE TABLE orders (i int generated always as identity, product_id varchar(256), name varchar(256), manufacturer varchar(256), quantity integer, price integer)");
 qr.update(conn, "CREATE TABLE order_audits (i int generated always as identity, order_id varchar(256), total_value integer)");
-return "db populated";]]&amp;gt;&amp;lt;/scripting:text&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:script&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/scripting:component&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-payload value="table already populated" doc:name="'table already populated'" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+return "db populated";]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/scripting:text<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:script<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:component<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="table already populated" doc:name="'table already populated'" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&amp;lt;/mule&amp;gt;&nbsp;</pre></td> 
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span>&nbsp;</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 

@@ -1112,7 +1112,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
+     <pre class="CodeRay highlight"><code data-lang="xml">
           
        <table class="CodeRay"> 
         <tbody> 
@@ -1125,13 +1125,13 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 6
 7
 </pre></td> 
-          <td class="code"><pre>&lt;head&gt;
-&nbsp;&nbsp;&lt;link href="css/south-street/jquery-ui-1.8.20.custom.css" rel="stylesheet" type="text/css"/&gt;
-&nbsp;&nbsp;&lt;link href="css/estore.css" rel="stylesheet" type="text/css"/&gt;
-&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery-1.7.2.min.js"&gt;&lt;/script&gt;
-&nbsp;&nbsp;&lt;script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"&gt;&lt;/script&gt;
-&nbsp;&nbsp;&lt;script type="text/javascript" src="mule-resource/js/mule.js"&gt;&lt;/script&gt;
-&lt;/head&gt;</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;head&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;link</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">"</span><span class="content">css/south-street/jquery-ui-1.8.20.custom.css</span><span class="delimiter">"</span></span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">"</span><span class="content">stylesheet</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">text/css</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;link</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">"</span><span class="content">css/estore.css</span><span class="delimiter">"</span></span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">"</span><span class="content">stylesheet</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">text/css</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;script</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">text/javascript</span><span class="delimiter">"</span></span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">"</span><span class="content">js/jquery-1.7.2.min.js</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;script</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">text/javascript</span><span class="delimiter">"</span></span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">"</span><span class="content">js/jquery-ui-1.8.20.custom.min.js</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;script</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">text/javascript</span><span class="delimiter">"</span></span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule-resource/js/mule.js</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/head&gt;</span></pre></td> 
          </tr> 
         </tbody> 
        </table></code></pre> 
@@ -1159,7 +1159,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1172,13 +1172,13 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 6
 7
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="e-storeFrontend-listProducts" doc:name="e-storeFrontend-listProducts"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ajax:inbound-endpoint channel="/estore/listProducts" responseTimeout="10000" connector-ref="ajaxServer" doc:name="/estore/listProducts"&gt;&lt;/ajax:inbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;response&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"&gt;&lt;/object-to-string-transformer&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/response&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:outbound-endpoint exchange-pattern="request-response" queue="estore.listProducts" connector-ref="Active_MQ" doc:name="Request product list to backend"&gt;&lt;/jms:outbound-endpoint&gt;&nbsp;
-&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-listProducts</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-listProducts</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ajax:inbound-endpoint</span> <span class="attribute-name">channel</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/listProducts</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">ajaxServer</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/listProducts</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/ajax:inbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;response&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/object-to-string-transformer&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/response&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.listProducts</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Request product list to backend</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/jms:outbound-endpoint&gt;</span>&nbsp;
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1214,14 +1214,14 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
           <tr> 
            <td class="line-numbers"><pre>1
 </pre></td> 
-           <td class="code"><pre>&lt;jms:activemq-connector name="Active_MQ" specification="1.1" brokerURL="vm://localhost" validateConnections="true" doc:name="Active_MQ"/&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ</span><span class="delimiter">"</span></span> <span class="attribute-name">specification</span>=<span class="string"><span class="delimiter">"</span><span class="content">1.1</span><span class="delimiter">"</span></span> <span class="attribute-name">brokerURL</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">validateConnections</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1244,7 +1244,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1275,31 +1275,31 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 24
 25
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="listProducts" doc:name="listProducts"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:inbound-endpoint exchange-pattern="request-response" queue="estore.listProducts" connector-ref="Active_MQ2" doc:name="JMS"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-variable variableName="allProducts" value="#\[new java.util.LinkedList()\]" doc:name="Initialize output list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;all doc:name="All"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ee:cache cachingStrategy-ref="listProductsBarbersParadiseCachingStrategy" doc:name="Cache"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9080" path="barbersparadise/products" method="GET" connector-ref="HttpConnector" doc:name="Fetch products from Barbers Paradise Store"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ee:cache&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;splitter expression="#[json:]" doc:name="Split received products list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:transform config-ref="barbersParadiseToCanonicalJSON" doc:name="Transform to canonical JSON"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="flowVars['allProducts'].add(payload)" doc:name="Add product to output list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ee:cache cachingStrategy-ref="listProductsVangoghPaintStoreCachingStrategy" doc:name="Cache"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;flow-ref name="subflow-fetchProductsFromVanGoghPaintStore" doc:name="subflow-fetchProductsFromVanGoghPaintStore"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ee:cache&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;collection-splitter doc:name="Split received collection"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:transform config-ref="vanGoghPaintToCanonicalJSON" doc:name="Transform to canonical JSON"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="flowVars['allProducts'].add(payload)" doc:name="Add product to output list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/all&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="allProducts" doc:name="Set payload to output list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">listProducts</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">listProducts</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:inbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.listProducts</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ2</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">JMS</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">allProducts</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#\[new java.util.LinkedList()\]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Initialize output list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;all</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">All</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ee:cache</span> <span class="attribute-name">cachingStrategy-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">listProductsBarbersParadiseCachingStrategy</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Cache</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">9080</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">barbersparadise/products</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HttpConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Fetch products from Barbers Paradise Store</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ee:cache&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;splitter</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[json:]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Split received products list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">barbersParadiseToCanonicalJSON</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform to canonical JSON</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowVars['allProducts'].add(payload)</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Add product to output list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ee:cache</span> <span class="attribute-name">cachingStrategy-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">listProductsVangoghPaintStoreCachingStrategy</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Cache</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductsFromVanGoghPaintStore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductsFromVanGoghPaintStore</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ee:cache&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;collection-splitter</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Split received collection</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">vanGoghPaintToCanonicalJSON</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform to canonical JSON</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowVars['allProducts'].add(payload)</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Add product to output list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/all&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">allProducts</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set payload to output list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1481,7 +1481,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1491,10 +1491,10 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 3
 4
 </pre></td> 
-           <td class="code"><pre>&lt;sub-flow name="subflow-fetchProductsFromVanGoghPaintStore" doc:name="subflow-fetchProductsFromVanGoghPaintStore"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cxf:jaxws-client operation="listProducts" serviceClass="com.mulesoft.example.estore.clients.provider.vangoghpaintstore.B2BStore" port="80" enableMuleSoapHeaders="true" doc:name="Prepare SOAP request"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9081" path="vangoghpaintstore" doc:name="Invoke SOAP request"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sub-flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductsFromVanGoghPaintStore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductsFromVanGoghPaintStore</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;cxf:jaxws-client</span> <span class="attribute-name">operation</span>=<span class="string"><span class="delimiter">"</span><span class="content">listProducts</span><span class="delimiter">"</span></span> <span class="attribute-name">serviceClass</span>=<span class="string"><span class="delimiter">"</span><span class="content">com.mulesoft.example.estore.clients.provider.vangoghpaintstore.B2BStore</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">80</span><span class="delimiter">"</span></span> <span class="attribute-name">enableMuleSoapHeaders</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Prepare SOAP request</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">9081</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">vangoghpaintstore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Invoke SOAP request</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sub-flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1572,7 +1572,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1583,11 +1583,11 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 4
 5
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="e-storeFrontend-addToCart" doc:name="e-storeFrontend-addToCart"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ajax:inbound-endpoint channel="/estore/addToCart" responseTimeout="10000" doc:name="/estore/addToCart"&gt;&lt;/ajax:inbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="sessionId" value="#[flowVars['cometd.client'].toString()]" doc:name="Set session id from AJAX client id"&gt;&lt;/set-property&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:outbound-endpoint queue="estore.addToCart" connector-ref="Active_MQ" doc:name="Request add product to cart to backend"&gt;&lt;/jms:outbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-addToCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-addToCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ajax:inbound-endpoint</span> <span class="attribute-name">channel</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/addToCart</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/addToCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/ajax:inbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">sessionId</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars['cometd.client'].toString()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set session id from AJAX client id</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/set-property&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.addToCart</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Request add product to cart to backend</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/jms:outbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1604,14 +1604,14 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
           <tr> 
            <td class="line-numbers"><pre>1
 </pre></td> 
-           <td class="code"><pre>&lt;set-property propertyName="sessionId" value="#[flowVars['cometd.client'].toString()]" doc:name="Set session id from AJAX client id"&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">sessionId</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars['cometd.client'].toString()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set session id from AJAX client id</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1634,7 +1634,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1644,10 +1644,10 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 3
 4
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="addToCart" doc:name="addToCart"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:inbound-endpoint queue="estore.addToCart" connector-ref="Active_MQ2" doc:name="JMS"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jdbc-ee:outbound-endpoint exchange-pattern="one-way" queryKey="query-addToCart" queryTimeout="-1" connector-ref="JDBCConnector" doc:name="Store product on cart table"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">addToCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">addToCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:inbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.addToCart</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ2</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">JMS</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jdbc-ee:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">queryKey</span>=<span class="string"><span class="delimiter">"</span><span class="content">query-addToCart</span><span class="delimiter">"</span></span> <span class="attribute-name">queryTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">-1</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">JDBCConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Store product on cart table</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1682,7 +1682,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1699,17 +1699,17 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 <strong>10</strong>
 11
 </pre></td> 
-           <td class="code"><pre>&lt;spring:beans&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;spring:bean id="Derby_Data_Source" class="org.enhydra.jdbc.standard.StandardXADataSource" destroy-method="shutdown"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;spring:property name="driverName" value="org.apache.derby.jdbc.EmbeddedDriver"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;spring:property name="url" value="jdbc:derby:muleEmbeddedDB;create=true"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/spring:bean&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/spring:beans&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;jdbc:connector name="JDBCConnector" dataSource-ref="Derby_Data_Source" validateConnections="true" queryTimeout="-1" pollingFrequency="0" doc:name="JDBCConnector"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jdbc:query key="query-addToCart" value="INSERT INTO cart (session_id, product_id, provider, quantity) VALUES (#[header:inbound:sessionId], #[json:productCode], #[json:provider], #[json:qty])"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jdbc:query key="query-showCart" value="SELECT * FROM cart WHERE session_id = #[header:inbound:sessionId]"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jdbc:query key="query-clearCart" value="DELETE FROM cart WHERE session_id = #[header:inbound:sessionId]"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/jdbc:connector&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;spring:beans&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">Derby_Data_Source</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.enhydra.jdbc.standard.StandardXADataSource</span><span class="delimiter">"</span></span> <span class="attribute-name">destroy-method</span>=<span class="string"><span class="delimiter">"</span><span class="content">shutdown</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">driverName</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.apache.derby.jdbc.EmbeddedDriver</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">url</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">jdbc:derby:muleEmbeddedDB;create=true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/spring:bean&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/spring:beans&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jdbc:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">JDBCConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">dataSource-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Derby_Data_Source</span><span class="delimiter">"</span></span> <span class="attribute-name">validateConnections</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">queryTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">-1</span><span class="delimiter">"</span></span> <span class="attribute-name">pollingFrequency</span>=<span class="string"><span class="delimiter">"</span><span class="content">0</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">JDBCConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jdbc:query</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">query-addToCart</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">INSERT INTO cart (session_id, product_id, provider, quantity) VALUES (#[header:inbound:sessionId], #[json:productCode], #[json:provider], #[json:qty])</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jdbc:query</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">query-showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">SELECT * FROM cart WHERE session_id = #[header:inbound:sessionId]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jdbc:query</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">query-clearCart</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">DELETE FROM cart WHERE session_id = #[header:inbound:sessionId]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/jdbc:connector&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1793,7 +1793,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1807,14 +1807,14 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 7
 8
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="e-storeFrontend-showCart" doc:name="e-storeFrontend-showCart"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ajax:inbound-endpoint channel="/estore/showCart" responseTimeout="10000" connector-ref="ajaxServer" doc:name="/estore/showCart"&gt;&lt;/ajax:inbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;response&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"&gt;&lt;/object-to-string-transformer&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/response&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="sessionId" value="#[flowVars['cometd.client'].toString()]" doc:name="Set session id from AJAX client id"&gt;&lt;/set-property&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:outbound-endpoint exchange-pattern="request-response" queue="estore.showCart" connector-ref="Active_MQ" doc:name="Request cart contents to backend"&gt;&lt;/jms:outbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-showCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ajax:inbound-endpoint</span> <span class="attribute-name">channel</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">ajaxServer</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/showCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/ajax:inbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;response&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/object-to-string-transformer&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/response&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">sessionId</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars['cometd.client'].toString()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set session id from AJAX client id</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/set-property&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Request cart contents to backend</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/jms:outbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1837,7 +1837,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1847,10 +1847,10 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 3
 4
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="showCart" doc:name="showCart"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:inbound-endpoint exchange-pattern="request-response" queue="estore.showCart" connector-ref="Active_MQ2" doc:name="JMS"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;flow-ref name="subflow-showCart" doc:name="subflow-showCart"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">showCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:inbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ2</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">JMS</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-showCart</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1867,7 +1867,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1913,46 +1913,46 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 39
 <strong>40</strong>
 </pre></td> 
-           <td class="code"><pre>&lt;sub-flow name="subflow-showCart" doc:name="subflow-showCart"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jdbc:outbound-endpoint exchange-pattern="request-response" queryKey="query-showCart" queryTimeout="-1" connector-ref="JDBCConnector" doc:name="Fetch cart contents from database"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-variable variableName="grandTotal" value="#[0]" doc:name="Initialize grand total"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-variable variableName="cartItems" value="#[new java.util.LinkedList()]" doc:name="Initialize cart items list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;foreach doc:name="Foreach"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;choice doc:name="Choice"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="payload['PROVIDER'].equals('Barber\'s Paradise Store')"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;enricher target="#[header:outbound:productDetails]" doc:name="Store product details as message property (enrich)"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ee:cache cachingStrategy-ref="fetchProductDetailsCachingStrategy" doc:name="Cache"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;core:flow-ref name="subflow-fetchProductDetailsFromBarbersParadise" doc:name="subflow-fetchProductDetailsFromBarbersParadise"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ee:cache&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/enricher&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="payload['PROVIDER'].equals('Van Gogh\'s Paint Store')"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;enricher target="#[header:outbound:productDetails]" doc:name="Store product details as message property (enrich)"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ee:cache cachingStrategy-ref="fetchProductDetailsCachingStrategy" doc:name="Cache"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;core:flow-ref name="subflow-fetchProductDetailsFromVanGoghPaintStore" doc:name="subflow-fetchProductDetailsFromVanGoghPaintStore"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ee:cache&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/enricher&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/choice&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:transform config-ref="consolidateProductDetailsOnCart" doc:name="Consolidate cart item info and subtotal"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:input-arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:input-argument key="price"&gt;#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['productDetails'].toString())).price]&lt;/DataMapper:input-argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:input-argument key="providerId"&gt;#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['productDetails'].toString())).providerId]&lt;/DataMapper:input-argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:input-argument key="product_id"&gt;#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['productDetails'].toString())).productId]&lt;/DataMapper:input-argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:input-argument key="productDescription"&gt;#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['productDetails'].toString())).productDescription]&lt;/DataMapper:input-argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DataMapper:input-arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DataMapper:transform&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-variable variableName="grandTotal" value="#[grandTotal + Float.parseFloat((new groovy.json.JsonSlurper().parseText(payload)).subtotal)]" doc:name="Sum item subtotal to grand total"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="flowVars['cartItems'].add(payload)" doc:name="Add cart item to list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/foreach&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="cartTotal" value="#[grandTotal]" doc:name="Set cartTotal message property with grand total"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="cartItems" doc:name="Set payload to cart items list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sub-flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-showCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jdbc:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">queryKey</span>=<span class="string"><span class="delimiter">"</span><span class="content">query-showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">queryTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">-1</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">JDBCConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Fetch cart contents from database</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">grandTotal</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[0]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Initialize grand total</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">cartItems</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[new java.util.LinkedList()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Initialize cart items list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;foreach</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Foreach</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">payload['PROVIDER'].equals('Barber\'s Paradise Store')</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;enricher</span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:productDetails]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Store product details as message property (enrich)</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ee:cache</span> <span class="attribute-name">cachingStrategy-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">fetchProductDetailsCachingStrategy</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Cache</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;core:flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductDetailsFromBarbersParadise</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductDetailsFromBarbersParadise</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ee:cache&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/enricher&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">payload['PROVIDER'].equals('Van Gogh\'s Paint Store')</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;enricher</span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:productDetails]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Store product details as message property (enrich)</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ee:cache</span> <span class="attribute-name">cachingStrategy-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">fetchProductDetailsCachingStrategy</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Cache</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;core:flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductDetailsFromVanGoghPaintStore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductDetailsFromVanGoghPaintStore</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ee:cache&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/enricher&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/choice&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">consolidateProductDetailsOnCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Consolidate cart item info and subtotal</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:input-arguments&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">price</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['productDetails'].toString())).price]<span class="tag">&lt;/DataMapper:input-argument&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">providerId</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['productDetails'].toString())).providerId]<span class="tag">&lt;/DataMapper:input-argument&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">product_id</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['productDetails'].toString())).productId]<span class="tag">&lt;/DataMapper:input-argument&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">productDescription</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['productDetails'].toString())).productDescription]<span class="tag">&lt;/DataMapper:input-argument&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/DataMapper:input-arguments&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/DataMapper:transform&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">grandTotal</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[grandTotal + Float.parseFloat((new groovy.json.JsonSlurper().parseText(payload)).subtotal)]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Sum item subtotal to grand total</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowVars['cartItems'].add(payload)</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Add cart item to list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/foreach&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">cartTotal</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[grandTotal]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set cartTotal message property with grand total</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">cartItems</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set payload to cart items list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sub-flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -2001,7 +2001,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="xml">
             
          <table class="CodeRay"> 
           <tbody> 
@@ -2012,11 +2012,11 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 4
 5
 </pre></td> 
-            <td class="code"><pre>&lt;sub-flow name="subflow-fetchProductDetailsFromBarbersParadise" doc:name="subflow-fetchProductDetailsFromBarbersParadise"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9080" path="barbersparadise/products/#[payload['PRODUCT_ID']]" doc:name="Fetch product info from Barber's Paradise Store"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;data-mapper:transform config-ref="barbersParadiseToCanonicalJSON" doc:name="Transform to canonical JSON"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sub-flow&gt;</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductDetailsFromBarbersParadise</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductDetailsFromBarbersParadise</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">9080</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">barbersparadise/products/#[payload['PRODUCT_ID']]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Fetch product info from Barber's Paradise Store</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">barbersParadiseToCanonicalJSON</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform to canonical JSON</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sub-flow&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -2036,7 +2036,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="xml">
             
          <table class="CodeRay"> 
           <tbody> 
@@ -2052,16 +2052,16 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 9
 <strong>10</strong>
 </pre></td> 
-            <td class="code"><pre>&lt;sub-flow name="subflow-fetchProductDetailsFromVanGoghPaintStore" doc:name="subflow-fetchProductDetailsFromVanGoghPaintStore"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="payload['PRODUCT_ID']" doc:name="Assing product id to payload"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;flow-ref name="subflow-invokeVanGoghGetProductInfoSOAPService" doc:name="subflow-invokeVanGoghGetProductInfoSOAPService"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;data-mapper:transform config-ref="vanGoghPaintToCanonicalJSON" doc:name="Transform to canonical JSON"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sub-flow&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;sub-flow name="subflow-invokeVanGoghGetProductInfoSOAPService" doc:name="subflow-invokeVanGoghGetProductInfoSOAPService"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cxf:jaxws-client operation="getProductInfo" serviceClass="com.mulesoft.example.estore.clients.provider.vangoghpaintstore.B2BStore" port="80" enableMuleSoapHeaders="true" doc:name="Prepare SOAP request"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9081" path="vangoghpaintstore" doc:name="Invoke SOAP request"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sub-flow&gt;</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductDetailsFromVanGoghPaintStore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-fetchProductDetailsFromVanGoghPaintStore</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">payload['PRODUCT_ID']</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Assing product id to payload</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-invokeVanGoghGetProductInfoSOAPService</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-invokeVanGoghGetProductInfoSOAPService</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">vanGoghPaintToCanonicalJSON</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform to canonical JSON</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sub-flow&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-invokeVanGoghGetProductInfoSOAPService</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-invokeVanGoghGetProductInfoSOAPService</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;cxf:jaxws-client</span> <span class="attribute-name">operation</span>=<span class="string"><span class="delimiter">"</span><span class="content">getProductInfo</span><span class="delimiter">"</span></span> <span class="attribute-name">serviceClass</span>=<span class="string"><span class="delimiter">"</span><span class="content">com.mulesoft.example.estore.clients.provider.vangoghpaintstore.B2BStore</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">80</span><span class="delimiter">"</span></span> <span class="attribute-name">enableMuleSoapHeaders</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Prepare SOAP request</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">9081</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">vangoghpaintstore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Invoke SOAP request</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sub-flow&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -2085,14 +2085,14 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
           <tr> 
            <td class="line-numbers"><pre>1
 </pre></td> 
-           <td class="code"><pre>&lt;enricher target="#[header:outbound:productDetails]" doc:name="Store product details as message property (enrich)"&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;enricher</span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:productDetails]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Store product details as message property (enrich)</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -2165,7 +2165,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -2177,12 +2177,12 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 5
 6
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="e-storeFrontend-getCartTotal" doc:name="e-storeFrontend-getCartTotal"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ajax:inbound-endpoint channel="/estore/getCartTotal" responseTimeout="10000" connector-ref="ajaxServer" doc:name="/estore/getCartTotal"&gt;&lt;/ajax:inbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="sessionId" value="#[flowVars['cometd.client'].toString()]" doc:name="Set session id from AJAX client id"&gt;&lt;/set-property&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:outbound-endpoint exchange-pattern="request-response" queue="estore.showCart" connector-ref="Active_MQ" doc:name="Request cart contents to backend"&gt;&lt;/jms:outbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="#[header:inbound:cartTotal]" doc:name="Set cart total property as payload"&gt;&lt;/expression-transformer&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-getCartTotal</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-getCartTotal</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ajax:inbound-endpoint</span> <span class="attribute-name">channel</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/getCartTotal</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">ajaxServer</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/getCartTotal</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/ajax:inbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">sessionId</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars['cometd.client'].toString()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set session id from AJAX client id</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/set-property&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Request cart contents to backend</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/jms:outbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:inbound:cartTotal]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set cart total property as payload</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/expression-transformer&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -2214,7 +2214,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -2225,11 +2225,11 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 4
 5
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="e-storeFrontend-doCheckout" doc:name="e-storeFrontend-doCheckout"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ajax:inbound-endpoint channel="/estore/doCheckout" responseTimeout="10000" doc:name="/estore/doCheckout"&gt;&lt;/ajax:inbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="sessionId" value="#[flowVars['cometd.client'].toString()]" doc:name="Set session id from AJAX client id"&gt;&lt;/set-property&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:outbound-endpoint exchange-pattern="request-response" queue="estore.doCheckout" connector-ref="Active_MQ" doc:name="Request checkout to backend"&gt;&lt;/jms:outbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-doCheckout</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-doCheckout</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ajax:inbound-endpoint</span> <span class="attribute-name">channel</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/doCheckout</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/doCheckout</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/ajax:inbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">sessionId</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars['cometd.client'].toString()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set session id from AJAX client id</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/set-property&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.doCheckout</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Request checkout to backend</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/jms:outbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -2257,7 +2257,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -2314,57 +2314,57 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 <strong>50</strong>
 51
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="doCheckout" doc:name="doCheckout"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:inbound-endpoint exchange-pattern="request-response" queue="estore.doCheckout" connector-ref="Active_MQ2" doc:name="JMS"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;enricher doc:name="Enrich message with cart details"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;core:flow-ref name="subflow-showCart" doc:name="subflow-showCart"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;enrich source="#[message.outboundProperties['cartTotal'].toString()]" target="#[header:outbound:grandTotal]"&gt;&lt;/enrich&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;enrich source="#[payload]" target="#[header:outbound:cartContents]"&gt;&lt;/enrich&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/enricher&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;enricher doc:name="Enrich message with payment authorization results"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;core:flow-ref name="subflow-authorizePayment" doc:name="subflow-authorizePayment"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;enrich source="#[xpath:/authorizationResponse/result]" target="#[header:outbound:paymentResult]"&gt;&lt;/enrich&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;enrich source="#[xpath:/authorizationResponse/reason]" target="#[header:outbound:paymentReason]"&gt;&lt;/enrich&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/enricher&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;choice doc:name="Choice"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[header:paymentResult=APPROVED]"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-variable variableName="orders" value="#[new java.util.LinkedList()]" doc:name="Initialize order numbers list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-variable variableName="orderSorter" value="#[new com.mulesoft.example.estore.util.OrderSorter((new groovy.json.JsonSlurper().parseText(payload)).cardholderName, (new groovy.json.JsonSlurper().parseText(payload)).deliveryAddress)]" doc:name="Initialize orders sorter"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;foreach collection="#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['cartContents'].toString()))]" doc:name="For each item on the cart"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-component doc:name="Classify item in orders sorter"&gt;#[flowVars['orderSorter'].sortOrderItem(payload.providerId, new com.mulesoft.example.estore.util.OrderItem(payload.productId, Integer.parseInt(payload.qty)))]&lt;/expression-component&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/foreach&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;foreach collection="#[flowVars['orderSorter'].getSortedOrders()]" doc:name="For each order"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;choice doc:name="Choice"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[payload.providerId == 'Barber\'s Paradise Store']"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:transform config-ref="ordertojsonorder" doc:name="Transform internal order repr. to provider repr."/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9080" path="barbersparadise/placeOrder" doc:name="Place order on Barber's Paradise Store"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[payload.providerId == 'Van Gogh\'s Paint Store']"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DataMapper:transform config-ref="ordertodeliveryorder" doc:name="Transform internal order repr. to provider repr."/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;flow-ref name="subflow-placeOrderOnVanGoghPaintStore" doc:name="subflow-placeOrderOnVanGoghPaintStore"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/choice&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="flowVars['orders'].add(&amp;quot;\&amp;quot;&amp;quot; + payload.toString() + &amp;quot;\&amp;quot;&amp;quot;)" doc:name="Add order to orders list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/foreach&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="&amp;quot;{\&amp;quot;result\&amp;quot;: \&amp;quot;APPROVED\&amp;quot;, \&amp;quot;orders\&amp;quot;: &amp;quot; + flowVars[&amp;quot;orders&amp;quot;].toString() + &amp;quot;}&amp;quot;" doc:name="Build checkout sucessful message"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[header:paymentResult=FAILED]"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="&amp;quot;{\&amp;quot;result\&amp;quot;: \&amp;quot;FAILED\&amp;quot;, \&amp;quot;reason\&amp;quot;: \&amp;quot;&amp;quot; + message.outboundProperties[&amp;quot;paymentReason&amp;quot;] + &amp;quot;\&amp;quot;}&amp;quot;" doc:name="Build payment rejected message"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/choice&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;catch-exception-strategy doc:name="Catch Exception Strategy"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="&amp;quot;{\&amp;quot;result\&amp;quot;: \&amp;quot;FAILED\&amp;quot;, \&amp;quot;reason\&amp;quot;: \&amp;quot;Unable to process payment with bank due to communication problems or invalid credit card information. Check you're submitting a 16-digit credit card number, a 3-digit security code, a name and an address.\&amp;quot;}&amp;quot;" doc:name="Build error response"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/catch-exception-strategy&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">doCheckout</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">doCheckout</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:inbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.doCheckout</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ2</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">JMS</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;enricher</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Enrich message with cart details</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;core:flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-showCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-showCart</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.outboundProperties['cartTotal'].toString()]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:grandTotal]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/enrich&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:cartContents]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/enrich&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/enricher&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;enricher</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Enrich message with payment authorization results</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;core:flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-authorizePayment</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-authorizePayment</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath:/authorizationResponse/result]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:paymentResult]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/enrich&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath:/authorizationResponse/reason]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:paymentReason]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/enrich&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/enricher&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:paymentResult=APPROVED]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">orders</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[new java.util.LinkedList()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Initialize order numbers list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">orderSorter</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[new com.mulesoft.example.estore.util.OrderSorter((new groovy.json.JsonSlurper().parseText(payload)).cardholderName, (new groovy.json.JsonSlurper().parseText(payload)).deliveryAddress)]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Initialize orders sorter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;foreach</span> <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['cartContents'].toString()))]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">For each item on the cart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-component</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Classify item in orders sorter</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>#[flowVars['orderSorter'].sortOrderItem(payload.providerId, new com.mulesoft.example.estore.util.OrderItem(payload.productId, Integer.parseInt(payload.qty)))]<span class="tag">&lt;/expression-component&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/foreach&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;foreach</span> <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars['orderSorter'].getSortedOrders()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">For each order</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.providerId == 'Barber\'s Paradise Store']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">ordertojsonorder</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform internal order repr. to provider repr.</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">9080</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">barbersparadise/placeOrder</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Place order on Barber's Paradise Store</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.providerId == 'Van Gogh\'s Paint Store']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;DataMapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">ordertodeliveryorder</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform internal order repr. to provider repr.</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/choice&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowVars['orders'].add(</span><span class="entity">&amp;quot;</span><span class="content">\</span><span class="entity">&amp;quot;</span><span class="entity">&amp;quot;</span> <span class="content">+ payload.toString() + </span><span class="entity">&amp;quot;</span><span class="content">\</span><span class="entity">&amp;quot;</span><span class="entity">&amp;quot;</span><span class="content">)</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Add order to orders list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/foreach&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="entity">&amp;quot;</span><span class="content">{\</span><span class="entity">&amp;quot;</span><span class="content">result\</span><span class="entity">&amp;quot;</span><span class="content">: \</span><span class="entity">&amp;quot;</span><span class="content">APPROVED\</span><span class="entity">&amp;quot;</span><span class="content">, \</span><span class="entity">&amp;quot;</span><span class="content">orders\</span><span class="entity">&amp;quot;</span><span class="content">: </span><span class="entity">&amp;quot;</span> <span class="content">+ flowVars[</span><span class="entity">&amp;quot;</span><span class="content">orders</span><span class="entity">&amp;quot;</span><span class="content">].toString() + </span><span class="entity">&amp;quot;</span><span class="content">}</span><span class="entity">&amp;quot;</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Build checkout sucessful message</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:paymentResult=FAILED]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="entity">&amp;quot;</span><span class="content">{\</span><span class="entity">&amp;quot;</span><span class="content">result\</span><span class="entity">&amp;quot;</span><span class="content">: \</span><span class="entity">&amp;quot;</span><span class="content">FAILED\</span><span class="entity">&amp;quot;</span><span class="content">, \</span><span class="entity">&amp;quot;</span><span class="content">reason\</span><span class="entity">&amp;quot;</span><span class="content">: \</span><span class="entity">&amp;quot;</span><span class="entity">&amp;quot;</span> <span class="content">+ message.outboundProperties[</span><span class="entity">&amp;quot;</span><span class="content">paymentReason</span><span class="entity">&amp;quot;</span><span class="content">] + </span><span class="entity">&amp;quot;</span><span class="content">\</span><span class="entity">&amp;quot;</span><span class="content">}</span><span class="entity">&amp;quot;</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Build payment rejected message</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/choice&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;catch-exception-strategy</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Catch Exception Strategy</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="entity">&amp;quot;</span><span class="content">{\</span><span class="entity">&amp;quot;</span><span class="content">result\</span><span class="entity">&amp;quot;</span><span class="content">: \</span><span class="entity">&amp;quot;</span><span class="content">FAILED\</span><span class="entity">&amp;quot;</span><span class="content">, \</span><span class="entity">&amp;quot;</span><span class="content">reason\</span><span class="entity">&amp;quot;</span><span class="content">: \</span><span class="entity">&amp;quot;</span><span class="content">Unable to process payment with bank due to communication problems or invalid credit card information. Check you're submitting a 16-digit credit card number, a 3-digit security code, a name and an address.\</span><span class="entity">&amp;quot;</span><span class="content">}</span><span class="entity">&amp;quot;</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Build error response</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/catch-exception-strategy&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -2378,7 +2378,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -2386,8 +2386,8 @@ $('#tabs').bind('tabsselect', function(event, ui) {
            <td class="line-numbers"><pre>1
 2
 </pre></td> 
-           <td class="code"><pre>&lt;enrich source="#[message.outboundProperties['cartTotal'].toString()]" target="#[header:outbound:grandTotal]"/&gt;
-&lt;enrich source="#[payload]" target="#[header:outbound:cartContents]"/&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.outboundProperties['cartTotal'].toString()]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:grandTotal]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:cartContents]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -2406,7 +2406,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="xml">
             
          <table class="CodeRay"> 
           <tbody> 
@@ -2420,14 +2420,14 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 7
 8
 </pre></td> 
-            <td class="code"><pre>&lt;sub-flow name="subflow-requestPaymentAuthorizationToBank" doc:name="subflow-requestPaymentAuthorizationToBank"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove-property propertyName="cartContents" doc:name="Remove cart contents property to call bank"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="10000" path="bank/authorizePayment" doc:name="Request payment authorization to bank"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sub-flow&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;sub-flow name="subflow-placeOrderOnVanGoghPaintStore" doc:name="subflow-placeOrderOnVanGoghPaintStore"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cxf:jaxws-client operation="placeOrder" serviceClass="com.mulesoft.example.estore.clients.provider.vangoghpaintstore.B2BStore" enableMuleSoapHeaders="true" doc:name="Prepare SOAP request"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9081" path="vangoghpaintstore" doc:name="Invoke SOAP request"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sub-flow&gt;</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-requestPaymentAuthorizationToBank</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-requestPaymentAuthorizationToBank</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;remove-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">cartContents</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Remove cart contents property to call bank</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">bank/authorizePayment</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Request payment authorization to bank</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sub-flow&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;cxf:jaxws-client</span> <span class="attribute-name">operation</span>=<span class="string"><span class="delimiter">"</span><span class="content">placeOrder</span><span class="delimiter">"</span></span> <span class="attribute-name">serviceClass</span>=<span class="string"><span class="delimiter">"</span><span class="content">com.mulesoft.example.estore.clients.provider.vangoghpaintstore.B2BStore</span><span class="delimiter">"</span></span> <span class="attribute-name">enableMuleSoapHeaders</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Prepare SOAP request</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">9081</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">vangoghpaintstore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Invoke SOAP request</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sub-flow&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -2477,14 +2477,14 @@ $('#tabs').bind('tabsselect', function(event, ui) {
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="xml">
             
          <table class="CodeRay"> 
           <tbody> 
            <tr> 
             <td class="line-numbers"><pre>1
 </pre></td> 
-            <td class="code"><pre>&lt;remove-property propertyName="cartContents" doc:name="Remove cart contents property to call bank"/&gt;</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;remove-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">cartContents</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Remove cart contents property to call bank</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -2560,7 +2560,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="xml">
             
          <table class="CodeRay"> 
           <tbody> 
@@ -2568,8 +2568,8 @@ $('#tabs').bind('tabsselect', function(event, ui) {
             <td class="line-numbers"><pre>1
 2
 </pre></td> 
-            <td class="code"><pre>&lt;enrich source="#[xpath:/authorizationResponse/result]" target="#[header:outbound:paymentResult]"/&gt;
-&lt;enrich source="#[xpath:/authorizationResponse/reason]" target="#[header:outbound:paymentReason]"/&gt;</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath:/authorizationResponse/result]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:paymentResult]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[xpath:/authorizationResponse/reason]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:outbound:paymentReason]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -2589,7 +2589,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="xml">
             
          <table class="CodeRay"> 
           <tbody> 
@@ -2630,41 +2630,41 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 34
 35
 </pre></td> 
-            <td class="code"><pre>&lt;choice doc:name="Choice"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[header:paymentResult=APPROVED]"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-variable variableName="orders" value="#[new java.util.LinkedList()]" doc:name="Initialize order numbers list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-variable variableName="orderSorter" value="#[new com.mulesoft.example.estore.util.OrderSorter((new groovy.json.JsonSlurper().parseText(payload)).cardholderName, (new groovy.json.JsonSlurper().parseText(payload)).deliveryAddress)]" doc:name="Initialize orders sorter"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;foreach collection="#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['cartContents'].toString()))]" doc:name="For each item on the cart"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-component doc:name="Classify item in orders sorter"&gt;#[flowVars['orderSorter'].sortOrderItem(payload.providerId, new com.mulesoft.example.estore.util.OrderItem(payload.productId, Integer.parseInt(payload.qty)))]&lt;/expression-component&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/foreach&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;foreach collection="#[flowVars['orderSorter'].getSortedOrders()]" doc:name="For each order"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;choice doc:name="Choice"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[payload.providerId == 'Van Gogh\'s Paint Store']"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;data-mapper:transform config-ref="ordertojsonorder" doc:name="Transform internal order repr. to provider repr."/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9080" path="barbersparadise/placeOrder" doc:name="Place order on Barber's Paradise Store"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[payload.providerId == 'Van Gogh\'s Paint Store']"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;data-mapper:transform config-ref="ordertodeliveryorder" doc:name="Transform internal order repr. to provider repr."/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;flow-ref name="subflow-placeOrderOnVanGoghPaintStore" doc:name="subflow-placeOrderOnVanGoghPaintStore"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/choice&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="flowVars['orders'].add(&amp;quot;\&amp;quot;&amp;quot; + payload.toString() + &amp;quot;\&amp;quot;&amp;quot;)" doc:name="Add order to orders list"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/foreach&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="&amp;quot;{\&amp;quot;result\&amp;quot;: \&amp;quot;APPROVED\&amp;quot;, \&amp;quot;orders\&amp;quot;: &amp;quot; + flowVars[&amp;quot;orders&amp;quot;].toString() + &amp;quot;}&amp;quot;" doc:name="Build checkout sucessful message"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[header:paymentResult=FAILED]"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;expression-transformer expression="&amp;quot;{\&amp;quot;result\&amp;quot;: \&amp;quot;FAILED\&amp;quot;, \&amp;quot;reason\&amp;quot;: \&amp;quot;&amp;quot; + message.outboundProperties[&amp;quot;paymentReason&amp;quot;] + &amp;quot;\&amp;quot;}&amp;quot;" doc:name="Build payment rejected message"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/choice&gt;</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:paymentResult=APPROVED]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">orders</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[new java.util.LinkedList()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Initialize order numbers list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">orderSorter</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[new com.mulesoft.example.estore.util.OrderSorter((new groovy.json.JsonSlurper().parseText(payload)).cardholderName, (new groovy.json.JsonSlurper().parseText(payload)).deliveryAddress)]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Initialize orders sorter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;foreach</span> <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[(new groovy.json.JsonSlurper().parseText(message.outboundProperties['cartContents'].toString()))]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">For each item on the cart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-component</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Classify item in orders sorter</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>#[flowVars['orderSorter'].sortOrderItem(payload.providerId, new com.mulesoft.example.estore.util.OrderItem(payload.productId, Integer.parseInt(payload.qty)))]<span class="tag">&lt;/expression-component&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/foreach&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;foreach</span> <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars['orderSorter'].getSortedOrders()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">For each order</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.providerId == 'Van Gogh\'s Paint Store']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">ordertojsonorder</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform internal order repr. to provider repr.</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">9080</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">barbersparadise/placeOrder</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Place order on Barber's Paradise Store</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.providerId == 'Van Gogh\'s Paint Store']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">ordertodeliveryorder</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform internal order repr. to provider repr.</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/choice&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowVars['orders'].add(</span><span class="entity">&amp;quot;</span><span class="content">\</span><span class="entity">&amp;quot;</span><span class="entity">&amp;quot;</span> <span class="content">+ payload.toString() + </span><span class="entity">&amp;quot;</span><span class="content">\</span><span class="entity">&amp;quot;</span><span class="entity">&amp;quot;</span><span class="content">)</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Add order to orders list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/foreach&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="entity">&amp;quot;</span><span class="content">{\</span><span class="entity">&amp;quot;</span><span class="content">result\</span><span class="entity">&amp;quot;</span><span class="content">: \</span><span class="entity">&amp;quot;</span><span class="content">APPROVED\</span><span class="entity">&amp;quot;</span><span class="content">, \</span><span class="entity">&amp;quot;</span><span class="content">orders\</span><span class="entity">&amp;quot;</span><span class="content">: </span><span class="entity">&amp;quot;</span> <span class="content">+ flowVars[</span><span class="entity">&amp;quot;</span><span class="content">orders</span><span class="entity">&amp;quot;</span><span class="content">].toString() + </span><span class="entity">&amp;quot;</span><span class="content">}</span><span class="entity">&amp;quot;</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Build checkout sucessful message</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[header:paymentResult=FAILED]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="entity">&amp;quot;</span><span class="content">{\</span><span class="entity">&amp;quot;</span><span class="content">result\</span><span class="entity">&amp;quot;</span><span class="content">: \</span><span class="entity">&amp;quot;</span><span class="content">FAILED\</span><span class="entity">&amp;quot;</span><span class="content">, \</span><span class="entity">&amp;quot;</span><span class="content">reason\</span><span class="entity">&amp;quot;</span><span class="content">: \</span><span class="entity">&amp;quot;</span><span class="entity">&amp;quot;</span> <span class="content">+ message.outboundProperties[</span><span class="entity">&amp;quot;</span><span class="content">paymentReason</span><span class="entity">&amp;quot;</span><span class="content">] + </span><span class="entity">&amp;quot;</span><span class="content">\</span><span class="entity">&amp;quot;</span><span class="content">}</span><span class="entity">&amp;quot;</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Build payment rejected message</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/choice&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -2750,7 +2750,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="xml">
             
          <table class="CodeRay"> 
           <tbody> 
@@ -2770,20 +2770,20 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 13
 14
 </pre></td> 
-            <td class="code"><pre>&lt;choice doc:name="Choice"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[payload.providerId == 'Barber\'s Paradise Store']"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;data-mapper:transform config-ref="ordertojsonorder" doc:name="Transform internal order repr. to provider repr."/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9080" path="barbersparadise/placeOrder" doc:name="Place order on Barber's Paradise Store"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;when expression="#[payload.providerId == 'Van Gogh\'s Paint Store']"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;data-mapper:transform config-ref="ordertodeliveryorder" doc:name="Transform internal order repr. to provider repr."/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;flow-ref name="subflow-placeOrderOnVanGoghPaintStore" doc:name="subflow-placeOrderOnVanGoghPaintStore"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/processor-chain&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/when&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/choice&gt;</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.providerId == 'Barber\'s Paradise Store']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">ordertojsonorder</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform internal order repr. to provider repr.</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">9080</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">barbersparadise/placeOrder</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Place order on Barber's Paradise Store</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.providerId == 'Van Gogh\'s Paint Store']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">ordertodeliveryorder</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform internal order repr. to provider repr.</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/choice&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -2806,7 +2806,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="xml">
             
          <table class="CodeRay"> 
           <tbody> 
@@ -2816,10 +2816,10 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 3
 4
 </pre></td> 
-            <td class="code"><pre>&lt;sub-flow name="subflow-placeOrderOnVanGoghPaintStore" doc:name="subflow-placeOrderOnVanGoghPaintStore"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cxf:jaxws-client operation="placeOrder" serviceClass="com.mulesoft.example.estore.clients.provider.vangoghpaintstore.B2BStore" enableMuleSoapHeaders="true" doc:name="Prepare SOAP request"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="9081" path="vangoghpaintstore" doc:name="Invoke SOAP request"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sub-flow&gt;</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">subflow-placeOrderOnVanGoghPaintStore</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;cxf:jaxws-client</span> <span class="attribute-name">operation</span>=<span class="string"><span class="delimiter">"</span><span class="content">placeOrder</span><span class="delimiter">"</span></span> <span class="attribute-name">serviceClass</span>=<span class="string"><span class="delimiter">"</span><span class="content">com.mulesoft.example.estore.clients.provider.vangoghpaintstore.B2BStore</span><span class="delimiter">"</span></span> <span class="attribute-name">enableMuleSoapHeaders</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Prepare SOAP request</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">9081</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">vangoghpaintstore</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Invoke SOAP request</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sub-flow&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -2833,14 +2833,14 @@ $('#tabs').bind('tabsselect', function(event, ui) {
      </div> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
+       <pre class="CodeRay highlight"><code data-lang="xml">
             
          <table class="CodeRay"> 
           <tbody> 
            <tr> 
             <td class="line-numbers"><pre>1
 </pre></td> 
-            <td class="code"><pre>&lt;expression-transformer expression="flowVars['orders'].add(&amp;quot;\&amp;quot;&amp;quot; + payload.toString() + &amp;quot;\&amp;quot;&amp;quot;)" doc:name="Add order to orders list"/&gt;</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;expression-transformer</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowVars['orders'].add(</span><span class="entity">&amp;quot;</span><span class="content">\</span><span class="entity">&amp;quot;</span><span class="entity">&amp;quot;</span> <span class="content">+ payload.toString() + </span><span class="entity">&amp;quot;</span><span class="content">\</span><span class="entity">&amp;quot;</span><span class="entity">&amp;quot;</span><span class="content">)</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Add order to orders list</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -2870,7 +2870,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -2881,11 +2881,11 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 4
 5
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="e-storeFrontend-clearCart" doc:name="e-storeFrontend-clearCart"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ajax:inbound-endpoint channel="/estore/clearCart" responseTimeout="10000" doc:name="/estore/clearCart"&gt;&lt;/ajax:inbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;set-property propertyName="sessionId" value="#[flowVars['cometd.client'].toString()]" doc:name="Set session id from AJAX client id"&gt;&lt;/set-property&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:outbound-endpoint queue="estore.clearCart" connector-ref="Active_MQ" doc:name="Request clear cart to backend"&gt;&lt;/jms:outbound-endpoint&gt;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-clearCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">e-storeFrontend-clearCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ajax:inbound-endpoint</span> <span class="attribute-name">channel</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/clearCart</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">/estore/clearCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/ajax:inbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">sessionId</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars['cometd.client'].toString()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set session id from AJAX client id</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/set-property&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.clearCart</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Request clear cart to backend</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/jms:outbound-endpoint&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -2905,7 +2905,7 @@ $('#tabs').bind('tabsselect', function(event, ui) {
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -2915,10 +2915,10 @@ $('#tabs').bind('tabsselect', function(event, ui) {
 3
 4
 </pre></td> 
-           <td class="code"><pre>&lt;flow name="clearCart" doc:name="clearCart"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jms:inbound-endpoint queue="estore.clearCart" connector-ref="Active_MQ2" doc:name="JMS"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;jdbc-ee:outbound-endpoint exchange-pattern="one-way" queryKey="query-clearCart" queryTimeout="-1" connector-ref="JDBCConnector" doc:name="Delete cart contents"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">clearCart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">clearCart</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jms:inbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">estore.clearCart</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Active_MQ2</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">JMS</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;jdbc-ee:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">queryKey</span>=<span class="string"><span class="delimiter">"</span><span class="content">query-clearCart</span><span class="delimiter">"</span></span> <span class="attribute-name">queryTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">-1</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">JDBCConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Delete cart contents</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 

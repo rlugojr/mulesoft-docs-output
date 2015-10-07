@@ -921,7 +921,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -974,53 +974,53 @@
 46
 47
 </pre></td> 
-         <td class="code"><pre>&lt;beans xmlns="http://www.springframework.org/schema/beans"
-&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-&nbsp;&nbsp;xsi:schemaLocation="
-&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"&gt;
+         <td class="code"><pre><span class="tag">&lt;beans</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&lt;bean id="initialDirContextFactory"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class="org.acegisecurity.ldap.DefaultInitialDirContextFactory"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;constructor-arg value="ldap://host:port/"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="managerDn"&gt;&lt;value&gt;cn=Manager,dc=acme,dc=org&lt;/value&gt;&lt;/property&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="managerPassword"&gt;&lt;value&gt;password&lt;/value&gt;&lt;/property&gt;
-&nbsp;&nbsp;&lt;/bean&gt;
+&nbsp;&nbsp;<span class="tag">&lt;bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">initialDirContextFactory</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.acegisecurity.ldap.DefaultInitialDirContextFactory</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;constructor-arg</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">ldap://host:port/</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">managerDn</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;value&gt;</span>cn=Manager,dc=acme,dc=org<span class="tag">&lt;/value&gt;</span><span class="tag">&lt;/property&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">managerPassword</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;value&gt;</span>password<span class="tag">&lt;/value&gt;</span><span class="tag">&lt;/property&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;/bean&gt;</span>
 &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&lt;bean id="userSearch" class="org.acegisecurity.ldap.search.FilterBasedLdapUserSearch"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;constructor-arg value="ou=People,dc=acme,dc=org"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;constructor-arg value="(uid={0})"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;constructor-arg ref="initialDirContextFactory" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="searchSubtree" value="true"/&gt;
-&nbsp;&nbsp;&lt;/bean&gt;
+&nbsp;&nbsp;<span class="tag">&lt;bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">userSearch</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.acegisecurity.ldap.search.FilterBasedLdapUserSearch</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;constructor-arg</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">ou=People,dc=acme,dc=org</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;constructor-arg</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">(uid={0})</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;constructor-arg</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">initialDirContextFactory</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">searchSubtree</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;/bean&gt;</span>
 &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&lt;bean id="userManager"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class="org.mule.galaxy.security.ldap.LdapUserManager"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init-method="initialize"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="initialDirContextFactory" ref="initialDirContextFactory"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="persisterManager" ref="persisterManager" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="userSearch" ref="userSearch"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="userMapper" ref="userDetailsMapper"/&gt;
+&nbsp;&nbsp;<span class="tag">&lt;bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">userManager</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.galaxy.security.ldap.LdapUserManager</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">init-method</span>=<span class="string"><span class="delimiter">"</span><span class="content">initialize</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">initialDirContextFactory</span><span class="delimiter">"</span></span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">initialDirContextFactory</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">persisterManager</span><span class="delimiter">"</span></span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">persisterManager</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">userSearch</span><span class="delimiter">"</span></span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">userSearch</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">userMapper</span><span class="delimiter">"</span></span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">userDetailsMapper</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Configure these two properties --&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="userSearchBase" value="ou=People,dc=acme,dc=org"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="userSearchAttributes"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;map&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;entry key="objectclass" value="inetOrgPerson"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/map&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/property&gt;
-&nbsp;&nbsp;&lt;/bean&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Configure these two properties --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">userSearchBase</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">ou=People,dc=acme,dc=org</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">userSearchAttributes</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;map&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;entry</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">objectclass</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">inetOrgPerson</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/map&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/property&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;/bean&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&lt;bean id="ldapAuthoritiesPopulator" class="org.mule.galaxy.security.ldap.LdapAuthoritiesPopulator"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;constructor-arg ref="initialDirContextFactory" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;constructor-arg value="ou=Groups,dc=acme,dc=org" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="groupSearchFilter" value="uniqueMember={0}"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="searchSubtree" value="true"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="rolePrefix" value=""/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="convertToUpperCase" value="false"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="accessControlManager" ref="accessControlManager"/&gt;
-&nbsp;&nbsp;&lt;/bean&gt;
+&nbsp;&nbsp;<span class="tag">&lt;bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">ldapAuthoritiesPopulator</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.galaxy.security.ldap.LdapAuthoritiesPopulator</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;constructor-arg</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">initialDirContextFactory</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;constructor-arg</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">ou=Groups,dc=acme,dc=org</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">groupSearchFilter</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">uniqueMember={0}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">searchSubtree</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">rolePrefix</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">convertToUpperCase</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">accessControlManager</span><span class="delimiter">"</span></span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">accessControlManager</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;/bean&gt;</span>
 &nbsp;&nbsp;&nbsp;
-&lt;/beans&gt;</pre></td> 
+<span class="tag">&lt;/beans&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 

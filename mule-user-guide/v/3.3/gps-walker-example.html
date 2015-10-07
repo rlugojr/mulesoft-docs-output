@@ -853,7 +853,7 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
+     <pre class="CodeRay highlight"><code data-lang="xml">
           
        <table class="CodeRay"> 
         <tbody> 
@@ -868,15 +868,15 @@
 8
 9
 </pre></td> 
-          <td class="code"><pre>&lt;flow name="StrollerService"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;quartz:inbound-endpoint repeatInterval="3000" startDelay="3000" jobName="walkGenerator"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;quartz:event-generator-job/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/quartz:inbound-endpoint&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;component&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;singleton-object class="org.mule.example.gpswalker.CityStroller"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/component&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ajax:outbound-endpoint channel="/gpswalker"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">StrollerService</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;quartz:inbound-endpoint</span> <span class="attribute-name">repeatInterval</span>=<span class="string"><span class="delimiter">"</span><span class="content">3000</span><span class="delimiter">"</span></span> <span class="attribute-name">startDelay</span>=<span class="string"><span class="delimiter">"</span><span class="content">3000</span><span class="delimiter">"</span></span> <span class="attribute-name">jobName</span>=<span class="string"><span class="delimiter">"</span><span class="content">walkGenerator</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;quartz:event-generator-job</span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/quartz:inbound-endpoint&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;component&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;singleton-object</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.example.gpswalker.CityStroller</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/component&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ajax:outbound-endpoint</span> <span class="attribute-name">channel</span>=<span class="string"><span class="delimiter">"</span><span class="content">/gpswalker</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
          </tr> 
         </tbody> 
        </table></code></pre> 
@@ -905,7 +905,7 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
+     <pre class="CodeRay highlight"><code data-lang="xml">
           
        <table class="CodeRay"> 
         <tbody> 
@@ -931,26 +931,26 @@
 19
 <strong>20</strong>
 </pre></td> 
-          <td class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;mule xmlns="http://www.mulesoft.org/schema/mule/core"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:ajax="http://www.mulesoft.org/schema/mule/ajax"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:quartz="http://www.mulesoft.org/schema/mule/quartz"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xsi:schemaLocation="
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/quartz http://www.mulesoft.org/schema/mule/quartz/current/mule-quartz.xsd
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/ajax http://www.mulesoft.org/schema/mule/ajax/current/mule-ajax.xsd
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;ajax:connector name="ajaxServer" serverUrl="http://0.0.0.0:8081/services/gps" resourceBase="${app.home}/docroot"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;flow name="StrollerService"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;quartz:inbound-endpoint repeatInterval="3000" startDelay="3000" jobName="walkGenerator"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;quartz:event-generator-job/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/quartz:inbound-endpoint&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;component&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;singleton-object class="org.mule.example.gpswalker.CityStroller"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/component&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ajax:outbound-endpoint channel="/gpswalker"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;
-&lt;/mule&gt;</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:ajax</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ajax</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:quartz</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/quartz</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/quartz http://www.mulesoft.org/schema/mule/quartz/current/mule-quartz.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/ajax http://www.mulesoft.org/schema/mule/ajax/current/mule-ajax.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ajax:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">ajaxServer</span><span class="delimiter">"</span></span> <span class="attribute-name">serverUrl</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://0.0.0.0:8081/services/gps</span><span class="delimiter">"</span></span> <span class="attribute-name">resourceBase</span>=<span class="string"><span class="delimiter">"</span><span class="content">${app.home}/docroot</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">StrollerService</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;quartz:inbound-endpoint</span> <span class="attribute-name">repeatInterval</span>=<span class="string"><span class="delimiter">"</span><span class="content">3000</span><span class="delimiter">"</span></span> <span class="attribute-name">startDelay</span>=<span class="string"><span class="delimiter">"</span><span class="content">3000</span><span class="delimiter">"</span></span> <span class="attribute-name">jobName</span>=<span class="string"><span class="delimiter">"</span><span class="content">walkGenerator</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;quartz:event-generator-job</span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/quartz:inbound-endpoint&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;component&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;singleton-object</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.example.gpswalker.CityStroller</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/component&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ajax:outbound-endpoint</span> <span class="attribute-name">channel</span>=<span class="string"><span class="delimiter">"</span><span class="content">/gpswalker</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span>
+<span class="tag">&lt;/mule&gt;</span></pre></td> 
          </tr> 
         </tbody> 
        </table></code></pre> 
@@ -981,14 +981,14 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
           <tr> 
            <td class="line-numbers"><pre>1
 </pre></td> 
-           <td class="code"><pre>&lt;ajax:connector name="ajaxServer" serverUrl="http://0.0.0.0:8081/services/gps" resourceBase="${app.home}/docroot"/&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;ajax:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">ajaxServer</span><span class="delimiter">"</span></span> <span class="attribute-name">serverUrl</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://0.0.0.0:8081/services/gps</span><span class="delimiter">"</span></span> <span class="attribute-name">resourceBase</span>=<span class="string"><span class="delimiter">"</span><span class="content">${app.home}/docroot</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -999,14 +999,14 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
           <tr> 
            <td class="line-numbers"><pre>1
 </pre></td> 
-           <td class="code"><pre>&lt;singleton-object class="org.mule.example.gpswalker.CityStroller"/&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;singleton-object</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.example.gpswalker.CityStroller</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1017,14 +1017,14 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
           <tr> 
            <td class="line-numbers"><pre>1
 </pre></td> 
-           <td class="code"><pre>&lt;ajax:outbound-endpoint channel="/gpswalker"/&gt;</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;ajax:outbound-endpoint</span> <span class="attribute-name">channel</span>=<span class="string"><span class="delimiter">"</span><span class="content">/gpswalker</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1042,7 +1042,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -1052,10 +1052,10 @@
 3
 4
 </pre></td> 
-         <td class="code"><pre>&lt;head&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Mule GPS Walker Example&lt;/title&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;script type="text/javascript" src="mule-resource/js/mule.js"&gt;&lt;/script&gt;
-&lt;/head&gt;</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;head&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;title&gt;</span>Mule GPS Walker Example<span class="tag">&lt;/title&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;script</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">text/javascript</span><span class="delimiter">"</span></span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule-resource/js/mule.js</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span>
+<span class="tag">&lt;/head&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1066,7 +1066,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -1079,13 +1079,13 @@
 6
 7
 </pre></td> 
-         <td class="code"><pre>&lt;script type="text/javascript"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;var map = null
-&nbsp;&nbsp;&nbsp;&nbsp;function init()
-&nbsp;&nbsp;&nbsp;&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setupMap();
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mule.subscribe("/gpswalker", callback);
-&nbsp;&nbsp;&nbsp;&nbsp;}</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;script</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">text/javascript</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="inline"><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">var</span> map = <span class="predefined-constant">null</span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="keyword">function</span> <span class="function">init</span>()
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>{
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>setupMap();
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>mule.subscribe(<span class="string"><span class="delimiter">"</span><span class="content">/gpswalker</span><span class="delimiter">"</span></span>, callback);
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 

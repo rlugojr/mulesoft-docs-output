@@ -1109,7 +1109,7 @@
        Dropbox RESTful Connector pom.xml: 
      </div> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1168,59 +1168,59 @@
 52
 53
 </pre></td> 
-           <td class="code"><pre>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-    &lt;groupId&gt;org.mule.samples.devkit&lt;/groupId&gt;
-    &lt;artifactId&gt;dropboxrest&lt;/artifactId&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-    &lt;packaging&gt;mule-module&lt;/packaging&gt;
-    &lt;name&gt;Mule ${serviceName} Cloud Connector&lt;/name&gt;
-    &lt;parent&gt;
-        &lt;groupId&gt;org.mule.tools.devkit&lt;/groupId&gt;
-        &lt;artifactId&gt;mule-devkit-parent&lt;/artifactId&gt;
-        &lt;version&gt;3.5.0-andes&lt;/version&gt;
-    &lt;/parent&gt;
-    &lt;properties&gt;
-        &lt;junit.version&gt;4.9&lt;/junit.version&gt;
-        &lt;mockito.version&gt;1.8.2&lt;/mockito.version&gt;
-        &lt;jdk.version&gt;1.6&lt;/jdk.version&gt;
-        &lt;category&gt;Cloud Connectors&lt;/category&gt;
-        &lt;licensePath&gt;LICENSE.md&lt;/licensePath&gt;
-        &lt;devkit.studio.package.skip&gt;false&lt;/devkit.studio.package.skip&gt;
-        &lt;serviceName&gt;DropBox REST Sample&lt;/serviceName&gt;
+           <td class="code"><pre><span class="tag">&lt;project</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://maven.apache.org/POM/4.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+         <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;modelVersion&gt;</span>4.0.0<span class="tag">&lt;/modelVersion&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.samples.devkit<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>dropboxrest<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;version&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;packaging&gt;</span>mule-module<span class="tag">&lt;/packaging&gt;</span>
+    <span class="tag">&lt;name&gt;</span>Mule ${serviceName} Cloud Connector<span class="tag">&lt;/name&gt;</span>
+    <span class="tag">&lt;parent&gt;</span>
+        <span class="tag">&lt;groupId&gt;</span>org.mule.tools.devkit<span class="tag">&lt;/groupId&gt;</span>
+        <span class="tag">&lt;artifactId&gt;</span>mule-devkit-parent<span class="tag">&lt;/artifactId&gt;</span>
+        <span class="tag">&lt;version&gt;</span>3.5.0-andes<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;/parent&gt;</span>
+    <span class="tag">&lt;properties&gt;</span>
+        <span class="tag">&lt;junit.version&gt;</span>4.9<span class="tag">&lt;/junit.version&gt;</span>
+        <span class="tag">&lt;mockito.version&gt;</span>1.8.2<span class="tag">&lt;/mockito.version&gt;</span>
+        <span class="tag">&lt;jdk.version&gt;</span>1.6<span class="tag">&lt;/jdk.version&gt;</span>
+        <span class="tag">&lt;category&gt;</span>Cloud Connectors<span class="tag">&lt;/category&gt;</span>
+        <span class="tag">&lt;licensePath&gt;</span>LICENSE.md<span class="tag">&lt;/licensePath&gt;</span>
+        <span class="tag">&lt;devkit.studio.package.skip&gt;</span>false<span class="tag">&lt;/devkit.studio.package.skip&gt;</span>
+        <span class="tag">&lt;serviceName&gt;</span>DropBox REST Sample<span class="tag">&lt;/serviceName&gt;</span>
 
-        &lt;!-- required for Jersey Client --&gt;
-        &lt;jersey.client.version&gt;1.6&lt;/jersey.client.version&gt;
-        &lt;jersey.multipart.version&gt;1.3&lt;/jersey.multipart.version&gt;
-    &lt;/properties&gt;
+        <span class="comment">&lt;!-- required for Jersey Client --&gt;</span>
+        <span class="tag">&lt;jersey.client.version&gt;</span>1.6<span class="tag">&lt;/jersey.client.version&gt;</span>
+        <span class="tag">&lt;jersey.multipart.version&gt;</span>1.3<span class="tag">&lt;/jersey.multipart.version&gt;</span>
+    <span class="tag">&lt;/properties&gt;</span>
 
- &lt;dependencies&gt;
-        &lt;!-- Add this to use OAuth support in DevKit--&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;oauth.signpost&lt;/groupId&gt;
-            &lt;artifactId&gt;signpost-core&lt;/artifactId&gt;
-            &lt;version&gt;1.2.1.2&lt;/version&gt;
-        &lt;/dependency&gt;
+ <span class="tag">&lt;dependencies&gt;</span>
+        <span class="comment">&lt;!-- Add this to use OAuth support in DevKit--&gt;</span>
+        <span class="tag">&lt;dependency&gt;</span>
+            <span class="tag">&lt;groupId&gt;</span>oauth.signpost<span class="tag">&lt;/groupId&gt;</span>
+            <span class="tag">&lt;artifactId&gt;</span>signpost-core<span class="tag">&lt;/artifactId&gt;</span>
+            <span class="tag">&lt;version&gt;</span>1.2.1.2<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;/dependency&gt;</span>
 
-        &lt;!-- Add this to use Jersey Client --&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;com.sun.jersey&lt;/groupId&gt;
-            &lt;artifactId&gt;jersey-client&lt;/artifactId&gt;
-            &lt;version&gt;${jersey.client.version}&lt;/version&gt;
-        &lt;/dependency&gt;
+        <span class="comment">&lt;!-- Add this to use Jersey Client --&gt;</span>
+        <span class="tag">&lt;dependency&gt;</span>
+            <span class="tag">&lt;groupId&gt;</span>com.sun.jersey<span class="tag">&lt;/groupId&gt;</span>
+            <span class="tag">&lt;artifactId&gt;</span>jersey-client<span class="tag">&lt;/artifactId&gt;</span>
+            <span class="tag">&lt;version&gt;</span>${jersey.client.version}<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;/dependency&gt;</span>
 
-        &lt;!-- Add this to use Mule support for JSON --&gt;
+        <span class="comment">&lt;!-- Add this to use Mule support for JSON --&gt;</span>
 
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.mule.modules&lt;/groupId&gt;
-            &lt;artifactId&gt;mule-module-json&lt;/artifactId&gt;
-            &lt;version&gt;${mule.version}&lt;/version&gt;
-            &lt;scope&gt;provided&lt;/scope&gt;
-        &lt;/dependency&gt;
+        <span class="tag">&lt;dependency&gt;</span>
+            <span class="tag">&lt;groupId&gt;</span>org.mule.modules<span class="tag">&lt;/groupId&gt;</span>
+            <span class="tag">&lt;artifactId&gt;</span>mule-module-json<span class="tag">&lt;/artifactId&gt;</span>
+            <span class="tag">&lt;version&gt;</span>${mule.version}<span class="tag">&lt;/version&gt;</span>
+            <span class="tag">&lt;scope&gt;</span>provided<span class="tag">&lt;/scope&gt;</span>
+        <span class="tag">&lt;/dependency&gt;</span>
 
- &lt;/dependencies&gt;
-&lt;/project&gt;</pre></td> 
+ <span class="tag">&lt;/dependencies&gt;</span>
+<span class="tag">&lt;/project&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 

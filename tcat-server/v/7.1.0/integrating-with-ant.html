@@ -932,7 +932,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -1050,118 +1050,118 @@
 111
 112
 </pre></td> 
-         <td class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project basedir="." default="build" name="tcat-deployment-update"&gt;
+         <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;project</span> <span class="attribute-name">basedir</span>=<span class="string"><span class="delimiter">"</span><span class="content">.</span><span class="delimiter">"</span></span> <span class="attribute-name">default</span>=<span class="string"><span class="delimiter">"</span><span class="content">build</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcat-deployment-update</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&lt;!-- Properties required for calling the update-tcat-deployment target. --&gt;
-&nbsp;&nbsp;&lt;property name="tcat.console.host" value="localhost"/&gt;
-&nbsp;&nbsp;&lt;property name="tcat.console.port" value="8080"/&gt;
-&nbsp;&nbsp;&lt;property name="tcat.console.user" value="admin"/&gt;
-&nbsp;&nbsp;&lt;property name="tcat.console.pass" value="admin"/&gt;
-&nbsp;&nbsp;&lt;property name="tcat.deployment.id" value="local$4f1b9bf8-613d-41d4-9423-09ccc33fa20e"/&gt;
-&nbsp;&nbsp;&lt;!-- This is the path of the directory where your WAR file resides. --&gt;
-&nbsp;&nbsp;&lt;property name="war.dist.dir" value="${basedir}/dist"/&gt;
-&nbsp;&nbsp;&lt;!-- This is just the filename of your WAR file, not containing directories. --&gt;
-&nbsp;&nbsp;&lt;property name="war.filename" value="mywebapp.war"/&gt;
-&nbsp;&nbsp;&lt;!-- You might want to use a version control revision number for war.rev.number. --&gt;
-&nbsp;&nbsp;&lt;property name="war.rev.number" value="2"/&gt;
+&nbsp;&nbsp;<span class="comment">&lt;!-- Properties required for calling the update-tcat-deployment target. --&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcat.console.host</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcat.console.port</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">8080</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcat.console.user</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">admin</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcat.console.pass</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">admin</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcat.deployment.id</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">local$4f1b9bf8-613d-41d4-9423-09ccc33fa20e</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="comment">&lt;!-- This is the path of the directory where your WAR file resides. --&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">war.dist.dir</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/dist</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="comment">&lt;!-- This is just the filename of your WAR file, not containing directories. --&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">war.filename</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">mywebapp.war</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="comment">&lt;!-- You might want to use a version control revision number for war.rev.number. --&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">war.rev.number</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">2</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&lt;!-- Include the ant-contrib tasks. --&gt;
-&nbsp;&nbsp;&lt;taskdef resource="net/sf/antcontrib/antlib.xml"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;classpath&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="ant-contrib-1.0b3.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="commons-httpclient-3.0.1.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="commons-logging-1.0.4.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="commons-codec-1.4.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/classpath&gt;
-&nbsp;&nbsp;&lt;/taskdef&gt;
+&nbsp;&nbsp;<span class="comment">&lt;!-- Include the ant-contrib tasks. --&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;taskdef</span> <span class="attribute-name">resource</span>=<span class="string"><span class="delimiter">"</span><span class="content">net/sf/antcontrib/antlib.xml</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;classpath&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">ant-contrib-1.0b3.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">commons-httpclient-3.0.1.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">commons-logging-1.0.4.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">commons-codec-1.4.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/classpath&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;/taskdef&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&lt;!-- Include the sardine task (to use the HTTP PUT method). --&gt;
-&nbsp;&nbsp;&lt;typedef resource="com/googlecode/sardine/ant/sardinetask.xml"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;classpath&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="sardine.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="httpclient-4.0.3.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="httpcore-4.1.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="httpmime-4.0.3.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="commons-logging-1.0.4.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${basedir}/lib"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name="commons-codec-1.4.jar"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/classpath&gt;
-&nbsp;&nbsp;&lt;/typedef&gt;
+&nbsp;&nbsp;<span class="comment">&lt;!-- Include the sardine task (to use the HTTP PUT method). --&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;typedef</span> <span class="attribute-name">resource</span>=<span class="string"><span class="delimiter">"</span><span class="content">com/googlecode/sardine/ant/sardinetask.xml</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;classpath&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sardine.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">httpclient-4.0.3.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">httpcore-4.1.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">httpmime-4.0.3.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">commons-logging-1.0.4.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${basedir}/lib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">commons-codec-1.4.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/classpath&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;/typedef&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&lt;target name="build"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Build your webapp, then send it to the Tcat Server console repository. --&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;antcall target="tcat-deployment-update"/&gt;
-&nbsp;&nbsp;&lt;/target&gt;
+&nbsp;&nbsp;<span class="tag">&lt;target</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">build</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Build your webapp, then send it to the Tcat Server console repository. --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;antcall</span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcat-deployment-update</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;/target&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&lt;target name="tcat-deployment-update"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description="Uploads the WAR to the Tcat repository + redeploys"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Upload (POST) the war file into the Tcat Server console repository. --&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;echo&gt;POST http://${tcat.console.host}:${tcat.console.port}/console/api/registry/Applications/${war.filename} rev ${war.rev.number}&lt;/echo&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;postMethod url="http://${tcat.console.host}:${tcat.console.port}/console/api/registry/Applications/${war.filename}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doAuthentication="true"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;header name="Title" value="${war.filename}"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;header name="Slug" value="${war.filename}"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;header name="X-Artifact-Version" value="${war.rev.number}"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;file path="${war.dist.dir}/${war.filename}"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;httpClient&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;clientParams authenticationPreemptive="true"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;httpState&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;credentials host="${tcat.console.host}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port="${tcat.console.port}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username="${tcat.console.user}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password="${tcat.console.pass}"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/httpState&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/httpClient&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/postMethod&gt;
+&nbsp;&nbsp;<span class="tag">&lt;target</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcat-deployment-update</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">Uploads the WAR to the Tcat repository + redeploys</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Upload (POST) the war file into the Tcat Server console repository. --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;echo&gt;</span>POST http://${tcat.console.host}:${tcat.console.port}/console/api/registry/Applications/${war.filename} rev ${war.rev.number}<span class="tag">&lt;/echo&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;postMethod</span> <span class="attribute-name">url</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://${tcat.console.host}:${tcat.console.port}/console/api/registry/Applications/${war.filename}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">doAuthentication</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;header</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Title</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">${war.filename}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;header</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Slug</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">${war.filename}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;header</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">X-Artifact-Version</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">${war.rev.number}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">${war.dist.dir}/${war.filename}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;httpClient&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;clientParams</span> <span class="attribute-name">authenticationPreemptive</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;httpState&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;credentials</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.console.host}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.console.port}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.console.user}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.console.pass}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/httpState&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/httpClient&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/postMethod&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Retrieve the webapp's deployment metadata from Tcat's console repository. --&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="tcat.deployment.file" value="${war.dist.dir}/.deployment.txt"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;delete file="${tcat.deployment.file}" failonerror="false"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;get src="http://${tcat.console.host}:${tcat.console.port}/console/api/deployments/${tcat.deployment.id}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dest="${tcat.deployment.file}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username="${tcat.console.user}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password="${tcat.console.pass}"/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Retrieve the webapp's deployment metadata from Tcat's console repository. --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcat.deployment.file</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">${war.dist.dir}/.deployment.txt</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;delete</span> <span class="attribute-name">file</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.deployment.file}</span><span class="delimiter">"</span></span> <span class="attribute-name">failonerror</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;get</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://${tcat.console.host}:${tcat.console.port}/console/api/deployments/${tcat.deployment.id}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">dest</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.deployment.file}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.console.user}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.console.pass}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Update the deployment metadata with the new revision number. --&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;replaceregexp file="${tcat.deployment.file}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match="${war.filename}/[^&amp;quot;/]+"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replace="${war.filename}/${war.rev.number}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flags="g" byline="true"/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Update the deployment metadata with the new revision number. --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;replaceregexp</span> <span class="attribute-name">file</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.deployment.file}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">match</span>=<span class="string"><span class="delimiter">"</span><span class="content">${war.filename}/[^</span><span class="entity">&amp;quot;</span><span class="content">/]+</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">replace</span>=<span class="string"><span class="delimiter">"</span><span class="content">${war.filename}/${war.rev.number}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">flags</span>=<span class="string"><span class="delimiter">"</span><span class="content">g</span><span class="delimiter">"</span></span> <span class="attribute-name">byline</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- PUT the deployment metadata back to the console, and redeploy the webapp. --&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;echo&gt;Updating deployment metadata and redeploying ${war.filename}.&lt;/echo&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;sardine username="${tcat.console.user}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password="${tcat.console.pass}"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;put url="http://${tcat.console.host}:${tcat.console.port}/console/api/deployments/${tcat.deployment.id}"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType="application/json"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fileset dir="${war.dist.dir}"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include name=".deployment.txt"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fileset&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/put&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sardine&gt;
-&nbsp;&nbsp;&lt;/target&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- PUT the deployment metadata back to the console, and redeploy the webapp. --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;echo&gt;</span>Updating deployment metadata and redeploying ${war.filename}.<span class="tag">&lt;/echo&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;sardine</span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.console.user}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${tcat.console.pass}</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;put</span> <span class="attribute-name">url</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://${tcat.console.host}:${tcat.console.port}/console/api/deployments/${tcat.deployment.id}</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">contentType</span>=<span class="string"><span class="delimiter">"</span><span class="content">application/json</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${war.dist.dir}</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">.deployment.txt</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/fileset&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/put&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/sardine&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;/target&gt;</span>
 &nbsp;
-&lt;/project&gt;</pre></td> 
+<span class="tag">&lt;/project&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 

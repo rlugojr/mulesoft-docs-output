@@ -885,7 +885,7 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
+     <pre class="CodeRay highlight"><code data-lang="xml">
           
        <table class="CodeRay"> 
         <tbody> 
@@ -899,14 +899,14 @@
 7
 8
 </pre></td> 
-          <td class="code"><pre>&lt;flow name="Import_Order" doc:name="Import_Order"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;file:inbound-endpoint path="/tmp/" responseTimeout="10000" doc:name="File"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;file:filename-regex-filter pattern=".*.xls" caseSensitive="false"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/file:inbound-endpoint&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;data-mapper:transform config-ref="t-shirt-to-request" doc:name="Data-mapper"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;object-to-string-transformer doc:name="Object to String"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:outbound-endpoint exchange-pattern="request-response" host="localhost" port="8081" contentType="application/json" doc:name="HTTP"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/flow&gt;</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Import_Order</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Import_Order</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp/</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;file:filename-regex-filter</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">.*.xls</span><span class="delimiter">"</span></span> <span class="attribute-name">caseSensitive</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/file:inbound-endpoint&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">t-shirt-to-request</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Data-mapper</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;object-to-string-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to String</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">contentType</span>=<span class="string"><span class="delimiter">"</span><span class="content">application/json</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
          </tr> 
         </tbody> 
        </table></code></pre> 
@@ -957,7 +957,7 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
+     <pre class="CodeRay highlight"><code data-lang="xml">
           
        <table class="CodeRay"> 
         <tbody> 
@@ -975,18 +975,15 @@
 11
 12
 </pre></td> 
-          <td class="code"><pre>&lt;flow name="Request_Order_Service" doc:name="Request_Order_Service"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;http:inbound-endpoint exchange-pattern="one-way" host="localhost" port="8081" doc:name="HTTP"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;data-mapper:transform config-ref="Json-To-Bean" doc:name="Data-mapper"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;foreach collection="#[payload]" doc:name="Foreach"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;scripting:component doc:name="Groovy"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;scripting:script engine="Groovy"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;scripting:text&gt;&lt;![CDATA[return " You need to create&nbsp; "+payload.getAmount() + " "+payload.getProduct()+"."]]&gt;&lt;/scripting:text&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/scripting:script&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/scripting:component&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;smtp:outbound-endpoint host="${mail_host}" port="${mail_port}" to="${mail_target}" from="${mail_from}" subject="${mail_subject}" responseTimeout="10000" doc:name="SMTP"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/foreach&gt;
-&lt;/flow&gt;</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Request_Order_Service</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Request_Order_Service</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:inbound-endpoint</span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Json-To-Bean</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Data-mapper</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;foreach</span> <span class="attribute-name">collection</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Foreach</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;script</span><span class="attribute-name">ing:component</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Groovy</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="inline"><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>&lt;scripting:script engine=<span class="string"><span class="delimiter">"</span><span class="content">Groovy</span><span class="delimiter">"</span></span>&gt;
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>&lt;scripting:text&gt;&lt;![CDATA[<span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content"> You need to create&nbsp; </span><span class="delimiter">"</span></span>+payload.getAmount() + <span class="string"><span class="delimiter">"</span><span class="content"> </span><span class="delimiter">"</span></span>+payload.getProduct()+<span class="string"><span class="delimiter">"</span><span class="content">.</span><span class="delimiter">"</span></span>]]&gt;&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">scripting:text&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span class="delimiter">/</span></span>scripting:script&gt;
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">scripting:component&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;smtp:outbound-endpoint host="${mail_host}" port="${mail_port}" to="${mail_target}" from="${mail_from}" subject="${mail_subject}" responseTimeout="10000" doc:name="SMTP"</span><span class="delimiter">/</span></span>&gt;
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">foreach&gt; &lt;</span><span class="delimiter">/</span></span>flow&gt;</span></pre></td> 
          </tr> 
         </tbody> 
        </table></code></pre> 

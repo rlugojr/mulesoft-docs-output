@@ -931,20 +931,20 @@
         <div class="panel-heading no-padding"> 
          <!-- Nav tabs --> 
          <ul class="nav nav-tabs" role="tablist"> 
-          <li class="active"><a href="#studio-visual-editor-ed716" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-          <li><a href="#studio-xml-editor-5b32a" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+          <li class="active"><a href="#studio-visual-editor-445c3" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+          <li><a href="#studio-xml-editor-45b29" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
          </ul> 
         </div> 
         <div class="panel-body tab-content no-padding"> 
-         <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ed716"> 
+         <div class="tab-pane in active fade no-padding" id="studio-visual-editor-445c3"> 
           <div class="paragraph"> 
            <p><span class="image"><img src="./_images/proxy_service_body_visual.png" alt="proxy_service_body_visual"></span></p> 
           </div> 
          </div> 
-         <div class="tab-pane fade no-padding" id="studio-xml-editor-5b32a"> 
+         <div class="tab-pane fade no-padding" id="studio-xml-editor-45b29"> 
           <div class="listingblock"> 
            <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="code">
+            <pre class="CodeRay highlight"><code data-lang="xml">
     
                  
               <table class="CodeRay"> 
@@ -962,17 +962,17 @@
 <strong>10</strong>
 11
 </pre></td> 
-                 <td class="code"><pre>&amp;lt;flow name="admitPatientService" doc:name="admitPatientService"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:description="AdmssionService SOAP-based web-service."&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response"
+                 <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="admitPatientService" doc:name="admitPatientService"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:description="AdmssionService SOAP-based web-service."<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="${http.port}" doc:name="AdmissionService"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="AdmissionService" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:proxy-service doc:name="Proxy service"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="AdmissionService" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:proxy-service doc:name="Proxy service"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace="http://www.mule-health.com/SOA/service/admission/1.0"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload="body" port="AdmissionPort" service="AdmissionService"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wsdlLocation="service/AdmissionService.wsdl" /&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wsdlLocation="service/AdmissionService.wsdl" /<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;...
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
                 </tr> 
                </tbody> 
               </table></code></pre> 
@@ -989,7 +989,7 @@
        WSDL 
      </div> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
+      <pre class="CodeRay highlight"><code data-lang="xml">
            
         <table class="CodeRay"> 
          <tbody> 
@@ -1036,47 +1036,47 @@
 <strong>40</strong>
 41
 </pre></td> 
-           <td class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+           <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
 &nbsp;
 &nbsp;
-&lt;wsdl:definitions xmlns:mes="http://www.mule-health.com/SOA/message/1.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Admission" xmlns:tns="http://www.mule-health.com/SOA/service/admission/1.0" targetNamespace="http://www.mule-health.com/SOA/service/admission/1.0"&gt;
+<span class="tag">&lt;wsdl:definitions</span> <span class="attribute-name">xmlns:mes</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mule-health.com/SOA/message/1.0</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:soap</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://schemas.xmlsoap.org/wsdl/soap/</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:wsdl</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://schemas.xmlsoap.org/wsdl/</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:xsd</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Admission</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:tns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mule-health.com/SOA/service/admission/1.0</span><span class="delimiter">"</span></span> <span class="attribute-name">targetNamespace</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mule-health.com/SOA/service/admission/1.0</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:types&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:types&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:schema&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:import namespace="http://www.mule-health.com/SOA/message/1.0" schemaLocation="xsd/SOA-Message-1.0.xsd" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xsd:schema&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:types&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:message name="admitSubject"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:part element="mes:admitSubject" name="parameters" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:message&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:message name="admitSubjectResponse"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:part element="mes:admitSubjectResponse" name="parameters" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:message&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:portType name="Admission"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:operation name="admitSubject"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:input message="tns:admitSubject" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:output message="tns:admitSubjectResponse" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:operation&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:portType&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:binding name="AdmissionSoap" type="tns:Admission"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:operation name="admitSubject"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;soap:operation soapAction="http://http://www.mule-health.com/SOA/service/admission/1.0/admitSubject" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:input&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;soap:body use="literal" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:input&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:output&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;soap:body use="literal" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:output&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:operation&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:binding&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:service name="AdmissionService"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;wsdl:port binding="tns:AdmissionSoap" name="AdmissionPort"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;soap:address location="http://www.mule-health.com" /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:port&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/wsdl:service&gt;
-&lt;/wsdl:definitions&gt;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;xsd:schema&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;xsd:import</span> <span class="attribute-name">namespace</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mule-health.com/SOA/message/1.0</span><span class="delimiter">"</span></span> <span class="attribute-name">schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">xsd/SOA-Message-1.0.xsd</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/xsd:schema&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:types&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:message</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">admitSubject</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:part</span> <span class="attribute-name">element</span>=<span class="string"><span class="delimiter">"</span><span class="content">mes:admitSubject</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">parameters</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:message&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:message</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">admitSubjectResponse</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:part</span> <span class="attribute-name">element</span>=<span class="string"><span class="delimiter">"</span><span class="content">mes:admitSubjectResponse</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">parameters</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:message&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:portType</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Admission</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:operation</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">admitSubject</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:input</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">tns:admitSubject</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:output</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">tns:admitSubjectResponse</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:operation&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:portType&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:binding</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AdmissionSoap</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">tns:Admission</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;soap:binding</span> <span class="attribute-name">style</span>=<span class="string"><span class="delimiter">"</span><span class="key">document</span><span class="delimiter">"</span></span> <span class="attribute-name">transport</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://schemas.xmlsoap.org/soap/http</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:operation</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">admitSubject</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;soap:operation</span> <span class="attribute-name">soapAction</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://http://www.mule-health.com/SOA/service/admission/1.0/admitSubject</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:input&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;soap:body</span> <span class="attribute-name">use</span>=<span class="string"><span class="delimiter">"</span><span class="content">literal</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:input&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:output&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;soap:body</span> <span class="attribute-name">use</span>=<span class="string"><span class="delimiter">"</span><span class="content">literal</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:output&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:operation&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:binding&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:service</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AdmissionService</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wsdl:port</span> <span class="attribute-name">binding</span>=<span class="string"><span class="delimiter">"</span><span class="content">tns:AdmissionSoap</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AdmissionPort</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;soap:address</span> <span class="attribute-name">location</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mule-health.com</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:port&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wsdl:service&gt;</span>
+<span class="tag">&lt;/wsdl:definitions&gt;</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1127,20 +1127,20 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-309d7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#studio-xml-editor-dd683" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-7b308" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#studio-xml-editor-f7274" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-309d7"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-7b308"> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/xml-only_soap_web_service.png" alt="xml-only_soap_web_service"></span>&nbsp;</p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="studio-xml-editor-dd683"> 
+      <div class="tab-pane fade no-padding" id="studio-xml-editor-f7274"> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
+         <pre class="CodeRay highlight"><code data-lang="xml">
     
               
            <table class="CodeRay"> 
@@ -1256,8 +1256,8 @@
 108
 109
 </pre></td> 
-              <td class="code"><pre>&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
-&amp;lt;mule xmlns:ldap="http://www.mulesoft.org/schema/mule/ldap" xmlns:jdbc-ee="http://www.mulesoft.org/schema/mule/ee/jdbc"
+              <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>mule xmlns:ldap="http://www.mulesoft.org/schema/mule/ldap" xmlns:jdbc-ee="http://www.mulesoft.org/schema/mule/ee/jdbc"
 &nbsp;&nbsp;&nbsp;&nbsp;xmlns:servlet="http://www.mulesoft.org/schema/mule/servlet" xmlns:ajax="http://www.mulesoft.org/schema/mule/ajax"
 &nbsp;&nbsp;&nbsp;&nbsp;xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
 &nbsp;&nbsp;&nbsp;&nbsp;xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper"
@@ -1290,81 +1290,81 @@ http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/
 &nbsp;
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
 &nbsp;
-http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd "&amp;gt;
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd "<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;spring:beans&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;spring:bean id="property-placeholder"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;spring:property name="location"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="classpath:config.dev.properties" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/spring:bean&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/spring:beans&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>spring:beans<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>spring:bean id="property-placeholder"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>spring:property name="location"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="classpath:config.dev.properties" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/spring:bean<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/spring:beans<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:namespace-manager
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;includeConfigNamespaces="true"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:namespace prefix="soap" uri="http://schemas.xmlsoap.org/soap/envelope/" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:namespace prefix="mes" uri="http://www.mule-health.com/SOA/message/1.0" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:namespace prefix="mod" uri="http://www.mule-health.com/SOA/model/1.0" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/mulexml:namespace-manager&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="admit_subject_to_upsert_patient"
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:namespace-manager
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;includeConfigNamespaces="true"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:namespace prefix="soap" uri="http://schemas.xmlsoap.org/soap/envelope/" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:namespace prefix="mes" uri="http://www.mule-health.com/SOA/message/1.0" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:namespace prefix="mod" uri="http://www.mule-health.com/SOA/model/1.0" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/mulexml:namespace-manager<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="admit_subject_to_upsert_patient"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transformationGraphPath="admit_subject_to_upsert_patient.grf"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="DataMapper" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="upsert_patient_response_to_create_episode"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="DataMapper" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="upsert_patient_response_to_create_episode"
 &nbsp;&nbsp;&nbsp;&nbsp;transformationGraphPath="upsert_patient_response_to_create_episode.grf"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="DataMapper" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;object-to-string-transformer name="Object_to_String"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Object to String" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="create_episode_response_to_admit_subject_response"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transformationGraphPath="create_episode_response_to_admit_subject_response.grf"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="DataMapper" /&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="DataMapper" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>object-to-string-transformer name="Object_to_String"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Object to String" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="create_episode_response_to_admit_subject_response"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transformationGraphPath="create_episode_response_to_admit_subject_response.grf"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="DataMapper" /<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="admitPatientService" doc:name="admitPatientService"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:description="AdmssionService SOAP-based web-service."&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="admitPatientService" doc:name="admitPatientService"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:description="AdmssionService SOAP-based web-service."<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="${http.port}" doc:name="AdmissionService"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="AdmissionService" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:proxy-service doc:name="Proxy service"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path="AdmissionService" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:proxy-service doc:name="Proxy service"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespace="http://www.mule-health.com/SOA/service/admission/1.0"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload="body" port="AdmissionPort" service="AdmissionService"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wsdlLocation="service/AdmissionService.wsdl" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:dom-to-xml-transformer
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returnClass="java.lang.String" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="upsertPatient" doc:name="Upsert Patient" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="createEpisode" doc:name="Create Episode" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wsdlLocation="service/AdmissionService.wsdl" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:dom-to-xml-transformer
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returnClass="java.lang.String" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="upsertPatient" doc:name="Upsert Patient" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="createEpisode" doc:name="Create Episode" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config-ref="create_episode_response_to_admit_subject_response"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="&amp;amp;lt;createEpisodeResponse /&amp;amp;gt; to &amp;amp;lt;admitSubjectResponse /&amp;amp;gt;" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="<span class="entity">&amp;amp;</span>lt;createEpisodeResponse /<span class="entity">&amp;amp;</span>gt; to <span class="entity">&amp;amp;</span>lt;admitSubjectResponse /<span class="entity">&amp;amp;</span>gt;" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="upsertPatient" doc:name="upsertPatient"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="admit_subject_to_upsert_patient"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="&amp;amp;amp;lt;admitSubject /&amp;amp;amp;gt; to &amp;amp;amp;lt;upsertPatient /&amp;amp;amp;gt;" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="invokePatientService" doc:name="Invoke Patient Service" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:dom-to-xml-transformer
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returnClass="java.lang.String" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="upsertPatient" doc:name="upsertPatient"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="admit_subject_to_upsert_patient"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="<span class="entity">&amp;amp;</span>amp;lt;admitSubject /<span class="entity">&amp;amp;</span>amp;gt; to <span class="entity">&amp;amp;</span>amp;lt;upsertPatient /<span class="entity">&amp;amp;</span>amp;gt;" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="invokePatientService" doc:name="Invoke Patient Service" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:dom-to-xml-transformer
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returnClass="java.lang.String" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="invokePatientService" doc:name="invokePatientService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:proxy-client payload="body"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enableMuleSoapHeaders="true" doc:name="Proxy client" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:outbound-endpoint exchange-pattern="request-response"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="${http.port}" path="PatientService" doc:name="PatientService" password="hello123" user="nialdarbey"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="invokePatientService" doc:name="invokePatientService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:proxy-client payload="body"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enableMuleSoapHeaders="true" doc:name="Proxy client" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:outbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="${http.port}" path="PatientService" doc:name="PatientService" password="hello123" user="nialdarbey"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="createEpisode" doc:name="createEpisode"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="upsert_patient_response_to_create_episode"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="&amp;amp;amp;lt;upsertPatientResponse /&amp;amp;amp;gt; to &amp;amp;amp;lt;createEpisode /&amp;amp;amp;gt;" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="invokeEHRService" doc:name="Invoke EHR Service" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:dom-to-xml-transformer
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returnClass="java.lang.String" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="createEpisode" doc:name="createEpisode"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="upsert_patient_response_to_create_episode"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="<span class="entity">&amp;amp;</span>amp;lt;upsertPatientResponse /<span class="entity">&amp;amp;</span>amp;gt; to <span class="entity">&amp;amp;</span>amp;lt;createEpisode /<span class="entity">&amp;amp;</span>amp;gt;" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="invokeEHRService" doc:name="Invoke EHR Service" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:dom-to-xml-transformer
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returnClass="java.lang.String" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="invokeEHRService" doc:name="invokeEHRService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:proxy-client payload="body"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enableMuleSoapHeaders="true" doc:name="Proxy client" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:outbound-endpoint exchange-pattern="request-response"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="${http.port}" path="EHRService" doc:name="EHRService" /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="invokeEHRService" doc:name="invokeEHRService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:proxy-client payload="body"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enableMuleSoapHeaders="true" doc:name="Proxy client" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:outbound-endpoint exchange-pattern="request-response"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host="localhost" port="${http.port}" path="EHRService" doc:name="EHRService" /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&amp;lt;/mule&amp;gt;</pre></td> 
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
              </tr> 
             </tbody> 
            </table></code></pre> 
@@ -1392,20 +1392,20 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-27b29" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#studio-xml-editor-b41c9" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-694e6" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#studio-xml-editor-1107a" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-27b29"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-694e6"> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/choice_studio.png" alt="choice_studio"></span>&nbsp;</p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="studio-xml-editor-b41c9"> 
+      <div class="tab-pane fade no-padding" id="studio-xml-editor-1107a"> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
+         <pre class="CodeRay highlight"><code data-lang="xml">
     
               
            <table class="CodeRay"> 
@@ -1427,21 +1427,21 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
 14
 15
 </pre></td> 
-              <td class="code"><pre>&amp;lt;flow name="PatientService" doc:name="PatientService"&amp;gt;
+              <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="PatientService" doc:name="PatientService"<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice doc:name="Choice"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="#[flowVars.operation == &amp;amp;apos;upsertPatient&amp;amp;apos;]"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="upsertPatient"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="upsert_patient_to_upsert_patient_response" doc:name="&amp;amp;amp;lt;upsertPatientRequest /&amp;amp;amp;gt; to &amp;amp;amp;lt;upsertPatientResponse /&amp;amp;amp;gt;"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="getPatient"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="get_patient_to_get_patient_response" doc:name="&amp;amp;amp;lt;getPatient /&amp;amp;amp;gt; to &amp;amp;amp;lt;getPatientResponse /&amp;amp;amp;gt;"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="#[flowVars.operation == <span class="entity">&amp;amp;</span>apos;upsertPatient<span class="entity">&amp;amp;</span>apos;]"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="upsertPatient"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="upsert_patient_to_upsert_patient_response" doc:name="<span class="entity">&amp;amp;</span>amp;lt;upsertPatientRequest /<span class="entity">&amp;amp;</span>amp;gt; to <span class="entity">&amp;amp;</span>amp;lt;upsertPatientResponse /<span class="entity">&amp;amp;</span>amp;gt;"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="getPatient"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="get_patient_to_get_patient_response" doc:name="<span class="entity">&amp;amp;</span>amp;lt;getPatient /<span class="entity">&amp;amp;</span>amp;gt; to <span class="entity">&amp;amp;</span>amp;lt;getPatientResponse /<span class="entity">&amp;amp;</span>amp;gt;"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
              </tr> 
             </tbody> 
            </table></code></pre> 
@@ -1460,20 +1460,20 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-5ff28" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#studio-xml-editor-2c838" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-a48ad" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#studio-xml-editor-aa0a6" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5ff28"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a48ad"> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/xml-only_soap_web_service2.png" alt="xml-only_soap_web_service2"></span></p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="studio-xml-editor-2c838"> 
+      <div class="tab-pane fade no-padding" id="studio-xml-editor-aa0a6"> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
+         <pre class="CodeRay highlight"><code data-lang="xml">
     
               
            <table class="CodeRay"> 
@@ -1553,9 +1553,9 @@ http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/cu
 72
 73
 </pre></td> 
-              <td class="code"><pre>&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
+              <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 &nbsp;
-&amp;lt;mule xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
+<span class="entity">&amp;lt;</span>mule xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
 &nbsp;&nbsp;&nbsp;&nbsp;xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
 &nbsp;
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
@@ -1570,62 +1570,62 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 &nbsp;
 http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
 &nbsp;
-http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd "&amp;gt;
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd "<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="insurance_request_to_insurance_response" transformationGraphPath="insurance_request_to_insurance_response.grf" doc:name="DataMapper"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="insurance_request_to_insurance_response" transformationGraphPath="insurance_request_to_insurance_response.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="insurance_request_to_insurance_request_rejected" transformationGraphPath="insurance_request_to_insurance_request_rejected.grf" doc:name="DataMapper"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="insurance_request_to_insurance_request_rejected" transformationGraphPath="insurance_request_to_insurance_request_rejected.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="upsert_patient_to_upsert_patient_response" transformationGraphPath="upsert_patient_to_upsert_patient_response.grf" doc:name="DataMapper"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="upsert_patient_to_upsert_patient_response" transformationGraphPath="upsert_patient_to_upsert_patient_response.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="get_patient_to_get_patient_response" transformationGraphPath="get_patient_to_get_patient_response.grf" doc:name="DataMapper"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="get_patient_to_get_patient_response" transformationGraphPath="get_patient_to_get_patient_response.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="create_episode_to_create_episode_response" transformationGraphPath="create_episode_to_create_episode_response.grf" doc:name="DataMapper"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="create_episode_to_create_episode_response" transformationGraphPath="create_episode_to_create_episode_response.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="find_episodes_to_find_episodes_response" transformationGraphPath="find_episodes_to_find_episodes_response.grf" doc:name="DataMapper"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="find_episodes_to_find_episodes_response" transformationGraphPath="find_episodes_to_find_episodes_response.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="create_bill_to_create_bill_response" transformationGraphPath="create_bill_to_create_bill_response.grf" doc:name="DataMapper"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="create_bill_to_create_bill_response" transformationGraphPath="create_bill_to_create_bill_response.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:config name="audit_request_to_audit_response" transformationGraphPath="audit_request_to_audit_response.grf" doc:name="DataMapper"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="audit_request_to_audit_response" transformationGraphPath="audit_request_to_audit_response.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="PatientService" doc:name="PatientService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" doc:name="PatientService" path="PatientService"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:proxy-service doc:name="Proxy service" namespace="http://www.mule-health.com/SOA/service/patient/1.0" payload="body" port="PatientPort" service="PatientService" wsdlLocation="service/PatientService.wsdl"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:dom-to-xml-transformer /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable doc:name="operation" value="#[xpath(&amp;amp;apos;fn:local-name(/*)&amp;amp;apos;)]" variableName="operation"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice doc:name="Choice"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="#[flowVars.operation == &amp;amp;apos;upsertPatient&amp;amp;apos;]"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="upsertPatient"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="upsert_patient_to_upsert_patient_response" doc:name="&amp;amp;amp;lt;upsertPatientRequest /&amp;amp;amp;gt; to &amp;amp;amp;lt;upsertPatientResponse /&amp;amp;amp;gt;"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="getPatient"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="get_patient_to_get_patient_response" doc:name="&amp;amp;amp;lt;getPatient /&amp;amp;amp;gt; to &amp;amp;amp;lt;getPatientResponse /&amp;amp;amp;gt;"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="EHRService" doc:name="EHRService"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" doc:name="EHRService" path="EHRService"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:proxy-service doc:name="Proxy service" namespace="http://www.mule-health.com/SOA/service/ehr/1.0" payload="body" port="EHRPort" service="EHRService"&nbsp; wsdlLocation="service/EHRService.wsdl"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;mulexml:dom-to-xml-transformer /&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable doc:name="operation" value="#[xpath('fn:local-name(/*)')]" variableName="operation"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice doc:name="Choice"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="#[flowVars.operation == &amp;amp;apos;createEpisode&amp;amp;apos;]"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="createEpisode"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="create_episode_to_create_episode_response" doc:name="&amp;amp;amp;lt;createEpisode /&amp;amp;amp;gt; to &amp;amp;amp;lt;createEpisodeResponse /&amp;amp;amp;gt;"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="findEpisode"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;data-mapper:transform config-ref="find_episodes_to_find_episodes_response" doc:name="&amp;amp;amp;lt;findEpisode /&amp;amp;amp;gt; to &amp;amp;amp;lt;findEpisodeResponse /&amp;amp;amp;gt;"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="PatientService" doc:name="PatientService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" doc:name="PatientService" path="PatientService"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:proxy-service doc:name="Proxy service" namespace="http://www.mule-health.com/SOA/service/patient/1.0" payload="body" port="PatientPort" service="PatientService" wsdlLocation="service/PatientService.wsdl"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:dom-to-xml-transformer /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable doc:name="operation" value="#[xpath(<span class="entity">&amp;amp;</span>apos;fn:local-name(/*)<span class="entity">&amp;amp;</span>apos;)]" variableName="operation"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="#[flowVars.operation == <span class="entity">&amp;amp;</span>apos;upsertPatient<span class="entity">&amp;amp;</span>apos;]"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="upsertPatient"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="upsert_patient_to_upsert_patient_response" doc:name="<span class="entity">&amp;amp;</span>amp;lt;upsertPatientRequest /<span class="entity">&amp;amp;</span>amp;gt; to <span class="entity">&amp;amp;</span>amp;lt;upsertPatientResponse /<span class="entity">&amp;amp;</span>amp;gt;"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="getPatient"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="get_patient_to_get_patient_response" doc:name="<span class="entity">&amp;amp;</span>amp;lt;getPatient /<span class="entity">&amp;amp;</span>amp;gt; to <span class="entity">&amp;amp;</span>amp;lt;getPatientResponse /<span class="entity">&amp;amp;</span>amp;gt;"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="EHRService" doc:name="EHRService"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="${http.port}" doc:name="EHRService" path="EHRService"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:proxy-service doc:name="Proxy service" namespace="http://www.mule-health.com/SOA/service/ehr/1.0" payload="body" port="EHRPort" service="EHRService"&nbsp; wsdlLocation="service/EHRService.wsdl"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>mulexml:dom-to-xml-transformer /<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable doc:name="operation" value="#[xpath('fn:local-name(/*)')]" variableName="operation"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="#[flowVars.operation == <span class="entity">&amp;amp;</span>apos;createEpisode<span class="entity">&amp;amp;</span>apos;]"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="createEpisode"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="create_episode_to_create_episode_response" doc:name="<span class="entity">&amp;amp;</span>amp;lt;createEpisode /<span class="entity">&amp;amp;</span>amp;gt; to <span class="entity">&amp;amp;</span>amp;lt;createEpisodeResponse /<span class="entity">&amp;amp;</span>amp;gt;"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="findEpisode"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform config-ref="find_episodes_to_find_episodes_response" doc:name="<span class="entity">&amp;amp;</span>amp;lt;findEpisode /<span class="entity">&amp;amp;</span>amp;gt; to <span class="entity">&amp;amp;</span>amp;lt;findEpisodeResponse /<span class="entity">&amp;amp;</span>amp;gt;"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&amp;lt;/mule&amp;gt;</pre></td> 
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
              </tr> 
             </tbody> 
            </table></code></pre> 

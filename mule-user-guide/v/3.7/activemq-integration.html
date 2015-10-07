@@ -886,7 +886,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -907,19 +907,19 @@
 14
 15
 </pre></td> 
-         <td class="code"><pre>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;mule xmlns="http://www.mulesoft.org/schema/mule/core"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:mule="http://www.mulesoft.org/schema/mule/core"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
-&nbsp;&nbsp;&nbsp;&nbsp;xsi:schemaLocation="
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd"&gt;
+         <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:mule</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:jms</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/jms</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&lt;jms:activemq-connector name="jmsConnector"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brokerURL="tcp://localhost:61616"/&gt;
-&nbsp;&nbsp;&lt;jms:activemq-xa-connector name="jmsXAConnector"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brokerURL="tcp://localhost:61616"/&gt;
+&nbsp;&nbsp;<span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">jmsConnector</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">brokerURL</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcp://localhost:61616</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;jms:activemq-xa-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">jmsXAConnector</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">brokerURL</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcp://localhost:61616</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;
 ...</pre></td> 
         </tr> 
@@ -988,7 +988,7 @@ apache-activemq-5.12.0/lib/hawtbuf-1.11.jar</pre>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -996,8 +996,8 @@ apache-activemq-5.12.0/lib/hawtbuf-1.11.jar</pre>
          <td class="line-numbers"><pre>1
 2
 </pre></td> 
-         <td class="code"><pre>&lt;jms:activemq-xa-connector name="jmsFailoverConnector"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brokerURL="failover:(tcp://primary:61616,tcp://secondary:61616)?randomize=false"/&gt;</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;jms:activemq-xa-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">jmsFailoverConnector</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">brokerURL</span>=<span class="string"><span class="delimiter">"</span><span class="content">failover:(tcp://primary:61616,tcp://secondary:61616)?randomize=false</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1008,14 +1008,14 @@ apache-activemq-5.12.0/lib/hawtbuf-1.11.jar</pre>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
         <tr> 
          <td class="line-numbers"><pre>1
 </pre></td> 
-         <td class="code"><pre>&lt;jms:activemq-connector name="jmsConnector" brokerURL="vm://localhost"/&gt;</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">jmsConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">brokerURL</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://localhost</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1029,7 +1029,7 @@ apache-activemq-5.12.0/lib/hawtbuf-1.11.jar</pre>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -1052,23 +1052,23 @@ apache-activemq-5.12.0/lib/hawtbuf-1.11.jar</pre>
 16
 17
 </pre></td> 
-         <td class="code"><pre>&lt;bean name="connectionFactory"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class="org.apache.activemq.ActiveMQConnectionFactory"&gt;
-&lt;!-- to support XA transactions, use org.apache.activemq.ActiveMQXAConnectionFactory instead --&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="brokerURL"&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="tcp://activemqserver:61616"/&gt;
+         <td class="code"><pre><span class="tag">&lt;bean</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">connectionFactory</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.apache.activemq.ActiveMQConnectionFactory</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="comment">&lt;!-- to support XA transactions, use org.apache.activemq.ActiveMQXAConnectionFactory instead --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">brokerURL</span><span class="delimiter">"</span></span><span class="error">&nbsp;</span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcp://activemqserver:61616</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="redeliveryPolicy"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;bean class="org.apache.activemq.RedeliveryPolicy"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="initialRedeliveryDelay"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="20000"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="redeliveryDelay"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="20000"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="maximumRedeliveries"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="10"/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/bean&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/property&gt;
-&lt;/bean&gt;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">redeliveryPolicy</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;bean</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.apache.activemq.RedeliveryPolicy</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">initialRedeliveryDelay</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">20000</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">redeliveryDelay</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">20000</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">maximumRedeliveries</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">10</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/bean&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/property&gt;</span>
+<span class="tag">&lt;/bean&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1079,14 +1079,14 @@ apache-activemq-5.12.0/lib/hawtbuf-1.11.jar</pre>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
         <tr> 
          <td class="line-numbers"><pre>1
 </pre></td> 
-         <td class="code"><pre>&lt;jms:activemq-connector name="jmsConnector" connectionFactory-ref="connectionFactory" maxRedelivery="-1"/&gt;</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">jmsConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">connectionFactory-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">connectionFactory</span><span class="delimiter">"</span></span> <span class="attribute-name">maxRedelivery</span>=<span class="string"><span class="delimiter">"</span><span class="content">-1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 

@@ -892,7 +892,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -912,20 +912,20 @@
 13
 14
 </pre></td> 
-         <td class="code"><pre>&lt;pluginRepositories&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;pluginRepository&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;id&gt;mule.dependencies&lt;/id&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;url&gt;http://dist.codehaus.org/mule/dependencies/maven2/&lt;/url&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;Mule Dependencies Repository&lt;/name&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/pluginRepository &gt;
+         <td class="code"><pre><span class="tag">&lt;pluginRepositories&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;pluginRepository&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;id&gt;</span>mule.dependencies<span class="tag">&lt;/id&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;url&gt;</span>http://dist.codehaus.org/mule/dependencies/maven2/<span class="tag">&lt;/url&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;name&gt;</span>Mule Dependencies Repository<span class="tag">&lt;/name&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/pluginRepository</span> <span class="error">&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- For the Abdera dependencies --&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;pluginRepository&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;id&gt;apache-incubating&lt;/id&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;Apache Incubating Repository&lt;/name&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;url&gt;http://people.apache.org/repo/m2-incubating-repository/&lt;/url&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/pluginRepository&gt;
-&lt;/pluginRepositories&gt;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- For the Abdera dependencies --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;pluginRepository&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;id&gt;</span>apache-incubating<span class="tag">&lt;/id&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;name&gt;</span>Apache Incubating Repository<span class="tag">&lt;/name&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;url&gt;</span>http://people.apache.org/repo/m2-incubating-repository/<span class="tag">&lt;/url&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/pluginRepository&gt;</span>
+<span class="tag">&lt;/pluginRepositories&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -941,7 +941,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -975,33 +975,33 @@
 27
 28
 </pre></td> 
-         <td class="code"><pre>&lt;build&gt;
-&nbsp;&nbsp;&lt;plugins&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;plugin&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.mule.galaxy&lt;/groupId&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;galaxy-maven-publish-plugin&lt;/artifactId&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;2.0.0&lt;/version&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;url&gt;http://localhost:8080/console/api/registry/Applications&lt;/url&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;username&gt;admin&lt;/username&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;password&gt;admin&lt;/password&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;overwrite&gt;true&lt;/overwrite&gt;
+         <td class="code"><pre><span class="tag">&lt;build&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;plugins&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;plugin&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;groupId&gt;</span>org.mule.galaxy<span class="tag">&lt;/groupId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;artifactId&gt;</span>galaxy-maven-publish-plugin<span class="tag">&lt;/artifactId&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;version&gt;</span>2.0.0<span class="tag">&lt;/version&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;url&gt;</span>http://localhost:8080/console/api/registry/Applications<span class="tag">&lt;/url&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;username&gt;</span>admin<span class="tag">&lt;/username&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;password&gt;</span>admin<span class="tag">&lt;/password&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;overwrite&gt;</span>true<span class="tag">&lt;/overwrite&gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Publish generated WAR --&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;includes&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;include&gt;target/*-${version}.war&lt;/include&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/includes&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;executions&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;execution&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;id&gt;publish-artifacts&lt;/id&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;phase&gt;package&lt;/phase&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;goals&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;goal&gt;execute&lt;/goal&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/goals&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/execution&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/executions&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/plugin&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Publish generated WAR --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;includes&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;include&gt;</span>target/*-${version}.war<span class="tag">&lt;/include&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/includes&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/configuration&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;executions&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;execution&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;id&gt;</span>publish-artifacts<span class="tag">&lt;/id&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;phase&gt;</span>package<span class="tag">&lt;/phase&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;goals&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;goal&gt;</span>execute<span class="tag">&lt;/goal&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/goals&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/execution&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/executions&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/plugin&gt;</span>
 ...</pre></td> 
         </tr> 
        </tbody> 
@@ -1018,7 +1018,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -1033,15 +1033,15 @@
 8
 9
 </pre></td> 
-         <td class="code"><pre>&lt;settings&gt;
-&nbsp;&nbsp;&lt;servers&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;server&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;id&gt;myServer&lt;/id&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;username&gt;admin&lt;/username&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;password&gt;admin&lt;/password&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/server&gt;
-&nbsp;&nbsp;&lt;/servers&gt;
-&lt;/settings&gt;</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;settings&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;servers&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;server&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;id&gt;</span>myServer<span class="tag">&lt;/id&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;username&gt;</span>admin<span class="tag">&lt;/username&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;password&gt;</span>admin<span class="tag">&lt;/password&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/server&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;/servers&gt;</span>
+<span class="tag">&lt;/settings&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1052,7 +1052,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -1063,11 +1063,11 @@
 4
 5
 </pre></td> 
-         <td class="code"><pre>&lt;configuration&gt;
+         <td class="code"><pre><span class="tag">&lt;configuration&gt;</span>
 &nbsp;&nbsp;...
-&nbsp;&nbsp;&lt;serverId&gt;myServer&lt;/serverId&gt;
+&nbsp;&nbsp;<span class="tag">&lt;serverId&gt;</span>myServer<span class="tag">&lt;/serverId&gt;</span>
 &nbsp;&nbsp;...
-&lt;/configuration&gt;</pre></td> 
+<span class="tag">&lt;/configuration&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 

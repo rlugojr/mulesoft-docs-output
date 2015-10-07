@@ -874,20 +874,20 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-cce1a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-39300" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-329c8" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-4f2cb" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-cce1a"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-329c8"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/mainLoanBrokerFlow.png" alt="mainLoanBrokerFlow"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-39300"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-4f2cb"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1021,7 +1021,7 @@
 126
 127
 </pre></td> 
-             <td class="code"><pre>&amp;lt;flow name="loan-broker-sync" doc:name="loan-broker-sync" doc:description="The main loanbroker flow that:
+             <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="loan-broker-sync" doc:name="loan-broker-sync" doc:description="The main loanbroker flow that:
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i) Receives a customer request
 &nbsp;
@@ -1035,9 +1035,9 @@
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi) Returns the response to the client
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The main loanbroker flow that:
 &nbsp;
@@ -1053,26 +1053,26 @@
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi) Returns the response to the client
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint address="http://0.0.0.0:11081" exchange-pattern="request-response" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://0.0.0.0:11081" exchange-pattern="request-response" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:body-to-parameter-map-transformer doc:name="Body to Parameter Map"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:body-to-parameter-map-transformer doc:name="Body to Parameter Map"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice doc:name="Choice"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="!(payload['name'] == null || payload['ssn'] == null || payload['amount'] == null || payload['term']==null)"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="!(payload['name'] == null || payload['ssn'] == null || payload['amount'] == null || payload['term']==null)"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="create customer request"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="create customer request"<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;import org.mule.example.loanbroker.message.CustomerQuoteRequest;
 &nbsp;
@@ -1083,71 +1083,71 @@
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload = new CustomerQuoteRequest(new Customer(payload['name'], Integer.parseInt(payload['ssn'])), Integer.parseInt(payload['amount']), Integer.parseInt(payload['term']));
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/expression-component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher source="#[payload]" target="#[flowVars['creditProfile']]" doc:name="Enrich with creditProfile"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher source="#[payload]" target="#[flowVars['creditProfile']]" doc:name="Enrich with creditProfile"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher source="#[payload]" target="#[flowVars['banks']]" doc:name="Enrich with banks"&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="lookupBanks" doc:name="lookupBanks"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="quotes" value="#[new java.util.LinkedList()]" doc:name="create empty quotes"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher source="#[payload]" target="#[flowVars['banks']]" doc:name="Enrich with banks"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;foreach collection="#[flowVars['banks']]" doc:name="Foreach"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="lookupBanks" doc:name="lookupBanks"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher target="#[quotes.add($)]" doc:name="Message Enricher"&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="lookupLoanQuote" doc:name="lookupLoanQuote"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/foreach&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="findLowestLoanQuote" doc:name="findLowestLoanQuote"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="quotes" value="#[new java.util.LinkedList()]" doc:name="create empty quotes"/<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>foreach collection="#[flowVars['banks']]" doc:name="Foreach"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher target="#[quotes.add($)]" doc:name="Message Enricher"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="lookupLoanQuote" doc:name="lookupLoanQuote"/<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/foreach<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;object-to-string-transformer doc:name="Object to String"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="set error message"&amp;gt;payload="Error: incomplete request"&amp;lt;/expression-component&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="findLowestLoanQuote" doc:name="findLowestLoanQuote"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>object-to-string-transformer doc:name="Object to String"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-payload value="Error processing loan request" doc:name="Set error message"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;&nbsp;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="set error message"<span class="entity">&amp;gt;</span>payload="Error: incomplete request"<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Error processing loan request" doc:name="Set error message"/<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>&nbsp;</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1175,20 +1175,20 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-c5c90" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-e31b0" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-5105c" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-59028" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c5c90"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5105c"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/choice_first_route2.png" alt="choice_first_route2"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-e31b0"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-59028"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1264,11 +1264,11 @@
 68
 69
 </pre></td> 
-             <td class="code"><pre>&amp;lt;choice doc:name="Choice"&amp;gt;
+             <td class="code"><pre><span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="!(payload['name'] == null || payload['ssn'] == null || payload['amount'] == null || payload['term']==null)"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="!(payload['name'] == null || payload['ssn'] == null || payload['amount'] == null || payload['term']==null)"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="create customer request"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="create customer request"<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;import org.mule.example.loanbroker.message.CustomerQuoteRequest;
 &nbsp;
@@ -1279,60 +1279,60 @@
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload = new CustomerQuoteRequest(new Customer(payload['name'], Integer.parseInt(payload['ssn'])), Integer.parseInt(payload['amount']), Integer.parseInt(payload['term']));
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/expression-component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher source="#[payload]" target="#[flowVars['creditProfile']]" doc:name="Enrich with creditProfile"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher source="#[payload]" target="#[flowVars['creditProfile']]" doc:name="Enrich with creditProfile"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher source="#[payload]" target="#[flowVars['banks']]" doc:name="Enrich with banks"&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="lookupBanks" doc:name="lookupBanks"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="quotes" value="#[new java.util.LinkedList()]" doc:name="create empty quotes"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher source="#[payload]" target="#[flowVars['banks']]" doc:name="Enrich with banks"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;foreach collection="#[flowVars['banks']]" doc:name="Foreach"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="lookupBanks" doc:name="lookupBanks"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher target="#[quotes.add($)]" doc:name="Message Enricher"&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="lookupLoanQuote" doc:name="lookupLoanQuote"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/foreach&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="findLowestLoanQuote" doc:name="findLowestLoanQuote"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="quotes" value="#[new java.util.LinkedList()]" doc:name="create empty quotes"/<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>foreach collection="#[flowVars['banks']]" doc:name="Foreach"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher target="#[quotes.add($)]" doc:name="Message Enricher"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="lookupLoanQuote" doc:name="lookupLoanQuote"/<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/foreach<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;object-to-string-transformer doc:name="Object to String"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="findLowestLoanQuote" doc:name="findLowestLoanQuote"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="set error message"&amp;gt;payload="Error: incomplete request"&amp;lt;/expression-component&amp;gt;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>object-to-string-transformer doc:name="Object to String"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;&nbsp;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="set error message"<span class="entity">&amp;gt;</span>payload="Error: incomplete request"<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>&nbsp;</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1353,14 +1353,14 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
+     <pre class="CodeRay highlight"><code data-lang="xml">
           
        <table class="CodeRay"> 
         <tbody> 
          <tr> 
           <td class="line-numbers"><pre>1
 </pre></td> 
-          <td class="code"><pre>&lt;expression-component doc:name="create customer request"&gt;import org.mule.example.loanbroker.message.CustomerQuoteRequest; import org.mule.example.loanbroker.model.Customer; payload = new CustomerQuoteRequest(new Customer(payload['name'], Integer.parseInt(payload['ssn'])), Integer.parseInt(payload['amount']), Integer.parseInt(payload['term']));&lt;/expression-component&gt;</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;expression-component</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">create customer request</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>import org.mule.example.loanbroker.message.CustomerQuoteRequest; import org.mule.example.loanbroker.model.Customer; payload = new CustomerQuoteRequest(new Customer(payload['name'], Integer.parseInt(payload['ssn'])), Integer.parseInt(payload['amount']), Integer.parseInt(payload['term']));<span class="tag">&lt;/expression-component&gt;</span></pre></td> 
          </tr> 
         </tbody> 
        </table></code></pre> 
@@ -1449,20 +1449,20 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-9ffe4" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-36afb" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-69077" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-7079f" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-9ffe4"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-69077"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/customerCreditProfile.png" alt="customerCreditProfile"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-36afb"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-7079f"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1485,22 +1485,22 @@
 15
 16
 </pre></td> 
-             <td class="code"><pre>&amp;lt;sub-flow name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile" doc:description="
+             <td class="code"><pre><span class="entity">&amp;lt;</span>sub-flow name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile" doc:description="
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the customer credit profile obtained form the Credit Agency
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the customer credit profile obtained form the Credit Agency
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-payload value="#[payload.customer]" doc:name="customer"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="#[payload.customer]" doc:name="customer"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="Processor Chain"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-client serviceClass="org.mule.example.loanbroker.creditagency.CreditAgencyService" operation="getCreditProfile" doc:name="getCreditProfile"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:outbound-endpoint address="http://localhost:18080/mule/TheCreditAgencyService" doc:name="HTTP"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="Processor Chain"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-client serviceClass="org.mule.example.loanbroker.creditagency.CreditAgencyService" operation="getCreditProfile" doc:name="getCreditProfile"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:outbound-endpoint address="http://localhost:18080/mule/TheCreditAgencyService" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger level="INFO" message="Credit profile: #[payload]" doc:name="creditProfile"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger level="INFO" message="Credit profile: #[payload]" doc:name="creditProfile"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1528,20 +1528,20 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-52fbd" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-69b22" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-22766" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-8cf02" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-52fbd"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-22766"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/lookupBanks.png" alt="lookupBanks"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-69b22"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-8cf02"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1569,27 +1569,27 @@
 <strong>20</strong>
 21
 </pre></td> 
-             <td class="code"><pre>&amp;lt;sub-flow name="lookupBanks" doc:name="lookupBanks" doc:description="
+             <td class="code"><pre><span class="entity">&amp;lt;</span>sub-flow name="lookupBanks" doc:name="lookupBanks" doc:description="
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the list of banks to contact and returns it as a flow variable 'banks'
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the list of banks to contact and returns it as a flow variable 'banks'
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice doc:name="Choice"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="payload.getLoanAmount() &amp;amp;gt;= 20000"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Bank1, Bank2"&amp;gt;payload=[new java.net.URI('http://localhost:10080/mule/TheBank1'), new java.net.URI('http://localhost:20080/mule/TheBank2')]&amp;lt;/expression-component&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="payload.getLoanAmount() &amp;amp;gt;= 10000 || payload.getLoanAmount() &amp;amp;lt;= 19999"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Bank3, Bank4"&amp;gt;payload=[new java.net.URI('http://localhost:30080/mule/TheBank3'), new java.net.URI('http://localhost:40080/mule/TheBank4')]&amp;lt;/expression-component&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Bank5"&amp;gt;payload=[new java.net.URI('http://localhost:50080/mule/TheBank5')]&amp;lt;/expression-component&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="payload.getLoanAmount() <span class="entity">&amp;amp;</span>gt;= 20000"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Bank1, Bank2"<span class="entity">&amp;gt;</span>payload=[new java.net.URI('http://localhost:10080/mule/TheBank1'), new java.net.URI('http://localhost:20080/mule/TheBank2')]<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="payload.getLoanAmount() <span class="entity">&amp;amp;</span>gt;= 10000 || payload.getLoanAmount() <span class="entity">&amp;amp;</span>lt;= 19999"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Bank3, Bank4"<span class="entity">&amp;gt;</span>payload=[new java.net.URI('http://localhost:30080/mule/TheBank3'), new java.net.URI('http://localhost:40080/mule/TheBank4')]<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Bank5"<span class="entity">&amp;gt;</span>payload=[new java.net.URI('http://localhost:50080/mule/TheBank5')]<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger level="INFO" message="Banks to contact: #[payload]" doc:name="banks"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger level="INFO" message="Banks to contact: #[payload]" doc:name="banks"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1612,20 +1612,20 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-7b3a6" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-9e3be" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-21f8f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-789f5" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-7b3a6"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-21f8f"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/choiceBanks.png" alt="choiceBanks"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-9e3be"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-789f5"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1643,17 +1643,17 @@
 <strong>10</strong>
 11
 </pre></td> 
-             <td class="code"><pre>&amp;lt;choice doc:name="Choice"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="payload.getLoanAmount() &amp;amp;gt;= 20000"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Bank1, Bank2"&amp;gt;payload=[new java.net.URI('http://localhost:10080/mule/TheBank1'), new java.net.URI('http://localhost:20080/mule/TheBank2')]&amp;lt;/expression-component&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="payload.getLoanAmount() &amp;amp;gt;= 10000 || payload.getLoanAmount() &amp;amp;lt;= 19999"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Bank3, Bank4"&amp;gt;payload=[new java.net.URI('http://localhost:30080/mule/TheBank3'), new java.net.URI('http://localhost:40080/mule/TheBank4')]&amp;lt;/expression-component&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Bank5"&amp;gt;payload=[new java.net.URI('http://localhost:50080/mule/TheBank5')]&amp;lt;/expression-component&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="payload.getLoanAmount() <span class="entity">&amp;amp;</span>gt;= 20000"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Bank1, Bank2"<span class="entity">&amp;gt;</span>payload=[new java.net.URI('http://localhost:10080/mule/TheBank1'), new java.net.URI('http://localhost:20080/mule/TheBank2')]<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="payload.getLoanAmount() <span class="entity">&amp;amp;</span>gt;= 10000 || payload.getLoanAmount() <span class="entity">&amp;amp;</span>lt;= 19999"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Bank3, Bank4"<span class="entity">&amp;gt;</span>payload=[new java.net.URI('http://localhost:30080/mule/TheBank3'), new java.net.URI('http://localhost:40080/mule/TheBank4')]<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Bank5"<span class="entity">&amp;gt;</span>payload=[new java.net.URI('http://localhost:50080/mule/TheBank5')]<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1678,20 +1678,20 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-5d41f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-5914c" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-06993" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-02916" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5d41f"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-06993"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/lookupLoanQuotes.png" alt="lookupLoanQuotes"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-5914c"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-02916"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1721,29 +1721,29 @@
 22
 23
 </pre></td> 
-             <td class="code"><pre>&amp;lt;sub-flow name="lookupLoanQuote" doc:name="lookupLoanQuote" doc:description="
+             <td class="code"><pre><span class="entity">&amp;lt;</span>sub-flow name="lookupLoanQuote" doc:name="lookupLoanQuote" doc:description="
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a loanQuote from a given bank's URI
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a loanQuote from a given bank's URI
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="bankUri" value="#[payload]" doc:name="bankUri"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="bankUri" value="#[payload]" doc:name="bankUri"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="create LoanBrokerLoanRequest"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="create LoanBrokerLoanRequest"<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;import org.mule.example.loanbroker.message.LoanBrokerQuoteRequest;
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LoanBrokerQuoteRequest bqr = new LoanBrokerQuoteRequest();
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bqr.setCreditProfile(flowVars['creditProfile']);
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload = bqr;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/expression-component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="Processor Chain"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-client serviceClass="org.mule.example.loanbroker.bank.BankService" operation="getLoanQuote" doc:name="getLoanQuote"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:outbound-endpoint address="http://#[flowVars['bankUri'].getHost()]:#[flowVars['bankUri'].getPort()]#[flowVars['bankUri'].getPath()]" doc:name="HTTP"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger message="LoanQuote from #[flowVars['bankUri']]: #[payload]" level="INFO" doc:name="quote"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="Processor Chain"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-client serviceClass="org.mule.example.loanbroker.bank.BankService" operation="getLoanQuote" doc:name="getLoanQuote"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:outbound-endpoint address="http://#[flowVars['bankUri'].getHost()]:#[flowVars['bankUri'].getPort()]#[flowVars['bankUri'].getPath()]" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="LoanQuote from #[flowVars['bankUri']]: #[payload]" level="INFO" doc:name="quote"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1768,20 +1768,20 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-f262d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-03704" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-b0f0c" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-2a5fe" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f262d"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b0f0c"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/findLowest.png" alt="findLowest"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-03704"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-2a5fe"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -1818,16 +1818,16 @@
 29
 <strong>30</strong>
 </pre></td> 
-             <td class="code"><pre>&amp;lt;sub-flow name="findLowestLoanQuote" doc:name="findLowestLoanQuote" doc:description="
+             <td class="code"><pre><span class="entity">&amp;lt;</span>sub-flow name="findLowestLoanQuote" doc:name="findLowestLoanQuote" doc:description="
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the loan quote with the lowest interest rate
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the loan quote with the lowest interest rate
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="lowestQuote" value = "#[null]" doc:name="Variable"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Expression"&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;![CDATA[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="lowestQuote" value = "#[null]" doc:name="Variable"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Expression"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>![CDATA[
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;import org.mule.example.loanbroker.model.LoanQuote;
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (Object current : (List) flowVars['quotes'])
@@ -1837,17 +1837,17 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flowVars['lowestQuote'] = loanQuote;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (loanQuote.getInterestRate() &amp;lt; flowVars['lowestQuote'].getInterestRate())
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (loanQuote.getInterestRate() <span class="entity">&amp;lt;</span> flowVars['lowestQuote'].getInterestRate())
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flowVars['lowestQuote'] = loanQuote;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload = flowVars['lowestQuote'];
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/expression-component&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger level="INFO" message="Lowest loan quote: #[payload]" doc:name="lowestQuote"/&amp;gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;</pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger level="INFO" message="Lowest loan quote: #[payload]" doc:name="lowestQuote"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1863,17 +1863,17 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-a4cae" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-7237a" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-0cc9e" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-00fa1" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a4cae"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-0cc9e"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/expressionComponent.png" alt="expressionComponent"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-7237a"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-00fa1"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="code">
@@ -1945,20 +1945,20 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-a46e1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#studio-xml-editor-02bb4" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-af55c" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#studio-xml-editor-9f6b5" role="tab" data-toggle="tab">Studio XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a46e1"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-af55c"> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/foreach_processing_and_choice_routing.png" alt="foreach_processing_and_choice_routing"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="studio-xml-editor-02bb4"> 
+     <div class="tab-pane fade no-padding" id="studio-xml-editor-9f6b5"> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="code">
+        <pre class="CodeRay highlight"><code data-lang="xml">
     
              
           <table class="CodeRay"> 
@@ -2531,9 +2531,9 @@
 565
 566
 </pre></td> 
-             <td class="code"><pre>&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
+             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 &nbsp;
-&amp;lt;mule xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:spring="http://www.springframework.org/schema/beans" xmlns="http://www.mulesoft.org/schema/mule/core"
+<span class="entity">&amp;lt;</span>mule xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:spring="http://www.springframework.org/schema/beans" xmlns="http://www.mulesoft.org/schema/mule/core"
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 &nbsp;
@@ -2553,23 +2553,23 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 &nbsp;
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 &nbsp;
-http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd " version="EE-3.4.0"&amp;gt;
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd " version="EE-3.4.0"<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Synchronous variant of loan broker example is modeled on the Enterprise integration Patterns book sample.
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See: http://www.eaipatterns.com/ComposedMessagingExample.html
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="loan-broker-sync" doc:name="loan-broker-sync" doc:description="The main loanbroker flow that:
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="loan-broker-sync" doc:name="loan-broker-sync" doc:description="The main loanbroker flow that:
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i) Receives a customer request
 &nbsp;
@@ -2583,9 +2583,9 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi) Returns the response to the client
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The main loanbroker flow that:
 &nbsp;
@@ -2601,26 +2601,26 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi) Returns the response to the client
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint address="http://0.0.0.0:11081" exchange-pattern="request-response" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://0.0.0.0:11081" exchange-pattern="request-response" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:body-to-parameter-map-transformer doc:name="Body to Parameter Map"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:body-to-parameter-map-transformer doc:name="Body to Parameter Map"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice doc:name="Choice"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="!(payload['name'] == null || payload['ssn'] == null || payload['amount'] == null || payload['term']==null)"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="!(payload['name'] == null || payload['ssn'] == null || payload['amount'] == null || payload['term']==null)"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="create customer request"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="create customer request"<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;import org.mule.example.loanbroker.message.CustomerQuoteRequest;
 &nbsp;
@@ -2631,175 +2631,175 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload = new CustomerQuoteRequest(new Customer(payload['name'], Integer.parseInt(payload['ssn'])), Integer.parseInt(payload['amount']), Integer.parseInt(payload['term']));
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/expression-component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher source="#[payload]" target="#[flowVars['creditProfile']]" doc:name="Enrich with creditProfile"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher source="#[payload]" target="#[flowVars['creditProfile']]" doc:name="Enrich with creditProfile"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher source="#[payload]" target="#[flowVars['banks']]" doc:name="Enrich with banks"&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="lookupBanks" doc:name="lookupBanks"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="quotes" value="#[new java.util.LinkedList()]" doc:name="create empty quotes"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher source="#[payload]" target="#[flowVars['banks']]" doc:name="Enrich with banks"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;foreach collection="#[flowVars['banks']]" doc:name="Foreach"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="lookupBanks" doc:name="lookupBanks"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;enricher target="#[quotes.add($)]" doc:name="Message Enricher"&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="lookupLoanQuote" doc:name="lookupLoanQuote"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/enricher&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/foreach&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow-ref name="findLowestLoanQuote" doc:name="findLowestLoanQuote"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="quotes" value="#[new java.util.LinkedList()]" doc:name="create empty quotes"/<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>foreach collection="#[flowVars['banks']]" doc:name="Foreach"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>enricher target="#[quotes.add($)]" doc:name="Message Enricher"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="lookupLoanQuote" doc:name="lookupLoanQuote"/<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/foreach<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;object-to-string-transformer doc:name="Object to String"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="set error message"&amp;gt;payload="Error: incomplete request"&amp;lt;/expression-component&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow-ref name="findLowestLoanQuote" doc:name="findLowestLoanQuote"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;catch-exception-strategy doc:name="Catch Exception Strategy"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>object-to-string-transformer doc:name="Object to String"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-payload value="Error processing loan request" doc:name="Set error message"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/catch-exception-strategy&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="set error message"<span class="entity">&amp;gt;</span>payload="Error: incomplete request"<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile" doc:description="Returns the customer credit profile obtained form the Credit Agency
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Error processing loan request" doc:name="Set error message"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="lookupCustomerCreditProfile" doc:name="lookupCustomerCreditProfile" doc:description="Returns the customer credit profile obtained form the Credit Agency
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the customer credit profile obtained form the Credit Agency
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-payload value="#[payload.customer]" doc:name="customer"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="#[payload.customer]" doc:name="customer"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="Processor Chain"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="Processor Chain"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-client serviceClass="org.mule.example.loanbroker.creditagency.CreditAgencyService" operation="getCreditProfile" doc:name="getCreditProfile"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-client serviceClass="org.mule.example.loanbroker.creditagency.CreditAgencyService" operation="getCreditProfile" doc:name="getCreditProfile"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:outbound-endpoint address="http://localhost:18080/mule/TheCreditAgencyService" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:outbound-endpoint address="http://localhost:18080/mule/TheCreditAgencyService" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger level="INFO" message="Credit profile: #[payload]" doc:name="creditProfile"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="lookupBanks" doc:name="lookupBanks" doc:description="Returns the list of banks to contact and returns it as a flow variable 'banks'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger level="INFO" message="Credit profile: #[payload]" doc:name="creditProfile"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="lookupBanks" doc:name="lookupBanks" doc:description="Returns the list of banks to contact and returns it as a flow variable 'banks'
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the list of banks to contact and returns it as a flow variable 'banks'
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;choice doc:name="Choice"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="payload.getLoanAmount() &amp;amp;gt;= 20000"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="payload.getLoanAmount() <span class="entity">&amp;amp;</span>gt;= 20000"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Bank1, Bank2"&amp;gt;payload=[new java.net.URI('http://localhost:10080/mule/TheBank1'), new java.net.URI('http://localhost:20080/mule/TheBank2')]&amp;lt;/expression-component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Bank1, Bank2"<span class="entity">&amp;gt;</span>payload=[new java.net.URI('http://localhost:10080/mule/TheBank1'), new java.net.URI('http://localhost:20080/mule/TheBank2')]<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;when expression="payload.getLoanAmount() &amp;amp;gt;= 10000 || payload.getLoanAmount() &amp;amp;lt;= 19999"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="payload.getLoanAmount() <span class="entity">&amp;amp;</span>gt;= 10000 || payload.getLoanAmount() <span class="entity">&amp;amp;</span>lt;= 19999"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Bank3, Bank4"&amp;gt;payload=[new java.net.URI('http://localhost:30080/mule/TheBank3'), new java.net.URI('http://localhost:40080/mule/TheBank4')]&amp;lt;/expression-component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Bank3, Bank4"<span class="entity">&amp;gt;</span>payload=[new java.net.URI('http://localhost:30080/mule/TheBank3'), new java.net.URI('http://localhost:40080/mule/TheBank4')]<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/when&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;otherwise&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Bank5"&amp;gt;payload=[new java.net.URI('http://localhost:50080/mule/TheBank5')]&amp;lt;/expression-component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Bank5"<span class="entity">&amp;gt;</span>payload=[new java.net.URI('http://localhost:50080/mule/TheBank5')]<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/otherwise&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/choice&amp;gt;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger level="INFO" message="Banks to contact: #[payload]" doc:name="banks"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="lookupLoanQuote" doc:name="lookupLoanQuote" doc:description="Returns a loanQuote from a given bank's URI
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger level="INFO" message="Banks to contact: #[payload]" doc:name="banks"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="lookupLoanQuote" doc:name="lookupLoanQuote" doc:description="Returns a loanQuote from a given bank's URI
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a loanQuote from a given bank's URI
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;set-variable variableName="bankUri" value="#[payload]" doc:name="bankUri"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="bankUri" value="#[payload]" doc:name="bankUri"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="create LoanBrokerLoanRequest"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="create LoanBrokerLoanRequest"<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;import org.mule.example.loanbroker.message.LoanBrokerQuoteRequest;
 &nbsp;
@@ -2812,42 +2812,42 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload = bqr;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/expression-component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;processor-chain doc:name="Processor Chain"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>processor-chain doc:name="Processor Chain"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-client serviceClass="org.mule.example.loanbroker.bank.BankService" operation="getLoanQuote" doc:name="getLoanQuote"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-client serviceClass="org.mule.example.loanbroker.bank.BankService" operation="getLoanQuote" doc:name="getLoanQuote"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:outbound-endpoint address="http://#[flowVars['bankUri'].getHost()]:#[flowVars['bankUri'].getPort()]#[flowVars['bankUri'].getPath()]" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:outbound-endpoint address="http://#[flowVars['bankUri'].getHost()]:#[flowVars['bankUri'].getPort()]#[flowVars['bankUri'].getPath()]" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/processor-chain&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/processor-chain<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger message="LoanQuote from #[flowVars['bankUri']]: #[payload]" level="INFO" doc:name="quote"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="LoanQuote from #[flowVars['bankUri']]: #[payload]" level="INFO" doc:name="quote"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;sub-flow name="findLowestLoanQuote" doc:name="findLowestLoanQuote" doc:description="Returns the loan quote with the lowest interest rate
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sub-flow name="findLowestLoanQuote" doc:name="findLowestLoanQuote" doc:description="Returns the loan quote with the lowest interest rate
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the loan quote with the lowest interest rate
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;expression-component doc:name="Expression"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-component doc:name="Expression"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;![CDATA[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>![CDATA[
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;import org.mule.example.loanbroker.model.LoanQuote;
 &nbsp;
@@ -2873,7 +2873,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (loanQuote.getInterestRate() &amp;lt; lowestQuote.getInterestRate())
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (loanQuote.getInterestRate() <span class="entity">&amp;lt;</span> lowestQuote.getInterestRate())
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
 &nbsp;
@@ -2888,215 +2888,215 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload = lowestQuote;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/expression-component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/expression-component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;logger level="INFO" message="Lowest loan quote: #[payload]" doc:name="lowestQuote"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger level="INFO" message="Lowest loan quote: #[payload]" doc:name="lowestQuote"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/sub-flow&amp;gt;
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sub-flow<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;!--
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>!--
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOCK SERVICES
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;--&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;--<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="TheCreditAgencyService" doc:name="TheCreditAgencyService" doc:description="The credit agency service will get the credit profile for a customer
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="TheCreditAgencyService" doc:name="TheCreditAgencyService" doc:description="The credit agency service will get the credit profile for a customer
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The credit agency service will get the credit profile for a customer
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint address="http://localhost:18080/mule/TheCreditAgencyService" exchange-pattern="request-response" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://localhost:18080/mule/TheCreditAgencyService" exchange-pattern="request-response" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="org.mule.example.loanbroker.creditagency.DefaultCreditAgency" doc:name="SOAP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="org.mule.example.loanbroker.creditagency.DefaultCreditAgency" doc:name="SOAP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component doc:name="creditAgency"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component doc:name="creditAgency"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;singleton-object class="org.mule.example.loanbroker.creditagency.DefaultCreditAgency"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>singleton-object class="org.mule.example.loanbroker.creditagency.DefaultCreditAgency"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="Bank1Flow" doc:name="Bank1Flow" doc:description="Mock flow representing Bank 1
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="Bank1Flow" doc:name="Bank1Flow" doc:description="Mock flow representing Bank 1
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mock flow representing Bank 1
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint address="http://localhost:10080/mule/TheBank1" exchange-pattern="request-response" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://localhost:10080/mule/TheBank1" exchange-pattern="request-response" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component doc:name="Bank 1"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component doc:name="Bank 1"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;singleton-object class="org.mule.example.loanbroker.bank.Bank"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>singleton-object class="org.mule.example.loanbroker.bank.Bank"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;property key="bankName" value="Bank #1"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>property key="bankName" value="Bank #1"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/singleton-object&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/singleton-object<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="Bank2Flow" doc:name="Bank2Flow" doc:description="Mock flow representing Bank 2
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="Bank2Flow" doc:name="Bank2Flow" doc:description="Mock flow representing Bank 2
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mock flow representing Bank 2
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint address="http://localhost:20080/mule/TheBank2" exchange-pattern="request-response" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://localhost:20080/mule/TheBank2" exchange-pattern="request-response" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/&amp;gt;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component doc:name="Bank 2"&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;singleton-object class="org.mule.example.loanbroker.bank.Bank"&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;property key="bankName" value="Bank #2"/&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/singleton-object&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/component&amp;gt;
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="Bank3Flow" doc:name="Bank3Flow" doc:description="Mock flow representing Bank 3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component doc:name="Bank 2"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>singleton-object class="org.mule.example.loanbroker.bank.Bank"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>property key="bankName" value="Bank #2"/<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/singleton-object<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/component<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="Bank3Flow" doc:name="Bank3Flow" doc:description="Mock flow representing Bank 3
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mock flow representing Bank 3
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint address="http://localhost:30080/mule/TheBank3" exchange-pattern="request-response" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://localhost:30080/mule/TheBank3" exchange-pattern="request-response" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component doc:name="Bank 3"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component doc:name="Bank 3"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;singleton-object class="org.mule.example.loanbroker.bank.Bank"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>singleton-object class="org.mule.example.loanbroker.bank.Bank"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;property key="bankName" value="Bank #3"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>property key="bankName" value="Bank #3"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/singleton-object&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/singleton-object<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="Bank4Flow" doc:name="Bank4Flow" doc:description="Mock flow representing Bank 4
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="Bank4Flow" doc:name="Bank4Flow" doc:description="Mock flow representing Bank 4
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mock flow representing Bank 4
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint address="http://localhost:40080/mule/TheBank4" exchange-pattern="request-response" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://localhost:40080/mule/TheBank4" exchange-pattern="request-response" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component doc:name="Bank 4"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component doc:name="Bank 4"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;singleton-object class="org.mule.example.loanbroker.bank.Bank"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>singleton-object class="org.mule.example.loanbroker.bank.Bank"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;property key="bankName" value="Bank #4"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>property key="bankName" value="Bank #4"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/singleton-object&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/singleton-object<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;flow name="Bank5Flow" doc:name="Bank5Flow" doc:description="Mock flow representing Bank 5
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&amp;gt;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="Bank5Flow" doc:name="Bank5Flow" doc:description="Mock flow representing Bank 5
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<span class="entity">&amp;gt;</span>
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mock flow representing Bank 5
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/description&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/description<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;http:inbound-endpoint address="http://localhost:50080/mule/TheBank5" exchange-pattern="request-response" doc:name="HTTP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint address="http://localhost:50080/mule/TheBank5" exchange-pattern="request-response" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>cxf:jaxws-service serviceClass="org.mule.example.loanbroker.bank.Bank" doc:name="SOAP"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;component doc:name="Bank 5"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>component doc:name="Bank 5"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;singleton-object class="org.mule.example.loanbroker.bank.Bank"&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>singleton-object class="org.mule.example.loanbroker.bank.Bank"<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;property key="bankName" value="Bank #5"/&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>property key="bankName" value="Bank #5"/<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/singleton-object&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/singleton-object<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/component&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/component<span class="entity">&amp;gt;</span>
 &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;/flow&amp;gt;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 &nbsp;
-&amp;lt;/mule&amp;gt;&nbsp;</pre></td> 
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span>&nbsp;</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 

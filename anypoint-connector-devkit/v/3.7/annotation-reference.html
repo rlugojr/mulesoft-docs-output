@@ -1822,7 +1822,7 @@ public class MyConnector {
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
+     <pre class="CodeRay highlight"><code data-lang="xml">
           
        <table class="CodeRay"> 
         <tbody> 
@@ -1834,12 +1834,12 @@ public class MyConnector {
 5
 6
 </pre></td> 
-          <td class="code"><pre>&lt;my-connector:connection-management name="connection-management" username="mule" password="mulemanishere"/&gt;
-&lt;my-connector:oauth name="oauth2" consumerkey="..." consumerSecret="..." /&gt;
+          <td class="code"><pre><span class="tag">&lt;my-connector:connection-management</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">connection-management</span><span class="delimiter">"</span></span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">mulemanishere</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;my-connector:oauth</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">oauth2</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerkey</span>=<span class="string"><span class="delimiter">"</span><span class="content">...</span><span class="delimiter">"</span></span> <span class="attribute-name">consumerSecret</span>=<span class="string"><span class="delimiter">"</span><span class="content">...</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
 &nbsp;
-&lt;flow&gt;
-&nbsp;&nbsp;&lt;my-connector:do-something config-ref="basic"/&gt;
-&lt;/flow&gt;</pre></td> 
+<span class="tag">&lt;flow&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;my-connector:do-something</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">basic</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
          </tr> 
         </tbody> 
        </table></code></pre> 
@@ -3042,14 +3042,14 @@ String myHeader) {&nbsp;
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
         <tr> 
          <td class="line-numbers"><pre>1
 </pre></td> 
-         <td class="code"><pre>&lt;mymodule:enrich targetExpression="#[variable:myexpr]" ... /&gt;&nbsp;</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;mymodule:enrich</span> <span class="attribute-name">targetExpression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[variable:myexpr]</span><span class="delimiter">"</span></span> <span class="attribute-name">...</span> <span class="tag">/&gt;</span>&nbsp;</pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -5184,7 +5184,7 @@ public void subscribeTopic(String topic, final SourceCallback callback) {
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -5195,11 +5195,11 @@ public void subscribeTopic(String topic, final SourceCallback callback) {
 4
 5
 </pre></td> 
-         <td class="code"><pre>&lt;flow name="myFlow"&gt;
-&nbsp;&nbsp;&lt;sfdc:subscribe-topic topic="/someTopic"/&gt;
-&nbsp;&nbsp;&lt;logger level="INFO" message="#[payload]"/&gt;
+         <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">myFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;sfdc:subscribe-topic</span> <span class="attribute-name">topic</span>=<span class="string"><span class="delimiter">"</span><span class="content">/someTopic</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;...
-&lt;/flow&gt;</pre></td> 
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 

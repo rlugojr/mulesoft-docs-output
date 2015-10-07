@@ -911,7 +911,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
+    <pre class="CodeRay highlight"><code data-lang="xml">
          
       <table class="CodeRay"> 
        <tbody> 
@@ -919,8 +919,8 @@
          <td class="line-numbers"><pre>1
 2
 </pre></td> 
-         <td class="code"><pre>&lt;Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rmiRegistryPort="10001" rmiServerPort="10002"/&gt;</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;Listener</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.apache.catalina.mbeans.JmxRemoteLifecycleListener</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">rmiRegistryPort</span>=<span class="string"><span class="delimiter">"</span><span class="content">10001</span><span class="delimiter">"</span></span> <span class="attribute-name">rmiServerPort</span>=<span class="string"><span class="delimiter">"</span><span class="content">10002</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -987,7 +987,7 @@
     <p>In the console, select one of the registered servers. This will take you to the <strong>Dashboard</strong> for that server. On the dashboard, you may add metric charts to the <strong>Server Metrics</strong> portlet.</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="/docs/download/attachments/58458215/tcat-server-metrics-portlet-1.png?version=1&amp;modificationDate=1285967747786" alt="image"></span><br></p> 
+    <p><span class="image"><img src="./_images/tcat-server-metrics-portlet-1.png" alt="image"></span><br></p> 
    </div> 
    <div class="sect3"> 
     <h4 id="server-metrics-portlet-on-the-server-dashboard"><a class="anchor" href="#server-metrics-portlet-on-the-server-dashboard"></a>Server Metrics Portlet on the Server Dashboard</h4> 
@@ -995,7 +995,7 @@
      <p>Configure the <strong>Server Metrics</strong> portlet by clicking the configuration button on the <strong>Server Metrics</strong> portlet’s top right corner.</p> 
     </div> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="/docs/download/attachments/58458215/tcat-server-metrics-portlet-2.png?version=1&amp;modificationDate=1285967795579" alt="image"></span><br></p> 
+     <p><span class="image"><img src="./_images/tcat-server-metrics-portlet-2.png" alt="image"></span><br></p> 
     </div> 
    </div> 
    <div class="sect3"> 
@@ -1004,7 +1004,7 @@
      <p>From the portlet configuration dialog, select that you want to add a new <strong>JMX Attribute</strong> chart type, and then you may click <strong>Browse</strong> to view the remote MBeanServer. These MBeans are registered with the remote JVM’s platform MBeanServer. This may include MBeans that are part of webapps, in addition to MBeans that are part of Tcat and Tomcat.</p> 
     </div> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="/docs/download/attachments/58458215/tcat-jmx-browser-error-count-1.png?version=1&amp;modificationDate=1285967837169" alt="image"></span><br></p> 
+     <p><span class="image"><img src="./_images/tcat-jmx-browser-error-count-1.png" alt="image"></span><br></p> 
     </div> 
    </div> 
    <div class="sect3"> 
@@ -1016,7 +1016,7 @@
      <p>Then, finish filling out the JMX Attribute Chart Type Configuration dialog. Make sure to enter a <strong>Display Name</strong> for the attribute you’re monitoring, and type in a <strong>Period</strong> (in whole seconds). This is the period interval by which the attribute’s value will be sampled. Each time your attribute is sampled, the console invokes a method call to the agent JVM to read the value of the MBean attribute. The lower you set the sample period, the higher the network and CPU utilization, so we suggest that you use caution not to set the sample period too low. Next, decide if you want to chart deltas by checking or unchecking the <strong>Track Delta</strong> checkbox. If you would like to monitor this metric across all of your servers, you may check the <strong>Add to All Servers</strong> checkbox, and this metric chart will show up on the Server Metrics portlet on each of your server dashboards. Click <strong>Ok</strong> in the Chart Type Configuration dialog when you’re finished configuring the chart.</p> 
     </div> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="/docs/download/attachments/58458215/tcat-jmx-attribute-chart-def-1.png?version=1&amp;modificationDate=1285967988852" alt="image"></span></p> 
+     <p><span class="image"><img src="./_images/tcat-jmx-attribute-chart-def-1.png" alt="image"></span></p> 
     </div> 
    </div> 
    <div class="sect3"> 
@@ -1025,7 +1025,7 @@
      <p>Then click <strong>Save</strong> in the Server Metrics configuration panel to apply the changes and begin monitoring and charting the metric you selected. You should see your new metric chart on the server dashboard.</p> 
     </div> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="/docs/download/attachments/58458215/tcat-server-metrics-portlet-3.png?version=1&amp;modificationDate=1285968277126" alt="image"></span></p> 
+     <p><span class="image"><img src="./_images/tcat-server-metrics-portlet-3.png" alt="image"></span></p> 
     </div> 
     <div class="paragraph"> 
      <p>Server Metrics portlet shows the new JMX attribute chart.</p> 
