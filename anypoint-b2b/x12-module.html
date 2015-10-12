@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-b2b/x12-module" />
-    <meta name="description" content="The X12 Module provides message reading, validation and writing capabilities to communicate with trading partners using X12 EDI exchanges. Included..." />
+    <meta name="description" content="The X12 Module provides you with the ability to communicate with trading partners using X12 EDI (electronic data interchange). The X12 Module inclu..." />
     <meta class="swiftype" name="title" data-type="string" content="X12 Module" />
 
 </head>
@@ -873,14 +873,14 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The X12 Module provides message reading, validation and writing capabilities to communicate with trading partners using X12 EDI exchanges.</p> 
+   <p>The X12 Module provides you with the ability to communicate with trading partners using X12 EDI (electronic data interchange).</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Included in the X12 Module are the following capabilities:</p> 
+   <p>The X12 Module includes:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>X12 EDI message reading, validation and writing</p> </li> 
+    <li> <p>X12 EDI message-reading, message-validation and message-writing</p> </li> 
     <li> <p>Integration with DataSense and DataMapper&nbsp;</p> </li> 
     <li> <p>X12 message packs for 4010 and 5010 versions</p> </li> 
     <li> <p>The ability to define your own schemas or customize the base X12 schemas</p> </li> 
@@ -898,7 +898,7 @@
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p>This page helps you learn how to do each of these 4 steps.</p> 
+   <p>This page helps provides guidance for each of these steps.</p> 
   </div> 
  </div> 
 </div> 
@@ -908,16 +908,31 @@
   <div class="sect2"> 
    <h3 id="installing-the-x12-module-in-anypoint-studio"><a class="anchor" href="#installing-the-x12-module-in-anypoint-studio"></a>Installing the X12 Module in Anypoint Studio</h3> 
    <div class="paragraph"> 
-    <p>Follow the steps below to install an X12 Module connector in Anypoint Studio. To use the&nbsp;X12 Module connector in a production environment, you must have purchased&nbsp;a license for&nbsp;Anypoint B2B.</p> 
+    <p>Follow the steps below to install an X12 Module connector in Anypoint Studio.</p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> To use the&nbsp;X12 Module connector in a production environment, you must have purchased&nbsp;a license for&nbsp;Anypoint B2B. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Under the&nbsp;<strong>Help</strong>&nbsp;menu in&nbsp;<strong>Anypoint Studio</strong>, select&nbsp;<strong>Install New Software</strong>.&nbsp;</p> </li> 
-     <li> <p>Select the Anypoint Connectors Update Site</p> </li> 
-     <li> <p>In the table below the&nbsp;<strong>Filter</strong>&nbsp;field, click to expand the&nbsp;<strong>Premium</strong>&nbsp;folder, then select&nbsp;<code>X12 Module</code>.&nbsp;Click&nbsp;<strong>Next</strong>.&nbsp;</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/x12-module-2.png" alt="x12-module-2"></span></p> 
-      </div> </li> 
+     <li> <p>On the&nbsp;<strong>Help</strong>&nbsp;menu in&nbsp;<strong>Anypoint Studio</strong>, select&nbsp;<strong>Install New Software</strong>.&nbsp;The <strong>Available Software</strong> page appears.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/x12-module-2.png" alt="x12-module-2"></span></p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>In the <strong>Work with</strong> box, select the Anypoint Connectors Update site (that is, <a href="http://edi-module-update-site.s3.amazonaws.com/beta-updates" class="bare">http://edi-module-update-site.s3.amazonaws.com/beta-updates</a>)</p> </li> 
+     <li> <p>In the table below the&nbsp;<strong>type filter text</strong>&nbsp;box, click to expand the&nbsp;<strong>Premium</strong>&nbsp;folder, then select&nbsp;<code>X12 Module</code>.&nbsp;</p> </li> 
+     <li> <p>Click&nbsp;<strong>Next</strong>.&nbsp;The <strong>Install Details</strong> page appears.</p> </li> 
      <li> <p>Review the details of the item you selected, then click&nbsp;<strong>Next</strong>.</p> </li> 
      <li> <p>Click to accept terms and conditions of the product, then click&nbsp;<strong>Finish</strong>.</p> </li> 
      <li> <p>Click&nbsp;<strong>Restart Now</strong>&nbsp;to complete the installation.&nbsp;After you install the connector and restart Studio you can see several new message processors available in the palette, under the Connectors category.</p> </li> 
@@ -927,7 +942,7 @@
   <div class="sect2"> 
    <h3 id="using-the-x12-module-via-maven"><a class="anchor" href="#using-the-x12-module-via-maven"></a>Using the&nbsp;X12 Module via Maven</h3> 
    <div class="paragraph"> 
-    <p>If you wish to use the&nbsp;X12 Module in conjunction with Maven, please follow the instructions&nbsp;<a href="http://mulesoft.github.io/edi-module/x12/guide/install.html">here</a>.</p> 
+    <p>If you want to use the&nbsp;X12 Module in conjunction with Maven, follow the instructions in the "As a Maven Dependency" section of the <strong>Install</strong> tab on the <a href="http://mulesoft.github.io/edi-module/x12/guide/install.html">Mule EDI Anypoint X12 Connector page</a>.</p> 
    </div> 
   </div> 
  </div> 
@@ -936,13 +951,13 @@
  <h2 id="edi-schema-language"><a class="anchor" href="#edi-schema-language"></a>EDI Schema Language</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The&nbsp;X12 Module uses a YAML format called ESL (for EDI Schema Language) to represent EDI schemas.&nbsp;&nbsp;Basic ESLs define the structure of EDI messages in terms of&nbsp;<em>structures</em>&nbsp;(transaction sets, in X12 terminology), <em>groups</em>&nbsp;(loops, in X12), <em>segments, composites, and elements</em>.&nbsp;Currently, ESLs for the X12 004010 and 005010 versions are included out of the box.&nbsp;</p> 
+   <p>The&nbsp;X12 Module uses a YAML format called ESL (for EDI Schema Language) to represent EDI schemas.&nbsp;&nbsp;Basic ESLs define the structure of EDI messages in terms of&nbsp;<em>structures</em>&nbsp;(transaction sets, in X12 terminology), <em>groups</em>&nbsp;(loops, in X12), <em>segments</em>, <em>composites</em>, and <em>elements</em>.&nbsp;ESLs for the X12 004010 and 005010 versions are included.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
-   <p>To configure the&nbsp;X12 Module according to your implementation convention, define an "overlay schema." An overlay schema is&nbsp;a special form of ESL that allows you to modify a base schema, such as an X12 4010 850 schema, with your specific conventions. (You don’t need an overlay schema if you’re using the structure defined by the standard, but most EDI exchanges modify the base definitions in an implementation convention)</p> 
+   <p>To configure the&nbsp;X12 Module according to your implementation convention, define an <em>overlay schema</em>. An overlay schema is&nbsp;a special form of ESL that allows you to modify a base schema, such as an X12 4010 850 schema, with your specific conventions. (You don’t need an overlay schema if you’re using the structure defined by the standard, but most EDI exchanges modify the base definitions in an implementation convention).</p> 
   </div> 
   <div class="paragraph"> 
-   <p>If you wish, you can also define your own schemas from scratch. Please see the&nbsp;<a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a>&nbsp;for more details.</p> 
+   <p>You can also define your own schemas from scratch. See&nbsp;<a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a>&nbsp;for more details.</p> 
   </div> 
   <div class="admonitionblock note"> 
    <table> 
@@ -1276,12 +1291,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-34bab" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-c2771" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-5f6ef" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-be49d" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-34bab"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5f6ef"> 
      <div class="paragraph"> 
       <p>Follow these steps to create a global&nbsp;X12 module configuration in a Mule application:</p> 
      </div> 
@@ -1298,7 +1313,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-c2771"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-be49d"> 
      <div class="paragraph"> 
       <p>Ensure that you have included the EDI namespaces in your configuration file.</p> 
      </div> 

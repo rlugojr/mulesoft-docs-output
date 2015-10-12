@@ -882,7 +882,7 @@
  <h2 id="classloading-in-mule"><a class="anchor" href="#classloading-in-mule"></a>Classloading in Mule</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Mule defines a hierarchy of classloaders to find and load classes for execution. This hierarchy uses a "parent first" model by default, this means that each classloader will attempt to load a class using his parent classloader before attempted to do it itself.</p> 
+   <p>Mule defines a hierarchy of classloaders to find and load classes for execution. This hierarchy uses a "parent first" model by default, this means that each classloader attempts to load a class using its parent classloader before attempting to do it itself.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Although this classloading architecture meets most classloading needs, there are times when you might need to override the default classloading scheme. For example, suppose an application requires a third-party library that is bundled with it. This might conflict with a library version that the domain classloader would load (that is, a version of the library already bundled with Mule). How do you ensure that the required version of the library is used with the application? To address requirements such as these, Mule supports<a href="/mule-user-guide/v/3.7/fine-grain-classloader-control">fine-grained class loading control</a> that enables you to override default classloading.</p> 
@@ -893,8 +893,8 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>The <strong>bootstrap</strong>, extensions, and CLASSPATH class loaders created by the Java virtual machine. This classloader loads the core Java libraries.</p> </li> 
-    <li> <p>The <strong>Mule System class loader</strong> . This classloader loads standard Mule libraries, that is, libraries in the&nbsp;<code>&lt;MULE_HOME&gt;/lib</code> subdirectories, where&nbsp;<code>&lt;MULE_HOME&gt;</code> is the directory where Mule ESB is installed. Subdirectories are loaded in a given order: <code>/boot, /user, /mule and /opt</code>. This means that classes located on a given folder will have precedence over classes with the same name located in a folder that was loaded after.</p> </li> 
-    <li> <p><strong>Domain classloader</strong> <strong>.</strong> Domains are used to share resources and libraries between the applications that belong to it. This classloader contains all the libraries located on&nbsp;<code>&lt;MULE_HOME&gt;/domains/&lt;mydomain&gt;</code> &nbsp;&nbsp;</p> 
+    <li> <p>The <strong>Mule System classloader</strong>. This classloader loads standard Mule libraries, that is, libraries in the&nbsp;<code>&lt;MULE_HOME&gt;/lib</code> subdirectories, where&nbsp;<code>&lt;MULE_HOME&gt;</code> is the directory where Mule ESB is installed. Subdirectories are loaded in a given order: <code>/boot, /user, /mule and /opt</code>. This means that classes located in a given folder have precedence over classes with the same name located in a folder that was loaded after.</p> </li> 
+    <li> <p><strong>Domain classloader</strong>. Domains are used to share resources and libraries between the applications that belong to it. This classloader contains all the libraries located on&nbsp;<code>&lt;MULE_HOME&gt;/domains/&lt;mydomain&gt;</code> &nbsp;&nbsp;</p> 
      <div class="admonitionblock note"> 
       <table> 
        <tbody> 
@@ -908,7 +908,7 @@
        </tbody> 
       </table> 
      </div> </li> 
-    <li> <p>If an application contains application plugins, then a <strong>Plugins classloader</strong> will be added. This classloader will contain all the plugins classes and libraries</p> 
+    <li> <p>If an application contains application plugins, then a <strong>Plugins classloader</strong> is added. This classloader contains all the plugins classes and libraries.</p> 
      <div class="admonitionblock note"> 
       <table> 
        <tbody> 
@@ -922,13 +922,13 @@
        </tbody> 
       </table> 
      </div> </li> 
-    <li> <p>One or more <strong>Mule application class loaders</strong> that load classes or libraries from a Mule application, that is, classes and libraries from&nbsp;<code>&lt;MULE_HOME&gt;/apps/&lt;myapp&gt;/classes</code> and&nbsp;<code>&lt;MULE_HOME&gt;/apps/&lt;myapp&gt;/lib</code> directories, where&nbsp;<code>&lt;myapp&gt;</code> is the name of the application. Besides the resources included in the Mule application, on each application classloader will be loaded all the libraries located on <code>&lt;MULE_HOME&gt;\lib\mule\per-app directory</code>.</p> </li> 
+    <li> <p>One or more <strong>Mule application class loaders</strong> that load classes or libraries from a Mule application, that is, classes and libraries from&nbsp;<code>&lt;MULE_HOME&gt;/apps/&lt;myapp&gt;/classes</code> and&nbsp;<code>&lt;MULE_HOME&gt;/apps/&lt;myapp&gt;/lib</code> directories, where&nbsp;<code>&lt;myapp&gt;</code> is the name of the application. Besides the resources included in the Mule application, on each application classloader is loaded all the libraries located on <code>&lt;MULE_HOME&gt;\lib\mule\per-app directory</code>.</p> </li> 
    </ol> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/CE-classloading-3.7.png" alt="CE-classloading-3.7"></span></p> 
   </div> 
-  <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+  <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
     <col style="width: 50%;"> 
     <col style="width: 50%;"> 
@@ -1038,12 +1038,12 @@
    <p>When a Mule EE server contains Mule Plugins, the classloading model is a bit different than the previously described hierarchy. The main difference is that applications can access resources exported by Mule Plugins.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>To support that scenario, each Mule plugin has a classloader supporting <a href="/mule-user-guide/v/3.7/fine-grain-classloader-control">fine grain classloading</a>. These classloaders are created using the Mule system classloader as the parent. Mule Plugins can contain many classes, libraries and resources, but only some of them should be accessed from the application. To avoid exporting unnecessary resources, from a Mule plugin, a class loader filter is used. Then the classloader used in the Mule Application will be a Composite ClassLoader that contains a list of classloaders. The first classloader in that list will be a Mule Application classloader as the one described before and the following elements will be the classloaders filters for each installed Mule Plugin.</p> 
+   <p>To support that scenario, each Mule plugin has a classloader supporting <a href="/mule-user-guide/v/3.7/fine-grain-classloader-control">fine grain classloading</a>. These classloaders are created using the Mule system classloader as the parent. Mule Plugins can contain many classes, libraries and resources, but only some of them should be accessed from the application. To avoid exporting unnecessary resources, from a Mule plugin, a class loader filter is used. Then the classloader used in the Mule Application is a Composite ClassLoader that contains a list of classloaders. The first classloader in that list is a Mule Application classloader as the one described before, and the following elements are the classloaders filters for each installed Mule Plugin.</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/EE-Classloading-3.7.png" alt="EE-Classloading-3.7"></span></p> 
   </div> 
-  <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+  <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
     <col style="width: 50%;"> 
     <col style="width: 50%;"> 

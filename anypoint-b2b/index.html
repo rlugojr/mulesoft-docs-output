@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-b2b" />
-    <meta name="description" content="Anypoint B2B enables customers to connect to trading partners using EDI over AS/2, FTP and other protocols using Mule. It integrates seamlessly int..." />
+    <meta name="description" content="Anypoint B2B enables Mule users to connect with trading partners using EDI over AS2, FTP and other protocols. It integrates seamlessly into the Mul..." />
     <meta class="swiftype" name="title" data-type="string" content="Anypoint B2B" />
 
 </head>
@@ -873,31 +873,65 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Anypoint B2B enables customers to connect to trading partners using EDI over AS/2, FTP and other protocols using Mule. It integrates seamlessly into the Mule runtime</p> 
+   <p>Anypoint B2B enables Mule users to connect with trading partners using EDI over AS2, FTP and other protocols. It integrates seamlessly into the Mule runtime.</p> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="about-this-page"><a class="anchor" href="#about-this-page"></a>About this page</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This page introduces Anypoint B2B and links to pages that provide Anypoint B2B implementation examples in the context of Anypoint Studio, Mule ESB’s graphical user interface. In addtion, we provide configuration details for implementing Anypoint B2B in the Mule XML Editor.&nbsp;</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2> 
+ <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Anypoint B2B&nbsp;includes the following:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>EDI Module:</p> 
+    <li> <p>EDI Module</p> 
      <div class="ulist"> 
       <ul> 
-       <li> <p>EDI message reading, validation and writing</p> </li> 
+       <li> <p>EDI message-reading, message-validation and message-writing capability</p> </li> 
        <li> <p>Integration with DataSense and DataMapper</p> </li> 
        <li> <p>X12 message packs for 4010 and 5010</p> </li> 
-       <li> <p>EDIFACT message packs for D.93A, D.95B, D.96A, D.98B, D99A, D.99B, D.00A, D.01B, D.02A, and D03a versions</p> </li> 
-       <li> <p>The ability to define your own schemas or customize the base X12/EDIFACT schemas</p> </li> 
+       <li> <p>EDIFACT message packs for versions D.93A, D.95B, D.96A, D.98B, D99A, D.99B, D.00A, D.01B, D.02A, and D03a</p> </li> 
+       <li> <p>Ability to define your own schemas or to customize the base X12/EDIFACT schemas</p> </li> 
       </ul> 
      </div> </li> 
-    <li> <p>Anypoint Partner Manager - Trading Partner Management and Message Tracking</p> </li> 
+    <li> <p>Anypoint Partner Manager (APM)</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Manages trading partners</p> </li> 
+       <li> <p>Tracks messages</p> </li> 
+      </ul> 
+     </div> </li> 
     <li> <p>AS/2 Connector</p> </li> 
     <li> <p>FTPS Connector</p> </li> 
-    <li> <p>B2B Connector:&nbsp;Controls connectivity between Anypoint Partner Manager and enables message tracking for non-EDI message types</p> </li> 
+    <li> <p>B2B Connector</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Controls connectivity between Anypoint Partner Manager and enabled connectors</p> </li> 
+       <li> <p>Enables message tracking for non-EDI message types</p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p><a href="/anypoint-b2b/v/3.7/anypoint-b2b-overview">Learn more</a></p> </li> 
    </ul> 
   </div> 
-  <div class="paragraph"> 
-   <p>Anypoint B2B&nbsp;requires Mule 3.6.0 and the March 2015 (5.0) release of Anypoint Studio.</p> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="requirements"><a class="anchor" href="#requirements"></a>Requirements</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Mule 3.6.0</p> </li> 
+    <li> <p>Anypoint Studio, Version 5.0 (March 2015 or later)</p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div> 
@@ -905,10 +939,16 @@
  <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you are familiar with Mule, <a href="/mule-user-guide/v/3.7/Anypoint-Connectors">Anypoint Connectors</a>, and the <a href="mule-fundamentals/v/3.7/Anypoint-Studio-Essentials">Anypoint Studio interface</a>. To increase your familiarity with Studio, consider completing one or more <a href="/mule-fundamentals/v/3.7/Basic-Studio-Tutorial">Anypoint Studio Tutorials</a>. Further, this page assumes that you have a basic understanding of <a href="/mule-fundamentals/v/3.7/Mule-Concepts">Mule flows</a>&nbsp;and <a href="/mule-user-guide/v/3.7/Global-Elements">Mule Global Elements</a>.&nbsp;</p> 
+   <p>This page assumes that you are familiar with:</p> 
   </div> 
-  <div class="paragraph"> 
-   <p>This document describes implementation examples within the context of Anypoint Studio, Mule ESB’s graphical user interface, and, also includes configuration details for doing the same in the XML Editor.&nbsp;</p> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Mule</p> </li> 
+    <li> <p>link:a/mule-user-guide/v/3.7/anypoint-connectors</p> </li> 
+    <li> <p>The Anypoint Studio interface (for informaiton about the interface, see link:/mule-fundamentals/v/3.7/anypoint-studio-essentials [Anypoint Studio Essentials]). To increase your familiarity with Studio, consider completing one or more <a href="/mule-fundamentals/v/3.7/Basic-Studio-Tutorial">Anypoint Studio Tutorials</a>.</p> </li> 
+    <li> <p><a href="/mule-fundamentals/v/3.7/mule-concepts">Mule flows</a></p> </li> 
+    <li> <p>link:/mule-fundamentals/v/3.7/global-elements</p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div> 
@@ -917,6 +957,8 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
+    <li> <p><a href="/anypoint-b2b/v/3.7/anypoint-b2b-overview">Learn more</a></p> </li> 
+    <li> <p><a href="/anypoint-partner-manager-users-guide">Anypoint Partner Manager User’s Guide</a></p> </li> 
     <li> <p><a href="/anypoint-b2b/x12-module">X12 Module</a>&nbsp;(<a href="http://mulesoft.github.io/edi-module/x12/">Reference</a>)</p> </li> 
     <li> <p><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a>&nbsp;(<a href="http://mulesoft.github.io/edi-module/edifact/">Reference</a>)</p> </li> 
     <li> <p><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a>&nbsp;(<a href="http://modusintegration.github.io/mule-connector-ftps/">Reference</a>)</p> </li> 
@@ -924,7 +966,7 @@
     <li> <p><a href="/anypoint-b2b/as2-connector-2.0.0-rc">AS/2 Connector - 2.0.0-RC3</a>&nbsp;(<a href="http://modusintegration.github.io/mule-connector-as2/">Reference</a>)</p> </li> 
     <li> <p><a href="/anypoint-b2b/edi-x12-order-processing-example">X12 Order Processing Example</a></p> </li> 
     <li> <p><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></p> </li> 
-    <li> <p><a href="/anypoint-b2b/anypoint-partner-manager">Anypoint Partner Manager (Trading Partner Management and Message Tracking)</a></p> 
+    <li> <p><a href="/anypoint-b2b/anypoint-partner-manager">Anypoint Partner Manager</a></p> 
      <div class="ulist"> 
       <ul> 
        <li> <p><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></p> </li> 
@@ -941,7 +983,7 @@
   <div class="ulist"> 
    <ul> 
     <li> <p><a href="/release-notes/x12-edifact-modules-1.0.0-release-notes">X12/EDIFACT EDI Modules 1.0.0</a></p> </li> 
-    <li> <p><a href="/release-notes/x12-edifact-modules-1.0.0-release-notes">AS/2 Connector 1.0.0</a></p> </li> 
+    <li> <p>link:/release-notes/as2-connector-1.0.0-release-notes.adoc</p> </li> 
     <li> <p><a href="/release-notes/as2-connector-2.0.0-rc3-release-notes">AS2 Connector 2.0.0-RC3</a></p> </li> 
     <li> <p><a href="/release-notes/ftps-connector-1.0.0-rc3-release-notes">FTPS Connector 1.0.0-RC3</a></p> </li> 
    </ul> 
@@ -952,7 +994,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#getting-started">Getting Started</a></li><li><a class="scroll-menu-link" href="#release-notes">Release Notes</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#about-this-page">About this page</a></li><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#requirements">Requirements</a></li><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#getting-started">Getting Started</a></li><li><a class="scroll-menu-link" href="#release-notes">Release Notes</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

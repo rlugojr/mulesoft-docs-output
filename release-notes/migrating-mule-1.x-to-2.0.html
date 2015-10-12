@@ -1028,13 +1028,31 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
-<span class="doctype">&lt;!DOCTYPE mule-configuration PUBLIC "-//MuleSource //DTD mule-configuration XML V1.0//EN" "http://mule.mulesource.org/dtds/mule-configuration.dtd"&gt;</span>
+<span class="doctype">&lt;!DOCTYPE mule-configuration PUBLIC "-//MuleSource //DTD mule-configuration XML V1.0//EN"
+                                "http://mule.mulesource.org/dtds/mule-configuration.dtd"&gt;</span>
 
 <span class="tag">&lt;mule-configuration</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">Samples</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">1.0</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 
-<span class="tag">&lt;/mule-configuration&gt;</span></code></pre> 
+<span class="tag">&lt;/mule-configuration&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1042,13 +1060,33 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesource.org/schema/mule/core/2.0</span><span class="delimiter">"</span></span>
       <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
       <span class="attribute-name">xmlns:jms</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesource.org/schema/mule/jms/2.0</span><span class="delimiter">"</span></span>
-      <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span> <span class="content">http://www.mulesource.org/schema/mule/core/2.0 http://www.mulesource.org/schema/mule/core/2.0/mule.xsd</span> <span class="content">http://www.mulesource.org/schema/mule/jms/2.0 http://www.mulesource.org/schema/mule/jms/2.0/mule-jms.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+      <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+          <span class="content">http://www.mulesource.org/schema/mule/core/2.0 http://www.mulesource.org/schema/mule/core/2.0/mule.xsd</span>
+          <span class="content">http://www.mulesource.org/schema/mule/jms/2.0 http://www.mulesource.org/schema/mule/jms/2.0/mule-jms.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 
-<span class="tag">&lt;/mule&gt;</span></code></pre> 
+<span class="tag">&lt;/mule&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="admonitionblock note"> 
@@ -1094,9 +1132,21 @@ muleContext.start();</code></pre>
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;client:remote-dispatcher-agent&gt;</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;client:remote-dispatcher-agent&gt;</span>
     <span class="tag">&lt;client:remote-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">tcp://localhost:60504</span><span class="delimiter">"</span></span> <span class="attribute-name">synchronous</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/client:remote-dispatcher-agent&gt;</span></code></pre> 
+<span class="tag">&lt;/client:remote-dispatcher-agent&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1111,8 +1161,19 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;connector</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.providers.vm.VMConnector</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;connector</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.providers.jms.JmsConnector</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;connector</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.providers.vm.VMConnector</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;connector</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.providers.jms.JmsConnector</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1120,8 +1181,19 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:connector</span><span class="tag">/&gt;</span>
-<span class="tag">&lt;jms:connector</span><span class="tag">/&gt;</span></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;vm:connector</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;jms:connector</span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1135,12 +1207,27 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">SystemStreamConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.providers.stream.SystemStreamConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">SystemStreamConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.providers.stream.SystemStreamConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;properties&gt;</span>
         <span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">promptMessage</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Please enter something: </span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">messageDelayTime</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">1000</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/properties&gt;</span>
-<span class="tag">&lt;/connector&gt;</span></code></pre> 
+<span class="tag">&lt;/connector&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1148,9 +1235,21 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;stdio:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">SystemStreamConnector</span><span class="delimiter">"</span></span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;stdio:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">SystemStreamConnector</span><span class="delimiter">"</span></span>
                  <span class="attribute-name">promptMessage</span>=<span class="string"><span class="delimiter">"</span><span class="content">Please enter something: </span><span class="delimiter">"</span></span>
-                 <span class="attribute-name">messageDelayTime</span>=<span class="string"><span class="delimiter">"</span><span class="content">1000</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+                 <span class="attribute-name">messageDelayTime</span>=<span class="string"><span class="delimiter">"</span><span class="content">1000</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="admonitionblock note"> 
@@ -1201,7 +1300,17 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">pop3://bob:secret@localhost:62002</span><span class="delimiter">"</span></span> <span class="attribute-name">transformers</span>=<span class="string"><span class="delimiter">"</span><span class="content">BytesToMime</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">pop3://bob:secret@localhost:62002</span><span class="delimiter">"</span></span> <span class="attribute-name">transformers</span>=<span class="string"><span class="delimiter">"</span><span class="content">BytesToMime</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1209,9 +1318,21 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;pop3:inbound-endpoint</span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">bob</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">secret</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">62002</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;pop3:inbound-endpoint</span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">bob</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">secret</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">62002</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;email:bytes-to-mime-transformer</span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/pop3:inbound-endpoint&gt;</span></code></pre> 
+<span class="tag">&lt;/pop3:inbound-endpoint&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1225,7 +1346,23 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;mule-descriptor</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">ChitChatUMO</span><span class="delimiter">"</span></span> <span class="attribute-name">implementation</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.samples.hello.ChitChatter</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;mule-descriptor</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">ChitChatUMO</span><span class="delimiter">"</span></span> <span class="attribute-name">implementation</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.samples.hello.ChitChatter</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;inbound-router&gt;</span>
         <span class="tag">&lt;endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://chitchatter</span><span class="delimiter">"</span></span> <span class="attribute-name">transformers</span>=<span class="string"><span class="delimiter">"</span><span class="content">NameStringToChatString</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/inbound-router&gt;</span>
@@ -1234,7 +1371,10 @@ muleContext.start();</code></pre>
             <span class="tag">&lt;endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">stream://System.out</span><span class="delimiter">"</span></span> <span class="attribute-name">transformers</span>=<span class="string"><span class="delimiter">"</span><span class="content">ChatStringToString</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
         <span class="tag">&lt;/router&gt;</span>
     <span class="tag">&lt;/outbound-router&gt;</span>
-<span class="tag">&lt;/mule-descriptor&gt;</span></code></pre> 
+<span class="tag">&lt;/mule-descriptor&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1242,7 +1382,24 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;service</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">ChitChatUMO</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;service</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">ChitChatUMO</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;inbound&gt;</span>
         <span class="tag">&lt;vm:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">chitchatter</span><span class="delimiter">"</span></span> <span class="attribute-name">transformer-refs</span>=<span class="string"><span class="delimiter">"</span><span class="content">NameStringToChatString</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/inbound&gt;</span>
@@ -1252,7 +1409,10 @@ muleContext.start();</code></pre>
             <span class="tag">&lt;stdio:outbound-endpoint</span> <span class="attribute-name">system</span>=<span class="string"><span class="delimiter">"</span><span class="content">OUT</span><span class="delimiter">"</span></span> <span class="attribute-name">transformer-refs</span>=<span class="string"><span class="delimiter">"</span><span class="content">ChatStringToString</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;/outbound-pass-through-router&gt;</span>
     <span class="tag">&lt;/outbound&gt;</span>
-<span class="tag">&lt;/service&gt;</span></code></pre> 
+<span class="tag">&lt;/service&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1278,9 +1438,21 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;component</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.your.PrototypeComponent</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;component</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.your.PrototypeComponent</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 ..
-<span class="tag">&lt;pooled-component</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.your.PooledPrototypeComponent</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+<span class="tag">&lt;pooled-component</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.your.PooledPrototypeComponent</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1288,7 +1460,26 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;spring:bean</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">myPooledSpringBeanComponent</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.your.PooledSpringBeanComponent</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;spring:bean</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">myPooledSpringBeanComponent</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.your.PooledSpringBeanComponent</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
 ..
 <span class="tag">&lt;pooled-component&gt;</span>
     <span class="tag">&lt;reflection-entry-point-resolver</span><span class="tag">/&gt;</span>
@@ -1300,7 +1491,10 @@ muleContext.start();</code></pre>
     <span class="tag">&lt;pooling-profile</span> <span class="attribute-name">exhaustedAction</span>=<span class="string"><span class="delimiter">"</span><span class="content">WHEN_EXHAUSTED_FAIL</span><span class="delimiter">"</span></span>
         <span class="attribute-name">initialisationPolicy</span>=<span class="string"><span class="delimiter">"</span><span class="content">INITIALISE_ALL</span><span class="delimiter">"</span></span> <span class="attribute-name">maxActive</span>=<span class="string"><span class="delimiter">"</span><span class="content">1</span><span class="delimiter">"</span></span>
         <span class="attribute-name">maxIdle</span>=<span class="string"><span class="delimiter">"</span><span class="content">2</span><span class="delimiter">"</span></span> <span class="attribute-name">maxWait</span>=<span class="string"><span class="delimiter">"</span><span class="content">3</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/pooled-component&gt;</span></code></pre> 
+<span class="tag">&lt;/pooled-component&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1314,11 +1508,25 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;router</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.routing.inbound.SelectiveConsumer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;router</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.routing.inbound.SelectiveConsumer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 
 <span class="tag">&lt;router</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.routing.outbound.FilteringOutboundRouter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;router</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.routing.outbound.MulticastingRouter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;router</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.my.CustomRouter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+<span class="tag">&lt;router</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.my.CustomRouter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1326,10 +1534,23 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;selective-consumer-router</span><span class="tag">/&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;selective-consumer-router</span><span class="tag">/&gt;</span>
 <span class="tag">&lt;filtering-router</span><span class="tag">/&gt;</span>
 <span class="tag">&lt;multicasting-router</span><span class="tag">/&gt;</span>
-<span class="tag">&lt;custom-inbound-router</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.my.CustomRouter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+<span class="tag">&lt;custom-inbound-router</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.my.CustomRouter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1337,14 +1558,31 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;global-endpoints&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;global-endpoints&gt;</span>
   <span class="tag">&lt;endpoint</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerResponses</span><span class="delimiter">"</span></span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://customer.responses</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/global-endpoints&gt;</span>
 ..
 <span class="tag">&lt;router</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.routing.outbound.FilteringOutboundRouter</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;global-endpoint</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerResponses</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;filter</span> <span class="attribute-name">expectedType</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.examples.loanbroker.messages.LoanQuote</span><span class="delimiter">"</span></span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.routing.filters.PayloadTypeFilter</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/router&gt;</span></code></pre> 
+<span class="tag">&lt;/router&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1352,12 +1590,27 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;vm:endpoint</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerResponses</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">customer.responses</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;vm:endpoint</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerResponses</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">customer.responses</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 ..
 <span class="tag">&lt;filtering-router&gt;</span>
     <span class="tag">&lt;outbound-endpoint</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerResponses</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;payload-type-filter</span> <span class="attribute-name">expectedType</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.examples.loanbroker.messages.LoanQuote</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/filtering-router&gt;</span></code></pre> 
+<span class="tag">&lt;/filtering-router&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1377,10 +1630,23 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;transformer</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.transformers.simple.MessagePropertiesTransformer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;transformer</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.transformers.simple.MessagePropertiesTransformer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;transformer</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.transformers.simple.ByteArrayToObject</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;transformer</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.transformers.xml.XsltTransformer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;transformer</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.my.CustomTransformer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+<span class="tag">&lt;transformer</span> <span class="attribute-name">className</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.my.CustomTransformer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1388,10 +1654,23 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;message-properties-transformer</span><span class="tag">/&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;message-properties-transformer</span><span class="tag">/&gt;</span>
 <span class="tag">&lt;byte-array-to-object-transformer</span><span class="tag">/&gt;</span>
 <span class="tag">&lt;xml:xslt-transformer</span><span class="tag">/&gt;</span>
-<span class="tag">&lt;custom-transformer</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.my.CustomTransformer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+<span class="tag">&lt;custom-transformer</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.my.CustomTransformer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1405,7 +1684,17 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;global-endpoint</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerRequestsREST</span><span class="delimiter">"</span></span> <span class="attribute-name">transformers</span>=<span class="string"><span class="delimiter">"</span><span class="content">RestRequestToCustomerRequestTransformer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;global-endpoint</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerRequestsREST</span><span class="delimiter">"</span></span> <span class="attribute-name">transformers</span>=<span class="string"><span class="delimiter">"</span><span class="content">RestRequestToCustomerRequestTransformer</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1413,7 +1702,22 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerRequestsREST</span><span class="delimiter">"</span></span> <span class="attribute-name">transformer-refs</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transformer1 Transformer2</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerRequestsREST</span><span class="delimiter">"</span></span> <span class="attribute-name">transformer-refs</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transformer1 Transformer2</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 
 <span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerRequestsREST</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;transformer</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">RestRequestToCustomerRequestTransformer</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
@@ -1421,7 +1725,10 @@ muleContext.start();</code></pre>
 
 <span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">IncomingData</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;byte-array-to-object-transformer</span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/inbound-endpoint&gt;</span></code></pre> 
+<span class="tag">&lt;/inbound-endpoint&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1435,7 +1742,23 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;mule-descriptor</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">bridge</span><span class="delimiter">"</span></span> <span class="attribute-name">implementation</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.components.simple.BridgeComponent</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;mule-descriptor</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">bridge</span><span class="delimiter">"</span></span> <span class="attribute-name">implementation</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.components.simple.BridgeComponent</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;inbound-router&gt;</span>
         <span class="tag">&lt;endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://bridge.inbound</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/inbound-router&gt;</span>
@@ -1444,7 +1767,10 @@ muleContext.start();</code></pre>
             <span class="tag">&lt;endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://bridge.outbound</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;/router&gt;</span>
     <span class="tag">&lt;/outbound-router&gt;</span>
-<span class="tag">&lt;/mule-descriptor&gt;</span></code></pre> 
+<span class="tag">&lt;/mule-descriptor&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1452,7 +1778,23 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;service</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">bridge</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;service</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">bridge</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
    <span class="tag">&lt;inbound&gt;</span>
        <span class="tag">&lt;vm:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">bridge.inbound</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
    <span class="tag">&lt;/inbound&gt;</span>
@@ -1461,7 +1803,10 @@ muleContext.start();</code></pre>
            <span class="tag">&lt;vm:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">bridge.outbound</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
        <span class="tag">&lt;/outbound-pass-through-router&gt;</span>
    <span class="tag">&lt;/outbound&gt;</span>
-<span class="tag">&lt;/service&gt;</span></code></pre> 
+<span class="tag">&lt;/service&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1475,13 +1820,29 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;model&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;model&gt;</span>
     <span class="tag">&lt;default-service-exception-strategy&gt;</span>
         <span class="tag">&lt;commit-transaction</span> <span class="attribute-name">exception-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">*</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">DLQ</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/default-service-exception-strategy&gt;</span>
     ...
-<span class="tag">&lt;/model&gt;</span></code></pre> 
+<span class="tag">&lt;/model&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1492,14 +1853,31 @@ muleContext.start();</code></pre>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;model&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;model&gt;</span>
     <span class="tag">&lt;default-service-exception-strategy&gt;</span>
         <span class="tag">&lt;commit-transaction</span> <span class="attribute-name">exception-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">*</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;rollback-transaction</span> <span class="attribute-name">exception-pattern</span><span class="error">"</span><span class="attribute-name">com.acme.a.</span><span class="error">*</span><span class="error">,</span><span class="attribute-name">com.acme.b.</span><span class="error">*</span><span class="error">"</span><span class="tag">/&gt;</span>
         <span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">DLQ</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/default-service-exception-strategy&gt;</span>
     ...
-<span class="tag">&lt;/model&gt;</span></code></pre> 
+<span class="tag">&lt;/model&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 

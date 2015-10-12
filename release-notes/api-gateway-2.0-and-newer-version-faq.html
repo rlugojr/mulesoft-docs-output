@@ -909,9 +909,21 @@
    <li> <p>Policy definition and processing - Policy definitions have been modified to include a new ID and policyName field as per this example:</p> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;policy</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/policy</span><span class="delimiter">"</span></span> <span class="attribute-name">...</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;policy</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/policy</span><span class="delimiter">"</span></span> <span class="attribute-name">...</span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">online</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">8298</span><span class="delimiter">"</span></span> <span class="attribute-name">policyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">Rate Limiting SLA Based</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-<span class="tag">&lt;/policy&gt;</span></code></pre> 
+<span class="tag">&lt;/policy&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> </li> 
   </ol> 
@@ -928,9 +940,21 @@
    <li> <p><strong>Custom policies</strong> - Custom policies continue to work as before with one exception: When an API Gateway is upgraded to version 2.0, applied custom policies cannot report policy violation events to the Analytics system. To remedy this, modify custom policies with a policyName field as per the following example:</p> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;policy</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/policy</span><span class="delimiter">"</span></span> <span class="attribute-name">...</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;policy</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/policy</span><span class="delimiter">"</span></span> <span class="attribute-name">...</span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">online</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">{{policyId}}</span><span class="delimiter">"</span></span> <span class="attribute-name">policyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">My custom policy name</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-<span class="tag">&lt;/policy&gt;</span></code></pre> 
+<span class="tag">&lt;/policy&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> </li> 
   </ul> 

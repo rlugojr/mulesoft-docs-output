@@ -921,11 +921,39 @@
     <li> <p>Paste&nbsp;the following code in the connector class:</p> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="java"><span class="comment">/** * Custom processor that places an animal in the barn. * * {@sample.xml ../../../doc/barn-connector.xml.sample barn:putInBarn} * * @param animal Name of the animal to be place in the barn * @return returns processed message */</span>
+       <pre class="CodeRay highlight"><code data-lang="java">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+</pre></td> 
+            <td class="code"><pre><span class="comment">/**
+ * Custom processor that places an animal in the barn.
+ *
+ * {@sample.xml ../../../doc/barn-connector.xml.sample barn:putInBarn}
+ *
+ * @param animal Name of the animal to be place in the barn
+ * @return returns processed message
+ */</span>
  <span class="annotation">@Processor</span>
  <span class="directive">public</span> <span class="predefined-type">String</span> putInBarn(<span class="predefined-type">String</span> animal) {
     <span class="keyword">return</span> animal + <span class="string"><span class="delimiter">"</span><span class="content"> has been placed in the barn</span><span class="delimiter">"</span></span>;
- }</code></pre> 
+ }</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
       </div> 
      </div> 
      <div class="admonitionblock note"> 
@@ -941,7 +969,95 @@
     <li> <p>Confirm that the complete class appears as follows:</p> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="java"><span class="comment">/** * (c) 2003-2014 MuleSoft, Inc. The software in this package is published * under the terms of the CPAL v1.0 license, a copy of which has been * included with this distribution in the LICENSE.md file. */</span>
+       <pre class="CodeRay highlight"><code data-lang="java">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong>30</strong>
+31
+32
+33
+34
+35
+36
+37
+38
+39
+<strong>40</strong>
+41
+42
+43
+44
+45
+46
+47
+48
+49
+<strong>50</strong>
+51
+52
+53
+54
+55
+56
+57
+58
+59
+<strong>60</strong>
+61
+62
+63
+64
+65
+66
+67
+68
+69
+<strong>70</strong>
+71
+72
+73
+74
+75
+76
+77
+78
+</pre></td> 
+            <td class="code"><pre><span class="comment">/**
+ * (c) 2003-2014 MuleSoft, Inc. The software in this package is published
+ * under the terms of the CPAL v1.0 license, a copy of which has been
+ * included with this distribution in the LICENSE.md file.
+ */</span>
 <span class="keyword">package</span> <span class="namespace">org.mule.modules.barn</span>;
 <span class="keyword">import</span> <span class="include">org.mule.api.annotations.ConnectionStrategy</span>;
 <span class="keyword">import</span> <span class="include">org.mule.api.annotations.Connector</span>;
@@ -949,33 +1065,61 @@
 <span class="keyword">import</span> <span class="include">org.mule.api.annotations.Processor</span>;
 <span class="keyword">import</span> <span class="include">org.mule.api.annotations.param.Default</span>;
 <span class="keyword">import</span> <span class="include">org.mule.modules.myproject.strategy.ConnectorConnectionStrategy</span>;
-<span class="comment">/** * Anypoint Connector * * @author MuleSoft, Inc. */</span>
+<span class="comment">/**
+ * Anypoint Connector
+ *
+ * @author MuleSoft, Inc.
+ */</span>
 <span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">barn</span><span class="delimiter">"</span></span>, schemaVersion=<span class="string"><span class="delimiter">"</span><span class="content">1.0</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">Barn</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">BarnConnector</span>
 {
-    <span class="comment">/** * Configurable */</span>
+    <span class="comment">/**
+     * Configurable
+     */</span>
     <span class="annotation">@Configurable</span>
     <span class="annotation">@Default</span>(<span class="string"><span class="delimiter">"</span><span class="content">value</span><span class="delimiter">"</span></span>)
     <span class="directive">private</span> <span class="predefined-type">String</span> myProperty;
     <span class="annotation">@ConnectionStrategy</span>
     ConnectorConnectionStrategy connectionStrategy;
 
-    <span class="comment">/** * Custom processor * * {@sample.xml ../../../doc/barn-connector.xml.sample barn:my-processor} * * @param content Content to be processed * @return Some string */</span>
+    <span class="comment">/**
+     * Custom processor
+     *
+     * {@sample.xml ../../../doc/barn-connector.xml.sample barn:my-processor}
+     *
+     * @param content Content to be processed
+     * @return Some string
+     */</span>
     <span class="annotation">@Processor</span>
     <span class="directive">public</span> <span class="predefined-type">String</span> myProcessor(<span class="predefined-type">String</span> content) {
-        <span class="comment">/* * MESSAGE PROCESSOR CODE GOES HERE */</span>
+        <span class="comment">/*
+         * MESSAGE PROCESSOR CODE GOES HERE
+         */</span>
         <span class="keyword">return</span> content;
     }
-    <span class="comment">/** * Custom processor that places an animal in the barn. * * {@sample.xml ../../../doc/barn-connector.xml.sample barn:putInBarn} * * @param animal Name of the animal to be place in the barn * @return returns processed message */</span>
+    <span class="comment">/**
+     * Custom processor that places an animal in the barn.
+     *
+     * {@sample.xml ../../../doc/barn-connector.xml.sample barn:putInBarn}
+     *
+     * @param animal Name of the animal to be place in the barn
+     * @return returns processed message
+     */</span>
      <span class="annotation">@Processor</span>
      <span class="directive">public</span> <span class="predefined-type">String</span> putInBarn(<span class="predefined-type">String</span> animal) {
         <span class="keyword">return</span> animal + <span class="string"><span class="delimiter">"</span><span class="content"> has been placed in the barn</span><span class="delimiter">"</span></span>;
      }
-    <span class="comment">/** * Set property * * @param myProperty My property */</span>
+    <span class="comment">/**
+     * Set property
+     *
+     * @param myProperty My property
+     */</span>
     <span class="directive">public</span> <span class="type">void</span> setMyProperty(<span class="predefined-type">String</span> myProperty) {
         <span class="local-variable">this</span>.myProperty = myProperty;
     }
-    <span class="comment">/** * Get property */</span>
+    <span class="comment">/**
+     * Get property
+     */</span>
     <span class="directive">public</span> <span class="predefined-type">String</span> getMyProperty() {
         <span class="keyword">return</span> <span class="local-variable">this</span>.myProperty;
     }
@@ -986,7 +1130,10 @@
      connectionStrategy) {
         <span class="local-variable">this</span>.connectionStrategy = connectionStrategy;
     }
-}</code></pre> 
+}</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
       </div> 
      </div> </li> 
     <li> <p>In Anypoint Studio, select&nbsp;<code>ConnectorConnectionStrategy</code>&nbsp;in the code, and on a Mac press the CMD key, or in Windows, press the Ctrl key. The <code>ConnectorConnectionStrategy.java</code> file opens and you can see the connection management implementation for this connector.&nbsp;</p> </li> 
@@ -1002,21 +1149,49 @@
      <li> <p>In your Anypoint Studio, open the file&nbsp;&nbsp; <code>doc/barn-connector.xml.sample</code> &nbsp;then paste the following snippet at the end:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml"><span class="comment">&lt;!-- BEGIN_INCLUDE(barn:putInBarn) --&gt;</span>
+        <pre class="CodeRay highlight"><code data-lang="xml">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+             <td class="code"><pre><span class="comment">&lt;!-- BEGIN_INCLUDE(barn:putInBarn) --&gt;</span>
     <span class="tag">&lt;barn:put-in-barn</span> <span class="attribute-name">animal</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[map-payload:animal]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="comment">&lt;!-- END_INCLUDE(barn:putInBarn) --&gt;</span></code></pre> 
+<span class="comment">&lt;!-- END_INCLUDE(barn:putInBarn) --&gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
       </div> </li> 
      <li> <p>Confirm that the complete contents of the file appears as:</p> 
       <div class="listingblock"> 
        <div class="content"> 
-        <pre class="CodeRay highlight"><code data-lang="xml"><span class="comment">&lt;!-- BEGIN_INCLUDE(barn:myProcessor) --&gt;</span>
+        <pre class="CodeRay highlight"><code data-lang="xml">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td> 
+             <td class="code"><pre><span class="comment">&lt;!-- BEGIN_INCLUDE(barn:myProcessor) --&gt;</span>
     <span class="tag">&lt;barn:my-processor</span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[map-payload:content]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
 <span class="comment">&lt;!-- END_INCLUDE(barn:myProcessor) --&gt;</span>
 
 <span class="comment">&lt;!-- BEGIN_INCLUDE(barn:putInBarn) --&gt;</span>
     <span class="tag">&lt;barn:put-in-barn</span> <span class="attribute-name">animal</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[map-payload:animal]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="comment">&lt;!-- END_INCLUDE(barn:putInBarn) --&gt;</span></code></pre> 
+<span class="comment">&lt;!-- END_INCLUDE(barn:putInBarn) --&gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
       </div> </li> 
     </ol> 
@@ -1059,12 +1234,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-f39c2" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-77eea" role="tab" data-toggle="tab">XML</a></li> 
+     <li class="active"><a href="#studio-visual-editor-22bbd" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-7f0b0" role="tab" data-toggle="tab">XML</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f39c2"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-22bbd"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Create a simple flow using an <strong>HTTP</strong> connector and your new <strong>Barn Connector</strong>. Use the default values configured in the HTTP endpoint (<strong>port</strong>:`8081`, <strong>host</strong>: <code>localhost</code>).</p> 
@@ -1122,13 +1297,45 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-77eea"> 
+    <div class="tab-pane fade no-padding" id="xml-7f0b0"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Create a simple flow using an HTTP connector and your new <code>barn:config</code>. Configure the parameters of each element according to the code sample below.</p> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>mule xmlns:barn="http://www.mulesoft.org/schema/mule/barn"
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+</pre></td> 
+               <td class="code"><pre><span class="entity">&amp;lt;</span>mule xmlns:barn="http://www.mulesoft.org/schema/mule/barn"
     xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
     xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
     xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.6.0"
@@ -1152,7 +1359,10 @@ http://www.mulesoft.org/schema/mule/barn http://www.mulesoft.org/schema/mule/bar
             animal="#[message.inboundProperties['animal']]" doc:name="Barn" /<span class="entity">&amp;gt;</span>
 
     <span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></code></pre> 
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
          </div> 
         </div> </li> 
        <li> <p>Save, then run the project.</p> </li> 

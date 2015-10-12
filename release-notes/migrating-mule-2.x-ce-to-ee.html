@@ -881,9 +881,21 @@
   <li> <p>If you use Maven to build your application, edit the <code>pom.xml</code> file and change the `muleVersion`property value to &lt;version&gt;-EE. For example:</p> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;properties&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;properties&gt;</span>
      <span class="tag">&lt;muleVersion&gt;</span>2.2.1-EE<span class="tag">&lt;/muleVersion&gt;</span>
- <span class="tag">&lt;/properties&gt;</span></code></pre> 
+ <span class="tag">&lt;/properties&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> </li> 
   <li> <p>If your application uses custom classes, copy your JAR files to the <code>${MULE_HOME}/lib/user</code> directory. If you are migrating from Mule 1.x Community to Mule 2.x Enterprise, note that the API and configuration files have changed, so your configuration files and possibly your classes will require modifications. See <a href="/release-notes/migrating-mule-1.x-to-2.0">Migrating Mule 1.x to 2.0</a>&nbsp;for more details. If you have purchased Mule Enterprise, you can use the Migration Tool on the <a href="http://mulesupport.mulesource.com/portal/login.mule">customer portal</a> to migrate your files.</p> </li> 

@@ -885,14 +885,31 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> testSend() <span class="directive">throws</span> <span class="exception">Exception</span>
+    <pre class="CodeRay highlight"><code data-lang="java">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+         <td class="code"><pre><span class="directive">public</span> <span class="type">void</span> testSend() <span class="directive">throws</span> <span class="exception">Exception</span>
 {
     MuleClient client = <span class="keyword">new</span> MuleClient(muleContext);
     <span class="predefined-type">String</span> payload = <span class="string"><span class="delimiter">"</span><span class="content">foo</span><span class="delimiter">"</span></span>;
     <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Object</span>&gt; properties = <span class="predefined-constant">null</span>;
     MuleMessage result = client.send(<span class="string"><span class="delimiter">"</span><span class="content">vm://test</span><span class="delimiter">"</span></span>, payload, properties);
     assertEquals(<span class="string"><span class="delimiter">"</span><span class="content">foo Received</span><span class="delimiter">"</span></span>, result.getPayloadAsString());
-}</code></pre> 
+}</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -900,18 +917,49 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+</pre></td> 
+         <td class="code"><pre>
+<span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
   <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
   <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
   <span class="attribute-name">xmlns:vm</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/vm</span><span class="delimiter">"</span></span>
   <span class="attribute-name">xmlns:test</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/test</span><span class="delimiter">"</span></span>
-  <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span> <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span> <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span> <span class="content">http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</span> <span class="content">http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+  <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+  <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+  <span class="content">http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</span>
+  <span class="content">http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 
 <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">TestComponentFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://test</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
   <span class="tag">&lt;test:component</span> <span class="attribute-name">appendString</span>=<span class="string"><span class="delimiter">"</span> <span class="content">Received</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/flow&gt;</span></code></pre> 
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -965,7 +1013,32 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> testEventCallback() <span class="directive">throws</span> <span class="exception">Exception</span>
+      <pre class="CodeRay highlight"><code data-lang="java">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td> 
+           <td class="code"><pre>
+<span class="directive">public</span> <span class="type">void</span> testEventCallback() <span class="directive">throws</span> <span class="exception">Exception</span>
 {
     EventCallback callback = <span class="keyword">new</span> EventCallback()
     {
@@ -981,7 +1054,10 @@
     MuleClient client = <span class="keyword">new</span> MuleClient();
 
     client.send(<span class="string"><span class="delimiter">"</span><span class="content">vm://test</span><span class="delimiter">"</span></span>, <span class="keyword">new</span> DefaultMuleMessage(<span class="string"><span class="delimiter">"</span><span class="content">foo</span><span class="delimiter">"</span></span>));
- }</code></pre> 
+ }</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -992,20 +1068,51 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td> 
+           <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xmlns:vm</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/vm</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xmlns:test</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/test</span><span class="delimiter">"</span></span>
-    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span> <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span> <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span> <span class="content">http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</span> <span class="content">http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+    <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+    <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+    <span class="content">http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</span>
+    <span class="content">http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 
 <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">TestComponentFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://test</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
     <span class="tag">&lt;component&gt;</span>
         <span class="tag">&lt;singleton-object</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.tck.functional.FunctionalTestComponent</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/component&gt;</span>
-<span class="tag">&lt;/flow&gt;</span></code></pre> 
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1025,13 +1132,29 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> onNotification(ServerNotification notification)
+      <pre class="CodeRay highlight"><code data-lang="java">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+</pre></td> 
+           <td class="code"><pre><span class="directive">public</span> <span class="type">void</span> onNotification(ServerNotification notification)
 {
     <span class="keyword">if</span> (notification.getAction() == FunctionalTestNotification.EVENT_RECEIVED)
     {
         <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">Event Received</span><span class="delimiter">"</span></span>);
     }
-}</code></pre> 
+}</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1039,7 +1162,17 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java">muleContext.registerListener(<span class="local-variable">this</span>,<span class="string"><span class="delimiter">"</span><span class="content">myComponent</span><span class="delimiter">"</span></span>);</code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="java">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+</pre></td> 
+           <td class="code"><pre>muleContext.registerListener(<span class="local-variable">this</span>,<span class="string"><span class="delimiter">"</span><span class="content">myComponent</span><span class="delimiter">"</span></span>);</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1051,9 +1184,21 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;test:component&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;test:component&gt;</span>
     <span class="tag">&lt;test:return-data&gt;</span>donkey<span class="tag">&lt;/test:return-data&gt;</span>
-<span class="tag">&lt;/test:component&gt;</span></code></pre> 
+<span class="tag">&lt;/test:component&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1061,9 +1206,21 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;test:component&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;test:component&gt;</span>
     <span class="tag">&lt;test:return-data</span> <span class="attribute-name">file</span>=<span class="string"><span class="delimiter">"</span><span class="content">abc.txt</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/test:component&gt;</span></code></pre> 
+<span class="tag">&lt;/test:component&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1079,7 +1236,17 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;test:component</span>  <span class="attribute-name">throwException</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span>  <span class="attribute-name">exceptionToThrow</span>=<span class="string"><span class="delimiter">"</span><span class="content">your.service.exception</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;test:component</span>  <span class="attribute-name">throwException</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span>  <span class="attribute-name">exceptionToThrow</span>=<span class="string"><span class="delimiter">"</span><span class="content">your.service.exception</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1093,7 +1260,17 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;test:component</span> <span class="attribute-name">enableMessageHistory</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;test:component</span> <span class="attribute-name">enableMessageHistory</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1107,7 +1284,17 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;test:component</span> <span class="attribute-name">appendString</span>=<span class="string"><span class="delimiter">"</span><span class="content">Received</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;test:component</span> <span class="attribute-name">appendString</span>=<span class="string"><span class="delimiter">"</span><span class="content">Received</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1118,7 +1305,17 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;test:component</span> <span class="attribute-name">waitTime</span>=<span class="string"><span class="delimiter">"</span><span class="content">5000</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;test:component</span> <span class="attribute-name">waitTime</span>=<span class="string"><span class="delimiter">"</span><span class="content">5000</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1129,7 +1326,17 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;test:component</span> <span class="attribute-name">doInboundTransform</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;test:component</span> <span class="attribute-name">doInboundTransform</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1152,7 +1359,33 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> testEventCallback() <span class="directive">throws</span> <span class="exception">Exception</span>
+    <pre class="CodeRay highlight"><code data-lang="java">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+</pre></td> 
+         <td class="code"><pre><span class="directive">public</span> <span class="type">void</span> testEventCallback() <span class="directive">throws</span> <span class="exception">Exception</span>
 {
     EventCallback callback = <span class="keyword">new</span> EventCallback()
     {
@@ -1171,7 +1404,10 @@
     MuleClient client = <span class="keyword">new</span> MuleClient();
 
     client.send(<span class="string"><span class="delimiter">"</span><span class="content">vm://test</span><span class="delimiter">"</span></span>, <span class="keyword">new</span> DefaultMuleMessage(<span class="string"><span class="delimiter">"</span><span class="content">foo</span><span class="delimiter">"</span></span>));
- }</code></pre> 
+ }</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -1179,20 +1415,51 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td> 
+         <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
   <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xmlns:vm</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/vm</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xmlns:test</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/test</span><span class="delimiter">"</span></span>
-    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span> <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span> <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span> <span class="content">http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</span> <span class="content">http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+    <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+    <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+    <span class="content">http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</span>
+    <span class="content">http://www.mulesoft.org/schema/mule/test http://www.mulesoft.org/schema/mule/test/current/mule-test.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 
 <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">TestComponentFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
    <span class="tag">&lt;inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://test</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
    <span class="tag">&lt;component&gt;</span>
         <span class="tag">&lt;spring-object</span> <span class="attribute-name">bean</span>=<span class="string"><span class="delimiter">"</span><span class="content">FTC</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
    <span class="tag">&lt;/component&gt;</span>
-<span class="tag">&lt;/flow&gt;</span></code></pre> 
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
    </div> 
   </div> 
  </div> 

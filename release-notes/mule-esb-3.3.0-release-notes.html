@@ -1742,7 +1742,17 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;configuration</span> <span class="attribute-name">useExtendedTransformations</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;configuration</span> <span class="attribute-name">useExtendedTransformations</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1786,7 +1796,34 @@
       <li> <p>Create bean profiles and configure them for separate profiles.</p> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">...</span><span class="tag">&gt;</span>
+         <pre class="CodeRay highlight"><code data-lang="xml">
+              
+           <table class="CodeRay"> 
+            <tbody> 
+             <tr> 
+              <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+</pre></td> 
+              <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">...</span><span class="tag">&gt;</span>
          <span class="tag">&lt;spring:beans</span> <span class="attribute-name">profile</span>=<span class="string"><span class="delimiter">"</span><span class="content">one</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
          <span class="tag">&lt;mule&gt;</span>
              <span class="tag">&lt;stdio:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">stdioConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">messageDelayTime</span>=<span class="string"><span class="delimiter">"</span><span class="content">10</span><span class="delimiter">"</span></span>  <span class="attribute-name">outputMessage</span>=<span class="string"><span class="delimiter">"</span><span class="content">profile 1: </span><span class="delimiter">"</span></span> <span class="attribute-name">promptMessage</span>=<span class="string"><span class="delimiter">"</span><span class="content">prompt message 1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
@@ -1806,7 +1843,10 @@
              <span class="tag">&lt;stdio:outbound-endpoint</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">out</span><span class="delimiter">"</span></span> <span class="attribute-name">system</span>=<span class="string"><span class="delimiter">"</span><span class="content">OUT</span><span class="delimiter">"</span></span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">stdioConnector</span><span class="delimiter">"</span></span>
 <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
        <span class="tag">&lt;/flow&gt;</span>
-<span class="tag">&lt;/mule&gt;</span></code></pre> 
+<span class="tag">&lt;/mule&gt;</span></pre></td> 
+             </tr> 
+            </tbody> 
+           </table></code></pre> 
         </div> 
        </div> </li> 
       <li> <p>When starting a Mule instance, use a JVM argument to set the profile system property to identify which bean profile Mule should use. Your setting applies to all applications deployed on the Mule instance.<br> <code>$MULE_HOME/bin -M-Dspring.profiles.active="one"</code></p> </li> 
@@ -1841,11 +1881,25 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
   <span class="tag">&lt;http:inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
   <span class="tag">&lt;expression-filter</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">0 == 1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/flow&gt;</span></code></pre> 
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1853,7 +1907,22 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
   <span class="tag">&lt;http:inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
   <span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">filteringSubFlow</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
   <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
@@ -1861,7 +1930,10 @@
 
 <span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">filteringSubFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;expression-filter</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">0 == 1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-<span class="tag">&lt;/sub-flow&gt;</span></code></pre> 
+<span class="tag">&lt;/sub-flow&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1869,7 +1941,22 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
   <span class="tag">&lt;http:inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
   <span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">filteringSubFlow</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
   <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
@@ -1877,7 +1964,10 @@
 
 <span class="tag">&lt;sub-flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">filteringSubFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;expression-filter</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">0 == 1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-<span class="tag">&lt;/sub-flow&gt;</span></code></pre> 
+<span class="tag">&lt;/sub-flow&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1897,10 +1987,23 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
   <span class="tag">&lt;http:inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response/</span></span><span class="error">&gt;</span>
   <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/flow&gt;</span></code></pre> 
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1908,12 +2011,27 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowWithFilter</span></span><span class="error">&gt;</span>
   <span class="tag">&lt;http:inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response/</span></span><span class="error">&gt;</span>
   <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/tmp</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
   <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/other</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
   <span class="tag">&lt;logger</span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/flow&gt;</span></code></pre> 
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1921,7 +2039,17 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;configuration</span> <span class="attribute-name">flowEndingWithOneWayEndpointReturnsNull</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;configuration</span> <span class="attribute-name">flowEndingWithOneWayEndpointReturnsNull</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1951,7 +2079,17 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;configuration</span> <span class="attribute-name">enricherPropagatesSessionVariableChanges</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;configuration</span> <span class="attribute-name">enricherPropagatesSessionVariableChanges</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1959,11 +2097,25 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;enricher&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;enricher&gt;</span>
     <span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">otherFlow</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[sessionVars['newSessionVar']]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[sessionVars['newSessionVar']]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
     <span class="tag">&lt;enrich</span> <span class="attribute-name">source</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[sessionVars['modifiedSessionVar']]</span><span class="delimiter">"</span></span> <span class="attribute-name">target</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[sessionVars['modifiedSessionVar']]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/enricher&gt;</span></code></pre> 
+<span class="tag">&lt;/enricher&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1983,7 +2135,28 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">parentFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">parentFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
    <span class="tag">&lt;flow-ref</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">privateFlowProxy</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
    <span class="tag">&lt;logger</span><span class="tag">/&gt;</span>
    <span class="tag">&lt;default-exception-strategy</span><span class="tag">/&gt;</span>
@@ -1997,7 +2170,10 @@
 <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">privateFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
    <span class="tag">&lt;test:component</span> <span class="attribute-name">throwException</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
    <span class="tag">&lt;default-exception-strategy</span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/flow&gt;</span></code></pre> 
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -2057,7 +2233,22 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;cxf:ws-security&gt;</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;cxf:ws-security&gt;</span>
     <span class="tag">&lt;cxf:ws-config&gt;</span>
         <span class="tag">&lt;cxf:property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">action</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">UsernameToken</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         ...
@@ -2065,7 +2256,10 @@
     <span class="tag">&lt;cxf:ws-custom-validator&gt;</span>
         <span class="tag">&lt;cxf:username-token-validator</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">validatorRef</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/cxf:ws-custom-validator&gt;</span>
-<span class="tag">&lt;/cxf:ws-security&gt;</span></code></pre> 
+<span class="tag">&lt;/cxf:ws-security&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -2082,7 +2276,24 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;spring:bean</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">wss4jInConfiguration</span><span class="delimiter">"</span></span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;spring:bean</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">wss4jInConfiguration</span><span class="delimiter">"</span></span>
     <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.springframework.beans.factory.config.MapFactoryBean</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sourceMap</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;spring:map&gt;</span>
@@ -2092,7 +2303,10 @@
           <span class="tag">&lt;/spring:entry&gt;</span>
         <span class="tag">&lt;/spring:map&gt;</span>
     <span class="tag">&lt;/spring:property&gt;</span>
-<span class="tag">&lt;/spring:bean&gt;</span></code></pre> 
+<span class="tag">&lt;/spring:bean&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -2103,14 +2317,31 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;cxf:jaxws-service&gt;</span>
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;cxf:jaxws-service&gt;</span>
     <span class="tag">&lt;cxf:ws-security&gt;</span>
         <span class="tag">&lt;cxf:mule-security-manager</span><span class="tag">/&gt;</span>
         <span class="tag">&lt;cxf:ws-config&gt;</span>
             <span class="tag">&lt;cxf:property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">action</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">UsernameToken</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
         <span class="tag">&lt;/cxf:ws-config&gt;</span>
     <span class="tag">&lt;/cxf:ws-security&gt;</span>
-<span class="tag">&lt;/cxf:jaxws-service&gt;</span></code></pre> 
+<span class="tag">&lt;/cxf:jaxws-service&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
