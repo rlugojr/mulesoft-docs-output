@@ -720,10 +720,10 @@
 <li>
 <i></i>
 <a href="/anypoint-b2b/">Anypoint B2B</a><ul>
-<li><i></i><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a></li><li><i></i><a href="/anypoint-b2b/x12-module">X12 Module</a></li><li><i></i><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a></li><li>
+<li><i></i><a href="/anypoint-b2b/">Anypoint B2B Overview</a></li><li><i></i><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a></li><li><i></i><a href="/anypoint-b2b/x12-module">X12 Module</a></li><li><i></i><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a></li><li>
 <i></i>
 <a href="/anypoint-b2b/anypoint-partner-manager">Anypoint Partner Manager</a><ul>
-<li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
+<li><i></i><a href="/anypoint-b2b/anypoint-partner-manager-users-guide">Anypoint Partner Manager User’s Guide</a></li><li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
 <li><i></i><a href="/anypoint-b2b/as2-connector">AS2 Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector-2.0.0-rc">AS2 Connector 2.0.0 RC</a></li><li><i></i><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a></li><li><i></i><a href="/anypoint-b2b/edi-x12-order-processing-example">EDI X12 Order Processing Example</a></li><li><i></i><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></li></ul></li>
 <li>
 <i></i>
@@ -885,7 +885,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This tutorial assumes that you have&nbsp;<a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">downloaded and installed Anypoint Studio</a>.&nbsp;If you do not have any previous experience with Eclipse or an Eclipse-based IDE, please review the brief introduction to the&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>&nbsp;and the document describing <a href="/mule-fundamentals/v/3.7/global-elements">Global Elements in Mule</a>. Further, consider following the <a href="/mule-fundamentals/v/3.7/basic-studio-tutorial">Basic</a> and <a href="/mule-fundamentals/v/3.7/content-based-routing-tutorial">Content-Based Routing</a> tutorials.</p> 
@@ -919,7 +919,7 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>If you don’t already have one, create a <a href="http://twitter.com/signup">regular Twitter account</a>. You may wish to create an account specifically for testing as you will be posting things to Twitter in this exercise.&nbsp;</p> </li> 
+    <li> <p>If you don’t already have one, create a <a href="http://twitter.com/signup">regular Twitter account</a>. You may wish to create an account specifically for testing for posting things to Twitter in this exercise.&nbsp;</p> </li> 
     <li> <p>Visit the <a href="https://dev.twitter.com/">Twitter Developers page</a> and sign in using your Twitter account credentials. This activity creates a separate developer account for you, with an association to your regular Twitter account.<br></p> </li> 
     <li> <p>To create a new&nbsp;<strong>Twitter Application</strong>, navigate to&nbsp;https://dev.twitter.com/apps/new</p> </li> 
     <li> <p>Complete the <strong>Application Details</strong> form according to the table and image below.</p> 
@@ -943,7 +943,7 @@
        </tr> 
        <tr> 
         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Website</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">An entry is required here, however, because this Twitter application will not be public, this field is not meaningful; enter a simple placeholder value.</p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">An entry is required here, however, because this Twitter application is not public, this field is not meaningful; enter a simple placeholder value.</p></td> 
        </tr> 
        <tr> 
         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Callback URL</strong></p></td> 
@@ -1048,7 +1048,7 @@
    <p>Once you configure the individual elements within it, which is in the&nbsp;next section, this flow accomplishes the goals that you set out to achieve with this application. Each building block that you select and place on the canvas performs part of the functionality of your application, as shown in the image below.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/flow+globitos.png" alt="flow+globitos"></span></p> 
+   <p><span class="image"><img src="./_images/flow-globitos.png" alt="flow-globitos"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -1064,7 +1064,7 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>Via the building block&nbsp;<strong>Properties</strong>&nbsp;<strong>Editor</strong> in the console of Studio’s visual editor</p> </li> 
-    <li> <p>Via XML code in Studio’s&nbsp;<strong>XML</strong>&nbsp;editor, or in any other XML editing environment<br></p> </li> 
+    <li> <p>Via XML code in Studio’s&nbsp;<strong>XML</strong>&nbsp;editor, or in any other XML editing environment</p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
@@ -1072,72 +1072,84 @@
   </div> 
   <div class="sect2"> 
    <h3 id="http-connector"><a class="anchor" href="#http-connector"></a>HTTP Connector</h3> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Click the HTTP building block in your flow to open its <a href="/mule-fundamentals/v/3.7/the-properties-editor">Properties Editor</a>.&nbsp; For this element to work, you must reference an abstract element called a <strong>Connector Configuration</strong>, which contains several of the high level necessary configuration properties. One single Connector Configuration element can be referenced by as many HTTP connectors as you like. Create a new Connector Configuration element by clicking the green plus sign next to the Connector Configuration field.</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/http+long.png" alt="http+long"></span></p> 
-      </div> </li> 
-     <li> <p>A new window opens up. Fill in the two required fields: <strong>Host</strong> and <strong>Port</strong>. Set&nbsp;<code>localhost</code> as the host and leave the default value <code>8081</code> as the port.</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/global+element.png" alt="global+element"></span></p> 
+   <div class="panel panel-default no-padding"> 
+    <div class="panel-heading no-padding"> 
+     <!-- Nav tabs --> 
+     <ul class="nav nav-tabs" role="tablist"> 
+      <li class="active"><a href="#studio-visual-editor-b3d09" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-or-standalone-23ea2" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     </ul> 
+    </div> 
+    <div class="panel-body tab-content no-padding"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b3d09"> 
+      <div class="olist arabic"> 
+       <ol class="arabic"> 
+        <li> <p>Click the HTTP building block in your flow to open its <a href="/mule-fundamentals/v/3.7/the-properties-editor">Properties Editor</a>.&nbsp; For this element to work, you must reference an abstract element called a <strong>Connector Configuration</strong>, which contains several of the high level necessary configuration properties. One single Connector Configuration element can be referenced by as many HTTP connectors as you like. Create a new Connector Configuration element by clicking the green plus sign next to the Connector Configuration field.</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/http-long.png" alt="http-long"></span></p> 
+         </div> </li> 
+        <li> <p>A new window opens. Fill in the two required fields: <strong>Host</strong> and <strong>Port</strong>. Set&nbsp;<code>localhost</code> as the host and leave the default value <code>8081</code> as the port.</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/global-element.png" alt="global-element"></span></p> 
+         </div> 
+         <table class="tableblock frame-all grid-all spread"> 
+          <colgroup> 
+           <col style="width: %;"> 
+           <col style="width: %;"> 
+          </colgroup> 
+          <thead> 
+           <tr> 
+            <th class="tableblock halign-left valign-top">Field</th> 
+            <th class="tableblock halign-left valign-top">Value</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><code>HTTP_Listener_Configuration</code></p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Host</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><code>localhost</code></p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><code>8081</code></p></td> 
+           </tr> 
+          </tbody> 
+         </table> </li> 
+        <li> <p>Click <strong>Ok</strong> to close this dialogue. Notice how the Connector Configuration field now contains a reference to the element you just created. You can edit it further by clicking the&nbsp;<code>edit</code> icon.</p> </li> 
+        <li> <p>Now provide a value for the required field <strong>Path</strong>: <code>gettweets</code>.</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/http.png" alt="http"></span></p> 
+         </div> 
+         <table class="tableblock frame-all grid-all spread"> 
+          <colgroup> 
+           <col style="width: %;"> 
+           <col style="width: %;"> 
+          </colgroup> 
+          <thead> 
+           <tr> 
+            <th class="tableblock halign-left valign-top">Field</th> 
+            <th class="tableblock halign-left valign-top">Value</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Path</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gettweets</code></p></td> 
+           </tr> 
+          </tbody> 
+         </table> </li> 
+       </ol> 
       </div> 
-      <div class="literalblock"> 
-       <div class="content"> 
-        <pre>&nbsp;</pre> 
-       </div> 
-      </div> 
-      <table class="tableblock frame-all grid-all spread"> 
-       <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-       </colgroup> 
-       <thead> 
-        <tr> 
-         <th class="tableblock halign-left valign-top">Field</th> 
-         <th class="tableblock halign-left valign-top">Value</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>HTTP_Listener_Configuration</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Host</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>localhost</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>8081</code></p></td> 
-        </tr> 
-       </tbody> 
-      </table> </li> 
-     <li> <p>Click <strong>Ok</strong> to close this dialogue. Notice how the Connector Configuration field now contains a reference to the element you just created. You can edit it further by clicking the&nbsp;<code>edit</code> icon.</p> </li> 
-     <li> <p>Now provide a value for the required field <strong>Path</strong>: <code>gettweets</code>.</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/http.png" alt="http"></span></p> 
-      </div> 
-      <table class="tableblock frame-all grid-all spread"> 
-       <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-       </colgroup> 
-       <thead> 
-        <tr> 
-         <th class="tableblock halign-left valign-top">Field</th> 
-         <th class="tableblock halign-left valign-top">Value</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Path</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gettweets</code></p></td> 
-        </tr> 
-       </tbody> 
-      </table> 
+     </div> 
+     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-23ea2"> 
       <div class="paragraph"> 
        <p>Configure the HTTP connector as follows:</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>+</p> 
       </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
@@ -1169,167 +1181,369 @@
          <td class="tableblock halign-left valign-top"><p class="tableblock"><code>gettweets</code></p></td> 
         </tr> 
        </tbody> 
-      </table> </li> 
-    </ol> 
+      </table> 
+      <div class="paragraph"> 
+       <p>For this element to work, you must reference an abstract element called a <strong>Connector Configuration</strong>, which contains several of the high level necessary configuration properties. One single Connector Configuration element can be referenced by as many HTTP connectors as you like. The attribute in the connector <strong>config-ref</strong> references this connector configuration element. You must now create an element outside the flow that matches the referenced name.</p> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+    
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 50%;"> 
+        <col style="width: 50%;"> 
+       </colgroup> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><code>HTTP_Listener_Configuration</code></p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>host</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>localhost</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>port</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>8081</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><code>HTTP_Listener_Configuration</code></p> 
+           </div> 
+          </div></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+    </div> 
    </div> 
-   <div class="paragraph"> 
-    <p>For this element to work, you must reference an abstract element called a <strong>Connector Configuration</strong>, which contains several of the high level necessary configuration properties. One single Connector Configuration element can be referenced by as many HTTP connectors as you like. The attribute in the connector <strong>config-ref</strong> references this connector configuration element. You must now create an element outside the flow that matches the referenced name.</p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 50%;"> 
-     <col style="width: 50%;"> 
-    </colgroup> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><code>HTTP_Listener_Configuration</code></p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>host</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>localhost</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>port</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>8081</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p><code>HTTP_Listener_Configuration</code></p> 
-        </div> 
-       </div></td> 
-     </tr> 
-    </tbody> 
-   </table> 
   </div> 
   <div class="sect2"> 
    <h3 id="twitter-connector"><a class="anchor" href="#twitter-connector"></a>Twitter Connector</h3> 
-   <div class="paragraph"> 
-    <p>Click the&nbsp;<strong>Twitter connector</strong>&nbsp;to open its Properties Editor, then enter values for the fields according to the table below.</p> 
+   <div class="panel panel-default no-padding"> 
+    <div class="panel-heading no-padding"> 
+     <!-- Nav tabs --> 
+     <ul class="nav nav-tabs" role="tablist"> 
+      <li class="active"><a href="#studio-visual-editor-edd49" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-or-standalone-17462" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     </ul> 
+    </div> 
+    <div class="panel-body tab-content no-padding"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-edd49"> 
+      <div class="paragraph"> 
+       <p>Click the&nbsp;<strong>Twitter connector</strong>&nbsp;to open its Properties Editor, then enter values for the fields according to the table below.</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/cttwitter.png" alt="cttwitter"></span></p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Field</th> 
+         <th class="tableblock halign-left valign-top">Value</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Twitter</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">The name Studio displays for the element in the flow.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Get user timeline by screen name</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the operation to perform on Twitter; this value returns a tweet stream from the twitter user you specify.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Screen Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[message.inboundProperties.'http.query.params'.sname]</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the twitter user; set to an expression that extracts a parameter from the HTTP request.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Page</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the page of results to retrieve. 1 is the default value.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Count</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>20</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the number of tweets the query returns. 20 is the default value.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Since Id</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Returns results with an id greater than the one specified here. -1 is the default value.</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-17462"> 
+      <div class="paragraph"> 
+       <p>Configure the Twitter connector as follows (note that one attribute is excluded on purpose; add the attribute in the next step):</p> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+    
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>twitter:get-user-timeline-by-screen-name doc:name="Twitter" screenName="#[message.inboundProperties.'http.query.params'.sname]"/<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Element</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>twitter:get-user-timeline-by-screen-name</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the operation to perform on Twitter; this value returns a tweet stream from the twitter user you specify.</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Attribute</th> 
+         <th class="tableblock halign-left valign-top">Value</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Twitter</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">The name Studio displays for the element in the flow.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>screenName</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[message.inboundProperties.'http.query.params'.sname]</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the twitter user; set to an expression that extracts a parameter from the HTTP request.</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+    </div> 
    </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/cttwitter.png" alt="cttwitter"></span></p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Field</th> 
-      <th class="tableblock halign-left valign-top">Value</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Twitter</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name Studio displays for the element in the flow.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Get user timeline by screen name</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the operation to perform on Twitter; this value returns a tweet stream from the twitter user you specify.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Screen Name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[message.inboundProperties.'http.query.params'.sname]</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the twitter user; set to an expression that extracts a parameter from the HTTP request.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Page</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the page of results to retrieve. 1 is the default value.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Count</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>20</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the number of tweets the query returns. 20 is the default value.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Since Id</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Returns results with an id greater than the one specified here. -1 is the default value.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <div class="paragraph"> 
-    <p>Configure the Twitter connector as follows (note that one attribute is excluded on purpose; you will add the attribute in the next step):</p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Element</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>twitter:get-user-timeline-by-screen-name</code></strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the operation to perform on Twitter; this value returns a tweet stream from the twitter user you specify.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Attribute</th> 
-      <th class="tableblock halign-left valign-top">Value</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Twitter</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The name Studio displays for the element in the flow.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>screenName</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[message.inboundProperties.'http.query.params'.sname]</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the twitter user; set to an expression that extracts a parameter from the HTTP request.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
    <div class="paragraph"> 
     <p>You may notice that the Studio visual editor displays a red <strong>x</strong> and a note that the config-ref attribute is required. Studio is alerting you that this connector requires a global connector configuration, which you define as a <strong>global element</strong>.&nbsp;A global element allows you to enter configuration information once, then reference the credentials from multiple elements in a flow or in multiple flows. In this case, you use the Twitter global element to configure all your connection details and API access credentials which the Twitter connector in your flow uses when it queries Twitter.</p> 
    </div> 
    <div class="paragraph"> 
     <p>Read more about <a href="/mule-fundamentals/v/3.7/global-elements">Global Elements in Mule</a>.</p> 
    </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Click the plus sign next to the <strong>Connector Configuration</strong> field.</p> 
+   <div class="panel panel-default no-padding"> 
+    <div class="panel-heading no-padding"> 
+     <!-- Nav tabs --> 
+     <ul class="nav nav-tabs" role="tablist"> 
+      <li class="active"><a href="#studio-visual-editor-d1130" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-or-standalone-98661" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     </ul> 
+    </div> 
+    <div class="panel-body tab-content no-padding"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d1130"> 
+      <div class="olist arabic"> 
+       <ol class="arabic"> 
+        <li> <p>Click the plus sign next to the <strong>Connector Configuration</strong> field.</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/cttwitterplus.png" alt="cttwitterplus"></span><br></p> 
+         </div> </li> 
+        <li> <p>Enter values for the fields according to the table below.<br></p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/twt4.png" alt="twt4"></span><br></p> 
+         </div> 
+         <table class="tableblock frame-all grid-all spread"> 
+          <colgroup> 
+           <col style="width: %;"> 
+           <col style="width: %;"> 
+          </colgroup> 
+          <thead> 
+           <tr> 
+            <th class="tableblock halign-left valign-top">Field</th> 
+            <th class="tableblock halign-left valign-top">Value</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Twitter1</code></p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Access Key</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Access Token value as obtained from Twitter</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Access Secret</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Access Token Secret value as obtained from Twitter</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Consumer Key</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Consumer Key value as obtained from Twitter</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Consumer Secret</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Consumer Secret value as obtained from Twitter</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use SSL</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code> (checked)</p></td> 
+           </tr> 
+          </tbody> 
+         </table> </li> 
+        <li> <p>Click <strong>OK</strong> to save the configurations. The <strong>Connector Configuration</strong> field should now be populated with the name of the global element you just created, <code>Twitter1</code>.</p> </li> 
+       </ol> 
+      </div> 
+     </div> 
+     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-98661"> 
+      <div class="olist arabic"> 
+       <ol class="arabic"> 
+        <li> <p>Above all flows in your application, configure the global element as follows:</p> 
+         <div class="listingblock"> 
+          <div class="content"> 
+           <pre class="CodeRay highlight"><code data-lang="xml">
+       
+                
+             <table class="CodeRay"> 
+              <tbody> 
+               <tr> 
+                <td class="line-numbers"><pre>1
+</pre></td> 
+                <td class="code"><pre><span class="entity">&amp;lt;</span>twitter:config name="Twitter1" accessKey="" accessSecret="" consumerKey="" consumerSecret="" doc:name="Twitter1"<span class="entity">&amp;gt;</span></pre></td> 
+               </tr> 
+              </tbody> 
+             </table></code></pre> 
+          </div> 
+         </div> 
+         <table class="tableblock frame-all grid-all spread"> 
+          <colgroup> 
+           <col style="width: %;"> 
+           <col style="width: %;"> 
+          </colgroup> 
+          <thead> 
+           <tr> 
+            <th class="tableblock halign-left valign-top">Attribute</th> 
+            <th class="tableblock halign-left valign-top">Value</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Twitter1</code></p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accessKey</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Access Token value as obtained from Twitter</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accessSecret</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Access Token Secret value as obtained from Twitter</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>consumerKey</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Consumer Key value as obtained from Twitter</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>consumerSecret</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Consumer Secret value as obtained from Twitter</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Twitter1</p></td> 
+           </tr> 
+          </tbody> 
+         </table> </li> 
+        <li> <p>Revisit the configuration of the Twitter connector in your flow. Add the <code>config-ref</code> attribute as follows:</p> </li> 
+       </ol> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+    
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+</pre></td> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>twitter:get-user-timeline-by-screen-name config-ref="Twitter1"      doc:name="Twitter" screenName="#[message.inboundProperties.'http.query.params'.sname]"/<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="foreach-scope"><a class="anchor" href="#foreach-scope"></a>Foreach Scope</h3> 
+   <div class="paragraph"> 
+    <p>When Twitter returns a response to the query, the payload is an array of objects, each of which describes a tweet and its attending metadata. The only field this application needs to access is <code>text</code>, as it contains the actual tweet content. You can access the text of the latest tweet via the expression <code>#[message.payload[0].text]</code>, but this application uses a Foreach scope to access the text of every tweet in the array.</p> 
+   </div> 
+   <div class="panel panel-default no-padding"> 
+    <div class="panel-heading no-padding"> 
+     <!-- Nav tabs --> 
+     <ul class="nav nav-tabs" role="tablist"> 
+      <li class="active"><a href="#studio-visual-editor-56d8f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-or-standalone-c78e7" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     </ul> 
+    </div> 
+    <div class="panel-body tab-content no-padding"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-56d8f"> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/cttwitterplus.png" alt="cttwitterplus"></span><br></p> 
-      </div> </li> 
-     <li> <p>Enter values for the fields according to the table below.<br></p> 
+       <p>Click the&nbsp;<strong>Foreach</strong> to open its Properties Editor. Keep the default values, as shown below.</p> 
+      </div> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/twt4.png" alt="twt4"></span><br></p> 
+       <p><span class="image"><img src="./_images/ForEachunconfig.png" alt="ForEachunconfig"></span></p> 
       </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
@@ -1344,38 +1558,28 @@
        </thead> 
        <tbody> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Twitter1</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>For Each</code></p></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Access Key</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Access Token value as obtained from Twitter</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Counter Variable Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>counter</code></p></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Access Secret</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Access Token Secret value as obtained from Twitter</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Batch Size</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Consumer Key</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Consumer Key value as obtained from Twitter</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Consumer Secret</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Consumer Secret value as obtained from Twitter</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use SSL</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code> (checked)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Root Message Variable Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rootMessage</code></p></td> 
         </tr> 
        </tbody> 
       </table> 
-      <div class="literalblock"> 
-       <div class="content"> 
-        <pre>&nbsp; &nbsp;</pre> 
-       </div> 
-      </div> </li> 
-     <li> <p>Click <strong>OK</strong> to save the configurations. The <strong>Connector Configuration</strong> field should now be populated with the name of the global element you just created, <code>Twitter1</code>.</p> </li> 
-     <li> <p>Above all flows in your application, configure the global element as follows:<br> &nbsp;</p> 
+     </div> 
+     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-c78e7"> 
+      <div class="paragraph"> 
+       <p>Add a <strong>Foreach</strong> scope as follows:</p> 
+      </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
         <col style="width: %;"> 
@@ -1389,161 +1593,93 @@
        </thead> 
        <tbody> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Twitter1</code></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accessKey</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Access Token value as obtained from Twitter</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>accessSecret</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Access Token Secret value as obtained from Twitter</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>consumerKey</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Consumer Key value as obtained from Twitter</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>consumerSecret</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Your unique Consumer Secret value as obtained from Twitter</p></td> 
-        </tr> 
-        <tr> 
          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Twitter1</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>For Each</code></p></td> 
         </tr> 
        </tbody> 
-      </table> </li> 
-     <li> <p>Revisit the configuration of the Twitter connector in your flow. Add the <strong><code>config-ref</code></strong> attribute as follows:</p> </li> 
-    </ol> 
+      </table> 
+     </div> 
+    </div> 
    </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="foreach-scope"><a class="anchor" href="#foreach-scope"></a>Foreach Scope</h3> 
-   <div class="paragraph"> 
-    <p>When Twitter returns a response to the query, the payload is an array of objects, each of which describes a tweet and its attending metadata. The only field this application needs to access is <strong><code>text</code></strong>, as it contains the actual tweet content. You can access the text of the latest tweet via the expression <code>#[message.payload[0].text]</code>, but this application uses a Foreach scope to access the text of every tweet in the array.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Click the&nbsp;<strong>Foreach</strong> to open its Properties Editor. Keep the default values, as shown below.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/ForEachunconfig.png" alt="ForEachunconfig"></span></p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Field</th> 
-      <th class="tableblock halign-left valign-top">Value</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>For Each</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Counter Variable Name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>counter</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Batch Size</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Root Message Variable Name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rootMessage</code></p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <div class="paragraph"> 
-    <p>Add a <strong>Foreach</strong> scope as follows:</p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Attribute</th> 
-      <th class="tableblock halign-left valign-top">Value</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>For Each</code></p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
   </div> 
   <div class="sect2"> 
    <h3 id="logger"><a class="anchor" href="#logger"></a>Logger</h3> 
-   <div class="paragraph"> 
-    <p>Click the&nbsp; <strong>Logger</strong> to open its Properties Editor, then enter values for the fields according to the table below.</p> 
+   <div class="panel panel-default no-padding"> 
+    <div class="panel-heading no-padding"> 
+     <!-- Nav tabs --> 
+     <ul class="nav nav-tabs" role="tablist"> 
+      <li class="active"><a href="#studio-visual-editor-d378b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-or-standalone-6575a" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     </ul> 
+    </div> 
+    <div class="panel-body tab-content no-padding"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d378b"> 
+      <div class="paragraph"> 
+       <p>Click the&nbsp; <strong>Logger</strong> to open its Properties Editor, then enter values for the fields according to the table below.</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/actlog.png" alt="actlog"></span></p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Field</th> 
+         <th class="tableblock halign-left valign-top">Value</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Logger</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Message</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.text]</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Level</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">`INFO `</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-6575a"> 
+      <div class="paragraph"> 
+       <p>Configure the <strong>Logger</strong>, <em>inside the Foreach scope</em>, as follows:</p> 
+      </div> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Attribute</th> 
+         <th class="tableblock halign-left valign-top">Value</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Logger</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>message</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.text]</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>level</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">`INFO `</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+    </div> 
    </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/actlog.png" alt="actlog"></span></p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Field</th> 
-      <th class="tableblock halign-left valign-top">Value</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Logger</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Message</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.text]</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Level</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`INFO `</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <div class="paragraph"> 
-    <p>Configure the <strong>Logger</strong>, <em>inside the Foreach scope</em>, as follows:</p> 
-   </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Attribute</th> 
-      <th class="tableblock halign-left valign-top">Value</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:Name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Logger</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>message</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.text]</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>level</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`INFO `</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
    <div class="paragraph"> 
     <p>Your complete application XML, once configured, should look like the code below.</p> 
    </div> 
@@ -1554,7 +1690,7 @@
        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
        <td class="content"> 
         <div class="paragraph"> 
-         <p>Keep in mind that for this example to work, you must manually configure the following values of the <strong>Twitter global element</strong> (<strong><code>twitter:config</code></strong> element):</p> 
+         <p>Keep in mind that for this example to work, you must manually configure the following values of the <strong>Twitter global element</strong> (<code>twitter:config</code> element):</p> 
         </div> 
         <div class="ulist"> 
          <ul> 
@@ -1595,7 +1731,7 @@
 18
 </pre></td> 
           <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:twitter</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/twitter</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
-    <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.6.0</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.7.0</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
 <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
@@ -1629,11 +1765,11 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>In the&nbsp; <strong>Package Explorer</strong>, right-click project name, then select&nbsp; <strong>Run As</strong> &nbsp;&gt;&nbsp; <strong>Mule Application</strong> . (If you have not already saved, Mule prompts you to save now.)</p> </li> 
-    <li> <p>Mule immediately kicks into gear, starting your application and letting it run. When the startup process is complete, Studio displays a message in the console that reads,&nbsp; <code>Started app 'connector_tutorial'</code> .<br></p> </li> 
+    <li> <p>Mule immediately kicks into gear, starting your application and letting it run. When the startup process is complete, Studio displays a message in the console that reads,&nbsp; <code>Started app 'connector_tutorial'</code>.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/started_connector_app.png" alt="started_connector_app"></span></p> 
+     </div> </li> 
    </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/started_connector_app.png" alt="started_connector_app"></span><br></p> 
   </div> 
  </div> 
 </div> 
@@ -1667,7 +1803,7 @@
  <h2 id="extra-credit"><a class="anchor" href="#extra-credit"></a>Extra Credit</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Now that you’re familiar with connectors, try applying your knowledge to an extra task.&nbsp;Revise your application so that, after retrieving tweets from a user, it posts the last of these to your own demo twitter account.b</p> 
+   <p>Now that you’re familiar with connectors, try applying your knowledge to an extra task.&nbsp;Revise your application so that, after retrieving tweets from a user, it posts the last of these to your own demo twitter account.</p> 
   </div> 
   <div class="paragraph"> 
    <p>As it’s kind of impolite to copy someone’s tweet without acknowledging its origin, keep in mind that your retweet should follow this structure <strong>RT @screenname : tweet text</strong></p> 
@@ -1720,7 +1856,7 @@
     </ol> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/flow+extra+credit.png" alt="flow+extra+credit"></span></p> 
+    <p><span class="image"><img src="./_images/flow-extra-credit.png" alt="flow-extra-credit"></span></p> 
    </div> 
    <div class="admonitionblock note"> 
     <table> 
@@ -1729,7 +1865,7 @@
        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
        <td class="content"> 
         <div class="paragraph"> 
-         <p>Keep in mind that for this example to work, you must manually configure the following values of the global Twitter connector (`twitter:config `element):</p> 
+         <p>Keep in mind that for this example to work, you must manually configure the following values of the global Twitter connector (<code>twitter:config</code> element):</p> 
         </div> 
         <div class="ulist"> 
          <ul> 
@@ -1763,7 +1899,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#goals">Goals</a></li><li><a class="scroll-menu-link" href="#obtaining-access-to-the-twitter-api">Obtaining Access to the Twitter API</a></li><li><a class="scroll-menu-link" href="#modeling-a-flow-with-a-connector">Modeling a Flow with a Connector</a></li><li><a class="scroll-menu-link" href="#configuring-the-flow-elements">Configuring the Flow Elements</a></li><li><a class="scroll-menu-link" href="#running-the-application">Running the Application</a></li><li><a class="scroll-menu-link" href="#using-the-application">Using the Application</a></li><li><a class="scroll-menu-link" href="#stopping-the-application">Stopping the Application</a></li><li><a class="scroll-menu-link" href="#extra-credit">Extra Credit</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#goals">Goals</a></li><li><a class="scroll-menu-link" href="#obtaining-access-to-the-twitter-api">Obtaining Access to the Twitter API</a></li><li><a class="scroll-menu-link" href="#modeling-a-flow-with-a-connector">Modeling a Flow with a Connector</a></li><li><a class="scroll-menu-link" href="#configuring-the-flow-elements">Configuring the Flow Elements</a></li><li><a class="scroll-menu-link" href="#running-the-application">Running the Application</a></li><li><a class="scroll-menu-link" href="#using-the-application">Using the Application</a></li><li><a class="scroll-menu-link" href="#stopping-the-application">Stopping the Application</a></li><li><a class="scroll-menu-link" href="#extra-credit">Extra Credit</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

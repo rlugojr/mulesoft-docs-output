@@ -719,10 +719,10 @@
 <li>
 <i></i>
 <a href="/anypoint-b2b/">Anypoint B2B</a><ul>
-<li><i></i><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a></li><li><i></i><a href="/anypoint-b2b/x12-module">X12 Module</a></li><li><i></i><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a></li><li>
+<li><i></i><a href="/anypoint-b2b/">Anypoint B2B Overview</a></li><li><i></i><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a></li><li><i></i><a href="/anypoint-b2b/x12-module">X12 Module</a></li><li><i></i><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a></li><li>
 <i></i>
 <a href="/anypoint-b2b/anypoint-partner-manager">Anypoint Partner Manager</a><ul>
-<li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
+<li><i></i><a href="/anypoint-b2b/anypoint-partner-manager-users-guide">Anypoint Partner Manager User’s Guide</a></li><li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
 <li><i></i><a href="/anypoint-b2b/as2-connector">AS2 Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector-2.0.0-rc">AS2 Connector 2.0.0 RC</a></li><li><i></i><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a></li><li><i></i><a href="/anypoint-b2b/edi-x12-order-processing-example">EDI X12 Order Processing Example</a></li><li><i></i><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></li></ul></li>
 <li>
 <i></i>
@@ -870,65 +870,21 @@
         <div class="article-content col-md-7">
           <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">CloudHub</a>/<a href="maintenance-and-upgrade-policy" class="breadcrumb-active-link">Maintenance and Upgrade Policy</a></div>
           <h1>Maintenance and Upgrade Policy</h1>
-          <div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>All maintenance to the CloudHub console, platform services, and worker cloud (see <a href="/cloudhub/cloudhub-architecture">CloudHub Architecture</a>) is performed during the maintenance windows specified in the <a href="http://www.mulesoft.com/terms/msa/current">subscription agreement</a>, except for critical security issues which are fixed immediately.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>MuleSoft’s policy is to perform all maintenance transparently and without any downtime to your integration(s) running in the worker cloud wherever possible. In cases where downtime for the console, platform services, or workers is unavoidable, MuleSoft communicates these maintenance windows at least 8 hours in advance and typically 7 days in advance, with the exception of critical security patches which may be fixed immediately.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>View the live status and detailed service history for the CloudHub console, CloudHub platform services, and the CloudHub worker cloud on <a href="http://status.mulesoft.com/">status.mulesoft.com</a>.</p> 
-  </div> 
- </div> 
+          <div class="paragraph"> 
+ <p>All maintenance to the CloudHub console, platform services, and worker cloud (see <a href="/cloudhub/cloudhub-architecture">CloudHub Architecture</a>) is performed during the maintenance windows specified in the <a href="http://www.mulesoft.com/terms/msa/current">subscription agreement</a>, except for critical security issues which are fixed immediately.</p> 
 </div> 
-<div class="sect1"> 
- <h2 id="mule-version-upgrades"><a class="anchor" href="#mule-version-upgrades"></a>Mule Version Upgrades</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>For the worker cloud, there are additional policies that apply to Mule version upgrades.&nbsp;For each release type, there is a minimum deprecation period which starts after a new version is released. This is how long the previous version is supported. For example, now that 3.7 has released, support is provided for the previous minor version, 3.6, for at least 12 months after the release of 3.7.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Customers receive notices prompting them to upgrade their applications during this deprecation period. If after the specified time an application is not upgraded, the application is restarted using CloudHub Zero Downtime on the new Mule version.</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: %;"> 
-    <col style="width: %;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Release Type</th> 
-     <th class="tableblock halign-left valign-top">Minimum Deprecation Period</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mule bug fix release (such as 3.6.2)</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">90 days</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mule minor version (such as 3.7.x)</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">12 months</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mule major version (such as Mule 3.x.y)</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">18 months</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CloudHub Runtime Release (such as Jan 2015)</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">4 months</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
+<div class="paragraph"> 
+ <p>MuleSoft’s policy is to perform all maintenance transparently and without any downtime to your integration(s) running in the worker cloud wherever possible. In cases where downtime for the console, platform services, or workers is unavoidable, MuleSoft communicates these maintenance windows at least 8 hours in advance and typically 7 days in advance, with the exception of critical security patches which may be fixed immediately.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>View the live status and detailed service history for the CloudHub console, CloudHub platform services, and the CloudHub worker cloud on <a href="http://status.mulesoft.com/">status.mulesoft.com</a>.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>For our versioning and back support policy, please see <a href="https://www.mulesoft.com/legal/versioning-back-support-policy">here</a>.</p> 
 </div>
         </div>
         <!-- END article-content -->
-        <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
-                <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#mule-version-upgrades">Mule Version Upgrades</a></li></ul></div></div><!-- /scroll-menu -->
+        
       </div>
     </div>
     <!-- START footer -->

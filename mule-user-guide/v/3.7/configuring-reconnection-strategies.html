@@ -720,10 +720,10 @@
 <li>
 <i></i>
 <a href="/anypoint-b2b/">Anypoint B2B</a><ul>
-<li><i></i><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a></li><li><i></i><a href="/anypoint-b2b/x12-module">X12 Module</a></li><li><i></i><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a></li><li>
+<li><i></i><a href="/anypoint-b2b/">Anypoint B2B Overview</a></li><li><i></i><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a></li><li><i></i><a href="/anypoint-b2b/x12-module">X12 Module</a></li><li><i></i><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a></li><li>
 <i></i>
 <a href="/anypoint-b2b/anypoint-partner-manager">Anypoint Partner Manager</a><ul>
-<li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
+<li><i></i><a href="/anypoint-b2b/anypoint-partner-manager-users-guide">Anypoint Partner Manager User’s Guide</a></li><li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
 <li><i></i><a href="/anypoint-b2b/as2-connector">AS2 Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector-2.0.0-rc">AS2 Connector 2.0.0 RC</a></li><li><i></i><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a></li><li><i></i><a href="/anypoint-b2b/edi-x12-order-processing-example">EDI X12 Order Processing Example</a></li><li><i></i><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></li></ul></li>
 <li>
 <i></i>
@@ -883,7 +883,7 @@
         <p>In Mule 2.x, <strong>Reconnection Strategies</strong> were referred to as "Retry Policies," because the underlying classes provided a generic framework for retrying the same operation over and over again. However, this terminology generated significant confusion among users who expected messages to get re-delivered and message exchanges to be re-executed.</p> 
        </div> 
        <div class="paragraph"> 
-        <p>To thwart further misunderstanding, we have, as of Mule 3.x, resumed use of the term "Reconnection Strategies."</p> 
+        <p>To thwart further misunderstanding, we have, as of Mule 3.x and newer, resumed use of the term "Reconnection Strategies."</p> 
        </div> </td> 
      </tr> 
     </tbody> 
@@ -894,9 +894,9 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>the type of exception</p> </li> 
-    <li> <p>number and frequency of reconnection attempts</p> </li> 
-    <li> <p>the notifications generated, and more</p> </li> 
+    <li> <p>The type of exception</p> </li> 
+    <li> <p>Number and frequency of reconnection attempts</p> </li> 
+    <li> <p>The notifications generated, and more</p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
@@ -913,21 +913,22 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p><strong>For both Mule ESB Enterprise and Community <em>later than Mule 3.2</em>, you don’t need to specify the <code>mule-ee.xsd</code> schema, since reconnection strategies are now built in to the core schema.</strong></p> 
-       </div> 
-       <div class="paragraph"> 
-        <p>Mule ESB Enterprise <em>prior to version 3.2</em> provides standard reconnection strategies that you can configure using the mule-ee.xsd schema:</p> 
-       </div> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="xml">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
+      <td class="content"> For both Mule ESB Enterprise and Community <em>newer than Mule 3.2</em>, you don’t need to specify the <code>mule-ee.xsd</code> schema, since reconnection strategies are now built in to the core schema. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Mule ESB Enterprise <em>prior to version 3.2</em> provides standard reconnection strategies that you can configure using the mule-ee.xsd schema:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
 2
 3
 4
@@ -935,24 +936,20 @@
 6
 7
 </pre></td> 
-              <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;</span>
+         <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;</span>
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
       <span class="attribute-name">xmlns:ee</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/core</span><span class="delimiter">"</span></span>
       <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
       <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
-        <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd</span>
-        <span class="content">http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/3.1/mule-ee.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> 
-       <div class="paragraph"> 
-        <p>For Mule ESB Community <em>prior to Mule 3.2</em>, you must create your own strategies and configure them using standard Spring syntax rather than the mule-ee.xsd schema.</p> 
-       </div> </td> 
-     </tr> 
-    </tbody> 
-   </table> 
+        <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+        <span class="content">http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For Mule ESB Community <em>prior to Mule 3.2</em>, you must create your own strategies and configure them using standard Spring syntax rather than the mule-ee.xsd schema.</p> 
   </div> 
  </div> 
 </div> 
@@ -962,91 +959,294 @@
   <div class="paragraph"> 
    <p>This section describes the reconnection strategies you can configure by editing your Mule application’s XML configuration file.</p> 
   </div> 
-  <div class="paragraph"> 
-   <p>xslt: Read link:http://www.mulesoft.org/xslt/mule/schemadoc/3.0/single-element-wiki.xsl error because of: java.io.IOException: Server returned HTTP response code: 401 for URL: <a href="http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl" class="bare">http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>For example:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+  <div class="sect2"> 
+   <h3 id="reconnect"><a class="anchor" href="#reconnect"></a>Reconnect</h3> 
+   <div class="paragraph"> 
+    <p>A reconnection strategy that allows the user to configure how many times a reconnection should be attempted and how long to wait between attempts.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-reconnect"><a class="anchor" href="#attributes-of-reconnect"></a>Attributes of reconnect</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Type</th> 
+       <th class="tableblock halign-left valign-top">Required</th> 
+       <th class="tableblock halign-left valign-top">Default</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>blocking</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">If false, the reconnection strategy runs in a separate, non-blocking thread</p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>frequency</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">2000</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">How often (in ms) to reconnect</p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>count</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">How many reconnection attempts to make</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-reconnect"><a class="anchor" href="#child-elements-of-reconnect"></a>Child Elements of reconnect</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-reconnect-notifier</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for a reconnection notifier element. The RetryNotifier interface is a callback that allows actions to be performed after each reconnection attempt, for example, firing server notification events on success or failure.</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p>For example:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AMQConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+           <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AMQConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;reconnect</span> <span class="attribute-name">count</span>=<span class="string"><span class="delimiter">"</span><span class="content">5</span><span class="delimiter">"</span></span> <span class="attribute-name">frequency</span>=<span class="string"><span class="delimiter">"</span><span class="content">1000</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/jms:activemq-connector&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
    </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>xslt: Read <a href="http://www.mulesoft.org/xslt/mule/schemadoc/3.0/single-element-wiki.xsl" class="bare">http://www.mulesoft.org/xslt/mule/schemadoc/3.0/single-element-wiki.xsl</a> error because of: java.io.IOException: Server returned HTTP response code: 401 for URL: <a href="http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl" class="bare">http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>For example:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+  <div class="sect2"> 
+   <h3 id="reconnect-forever"><a class="anchor" href="#reconnect-forever"></a>Reconnect Forever</h3> 
+   <div class="paragraph"> 
+    <p>A reconnection strategy that retries an infinite number of times at the specified frequency.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-reconnect-forever"><a class="anchor" href="#attributes-of-reconnect-forever"></a>Attributes of reconnect-forever</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Type</th> 
+       <th class="tableblock halign-left valign-top">Required</th> 
+       <th class="tableblock halign-left valign-top">Default</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>blocking</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">If false, the reconnection strategy runs in a separate, non-blocking thread.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>frequency</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">2000</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">How often (in ms) to reconnect.</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-reconnect-forever"><a class="anchor" href="#child-elements-of-reconnect-forever"></a>Child Elements of reconnect-forever</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-reconnect-notifier</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for a reconnection notifier element. The RetryNotifier interface is a callback that allows actions to be performed after each reconnection attempt, for example, firing server notification events on success or failure.</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p>For example:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AMQConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+           <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AMQConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;reconnect-forever</span> <span class="attribute-name">frequency</span>=<span class="string"><span class="delimiter">"</span><span class="content">5000</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/jms:activemq-connector&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
    </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>xslt: Read <a href="http://www.mulesoft.org/xslt/mule/schemadoc/3.0/single-element-wiki.xsl" class="bare">http://www.mulesoft.org/xslt/mule/schemadoc/3.0/single-element-wiki.xsl</a> error because of: java.io.IOException: Server returned HTTP response code: 401 for URL: <a href="http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl" class="bare">http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>For example:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+  <div class="sect2"> 
+   <h3 id="reconnect-custom-strategy"><a class="anchor" href="#reconnect-custom-strategy"></a>Reconnect Custom Strategy</h3> 
+   <div class="paragraph"> 
+    <p>A user-defined reconnection strategy.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-reconnect-custom-strategy"><a class="anchor" href="#attributes-of-reconnect-custom-strategy"></a>Attributes of &lt;reconnect-custom-strategy…​&gt;</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Type</th> 
+       <th class="tableblock halign-left valign-top">Required</th> 
+       <th class="tableblock halign-left valign-top">Default</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+       <th class="tableblock halign-left valign-top"></th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>blocking</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">If false, the reconnection strategy runs in a separate, non-blocking thread.</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p>A class that implements the <code>RetryPolicyTemplate</code> interface.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-reconnect-custom-strategy"><a class="anchor" href="#child-elements-of-reconnect-custom-strategy"></a>Child Elements of reconnect-custom-strategy</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-reconnect-notifier</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">A placeholder for a reconnection notifier element. The RetryNotifier interface is a callback that allows actions to be performed after each reconnection attempt, for example, firing server notification events on success or failure.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>spring:property</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
+       <td class="tableblock halign-left valign-top"></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p>For example:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 4
 5
 6
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AMQConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+           <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AMQConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;reconnect-custom-strategy</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.retry.test.TestRetryPolicyTemplate</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">fooBar</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">revolutions</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">500</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/reconnect-custom-strategy&gt;</span>
 <span class="tag">&lt;/jms:activemq-connector&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="non-blocking-reconnection"><a class="anchor" href="#non-blocking-reconnection"></a>Non-Blocking Reconnection</h3> 
    <div class="paragraph"> 
-    <p>By default, a reconnection strategy will block Mule application message processing until it is able to connect/reconnect. When you enable <strong>non-blocking</strong> reconnection, the application does not need to wait for all endpoints to re-connect before it restarts. Furthermore, if a connection is lost, the reconnection takes place on a thread separate from the application thread. Note that such behavior may or may not be desirable, depending on your application needs.</p> 
+    <p>By default, a reconnection strategy blocks Mule application message processing until it is able to connect/reconnect. When you enable <strong>non-blocking</strong> reconnection, the application does not need to wait for all endpoints to re-connect before it restarts. Furthermore, if a connection is lost, the reconnection takes place on a thread separate from the application thread. Note that such behavior may or may not be desirable, depending on your application needs.</p> 
    </div> 
    <div class="paragraph"> 
     <p>Any reconnection strategy can be made non-blocking simply by setting the attribute <code>blocking="false"</code>. For example:</p> 
@@ -1090,16 +1290,16 @@
   <div class="sect2"> 
    <h3 id="transactions"><a class="anchor" href="#transactions"></a>Transactions</h3> 
    <div class="paragraph"> 
-    <p>When <a href="/mule-user-guide/v/3.7/transaction-management">transactions</a> are properly configured, any message being routed by Mule at the moment a reconnection strategy goes into effect will not be dropped. Instead, the transaction is rolled back and only committed once the transport successfully reconnects via the reconnection strategy.</p> 
+    <p>When <a href="/mule-user-guide/v/3.7/transaction-management">transactions</a> are properly configured, any message being routed by Mule at the moment a reconnection strategy goes into effect is not dropped. Instead, the transaction is rolled back and only committed once the transport successfully reconnects via the reconnection strategy.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="reconnect-notifiers"><a class="anchor" href="#reconnect-notifiers"></a>Reconnect Notifiers</h3> 
    <div class="paragraph"> 
-    <p>A reconnect notifier is called for each reconnection attempt and is also configurable. You can create a custom reconnect notifier that implements the &nbsp;org.mule.api.retry.RetryNotifier interface.</p> 
+    <p>A reconnect notifier is called for each reconnection attempt and is also configurable. You can create a custom reconnect notifier that implements the <code>org.mule.api.retry.RetryNotifier</code> interface.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>xslt: Read <a href="http://www.mulesoft.org/xslt/mule/schemadoc/3.0/single-element-wiki.xsl" class="bare">http://www.mulesoft.org/xslt/mule/schemadoc/3.0/single-element-wiki.xsl</a> error because of: java.io.IOException: Server returned HTTP response code: 401 for URL: <a href="http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl" class="bare">http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl</a></p> 
+    <p>The Reconnector notifier element fires a <code>ConnectionNotification</code> upon each reconnection attempt. There are no attributes or child elements for the notifier element.</p> 
    </div> 
    <div class="paragraph"> 
     <p>For example:</p> 
@@ -1127,20 +1327,70 @@
        </table></code></pre> 
     </div> 
    </div> 
-   <div class="paragraph"> 
-    <p>xslt: Read <a href="http://www.mulesoft.org/xslt/mule/schemadoc/3.0/single-element-wiki.xsl" class="bare">http://www.mulesoft.org/xslt/mule/schemadoc/3.0/single-element-wiki.xsl</a> error because of: java.io.IOException: Server returned HTTP response code: 401 for URL: <a href="http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl" class="bare">http://svn.codehaus.org/mule/branches/mule-3.1.x/tools/schemadocs/src/main/resources/xslt//single-element-wiki.xsl</a></p> 
+   <div class="sect3"> 
+    <h4 id="reconnect-custom-notifier"><a class="anchor" href="#reconnect-custom-notifier"></a>Reconnect Custom Notifier</h4> 
+    <div class="paragraph"> 
+     <p>A user-defined reconnection notifier.</p> 
+    </div> 
    </div> 
-   <div class="paragraph"> 
-    <p>For example:</p> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-reconnect-custom-notifier"><a class="anchor" href="#attributes-of-reconnect-custom-notifier"></a>Attributes of reconnect-custom-notifier</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Type</th> 
+       <th class="tableblock halign-left valign-top">Required</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>class</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">class name</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">A class that implements the RetryNotifier interface. There’s no default value.</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+   <div class="sect3"> 
+    <h4 id="child-elements-of-reconnect-custom-notifier"><a class="anchor" href="#child-elements-of-reconnect-custom-notifier"></a>Child Elements of reconnect-custom-notifier</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>spring:property</code></p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p>For example:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1148,16 +1398,17 @@
 6
 7
 </pre></td> 
-          <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AMQConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+           <td class="code"><pre><span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">AMQConnector</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
     <span class="tag">&lt;reconnect&gt;</span>
         <span class="tag">&lt;reconnect-custom-notifier</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.mule.retry.test.TestRetryNotifier</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
             <span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">color</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">red</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;/reconnect-custom-notifier&gt;</span>
     <span class="tag">&lt;/reconnect&gt;</span>
 <span class="tag">&lt;/jms:activemq-connector&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
     </div> 
    </div> 
   </div> 
@@ -1195,7 +1446,10 @@
   <div class="sect2"> 
    <h3 id="creating-a-custom-reconnection-strategy"><a class="anchor" href="#creating-a-custom-reconnection-strategy"></a>Creating a Custom Reconnection Strategy</h3> 
    <div class="paragraph"> 
-    <p>To create a custom reconnection strategy, implement the interface&nbsp;RetryPolicy, where the method <code>PolicyStatus applyPolicy(Throwable cause)`takes some action based on the type of exception, then returns&nbsp;Policy Status to indicate whether the policy has been exhausted or should continue to retry. You also create a&nbsp;RetryPolicyTemplate, which is what you actually configure on the connector. Typically, the template inherits from AbstractPolicyTemplate, and the method `RetryPolicy createRetryInstance()</code> returns an instance of your custom <code>RetryPolicy</code>. At runtime, a new instance of the <code>RetryPolicy</code> is created each time the policy goes into effect, thereby resetting any state information it may contain, such as counters. For example:</p> 
+    <p>To create a custom reconnection strategy, implement the interface&nbsp;RetryPolicy, where the method <code>PolicyStatus applyPolicy(Throwable cause)</code> takes some action based on the type of exception, then returns&nbsp;Policy Status to indicate whether the policy has been exhausted or should continue to retry. You also create a&nbsp;<code>RetryPolicyTemplate</code>, which is what you actually configure on the connector. Typically, the template inherits from AbstractPolicyTemplate, and the method <code>RetryPolicy createRetryInstance()</code> returns an instance of your custom <code>RetryPolicy</code>. At runtime, a new instance of the <code>RetryPolicy</code> is created each time the policy goes into effect, thereby resetting any state information it may contain, such as counters.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>For example:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1285,7 +1539,7 @@ public class AstronomicalRetryPolicyTemplate extends AbstractPolicyTemplate
  <h2 id="configuring-reconnection-strategies-using-studio"><a class="anchor" href="#configuring-reconnection-strategies-using-studio"></a>Configuring Reconnection Strategies Using Studio</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Within the Studio environment, you typically set reconnection strategies for your application through global connectors. In rare cases where you want to set <em>different</em> reconnection strategies for the inbound and outbound endpoints in your flow, MuleSoft recommends that you configure two separate global connectors, then associate one with the inbound endpoint and the other with the outbound endpoint.</p> 
+   <p>Within the Anypoint Studio environment, you typically set reconnection strategies for your application through global connectors. In rare cases where you want to set <em>different</em> reconnection strategies for the inbound and outbound endpoints in your flow, MuleSoft recommends that you configure two separate global connectors, then associate one with the inbound endpoint and the other with the outbound endpoint.</p> 
   </div> 
   <div class="admonitionblock tip"> 
    <table> 
@@ -1312,28 +1566,28 @@ public class AstronomicalRetryPolicyTemplate extends AbstractPolicyTemplate
     <p>The <strong>Properties</strong> pane for almost every global endpoint and global connector that appears in the Studio interface features a <strong>Reconnection</strong> tab, as pictured below:</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="/docs/download/attachments/122752140/ReconnectionTab.png?version=1&amp;modificationDate=1332187830098" alt="image"></span></p> 
+    <p><span class="image"><img src="./_images/ReconnectionTab.png" alt="ReconnectionTab"></span></p> 
    </div> 
    <div class="paragraph"> 
     <p>To display the Reconnection tab associated with the specific global connector or global endpoint you want to configure, complete the following steps:</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>launch the Studio interface</p> </li> 
-     <li> <p>open the project for which you wish to set a reconnection strategy</p> </li> 
-     <li> <p>click the <strong>Global Elements</strong> tab beneath the <strong>Message Flow</strong> canvas</p> </li> 
-     <li> <p>select the global connector or global endpoint on which you wish to set the reconnection strategy, then double-click on it to open its <strong>Properties</strong> pane <strong>or . . .</strong> if the global connector or global endpoint does not exist, click <strong>Create</strong> on the right side on the <strong>Global Mule Configuration Elements</strong> pane, then navigate through the <strong>Choose Global Type</strong> pop up, select the global element you want to create, then click <strong>OK</strong> to open its <strong>Properties</strong> pane.</p> </li> 
+     <li> <p>Launch the Studio interface</p> </li> 
+     <li> <p>Open the project for which you wish to set a reconnection strategy</p> </li> 
+     <li> <p>Click the <strong>Global Elements</strong> tab beneath the <strong>Message Flow</strong> canvas</p> </li> 
+     <li> <p>Select the global connector or global endpoint on which you wish to set the reconnection strategy, then double-click to open its <strong>Properties</strong> pane. Or:<br> If the global connector or global endpoint does not exist, click <strong>Create</strong> on the right side on the <strong>Global Mule Configuration Elements</strong> pane, then navigate through the <strong>Choose Global Type</strong> pop up, select the global element you want to create, then click <strong>OK</strong> to open its <strong>Properties</strong> pane.</p> </li> 
      <li> <p>Click the <strong>Reconnection</strong> tab to display it.</p> </li> 
     </ol> 
    </div> 
    <div class="paragraph"> 
-    <p>By default, the "Do not use reconnection strategy" button is selected; in other words, the connector will not attempt to reconnect unless you tell it to. If you select one of the other radio buttons, then decide you don’t want a reconnection strategy after all, reset to the default simply by clicking "Do not use reconnection strategy."</p> 
+    <p>By default, the <strong>Do not use reconnection strategy</strong> button is selected; in other words, the connector does not attempt to reconnect unless you tell it to. If you select one of the other radio buttons, then decide you don’t want a reconnection strategy after all, reset to the default simply by clicking "Do not use reconnection strategy."</p> 
    </div> 
    <div class="paragraph"> 
     <p>For convenience you can select the <strong>Standard Reconnection</strong> radio button, which attempts to reconnect every 2000 ms, until a total of two reconnection attempts have been attempted.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>Once you have selected <strong>Standard Reconnection</strong>, you can change the defaults for <strong>Frequency</strong> and <strong>Reconnection Attempts</strong>, and you can check the <strong>Reconnect Forever</strong> option so that the connector or endpoint will keep trying to connect until it succeeds. Be warned, however, that <em>large (or infinite) numbers of closely spaced reconnection attempts can consume significant resources and generate extremely long log files</em>.</p> 
+    <p>Once you have selected <strong>Standard Reconnection</strong>, you can change the defaults for <strong>Frequency</strong> and <strong>Reconnection Attempts</strong>, and you can check the <strong>Reconnect Forever</strong> option so that the connector or endpoint keeps trying to connect until it succeeds. Be warned, however, that <em>large (or infinite) numbers of closely spaced reconnection attempts can consume significant resources and generate extremely long log files</em>.</p> 
    </div> 
    <div class="paragraph"> 
     <p>You can prevent the reconnection attempts from completely blocking the main application flow thread by checking the option near the bottom of the <strong>Reconnection</strong> tab labeled <strong>Run the reconnection as a separate thread</strong>.</p> 

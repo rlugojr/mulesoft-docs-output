@@ -719,10 +719,10 @@
 <li class="expanded">
 <i></i>
 <a href="/anypoint-b2b/">Anypoint B2B</a><ul style="display: block;">
-<li class="active"><i></i><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a></li><li><i></i><a href="/anypoint-b2b/x12-module">X12 Module</a></li><li><i></i><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a></li><li>
+<li><i></i><a href="/anypoint-b2b/">Anypoint B2B Overview</a></li><li class="active"><i></i><a href="/anypoint-b2b/edifact-module">EDIFACT Module</a></li><li><i></i><a href="/anypoint-b2b/x12-module">X12 Module</a></li><li><i></i><a href="/anypoint-b2b/edi-schema-language-reference">EDI Schema Language Reference</a></li><li>
 <i></i>
 <a href="/anypoint-b2b/anypoint-partner-manager">Anypoint Partner Manager</a><ul>
-<li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
+<li><i></i><a href="/anypoint-b2b/anypoint-partner-manager-users-guide">Anypoint Partner Manager User’s Guide</a></li><li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
 <li><i></i><a href="/anypoint-b2b/as2-connector">AS2 Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector-2.0.0-rc">AS2 Connector 2.0.0 RC</a></li><li><i></i><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a></li><li><i></i><a href="/anypoint-b2b/edi-x12-order-processing-example">EDI X12 Order Processing Example</a></li><li><i></i><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></li></ul></li>
 <li>
 <i></i>
@@ -1272,12 +1272,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-79f9a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-or-standalone-55fb6" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-70cba" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-or-standalone-7842b" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-79f9a"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-70cba"> 
      <div class="paragraph"> 
       <p>Follow these steps to create a global EDI module configuration in a Mule application:</p> 
      </div> 
@@ -1294,7 +1294,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-55fb6"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-7842b"> 
      <div class="paragraph"> 
       <p>First, ensure that you have included the appropriate EDI namespace in your configuration file. For EDIFACT, the namespace and schema location are:</p> 
      </div> 
@@ -1609,9 +1609,35 @@
 3
 4
 5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
 </pre></td> 
          <td class="code"><pre><span class="tag">&lt;edifact-edi:read</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Walmart</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Read EDI Doc</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 ...
+<span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform Message</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="tag">&lt;dw:input-payload</span> <span class="attribute-name">doc:sample</span>=<span class="string"><span class="delimiter">"</span><span class="content">InMessage.dwl</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
+%output application/java
+---
+{
+    Messages: {
+        D96A: {
+            CONTRL: payload.FunctionalAcksGenerated
+        }
+    }
+}<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
+ <span class="tag">&lt;/dw:transform-message&gt;</span>
 <span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[ ['Transactions' : ['CONTRL' : payload.FunctionalAcksGenerated] ] ]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Create outgoing message</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;edifact-edi:write</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">MyTradingPartner</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Send CONTRL Ack</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">output</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">ack.edi</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
