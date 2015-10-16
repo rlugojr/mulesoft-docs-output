@@ -854,7 +854,7 @@
  <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document presents two usage examples of the database connector. This document assumes you are familiar with the&nbsp;<a href="/mule-user-guide/v/3.6/database-connector">database connector</a>&nbsp;as well as with&nbsp;<a href="/mule-user-guide/v/3.6/datasense">DataSense</a>; to understand the second example, the reader should also be familiar with the&nbsp;<a href="/mule-user-guide/v/3.3/datamapper-transformer-reference">DataMapper transformer</a>&nbsp;and Mule&nbsp;<a href="/mule-user-guide/v/3.6/batch-processing">batch processing</a>.</p> 
+   <p>This document presents two usage examples of the database connector. This document assumes you are familiar with the&nbsp;<a href="/mule-user-guide/v/3.6/database-connector">database connector</a>&nbsp;as well as with&nbsp;<a href="/mule-user-guide/v/3.6/datasense">DataSense</a>; to understand the second example, the reader should also be familiar with the&nbsp;<a href="/mule-user-guide/v/3.6/datamapper-transformer-reference">DataMapper transformer</a>&nbsp;and Mule&nbsp;<a href="/mule-user-guide/v/3.6/batch-processing">batch processing</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1611,12 +1611,12 @@ show tables;</pre></td>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-4c31b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#standalone-xml-59ed6" role="tab" data-toggle="tab">Standalone XML</a></li> 
+      <li class="active"><a href="#studio-visual-editor-6a88a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#standalone-xml-742c1" role="tab" data-toggle="tab">Standalone XML</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4c31b"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6a88a"> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
         <col style="width: %;"> 
@@ -1655,7 +1655,7 @@ show tables;</pre></td>
        </tbody> 
       </table> 
      </div> 
-     <div class="tab-pane fade no-padding" id="standalone-xml-59ed6"> 
+     <div class="tab-pane fade no-padding" id="standalone-xml-742c1"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1686,12 +1686,12 @@ show tables;</pre></td>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-c8889" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#standalone-xml-a67bc" role="tab" data-toggle="tab">Standalone XML</a></li> 
+      <li class="active"><a href="#studio-visual-editor-06ad4" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#standalone-xml-3b6be" role="tab" data-toggle="tab">Standalone XML</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-c8889"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-06ad4"> 
       <div class="paragraph"> 
        <p><strong>General Tab</strong></p> 
       </div> 
@@ -1828,7 +1828,7 @@ generatedata</pre></td>
        </tbody> 
       </table> 
      </div> 
-     <div class="tab-pane fade no-padding" id="standalone-xml-a67bc"> 
+     <div class="tab-pane fade no-padding" id="standalone-xml-3b6be"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -1953,7 +1953,7 @@ generatedata</pre></td>
  <h2 id="example-2"><a class="anchor" href="#example-2"></a>Example 2</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In this example, a database connector retrieves data from two tables. A&nbsp;<a href="/mule-user-guide/v/3.3/datamapper-transformer-reference">DataMapper transformer</a>&nbsp;maps this data to the CSV format. A&nbsp;<a href="/mule-user-guide/v/3.6/file-connector">file connector</a>&nbsp;writes the resulting CSV file to disk, and a&nbsp;<a href="/mule-user-guide/v/3.3/logger-component-reference">logger component</a>&nbsp;logs processing details to the console.</p> 
+   <p>In this example, a database connector retrieves data from two tables. A&nbsp;<a href="/mule-user-guide/v/3.6/datamapper-transformer-reference">DataMapper transformer</a>&nbsp;maps this data to the CSV format. A&nbsp;<a href="/mule-user-guide/v/3.6/file-connector">file connector</a>&nbsp;writes the resulting CSV file to disk, and a&nbsp;<a href="/mule-user-guide/v/3.6/logger-component-reference">logger component</a>&nbsp;logs processing details to the console.</p> 
   </div> 
   <div class="paragraph"> 
    <p>This example uses&nbsp;<a href="/mule-user-guide/v/3.6/batch-processing">batch processing</a>, which means that within this Mule app, messages are divided into records and processed asynchronously. Batch processing, in conjunction with&nbsp;<strong>streaming</strong>&nbsp;enabled on the database connector, can be useful to avoid system overload when dealing with large volumes of data.</p> 
@@ -1962,7 +1962,7 @@ generatedata</pre></td>
    <p><span class="image"><img src="./_images/ex.2-batchjob.flow.png" alt="ex.2-batchjob.flow"></span></p> 
   </div> 
   <div class="paragraph"> 
-   <p>The database connector is inside a&nbsp;<a href="/mule-user-guide/v/3.6/poll-reference">poll scope</a>&nbsp;which, every ten minutes, requests the database connector to perform its configured operation on the database. The database connector performs a database query which returns 100 rows. Mule feeds this data into the DataMapper transformer inside the&nbsp;<code>Batch Commit</code>&nbsp;batch scope. DataMapper transforms the input into a CSV file; then, a&nbsp;<a href="/mule-user-guide/v/3.6/file-connector">file connector</a>&nbsp;writes the resulting CSV file to disk. A&nbsp;<a href="/mule-user-guide/v/3.3/logger-component-reference">logger component</a>&nbsp;logs processed records to the console.</p> 
+   <p>The database connector is inside a&nbsp;<a href="/mule-user-guide/v/3.6/poll-reference">poll scope</a>&nbsp;which, every ten minutes, requests the database connector to perform its configured operation on the database. The database connector performs a database query which returns 100 rows. Mule feeds this data into the DataMapper transformer inside the&nbsp;<code>Batch Commit</code>&nbsp;batch scope. DataMapper transforms the input into a CSV file; then, a&nbsp;<a href="/mule-user-guide/v/3.6/file-connector">file connector</a>&nbsp;writes the resulting CSV file to disk. A&nbsp;<a href="/mule-user-guide/v/3.6/logger-component-reference">logger component</a>&nbsp;logs processed records to the console.</p> 
   </div> 
   <div class="admonitionblock tip"> 
    <table> 
@@ -1986,12 +1986,12 @@ generatedata</pre></td>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-81db4" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#standalone-xml-49157" role="tab" data-toggle="tab">Standalone XML</a></li> 
+      <li class="active"><a href="#studio-visual-editor-51bbd" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#standalone-xml-f7804" role="tab" data-toggle="tab">Standalone XML</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-81db4"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-51bbd"> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
         <col style="width: %;"> 
@@ -2030,7 +2030,7 @@ generatedata</pre></td>
        </tbody> 
       </table> 
      </div> 
-     <div class="tab-pane fade no-padding" id="standalone-xml-49157"> 
+     <div class="tab-pane fade no-padding" id="standalone-xml-f7804"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
@@ -2057,12 +2057,12 @@ generatedata</pre></td>
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-f29aa" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#standalone-xml-d2dac" role="tab" data-toggle="tab">Standalone XML</a></li> 
+      <li class="active"><a href="#studio-visual-editor-f3878" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#standalone-xml-bebca" role="tab" data-toggle="tab">Standalone XML</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f29aa"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f3878"> 
       <div class="paragraph"> 
        <p><strong>General Tab</strong></p> 
       </div> 
@@ -2197,7 +2197,7 @@ generatedata</pre></td>
        </tbody> 
       </table> 
      </div> 
-     <div class="tab-pane fade no-padding" id="standalone-xml-d2dac"> 
+     <div class="tab-pane fade no-padding" id="standalone-xml-bebca"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">

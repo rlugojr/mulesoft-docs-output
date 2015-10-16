@@ -295,14 +295,10 @@
 <a href="/mule-user-guide/v/3.7/creating-custom-transformers">Creating Custom Transformers</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/creating-flow-objects-and-transformers-using-annotations">Creating Flow Objects and Transformers Using Annotations</a></li><li><i></i><a href="/mule-user-guide/v/3.7/function-annotation">Function Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/groovy-annotation">Groovy Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/inboundattachments-annotation">InboundAttachments Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/inboundheaders-annotation">InboundHeaders Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/lookup-annotation">Lookup Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/mule-annotation">Mule Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/outboundattachments-annotation">OutboundAttachments Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/outboundheaders-annotation">OutboundHeaders Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/payload-annotation">Payload Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/schedule-annotation">Schedule Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/transformer-annotation">Transformer Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/xpath-annotation">XPath Annotation</a></li><li><i></i><a href="/mule-user-guide/v/3.7/creating-custom-transformer-classes">Creating Custom Transformer Classes</a></li></ul></li>
 </ul></li>
-<li>
-<i></i>
-<a href="/mule-user-guide/v/3.7/improving-performance-with-the-kryo-serializer">Improving Performance with the Kryo Serializer</a><ul>
-<li>
+<li><i></i><a href="/mule-user-guide/v/3.7/improving-performance-with-the-kryo-serializer">Improving Performance with the Kryo Serializer</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/datamapper-user-guide-and-reference">Datamapper User Guide and Reference</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/datamapper-concepts">DataMapper Concepts</a></li><li><i></i><a href="/mule-user-guide/v/3.7/datamapper-visual-reference">DataMapper Visual Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/defining-datamapper-input-and-output-metadata">Defining DataMapper Input and Output Metadata</a></li><li><i></i><a href="/mule-user-guide/v/3.7/defining-metadata-using-edit-fields">Defining Metadata Using Edit Fields</a></li><li><i></i><a href="/mule-user-guide/v/3.7/pojo-class-bindings-and-factory-classes">POJO Class Bindings and Factory Classes</a></li><li><i></i><a href="/mule-user-guide/v/3.7/building-a-mapping-flow-in-the-graphical-mapping-editor">Building a Mapping Flow in the Graphical Mapping Editor</a></li><li><i></i><a href="/mule-user-guide/v/3.7/mapping-flow-input-and-output-properties">Mapping Flow Input and Output Properties</a></li><li><i></i><a href="/mule-user-guide/v/3.7/datamapper-input-error-policy-for-bad-input-data">DataMapper Input Error Policy for Bad Input Data</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-datamapper-lookup-tables">Using DataMapper Lookup Tables</a></li><li><i></i><a href="/mule-user-guide/v/3.7/streaming-data-processing-with-datamapper">Streaming Data Processing with DataMapper</a></li><li><i></i><a href="/mule-user-guide/v/3.7/updating-metadata-in-an-existing-mapping">Updating Metadata in an Existing Mapping</a></li><li><i></i><a href="/mule-user-guide/v/3.7/mapping-elements-inside-lists">Mapping Elements Inside Lists</a></li><li><i></i><a href="/mule-user-guide/v/3.7/previewing-datamapper-results-on-sample-data">Previewing DataMapper Results on Sample Data</a></li><li><i></i><a href="/mule-user-guide/v/3.7/datamapper-examples">DataMapper Examples</a></li><li><i></i><a href="/mule-user-guide/v/3.7/datamapper-supplemental-topics">DataMapper Supplemental Topics</a></li><li><i></i><a href="/mule-user-guide/v/3.7/choosing-mel-or-ctl2-as-scripting-engine">Choosing MEL or CTL2 as Scripting Engine</a></li><li><i></i><a href="/mule-user-guide/v/3.7/datamapper-fixed-width-input-format">DataMapper Fixed Width Input Format</a></li><li><i></i><a href="/mule-user-guide/v/3.7/datamapper-flat-to-structured-and-structured-to-flat-mapping">DataMapper Flat-to-Structured and Structured-to-Flat Mapping</a></li><li><i></i><a href="/mule-user-guide/v/3.7/including-the-datamapper-plugin">Including the DataMapper Plugin</a></li></ul></li>
-</ul></li>
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/error-handling">Error Handling</a><ul>
@@ -3828,69 +3824,67 @@ users: payload.users.name[?($ == "Mariano")]</pre></td>
     <p>The example above selects key value pairs with value "Mariano" ⇒ {name: Mariano, name: Mariano}</p> 
    </div> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="assert-present"><a class="anchor" href="#assert-present"></a>Assert Present</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Returns an exception if any of the specified keys is not found.</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-     Input: 
+  <div class="sect2"> 
+   <h3 id="assert-present"><a class="anchor" href="#assert-present"></a>Assert Present</h3> 
+   <div class="paragraph"> 
+    <p>Returns an exception if any of the specified keys is not found.</p> 
    </div> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="json">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+   <div class="listingblock"> 
+    <div class="title">
+      Input: 
+    </div> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="json">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-         <td class="code"><pre>{
+          <td class="code"><pre>{
   <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Annie</span><span class="delimiter">"</span></span>
 }</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="title">
-     Transform: 
-   </div> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="DataWeave">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+   <div class="listingblock"> 
+    <div class="title">
+      Transform: 
+    </div> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="DataWeave">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
 2
 3
 4
 </pre></td> 
-         <td class="code"><pre>%dw 1.0
+          <td class="code"><pre>%dw 1.0
 %output application/xml
 ---
 present: payload.lastName! <i class="conum" data-value="1"></i><b>(1)</b></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
-  </div> 
-  <div class="colist arabic"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td><i class="conum" data-value="1"></i><b>1</b></td> 
-      <td>Throws an exception saying "There is no key named 'lastName'"</td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <div class="colist arabic"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td><i class="conum" data-value="1"></i><b>1</b></td> 
+       <td>Throws an exception saying "There is no key named 'lastName'"</td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="reference-elements-from-an-incoming-mule-message"><a class="anchor" href="#reference-elements-from-an-incoming-mule-message"></a>Reference Elements From an Incoming Mule Message</h3> 
@@ -4203,6 +4197,43 @@ present: payload.lastName! <i class="conum" data-value="1"></i><b>(1)</b></pre><
          </tbody> 
         </table></code></pre> 
      </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="reference-mule-properties"><a class="anchor" href="#reference-mule-properties"></a>Reference Mule Properties</h3> 
+   <div class="paragraph"> 
+    <p>In Mule, you can define properties at a project level, these are then assigned when deploying. The recomended way to do this is using a properties file <code>mule-app.properties</code> in the 'src/main/app' folder, for more details and other ways to assign these, see <a href="/mule-user-guide/v/3.7/configuring-properties">Configuring Properties</a>. These properties can then be referenced by your DataWeave code.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To create a placeholder for one of these properties in your DataWeave code, simply write p('propertyName'). In the example below, keep in mind that a property named 'language' must first be defined.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+      Transform 
+    </div> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="DataWeave">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+          <td class="code"><pre>%dw 1.0
+%output application/xml
+---
+{
+   language: p(‘language')
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -9435,7 +9466,7 @@ users: ["jhon", "petter", "mat"] map  upper $</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#getting-started">Getting started:</a></li><li><a class="scroll-menu-link" href="#document-structure">Document Structure</a></li><li><a class="scroll-menu-link" href="#example-transformation">Example Transformation</a></li><li><a class="scroll-menu-link" href="#dataweave-canonical-model">DataWeave Canonical Model</a></li><li><a class="scroll-menu-link" href="#literal-expressions">Literal Expressions</a></li><li><a class="scroll-menu-link" href="#variables">Variables</a></li><li><a class="scroll-menu-link" href="#selectors">Selectors</a></li><li><a class="scroll-menu-link" href="#assert-present">Assert Present</a></li><li><a class="scroll-menu-link" href="#operators">Operators</a></li><li><a class="scroll-menu-link" href="#object">Object</a></li><li><a class="scroll-menu-link" href="#string">String</a></li><li><a class="scroll-menu-link" href="#number">Number</a></li><li><a class="scroll-menu-link" href="#boolean">Boolean</a></li><li><a class="scroll-menu-link" href="#dates">Dates</a></li><li><a class="scroll-menu-link" href="#regular-expressions">Regular Expressions</a></li><li><a class="scroll-menu-link" href="#custom-types">Custom Types</a></li><li><a class="scroll-menu-link" href="#functions-and-lambdas">Functions and Lambdas</a></li><li><a class="scroll-menu-link" href="#go-further">Go Further</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#getting-started">Getting started:</a></li><li><a class="scroll-menu-link" href="#document-structure">Document Structure</a></li><li><a class="scroll-menu-link" href="#example-transformation">Example Transformation</a></li><li><a class="scroll-menu-link" href="#dataweave-canonical-model">DataWeave Canonical Model</a></li><li><a class="scroll-menu-link" href="#literal-expressions">Literal Expressions</a></li><li><a class="scroll-menu-link" href="#variables">Variables</a></li><li><a class="scroll-menu-link" href="#selectors">Selectors</a></li><li><a class="scroll-menu-link" href="#operators">Operators</a></li><li><a class="scroll-menu-link" href="#object">Object</a></li><li><a class="scroll-menu-link" href="#string">String</a></li><li><a class="scroll-menu-link" href="#number">Number</a></li><li><a class="scroll-menu-link" href="#boolean">Boolean</a></li><li><a class="scroll-menu-link" href="#dates">Dates</a></li><li><a class="scroll-menu-link" href="#regular-expressions">Regular Expressions</a></li><li><a class="scroll-menu-link" href="#custom-types">Custom Types</a></li><li><a class="scroll-menu-link" href="#functions-and-lambdas">Functions and Lambdas</a></li><li><a class="scroll-menu-link" href="#go-further">Go Further</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
