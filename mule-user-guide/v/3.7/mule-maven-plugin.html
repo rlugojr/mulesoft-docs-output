@@ -230,7 +230,11 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/salesforce-connector">Salesforce Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/salesforce-connector-authentication">Salesforce Connector Authentication</a></li><li><i></i><a href="/mule-user-guide/v/3.7/salesforce-connector-reference">Salesforce Connector Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/salesforce-contact-aggregation-example">Salesforce Contact Aggregation Example</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/sap-connector">SAP Connector</a></li><li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/3.7/sap-connector">SAP Connector</a><ul>
+<li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-advanced-features">SAP Connector Advanced Features</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-troubleshooting">SAP Connector Troubleshooting</a></li></ul></li>
+<li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/servicenow-connector-5.0">ServiceNow Connector 5.0</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector-5.0-migration-guide">ServiceNow Connector 5.0 Migration Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector">ServiceNow Connector</a></li></ul></li>
@@ -494,11 +498,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connecting-using-transports">Connecting Using Transports</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/configuring-a-transport">Configuring a Transport</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.7/mulesoft-enterprise-java-connector-for-sap-reference">MuleSoft Enterprise Java Connector for SAP Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/sap-jco-extended-properties">SAP JCo Extended Properties</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sap-jco-server-services-configuration">SAP JCo Server Services Configuration</a></li><li><i></i><a href="/mule-user-guide/v/3.7/outbound-endpoint-transactions">Outbound Endpoint Transactions</a></li><li><i></i><a href="/mule-user-guide/v/3.7/troubleshooting-sap-connector">Troubleshooting SAP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/xml-definitions">XML Definitions</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/jetty-transport-reference">Jetty Transport Reference</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/jetty-ssl-transport">Jetty SSL Transport</a></li></ul></li>
@@ -1211,6 +1211,41 @@
   </div> 
   <div class="paragraph"> 
    <p>For a list and description of the parameters employed, see <a href="#cloudhub">CloudHub</a>.</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="selecting-your-business-group"><a class="anchor" href="#selecting-your-business-group"></a>Selecting Your Business Group</h3> 
+   <div class="paragraph"> 
+    <p>In CloudHub and Anypoint Runtime Manager deployments, you can select a Business Group other than your root organization. In the example below, the plugin is configured to deploy to the <code>devops</code> business group, which resides under the <code>engineering</code> business group.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Business group names within a hierarchy are separated by a backslash (\). If the name of your business group includes a backslash, escape it with preceding backslash. For example, to select <code>\group2</code> under <code>\group1</code>: <code>\group1\\group2</code>.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;plugin&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.mule.tools.maven<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>mule-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;configuration&gt;</span>
+        <span class="tag">&lt;deploymentType&gt;</span>cloudhub<span class="tag">&lt;/deploymentType&gt;</span>
+        <span class="tag">&lt;muleVersion&gt;</span>${mule.version}<span class="tag">&lt;/muleVersion&gt;</span>
+        <span class="tag">&lt;username&gt;</span>${username}<span class="tag">&lt;/username&gt;</span>
+        <span class="tag">&lt;password&gt;</span>${password}<span class="tag">&lt;/password&gt;</span>
+        <span class="tag">&lt;applicationName&gt;</span>my-application<span class="tag">&lt;/applicationName&gt;</span>
+        <span class="tag">&lt;environment&gt;</span>Production<span class="tag">&lt;/environment&gt;</span>
+        <span class="tag">&lt;businessGroup&gt;</span>engineering\devops<span class="tag">&lt;/businessGroup&gt;</span>
+    <span class="tag">&lt;/configuration&gt;</span>
+    <span class="tag">&lt;executions&gt;</span>
+        <span class="tag">&lt;execution&gt;</span>
+            <span class="tag">&lt;id&gt;</span>deploy<span class="tag">&lt;/id&gt;</span>
+            <span class="tag">&lt;phase&gt;</span>deploy<span class="tag">&lt;/phase&gt;</span>
+            <span class="tag">&lt;goals&gt;</span>
+                <span class="tag">&lt;goal&gt;</span>deploy<span class="tag">&lt;/goal&gt;</span>
+            <span class="tag">&lt;/goals&gt;</span>
+        <span class="tag">&lt;/execution&gt;</span>
+    <span class="tag">&lt;/executions&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></code></pre> 
+    </div> 
+   </div> 
   </div> 
  </div> 
 </div> 

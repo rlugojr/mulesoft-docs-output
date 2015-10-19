@@ -230,7 +230,11 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/salesforce-connector">Salesforce Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/salesforce-connector-authentication">Salesforce Connector Authentication</a></li><li><i></i><a href="/mule-user-guide/v/3.7/salesforce-connector-reference">Salesforce Connector Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/salesforce-contact-aggregation-example">Salesforce Contact Aggregation Example</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/sap-connector">SAP Connector</a></li><li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/3.7/sap-connector">SAP Connector</a><ul>
+<li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-advanced-features">SAP Connector Advanced Features</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-troubleshooting">SAP Connector Troubleshooting</a></li></ul></li>
+<li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/servicenow-connector-5.0">ServiceNow Connector 5.0</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector-5.0-migration-guide">ServiceNow Connector 5.0 Migration Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector">ServiceNow Connector</a></li></ul></li>
@@ -494,11 +498,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connecting-using-transports">Connecting Using Transports</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/configuring-a-transport">Configuring a Transport</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.7/mulesoft-enterprise-java-connector-for-sap-reference">MuleSoft Enterprise Java Connector for SAP Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/sap-jco-extended-properties">SAP JCo Extended Properties</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sap-jco-server-services-configuration">SAP JCo Server Services Configuration</a></li><li><i></i><a href="/mule-user-guide/v/3.7/outbound-endpoint-transactions">Outbound Endpoint Transactions</a></li><li><i></i><a href="/mule-user-guide/v/3.7/troubleshooting-sap-connector">Troubleshooting SAP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/xml-definitions">XML Definitions</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/jetty-transport-reference">Jetty Transport Reference</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/jetty-ssl-transport">Jetty SSL Transport</a></li></ul></li>
@@ -869,6 +869,9 @@
   <div class="paragraph"> 
    <p>At compile time, Anypoint Connector DevKit generates client code for all the operations, and provides most of the functionality for the methods. For well-defined RESTful APIs, this can be a convenient solution for quickly producing a connector.</p> 
   </div> 
+  <div class="paragraph"> 
+   <p>See Also: <a href="/anypoint-connector-devkit/v/3.6/annotation-reference">Annotation Reference</a></p> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -880,7 +883,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="code-restcall-code-based-connector-architecture"><a class="anchor" href="#code-restcall-code-based-connector-architecture"></a><code>@RestCall</code>-Based Connector Architecture</h2> 
+ <h2 id="restcall-based-connector-architecture"><a class="anchor" href="#restcall-based-connector-architecture"></a>@RestCall-Based Connector Architecture</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>The DevKit handles "well-behaved" RESTful Web services, that is, those which require clean URLs, correct HTTP verb usage, etc.</p> 
@@ -913,13 +916,13 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="code-restcall-code-annotations"><a class="anchor" href="#code-restcall-code-annotations"></a><code>@RestCall</code> Annotations</h2> 
+ <h2 id="restcall-annotations"><a class="anchor" href="#restcall-annotations"></a>@RestCall Annotations</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>DevKit provides a set of annotations to simplify working with RESTful APIs. These annotations handle all necessary operations, generating each REST call and incorporating each REST call parameter.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="code-restcall-code"><a class="anchor" href="#code-restcall-code"></a><code>@RestCall</code></h3> 
+   <h3 id="restcall"><a class="anchor" href="#restcall"></a>@RestCall</h3> 
    <div class="paragraph"> 
     <p>Used with the <code>@Processor</code> annotation. Indicates that upon invocation, the processor makes a RESTful request.</p> 
    </div> 
@@ -1002,7 +1005,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="code-resturiparam-code"><a class="anchor" href="#code-resturiparam-code"></a><code>@RestURIParam</code></h3> 
+   <h3 id="resturiparam"><a class="anchor" href="#resturiparam"></a>@RestURIParam</h3> 
    <div class="paragraph"> 
     <p>Allows you to dynamically generate URIs by inserting parameters which are annotated with the <code>@RestUriParam</code> annotation.</p> 
    </div> 
@@ -1067,7 +1070,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="code-restqueryparam-code"><a class="anchor" href="#code-restqueryparam-code"></a><code>@RestQueryParam</code></h3> 
+   <h3 id="restqueryparam"><a class="anchor" href="#restqueryparam"></a>@RestQueryParam</h3> 
    <div class="paragraph"> 
     <p>Specifies URI query parameters, which are appended to the path of the URI after a ? or &amp; symbol. You can apply this annotation to <code>@Processor</code> method arguments or to connector fields marked @Configurable. This enables you to use dynamically-generated arguments as query parameters.</p> 
    </div> 
@@ -1100,7 +1103,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="code-restheaderparam-code"><a class="anchor" href="#code-restheaderparam-code"></a><code>@RestHeaderParam</code></h3> 
+   <h3 id="restheaderparam"><a class="anchor" href="#restheaderparam"></a>@RestHeaderParam</h3> 
    <div class="paragraph"> 
     <p>Allows you to insert custom headers in the HTTP request. When using this annotation, you must specify the name of the header to include in the call. As with the <code>@RestURIParam</code> annotation, you can apply this annotation to <code>@Processor</code> methods arguments or to connector fields marked <code>@Configurable</code>.</p> 
    </div> 
@@ -1152,7 +1155,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="code-restpostparam-code"><a class="anchor" href="#code-restpostparam-code"></a><code>@RestPostParam</code></h3> 
+   <h3 id="restpostparam"><a class="anchor" href="#restpostparam"></a>@RestPostParam</h3> 
    <div class="paragraph"> 
     <p>Allows you to set parameters in the body of POST method calls. Define the POST method with&nbsp;<code>@RestCall</code> and set its parameters with&nbsp;<code>@RestPostParam</code>.</p> 
    </div> 
@@ -1227,7 +1230,7 @@
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>For an example on how to implement a <code>@RestCall</code> connector, see&nbsp;<a href="/documentation/display/current/Creating+a+Connector+for+a+RESTful+API+using+<code>@RestCall</code>+Annotations">Creating a Connector for a RESTful API using @RestCall Annotations</a>.</p> 
+   <p>For an example on how to implement a <code>@RestCall</code> connector, see&nbsp; <a href="/anypoint-connector-devkit/v/3.6/creating-a-connector-for-a-restful-api-using-restcall-annotations">Creating a Connector for a RESTful API using&nbsp;@RESTCall Annotations</a></p> 
   </div> 
  </div> 
 </div>
@@ -1235,7 +1238,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#code-restcall-code-based-connector-architecture">@RestCall-Based Connector Architecture</a></li><li><a class="scroll-menu-link" href="#code-restcall-code-annotations">@RestCall Annotations</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#restcall-based-connector-architecture">@RestCall-Based Connector Architecture</a></li><li><a class="scroll-menu-link" href="#restcall-annotations">@RestCall Annotations</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

@@ -229,7 +229,11 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/salesforce-connector">Salesforce Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/salesforce-connector-authentication">Salesforce Connector Authentication</a></li><li><i></i><a href="/mule-user-guide/v/3.7/salesforce-connector-reference">Salesforce Connector Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/salesforce-contact-aggregation-example">Salesforce Contact Aggregation Example</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/sap-connector">SAP Connector</a></li><li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/3.7/sap-connector">SAP Connector</a><ul>
+<li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-advanced-features">SAP Connector Advanced Features</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-troubleshooting">SAP Connector Troubleshooting</a></li></ul></li>
+<li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/servicenow-connector-5.0">ServiceNow Connector 5.0</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector-5.0-migration-guide">ServiceNow Connector 5.0 Migration Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector">ServiceNow Connector</a></li></ul></li>
@@ -493,11 +497,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connecting-using-transports">Connecting Using Transports</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/configuring-a-transport">Configuring a Transport</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.7/mulesoft-enterprise-java-connector-for-sap-reference">MuleSoft Enterprise Java Connector for SAP Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/sap-jco-extended-properties">SAP JCo Extended Properties</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sap-jco-server-services-configuration">SAP JCo Server Services Configuration</a></li><li><i></i><a href="/mule-user-guide/v/3.7/outbound-endpoint-transactions">Outbound Endpoint Transactions</a></li><li><i></i><a href="/mule-user-guide/v/3.7/troubleshooting-sap-connector">Troubleshooting SAP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/xml-definitions">XML Definitions</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/jetty-transport-reference">Jetty Transport Reference</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/jetty-ssl-transport">Jetty SSL Transport</a></li></ul></li>
@@ -870,7 +870,13 @@
  <p>If you are deploying applications to <a href="/cloudhub">CloudHub</a> or the <a href="/anypoint-platform-for-apis">Anypoint Platform for APIs</a> and your company’s security policies require that you run penetration testing on them, there is a way for you to run these. Given that such tests can interfere with other tenants, penetration testing is only allowed on your own workers. It is not allowed for any other services in the Anypoint Platform.</p> 
 </div> 
 <div class="paragraph"> 
- <p>To perform such testing, you must provide a written request 5 business days in advance to <a href="mailto:security@mulesoft.com">security@mulesoft.com</a> along with:</p> 
+ <p>External vulnerability scans, via an Approved Scanning Vendor (ASV), as described in section 11.2.2 of the PCI standard may be performed at will and do not require prior approval. Penetration testing as described by section 11.3.1 of the PCI standard does require prior approval from Mulesoft.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Workers, by default, do not use static IPs and cannot be properly tested as their IPs may change. To request fixed IPs please contact <a href="<a href=" mailto:security@mulesoft.com"="">security@mulesoft.com</a>"&gt;support, as described in <a href="/cloudhub/managing-cloudhub-applications">Managing CloudHub Applications</a>.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>To perform such testing, you must provide a written request 5 business days in advance to <a href="<a href=" mailto:security@mulesoft.com"="">security@mulesoft.com</a>"&gt;support along with:</p> 
 </div> 
 <div class="ulist"> 
  <ul> 
@@ -878,10 +884,10 @@
   <li> <p>Hosts to include in the test.</p> </li> 
   <li> <p>Source IP address or range.</p> </li> 
   <li> <p>Contact information, including a phone number and email, for the individual or team conducting the test.</p> </li> 
-  <li> <p>Agree to only audit CloudHub workers, and not audit any other platform services which are common to all tenants.</p> </li> 
-  <li> <p>Agree not to audit shared workers.</p> </li> 
-  <li> <p>Send an email to <a href="mailto:security@mulesoft.com">security@mulesoft.com</a> upon start and completion of tests.</p> </li> 
-  <li> <p>Notify <a href="mailto:security@mulesoft.com">security@mulesoft.com</a> of any vulnerabilities found immediately.</p> </li> 
+  <li> <p>You agree to only audit CloudHub workers, and not audit any other platform services which are common to all tenants.</p> </li> 
+  <li> <p>You agree not to audit shared workers.</p> </li> 
+  <li> <p>Send an email to <a href="<a href=" mailto:security@mulesoft.com"="">security@mulesoft.com</a>"&gt;support upon start and completion of tests.</p> </li> 
+  <li> <p>Notify <a href="<a href=" mailto:security@mulesoft.com"="">security@mulesoft.com</a>"&gt;support of any vulnerabilities found immediately.</p> </li> 
   <li> <p>You may only audit once a quarter.</p> </li> 
  </ul> 
 </div> 

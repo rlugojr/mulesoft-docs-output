@@ -230,7 +230,11 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/salesforce-connector">Salesforce Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/salesforce-connector-authentication">Salesforce Connector Authentication</a></li><li><i></i><a href="/mule-user-guide/v/3.7/salesforce-connector-reference">Salesforce Connector Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/salesforce-contact-aggregation-example">Salesforce Contact Aggregation Example</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/sap-connector">SAP Connector</a></li><li>
+<li>
+<i></i>
+<a href="/mule-user-guide/v/3.7/sap-connector">SAP Connector</a><ul>
+<li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-advanced-features">SAP Connector Advanced Features</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-troubleshooting">SAP Connector Troubleshooting</a></li></ul></li>
+<li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/servicenow-connector-5.0">ServiceNow Connector 5.0</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector-5.0-migration-guide">ServiceNow Connector 5.0 Migration Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector">ServiceNow Connector</a></li></ul></li>
@@ -494,11 +498,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connecting-using-transports">Connecting Using Transports</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/configuring-a-transport">Configuring a Transport</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li>
-<i></i>
-<a href="/mule-user-guide/v/3.7/mulesoft-enterprise-java-connector-for-sap-reference">MuleSoft Enterprise Java Connector for SAP Reference</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/sap-jco-extended-properties">SAP JCo Extended Properties</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sap-jco-server-services-configuration">SAP JCo Server Services Configuration</a></li><li><i></i><a href="/mule-user-guide/v/3.7/outbound-endpoint-transactions">Outbound Endpoint Transactions</a></li><li><i></i><a href="/mule-user-guide/v/3.7/troubleshooting-sap-connector">Troubleshooting SAP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/xml-definitions">XML Definitions</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/jetty-transport-reference">Jetty Transport Reference</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/jetty-ssl-transport">Jetty SSL Transport</a></li></ul></li>
@@ -874,6 +874,9 @@
    <p>Anypoint MQ (AMQ) is a multi-tenant, cloud messaging service designed to enable customers to perform advanced asynchronous messaging scenarios between their applications. AMQ is fully integrated with Anypoint Platform, offering role based access control, client application management, and connectors.</p> 
   </div> 
   <div class="paragraph"> 
+   <p><strong>Note</strong>: See <a href="#defintions">Definitions</a> for unfamiliar terms.</p> 
+  </div> 
+  <div class="paragraph"> 
    <p>AMQ is a pub/sub and point-to-point messaging broker that handles messages between:</p> 
   </div> 
   <div class="ulist"> 
@@ -887,6 +890,25 @@
   </div> 
   <div class="paragraph"> 
    <p>Receiver applications register with AMQ to receive messages. Notification events trigger when a message arrives in AMQ.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>An example of AMQ would be where an application running Salesforce customer relationship manager (CRM) wants to communicate with two applications that handle different databases.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/mq-crm-to-dbs.png" alt="CRM sends msg to MQ that apps receive"></span></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Using AMQ, the Salesforce application sends a pub/sub message to the AMQ message exchange, and the two applications receive the message from the message exchange and convey the message to their respective databases.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>See also other topics in this section:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="#features">Features</a></p> </li> 
+    <li> <p><a href="#workflow">Workflow</a></p> </li> 
+    <li> <p><a href="#definitions">Definitions</a></p> </li> 
+   </ul> 
   </div> 
   <div class="sect2"> 
    <h3 id="features"><a class="anchor" href="#features"></a>Features</h3> 
@@ -904,15 +926,39 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="use-case"><a class="anchor" href="#use-case"></a>Use Case</h3> 
-   <div class="paragraph"> 
-    <p>An example of AMQ would be where an application running Salesforce customer relationship manager (CRM) wants to communicate with two applications that handle different databases.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/mq-crm-to-dbs.png" alt="CRM sends msg to MQ that apps receive"></span></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Using AMQ, the Salesforce application sends a pub/sub message to the AMQ message exchange, and the two applications receive the message from the message exchange and convey the message to their respective databases.</p> 
+   <h3 id="workflow"><a class="anchor" href="#workflow"></a>Workflow</h3> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>After you register a client application with Anypoint Platform &gt; MQ, MQ provides you with a client ID and client secret.</p> </li> 
+     <li> <p>Using Anypoint Studio you configure the Anypoint MQ connector to use the client ID and client.</p> </li> 
+     <li> <p>Apps publish and subscribe messages as follows:</p> 
+      <table class="tableblock frame-all grid-all" style="width: 70%;"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Client</th> 
+         <th class="tableblock halign-left valign-top">MQ Broker</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">1. Requests message</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">2. Sends message and lock ID</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">3. Modifies TTL if needed</p></td> 
+         <td class="tableblock halign-left valign-top"></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">4. Acks and receives message, or nacks and leaves message in MQ</p></td> 
+         <td class="tableblock halign-left valign-top"></td> 
+        </tr> 
+       </tbody> 
+      </table> </li> 
+    </ol> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -922,12 +968,13 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p><strong>Ack/Nack</strong>:<br> <strong>Ack</strong> - Acknowledge a message. In this case, an application receives a message and the message is deleted from the queue.<br> <strong>Nack</strong> - Negative acknowledge a message. In this case, an application does not receive a message and the message does not delete from the queue.</p> </li> 
+     <li> <p><strong>Ack/Nack</strong>: <strong>Ack</strong> - An application receives a message and MQ deletes the message. <strong>Nack</strong> - An application does not receive a message and MQ does not delete the message.</p> </li> 
      <li> <p><strong>Binding</strong> - Lets pub/sub applications bridge the simple pub/sub structure and utilize point-to-point features such as sending a message to specific applications. Bindings identify which queues comprise an exchange. In Anypoint Platform, by specifying which message queues are in an exchange, Anypoint MQ creates and manages the bindings for you.</p> </li> 
-     <li> <p><strong>Destination</strong> - A middleware software component to which applications register to provide or receive messages, a storage area where messages are sent to, and from where an application receives a message. In Anypoint Studio, the destination is configured from the Anypoint MQ Connector.</p> </li> 
+     <li> <p><strong>Destination</strong> - An exchange or queue. Applications register to a destination and publish messages to the destination. Applications subscribe to a destination to receive a message. Anypoint Platform’s MQ feature lets you configure Destinations by creating or maintaining queues or exchanges. Anypoint Studio lets you configure destinations using the Anypoint MQ connector.</p> </li> 
      <li> <p><strong>Durable message</strong> - A message that persists until its indicated client receives it.</p> </li> 
      <li> <p><strong>Message</strong> - Serializable <a href="/mule-fundamentals/v/3.7/mule-message-structure">Mule Message</a> content that applications send and receive, so that the applications can communicate with each other.</p> </li> 
      <li> <p><strong>Message Exchange</strong> - A pub/sub message source with multiple outputs. Applications register to subscribe to messages that the exchange publishes.</p> </li> 
+     <li> <p><strong>On premises</strong> - Mule runtime that runs on a computer in your organization.</p> </li> 
      <li> <p><strong>Point-to-point</strong> - A pattern that allows an application to send a message that only a single application can receive.</p> </li> 
      <li> <p><strong>Pub/sub</strong> (publish/subscribe) - A ​pattern that allows messages to be distributed to multiple consumers.</p> </li> 
      <li> <p><strong>Publisher</strong> - Applications that send messages to Anypoint MQ.</p> </li> 
@@ -939,7 +986,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="creating-queues"><a class="anchor" href="#creating-queues"></a>Creating Queues</h2> 
+ <h2 id="create-a-queue"><a class="anchor" href="#create-a-queue"></a>Create a Queue</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>You can use Anypoint Platform to create queues and exchanges.</p> 
@@ -955,35 +1002,33 @@
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mq-click-queue.png" alt="Click the Queue option from the blue circle menu"></span></p> 
      </div> </li> 
-    <li> <p>In the <strong>Create Queues</strong> window, provide a queue name, and if needed, change the time-to-live values for how long a message persists before being automatically deleted, and how long you can apply a lock to a message so that an application has exclusive access to the message. If needed, mark the queue so that any messages that arrive in the queue get encrypted using MD5. To mark the queue, slide the Encryption slider to the right.</p> 
+    <li> <p>In the <strong>Create Queues</strong> window, provide a queue name, and if needed, change the time-to-live values for how long a message persists before being automatically deleted, and how long you can apply a lock to a message so that an application has exclusive access to the message. If needed, mark the queue so that any messages that arrive in the queue get encrypted using password-based encryption (PBE) with MD5 and DES. To mark the queue, slide the Encryption slider to the right.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mq-create-queue.png" alt="Create a queue window"></span></p> 
      </div> </li> 
     <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
    </ol> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="queue-details"><a class="anchor" href="#queue-details"></a>Queue Details</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Review the destination details screen:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/mq-queue-details.png" alt="Queue Details to the right of the queue entry"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>You can use the details display to:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Purge messages</p> </li> 
-    <li> <p>Delete a queue</p> </li> 
-    <li> <p>View queued messages</p> </li> 
-    <li> <p>View in-flight messages</p> </li> 
-    <li> <p>View exchanges to which the queue is bound</p> </li> 
-   </ul> 
+  <div class="sect2"> 
+   <h3 id="queue-details"><a class="anchor" href="#queue-details"></a>Queue Details</h3> 
+   <div class="paragraph"> 
+    <p>Review the destination details screen:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/mq-queue-details.png" alt="Queue Details to the right of the queue entry"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>You can use the details display to:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Purge messages</p> </li> 
+     <li> <p>Delete a queue</p> </li> 
+     <li> <p>View queued messages</p> </li> 
+     <li> <p>View in-flight messages</p> </li> 
+     <li> <p>View exchanges to which the queue is bound</p> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1000,7 +1045,7 @@
       <p><span class="image"><img src="./_images/mq-click-exchange.png" alt="From the blue circle drop down click Exchange"></span></p> 
      </div> 
      <div class="paragraph"> 
-      <p>In the <strong>Create Exchange</strong> window, provide an exchange name, and click which queues to bind to the exchange. If needed, mark the exchange so that any messages that arrive in each queue gets encrypted (using MD5). To mark the exchange, slide the Encryption slider to the right.</p> 
+      <p>In the <strong>Create Exchange</strong> window, provide an exchange name, and click which queues to bind to the exchange. If needed, mark the exchange so that any messages that arrive in each queue gets encrypted (using PBE with MD5 and DES). To mark the exchange, slide the Encryption slider to the right.</p> 
      </div> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mq-create-exchange.png" alt="Create an exchange window"></span></p> 
@@ -1008,26 +1053,83 @@
     <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
    </ol> 
   </div> 
+  <div class="sect2"> 
+   <h3 id="message-exchange-details"><a class="anchor" href="#message-exchange-details"></a>Message Exchange Details</h3> 
+   <div class="paragraph"> 
+    <p>The message exchange details appear to the right of the exchange entry:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/mq-exchange-details.png" alt="Exchange details to the right of the entry"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>You can use the details display to:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Delete the exchange</p> </li> 
+     <li> <p>Monitor exchange throughput</p> </li> 
+     <li> <p>View which queues are bound to the exchange</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="message-exchange-details"><a class="anchor" href="#message-exchange-details"></a>Message Exchange Details</h2> 
+ <h2 id="create-a-client-app"><a class="anchor" href="#create-a-client-app"></a>Create a Client App</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The message exchange details appear to the right of the exchange entry:</p> 
+   <p>Creating a client app provides the client ID and client secret you can use to register an app as either an MQ publisher or subscriber.</p> 
   </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>In Anypoint Platform, click <strong>MQ</strong>.</p> </li> 
+    <li> <p>Click <strong>Client Apps</strong> from the left nav bar:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-client-apps-in-nav.png" alt="Click Client Apps in left nav bar"></span>.</p> 
+     </div> </li> 
+    <li> <p>Click the blue plus circle:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-blue-plus-circle.png" alt="Create client app circle button about two-thirds to the right below the taskbar"></span></p> 
+     </div> </li> 
+    <li> <p>Specify the name of the client application.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-create-client-app-window.png" alt="mq-create-client-app-window"></span></p> 
+     </div> </li> 
+    <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
+    <li> <p>Click the client app entry to view the client ID and secret values:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-client-app-details.png" alt="Client app details appears to the right of the client entry"></span></p> 
+     </div> </li> 
+   </ol> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="set-mq-roles"><a class="anchor" href="#set-mq-roles"></a>Set MQ Roles</h2> 
+ <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/mq-exchange-details.png" alt="Exchange details to the right of the entry"></span></p> 
+   <p>Anypoint Platform lets you manage the <a href="/anypoint-platform-administration/managing-accounts-roles-and-permissions">roles</a> of those who administer the MQ features in Anypoint Platform for your organization.</p> 
   </div> 
-  <div class="paragraph"> 
-   <p>You can use the details display to:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Delete the exchange</p> </li> 
-    <li> <p>Monitor exchange throughput</p> </li> 
-    <li> <p>View which queues are bound to the exchange</p> </li> 
-   </ul> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Click the gear icon in Anypoint Platform:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-roles-listing.png" alt="Gear icon and Roles details"></span></p> 
+     </div> </li> 
+    <li> <p>Click <strong>Add role</strong>.</p> </li> 
+    <li> <p>Type the role name and description, and click <strong>Add role</strong>:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-name-role.png" alt="In the Add role window" width="specify a name and description"></span></p> 
+     </div> </li> 
+    <li> <p>Click <strong>MQ</strong>, select an environment from the drop-down list, and choose permissions:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-choose-env-perms.png" alt="Role window"></span></p> 
+     </div> </li> 
+    <li> <p>Review the settings. If needed, you can delete permissions by clicking the black <strong>x</strong> or delete the role.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-role-view.png" alt="Role listing"></span></p> 
+     </div> </li> 
+   </ol> 
   </div> 
  </div> 
 </div> 
@@ -1125,7 +1227,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#creating-queues">Creating Queues</a></li><li><a class="scroll-menu-link" href="#queue-details">Queue Details</a></li><li><a class="scroll-menu-link" href="#create-a-message-exchange">Create a Message Exchange</a></li><li><a class="scroll-menu-link" href="#message-exchange-details">Message Exchange Details</a></li><li><a class="scroll-menu-link" href="#anypoint-studio-mq-connector">Anypoint Studio MQ Connector</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#create-a-queue">Create a Queue</a></li><li><a class="scroll-menu-link" href="#create-a-message-exchange">Create a Message Exchange</a></li><li><a class="scroll-menu-link" href="#create-a-client-app">Create a Client App</a></li><li><a class="scroll-menu-link" href="#set-mq-roles">Set MQ Roles</a></li><li><a class="scroll-menu-link" href="#anypoint-studio-mq-connector">Anypoint Studio MQ Connector</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
