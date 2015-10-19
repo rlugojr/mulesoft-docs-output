@@ -867,114 +867,118 @@
         <div class="article-content col-md-7">
           <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="developing">Developing</a>/<a href="anypoint-connectors">Anypoint Connectors</a>/<a href="http-connector" class="breadcrumb-active-link">HTTP Connector</a></div>
           <h1>HTTP Connector</h1>
-          <div class="paragraph"> 
- <p>The HTTP Connector can send an receive HTTP and HTTPS requests over a selected host, port and address.</p> 
-</div> 
-<div class="paragraph"> 
- <p>Depending on which type of HTTP connector you use, you can either:</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p><a href="/mule-user-guide/v/3.7/http-listener-connector">Listen for HTTP requests</a> that arrive at a certain address and provide an HTTP response to these</p> </li> 
-  <li> <p><a href="/mule-user-guide/v/3.7/http-request-connector">Send HTTP requests</a> to a certain address and receive the returned response</p> </li> 
- </ul> 
-</div> 
-<div class="paragraph"> 
- <p>Through additional configuration, the connector allows you to:</p> 
-</div> 
-<div class="ulist"> 
- <ul> 
-  <li> <p>Use <a href="/mule-user-guide/v/3.7/tls-configuration">TLS</a> encryption to send or receive <strong>HTTPS</strong> requests&nbsp;</p> </li> 
-  <li> <p>Send <a href="/mule-user-guide/v/3.7/authentication-in-http-requests">Authenticated Requests</a>, through <strong>Basic Authentication, Digest and OAuth</strong></p> </li> 
- </ul> 
-</div> 
-<div class="panel panel-default no-padding"> 
- <div class="panel-heading no-padding"> 
-  <!-- Nav tabs --> 
-  <ul class="nav nav-tabs" role="tablist"> 
-   <li class="active"><a href="#studio-visual-editor-7afdd" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-   <li><a href="#xml-editor-57d49" role="tab" data-toggle="tab">XML Editor</a></li> 
-  </ul> 
- </div> 
- <div class="panel-body tab-content no-padding"> 
-  <div class="tab-pane in active fade no-padding" id="studio-visual-editor-7afdd"> 
-   <div class="paragraph"> 
-    <p>In Studio, the HTTP Connector can work in one of two ways, depending on where it’s placed on a flow:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>As an <a href="/mule-user-guide/v/3.7/http-listener-connector">HTTP Listener Connector</a></p> </li> 
-     <li> <p>As an <a href="/mule-user-guide/v/3.7/http-request-connector">HTTP Request Connector</a></p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To instance the connector as an HTTP Listener Connector, you must place it into the <strong>Source</strong> section of a flow (ie: as the first element in the flow):</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/add_listener.png" alt="add+listener"></span></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To instance the connector as an HTTP Request Connector, you must place it into the <strong>Process</strong> section of a flow (ie: anywhere except the beginning of it):</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/add+request+connector.png" alt="add+request+connector"></span></p> 
-   </div> 
+          <div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The HTTP Connector can send an receive HTTP and HTTPS requests over a selected host, port and address.</p> 
   </div> 
-  <div class="tab-pane fade no-padding" id="xml-editor-57d49"> 
-   <div class="paragraph"> 
-    <p>When writing Mule projects in XML, the HTTP Connector can work in one of two ways, depending on how you create it:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>As an <a href="/mule-user-guide/v/3.7/http-listener-connector">HTTP Listener Connector</a></p> </li> 
-     <li> <p>As an <a href="/mule-user-guide/v/3.7/http-request-connector">HTTP Request Connector</a></p> </li> 
+  <div class="paragraph"> 
+   <p>Depending on which type of HTTP connector you use, you can either:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="/mule-user-guide/v/3.7/http-listener-connector">Listen for HTTP requests</a> that arrive at a certain address and provide an HTTP response to these</p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.7/http-request-connector">Send HTTP requests</a> to a certain address and receive the returned response</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Through additional configuration, the connector allows you to:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Use <a href="/mule-user-guide/v/3.7/tls-configuration">TLS</a> encryption to send or receive <strong>HTTPS</strong> requests&nbsp;</p> </li> 
+    <li> <p>Send <a href="/mule-user-guide/v/3.7/authentication-in-http-requests">Authenticated Requests</a>, through <strong>Basic Authentication, Digest and OAuth</strong></p> </li> 
+   </ul> 
+  </div> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-d0d52" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-3b54a" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
-   <div class="paragraph"> 
-    <p>To instance the connector as an HTTP Listener Connector, add the following XML tag at the start of a flow:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/" /<span class="entity">&amp;gt;</span></code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>This element must reference a global configuration element of the following type:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" /<span class="entity">&amp;gt;</span></code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To instance the connector as an HTTP Request Connector, add the following XML tag in any part of a flow:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:request config-ref="HTTP_Request_Configuration" path="/" method="GET" /<span class="entity">&amp;gt;</span></code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>This element must reference a global configuration element of the following type:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:request-config name="HTTP_Request_Configuration" host="example.com" port="8081"/<span class="entity">&amp;gt;</span></code></pre> 
-    </div> 
-   </div> 
-   <div class="sect1"> 
-    <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
-    <div class="sectionbody"> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d0d52"> 
+     <div class="paragraph"> 
+      <p>In Studio, the HTTP Connector can work in one of two ways, depending on where it’s placed on a flow:</p> 
+     </div> 
      <div class="ulist"> 
       <ul> 
-       <li> <p>See the <a href="/mule-user-guide/v/3.7/http-connector-reference">full reference</a>﻿for the available XML configurable options in this connector.</p> </li> 
+       <li> <p>As an <a href="/mule-user-guide/v/3.7/http-listener-connector">HTTP Listener Connector</a></p> </li> 
+       <li> <p>As an <a href="/mule-user-guide/v/3.7/http-request-connector">HTTP Request Connector</a></p> </li> 
       </ul> 
      </div> 
-     <div class="exampleblock"> 
+     <div class="paragraph"> 
+      <p>To instance the connector as an HTTP Listener Connector, you must place it into the <strong>Source</strong> section of a flow (ie: as the first element in the flow):</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/add_listener.png" alt="add+listener"></span></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>To instance the connector as an HTTP Request Connector, you must place it into the <strong>Process</strong> section of a flow (ie: anywhere except the beginning of it):</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/add+request+connector.png" alt="add+request+connector"></span></p> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="xml-editor-3b54a"> 
+     <div class="paragraph"> 
+      <p>When writing Mule projects in XML, the HTTP Connector can work in one of two ways, depending on how you create it:</p> 
+     </div> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>As an <a href="/mule-user-guide/v/3.7/http-listener-connector">HTTP Listener Connector</a></p> </li> 
+       <li> <p>As an <a href="/mule-user-guide/v/3.7/http-request-connector">HTTP Request Connector</a></p> </li> 
+      </ul> 
+     </div> 
+     <div class="paragraph"> 
+      <p>To instance the connector as an HTTP Listener Connector, add the following XML tag at the start of a flow:</p> 
+     </div> 
+     <div class="listingblock"> 
       <div class="content"> 
-       <div class="listingblock"> 
+       <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/" /<span class="entity">&amp;gt;</span></code></pre> 
+      </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>This element must reference a global configuration element of the following type:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" /<span class="entity">&amp;gt;</span></code></pre> 
+      </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>To instance the connector as an HTTP Request Connector, add the following XML tag in any part of a flow:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:request config-ref="HTTP_Request_Configuration" path="/" method="GET" /<span class="entity">&amp;gt;</span></code></pre> 
+      </div> 
+     </div> 
+     <div class="paragraph"> 
+      <p>This element must reference a global configuration element of the following type:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:request-config name="HTTP_Request_Configuration" host="example.com" port="8081"/<span class="entity">&amp;gt;</span></code></pre> 
+      </div> 
+     </div> 
+     <div class="sect1"> 
+      <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+      <div class="sectionbody"> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p>See the <a href="/mule-user-guide/v/3.7/http-connector-reference">full reference</a>﻿for the available XML configurable options in this connector.</p> </li> 
+        </ul> 
+       </div> 
+       <div class="exampleblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:request-config name="HTTP_Request_Configuration" host="example.com" port="8081" /<span class="entity">&amp;gt;</span></code></pre> 
+         <div class="listingblock"> 
+          <div class="content"> 
+           <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>http:request-config name="HTTP_Request_Configuration" host="example.com" port="8081" /<span class="entity">&amp;gt;</span></code></pre> 
+          </div> 
+         </div> 
         </div> 
        </div> 
       </div> 
@@ -982,33 +986,44 @@
     </div> 
    </div> 
   </div> 
+  <div class="admonitionblock tip"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+      <td class="content"> To migrate a project that uses instances of the old <a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP endpoint-based connector</a> to the new HTTP operation-based connector, see <a href="/mule-user-guide/v/3.7/migrating-to-the-new-http-connector">Migrating to the New HTTP Connector</a>. The old HTTP endpoint-based Connector still works with Mule 3.6 Runtime, but it’s deprecated and will eventually be removed. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="admonitionblock tip"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+      <td class="content"> You can edit the log4j2 configuration file to make the logging of the HTTP connector’s activity a lot more verbose, if you need to. See&nbsp;<a href="/mule-user-guide/v/3.7/logging-in-mule">Logging in Mule</a> for instructions. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
  </div> 
 </div> 
-<div class="admonitionblock tip"> 
- <table> 
-  <tbody> 
-   <tr> 
-    <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-    <td class="content"> To migrate a project that uses instances of the old <a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP endpoint-based connector</a> to the new HTTP operation-based connector, see <a href="/mule-user-guide/v/3.7/migrating-to-the-new-http-connector">Migrating to the New HTTP Connector</a>. The old HTTP endpoint-based Connector still works with Mule 3.6 Runtime, but it’s deprecated and will eventually be removed. </td> 
-   </tr> 
-  </tbody> 
- </table> 
-</div> 
-<div class="admonitionblock tip"> 
- <table> 
-  <tbody> 
-   <tr> 
-    <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-    <td class="content"> You can edit the log4j2 configuration file to make the logging of the HTTP connector’s activity a lot more verbose, if you need to. See&nbsp;<a href="/mule-user-guide/v/3.7/logging-in-mule">Logging in Mule</a> for instructions. </td> 
-   </tr> 
-  </tbody> 
- </table> 
+<div class="sect1"> 
+ <h2 id="debugging"><a class="anchor" href="#debugging"></a>Debugging</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>When using a <a href="/mule-user-guide/v/3.7/logging-in-mule">logger</a> set to DEBUG level and placed after an HTTP Connector, both if you’re using a Listener HTTP Connector or a Request HTTP Connector, every message produced by it will be logged.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To configure this, set the class org.mule.module.http.internal.HttpMessageLogger to DEBUG level, read <a href="/mule-user-guide/v/3.7/logging-in-mule#configuring-custom-logging-settings">configuring custom logging settings</a> to see how.</p> 
+  </div> 
+ </div> 
 </div>
         </div>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#see-also">See Also</a></li><li><a class="scroll-menu-link" href="#debugging">Debugging</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
