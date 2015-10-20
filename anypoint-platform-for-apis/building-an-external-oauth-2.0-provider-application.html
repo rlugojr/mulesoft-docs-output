@@ -876,7 +876,7 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-      <td class="content"> The external OAuth Provider App must run on the Gateway runtime 2.0 or earlier, and include the same Client Id and Client Secret as the organization where the API is managed.<br> <br> This runtime employs the <a href="/mule-user-guide/v/3.6/http-connector">new HTTP Connector</a> to receive its requests. The deprecated endpoint based HTTP connector is not fully supported on this runtime. </td> 
+      <td class="content"> The external OAuth Provider App must run on the Gateway runtime 2.0 or earlier, and include the same Client Id and Client Secret as the organization where the API is managed.<br> <br> This runtime employs the <a href="/mule-user-guide/v/3.7/http-connector">new HTTP Connector</a> to receive its requests. The deprecated endpoint based HTTP connector is not fully supported on this runtime. </td> 
      </tr> 
     </tbody> 
    </table> 
@@ -896,7 +896,7 @@
  <h2 id="customizing-the-oauth-2-0-provider-app"><a class="anchor" href="#customizing-the-oauth-2-0-provider-app"></a>Customizing the OAuth 2.0 Provider App</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The example <a href="provider.txt">OAuth 2.0 Provider</a> requires very little configuration, you don’t actually need to understand its inner workings to set it up, in most use cases. If you nevertheless do want to understand how it works, here’s an overview of it’s different components.</p> 
+   <p>The example <a href="_attachments/provider.txt">OAuth 2.0 Provider</a> requires very little configuration, you don’t actually need to understand its inner workings to set it up, in most use cases. If you nevertheless do want to understand how it works, here’s an overview of it’s different components.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Depending on the OAuth grant type you want to use, the OAuth Provider application may expose two or three endpoints:</p> 
@@ -921,24 +921,24 @@
    </thead> 
    <tbody> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://oauth2-providerconfig/">oauth2-provider:config</a></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>oauth2-provider:config</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">This component encapsulates most of the configurations required to implement OAuth, both for generating tokens or authorization codes, and for validating them. It implicitly exposes two endpoints for assigning authorization codes and tokens. It is then referenced by a matching element in the flow.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://ssauthentication-manager/">ss:authentication-manager</a></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ss:authentication-manager</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">- Spring bean that defines an authentication manager and provider<br> <br> - Validates user credentials</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://api-platform-gwclient-store/">api-platform-gw:client-store</a></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>api-platform-gw:client-store</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">- Store that retains OAuth client-specific information. If the client sends validation credentials in the body or the query of the request, the OAuth Web service provider simply validates the incoming credentials (client ID and client secret) against the content in the clientStore<br> - Caches client ID and Secret of valid organization’s client applications</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://api-platform-gwclient-security-provider/">api-platform-gw:client-security-provider</a></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>api-platform-gw:client-security-provider</code></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">Validates client application’s credentials.</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://mule-sssecurity-manager/">mule-ss:security-manager</a></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">- For configuringuring <a href="/mule-user-guide/v/3.6/configuring-the-spring-security-manager">Spring Security Manager</a><br> - Authenticates resource owners (eg: when the user credentials are validated after the login page). The only situation where this provider is not required, is when the Grant Type is Client Credentials.</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mule-ss:security-manager</code></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">- For configuringuring <a href="/mule-user-guide/v/3.7/configuring-the-spring-security-manager">Spring Security Manager</a><br> - Authenticates resource owners (for example: when the user credentials are validated after the login page). The only situation where this provider is not required, is when the Grant Type is Client Credentials.</p></td> 
     </tr> 
    </tbody> 
   </table> 
@@ -1038,7 +1038,13 @@ wrapper.java.additional<span class="float">.8</span>=-Danypoint.platform.client_
          </div> 
         </div> 
         <div class="paragraph"> 
-         <p><strong>Note</strong>:&nbsp;The numbers in these parameters (<code>wrapper.java.additional.</code> <em>n</em>) must run sequentially in order starting with 1 on the top parameter in the file.<br> <br> The following is an example of the wrapper.conf file with the Client ID and Client Secret statements:<br> <br> <span class="image"><img src="./_images/ApiGwSettings.png" alt="ApiGwSettings"></span></p> 
+         <p><strong>Note</strong>:&nbsp;The numbers in these parameters (<code>wrapper.java.additional.</code> <em>n</em>) must run sequentially in order starting with 1 on the top parameter in the file.</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>The following is an example of the wrapper.conf file with the Client ID and Client Secret statements:</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/ApiGwSettings.png" alt="ApiGwSettings"></span></p> 
         </div> </li> 
        <li> <p>Edit the <code>api-gateway</code>&nbsp;domain to support HTTPS. This domain is used by the proxies you deploy to the API Gateway, and allows for multiple proxies to share a single port. By default this domain only enables HTTP communications, to also enable HTTPS, you must edit it and provide HTTPS credentials in it.</p> 
         <div class="paragraph"> 
@@ -1073,12 +1079,21 @@ wrapper.java.additional<span class="float">.8</span>=-Danypoint.platform.client_
     <li> <p>Start the API Gateway</p> </li> 
     <li> <p>Copy <code>./examples/apps/leagues-rest</code> (from the Gateway home) to the <code>/apps</code> folder within your gateway installation.<br></p> 
      <div class="paragraph"> 
-      <p><strong>Note</strong>: Copy the entire <code>leagues-rest</code> directory from the software examples folder.<br> <br></p> 
+      <p><strong>Note</strong>: Copy the entire <code>leagues-rest</code> directory from the software examples folder.</p> 
      </div> </li> 
-    <li> <p>Open the Leagues App&nbsp;by browsing to&nbsp;http://localhost:8080/api/teams resource.<br> <br> <span class="image"><img src="./_images/LeaguesListing.png" alt="LeaguesListing"></span></p> </li> 
-    <li> <p>Again in the browser, open the RAML console at <a href="http://localhost:8080/console/" class="bare">http://localhost:8080/console/</a>. From here you can make calls to the Leagues API using its simple UI.<br> <br> <span class="image"><img src="./_images/LaLiga.png" alt="LaLiga"></span></p> </li> 
+    <li> <p>Open the Leagues App&nbsp;by browsing to&nbsp;http://localhost:8080/api/teams resource.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/LeaguesListing.png" alt="LeaguesListing"></span></p> 
+     </div> </li> 
+    <li> <p>Again in the browser, open the RAML console at <a href="http://localhost:8080/console/" class="bare">http://localhost:8080/console/</a>. From here you can make calls to the Leagues API using its simple UI.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/LaLiga.png" alt="LaLiga"></span></p> 
+     </div> </li> 
     <li> <p>Log in to <a href="https://anypoint.mulesoft.com/">Anypoint platform</a>.</p> </li> 
-    <li> <p>Register a new API in your Anypoint platform account, through this platform you can add a proxy in front of the backend API. For this tutorial, make sure to use the name <code>External AES Tutorial</code> and version <code>1.0</code>.<br> <br> You can use this <a href="_attachments/api-v1.raml">RAML file</a> as a reference:</p> 
+    <li> <p>Register a new API in your Anypoint platform account, through this platform you can add a proxy in front of the backend API. For this tutorial, make sure to use the name <code>External AES Tutorial</code> and version <code>1.0</code>.</p> 
+     <div class="paragraph"> 
+      <p>You can use this <a href="_attachments/api-v1.raml">RAML file</a> as a reference:</p> 
+     </div> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="yaml">
@@ -1153,11 +1168,14 @@ wrapper.java.additional<span class="float">.8</span>=-Danypoint.platform.client_
     <li> <p>Save the API, return to the <strong>API administration</strong> screen, and click the API name to view API Definition, Portal, and Status page.&nbsp;</p> </li> 
     <li> <p>Click <strong>API Status</strong> &gt; <strong>Configure endpoint</strong> to create an HTTPS proxy. Fill&nbsp;in the required information as follows. Using HTTPS works thanks to that you have already configured HTTPS settings in your gateway on a previous step.&nbsp;For more information, see&nbsp; <a href="/anypoint-platform-for-apis/https-api-proxy-example">HTTPS API Proxy Example</a>:</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/Pasted+image+at+2015_07_24+09_53+AM.png" alt="Pasted+image+at+2015_07_24+09_53+AM"></span></p> 
+      <p><span class="image"><img src="./_images/ext-oauth2-configure-endpoint.png" alt="ext-oauth2-configure-endpoint"></span></p> 
      </div> </li> 
     <li> <p>Click <strong>Save</strong>.</p> </li> 
-    <li> <p>Download the latest version of the proxy<br> <br> <span class="image"><img src="./_images/Pasted+image+at+2015_07_08+05_38+PM.png" alt="Pasted+image+at+2015_07_08+05_38+PM"></span></p> </li> 
-    <li> <p>The proxy application should be working at <a href="https://localhost:8082/leagues/teams" class="bare">https://localhost:8082/leagues/teams</a></p> </li> 
+    <li> <p>Download the latest version of the proxy.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/ext-oauth2-api-status.png" alt="ext-oauth2-api-status"></span></p> 
+     </div> </li> 
+    <li> <p>The proxy application should be working at <code><a href="https://localhost:8082/leagues/teams" class="bare">https://localhost:8082/leagues/teams</a></code></p> </li> 
    </ol> 
   </div> 
   <div class="sect3"> 
@@ -1178,15 +1196,18 @@ wrapper.java.additional<span class="float">.8</span>=-Danypoint.platform.client_
             </tr> 
            </tbody> 
           </table> 
+         </div> 
+         <div class="paragraph"> 
+          <p>OR download the OAuth2 Provider Template file in the Prerequisite section of this tutorial</p> 
          </div> </li> 
        </ol> 
-      </div> 
-      <div class="paragraph"> 
-       <p>OR download the OAuth2 Provider Template file in the Prerequisite section of this tutorial</p> 
       </div> </li> 
      <li> <p>Import the downloaded .zip file into Anypoint Studio as an <strong>Anypoint Studio Generated Deployable Archive (.zip)</strong>, make sure it is using API Gateway 2.x Server Runtime.</p> </li> 
      <li> <p>Copy the&nbsp;<code>keystore.jks</code>&nbsp;– provided in the prerequisite section – file to <code>src/main/resources</code></p> </li> 
-     <li> <p>Set the following properties in <code>src/main/resources/mule.dev.properties</code><br> <strong>For single authentication:</strong></p> 
+     <li> <p>Set the following properties in <code>src/main/resources/mule.dev.properties</code></p> 
+      <div class="paragraph"> 
+       <p><strong>For single authentication:</strong></p> 
+      </div> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="code">
@@ -1286,10 +1307,13 @@ access.token.endpoint.path=access_token</pre></td>
           </table></code></pre> 
        </div> 
       </div> </li> 
-     <li> <p>In case you’re deploying your OAuth 2 provider to the same server as your proxy, you will need to change the port where it’s hosted, as the default one will overlap with your proxy. To do so, look in&nbsp;<code>src/main/resources</code> for the file&nbsp;<code>common.properties</code> and change the&nbsp;<code>http.port</code> property to anything other than 8082, in this example we’ll use 8083.<br> If you’re deploying both OAuth 2 provider and proxy to two different servers, this step isn’t necessary.</p> </li> 
+     <li> <p>In case you’re deploying your OAuth 2 provider to the same server as your proxy, you need to change the port where it’s hosted, as the default one overlaps with your proxy. To do so, look in&nbsp;<code>src/main/resources</code> for the file&nbsp;<code>common.properties</code> and change the&nbsp;<code>http.port</code> property to anything other than 8082, in this example we use 8083.<br> If you’re deploying both OAuth 2 provider and proxy to two different servers, this step isn’t necessary.</p> </li> 
      <li> <p>Open the project’s <code>mule-</code> <code>config.xml</code> file in Studio</p> </li> 
      <li> <p>Go to the Global Elements tab, under the canvas</p> </li> 
-     <li> <p>Edit the OAuth Provider module:<br> <br> <span class="image"><img src="./_images/OAuthProviderModule.png" alt="OAuthProviderModule"></span></p> </li> 
+     <li> <p>Edit the OAuth Provider module:<br></p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/OAuthProviderModule.png" alt="OAuthProviderModule"></span></p> 
+      </div> </li> 
      <li> <p>If you want to test the API through the console, Scopes must be empty (defaults are "READ WRITE").<br></p> 
       <div class="olist loweralpha"> 
        <ol class="loweralpha" type="a"> 
@@ -1311,8 +1335,11 @@ access.token.endpoint.path=access_token</pre></td>
      <li> <p>Add the RAML snippet to the API’s RAML in Designer. The updated RAML should look like&nbsp;<a href="_attachments/api-v2.raml">this one</a>.</p> </li> 
      <li> <p>If everything went correctly, you are able to select "OAuth 2.0" from a dropdown menu in the&nbsp;<a href="https://localhost:8082/leagues-console">application console</a>.</p> </li> 
      <li> <p>Open the API version page of the API, then the policies tab</p> </li> 
-     <li> <p>Apply AES external policy providing the validation URL (in this case&nbsp; <a href="https://localhost:8083/validate" class="bare">https://localhost:8083/validate</a> ).&nbsp;<br> If you are going to use the console, no scopes must be provided and CORS policy must be applied as well. <br> <span class="image"><img src="./_images/Pasted+image+at+2015_07_10+06_37+PM.png" alt="Pasted+image+at+2015_07_10+06_37+PM"></span></p> </li> 
-     <li> <p>Open the <a href="https://localhost:8082/console/">API console</a> and try the teams resource. This time a 403 status code will be returned as no OAuth credentials were present in your request.</p> </li> 
+     <li> <p>Apply AES external policy providing the validation URL (in this case&nbsp; <a href="https://localhost:8083/validate" class="bare">https://localhost:8083/validate</a> ).&nbsp;<br> If you are going to use the console, no scopes must be provided and CORS policy must be applied as well.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/ext-oauth2-apply-policy.png" alt="ext-oauth2-apply-policy.png"></span></p> 
+      </div> </li> 
+     <li> <p>Open the <code><a href="https://localhost:8082/console" class="bare">https://localhost:8082/console</a></code>&nbsp;and try the teams resource. This time a 403 status code returns as no OAuth credentials were present in your request.</p> </li> 
     </ol> 
    </div> 
   </div> 
@@ -1336,17 +1363,26 @@ access.token.endpoint.path=access_token</pre></td>
        <li> <p>Back in your API Version page, see the <strong>Application</strong> tab in the lower section, you should see application you just registered listed there. Get the client id and secret for that application.</p> </li> 
       </ol> 
      </div> </li> 
-    <li> <p>Open the <a href="https://localhost:8082/console">API console</a> &nbsp;</p> </li> 
+    <li> <p>Open <code><a href="https://localhost:8082/console" class="bare">https://localhost:8082/console</a></code>&nbsp;</p> </li> 
     <li> <p>Through the API Console UI, try to send a request the teams resource. Fill in the fields with the following:</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
        <li> <p>Security Scheme → &nbsp;OAuth2</p> </li> 
        <li> <p>Authorization Grant → Implicit</p> </li> 
-       <li> <p>Client ID → Use the one you obtained from the app you registered in the previous step <br> <br> <span class="image"><img src="https://lh6.googleusercontent.com/RklIGwCrhuMTwspwHyK9r7QojOoHd5v_yLlptkZb17KYU_PWRHhnar9MQBLN2LwBtT3CZIirqKHq1xukuqgC2PqOKxjf204dS3agMFDaR9FHb1YSuwVWk4zryS1VOyD8z6OEi-g" alt="image"></span> <br></p> </li> 
+       <li> <p>Client ID → Use the one you obtained from the app you registered in the previous step:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/ext-oauth2-client-id.png" alt="ext-oauth2-client-id"></span></p> 
+        </div> </li> 
       </ol> 
      </div> </li> 
-    <li> <p>Click <strong>GET,</strong>&nbsp;then you will be prompted for the username and password that you set up in the configuration OAuth 2.0 external provider application (in this example, username:&nbsp;<code>name</code> password:&nbsp;<code>password</code> )<br> <span class="image"><img src="https://lh5.googleusercontent.com/7fowjZ-TD_x08Rc80kahmyw1JPpL_LA1G10Kh3GzdlfFGMphr0D61hWK-H0th2i1kMZ57DZQThaMUwa-G6wXVyTB5D5RoCbLQ4fDDuvpzzi8Era2xJUAVEKifwqWD9lfv-wri-o" alt="image"></span> Click&nbsp;</p> </li> 
-    <li> <p><strong>Login and Authorize</strong>. You should see a 200 status code with the response <br> <br> <span class="image"><img src="https://lh5.googleusercontent.com/qBm7pw4M6BztlgnyJLKmMtV3nwAiHPoyzpcecnqESI83Vv5lxw_K-h_nQkGXFtc6yBUig6OZLeTroQ0XtdnB9oAMqY5eVAK8ukmuJU3KIeKPTetFQp_C9N9kP8g4—​e-hUyCG6o" alt="image"></span> <br></p> </li> 
+    <li> <p>Click <strong>GET,</strong>&nbsp;and you are prompted for the username and password that you set up in the configuration OAuth 2.0 external provider application (in this example, username:&nbsp;<code>name</code> password:&nbsp;<code>password</code> )</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/ext-oauth2-ping-api.png" alt="ext-oauth2-ping-api"></span></p> 
+     </div> </li> 
+    <li> <p><strong>Login and Authorize</strong>. You should see a 200 status code with the response</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/ext-oauth2-login-and-auth.png" alt="ext-oauth2-login-and-auth"></span></p> 
+     </div> </li> 
    </ol> 
   </div> 
  </div> 
