@@ -1797,6 +1797,9 @@
   <div class="paragraph"> 
    <p>DataMapper is now an optional plugin that must be installed inside the Mule runtime for applications that are using it.</p> 
   </div> 
+  <div class="paragraph"> 
+   <p>MULE-8583 also introduced hostname validation in the HTTP requester since the upgrade included the fix for <a href="https://github.com/AsyncHttpClient/async-http-client/issues/197">this</a> async-http-client security vulnerability. This means that seemingly valid certificates for HTTPS connections in older versions could now be rejected if they contain no Subject Alternative Name extension matching the host of the request.</p> 
+  </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
     <col style="width: 50%;"> 
