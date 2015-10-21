@@ -1314,35 +1314,73 @@ $MULE_HOME/bin/mule $1 -config &lt;path to mule-conf.xml&gt;</pre></td>
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">net start|stop mule
-----&nbsp;
-
-== Common Parameters
-
-The table below lists some parameters common to Mule, which are not documented in the&nbsp;`wrapper.conf` configuration file.
-
-[width="100a",cols="50a,50a",options="header",]
-|===
-|Parameter |Description
-|`-D-Mmule.agent.enabled` |*(* _Boolean_ *_)_* Start Mule ESB with or without the Management Console agent, which is enabled by default.
-|
-[source, code]</code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">net start|stop mule</code></pre> 
    </div> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="common-parameters"><a class="anchor" href="#common-parameters"></a>Common Parameters</h2> 
+ <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>-D-Mmule.mmc.bind.port</p> 
+   <p>The table below lists some parameters common to Mule, which are not documented in the&nbsp;<code>wrapper.conf</code> configuration file.</p> 
   </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>|Specify a port or port range for the Mule ESB agent listener that the Management Console binds to. To specify a port range, use&nbsp;`&lt;port&gt;-&lt;port&gt;`, for example&nbsp;`3000-3010`.
-|===
-
-The `$MULE_HOME/conf/wrapper.conf` configuration file includes many more parameters, some of which are by default commented out, but documented in the comments.&nbsp;
-
-== See Also
-
-* *NEXT STEP:* Start with link:/mule-fundamentals/v/3.7/mule-application-architecture[Mule Application Architecture].</pre> 
-   </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 50%;"> 
+    <col style="width: 50%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Parameter</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><code>-D-Mmule.agent.enabled</code></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><strong>(</strong> <em>Boolean</em> <strong><em>)</em></strong> Start Mule ESB with or without the Management Console agent, which is enabled by default.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="code">-D-Mmule.mmc.bind.port</code></pre> 
+        </div> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Specify a port or port range for the Mule ESB agent listener that the Management Console binds to. To specify a port range, use&nbsp;<code>&lt;port&gt;-&lt;port&gt;</code>, for example&nbsp;<code>3000-3010</code>.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="paragraph"> 
+   <p>The <code>$MULE_HOME/conf/wrapper.conf</code> configuration file includes many more parameters, some of which are by default commented out, but documented in the comments.&nbsp;</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><strong>NEXT STEP:</strong> Start with <a href="/mule-fundamentals/v/3.7/mule-application-architecture">Mule Application Architecture</a>.</p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div>
@@ -1350,7 +1388,7 @@ The `$MULE_HOME/conf/wrapper.conf` configuration file includes many more paramet
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#startup-and-shutdown-script">Startup and Shutdown Script</a></li><li><a class="scroll-menu-link" href="#starting-and-stopping-mule-via-the-command-line">Starting and Stopping Mule Via the Command Line</a></li><li><a class="scroll-menu-link" href="#passing-arguments-to-mule-at-startup">Passing Arguments to Mule At Startup</a></li><li><a class="scroll-menu-link" href="#running-mule-as-a-unix-daemon">Running Mule As a Unix Daemon</a></li><li><a class="scroll-menu-link" href="#running-mule-as-a-windows-service">Running Mule As a Windows Service</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#startup-and-shutdown-script">Startup and Shutdown Script</a></li><li><a class="scroll-menu-link" href="#starting-and-stopping-mule-via-the-command-line">Starting and Stopping Mule Via the Command Line</a></li><li><a class="scroll-menu-link" href="#passing-arguments-to-mule-at-startup">Passing Arguments to Mule At Startup</a></li><li><a class="scroll-menu-link" href="#running-mule-as-a-unix-daemon">Running Mule As a Unix Daemon</a></li><li><a class="scroll-menu-link" href="#running-mule-as-a-windows-service">Running Mule As a Windows Service</a></li><li><a class="scroll-menu-link" href="#common-parameters">Common Parameters</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
