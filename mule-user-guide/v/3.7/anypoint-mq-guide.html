@@ -898,17 +898,17 @@
     <p>Message queues provide temporary storage that allow applications to communicate in a scalable and reliable way. Publishers can publish messages onto queues, and subscribers can receive messages off from a queue.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>TODO: diagram of publisher, queue, and subscriber</p> 
+    <p><span class="image"><img src="./_images/mq-pub-q-sub.png" alt="MQ Publisher-Queue-Subscriber"></span></p> 
    </div> 
    <div class="paragraph"> 
     <p>Queues provide a number of benefits:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>Horizontal scalability: by putting message on a queue, the work to process that message can be distributed across a number of different subscribers</p> </li> 
-     <li> <p>Reliability: queues to be used to ensure that messages are always processed, even in the case of failure</p> </li> 
-     <li> <p>Decoupling: a queue can be used as a communication mechanism between different applications and devices, allowing them to have different development lifecycles or maintenance windows, without affecting other applications</p> </li> 
-     <li> <p>Aggregation: if there are many message producers, they can all publish to a single queue, allowing easy consumption by consumers.</p> </li> 
+     <li> <p>Horizontal scalability: By putting a message on a queue, the work to process that message can be distributed across a number of different subscribers.</p> </li> 
+     <li> <p>Reliability: Queues ensure that messages are always processed, even in the case of failure.</p> </li> 
+     <li> <p>Decoupling: A queue can be used as a communication mechanism between different applications and devices, allowing them to have different development lifecycles or maintenance windows, without affecting other applications</p> </li> 
+     <li> <p>Aggregation: When there are many message producers, they can all publish to a single queue, allowing easy consumption by consumers.</p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
@@ -920,7 +920,7 @@
      <li> <p>When retrieving, the consumer specifies a lock timeout. If the message is not processed within that time window, the message is made visible to other consumers to be processed. This ensures that if there was a failure of some sort, such as the consumer node crashed, the message can be processed by another node.</p> </li> 
      <li> <p>If a consumer processes a message successfully, the client acknowledges the message, and MQ removes the message from the queue.</p> </li> 
      <li> <p>If a consumer is not able to process a message, the message proceeds with a negative acknowledgement, and becomes visible on the queue again.</p> </li> 
-     <li> <p>Addditionally, each queue has a Message time-to-live (TTL). This specifies how long the message is on the queue before MQ expires the message and removes it from the queue.</p> </li> 
+     <li> <p>Additionally, each queue has a Message time-to-live (TTL). This specifies how long the message is on the queue before MQ expires the message and removes it from the queue.</p> </li> 
     </ul> 
    </div> 
   </div> 
@@ -933,7 +933,13 @@
   <div class="sect2"> 
    <h3 id="exchanges"><a class="anchor" href="#exchanges"></a>Exchanges</h3> 
    <div class="paragraph"> 
-    <p>Exchanges provide a way to distribute a single message to many consumers. For example, if you have publisher that publishes changes in the weather, and you have multiple applications that all want to receive that data, then you can use an exchange to publish a single message to multiple queues for each application. A binding is a relationship between the queue and an exchange, which tells the exchange where to send messages to.</p> 
+    <p>Exchanges provide a way to distribute a single message to many consumers.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/mq-pub-ex-sub.png" alt="MQ Exchange = publisher>exchange>queues>consumers"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>For example, if you have publisher that publishes changes in the weather, and you have multiple applications that all want to receive that data, then you can use an exchange to publish a single message to multiple queues for each application. A binding is a relationship between the queue and an exchange, which tells the exchange where to send messages to.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
