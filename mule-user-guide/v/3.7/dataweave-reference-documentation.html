@@ -3820,67 +3820,69 @@ users: payload.users.name[?($ == "Mariano")]</pre></td>
     <p>The example above selects key value pairs with value "Mariano" ⇒ {name: Mariano, name: Mariano}</p> 
    </div> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="assert-present"><a class="anchor" href="#assert-present"></a>Assert Present</h3> 
-   <div class="paragraph"> 
-    <p>Returns an exception if any of the specified keys is not found.</p> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="assert-present"><a class="anchor" href="#assert-present"></a>Assert Present</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Returns an exception if any of the specified keys is not found.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+     Input: 
    </div> 
-   <div class="listingblock"> 
-    <div class="title">
-      Input: 
-    </div> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="json">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="json">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-          <td class="code"><pre>{
+         <td class="code"><pre>{
   <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Annie</span><span class="delimiter">"</span></span>
 }</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
    </div> 
-   <div class="listingblock"> 
-    <div class="title">
-      Transform: 
-    </div> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="DataWeave">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+  </div> 
+  <div class="listingblock"> 
+   <div class="title">
+     Transform: 
+   </div> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="DataWeave">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
 2
 3
 4
 </pre></td> 
-          <td class="code"><pre>%dw 1.0
+         <td class="code"><pre>%dw 1.0
 %output application/xml
 ---
 present: payload.lastName! <i class="conum" data-value="1"></i><b>(1)</b></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
    </div> 
-   <div class="colist arabic"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td><i class="conum" data-value="1"></i><b>1</b></td> 
-       <td>Throws an exception saying "There is no key named 'lastName'"</td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
+  </div> 
+  <div class="colist arabic"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td><i class="conum" data-value="1"></i><b>1</b></td> 
+      <td>Throws an exception saying "There is no key named 'lastName'"</td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
   <div class="sect2"> 
    <h3 id="reference-elements-from-an-incoming-mule-message"><a class="anchor" href="#reference-elements-from-an-incoming-mule-message"></a>Reference Elements From an Incoming Mule Message</h3> 
@@ -4193,43 +4195,6 @@ present: payload.lastName! <i class="conum" data-value="1"></i><b>(1)</b></pre><
          </tbody> 
         </table></code></pre> 
      </div> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="reference-mule-properties"><a class="anchor" href="#reference-mule-properties"></a>Reference Mule Properties</h3> 
-   <div class="paragraph"> 
-    <p>In Mule, you can define properties at a project level, these are then assigned when deploying. The recomended way to do this is using a properties file <code>mule-app.properties</code> in the 'src/main/app' folder, for more details and other ways to assign these, see <a href="/mule-user-guide/v/3.7/configuring-properties">Configuring Properties</a>. These properties can then be referenced by your DataWeave code.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To create a placeholder for one of these properties in your DataWeave code, simply write p('propertyName'). In the example below, keep in mind that a property named 'language' must first be defined.</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="title">
-      Transform 
-    </div> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="DataWeave">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-</pre></td> 
-          <td class="code"><pre>%dw 1.0
-%output application/xml
----
-{
-   language: p(‘language')
-}</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -5468,6 +5433,122 @@ concat: {aa: "a"} ++ {cc: "c"}</pre></td>
          </tbody> 
         </table></code></pre> 
      </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="is"><a class="anchor" href="#is"></a>IS</h3> 
+   <div class="paragraph"> 
+    <p>Evaluates if a condition validates to true and returns a boolean value. Conditions may include and &amp; or operators.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+      Input 
+    </div> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;root&gt;</span>
+    <span class="tag">&lt;order&gt;</span>
+      <span class="tag">&lt;items&gt;</span> 155 <span class="tag">&lt;/items&gt;</span>
+    <span class="tag">&lt;/order&gt;</span>
+    <span class="tag">&lt;order&gt;</span>
+      <span class="tag">&lt;items&gt;</span> 30 <span class="tag">&lt;/items&gt;</span>
+    <span class="tag">&lt;/order&gt;</span>
+    <span class="tag">&lt;order&gt;</span>
+        null
+    <span class="tag">&lt;/order&gt;</span>
+<span class="tag">&lt;/root&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+      Transform 
+    </div> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="DataWeave">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+          <td class="code"><pre>%dw 1.0
+%output application/xml
+---
+ROOT: payload.root.*order mapObject (
+  ORDER:{
+    itemsCollectionPresent: $ is :object and $.items?
+  }
+)</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="title">
+      Output 
+    </div> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version='1.0' encoding='UTF-8'?&gt;</span>
+<span class="tag">&lt;ROOT&gt;</span>
+  <span class="tag">&lt;ORDER&gt;</span>
+    <span class="tag">&lt;itemsCollectionPresent&gt;</span>true<span class="tag">&lt;/itemsCollectionPresent&gt;</span>
+  <span class="tag">&lt;/ORDER&gt;</span>
+  <span class="tag">&lt;ORDER&gt;</span>
+    <span class="tag">&lt;itemsCollectionPresent&gt;</span>true<span class="tag">&lt;/itemsCollectionPresent&gt;</span>
+  <span class="tag">&lt;/ORDER&gt;</span>
+  <span class="tag">&lt;ORDER&gt;</span>
+    <span class="tag">&lt;itemsCollectionPresent&gt;</span>false<span class="tag">&lt;/itemsCollectionPresent&gt;</span>
+  <span class="tag">&lt;/ORDER&gt;</span>
+<span class="tag">&lt;/ROOT&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -9382,7 +9463,7 @@ users: ["jhon", "petter", "mat"] map  upper $</pre></td>
 3
 </pre></td> 
            <td class="code"><pre><span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">mySecondFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;set-payload</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Payload</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.get(</span><span class="delimiter">"</span></span><span class="attribute-name">b</span><span class="error">"</span><span class="error">)</span> <span class="error">+</span> <span class="error">'</span> <span class="attribute-name">world</span><span class="error">!</span><span class="error">'</span> <span class="error">]</span><span class="error">"</span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;set-payload</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Payload</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload + ' world!' ]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
          </tbody> 
@@ -9462,7 +9543,7 @@ users: ["jhon", "petter", "mat"] map  upper $</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#getting-started">Getting started:</a></li><li><a class="scroll-menu-link" href="#document-structure">Document Structure</a></li><li><a class="scroll-menu-link" href="#example-transformation">Example Transformation</a></li><li><a class="scroll-menu-link" href="#dataweave-canonical-model">DataWeave Canonical Model</a></li><li><a class="scroll-menu-link" href="#literal-expressions">Literal Expressions</a></li><li><a class="scroll-menu-link" href="#variables">Variables</a></li><li><a class="scroll-menu-link" href="#selectors">Selectors</a></li><li><a class="scroll-menu-link" href="#operators">Operators</a></li><li><a class="scroll-menu-link" href="#object">Object</a></li><li><a class="scroll-menu-link" href="#string">String</a></li><li><a class="scroll-menu-link" href="#number">Number</a></li><li><a class="scroll-menu-link" href="#boolean">Boolean</a></li><li><a class="scroll-menu-link" href="#dates">Dates</a></li><li><a class="scroll-menu-link" href="#regular-expressions">Regular Expressions</a></li><li><a class="scroll-menu-link" href="#custom-types">Custom Types</a></li><li><a class="scroll-menu-link" href="#functions-and-lambdas">Functions and Lambdas</a></li><li><a class="scroll-menu-link" href="#go-further">Go Further</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#getting-started">Getting started:</a></li><li><a class="scroll-menu-link" href="#document-structure">Document Structure</a></li><li><a class="scroll-menu-link" href="#example-transformation">Example Transformation</a></li><li><a class="scroll-menu-link" href="#dataweave-canonical-model">DataWeave Canonical Model</a></li><li><a class="scroll-menu-link" href="#literal-expressions">Literal Expressions</a></li><li><a class="scroll-menu-link" href="#variables">Variables</a></li><li><a class="scroll-menu-link" href="#selectors">Selectors</a></li><li><a class="scroll-menu-link" href="#assert-present">Assert Present</a></li><li><a class="scroll-menu-link" href="#operators">Operators</a></li><li><a class="scroll-menu-link" href="#object">Object</a></li><li><a class="scroll-menu-link" href="#string">String</a></li><li><a class="scroll-menu-link" href="#number">Number</a></li><li><a class="scroll-menu-link" href="#boolean">Boolean</a></li><li><a class="scroll-menu-link" href="#dates">Dates</a></li><li><a class="scroll-menu-link" href="#regular-expressions">Regular Expressions</a></li><li><a class="scroll-menu-link" href="#custom-types">Custom Types</a></li><li><a class="scroll-menu-link" href="#functions-and-lambdas">Functions and Lambdas</a></li><li><a class="scroll-menu-link" href="#go-further">Go Further</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
