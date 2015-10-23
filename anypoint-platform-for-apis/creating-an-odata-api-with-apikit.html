@@ -959,6 +959,7 @@
     <ol class="arabic"> 
      <li> <p>Under the <strong>Help</strong> menu in Anypoint Studio, select <strong>Install New Software</strong>.</p> </li> 
      <li> <p>In the <strong>Work with:</strong> field in the Install wizard, enter: <code><a href="http://apikit-nightly.s3.amazonaws.com/k2-odata" class="bare">http://apikit-nightly.s3.amazonaws.com/k2-odata</a></code>.</p> </li> 
+     <li> <p>Studio displays a list of items to select. Click the checkboxes next to <strong>APIKit Studio Plugin</strong> and <strong>RAML Editor</strong>, then click <strong>Next</strong>.</p> </li> 
      <li> <p>Studio displays details of the selected item. Click <strong>Next</strong>.</p> </li> 
      <li> <p>Click to accept the terms and conditions of the product, then click <strong>Finish</strong>.</p> </li> 
      <li> <p>Click <strong>Restart Now</strong> to complete the installation.</p> </li> 
@@ -988,7 +989,7 @@
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>Once you have defined your entity model, use APIKit to generate the flows for the application. To do this: in the Package Explorer, right-click the application name or the <code>model.json</code> file, then select <strong>APIKit</strong> → <strong>Generate Flows</strong>.</p> </li> 
-     <li> <p>When you select to generate the flows, APIKit generates a RAML file (<code>api.raml</code>) in the same folder as the <code>model.json</code> file. The <code>api.raml</code> file contains definitions for as many resources as there are entities in the <code>model.json</code> file that you edited. APIKit then scaffolds your OData endpoints as flows, defined in a file called <code>api.xml</code>.<br> At this point, you can begin implementing the endpoints in the XML file. When implementing the endpoints, bear in mind that the input for each flow may contain the following variables:</p> 
+     <li> <p>When you select to generate the flows, APIKit generates a RAML file (<code>api.raml</code>) in the same folder as the <code>model.json</code> file. The <code>api.raml</code> file contains definitions for as many resources as there are entities in the <code>model.json</code> file that you edited. APIKit then scaffolds your OData endpoints as flows, defined in a file called <code>api.xml</code>.<br> At this point, you can begin implementing the endpoints in the XML file. When implementing the endpoints, bear in mind that the flows' input and output <strong>must</strong> be in the JSON format. The input for each flow may contain the following variables:</p> 
       <div class="ulist"> 
        <ul> 
         <li> <p><code>orderby</code></p> </li> 
@@ -1007,7 +1008,7 @@
      <li> <p>Package your app by running <code>mvn clean package</code>.</p> </li> 
      <li> <p>Run your app locally.</p> </li> 
      <li> <p>Deploy your app to CloudHub: Right-click your project, then select <strong>CloudHub</strong> → <strong>Deploy to CloudHub</strong>. (For further details, see <a href="/cloudhub/deploying-a-cloudhub-application">Deploying a CloudHub Application</a>.</p> </li> 
-     <li> <p>Register your app in Salesforce. For details, see the <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=connected_app_create.htm">Salesforce documentation</a>.</p> </li> 
+     <li> <p>Register your app in Salesforce. For details, see the <a href="https://help.salesforce.com/HTViewHelpDoc?id=platform_connect_add_external_data_source.htm&amp;language=en_US">Salesforce documentation</a>.</p> </li> 
     </ol> 
    </div> 
   </div> 
@@ -1063,7 +1064,7 @@
      <li> <p>Package your app by running <code>mvn clean package</code>.</p> </li> 
      <li> <p>Run your app locally.</p> </li> 
      <li> <p>Deploy your app to CloudHub: Right-click your project, then select <strong>CloudHub</strong> → <strong>Deploy to CloudHub</strong>. (For further details, see <a href="/cloudhub/deploying-a-cloudhub-application">Deploying a CloudHub Application</a>.</p> </li> 
-     <li> <p>Register your app in Salesforce. For details, see the <a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=connected_app_create.htm">Salesforce documentation</a>.</p> </li> 
+     <li> <p>Register your app in Salesforce. For details, see the <a href="https://help.salesforce.com/HTViewHelpDoc?id=platform_connect_add_external_data_source.htm&amp;language=en_US">Salesforce documentation</a>.</p> </li> 
     </ol> 
    </div> 
   </div> 
