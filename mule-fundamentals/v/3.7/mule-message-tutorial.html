@@ -881,7 +881,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This tutorial assumes that you have&nbsp;downloaded and installed <a href="http://www.mulesoft.com/platform/mule-studio">Anypoint&nbsp;Studio</a>.&nbsp;If you do not have any previous experience with Eclipse or an Eclipse-based IDE, please review the brief introduction to the&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>&nbsp;or complete the&nbsp;<a href="/mule-fundamentals/v/3.7/basic-studio-tutorial">Basic Studio Tutorial</a>.&nbsp;</p> 
@@ -943,26 +943,34 @@
        <p><span class="image"><img src="./_images/basic+flow.png" alt="basic+flow"></span></p> 
       </div> </li> 
      <li> <p>Configure your HTTP connector so that the <strong>path</strong> is <strong>'</strong>'* and that it has a connector configuration element with <strong>Host</strong> set to <strong>localhost</strong> and <strong>Port</strong> set to <strong>8081</strong></p> </li> 
-     <li> <p>Save and then run your project by selecting your project in the package explorer and selecting&nbsp;<strong>Run As &gt; Mule Application</strong>.</p> </li> 
+     <li> <p>Save and then run your project by selecting your project in the package explorer and selecting&nbsp;<strong>Run As</strong> &gt; <strong>Mule Application</strong>.</p> </li> 
      <li> <p>Select the Console tab and wait for the indication that Mule is up and kicking.&nbsp;</p> </li> 
      <li> <p>Open a browser and point it to&nbsp;<code><a href="http://localhost:8081" class="bare">http://localhost:8081</a></code>.</p> </li> 
      <li> <p>Observe that, by default, the logger logs all the information about the Mule message, except for the payload.</p> 
-      <div class="listingblock"> 
+      <div class="exampleblock"> 
        <div class="content"> 
-        <pre>Why isn't the payload included in this log output?
-
-By design, the logger's default output is all information about the Mule message except for the payload. The payload is not included because it might be very verbose or in an unreadable format. Instead, this default output includes information about the payload type, which is very useful information in a situation where you are interested in seeing a collection of all the key information about the message and its fields.
-Of course, logging the payload is also very easy to do: simply set the logger message to `#[message.payload]`.</pre> 
+        <div class="paragraph"> 
+         <p>Why isn’t the payload included in this log output?</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>By design, the logger’s default output is all information about the Mule message except for the payload. The payload is not included because it might be very verbose or in an unreadable format. Instead, this default output includes information about the payload type, which is very useful information in a situation where you are interested in seeing a collection of all the key information about the message and its fields. Of course, logging the payload is also very easy to do: simply set the logger message to <code>#[message.payload]</code>.</p> 
+        </div> 
        </div> 
       </div> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/log+output.png" alt="log+output"></span></p> 
       </div> </li> 
-     <li> <p>The key-value pairs displayed by the logger correspond to the <strong>fields</strong> of the message and the <strong>properties</strong> and <strong>variables</strong> that you can access with a Mule expression at this point in the flow. In this example, the log output provides the names and values of a long list of inbound properties set by the HTTP connector through which this message arrived into the flow. So, you could use this information to write a MEL expression to select one of these inbound properties, like this:<br> <code>#[message.inboundProperties.'http.method']</code><br> If you feed Mule this expression in some message processor later in your flow, Mule evaluates that expression at runtime and returns a value of GET.</p> </li> 
+     <li> <p>The key-value pairs displayed by the logger correspond to the <strong>fields</strong> of the message and the <strong>properties</strong> and <strong>variables</strong> that you can access with a Mule expression at this point in the flow. In this example, the log output provides the names and values of a long list of inbound properties set by the HTTP connector through which this message arrived into the flow. So, you could use this information to write a MEL expression to select one of these inbound properties, like this:</p> 
+      <div class="paragraph"> 
+       <p><code>#[message.inboundProperties.'http.method']</code></p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>If you feed Mule this expression in some message processor later in your flow, Mule evaluates that expression at runtime and returns a value of GET.</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>You can log the Mule message to the console at any time in an application to give you quick access to this summary of data about the message and its properties and variables.</p> 
+      </div> </li> 
     </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>You can log the Mule message to the console at any time in an application to give you quick access to this summary of data about the message and its properties and variables.</p> 
    </div> 
    <div class="literalblock"> 
     <div class="content"> 
@@ -1024,14 +1032,17 @@ Of course, logging the payload is also very easy to do: simply set the logger me
      <li> <p>Point a browser to` <a href="http://localhost:8081`" class="bare">http://localhost:8081`</a>.</p> </li> 
      <li> <p>Navigate to your <code>$MULE_HOME/logs</code> folder and open the .log file associated with this application.</p> </li> 
      <li> <p>Observe the log output produced by the message that you sent via your browser.</p> 
-      <div class="listingblock"> 
+      <div class="exampleblock"> 
        <div class="content"> 
-        <pre>Why isn't the payload included in this log output?
-
-By design, the logger's default output is all information about the Mule message except for the payload. The payload is not included because it might be very verbose or in a not particularly readable format. Instead, this default output includes information about the payload type, which is very useful information in a situation where you are interested in seeing a collection of all the key information about the message and its fields.
-
-Of course, logging the payload is also very easy to do: simply set the logger message to +
-`#[message.payload]`</pre> 
+        <div class="paragraph"> 
+         <p>Why isn’t the payload included in this log output?</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>By design, the logger’s default output is all information about the Mule message except for the payload. The payload is not included because it might be very verbose or in a not particularly readable format. Instead, this default output includes information about the payload type, which is very useful information in a situation where you are interested in seeing a collection of all the key information about the message and its fields.</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>Of course, logging the payload is also very easy to do: simply set the logger message to<br> <code>#[message.payload]</code></p> 
+        </div> 
        </div> 
       </div> 
       <div class="paragraph"> 
@@ -1088,7 +1099,7 @@ Of course, logging the payload is also very easy to do: simply set the logger me
     </ol> 
    </div> 
    <div class="paragraph"> 
-    <p>You have now configured the variable transformer to set a flow variable called path with a value that Mule will evaluate at runtime based on the MEL expression`#[message.inboundProperties.'http.request.path']`</p> 
+    <p>You have now configured the variable transformer to set a flow variable called path with a value that Mule evaluates at runtime based on the MEL expression`#[message.inboundProperties.'http.request.path']`</p> 
    </div> 
   </div> 
   <div class="sect3"> 
@@ -1190,11 +1201,11 @@ Of course, logging the payload is also very easy to do: simply set the logger me
   <div class="sect3"> 
    <h4 id="using-the-mule-expression-evaluator"><a class="anchor" href="#using-the-mule-expression-evaluator"></a>Using the Mule Expression Evaluator</h4> 
    <div class="paragraph"> 
-    <p>The most direct and dynamic way of exploring which MEL expressions will resolve as you expect them to is to use the Mule Expression Evaluator within the Mule Visual Debugger. You can access the Mule Expression Evaluator while running in Debug mode, after having sent a message and paused it at a breakpoint in your flow.</p> 
+    <p>The most direct and dynamic way of exploring which MEL expressions resolve as you expect them to is to use the Mule Expression Evaluator within the Mule Visual Debugger. You can access the Mule Expression Evaluator while running in Debug mode, after having sent a message and paused it at a breakpoint in your flow.</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>With your flow paused at your Logger breakpoint, open the Mule Expression Evaluator by clicking the <span class="image"><img src="./_images/x+plus+y.png" alt="x+plus+y"></span>&nbsp;icon.&nbsp;In the yellow box that opens, you can test out any MEL expression. Mule will immediately evaluate the expression, relative to the breakpoint in your flow where your message is currently paused, and either return a value or throw an exception.</p> </li> 
+     <li> <p>With your flow paused at your Logger breakpoint, open the Mule Expression Evaluator by clicking the <span class="image"><img src="./_images/x+plus+y.png" alt="x+plus+y"></span>&nbsp;icon.&nbsp;In the yellow box that opens, you can test out any MEL expression. Mule immediately evaluates the expression, relative to the breakpoint in your flow where your message is currently paused, and either returns a value or throws an exception.</p> </li> 
      <li> <p>Try out the following MEL expressions in the Mule Expression Evaluator and note the results:</p> </li> 
     </ol> 
    </div> 
@@ -1289,12 +1300,12 @@ Of course, logging the payload is also very easy to do: simply set the logger me
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-63497" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#mule-standalone-446a1" role="tab" data-toggle="tab">Mule Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-7e24c" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#mule-standalone-c219b" role="tab" data-toggle="tab">Mule Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-63497"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-7e24c"> 
      <div class="paragraph"> 
       <p>Now that you’re familiar with how to access information about your message and its environment, try logging some other basic data to the console with this logger message:</p> 
      </div> 
@@ -1316,7 +1327,7 @@ Of course, logging the payload is also very easy to do: simply set the logger me
       </ol> 
      </div> 
      <div class="paragraph"> 
-      <p>Your results will vary depending on these factors:</p> 
+      <p>Your results can vary depending on these factors:</p> 
      </div> 
      <div class="ulist"> 
       <ul> 
@@ -1327,7 +1338,7 @@ Of course, logging the payload is also very easy to do: simply set the logger me
       </ul> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="mule-standalone-446a1"> 
+    <div class="tab-pane fade no-padding" id="mule-standalone-c219b"> 
      <div class="paragraph"> 
       <p>In your existing project that you created in the <a href="#Using the Logger">[Using the Logger]</a> section,</p> 
      </div> 
@@ -1336,18 +1347,7 @@ Of course, logging the payload is also very easy to do: simply set the logger me
        <li> <p>Modify your flow to include a set-variable element with the name <code>path</code> and a value of&nbsp;<br> <code>#[message.inboundProperties.'http.request.path']</code>&nbsp;</p> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>set-variable name=path value="#[message.inboundProperties.'http.request.path']"/<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
+          <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>set-variable name=path value="#[message.inboundProperties.'http.request.path']"/<span class="entity">&amp;gt;</span></code></pre> 
          </div> 
         </div> </li> 
        <li> <p>Configure your logger element with the following message:<br> <code>#[app.name] running on Mule version #[mule.version] on #[server.userName] arrived with the path #[flowVars.path]</code></p> 
@@ -1380,7 +1380,7 @@ Of course, logging the payload is also very easy to do: simply set the logger me
       <p><code>org.mule.api.processor.LoggerMessageProcessor: mel_test running on Mule version 3.6.0 on AaronMacbook arrived with the path /Aaron</code></p> 
      </div> 
      <div class="paragraph"> 
-      <p>Your results will vary depending on these factors:</p> 
+      <p>Your results can vary depending on these factors:</p> 
      </div> 
      <div class="ulist"> 
       <ul> 
@@ -1491,7 +1491,7 @@ Of course, logging the payload is also very easy to do: simply set the logger me
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> Use an <strong>Expression Component</strong> in your flow to manipulate parts of the Mule message without replacing the entire payload. Note that an expression component and expression transformer look very similar, but the latter will always set the value of the expression as the new payload of the message, so you don’t want that in this case. </td> 
+       <td class="content"> Use an <strong>Expression Component</strong> in your flow to manipulate parts of the Mule message without replacing the entire payload. Note that an expression component and expression transformer look very similar, but the latter always sets the value of the expression as the new payload of the message, so you don’t want that in this case. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1517,7 +1517,7 @@ Of course, logging the payload is also very easy to do: simply set the logger me
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> Use the server.dateTime function, then format the result by calling the format() method, passing the argument 'EEEE'. Based on <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>, this will return a string in the form of the day of the week. </td> 
+       <td class="content"> Use the server.dateTime function, then format the result by calling the format() method, passing the argument 'EEEE'. Based on <a href="http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>, this returns a string in the form of the day of the week. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1530,7 +1530,7 @@ Of course, logging the payload is also very easy to do: simply set the logger me
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> Try running your application in Debug Mode with breakpoints on your message processors. What payload type do you observe? Is that payload type serializable? If it is, Mule is converting your payload to a bytearray per its default behavior. In this case, you want a nice readable string instead, so you need to add an additional message processor after your expression component to change your data type. Browse through the transformers drawer in the palette to find the appropriate one that will do the trick. </td> 
+       <td class="content"> Try running your application in Debug Mode with breakpoints on your message processors. What payload type do you observe? Is that payload type serializable? If it is, Mule is converting your payload to a bytearray per its default behavior. In this case, you want a nice readable string instead, so you need to add an additional message processor after your expression component to change your data type. Browse through the transformers drawer in the palette to find the appropriate one that does the trick. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1678,7 +1678,7 @@ Of course, logging the payload is also very easy to do: simply set the logger me
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#goals">Goals</a></li><li><a class="scroll-menu-link" href="#accessing-information-about-your-mule-messages">Accessing Information about your Mule Messages</a></li><li><a class="scroll-menu-link" href="#selecting-data-from-mule-messages-and-their-environment-with-mel">Selecting Data from Mule Messages and their Environment with MEL</a></li><li><a class="scroll-menu-link" href="#extra-credit">Extra Credit</a></li><li><a class="scroll-menu-link" href="#full-code-of-the-extra-credit-application">Full Code of the Extra Credit Application</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#goals">Goals</a></li><li><a class="scroll-menu-link" href="#accessing-information-about-your-mule-messages">Accessing Information about your Mule Messages</a></li><li><a class="scroll-menu-link" href="#selecting-data-from-mule-messages-and-their-environment-with-mel">Selecting Data from Mule Messages and their Environment with MEL</a></li><li><a class="scroll-menu-link" href="#extra-credit">Extra Credit</a></li><li><a class="scroll-menu-link" href="#full-code-of-the-extra-credit-application">Full Code of the Extra Credit Application</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

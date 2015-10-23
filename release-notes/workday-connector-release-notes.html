@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/release-notes/workday-connector-release-notes" />
-    <meta name="description" content="Select Guide: Workday Connector Workday connector 6.0 is compatible with: Mule Runtime 3.7.0 or newer Anypoint Studio 5.2 or newer Note: The Workda..." />
+    <meta name="description" content="Select Workday is a Software-as-a-Service (SaaS) solution developed by Workday Inc. It consists of a set of management applications, covering sever..." />
     <meta class="swiftype" name="title" data-type="string" content="Workday Connector Release Notes" />
 
 </head>
@@ -872,7 +872,712 @@
    <p><strong><em>Select</em></strong></p> 
   </div> 
   <div class="paragraph"> 
-   <p><strong>Guide</strong>: <a href="/mule-user-guide/v/3.7/workday-connector">Workday Connector</a></p> 
+   <p>Workday is a Software-as-a-Service (SaaS) solution developed by Workday Inc. It consists of a set of management applications, covering several areas like human resources management, staffing, recruiting and performance management.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Connector Guide</strong>: <a href="/mule-user-guide/v/3.7/workday-connector">Workday Connector</a></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Migration Guide</strong>:&nbsp;<a href="/mule-user-guide/v/3.7/workday-connector-6.0-migration-guide">Workday Connector 6.0 or above Migration Guide</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="workday-connector-7-0-october-19-2015"><a class="anchor" href="#workday-connector-7-0-october-19-2015"></a>Workday Connector 7.0 - October 19, 2015</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-compatibility"><a class="anchor" href="#version-7-0-compatibility"></a>Version 7.0 Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>Workday connector 7.0 is compatible with:</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Application/Service</th> 
+      <th class="tableblock halign-left valign-top">Version</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule Runtime</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">3.7.0 or later</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Anypoint Studio</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">5.2 or later</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Workday API</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">v25.0</p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> The Workday connector requires an Enterprise License. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-features"><a class="anchor" href="#version-7-0-features"></a>Version 7.0 Features</h3> 
+   <div class="paragraph"> 
+    <p>Introduced the following new Workday APIs</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Admissions</p> </li> 
+     <li> <p>Compensation Review</p> </li> 
+     <li> <p>Financial Aid</p> </li> 
+     <li> <p>Inventory</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-supported-workday-apis"><a class="anchor" href="#version-7-0-supported-workday-apis"></a>Version 7.0 Supported Workday APIs</h3> 
+   <div class="sect3"> 
+    <h4 id="human-capital-management"><a class="anchor" href="#human-capital-management"></a>Human Capital Management</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Absence Management</p> </li> 
+      <li> <p>Benefits Administration</p> </li> 
+      <li> <p>Compensation</p> </li> 
+      <li> <p>Compensation Review</p> </li> 
+      <li> <p>Human Resources</p> </li> 
+      <li> <p>Payroll</p> </li> 
+      <li> <p>Payroll Interface</p> </li> 
+      <li> <p>Payroll GBR</p> </li> 
+      <li> <p>Performance Management</p> </li> 
+      <li> <p>Recruiting</p> </li> 
+      <li> <p>Staffing</p> </li> 
+      <li> <p>Talent</p> </li> 
+      <li> <p>Time Tracking</p> </li> 
+      <li> <p>Workforce Planning</p> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="financials"><a class="anchor" href="#financials"></a>Financials</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Cash Management</p> </li> 
+      <li> <p>Financial Manangement</p> </li> 
+      <li> <p>Inventory</p> </li> 
+      <li> <p>Professional Services Automation</p> </li> 
+      <li> <p>Resource Management</p> </li> 
+      <li> <p>Revenue Management</p> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="student"><a class="anchor" href="#student"></a>Student</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Academic Foundation</p> </li> 
+      <li> <p>Admissions</p> </li> 
+      <li> <p>Campus Engagement</p> </li> 
+      <li> <p>Financial Aid</p> </li> 
+      <li> <p>Student Recruiting</p> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="system"><a class="anchor" href="#system"></a>System</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Identity Management</p> </li> 
+      <li> <p>Integrations</p> </li> 
+      <li> <p>Tenant Data Translation</p> </li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-new-modified-and-deprecated-operations"><a class="anchor" href="#version-7-0-new-modified-and-deprecated-operations"></a>Version 7.0 New, Modified and Deprecated Operations</h3> 
+   <div class="sect3"> 
+    <h4 id="new-operations"><a class="anchor" href="#new-operations"></a>New Operations</h4> 
+    <div class="sect4"> 
+     <h5 id="academic-foundation"><a class="anchor" href="#academic-foundation"></a>Academic Foundation</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Educational Institution Course</p> </li> 
+       <li> <p>Get Student Educational Institution</p> </li> 
+       <li> <p>Get Student Educational Institution Districts</p> </li> 
+       <li> <p>Import Education Test Results</p> </li> 
+       <li> <p>Put Educational Institution Course</p> </li> 
+       <li> <p>Put Student Educational Institution</p> </li> 
+       <li> <p>Put Student Educational Institution District</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="admissions"><a class="anchor" href="#admissions"></a>Admissions</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Student Application Admission Responses</p> </li> 
+       <li> <p>Get Student Application Requirement Assignments</p> </li> 
+       <li> <p>Put Student Application Admission Response</p> </li> 
+       <li> <p>Put Student Application Requirement Assignment</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="financial-aid"><a class="anchor" href="#financial-aid"></a>Financial Aid</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Student Award Items</p> </li> 
+       <li> <p>Get Student Preliminary Awards</p> </li> 
+       <li> <p>Put Student Award Item</p> </li> 
+       <li> <p>Put Student Preliminary Award</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="human-resources"><a class="anchor" href="#human-resources"></a>Human Resources</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Assign Members to Custom Organization</p> </li> 
+       <li> <p>Change Veteran Status Identification</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="performance-management"><a class="anchor" href="#performance-management"></a>Performance Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Goal Units</p> </li> 
+       <li> <p>Put Goal Units</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="recruiting"><a class="anchor" href="#recruiting"></a>Recruiting</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Job Application Additional Data</p> </li> 
+       <li> <p>Put Job Application Additional Data</p> </li> 
+       <li> <p>Edit Job Requisition Additional Data</p> </li> 
+       <li> <p>Edit Position Restrictions Additional Data</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="resource-management"><a class="anchor" href="#resource-management"></a>Resource Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Cash Advance Repayment</p> </li> 
+       <li> <p>Get Resource Forecasts</p> </li> 
+       <li> <p>Get Supplier Contact Information</p> </li> 
+       <li> <p>Import Resource Forecast</p> </li> 
+       <li> <p>Put Cash Advance Repayment</p> </li> 
+       <li> <p>Submit Supplier Contact Information</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="revenue-management"><a class="anchor" href="#revenue-management"></a>Revenue Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Company as Business Entity</p> </li> 
+       <li> <p>Put Company as Business Entity</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="staffing"><a class="anchor" href="#staffing"></a>Staffing</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Change Organization Assignments</p> </li> 
+       <li> <p>Edit Worker Additional Data</p> </li> 
+       <li> <p>Edit Job Requisition Additional Data</p> </li> 
+       <li> <p>Edit Position Restrictions Additional Data</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="student-recruiting"><a class="anchor" href="#student-recruiting"></a>Student Recruiting</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Student Recruitments</p> </li> 
+       <li> <p>Import Student Recruitments</p> </li> 
+       <li> <p>Put Student Recruitment</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="talent"><a class="anchor" href="#talent"></a>Talent</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Skill Profile Categories</p> </li> 
+       <li> <p>Get Skill Profiles</p> </li> 
+       <li> <p>Get Talent Statement Types</p> </li> 
+       <li> <p>Put Skill Profile</p> </li> 
+       <li> <p>Put Skill Profile Category</p> </li> 
+       <li> <p>Put Talent Statement Type</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="time-tracking"><a class="anchor" href="#time-tracking"></a>Time Tracking</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Assign Work Schedule</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="modified-operations"><a class="anchor" href="#modified-operations"></a>Modified Operations</h4> 
+    <div class="sect4"> 
+     <h5 id="absence-management"><a class="anchor" href="#absence-management"></a>Absence Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Adjust Time Off</p> </li> 
+       <li> <p>Enter Time Off</p> </li> 
+       <li> <p>Get Absence Inputs</p> </li> 
+       <li> <p>Put Absence Input</p> </li> 
+       <li> <p>Put Override Balance</p> </li> 
+       <li> <p>Request Leave of Absence</p> </li> 
+       <li> <p>Request Return from Leave of Absence</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="academic-foundation-2"><a class="anchor" href="#academic-foundation-2"></a>Academic Foundation</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Programs of Study</p> </li> 
+       <li> <p>Put Program of Study</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="cash-management"><a class="anchor" href="#cash-management"></a>Cash Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Ad Hoc Payment</p> </li> 
+       <li> <p>Put Bank Account</p> </li> 
+       <li> <p>Submit Ad Hoc Payment</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="compensation"><a class="anchor" href="#compensation"></a>Compensation</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Add Stock Grant</p> </li> 
+       <li> <p>Update Stock Grant</p> </li> 
+       <li> <p>Get Employee Awards</p> </li> 
+       <li> <p>Get Compensation Plans</p> </li> 
+       <li> <p>Put Compensation Plans</p> </li> 
+       <li> <p>Request Compensation Change</p> </li> 
+       <li> <p>Request Compensation Change</p> </li> 
+       <li> <p>Request Compensation Change</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="financial-management"><a class="anchor" href="#financial-management"></a>Financial Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Alternate Account Set Mappings</p> </li> 
+       <li> <p>Get Customer Contract</p> </li> 
+       <li> <p>Get Gift</p> </li> 
+       <li> <p>Get Journals</p> </li> 
+       <li> <p>Get Payments</p> </li> 
+       <li> <p>Get Recurring Journal Templates</p> </li> 
+       <li> <p>Import Accounting Journal</p> </li> 
+       <li> <p>Put Alternate Account Set Mappings</p> </li> 
+       <li> <p>Put Grant</p> </li> 
+       <li> <p>Put Recurring Journal Template</p> </li> 
+       <li> <p>Put Statistic Definitions</p> </li> 
+       <li> <p>Submit Customer Contract</p> </li> 
+       <li> <p>Submit Gift</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="human-resources-2"><a class="anchor" href="#human-resources-2"></a>Human Resources</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Add Academic Appointment</p> </li> 
+       <li> <p>Change Emergency Contacts</p> </li> 
+       <li> <p>Change Personal Information</p> </li> 
+       <li> <p>Get Work Schedule Calendars</p> </li> 
+       <li> <p>Manage Committee Membership</p> </li> 
+       <li> <p>Put Work Schedule Calendar</p> </li> 
+       <li> <p>Get Workers</p> </li> 
+       <li> <p>Get Payroll Involuntary Withholding Orders</p> </li> 
+       <li> <p>Put Payroll Involuntary Withholding Order</p> </li> 
+       <li> <p>Get Payroll Results</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="payroll-interface"><a class="anchor" href="#payroll-interface"></a>Payroll Interface</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Payees</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="performance-management-2"><a class="anchor" href="#performance-management-2"></a>Performance Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Manage Goals</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="recruiting-2"><a class="anchor" href="#recruiting-2"></a>Recruiting</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Create Job Requisition</p> </li> 
+       <li> <p>Create Position</p> </li> 
+       <li> <p>Get Headcounts</p> </li> 
+       <li> <p>Get Positions</p> </li> 
+       <li> <p>Edit Job Requisition</p> </li> 
+       <li> <p>Get Background Check</p> </li> 
+       <li> <p>Get Candidates</p> </li> 
+       <li> <p>Get Create Job Requisition</p> </li> 
+       <li> <p>Get Edit Job Requisition</p> </li> 
+       <li> <p>Put Candidate</p> </li> 
+       <li> <p>Put Candidate Attachment</p> </li> 
+       <li> <p>Get Applicants</p> </li> 
+       <li> <p>Put Applicant</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="resource-management-2"><a class="anchor" href="#resource-management-2"></a>Resource Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Cancel Supplier Invoice</p> </li> 
+       <li> <p>Cancel Supplier Invoice Adjustment</p> </li> 
+       <li> <p>Get Expense Item</p> </li> 
+       <li> <p>Get Expense Report</p> </li> 
+       <li> <p>Get Requisition</p> </li> 
+       <li> <p>Get Spend Authorization</p> </li> 
+       <li> <p>Get Travel City</p> </li> 
+       <li> <p>Import Supplier Invoice</p> </li> 
+       <li> <p>Put Expense Item</p> </li> 
+       <li> <p>Put Purchase Item</p> </li> 
+       <li> <p>Put Travel City</p> </li> 
+       <li> <p>Resume Asset Depreciation</p> </li> 
+       <li> <p>Submit Expense Report</p> </li> 
+       <li> <p>Submit Expense Report</p> </li> 
+       <li> <p>Submit Expense Report for Applicant</p> </li> 
+       <li> <p>Submit Requisition</p> </li> 
+       <li> <p>Submit Spend Authorization</p> </li> 
+       <li> <p>Submit Supplier</p> </li> 
+       <li> <p>Submit Supplier Invoice</p> </li> 
+       <li> <p>Submit Supplier Invoice</p> </li> 
+       <li> <p>Submit Supplier Invoice Adjustment</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="revenue-management-2"><a class="anchor" href="#revenue-management-2"></a>Revenue Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Correct Award</p> </li> 
+       <li> <p>Put Award Schedule</p> </li> 
+       <li> <p>Put Customer Payment</p> </li> 
+       <li> <p>Submit Award</p> </li> 
+       <li> <p>Submit Customer Contract</p> </li> 
+       <li> <p>Submit Customer Invoice</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="staffing-2"><a class="anchor" href="#staffing-2"></a>Staffing</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Add Additional Job</p> </li> 
+       <li> <p>Edit Hiring Restrictions</p> </li> 
+       <li> <p>Get Headcounts</p> </li> 
+       <li> <p>Get Positions</p> </li> 
+       <li> <p>Promote Employee (DEPRECATED)</p> </li> 
+       <li> <p>Demote Employee (DEPRECATED)</p> </li> 
+       <li> <p>Start International Assignment</p> </li> 
+       <li> <p>Assign Organization</p> </li> 
+       <li> <p>Change Job</p> </li> 
+       <li> <p>Contract Contingent Worker</p> </li> 
+       <li> <p>Edit Position</p> </li> 
+       <li> <p>Edit Service Dates</p> </li> 
+       <li> <p>Hire Employee</p> </li> 
+       <li> <p>Put Start International Assignment</p> </li> 
+       <li> <p>Get Workers</p> </li> 
+       <li> <p>Get Applicants</p> </li> 
+       <li> <p>Put Applicant</p> </li> 
+       <li> <p>Create Position</p> </li> 
+       <li> <p>Edit Position Restrictions</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="talent-2"><a class="anchor" href="#talent-2"></a>Talent</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Manager Certifications</p> </li> 
+       <li> <p>Manage Certifications</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="deprecated-operations"><a class="anchor" href="#deprecated-operations"></a>Deprecated Operations</h4> 
+    <div class="sect4"> 
+     <h5 id="academic-foundation-3"><a class="anchor" href="#academic-foundation-3"></a>Academic Foundation</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Educational Institution Districts</p> </li> 
+       <li> <p>Get Educational Institutions</p> </li> 
+       <li> <p>Put Educational Institution</p> </li> 
+       <li> <p>Put Educational Institution District</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="benefits-administration"><a class="anchor" href="#benefits-administration"></a>Benefits Administration</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Employee Defined Contribution Elections</p> </li> 
+       <li> <p>Put Dependent</p> </li> 
+       <li> <p>Put Employee Defined Contribution Elections</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="campus-engagement"><a class="anchor" href="#campus-engagement"></a>Campus Engagement</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Engagement Emails</p> </li> 
+       <li> <p>Get Engagement Plans</p> </li> 
+       <li> <p>Put Engagement Email</p> </li> 
+       <li> <p>Put Engagement Plan</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="compensation-2"><a class="anchor" href="#compensation-2"></a>Compensation</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Request Stock Grant</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="financial-management-2"><a class="anchor" href="#financial-management-2"></a>Financial Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Companies</p> </li> 
+       <li> <p>Put Budget Incremental</p> </li> 
+       <li> <p>Put Business Plan Details</p> </li> 
+       <li> <p>Submit Business Plan Amendment</p> </li> 
+       <li> <p>Submit Position Budget</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="human-resources-3"><a class="anchor" href="#human-resources-3"></a>Human Resources</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Add Update Company Tax ID</p> </li> 
+       <li> <p>Find Business Site</p> </li> 
+       <li> <p>Find Job Classification Group</p> </li> 
+       <li> <p>Find Job Family Group</p> </li> 
+       <li> <p>Find Job Profile</p> </li> 
+       <li> <p>Get Business Site</p> </li> 
+       <li> <p>Get Company Tax ID</p> </li> 
+       <li> <p>Get Company Tax IDs</p> </li> 
+       <li> <p>Get Job Classification Group</p> </li> 
+       <li> <p>Get Job Family Group</p> </li> 
+       <li> <p>Get Job Profile</p> </li> 
+       <li> <p>Put Company Tax ID</p> </li> 
+       <li> <p>Put Dependent</p> </li> 
+       <li> <p>Find Contingent Worker</p> </li> 
+       <li> <p>Find Employee</p> </li> 
+       <li> <p>Find Worker</p> </li> 
+       <li> <p>Update Contingent Worker Personal Info</p> </li> 
+       <li> <p>Update Employee Personal Info</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="payroll"><a class="anchor" href="#payroll"></a>Payroll</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Payroll Inputs</p> </li> 
+       <li> <p>Put Payroll Input</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="payroll-interface-2"><a class="anchor" href="#payroll-interface-2"></a>Payroll Interface</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Put Batch</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="performance-management-3"><a class="anchor" href="#performance-management-3"></a>Performance Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Competency Levels</p> </li> 
+       <li> <p>Put Competency Level</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="professional-services-automation"><a class="anchor" href="#professional-services-automation"></a>Professional Services Automation</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Add Update Customer Invoice</p> </li> 
+       <li> <p>Cancel Customer Invoice</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="recruiting-3"><a class="anchor" href="#recruiting-3"></a>Recruiting</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Add Update Applicant</p> </li> 
+       <li> <p>Find Applicant</p> </li> 
+       <li> <p>Get Applicant</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="resource-management-3"><a class="anchor" href="#resource-management-3"></a>Resource Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get PO for PO Issue Outbound</p> </li> 
+       <li> <p>Get Supplier Order Contracts</p> </li> 
+       <li> <p>Put Card Holder Listing File</p> </li> 
+       <li> <p>Put Credit Card Transactions</p> </li> 
+       <li> <p>Put Expense Credit Card</p> </li> 
+       <li> <p>Put Expense Credit Card Transaction File</p> </li> 
+       <li> <p>Put Supplier</p> </li> 
+       <li> <p>Submit Supplier Order Contract</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="revenue-management-3"><a class="anchor" href="#revenue-management-3"></a>Revenue Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Put Cash Sale</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="staffing-3"><a class="anchor" href="#staffing-3"></a>Staffing</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Maintain Employee Contracts</p> </li> 
+       <li> <p>Maintain Academic Tenure Date</p> </li> 
+       <li> <p>Put Dependent</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="student-recruiting-2"><a class="anchor" href="#student-recruiting-2"></a>Student Recruiting</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Student Prospects</p> </li> 
+       <li> <p>Import Student Prospects</p> </li> 
+       <li> <p>Submit Student Prospect</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="talent-3"><a class="anchor" href="#talent-3"></a>Talent</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Competency Levels</p> </li> 
+       <li> <p>Put Competency Level</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="end-of-life-operations"><a class="anchor" href="#end-of-life-operations"></a>End of Life Operations</h4> 
+    <div class="sect4"> 
+     <h5 id="recruiting-4"><a class="anchor" href="#recruiting-4"></a>Recruiting</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Put Job Posting for Referrals</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="resource-management-4"><a class="anchor" href="#resource-management-4"></a>Resource Management</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Get Resources</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="staffing-4"><a class="anchor" href="#staffing-4"></a>Staffing</h5> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Demote Employee</p> </li> 
+       <li> <p>Promote Employee</p> </li> 
+       <li> <p>Transfer Contingent Worker</p> </li> 
+       <li> <p>Transfer Employee</p> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-maven-dependencies"><a class="anchor" href="#version-7-0-maven-dependencies"></a>Version 7.0 Maven Dependencies</h3> 
+   <div class="paragraph"> 
+    <p>As with any other Anypoint Connector, the Workday connector can be imported into your Mule application as a dependency by specifying it in the pom.xml file of your Mule project using the following Maven coordinates.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;groupId&gt;</span>org.mule.modules<span class="tag">&lt;/groupId&gt;</span>
+<span class="tag">&lt;artifactId&gt;</span>workday-connector<span class="tag">&lt;/artifactId&gt;</span>
+<span class="tag">&lt;version&gt;</span>7.0.0<span class="tag">&lt;/version&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-fixes"><a class="anchor" href="#version-7-0-fixes"></a>Version 7.0 Fixes</h3> 
+   <div class="paragraph"> 
+    <p>None</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-known-issues"><a class="anchor" href="#version-7-0-known-issues"></a>Version 7.0 Known Issues</h3> 
+   <div class="paragraph"> 
+    <p>None.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -926,8 +1631,15 @@
      </tr> 
     </tbody> 
    </table> 
-   <div class="paragraph"> 
-    <p><strong>Note</strong>: The Workday Connector requires an Enterprise License.</p> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> The Workday connector requires an Enterprise License. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -944,57 +1656,57 @@
   </div> 
   <div class="sect2"> 
    <h3 id="version-6-0-supported-workday-apis"><a class="anchor" href="#version-6-0-supported-workday-apis"></a>Version 6.0 Supported Workday APIs</h3> 
-   <div class="paragraph"> 
-    <p><strong>Human Capital Management</strong></p> 
+   <div class="sect3"> 
+    <h4 id="human-capital-management-2"><a class="anchor" href="#human-capital-management-2"></a>Human Capital Management</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Absence Management</p> </li> 
+      <li> <p>Benefits Administration</p> </li> 
+      <li> <p>Compensation</p> </li> 
+      <li> <p>Human Resources</p> </li> 
+      <li> <p>Payroll</p> </li> 
+      <li> <p>Payroll Interface</p> </li> 
+      <li> <p>Payroll GBR</p> </li> 
+      <li> <p>Performance Management</p> </li> 
+      <li> <p>Recruiting</p> </li> 
+      <li> <p>Staffing</p> </li> 
+      <li> <p>Talent</p> </li> 
+      <li> <p>Time Tracking</p> </li> 
+      <li> <p>Workforce Planning</p> </li> 
+      <li> <p>Financials</p> </li> 
+     </ul> 
+    </div> 
    </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Absence Management</p> </li> 
-     <li> <p>Benefits Administration</p> </li> 
-     <li> <p>Compensation</p> </li> 
-     <li> <p>Human Resources</p> </li> 
-     <li> <p>Payroll</p> </li> 
-     <li> <p>Payroll Interface</p> </li> 
-     <li> <p>Payroll GBR</p> </li> 
-     <li> <p>Performance Management</p> </li> 
-     <li> <p>Recruiting</p> </li> 
-     <li> <p>Staffing</p> </li> 
-     <li> <p>Talent</p> </li> 
-     <li> <p>Time Tracking</p> </li> 
-     <li> <p>Workforce Planning</p> </li> 
-     <li> <p>Financials</p> </li> 
-    </ul> 
+   <div class="sect3"> 
+    <h4 id="cash-management-2"><a class="anchor" href="#cash-management-2"></a>Cash Management</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Financial Manangement</p> </li> 
+      <li> <p>Professional Services Automation</p> </li> 
+      <li> <p>Resource Management</p> </li> 
+      <li> <p>Revenue Management</p> </li> 
+     </ul> 
+    </div> 
    </div> 
-   <div class="paragraph"> 
-    <p><strong>Cash Management</strong></p> 
+   <div class="sect3"> 
+    <h4 id="student-2"><a class="anchor" href="#student-2"></a>Student</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Academic Foundation</p> </li> 
+      <li> <p>Campus Engagement</p> </li> 
+      <li> <p>Student Recruiting</p> </li> 
+     </ul> 
+    </div> 
    </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Financial Manangement</p> </li> 
-     <li> <p>Professional Services Automation</p> </li> 
-     <li> <p>Resource Management</p> </li> 
-     <li> <p>Revenue Management</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><strong>Student</strong></p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Academic Foundation</p> </li> 
-     <li> <p>Campus Engagement</p> </li> 
-     <li> <p>Student Recruiting</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p><strong>System</strong></p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Identity Management</p> </li> 
-     <li> <p>Integrations</p> </li> 
-     <li> <p>Tenant Data Translation</p> </li> 
-    </ul> 
+   <div class="sect3"> 
+    <h4 id="system-2"><a class="anchor" href="#system-2"></a>System</h4> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Identity Management</p> </li> 
+      <li> <p>Integrations</p> </li> 
+      <li> <p>Tenant Data Translation</p> </li> 
+     </ul> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -2935,8 +3647,15 @@
   <div class="paragraph"> 
    <p>Release Notes for version v4.2.0 of the Workday connector.&nbsp;</p> 
   </div> 
-  <div class="paragraph"> 
-   <p><strong>Note</strong>: The Workday connector requires an Enterprise License.</p> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> The Workday connector requires an Enterprise License. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
   <div class="sect2"> 
    <h3 id="version-4-2-0-compatibility"><a class="anchor" href="#version-4-2-0-compatibility"></a>Version 4.2.0 Compatibility</h3> 
@@ -4815,10 +5534,12 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Visit&nbsp;<a href="https://community.workday.com/custom/developer/API/versions/v23.0/index.html">Workday API documentation page</a>&nbsp;for information on Workday v23.0 API.</p> </li> 
-    <li> <p>Learn how to&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-exchange">Install Anypoint Connectors</a>&nbsp;using Anypoint Exchange.</p> </li> 
-    <li> <p>Access MuleSoft’s&nbsp;http://forum.mulesoft.org/mulesoft[Forum]&nbsp;to pose questions and get help from Mule’s broad community of users.</p> </li> 
-    <li> <p>To access MuleSoft’s expert support team,&nbsp;http://www.mulesoft.com/mule-esb-subscription[subscribe]&nbsp;to Mule ESB Enterprise and log into MuleSoft&nbsp;http://www.mulesoft.com/support-login[Customer Portal].&nbsp;</p> </li> 
+    <li> <p>Refer to the <a href="/release-notes/v/latest/workday-connector-6.0-migration-guide">Workday Connector 6.0 or above Migration Guide</a>to learn how to upgrade to Workday connector v6.0 or above.</p> </li> 
+    <li> <p>For more information on Workday v25.0 API , refer to the <a href="https://community.workday.com/custom/developer/API/versions/v25.0/index.html">Workday API documentation</a>.</p> </li> 
+    <li> <p>Workday v25.0 <a href="https://community.workday.com/current/wsrelnotes">Release Notes</a> (Requires Workday Community login)</p> </li> 
+    <li> <p>Learn about <a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">installing the connector</a></p> </li> 
+    <li> <p>Access MuleSoft’s&nbsp;<a href="http://forum.mulesoft.org/mulesoft">Forum</a>&nbsp;to pose questions and get help from Mule’s broad community of users.</p> </li> 
+    <li> <p>To access MuleSoft’s expert support team,&nbsp;<a href="http://www.mulesoft.com/mule-esb-subscription">subscribe</a>&nbsp;to Mule ESB Enterprise and log into MuleSoft’s&nbsp;<a href="http://www.mulesoft.com/support-login">Customer Portal</a>.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -4827,7 +5548,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#workday-connector-6-0-july-31-2015">Workday Connector 6.0 - July 31, 2015</a></li><li><a class="scroll-menu-link" href="#version-5-0-july-1-2015">Version 5.0 - July 1, 2015</a></li><li><a class="scroll-menu-link" href="#version-4-2-0-march-20-2015">Version 4.2.0 - March 20, 2015</a></li><li><a class="scroll-menu-link" href="#version-4-1-1-december-12-2014">Version 4.1.1 - December 12, 2014</a></li><li><a class="scroll-menu-link" href="#version-4-0-1-october-29-2014">Version 4.0.1 - October 29, 2014</a></li><li><a class="scroll-menu-link" href="#version-4-0-0-september-29-2014">Version 4.0.0 - September 29, 2014</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#workday-connector-7-0-october-19-2015">Workday Connector 7.0 - October 19, 2015</a></li><li><a class="scroll-menu-link" href="#workday-connector-6-0-july-31-2015">Workday Connector 6.0 - July 31, 2015</a></li><li><a class="scroll-menu-link" href="#version-5-0-july-1-2015">Version 5.0 - July 1, 2015</a></li><li><a class="scroll-menu-link" href="#version-4-2-0-march-20-2015">Version 4.2.0 - March 20, 2015</a></li><li><a class="scroll-menu-link" href="#version-4-1-1-december-12-2014">Version 4.1.1 - December 12, 2014</a></li><li><a class="scroll-menu-link" href="#version-4-0-1-october-29-2014">Version 4.0.1 - October 29, 2014</a></li><li><a class="scroll-menu-link" href="#version-4-0-0-september-29-2014">Version 4.0.0 - September 29, 2014</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
