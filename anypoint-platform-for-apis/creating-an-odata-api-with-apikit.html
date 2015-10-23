@@ -727,11 +727,7 @@
 <i></i>
 <a href="/anypoint-connector-devkit/v/3.7/creating-an-anypoint-connector-project">Creating an Anypoint Connector Project</a><ul>
 <li><i></i><a href="/anypoint-connector-devkit/v/3.7/creating-a-java-sdk-based-connector">Creating a Java SDK-Based Connector</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/creating-a-soap-connector">Creating a SOAP Connector</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/creating-a-rest-connector">Creating a REST Connector</a></li></ul></li>
-<li><i></i><a href="/anypoint-connector-devkit/v/3.7/connector-project-structure">Connector Project Structure</a></li><li>
-<i></i>
-<a href="/anypoint-connector-devkit/v/3.7/setting-up-api-access">Setting Up API Access</a><ul>
-<li><i></i><a href="/anypoint-connector-devkit/v/3.7/3.7configure-twitter-for-api-access">Configure Twitter for API Access</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/configure-twilio-for-api-access">Configure Twilio for API Access</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/salesforce-developer-account-setup">Salesforce Developer Account Setup</a></li></ul></li>
-<li>
+<li><i></i><a href="/anypoint-connector-devkit/v/3.7/connector-project-structure">Connector Project Structure</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.7/setting-up-api-access">Setting Up API Access</a></li><li>
 <i></i>
 <a href="/anypoint-connector-devkit/v/3.7/authentication">Authentication</a><ul>
 <li><i></i><a href="/anypoint-connector-devkit/v/3.7/authentication-methods">Authentication Methods</a></li><li>
@@ -911,10 +907,30 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>Mule 3.7.x runtime or later</p> </li> 
-    <li> <p><a href="https://github.com/mulesoft/apikit/tree/2.0.0-BETA">APIKit 2.0 Beta</a></p> </li> 
     <li> <p><a href="https://www.mulesoft.com/platform/studio">The latest version of Anypoint Studio</a></p> </li> 
-    <li> <p><a href="https://github.com/mulesoft-labs/apikit-odata-template">Anypoint template for APIKit-OData</a></p> </li> 
+    <li> <p>APIKit with OData Extension, which you download from within Studio (see <a href="#installing-the-apikit-extension-in-studio">below</a>)</p> </li> 
    </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Once you have the latest version of Studio and the APIKit extension, the basic high-level steps are the following:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Import the template into Anypoint Studio.</p> </li> 
+    <li> <p>Define your OData entity model in the JSON file provided in the template.</p> </li> 
+    <li> <p>Run APIKit to scaffold the application, generating a RAML file that exposes OData endpoints with the entities you defined.</p> </li> 
+    <li> <p>Implement the flows in your application.</p> </li> 
+    <li> <p>Run your app locally, then deploy it to CloudHub.</p> </li> 
+    <li> <p>Register in Salesforce.</p> </li> 
+   </ol> 
+  </div> 
+  <div class="paragraph"> 
+   <p>These steps are detailed below.</p> 
   </div> 
   <div class="admonitionblock tip"> 
    <table> 
@@ -929,35 +945,25 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Once you have the latest version of Studio and the APIKit extension, the basic high-level steps are the following:</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p><a href="https://github.com/mulesoft-labs/apikit-odata-template">Download the Anypoint template</a>.</p> </li> 
-    <li> <p>Import the template into Anypoint Studio.</p> </li> 
-    <li> <p>Define your OData entity model in the JSON file provided in the template.</p> </li> 
-    <li> <p>Run APIKit to scaffold the application, generating a RAML file that exposes OData endpoints with the entities you defined.</p> </li> 
-    <li> <p>Implement the flows in your application.</p> </li> 
-    <li> <p>Run your app locally, then deploy it to CloudHub.</p> </li> 
-    <li> <p>Register in Salesforce.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>These steps are detailed below.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If you prefer to work without the template, see <a href="#using-the-sdk-without-the-template">Using the SDK Without the Template</a> below.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
  <h2 id="using-apikit-2-0-beta"><a class="anchor" href="#using-apikit-2-0-beta"></a>Using APIKit 2.0 Beta</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To use this functionality, you must <a href="https://github.com/mulesoft/apikit/tree/2.0.0-BETA">download and install APIKit 2.0 Beta</a>. Also, ensure you have the latest version of Studio and Mule 3.7 or later runtime (see the prerequisites <a href="#prerequisites">above</a>).</p> 
+   <p>To use this functionality, ensure you have the latest version of Studio and Mule 3.7 or later runtime (see the prerequisites <a href="#prerequisites">above</a>).</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="installing-the-apikit-extension-in-studio"><a class="anchor" href="#installing-the-apikit-extension-in-studio"></a>Installing the APIKit Extension in Studio</h3> 
+   <div class="paragraph"> 
+    <p>APIKit 2.0 Beta is available via a Studio update site. To install APIKit 2.0 Beta, follow these steps:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Under the <strong>Help</strong> menu in Anypoint Studio, select <strong>Install New Software</strong>.</p> </li> 
+     <li> <p>In the <strong>Work with:</strong> field in the Install wizard, enter: <code><a href="http://apikit-nightly.s3.amazonaws.com/k2-odata" class="bare">http://apikit-nightly.s3.amazonaws.com/k2-odata</a></code>.</p> </li> 
+     <li> <p>Studio displays details of the selected item. Click <strong>Next</strong>.</p> </li> 
+     <li> <p>Click to accept the terms and conditions of the product, then click <strong>Finish</strong>.</p> </li> 
+     <li> <p>Click <strong>Restart Now</strong> to complete the installation.</p> </li> 
+    </ol> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="importing-the-anypoint-template"><a class="anchor" href="#importing-the-anypoint-template"></a>Importing the Anypoint Template</h3> 
@@ -1011,7 +1017,7 @@
     <p>Using the template is the quickest and easiest way to build your OData-enabled application; however, if you do not wish to use the template, follow the steps below.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>To use this functionality, you must <a href="https://github.com/mulesoft/apikit/tree/2.0.0-BETA">download and install APIKit 2.0 Beta</a>. Also, ensure you have the latest version of Studio and Mule 3.7 or later runtime (see the prerequisites <a href="#prerequisites">above</a>).</p> 
+    <p>To use this functionality, ensure you have the latest version of Studio and Mule 3.7 or later runtime (see the prerequisites <a href="#prerequisites">above</a>).</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
