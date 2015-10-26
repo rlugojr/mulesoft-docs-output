@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Workday Connector   // MuleSoft Documentation </title>
+    <title>Workday Connector 7.0 // MuleSoft Documentation </title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/asciidoctor.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
@@ -19,8 +19,8 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/workday-connector" />
-    <meta name="description" content="Select The Anypoint Connector for Workday is a closed source Enterprise connector which provides a connection between Workday and third party softw..." />
-    <meta class="swiftype" name="title" data-type="string" content="Workday Connector  " />
+    <meta name="description" content="Select The Anypoint Connector for Workday is a closed source Enterprise connector which provides a connection between Workday and third party ..." />
+    <meta class="swiftype" name="title" data-type="string" content="Workday Connector 7.0" />
 
 </head>
 <body>
@@ -236,17 +236,17 @@
 <li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-advanced-features">SAP Connector Advanced Features</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sap-connector-troubleshooting">SAP Connector Troubleshooting</a></li></ul></li>
 <li>
 <i></i>
-<a href="/mule-user-guide/v/3.7/servicenow-connector-5.0">ServiceNow Connector 5.0</a><ul>
-<li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector-5.0-migration-guide">ServiceNow Connector 5.0 Migration Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector">ServiceNow Connector</a></li></ul></li>
+<a href="/mule-user-guide/v/3.7/servicenow-connector-5.0">ServiceNow Connector</a><ul>
+<li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector-5.0-migration-guide">ServiceNow Connector 5.0 Migration Guide</a></li></ul></li>
 <li><i></i><a href="/mule-user-guide/v/3.7/servlet-connector">Servlet Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sftp-connector">SFTP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/siebel-connector">Siebel Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twilio-connector">Twilio Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twitter-connector">Twitter Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/web-service-consumer">Web Service Consumer</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/web-service-consumer-reference">Web Service Consumer Reference</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/windows-powershell-connector-guide">Windows PowerShell Connector Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.7/wmq-connector">WMQ Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/windows-powershell-connector-guide">Windows PowerShell Connector Guide</a></li><li><i></i><a href="/mule-user-guide/v/3.7/wmq-connector">WMQ Connector</a></li><li class="active"><i></i><a href="/mule-user-guide/v/3.7/workday-connector">Workday Connector 7.0</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/workday-connector-6.0">Workday Connector 6.0</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/workday-connector-6.0-migration-guide">Workday Connector 6.0 Migration Guide</a></li></ul></li>
-<li class="active"><i></i><a href="/mule-user-guide/v/3.7/workday-connector">Workday Connector</a></li></ul></li>
+</ul></li>
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/components">Components</a><ul>
@@ -861,18 +861,21 @@
         <!-- END older version notification -->
         <!-- START article content -->
         <div class="article-content col-md-7">
-          <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="developing">Developing</a>/<a href="anypoint-connectors">Anypoint Connectors</a>/<a href="workday-connector" class="breadcrumb-active-link">Workday Connector</a></div>
-          <h1>Workday Connector  </h1>
+          <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="developing">Developing</a>/<a href="anypoint-connectors">Anypoint Connectors</a>/<a href="workday-connector" class="breadcrumb-active-link">Workday Connector 7.0</a></div>
+          <h1>Workday Connector 7.0</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><mark><strong>Select</strong></mark></p> 
+   <p><strong><em>Select</em></strong></p> 
   </div> 
   <div class="paragraph"> 
-   <p>The Anypoint Connector for Workday is a closed source Enterprise connector which provides a connection between Workday and third party software. It interfaces with the Human Capital Management, Financial Management, Student, and System web services.</p> 
+   <p>The Anypoint&nbsp;Connector for Workday is a closed source Enterprise connector which provides a connection between Workday and third party software. It implements the Workday v25.0 API modules, and interfaces with the Human Capital Management, Financial Management, Student, and System web services. The Workday connector is a SOAP based connector developed with DevKit 3.7.1.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><strong>Release Notes</strong>:&nbsp;<a href="/release-notes/workday-connector-release-notes">Workday Connector Release Notes</a>.&nbsp;</p> 
+   <p><strong>Release Notes</strong>:&nbsp;<a href="/release-notes/workday-connector-release-notes">Workday Connector Release Notes</a></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Migration Guide</strong>: <a href="/mule-user-guide/v/3.7/workday-connector-6.0-migration-guide">Workday Connector 6.0 Migration Guide</a></p> 
   </div> 
  </div> 
 </div> 
@@ -880,16 +883,20 @@
  <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you are familiar with Workday API. To use the this connector, you need:</p> 
+   <p>To use this connector, you need:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>A Workday instance with requisite permission</p> </li> 
-    <li> <p>A set of valid credentials, including the required Workday endpoints, pointing to your Workday instance.</p> </li> 
+    <li> <p>A Workday instance with the necessary permissions</p> </li> 
+    <li> <p>A set of valid credentials, including username, password, tenant name, and host name (optional). The service endpoints are automatically generated based on the credentials.</p> </li> 
+    <li> <p>A MuleSoft Enterprise License</p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>This document also assumes that you are familiar with Mule, <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>, and the <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>. To increase your familiarity with Studio, consider completing one or more Anypoint Studio Tutorials. Further, this page assumes that you have a basic understanding of&nbsp;<a href="/mule-fundamentals/v/3.7/elements-in-a-mule-flow">Mule flows</a> and <a href="/mule-fundamentals/v/3.7/global-elements">Mule Global Elements</a>.&nbsp;This document describes implementation examples within the context of Anypoint Studio, Mule ESB’s graphical user interface, and, in parallel, includes configuration details for doing the same in the XML Editor.</p> 
+   <p>This document assumes that you are familiar with Mule, <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>, and <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a>. To increase your familiarity with Studio, consider completing one or more <a href="/mule-fundamentals/v/3.7/basic-studio-tutorial">Basic Studio Tutorials</a>. This page assumes you understand <a href="/mule-fundamentals/v/3.7/mule-concepts">Mule Concepts</a>, <a href="/mule-fundamentals/v/3.7/elements-in-a-mule-flow">Elements in a Mule Flow</a>, and <a href="/mule-fundamentals/v/3.7/global-elements">Global Elements</a>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Here you can find implementation examples within the context of Anypoint Studio, Mule ESB’s graphical user interface, and, also configuration details for doing the same in the XML Editor.&nbsp;</p> 
   </div> 
  </div> 
 </div> 
@@ -897,7 +904,7 @@
  <h2 id="compatibility"><a class="anchor" href="#compatibility"></a>Compatibility</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Workday connector 5.0 is compatible with:</p> 
+   <p>Workday connector 7.0 is compatible with:</p> 
   </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
@@ -915,13 +922,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p>Workday API</p> 
+        <p>Mule Runtime</p> 
        </div> 
       </div></td> 
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p>v24.0</p> 
+        <p>EE 3.7.0 or later</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -929,13 +936,27 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p>Mule Runtime</p> 
+        <p>Anypoint Studio</p> 
        </div> 
       </div></td> 
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p>Enterprise Edition 3.5.0 and later</p> 
+        <p>5.2 or later</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Workday API</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>v25.0</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -963,241 +984,383 @@
   <div class="sect2"> 
    <h3 id="installing"><a class="anchor" href="#installing"></a>Installing</h3> 
    <div class="paragraph"> 
-    <p>You can install a connector in Anypoint Studio using the instructions in <a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>. However, to use the&nbsp;Workday Connector in a production environment, you must have either:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>An&nbsp;<strong>Enterprise license</strong>&nbsp;to use Mule&nbsp;</p> </li> 
-     <li> <p>A <strong>CloudHub</strong> Starter, Professional, or Enterprise account</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Contact the&nbsp;<a href="/mule-user-guide/v/3.7/siebel-connector">MuleSoft Sales Team</a>&nbsp;to obtain either of these. (Read more about&nbsp;<a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Installing an Enterprise License</a>.) Click&nbsp;<strong>Restart Now</strong>&nbsp;to complete the installation. After you install the connector and restart Studio, you can see several new message processors available in the palette, all under the Connectors category.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/wd_palette.png" alt="wd_palette"></span></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Alternatively you can also <a href="/mule-user-guide/v/3.7/installing-extensions">install this extension via Maven</a>.</p> 
+    <p>You can install a connector in Anypoint Studio using the instructions in <a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>. However, to use the&nbsp;Workday connector 7.0 in a production environment, you must have an&nbsp;Enterprise license&nbsp;to use Mule.&nbsp; Contact the&nbsp;<a href="mailto:info@mulesoft.com">MuleSoft Sales Team</a> to obtain either of these. Read more about&nbsp;<a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Installing an Enterprise License</a>.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="updating-from-an-older-version"><a class="anchor" href="#updating-from-an-older-version"></a>Updating from an Older Version</h3> 
-   <div class="paragraph"> 
-    <p>When a new version of a connector is released, Anypoint studio displays a popup in the bottom right corner of your screen with the following message: <strong>Updates Available</strong>.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To upgrade to the newer version of the Workday connector:</p> 
-   </div> 
+   <h3 id="upgrading-from-an-older-version"><a class="anchor" href="#upgrading-from-an-older-version"></a>Upgrading from an Older Version</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Click the popup and check for the available updates.</p> </li> 
-     <li> <p>Install the individual Workday connectors from the update site.</p> </li> 
-     <li> <p>Ensure that the maven dependencies have been updated correctly from&nbsp;<code>mule-module-workday</code>&nbsp;to&nbsp;<code>mule-module-workday-&lt;wd_module_name&gt;</code>.</p> </li> 
+     <li> <p>Uninstall the previous Workday Connectors.</p> </li> 
+     <li> <p>Install the Workday Connector as described in the previous section.</p> </li> 
+     <li> <p>Make sure you have updated the Maven dependencies correctly:</p> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 34%;"> 
+        <col style="width: 33%;"> 
+        <col style="width: 33%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Connector Version</th> 
+         <th class="tableblock halign-left valign-top">From</th> 
+         <th class="tableblock halign-left valign-top">To</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Version until 4.0.1</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><code>&lt;groupId&gt;org.mule.modules&lt;/groupId&gt;</code><br> <code>&lt;artifactId&gt;mule-module-workday&lt;/artifactId&gt;</code></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><code>&lt;groupId&gt;org.mule.modules&lt;/groupId&gt;</code><br> <code>&lt;artifactId&gt;workday-connector&lt;/artifactId&gt;</code></p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Versions 4.0.1 to 6.0 or above</p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><code>&lt;groupId&gt;org.mule.modules&lt;/groupId&gt;</code><br> <code>&lt;artifactId&gt;mule-module-workday-&lt;wd_module_name&gt;&lt;/artifactId&gt;</code></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><code>&lt;groupId&gt;org.mule.modules&lt;/groupId&gt;</code><br> <code>&lt;artifactId&gt;workday-connector&lt;/artifactId&gt;</code></p> 
+           </div> 
+          </div></td> 
+        </tr> 
+       </tbody> 
+      </table> </li> 
+     <li> <p>It is important to update the flows to:<br></p> 
+      <div class="olist loweralpha"> 
+       <ol class="loweralpha" type="a"> 
+        <li> <p>Update the existing data mappings</p> </li> 
+        <li> <p>Replace the old Workday connector with the newer connector</p> </li> 
+        <li> <p>Replace the phased out or deprecated operations</p> </li> 
+       </ol> 
+      </div> </li> 
+     <li> <p>Make the following changes to the namespace:</p> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">From</th> 
+         <th class="tableblock halign-left valign-top">To</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Namespace:</strong><br> <code>xmlns:wd-staffing="http://www.mulesoft.org/schema/mule/wd-staffing"</code><br> <strong>Schema Location:</strong><br> <a href="http://www.mulesoft.org/schema/mule/wd-staffing" class="bare">http://www.mulesoft.org/schema/mule/wd-staffing</a><br> <a href="http://www.mulesoft.org/schema/mule/wd-staffing/2.0/mule-wd-%3Cwd_module_name%3E.xsd">http://www.mulesoft.org/schema/mule/wd-staffing/2.0/mule-wd-&lt;wd_module_name&gt;.xsd</a></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Namespace:</strong><br> <code>xmlns:wd-connector="http://www.mulesoft.org/schema/mule/wd-connector"</code><br> <strong>Schema Location:</strong><br> <a href="http://www.mulesoft.org/schema/mule/wd-connector" class="bare">http://www.mulesoft.org/schema/mule/wd-connector</a><br> <a href="http://www.mulesoft.org/schema/mule/wd-connector/current/mule-wd-connector.xsd" class="bare">http://www.mulesoft.org/schema/mule/wd-connector/current/mule-wd-connector.xsd</a></p></td> 
+        </tr> 
+       </tbody> 
+      </table> </li> 
     </ol> 
-   </div> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> Make sure you update flows that are using Phased Out or Deprecated operations. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Follow the instructions provided by the user interface.</p> </li> 
-     <li> <p>Restart Studio when prompted.</p> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>After restarting, if you have several versions of the connector installed, Mule asks you for the version of the connector you like to use.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="creating-a-new-project"><a class="anchor" href="#creating-a-new-project"></a>Creating a New Project</h3> 
+   <div class="paragraph"> 
+    <p>To use the Workday connector 7.0 in a Mule application project:</p> 
+   </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>In Studio, click&nbsp;<strong>File</strong>&nbsp;&gt;&nbsp;<strong>New</strong> &gt; <strong>Mule Project</strong>.</p> 
+     <li> <p>In Studio, select&nbsp;<strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>.</p> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/filenew.png" alt="filenew"></span></p> 
+       <p><span class="image"><img src="./_images/wd6_filenew.png" alt="wd6_filenew"></span></p> 
       </div> </li> 
-     <li> <p>Enter a name for your new project and leave the remaining options with their default values.</p> </li> 
-     <li> <p>If you plan to use Git, select <strong>Create a .gitignore file</strong> for the project with default ignores for Studio Projects, and then click <strong>Next</strong>.</p> </li> 
-     <li> <p>Click <strong>Finish</strong> to create the project.</p> </li> 
+     <li> <p>Enter a name for your new project and leave the remaining options with their default values.&nbsp;</p> </li> 
+     <li> <p>If you plan to use Git, select&nbsp;<strong>Create a .gitignore file</strong> for the project with default ignores for Studio Projects, and then click&nbsp;<strong>Next</strong>.</p> </li> 
+     <li> <p>Click&nbsp;<strong>Finish</strong>&nbsp;to create the project.</p> </li> 
     </ol> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="configuring-the-workday-connector-global-element"><a class="anchor" href="#configuring-the-workday-connector-global-element"></a>Configuring the Workday&nbsp;Connector Global Element</h2> 
+ <h2 id="configuring-the-global-element"><a class="anchor" href="#configuring-the-global-element"></a>Configuring the Global Element</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To use the Workday connector in your Mule application, you must configure a global element for each Workday connector module in the application (read more about <a href="/mule-fundamentals/v/3.7/global-elements">global elements</a>). To create a global Workday connector configuration, follow these steps:</p> 
+   <p>To use the Workday connector&nbsp;in your Mule application,&nbsp;you must configure&nbsp;a global Workday element that can be used by all the Workday connectors in the application (read more about&nbsp; <a href="/mule-fundamentals/v/3.7/global-elements">Global Elements</a>.)&nbsp;The Workday connector now offers two global configuration types:</p> 
   </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Click the&nbsp;<strong>Global Elements tab</strong>&nbsp;at the base of the canvas, then click&nbsp;<strong>Create</strong>.</p> </li> 
-    <li> <p>Use the filter to locate, then select, one of the Workday connector configurations, then click&nbsp;<strong>OK</strong>. The example below uses the&nbsp;Workday Cash Management&nbsp;message processor.</p> </li> 
-    <li> <p>Configure the global connector’s parameters according to the table below.</p> </li> 
-   </ol> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><strong>Configuration</strong>: This configuration requires the following credentials: <strong>Username</strong> (without the tenant name), <strong>Password</strong>, <strong>Tenant Name</strong>, and <strong>Host Name</strong>. Starting from version 6.0 of the connector, the service endpoints are automatically generated by the connector.</p> </li> 
+    <li> <p><strong>Advanced Configuration</strong>: Apart from what is available in the above configuration, the advanced configuration supports a user-defined HTTP Request Configuration which enables the user to adjust both the <strong>Connection Idle Timeout</strong> and <strong>Response Timeout</strong> and set up a proxy connection.</p> </li> 
+   </ul> 
   </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/global_elements_1.jpg" alt="global_elements_1"></span></p> 
-  </div> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: 33%;"> 
-    <col style="width: 33%;"> 
-    <col style="width: 33%;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Parameter</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-     <th class="tableblock halign-left valign-top">Example</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><strong>Name</strong></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Name for the global element</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Workday_Cash_Management_Connection_Management</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><strong>Username</strong></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>User for connecting to Workday. The username should follow this structure: userID@tenantID</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>user1@acme_pt1</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><strong>Password</strong></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Password for connecting to Workday</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><code><strong><strong></strong></strong>**</code></p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><strong>Endpoint</strong></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>URL where data server is hosted. It should follow this structure: <code><a href="https://{your" class="bare">https://{your</a> Workday domain}/ccx/service/{your tenant name}/{desired Workday Service}/{desired Workday Service Version}</code></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><a href="https://services1.workday.com/ccx/service/acme_pt1/Human_Resources/v24.0" class="bare">https://services1.workday.com/ccx/service/acme_pt1/Human_Resources/v24.0</a></p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><strong>wsdl</strong></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Enter the <strong>WSDL Location</strong> property. This defaults to the WSDL found on the Workday Community website.</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div></div></td> 
-    </tr> 
-   </tbody> 
-  </table> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Access the&nbsp;<strong>Pooling Profile</strong>&nbsp;tab to configure any settings relevant to managing multiple connections via a connection pool.</p> </li> 
-    <li> <p>Access the&nbsp;<strong>Reconnection</strong>&nbsp;tab to configure any&nbsp;settings relevant to reconnection strategies that Mule should execute if it loses its connection to Workday.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> The Workday connector v5.0 enables you to adjust the values for the <strong>Connection Timeout</strong> and the <strong>Receive Timeout</strong> of requests that are sent to Workday. The default value for both of these fields is 60000ms, which means that any requests that take longer than a minute throw an exception. You can override this behavior by setting their values to 0 so that the connector waits indefinitely until a request is successfully sent and a response is received. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Click <strong>Test Connection</strong> to confirm that the parameters of your global Workday connector are accurate, and that Mule is able to successfully connect to your instance of Workday. (Read more about&nbsp;<a href="/mule-user-guide/v/3.7/testing-connections">Testing Connections</a>.)</p> </li> 
-    <li> <p>Click&nbsp;<strong>OK</strong>&nbsp;to save the global connector configurations.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="setting-up-a-global-configuration-with-proxy-optional"><a class="anchor" href="#setting-up-a-global-configuration-with-proxy-optional"></a>Setting up a Global Configuration with Proxy (Optional)</h3> 
-   <div class="paragraph"> 
-    <p>The Workday connector 5.0 supports the use of HTTP proxy servers. To setup the Global Configuration with Proxy:</p> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-4bb92" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-b9553" role="tab" data-toggle="tab">XML Editor</a></li> 
+    </ul> 
    </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Click the&nbsp;<strong>Global Elements tab</strong>&nbsp;at the base of the canvas, then click&nbsp;<strong>Create</strong>.</p> </li> 
-     <li> <p>Use the filter to locate, then select, one of the Workday connector configurations, then click&nbsp;<strong>OK</strong>. The example below uses the&nbsp;Workday Cash Management message processor.</p> </li> 
-     <li> <p>Configure the global connector’s parameters.</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/global_elements_2.jpg" alt="global_elements_2"></span></p> 
-      </div> </li> 
-     <li> <p>Under the Proxy Settings section, enter the <strong>Host</strong> address and <strong>Port</strong> number. If one of these fields is an input, the other must also be input.</p> </li> 
-     <li> <p>If your proxy server requires you to specify a username and password, you can fill these in the Username and Password fields. However, if your proxy server does not require a username and password, you can leave these fields empty.</p> </li> 
-    </ol> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4bb92"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Click the&nbsp;<strong>Global Elements</strong>&nbsp;tab at the base of the canvas.</p> </li> 
+       <li> <p>On the Global Mule Configuration Elements screen, click&nbsp;<strong>Create</strong>.</p> </li> 
+       <li> <p>In the Choose Global Type wizard, expand <strong>Connector Configuration</strong>, and then select&nbsp;<strong>Workday: Basic</strong> or&nbsp; <strong>Workday: Advanced</strong>, depending on your Workday implementation.</p> </li> 
+       <li> <p>Click&nbsp; <strong>OK</strong></p> </li> 
+       <li> <p>Enter the global element properties.</p> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>For <strong>Workday: Basic</strong> Configuration:</p> 
+           <div class="paragraph"> 
+            <p><span class="image"><img src="./_images/wd7-global-element-properties.png" alt="wd7_global_elements"></span></p> 
+           </div> 
+           <table class="tableblock frame-all grid-all spread"> 
+            <colgroup> 
+             <col style="width: 50%;"> 
+             <col style="width: 50%;"> 
+            </colgroup> 
+            <thead> 
+             <tr> 
+              <th class="tableblock halign-left valign-top">Field</th> 
+              <th class="tableblock halign-left valign-top">Description</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter a name for the configuration to reference it later</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Username</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the username to log in to Workday.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Password</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the corresponding password.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Tenant Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the Workday Tenant ID. It usually has the suffix "pt_1" appended to it, such as "acme_pt1".</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Host Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the&nbsp;host name of one of the Workday Cloud Servers. By default, the connector sets the host name to <code>impl-cc.workday.com</code>.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+            </tbody> 
+           </table> 
+           <div class="admonitionblock note"> 
+            <table> 
+             <tbody> 
+              <tr> 
+               <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+               <td class="content"> 
+                <div class="paragraph"> 
+                 <p>In the Global Element Properties image, the placeholder values refer to a configuration file in the <code>src</code> folder of your project. See <a href="/mule-user-guide/v/3.7/configuring-properties">Configuring Properties</a>. Either enter your credentials in the global configuration properties, or reference a configuration file containing these values.</p> 
+                </div> 
+                <div class="paragraph"> 
+                 <p>For simpler maintenance and better re-usability of your project, Mule recommends that you use a configuration file. Keeping these values in a separate file is useful if you need to deploy to different environments, such as production, development, and QA, where your access credentials differ. See <a href="/mule-user-guide/v/3.7/deploying-to-multiple-environments">Deploying to Multiple Environments</a> for instructions on how to manage this.</p> 
+                </div> </td> 
+              </tr> 
+             </tbody> 
+            </table> 
+           </div> </li> 
+          <li> <p>For <strong>Workday: Advanced</strong> Configuration:</p> 
+           <table class="tableblock frame-all grid-all spread"> 
+            <colgroup> 
+             <col style="width: 50%;"> 
+             <col style="width: 50%;"> 
+            </colgroup> 
+            <thead> 
+             <tr> 
+              <th class="tableblock halign-left valign-top">Field</th> 
+              <th class="tableblock halign-left valign-top">Description</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter a name of the configuration to reference it later</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Requester Config</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter an HTTPRequester configuration.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Username</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the username to log in to Workday.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Password</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the corresponding password.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Tenant Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the Workday Tenant ID. It is usually appended with pt_1, such as "acme_pt1".</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Host Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the&nbsp;host name of one of the Workday Cloud Servers. By default, the connector sets the host name to <code>impl-cc.workday.com</code>.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+            </tbody> 
+           </table> </li> 
+         </ol> 
+        </div> </li> 
+       <li> <p>Keep the&nbsp;<strong>Pooling Profile</strong> and the <strong>Reconnection</strong>&nbsp;tabs with their default entries.</p> </li> 
+       <li> <p>Click&nbsp;<strong>OK</strong>&nbsp;to save the global connector configurations.&nbsp;</p> </li> 
+      </ol> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="xml-editor-b9553"> 
+     <div class="paragraph"> 
+      <p>To configure the Workday global element:</p> 
+     </div> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Ensure you have included the following namespace in your configuration file:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">xmlns:wd-connector="http://www.mulesoft.org/schema/mule/wd-connector"</code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Create a global Workday configuration outside and above your flows, using the following global configuration code:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>wd-connector:config name="Workday_Connector__Configuration" username="${workday.username}" password="${workday.password}" tenantName="${workday.tenantname}" doc:name="Workday Connector: Configuration"/<span class="entity">&amp;gt;</span></code></pre> 
+         </div> 
+        </div> </li> 
+      </ol> 
+     </div> 
+    </div> 
    </div> 
   </div> 
  </div> 
@@ -1206,1241 +1369,345 @@
  <h2 id="using-the-connector"><a class="anchor" href="#using-the-connector"></a>Using the Connector</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Workday connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation the connector is intended to perform.</p> 
+   <p>The Workday connector 7.0 is&nbsp;an operation-based connector, which means that when you add the connector to your flow, you need to select a Workday module and an operation for the connector to perform. The Workday connector 7.0 supports the following Workday APIs: Human Resource, Financials, Student, and System.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="adding-the-workday-connector-to-a-flow"><a class="anchor" href="#adding-the-workday-connector-to-a-flow"></a>Adding the Workday Connector to a Flow</h3> 
+   <h3 id="adding-the-workday-connector-7-0-to-a-flow"><a class="anchor" href="#adding-the-workday-connector-7-0-to-a-flow"></a>Adding the Workday&nbsp;Connector 7.0 to a Flow</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>Create a new Mule project in Anypoint Studio.</p> </li> 
-     <li> <p>Drag the relevant Workday message processor onto the canvas, then select it to open the properties editor. We use the Workday Cash Management connector for an example here.</p> </li> 
-     <li> <p>Configure the connector’s parameters:</p> 
+     <li> <p>Drag the Workday Connector 7.0 onto the canvas, then select it to open the properties editor.</p> </li> 
+     <li> <p>Configure the connector’s parameters:&nbsp;</p> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/cash_management.png" alt="cash_management"></span></p> 
+       <p><span class="image"><img src="./_images/wd6_connector1.png" alt="wd6_connector1"></span></p> 
       </div> 
       <table class="tableblock frame-all grid-all spread"> 
        <colgroup> 
-        <col style="width: 33%;"> 
-        <col style="width: 33%;"> 
-        <col style="width: 33%;"> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
        </colgroup> 
-       <thead> 
-        <tr> 
-         <th class="tableblock halign-left valign-top">Field</th> 
-         <th class="tableblock halign-left valign-top">Description</th> 
-         <th class="tableblock halign-left valign-top">Default</th> 
-        </tr> 
-       </thead> 
        <tbody> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the element in your flow.</p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Workday Cash Management</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Config Reference</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">The global element linked to this connector.</p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a unique label for the connector in your application.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Select a global Workday connector 7.0 configuration from the dropdown or add a new one by clicking the green plus sign <strong>+</strong>.</p></td> 
         </tr> 
         <tr> 
          <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">The operation to perform.</p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Get financial institutions</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Invoke</strong></p></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Get Financial Request Reference</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">A parameter that defines the query filter for the set of results.</p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">#[payload]</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Service</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Select a Workday service, such as <strong>Financial Management</strong>.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Select an operation to perform in the service, such as <strong>Put_Fund</strong>.</p></td> 
         </tr> 
        </tbody> 
       </table> </li> 
-     <li> <p>Click blank space on the canvas to save your Workday connector configurations.</p> </li> 
+     <li> <p>Click the blank space on the canvas to save your configurations.</p> </li> 
     </ol> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="example-use-case"><a class="anchor" href="#example-use-case"></a>Example Use Case</h3> 
-   <div class="paragraph"> 
-    <p><strong>Note</strong>: Get the first 100 workers in your company and create a CSV file for them. As a recruiter, I want to get a partial list of employees in my company and export the list to a file.</p> 
-   </div> 
-   <div class="panel panel-default no-padding"> 
-    <div class="panel-heading no-padding"> 
-     <!-- Nav tabs --> 
-     <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-0bf82" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-d19f3" role="tab" data-toggle="tab">XML Editor</a></li> 
-     </ul> 
-    </div> 
-    <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-0bf82"> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>Drag an HTTP connector into a new flow, and configure it with the following parameters:</p> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Property</th> 
-            <th class="tableblock halign-left valign-top">Value</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Host</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>localhost</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Path</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>getWorker</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/HTTP-general.png" alt="HTTP-general"></span></p> 
-         </div> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/HTTP-GE.png" alt="HTTP-GE"></span></p> 
-         </div> 
-         <div class="admonitionblock tip"> 
-          <table> 
-           <tbody> 
-            <tr> 
-             <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-             <td class="content"> 
-              <div class="paragraph"> 
-               <p>To set the host for the HTTP connector, you need to add a connector configuration. Click the plus <strong>+</strong> icon next to <strong>Connector Configuration</strong> (outlined above) to display the global element properties for the HTTP connector. Then, set the value of the <strong>Host</strong> field to&nbsp;<code>localhost</code>. The new flow is now reachable through the path <code><a href="http://localhost:8081/getWorker" class="bare">http://localhost:8081/getWorker</a></code>.</p> 
-              </div> </td> 
-            </tr> 
-           </tbody> 
-          </table> 
-         </div> </li> 
-        <li> <p>Add a Groovy transformer after the HTTP connector to deal with the message payload.</p> </li> 
-        <li> <p>Add the following code into the Groovy transformer. This groovy script constructs the SOAP request to get workers out of Workday.</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="code">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-</pre></td> 
-                <td class="code"><pre>// instantiate a new getworkerrequest object
-com.workday.hr.GetWorkersRequestType getWorkersType = new com.workday.hr.GetWorkersRequestType();
-&nbsp;
-//OPTIONAL instantiate a responsefilter object to set page number
-com.workday.hr.ResponseFilterType responseFilterType = new com.workday.hr.ResponseFilterType();
-//Set the page number
-responseFilterType.setPage(1);
-//set the response filter in the worker object
-getWorkersType.setResponseFilter(responseFilterType);
-&nbsp;
-//return the getworkerrequest object as the message payload
-return getWorkersType;</pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Drag a Workday Human Resource connector into the flow.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/workdayFlow1.png" alt="workdayFlow1"></span></p> 
-         </div> </li> 
-        <li> <p>Add a new Global element by clicking on the plus sign next to the <strong>Connector Configuration</strong> field.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/wd2.png" alt="wd2"></span></p> 
-         </div> </li> 
-        <li> <p>Configure this Global Element according to the table below (Refer to Configuring the Workday Human Resource Connector for more details).</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/global_elements_1.jpg" alt="global_elements_1"></span></p> 
-         </div> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Property</th> 
-            <th class="tableblock halign-left valign-top">Description</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>A unique name for this global element to be referenced by connectors</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>user</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>User for connecting to Workday, formatted as &lt;user&gt;@&lt;Tenant ID&gt;</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>password</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Workday password</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>endpoint</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>URL of your Workday server, in the form <a href="https://<Workday" class="bare">https://&lt;Workday</a> domain&gt;/ccx/service/&lt;your tenant name&lt;/&lt;desired Workday Service&gt;/&lt;desired Workday Service Version&gt; (for example, <code><a href="https://services1.workday.com/ccx/service/acme/Human_Resources/v1" class="bare">https://services1.workday.com/ccx/service/acme/Human_Resources/v1</a></code>).</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p>Back in the properties editor of the Workday Human Resource connector in your application, configure the remaining parameters according to the table below.</p> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Field</th> 
-            <th class="tableblock halign-left valign-top">Value</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Display Name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Workday Human Resource</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Config Reference</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Workday_Human_Resource (the name of the global element you created)</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Operation</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Get workers</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Workers Request Reference</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Leave the default #[payload]</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/wd3.png" alt="wd3"></span></p> 
-         </div> </li> 
-        <li> <p>Add a DataMapper transformer, then configure it as per the steps listed below.</p> 
-         <div class="olist loweralpha"> 
-          <ol class="loweralpha" type="a"> 
-           <li> <p>For the input type, select <strong>Connector</strong>. The fields should be automatically populated with the following:</p> 
-            <table class="tableblock frame-all grid-all spread"> 
-             <colgroup> 
-              <col style="width: 50%;"> 
-              <col style="width: 50%;"> 
-             </colgroup> 
-             <thead> 
-              <tr> 
-               <th class="tableblock halign-left valign-top">Property</th> 
-               <th class="tableblock halign-left valign-top">Value</th> 
-              </tr> 
-             </thead> 
-             <tbody> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Connector</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Workday_Human_Resource</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Operation</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>get-workers</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Object</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>GetWorkersResponseType</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-             </tbody> 
-            </table> </li> 
-           <li> <p>For the output type, select <strong>CSV</strong>, then <strong>User Defined</strong>. Click <strong>Create/Edit Structure</strong> to specify the following data structure for the output file:</p> 
-            <table class="tableblock frame-all grid-all spread"> 
-             <colgroup> 
-              <col style="width: 50%;"> 
-              <col style="width: 50%;"> 
-             </colgroup> 
-             <thead> 
-              <tr> 
-               <th class="tableblock halign-left valign-top">Variable</th> 
-               <th class="tableblock halign-left valign-top">Type</th> 
-              </tr> 
-             </thead> 
-             <tbody> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>UserID</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>String</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>String</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Title</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>String</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-             </tbody> 
-            </table> </li> 
-           <li> <p>Once you have defined both input and output, click <strong>Create Mapping</strong>.</p> </li> 
-           <li> <p>In the response data provided by the connector (listed in DataMapper’s Input pane) find the <strong>worker</strong> element, then drag it to the output root node as shown below. This creates a new <strong>Element Mapping</strong>.</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/worker-element.png" alt="worker-element"></span></p> 
-            </div> </li> 
-           <li> <p>Find the input data fields of the <strong>worker</strong> that you want to map to your CSV output file. Drag each input data field to its corresponding output CSV field.</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/DM.png" alt="DM"></span></p> 
-            </div> </li> 
-          </ol> 
-         </div> </li> 
-        <li> <p>Add a File Endpoint at the end of your flow to output the payload to a CSV file.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/workdayFlow1-final_stage.png" alt="workdayFlow1-final_stage"></span></p> 
-         </div> 
-         <div class="paragraph"> 
-          <p>Configure the File Endpoint:</p> 
-         </div> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Property</th> 
-            <th class="tableblock halign-left valign-top">Value</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Display Name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>File</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Path</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>&lt;desired path to create files in&gt;</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Output Pattern</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>&lt;desired filename&gt;</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p>Run the project as a Mule application.</p> </li> 
-        <li> <p>From a browser, navigate to <a href="http://localhost:8081/getWorker" class="bare">http://localhost:8081/getWorker</a>.</p> </li> 
-        <li> <p>Mule performs the query, produces a CSV file with a list of contacts matching the query criteria, and inserts the file in the output folder you specified.</p> </li> 
-       </ol> 
-      </div> 
-     </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-d19f3"> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>Add a <strong><code>wd-hr:config</code> global element</strong> to your project, then configure its attributes and child elements according to the table below (see code below for a complete sample).</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>wd-hr:config name="Workday_Human_Resource" doc:name="Workday Human Resource" hrUser="<span class="entity">&amp;lt;</span>your user name<span class="entity">&amp;gt;</span>" hrPassword="<span class="entity">&amp;lt;</span>your password<span class="entity">&amp;gt;</span>" hrEndpoint="<span class="entity">&amp;lt;</span>your server<span class="entity">&amp;gt;</span>"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>wd-hr:connection-pooling-profile initialisationPolicy="INITIALISE_ONE" exhaustedAction="WHEN_EXHAUSTED_GROW"/<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/wd-hr:config<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Attribute</th> 
-            <th class="tableblock halign-left valign-top">Value</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>Workday_Human_Resource</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>doc:name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>Workday Human Resource</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>objectManager</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>EAIObjMgr_enu</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>hrPassword</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>&lt;your password&gt;</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>hrEndpoint</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>&lt;your server&gt;</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>hrUser</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>&lt;your username&gt;</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 100%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Child Element</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>wd-hr:connection-pooling-profile</strong></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Child Element Attribute</th> 
-            <th class="tableblock halign-left valign-top">Value</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>initialisationPolicy</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>INITIALISE_ONE</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>exhaustedAction</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>WHEN_EXHAUSTED_GROW</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p>Create a Mule flow with an <strong>HTTP connector</strong>, configuring according to the table below (see code below for a complete sample).</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="workdayFlow1"doc:name="workdayFlow1"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:inbound-endpoint exchange-pattern="one-way"host="localhost"port="8081"path="getWorker"doc:name="HTTP"/<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Attribute</th> 
-            <th class="tableblock halign-left valign-top">Value</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>exchange-pattern</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>one-way</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>host</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>localhost</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>port</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>8081</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>path</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>getWorker</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>doc:name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>HTTP</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> 
-         <div class="paragraph"> 
-          <p>The new flow is now reachable through the path <a href="http://localhost:8081/getWorker" class="bare">http://localhost:8081/getWorker</a>. As the exchange pattern is set to one-way, no response message is returned to the requester.</p> 
-         </div> </li> 
-        <li> <p>After the HTTP connector, add Groovy transformer:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-4
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>scripting:transformer doc:name="Groovy"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:script engine="Groovy"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:script<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/scripting:transformer<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> 
-         <div class="paragraph"> 
-          <p>Include the following code inside the Groovy transformer:</p> 
-         </div> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="code">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-13
-14
-</pre></td> 
-                <td class="code"><pre>//This groovy script constructs the SOAP request to get workers out of workday
-&nbsp;
-// instantiate a new getworkerrequest object
-com.workday.hr.GetWorkersRequestType getWorkersType = new com.workday.hr.GetWorkersRequestType();
-&nbsp;
-//OPTIONAL instantiate a responsefilter object to set page number
-com.workday.hr.ResponseFilterType responseFilterType = new com.workday.hr.ResponseFilterType();
-//Set the page number
-responseFilterType.setPage(1);
-//set the response filter in the worker object
-getWorkersType.setResponseFilter(responseFilterType);
-&nbsp;
-//return the getworkerrequest object as the message payload
-return getWorkersType;</pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> 
-         <div class="paragraph"> 
-          <p>The end result should look like this:</p> 
-         </div> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-13
-14
-15
-16
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>scripting:transformer doc:name="Groovy"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>scripting:script engine="Groovy"<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[//This groovy script constructs the SOAP request to get workers out of workday
-// instantiate a new getworkerrequest object
-com.workday.hr.GetWorkersRequestType getWorkersType = new com.workday.hr.GetWorkersRequestType();
-//OPTIONAL instantiate a responsefilter object to set page number
-com.workday.hr.ResponseFilterType responseFilterType = new com.workday.hr.ResponseFilterType();
-//Set the page number
-responseFilterType.setPage(1);
-//set the response filter in the worker object
-getWorkersType.setResponseFilter(responseFilterType);
-//return the getworkerrequest object as the message payload
-return getWorkersType;
-&nbsp;
-]]<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/scripting:script<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/scripting:transformer<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>After the Groovy transformer, add a <strong><code>wd-hr:get-workers</code></strong> element to your flow, configuring the attributes according to the table below.</p> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Property</th> 
-            <th class="tableblock halign-left valign-top">Value</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>doc:name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Workday Human Resource</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>config-ref</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>Workday_Human_Resource</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> 
-         <div class="paragraph"> 
-          <p>The&nbsp;<code>config-ref</code> links this connector to the global element you created at the beginning of this example.</p> 
-         </div> </li> 
-        <li> <p>Add a DataMapper element.</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:config name="new_mapping_grf" transformationGraphPath="new_mapping.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> 
-         <div class="paragraph"> 
-          <p>You must configure the DataMapper element through Studio’s Visual Editor. Switch the view to Studio’s Message Flow view, then click the DataMapper element to set its properties.</p> 
-         </div> 
-         <div class="olist loweralpha"> 
-          <ol class="loweralpha" type="a"> 
-           <li> <p>For the input type, select <strong>Connector</strong>. The fields should be automatically populated with the following:</p> 
-            <table class="tableblock frame-all grid-all spread"> 
-             <colgroup> 
-              <col style="width: 50%;"> 
-              <col style="width: 50%;"> 
-             </colgroup> 
-             <thead> 
-              <tr> 
-               <th class="tableblock halign-left valign-top">Property</th> 
-               <th class="tableblock halign-left valign-top">Value</th> 
-              </tr> 
-             </thead> 
-             <tbody> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Connector</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Workday_Human_Resource</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Operation</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>get-workers</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Object</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>GetWorkersResponseType</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-             </tbody> 
-            </table> </li> 
-           <li> <p>For the output type, select <strong>CSV</strong>, then <strong>User Defined</strong>. Click <strong>Edit Fields</strong> to specify the following data structure for the output file.</p> 
-            <table class="tableblock frame-all grid-all spread"> 
-             <colgroup> 
-              <col style="width: 50%;"> 
-              <col style="width: 50%;"> 
-             </colgroup> 
-             <thead> 
-              <tr> 
-               <th class="tableblock halign-left valign-top">Variable</th> 
-               <th class="tableblock halign-left valign-top">Type</th> 
-              </tr> 
-             </thead> 
-             <tbody> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>UserID</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>String</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>String</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Title</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>String</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-             </tbody> 
-            </table> </li> 
-           <li> <p>Once you have defined both input and output, click <strong>Create Mapping</strong></p> </li> 
-           <li> <p>In the response data provided by the connector (listed in DataMapper’s Input pane) find the <strong>worker</strong> element, then drag it to the output root node as shown below. This creates a new <strong>Element Mapping</strong>.</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/worker-element.png" alt="worker-element"></span></p> 
-            </div> </li> 
-           <li> <p>Find the input data fields of the worker that you want to map to your CSV output file. Drag each input data field to its corresponding output CSV field.</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/DM.png" alt="DM"></span></p> 
-            </div> </li> 
-          </ol> 
-         </div> </li> 
-        <li> <p>Add a <code>file:outbound-endpoint</code> in the flow after the DataMapper to output the payload into a CSV file. Configure its attributes as follows:</p> 
-         <div class="paragraph"> 
-          <p><code>&lt;file:outbound-endpoint path="/Users/mulesoft/AnypointStudio/workspace/workday/testfiles" responseTimeout="10000" doc:name="File"/&gt;</code></p> 
-         </div> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Attribute</th> 
-            <th class="tableblock halign-left valign-top">Value</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>path</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>The location in which you wish to capture the CSV file the application produces</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>responseTimeout</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="listingblock"> 
-               <div class="content"> 
-                <pre class="CodeRay highlight"><code data-lang="code">10000</code></pre> 
-               </div> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>doc:name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="listingblock"> 
-               <div class="content"> 
-                <pre class="CodeRay highlight"><code data-lang="code">File</code></pre> 
-               </div> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p>Run the project as a Mule Application.</p> </li> 
-        <li> <p>From a browser, navigate to <code><a href="http://localhost:8081/getWorker" class="bare">http://localhost:8081/getWorker</a>.</code></p> </li> 
-        <li> <p>Mule conducts the query, produces a CSV file with a list workers, and inserts the file in the output folder you specified.</p> </li> 
-       </ol> 
-      </div> 
-     </div> 
-    </div> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="example-code"><a class="anchor" href="#example-code"></a>Example Code</h2> 
+ <h2 id="example-use-case"><a class="anchor" href="#example-use-case"></a>Example Use Case</h2> 
  <div class="sectionbody"> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>For this example to work, you must manually configure the following values of the global Workday HR connector (<code>wd-hr:config</code> element):</p> 
-       </div> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p>hrUser</p> </li> 
-         <li> <p>hrPassword</p> </li> 
-         <li> <p>hrEndpoint</p> </li> 
-        </ul> 
-       </div> 
-       <div class="paragraph"> 
-        <p>Moreover, adjust the filepath configuration to match a valid path on your local system and note that the DataMapper component must be configured manually using Studio’s Visual Editor.</p> 
-       </div> </td> 
-     </tr> 
-    </tbody> 
-   </table> 
+  <div class="paragraph"> 
+   <p>Add a fund using Workday’s Financial Management web service. <span class="image"><img src="./_images/wd7-example-flow.png" alt="wd7 example flow"></span></p> 
   </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-471eb" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-0b8ae" role="tab" data-toggle="tab">XML Editor</a></li> 
+    </ul> 
+   </div> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-471eb"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Create a Mule project in your Anypoint Studio.</p> </li> 
+       <li> <p>Drag an HTTP connector into the canvas, then select it to open the properties editor console.</p> </li> 
+       <li> <p>Add a new HTTP Listener Configuration global element:</p> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>In&nbsp;<strong>General Settings</strong>, click the green plus sign <strong>+</strong> next to the <strong>Connector Configuration</strong> field:</p> 
+           <div class="paragraph"> 
+            <p><span class="image"><img src="./_images/wd6_http_config.png" alt="wd6_http_config"></span></p> 
+           </div> </li> 
+          <li> <p>Configure the following HTTP parameters:</p> 
+           <div class="paragraph"> 
+            <p><span class="image"><img src="./_images/wd6_http_listener_configuration.png" alt="wd6_http_listener_configuration"></span></p> 
+           </div> 
+           <table class="tableblock frame-all grid-all spread"> 
+            <colgroup> 
+             <col style="width: 50%;"> 
+             <col style="width: 50%;"> 
+            </colgroup> 
+            <thead> 
+             <tr> 
+              <th class="tableblock halign-left valign-top">Field</th> 
+              <th class="tableblock halign-left valign-top">Value</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Port</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>8081</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Host</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>localhost</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Display Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>HTTP_Listener_Configuration</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+            </tbody> 
+           </table> </li> 
+         </ol> 
+        </div> </li> 
+       <li> <p>Add a Set Payload transformer after the HTTP connector, and configure it as follows:</p> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: 50%;"> 
+          <col style="width: 50%;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">Field</th> 
+           <th class="tableblock halign-left valign-top">Value</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Display Name</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p>Enter a name for the transformer.</p> 
+             </div> 
+            </div></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Value</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><code>#[['FundName':' I.M.F' , 'FundTypeID' : ' FUND_TYPE-6-3']]"</code></p> 
+             </div> 
+            </div></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>Drag the Workday Connector 7.0 into the flow.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/wd6_palette.png" alt="wd6_palette"></span></p> 
+        </div> </li> 
+       <li> <p>If you haven’t already created a Workday global element, add one by clicking the green plus sign <strong>+</strong> next to the <strong>Connector Configuration</strong> field and select <strong>Workday: Basic</strong> as the "global type"</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/wd7-choose-global-type.png" alt="Choose Global Type"></span></p> 
+        </div> </li> 
+       <li> <p>Configure the Workday global element, using credentials stored in a properties file, for example <code>src/main/resources/credentials.properties</code>:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/wd7-global-element-properties.png" alt="wd7 global element properties"></span></p> 
+        </div> 
+        <div class="admonitionblock note"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+            <td class="content"> For more information on setting credentials inside a properties file, refer to this section on <a href="/mule-user-guide/v/3.7/configuring-properties#properties-files">Properties Files</a>. </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> </li> 
+       <li> <p>Back in the properties editor of the connector, configure the remaining parameters:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/wd6_connector2.png" alt="wd6_connector2"></span></p> 
+        </div> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: %;"> 
+          <col style="width: %;"> 
+         </colgroup> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a unique label for the connector in your application.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Select a global Workday connector 7.0 element from the dropdown.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Invoke</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Service</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Select a Workday service, such as Financial Management.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Select an operation to perform in the service, such as <strong>Put_Fund</strong></p></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>Drag a <strong>Transform Message</strong> (DataWeave) component into the flow before the Workday Connector.</p> </li> 
+       <li> <p>Click the <strong>DataWeave</strong> component and then click the scaffold button <span class="image"><img src="./_images/scaffold-button.png" alt="dataweave scaffold button"></span> which appears above the code editor.</p> </li> 
+       <li> <p>Select the desired fields.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/wd7-dataweave-scaffold-window.png" alt="wd7_scaffold_window"></span></p> 
+        </div> </li> 
+       <li> <p>Modify the DataWeave content so it matches the code below:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="dataweave">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+</pre></td> 
+               <td class="code"><pre>%dw 1.0
+%output application/xml
+%namespace ns0 urn:com.workday/bsvc
+---
+{
+ns0#Put_Fund_Request @(ns0#Add_Only: true , ns0#version: "v25.0"): {
+  ns0#Fund_Data: {
+     ns0#Fund_Name: payload.FundName,
+       ns0#Fund_Type_Reference: {
+         ns0#ID @(ns0#type: "Fund_Type_ID"): payload.FundTypeID
+       }
+     }
+  }
+}</pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Save and run the project as a Mule Application. Then enter <a href="http://localhost:8081" class="bare">http://localhost:8081</a> in your browser and wait for the result. You should receive an XML response that looks like:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+               <td class="code"><pre><span class="entity">&amp;lt;</span>wd:Put_Fund_Response xmlns:wd="urn:com.workday/bsvc" wd:version="v25.0"<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>wd:Fund_Reference wd:Descriptor="I.M.F"<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>wd:ID wd:type="WID"<span class="entity">&amp;gt;</span>THE_WID_ID_NUMBER<span class="entity">&amp;lt;</span>/wd:ID<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>wd:ID wd:type="Fund_ID"<span class="entity">&amp;gt;</span>FUND-6-399<span class="entity">&amp;lt;</span>/wd:ID<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/wd:Fund_Reference<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/wd:Put_Fund_Response<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+      </ol> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="xml-editor-0b8ae"> 
+     <div class="admonitionblock note"> 
+      <table> 
        <tbody> 
         <tr> 
-         <td class="line-numbers"><pre>1
+         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+         <td class="content"> For this code to work in Anypoint Studio, you must provide the credentials for the Workday instance. You can either replace the variables with their values in the code, or you can add the credentials into the file named&nbsp;<code>mule-app.properties</code> in the&nbsp; <code>src/main/app</code> folder&nbsp;to provide the values for each variable, or as below, using a file called <code>credentials.properties</code> stored at <code>src/main/resources</code>. </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+    
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2480,54 +1747,53 @@ return getWorkersType;
 38
 39
 <strong>40</strong>
-41
-42
-43
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:data-mapper</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/data-mapper</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:file</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/file</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:wd-hr</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/wd-hr</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:scripting</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/scripting</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:tracking</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/tracking</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.7.0</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/wd-hr http://www.mulesoft.org/schema/mule/wd-hr/current/mule-wd-hr.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wd-hr:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Workday_Human_Resource</span><span class="delimiter">"</span></span> <span class="attribute-name">hrUser</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="attribute-name">hrPassword</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="attribute-name">hrEndpoint</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Workday Human Resource</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;wd-hr:connection-pooling-profile</span> <span class="attribute-name">initialisationPolicy</span>=<span class="string"><span class="delimiter">"</span><span class="content">INITIALISE_ONE</span><span class="delimiter">"</span></span> <span class="attribute-name">exhaustedAction</span>=<span class="string"><span class="delimiter">"</span><span class="content">WHEN_EXHAUSTED_GROW</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/wd-hr:config&gt;</span>
-#&nbsp;&nbsp;&nbsp; <span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span><span class="error">&nbsp;</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">getworkersresponsetype_to_csv</span><span class="delimiter">"</span></span> <span class="attribute-name">transformationGraphPath</span>=<span class="string"><span class="delimiter">"</span><span class="content">getworkersresponsetype_to_csv.grf</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">getworkersresponsetype_to_csv</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">workdayFlow1</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">workdayFlow1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">getWorker</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;script</span><span class="attribute-name">ing:transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Groovy</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-<span class="inline"><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>&lt;scripting:script engine=<span class="string"><span class="delimiter">"</span><span class="content">Groovy</span><span class="delimiter">"</span></span>&gt;
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>&lt;![CDATA[
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span>
-<span class="comment">//This groovy script constructs the SOAP request to get workers out of workday</span>
-<span class="comment">// instantiate a new getworkerrequest object</span>
-com.workday.hr.GetWorkersRequestType getWorkersType = <span class="keyword">new</span> com.workday.hr.GetWorkersRequestType();
-<span class="comment">//OPTIONAL instantiate a responsefilter object to set page number</span>
-com.workday.hr.ResponseFilterType responseFilterType = <span class="keyword">new</span> com.workday.hr.ResponseFilterType();
-<span class="comment">//Set the page number</span>
-responseFilterType.setPage(<span class="integer">1</span>);
-<span class="comment">//set the response filter in the worker object</span>
-getWorkersType.setResponseFilter(responseFilterType);
-<span class="comment">//return the getworkerrequest object as the message payload</span>
-<span class="keyword">return</span> getWorkersType;
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>]]&gt;
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">scripting:script&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span class="delimiter">/</span></span>scripting:transformer&gt;
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="tag">&lt;wd-hr:get-workers</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Workday_Human_Resource</span><span class="delimiter">"</span></span><span class="error">&nbsp;</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Workday Human Resource</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">getworkersresponsetype_to_csv</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">DataMapper</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>&lt;file:outbound-endpoint path=<span class="string"><span class="delimiter">"</span><span class="content">/Users/mulesoft/Documents/connectors/workday/output</span><span class="delimiter">"</span></span> outputPattern=<span class="string"><span class="delimiter">"</span><span class="content">workers.csv</span><span class="delimiter">"</span></span> responseTimeout=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> doc:name=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span>/&gt;
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">flow&gt; &lt;</span><span class="delimiter">/</span><span class="modifier">m</span></span>ule&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+            <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
+
+<span class="entity">&amp;lt;</span>mule xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw"
+        xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:wd-connector="http://www.mulesoft.org/schema/mule/wd-connector" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+        xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.7.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/wd-connector http://www.mulesoft.org/schema/mule/wd-connector/current/mule-wd-connector.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd"<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>context:property-placeholder location="credentials.properties"/<span class="entity">&amp;gt;</span>
+ <span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span>
+
+ <span class="entity">&amp;lt;</span>wd-connector:config name="Workday_Connector_Configuration" username="${workday.username}" password="${workday.password}" tenantName="${workday.tenantname}" doc:name="Workday Connector: Configuration"/<span class="entity">&amp;gt;</span>
+
+ <span class="entity">&amp;lt;</span>flow name="demoFlow"<span class="entity">&amp;gt;</span>
+   <span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
+   <span class="entity">&amp;lt;</span>set-payload value="#[['FundName':' I.M.F' , 'FundTypeID' : ' FUND_TYPE-6-3']]" doc:name="Set Payload"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>dw:transform-message doc:name="Transform Message"<span class="entity">&amp;gt;</span>
+            <span class="entity">&amp;lt;</span>dw:set-payload<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[%dw 1.0
+%output application/xml
+%namespace ns0 urn:com.workday/bsvc
+---
+{
+ns0#Put_Fund_Request @(ns0#Add_Only: true , ns0#version: "v25.0"): {
+  ns0#Fund_Data: {
+     ns0#Fund_Name: payload.FundName,
+       ns0#Fund_Type_Reference: {
+         ns0#ID @(ns0#type: "Fund_Type_ID"): payload.FundTypeID
+       }
+     }
+  }
+}]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/dw:set-payload<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>/dw:transform-message<span class="entity">&amp;gt;</span>
+   <span class="entity">&amp;lt;</span>wd-connector:invoke config-ref="Workday_Connector_Configuration" type="Financial_Management||Put_Fund" doc:name="Workday Connector"/<span class="entity">&amp;gt;</span>
+ <span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+    </div> 
    </div> 
   </div> 
  </div> 
@@ -2537,9 +1803,10 @@ getWorkersType.setResponseFilter(responseFilterType);
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Learn about the&nbsp;DataMapper&nbsp;transformer, the most efficient way to assign mappings to data.</p> </li> 
-    <li> <p>Read advanced information about the <a href="http://mulesoft.github.io/workday-connector/mule/modules.html">Workday Connector</a>, including schema, attributes and security details.</p> </li> 
-    <li> <p>Read more about&nbsp;<a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>.</p> </li> 
+    <li> <p>To view the latest changes to the Workday connector, read the <a href="/release-notes/workday-connector-release-notes">Workday Connector Release Notes</a></p> </li> 
+    <li> <p>Learn more about working with <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>.</p> </li> 
+    <li> <p>For more information on Workday v25.0 API, refer to the <a href="https://community.workday.com/custom/developer/API/versions/v25.0/index.html">Workday API documentation</a>.</p> </li> 
+    <li> <p>Workday v25.0 <a href="https://community.workday.com/current/wsrelnotes">Release Notes</a> (Requires Workday Community login)</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -2548,7 +1815,7 @@ getWorkersType.setResponseFilter(responseFilterType);
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#installing-and-configuring">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#configuring-the-workday-connector-global-element">Configuring the Workday Connector Global Element</a></li><li><a class="scroll-menu-link" href="#using-the-connector">Using the Connector</a></li><li><a class="scroll-menu-link" href="#example-code">Example Code</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#installing-and-configuring">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#configuring-the-global-element">Configuring the Global Element</a></li><li><a class="scroll-menu-link" href="#using-the-connector">Using the Connector</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
