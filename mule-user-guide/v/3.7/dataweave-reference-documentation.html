@@ -5740,6 +5740,50 @@ ROOT: payload.root.*order mapObject (
      </div> 
     </div> 
    </div> 
+   <div class="sect3"> 
+    <h4 id="coerce-to-object"><a class="anchor" href="#coerce-to-object"></a>Coerce to Object</h4> 
+    <div class="paragraph"> 
+     <p>You can coerce your input into to a custom object type of whatever class you want.</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="title">
+       Transform 
+     </div> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="DataWeave">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+           <td class="code"><pre>%dw 1.0
+%output application/json
+---
+{
+  payload as :object {class : "soa.sfabs.SOAResponseInfoType\$ServiceInfo"}
+}</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+    <div class="admonitionblock note"> 
+     <table> 
+      <tbody> 
+       <tr> 
+        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+        <td class="content"> Keep in mind that if the class name contains any '$' characters, they must be escaped with a \ </td> 
+       </tr> 
+      </tbody> 
+     </table> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="flatten"><a class="anchor" href="#flatten"></a>Flatten</h3> 
