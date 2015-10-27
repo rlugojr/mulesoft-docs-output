@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/anypoint-mq-guide" />
-    <meta name="description" content="Anypoint MQ (AMQ) is a multi-tenant, cloud messaging service designed to enable customers to perform advanced asynchronous messaging scenarios betw..." />
+    <meta name="description" content="Anypoint MQ is a multi-tenant, cloud messaging service designed to enable customers to perform advanced asynchronous messaging scenarios between th..." />
     <meta class="swiftype" name="title" data-type="string" content="Anypoint MQ Guide" />
 
 </head>
@@ -867,7 +867,7 @@
  <h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Anypoint MQ (AMQ) is a multi-tenant, cloud messaging service designed to enable customers to perform advanced asynchronous messaging scenarios between their applications. AMQ is fully integrated with Anypoint Platform, offering role based access control, client application management, and connectors.</p> 
+   <p>Anypoint MQ is a multi-tenant, cloud messaging service designed to enable customers to perform advanced asynchronous messaging scenarios between their applications. Anypoint MQ is fully integrated with Anypoint Platform, offering role based access control, client application management, and connectors.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Anypoint MQ includes the follow features:</p> 
@@ -941,13 +941,13 @@
   <div class="sect2"> 
    <h3 id="example"><a class="anchor" href="#example"></a>Example</h3> 
    <div class="paragraph"> 
-    <p>An example of AMQ would be where an application running Salesforce customer relationship manager (CRM) wants to communicate with two applications that handle different databases.</p> 
+    <p>An example of Anypoint MQ would be where an application running Salesforce customer relationship manager (CRM) wants to communicate with two applications that handle different databases.</p> 
    </div> 
    <div class="paragraph"> 
     <p><span class="image"><img src="./_images/mq-crm-to-dbs.png" alt="CRM sends msg to MQ that apps receive"></span></p> 
    </div> 
    <div class="paragraph"> 
-    <p>Using AMQ, the Salesforce application sends a pub/sub message to the AMQ message exchange, and the two applications receive the message from the message exchange and convey the message to their respective databases.</p> 
+    <p>Using Anypoint MQ, the Salesforce application sends a pub/sub message to the Anypoint MQ message exchange, and the two applications receive the message from the message exchange and convey the message to their respective databases.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -988,7 +988,8 @@
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mq-click-queue.png" alt="Click the Queue option from the blue circle menu"></span></p> 
      </div> </li> 
-    <li> <p>In the <strong>Create Queues</strong> window, provide a queue name, and if needed, change the time-to-live values for how long a message persists before being automatically deleted, and how long you can apply a lock to a message so that an application has exclusive access to the message. If needed, mark the queue so that any messages that arrive in the queue get encrypted using password-based encryption (PBE) with MD5 and DES. To mark the queue, slide the Encryption slider to the right.</p> 
+    <li> <p>In the <strong>Create Queues</strong> window, provide a queue name, and if needed, change the time-to-live default values for how long a message persists before being automatically deleted, and how long you can apply a lock to a message so that an application has exclusive access to the message. The default values you set affect the settings in the <a href="#createapp">client apps</a> you create.</p> </li> 
+    <li> <p>If needed, mark the queue so that any messages that arrive in the queue get encrypted using password-based encryption (PBE) with MD5 and DES. To mark the queue, slide the Encryption slider to the right.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mq-create-queue.png" alt="Create a queue window"></span></p> 
      </div> </li> 
@@ -1061,7 +1062,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="create-a-client-app"><a class="anchor" href="#create-a-client-app"></a>Create a Client App</h2> 
+ <h2 id="createapp"><a class="anchor" href="#createapp"></a>Create a Client App</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Creating a client app provides the client ID and client secret you can use to register an app as either an MQ publisher or subscriber.</p> 
@@ -1098,16 +1099,21 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Click the gear icon in Anypoint Platform:</p> 
+    <li> <p>Click the gear icon in the Anypoint Platform taskbar:</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-roles-listing.png" alt="Gear icon and Roles details"></span></p> 
+      <p><span class="image"><img src="./_images/mq-roles-gear-icon.png" alt="Gear icon in taskbar"></span></p> 
      </div> </li> 
     <li> <p>Click <strong>Add role</strong>.</p> </li> 
     <li> <p>Type the role name and description, and click <strong>Add role</strong>:</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mq-name-role.png" alt="In the Add role window" width="specify a name and description"></span></p> 
      </div> </li> 
-    <li> <p>Click <strong>MQ</strong>, select an environment from the drop-down list, and choose permissions:</p> 
+    <li> <p>Click <strong>MQ</strong>, select an environment from the drop-down list.</p> </li> 
+    <li> <p>Choose permissions:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-role-details.png" alt="Role window"></span></p> 
+     </div> </li> 
+    <li> <p>Click the green checkmark icon at the right:</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mq-choose-env-perms.png" alt="Role window"></span></p> 
      </div> </li> 
@@ -1123,28 +1129,68 @@
  <h2 id="anypoint-studio-mq-connector"><a class="anchor" href="#anypoint-studio-mq-connector"></a>Anypoint Studio MQ Connector</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To add the MQ connector to Studio:</p> 
+   <p>This section describes how to install the Anypoint MQ connector in Anypoint Studio and how to configure Studio to handle applications.</p> 
   </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>In Studio, click <strong>Help</strong> &gt; <strong>Install New Software</strong>.</p> </li> 
-    <li> <p>Next to the <strong>Works with</strong> field, click <strong>Add</strong>.</p> 
-     <div class="olist loweralpha"> 
-      <ol class="loweralpha" type="a"> 
-       <li> <p>Set the name to <code>Incubator</code> and the URL to:<br></p> 
-        <div class="paragraph"> 
-         <p><code><a href="http://s3.amazonaws.com/mule-tooling-incubator/lanin" class="bare">http://s3.amazonaws.com/mule-tooling-incubator/lanin</a></code></p> 
-        </div> </li> 
-      </ol> 
-     </div> </li> 
-    <li> <p>Follow the prompts to install the software.</p> </li> 
-    <li> <p>Open the <code>conf.properties</code> file in <code>src/main/resources</code> and specify the <code>client.id</code> and <code>client.secret</code> properties. Copy the ID and Secret from the client you created.</p> </li> 
-   </ol> 
+  <div class="sect2"> 
+   <h3 id="add-mq-connector-to-studio"><a class="anchor" href="#add-mq-connector-to-studio"></a>Add MQ Connector to Studio</h3> 
+   <div class="paragraph"> 
+    <p>To add the Anypoint MQ connector to Studio:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>In Studio, click <strong>Help</strong> &gt; <strong>Install New Software</strong>.</p> </li> 
+     <li> <p>Paste this URL into the <strong>Work with</strong> field and press Enter:</p> 
+      <div class="paragraph"> 
+       <p><code><a href="http://s3.amazonaws.com/mule-tooling-incubator/lanin" class="bare">http://s3.amazonaws.com/mule-tooling-incubator/lanin</a></code></p> 
+      </div> </li> 
+     <li> <p>Click the checkbox for <strong>Anypoint Messaging Connector</strong> and click <strong>Next</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-connector-install.png" alt="Type URL and click Anypoint Messaging Connector"></span></p> 
+      </div> </li> 
+     <li> <p>Follow the prompts to install the software.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="add-a-client-app-to-studio"><a class="anchor" href="#add-a-client-app-to-studio"></a>Add a Client App to Studio</h3> 
+   <div class="paragraph"> 
+    <p>To add a client app to Studio:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>In Anypoint Platform, click <strong>MQ</strong> &gt; <strong>Client Apps</strong>.</p> </li> 
+     <li> <p>Create a client app.</p> </li> 
+     <li> <p>In Anypoint Studio, create a new Mule Project.</p> </li> 
+     <li> <p>In Anypoint Studio, search for "transform" and drag the <strong>Transform Message</strong> icon to the canvas. You can rename Transform Message to a new value by right-clicking the icon and selecting <strong>Rename</strong>. For the example flow, rename the icon to "Create Customer".</p> </li> 
+     <li> <p>Use the DataWeave syntax to specify firstname, lastname, and company values:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-dataweave.png" alt="mq-dataweave"></span></p> 
+      </div> </li> 
+     <li> <p>Search for "mq" and drag the Anypoint MQ connector icon to the canvas.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-connector-visual-flow.png" alt="mq-connector-visual-flow"></span></p> 
+      </div> </li> 
+     <li> <p>Click the green plus sign to the right of <strong>Connector Configuration</strong>.</p> </li> 
+     <li> <p>In the Global Element Properties window:</p> 
+      <div class="olist loweralpha"> 
+       <ol class="loweralpha" type="a"> 
+        <li> <p>Copy the <strong>Anypoint Platform</strong> &gt; <strong>MQ</strong> &gt; <strong>Client App</strong> &gt; <strong>Client App ID</strong> value to Studio’s <strong>Client ID</strong> field.</p> </li> 
+        <li> <p>Copy the <strong>Client App</strong> &gt; <strong>Client Secret</strong> value to Studio’s <strong>Client Secret</strong> field.</p> </li> 
+        <li> <p>Click OK.</p> </li> 
+       </ol> 
+      </div> </li> 
+     <li> <p>Click the <strong>Operation</strong> field and specify an operation such as Publish or Consume.</p> </li> 
+     <li> <p>Specify the <strong>Destination</strong> as the name of the Queue or Exchange that you set in Anypoint Platform.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-connector-properties.png" alt="mq-connector-properties"></span></p> 
+      </div> </li> 
+    </ol> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="example-studio-flow"><a class="anchor" href="#example-studio-flow"></a>Example Studio Flow</h3> 
    <div class="paragraph"> 
-    <p>Create a new Mule Project and copy the following to the XML editor view of Studio.</p> 
+    <p>The flow for the previous Anypoint Studio example is as follows:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1171,14 +1217,39 @@
 16
 17
 18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong>30</strong>
+31
+32
 </pre></td> 
-          <td class="code"><pre><span class="tag">&lt;mq:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint_MQ_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint MQ Configuration</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-       <span class="tag">&lt;mq:access</span> <span class="attribute-name">brokerUrl</span>=<span class="string"><span class="delimiter">"</span><span class="content">${url}</span><span class="delimiter">"</span></span> <span class="attribute-name">clientId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${client.id}</span><span class="delimiter">"</span></span> <span class="attribute-name">clientSecret</span>=<span class="string"><span class="delimiter">"</span><span class="content">${client.secret}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-   <span class="tag">&lt;/mq:config&gt;</span>
-   <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">producerFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-       <span class="tag">&lt;poll</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Poll</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-           <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Create Customer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-               <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+<span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:dw</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/dw</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xmlns:anypoint-mq</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/anypoint-mq</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+        <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd</span>
+<span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span>
+<span class="content">http://www.mulesoft.org/schema/mule/anypoint-mq http://www.mulesoft.org/schema/mule/anypoint-mq/current/mule-anypoint-mq.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;anypoint-mq:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint_MQ_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint MQ Configuration</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;anypoint-mq:provider</span> <span class="attribute-name">url</span>=<span class="string"><span class="delimiter">"</span><span class="content">https://mq-qa-us-east-1.anypoint.mulesoft.com/api/v1</span><span class="delimiter">"</span></span> <span class="attribute-name">clientId</span>=<span class="string"><span class="delimiter">"</span><span class="content">&lt;id</span></span><span class="error">&gt;</span>" clientSecret="<span class="tag">&lt;secret&gt;</span>"/<span class="error">&gt;</span>
+  <span class="tag">&lt;/anypoint-mq:config&gt;</span>
+<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">producerFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;poll</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Poll</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Create Customer</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
 %output application/json
 ---
 {
@@ -1186,10 +1257,13 @@
     "lastName" : "Schmoe",
     "company" : "Acme, Inc"
 }<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
-           <span class="tag">&lt;/dw:transform-message&gt;</span>
-       <span class="tag">&lt;/poll&gt;</span>
-       <span class="tag">&lt;mq:publish</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint_MQ_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">destination</span>=<span class="string"><span class="delimiter">"</span><span class="content">customer-updates</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint MQ</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-   <span class="tag">&lt;/flow&gt;</span></pre></td> 
+    <span class="tag">&lt;/dw:transform-message&gt;</span>
+  <span class="tag">&lt;/poll&gt;</span>
+        <span class="tag">&lt;anypoint-mq:publish</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint_MQ_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">destination</span>=<span class="string"><span class="delimiter">"</span><span class="content">MyExchange</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Anypoint MQ</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;anypoint-mq:message-builder</span> <span class="attribute-name">messageId</span>=<span class="string"><span class="delimiter">"</span><span class="content">mq42</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/anypoint-mq:publish&gt;</span>
+<span class="tag">&lt;/flow&gt;</span>
+<span class="tag">&lt;/mule&gt;</span></pre></td> 
          </tr> 
         </tbody> 
        </table></code></pre> 
@@ -1203,8 +1277,8 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>AMQP</p> </li> 
-    <li> <p>JMS</p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a></p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.7/jms-transport-reference">JMS Transport Reference</a></p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1213,7 +1287,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#conceptual-overview">Conceptual Overview</a></li><li><a class="scroll-menu-link" href="#create-a-queue">Create a Queue</a></li><li><a class="scroll-menu-link" href="#create-a-message-exchange">Create a Message Exchange</a></li><li><a class="scroll-menu-link" href="#create-a-client-app">Create a Client App</a></li><li><a class="scroll-menu-link" href="#set-mq-roles">Set MQ Roles</a></li><li><a class="scroll-menu-link" href="#anypoint-studio-mq-connector">Anypoint Studio MQ Connector</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#conceptual-overview">Conceptual Overview</a></li><li><a class="scroll-menu-link" href="#create-a-queue">Create a Queue</a></li><li><a class="scroll-menu-link" href="#create-a-message-exchange">Create a Message Exchange</a></li><li><a class="scroll-menu-link" href="#createapp">Create a Client App</a></li><li><a class="scroll-menu-link" href="#set-mq-roles">Set MQ Roles</a></li><li><a class="scroll-menu-link" href="#anypoint-studio-mq-connector">Anypoint Studio MQ Connector</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
