@@ -1132,7 +1132,7 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> You need to have the proper permissions for the folder and files that the connector points to. If not, an exception will be raised and no more files will be processed after the first failed attempt. </td> 
+      <td class="content"> You need to have the proper permissions for the folder and files that the connector points to. If not, an exception is raised and no more files are processed after the first failed attempt. </td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1497,453 +1497,356 @@ sftp.password=icannottellyou</pre></td>
    <h3 id="attributes-of-connector"><a class="anchor" href="#attributes-of-connector"></a>Attributes of &lt;connector…​&gt;</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">preferredAuthenticationMethods</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>preferredAuthenticationMethods</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list of authentication methods used by the SFTP client. Valid values are: gssapi-with-mic, publickey, keyboard-interactive and password.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Comma-separated list of authentication methods used by the SFTP client. Valid values are: gssapi-with-mic, publickey, keyboard-interactive and password.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">maxConnectionPoolSize</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>maxConnectionPoolSize</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: No Default: disabled If the number of active connections is specified, then a connection pool will be used with active connections up to this number. Use a negative value for no limit. If the value is zero no connection pool will be used.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. If the number of active connections is specified, then a connection pool is used with active connections up to this number. Use a negative value for no limit. If the value is zero no connection pool is used.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">pollingFrequency</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">pollingFr`equency</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: 1000 ms The frequency in milliseconds that the read directory should be checked. Note that the read directory is specified by the endpoint of the listening component.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: 1000 ms. The frequency in milliseconds that the read directory should be checked. Note that the read directory is specified by the endpoint of the listening component.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">autoDelete</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>autoDelete</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: true Whether to delete the file after successfully reading it.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: true. Whether to delete the file after successfully reading it.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">fileAge</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>fileAge</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled minimum age (in ms) for a file to be processed. This can be useful when consuming large files. It tells Mule to wait for a period of time before consuming the file, allowing the file to be completely written before the file is processed. WARNING: The fileAge attribute will only work properly if the servers where Mule and the sftp-server runs have synchronized time. NOTE: See attribute sizeCheckWaitTime for an alternate method of determining if a incoming file is ready for processing.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. minimum age (in ms) for a file to be processed. This can be useful when consuming large files. It tells Mule to wait for a period of time before consuming the file, allowing the file to be completely written before the file is processed. WARNING: The <code>fileAge</code> attribute only works properly if the servers where Mule and the sftp-server runs have synchronized time. <strong>Note</strong>: See attribute <code>sizeCheckWaitTime</code> for an alternate method of determining if a incoming file is ready for processing.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">sizeCheckWaitTime</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sizeCheckWaitTime</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled Wait time (in ms) between size-checks to determine if a file is ready to be processed. Disabled if not set or set to a negative value. This feature can be useful to avoid processing not yet completely written files (e.g. consuming large files). It tells Mule to do two size checks waiting the specified time between the two size calls. If the two size calls return the same value Mule consider the file ready for processing. NOTE: See attribute fileAge for an alternate method of determining if a incoming file is ready for processing.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. Wait time (in ms) between size-checks to determine if a file is ready to be processed. Disabled if not set or set to a negative value. This feature can be useful to avoid processing not yet completely written files (such as, consuming large files). It tells Mule to do two size checks waiting the specified time between the two size calls. If the two size calls return the same value Mule consider the file ready for processing. <strong>Note</strong>: See attribute fileAge for an alternate method of determining if a incoming file is ready for processing.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">archiveDir</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>archiveDir</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled Archives a copy of the file in the specified directory on the file system where mule is running. The archive folder must have been created before Mule is started and the user Mule runs under must have privileges to read and write to the folder.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. Archives a copy of the file in the specified directory on the file system where mule is running. The archive folder must have been created before Mule is started and the user Mule runs under must have privileges to read and write to the folder.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">archiveTempReceivingDir</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>archiveTempReceivingDir</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled If specified then the file to be archived is received in this folder and then moved to the archiveTempSendingDir while sent further on to the outbound endpoint. This folder is created as a subfolder to the archiveDir. NOTE: Must be specified together with the archiveTempSendingDir and archiveDir attributes.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. If specified then the file to be archived is received in this folder and then moved to the archiveTempSendingDir while sent further on to the outbound endpoint. This folder is created as a subfolder to the archiveDir. NOTE: Must be specified together with the archiveTempSendingDir and archiveDir attributes.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">archiveTempSendingDir</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>archiveTempSendingDir</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled If specified then the file to be archived is sent to the outbound endpoint from this folder. This folder is created as a subfolder to the archiveDir. After the file is consumed by the outbound endpoint or the component itself (i.e. when the underlying InputStream is closed) it will be moved to the archive folder. NOTE: Must be specified together with the archiveTempReceivingDir and archiveDir attributes.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. If specified then the file to be archived is sent to the outbound endpoint from this folder. This folder is created as a subfolder to the archiveDir. After the file is consumed by the outbound endpoint or the component itself (that is, when the underlying InputStream is closed) it is moved to the archive folder. NOTE: Must be specified together with the archiveTempReceivingDir and archiveDir attributes.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">outputPattern</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputPattern</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: the message id, e.g. ee241e68-c619-11de-986b-adeb3d6db038 The pattern to use when writing a file to disk. This can use the patterns supported by the filename-parser configured for this connector, by default the <a href="http://www.mulesoft.org/display/MULE2USER/File+Transport#FileTransport-LegacyFilenameParser">Legacy Filename Parser</a> is used. See section <a href="http://www.mulesoft.org/display/MULE2USER/File+Transport">Child Elements to File Connector</a> for information on how to override the default parser.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: the message ID, for example, <code>ee241e68-c619-11de-986b-adeb3d6db038</code><br> The pattern to use when writing a file to disk. This can use the patterns supported by the filename-parser configured for this connector. By default the <a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a> is used. See this same document section for information on how to override the default parser.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">keepFileOnError</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>keepFileOnError</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: true If true the file on the inbound-endpoint will not be deleted if an error occurs when writing to the outbound-endpoint. NOTE: This assumes that both the inbound and outbound endpoints are using the SFTP-Transport.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: true. If true, the file on the inbound-endpoint is not deleted if an error occurs when writing to the outbound-endpoint. <strong>Note</strong>: This assumes that both the inbound and outbound endpoints are using the SFTP-Transport.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">duplicateHandling</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>duplicateHandling</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">duplicateHandlingType</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: throwException Determines what to do if a file already exist on the outbound endpoint with the specified name. throwException: Will throw an exception if a file already exists overwrite: Will overwrite an existing file addSeqNo: Will add a sequence number to the target filename making the filename unique, starting with 1 and incrementing the number until a unique filename is found The default behavior is to throw an exception.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: throwException. Determines what to do if a file already exist on the outbound endpoint with the specified name. + <code>throwException</code>: throws an exception if a file already exists<br> <code>overwrite</code>: overwrites an existing file<br> <code>addSeqNo</code>: adds a sequence number to the target filename making the filename unique, starting with 1 and incrementing the number until a unique filename is found The default behavior is to throw an exception.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">identityFile</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>identityFile</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled An identityFile location for a PKI private key.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. An identityFile location for a PKI private key.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">passphrase</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>passphrase</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled The passphrase (password) for the identityFile if required.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. The passphrase (password) for the identityFile if required.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">tempDirInbound</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tempDirInbound</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: No Default: disabled If specified then Mule tries to create the temp-directory in the endpoint folder if it doesn’t already exist. Ensure that the user Mule is configured to use to access the sftp server has privileges to create a temp folder if required! For inbound endpoints: A temporary directory on the ftp-server from where the download takes place. The file will be moved (locally on the sftp-server) to the tempDir, to mark that a download is taking place, before the download starts. NOTE: A file in the tempDir of an inbound endpoint is always correct (has only been moved locally on the sftp-server) and can therefore be used to restart a failing file transfer.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. If specified then Mule tries to create the temp-directory in the endpoint folder if it doesn’t already exist. Ensure that the user Mule is configured to use to access the sftp server has privileges to create a temp folder if required! For inbound endpoints: A temporary directory on the ftp-server from where the download takes place. The file is moved (locally on the sftp-server) to the tempDir, to mark that a download is taking place, before the download starts. <strong>Note</strong>: A file in the tempDir of an inbound endpoint is always correct (has only been moved locally on the sftp-server) and can therefore be used to restart a failing file transfer.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">tempDirOutbound</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tempDirOutbound</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: No Default: disabled If specified then Mule tries to create the temp-directory in the endpoint folder if it doesn’t already exist. Ensure that the user Mule is configured to use to access the sftp server has privileges to create a temp folder if required! For outbound endpoints: A temporary directory on the sftp-server to first upload the file to. When the file is fully uploaded the file is moved to its final destination. The tempDir will be created as a sub directory to the endpoint. NOTE: A file in the tempDir of an outbound endpoint might not be correct (since the upload takes place to this folder) and can therefore NOT be used to restart a failing file transfer.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. If specified, then Mule tries to create the temp-directory in the endpoint folder if it doesn’t already exist. Ensure that the user Mule configured to use to access the SFTP server has privileges to create a temp folder if required.<br> For outbound endpoints: A temporary directory on the sftp-server to first upload the file to. When the file is fully uploaded the file is moved to its final destination. The tempDir is created as a sub directory to the endpoint. <strong>Note</strong>: A file in the tempDir of an outbound endpoint might not be correct (since the upload takes place to this folder) and can therefore NOT be used to restart a failing file transfer.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">useTempFileTimestampSuffix</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>useTempFileTimestampSuffix</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: No Default: disabled Used together with the tempDir - attribute to give the files in the tempDir a guaranteed unique name based on the local time when the file was moved to the tempDir.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. Used together with the tempDir - attribute to give the files in the tempDir a guaranteed unique name based on the local time when the file was moved to the tempDir.</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-connector"><a class="anchor" href="#child-elements-of-connector"></a>Child Elements of &lt;connector…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">file:abstract-filenameParser</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <h3 id="child-element-of-connector"><a class="anchor" href="#child-element-of-connector"></a>Child Element of connector</h3> 
+   <div class="paragraph"> 
+    <p>Element: <code>file:abstract-filenameParser</code><br> Cardinality: 0..1</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="inbound-endpoint"><a class="anchor" href="#inbound-endpoint"></a>Inbound endpoint</h2> 
+ <h2 id="inbound-endpoint"><a class="anchor" href="#inbound-endpoint"></a>Inbound Endpoint</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of &lt;inbound-endpoint…​&gt;</h3> 
+   <h3 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of inbound-endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A file location.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>user</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A username.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A password.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">host</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>host</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An IP address (eg www.mulesoft.com, localhost, 127.0.0.1).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An IP address (for example, www.mulesoft.com, localhost, 127.0.0.1).</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>port</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">port number</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A port number.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">pollingFrequency</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>pollingFrequency</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: 1000 ms The frequency in milliseconds that the read directory should be checked. Note that the read directory is specified by the endpoint of the listening component.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: 1000 ms. The frequency in milliseconds that the read directory should be checked. Note that the read directory is specified by the endpoint of the listening component.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">autoDelete</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>autoDelete</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: true Whether to delete the file after successfully reading it.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: true. Whether to delete the file after successfully reading it.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">fileAge</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>fileAge</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled [width="100",cols="33,33,33",options="header"] age (in ms) for a file to be processed. This can be useful when consuming large files. It tells Mule to wait for a period of time before consuming the file, allowing the file to be completely written before the file is processed. WARNING: The fileAge attribute will only work properly if the servers where Mule and the sftp-server runs have synchronized time. NOTE: See attribute sizeCheckWaitTime for an alternate method of determining if a incoming file is ready for processing.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. Age (in ms) for a file to be processed. This can be useful when consuming large files. It tells Mule to wait for a period of time before consuming the file, allowing the file to be completely written before the file is processed. WARNING: The fileAge attribute only works properly if the servers where Mule and the sftp-server runs have synchronized time. <strong>Note</strong>: See attribute sizeCheckWaitTime for an alternate method of determining if a incoming file is ready for processing.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">sizeCheckWaitTime</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sizeCheckWaitTime</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled Wait time (in ms) between size-checks to determine if a file is ready to be processed. Disabled if not set or set to a negative value. This feature can be useful to avoid processing not yet completely written files (e.g. consuming large files). It tells Mule to do two size checks waiting the specified time between the two size calls. If the two size calls return the same value Mule consider the file ready for processing. NOTE: See attribute fileAge for an alternate method of determining if a incoming file is ready for processing.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. Wait time (in ms) between size-checks to determine if a file is ready to be processed. Disabled if not set or set to a negative value. This feature can be useful to avoid processing not yet completely written files (such as when consuming large files). It tells Mule to do two size checks waiting the specified time between the two size calls. If the two size calls return the same value Mule consider the file ready for processing. <strong>Note</strong>: See attribute fileAge for an alternate method of determining if a incoming file is ready for processing.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">archiveDir</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>archiveDir</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled Archives a copy of the file in the specified directory on the file system where mule is running. The archive folder must have been created before Mule is started and the user Mule runs under must have privileges to read and write to the folder.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. Archives a copy of the file in the specified directory on the file system where mule is running. The archive folder must have been created before Mule is started and the user Mule runs under must have privileges to read and write to the folder.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">archiveTempReceivingDir</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>archiveTempReceivingDir</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled If specified then the file to be archived is received in this folder and then moved to the archiveTempSendingDir while sent further on to the outbound endpoint. This folder is created as a subfolder to the archiveDir. NOTE: Must be specified together with the archiveTempSendingDir and archiveDir attributes.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. If specified then the file to be archived is received in this folder and then moved to the archiveTempSendingDir while sent further on to the outbound endpoint. This folder is created as a subfolder to the archiveDir. <strong>NOte</strong>: Must be specified together with the archiveTempSendingDir and archiveDir attributes.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">archiveTempSendingDir</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>archiveTempSendingDir</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled If specified then the file to be archived is sent to the outbound endpoint from this folder. This folder is created as a subfolder to the archiveDir. After the file is consumed by the outbound endpoint or the component itself (i.e. when the underlying InputStream is closed) it will be moved to the archive folder. NOTE: Must be specified together with the archiveTempReceivingDir and archiveDir attributes.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. If specified then the file to be archived is sent to the outbound endpoint from this folder. This folder is created as a subfolder to the archiveDir. After the file is consumed by the outbound endpoint or the component itself (that is, when the underlying InputStream is closed) it is moved to the archive folder. <strong>Note</strong>: Must be specified together with the archiveTempReceivingDir and archiveDir attributes.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">identityFile</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>identityFile</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled An identityFile location for a PKI private key.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. An identityFile location for a PKI private key.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">passphrase</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>passphrase</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled The passphrase (password) for the identityFile if required.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. The passphrase (password) for the identityFile if required.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">tempDir</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tempDir</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: No Default: disabled If specified then Mule tries to create the temp-directory in the endpoint folder if it doesn’t already exist. Ensure that the user Mule is configured to use to access the sftp server has privileges to create a temp folder if required! For inbound endpoints: A temporary directory on the ftp-server from where the download takes place. The file will be moved (locally on the sftp-server) to the tempDir, to mark that a download is taking place, before the download starts. NOTE: A file in the tempDir of an inbound endpoint is always correct (has only been moved locally on the sftp-server) and can therefore be used to restart a failing file transfer. For outbound endpoints: A temporary directory on the sftp-server to first upload the file to. When the file is fully uploaded the file is moved to its final destination. The tempDir will be created as a sub directory to the endpoint. NOTE: A file in the tempDir of an outbound endpoint might not be correct (since the upload takes place to this folder) and can therefore NOT be used to restart a failing file transfer.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. If specified then Mule tries to create the temp-directory in the endpoint folder if it doesn’t already exist. Ensure that the user Mule is configured to use to access the sftp server has privileges to create a temp folder if required! For inbound endpoints: A temporary directory on the ftp-server from where the download takes place. The file is moved (locally on the sftp-server) to the tempDir, to mark that a download is taking place, before the download starts. <strong>Note</strong>: A file in the tempDir of an inbound endpoint is always correct (has only been moved locally on the sftp-server) and can therefore be used to restart a failing file transfer. For outbound endpoints: A temporary directory on the sftp-server to first upload the file to. When the file is fully uploaded the file is moved to its final destination. The tempDir is created as a sub directory to the endpoint. <strong>Note</strong>: A file in the tempDir of an outbound endpoint might not be correct (since the upload takes place to this folder) and can therefore NOT be used to restart a failing file transfer.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">useTempFileTimestampSuffix</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>useTempFileTimestampSuffix</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: No Default: disabled Used together with the tempDir - attribute to give the files in the tempDir a guaranteed unique name based on the local time when the file was moved to the tempDir.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. Used together with the tempDir - attribute to give the files in the tempDir a guaranteed unique name based on the local time when the file was moved to the tempDir.</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-inbound-endpoint"><a class="anchor" href="#child-elements-of-inbound-endpoint"></a>Child Elements of &lt;inbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>inbound-endpoint</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound endpoint</h2> 
+ <h2 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound Endpoint</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="attributes-of-outbound-endpoint"><a class="anchor" href="#attributes-of-outbound-endpoint"></a>Attributes of &lt;outbound-endpoint…​&gt;</h3> 
+   <h3 id="attributes-of-outbound-endpoint"><a class="anchor" href="#attributes-of-outbound-endpoint"></a>Attributes of outbound-endpoint</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
+     <col style="width: %;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A file location.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>user</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A username.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A password.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">host</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>host</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An IP address (eg www.mulesoft.com, localhost, 127.0.0.1).</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">An IP address (for example, www.mulesoft.com, localhost, 127.0.0.1).</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>port</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">port number</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A port number.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">outputPattern</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>outputPattern</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: the message id, e.g. ee241e68-c619-11de-986b-adeb3d6db038 The pattern to use when writing a file to disk. This can use the patterns supported by the filename-parser configured for this connector, by default the <a href="http://www.mulesoft.org/display/MULE2USER/File+Transport#FileTransport-LegacyFilenameParser">Legacy Filename Parser</a> is used. See section <a href="http://www.mulesoft.org/display/MULE2USER/File+Transport">Child Elements to File Connector</a> for information on how to override the default parser.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: the message ID, for example, ee241e68-c619-11de-986b-adeb3d6db038 The pattern to use when writing a file to disk. This can use the patterns supported by the filename-parser configured for this connector. By default the <a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a> is used. See this same document section for information on how to override the default parser.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">keepFileOnError</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>keepFileOnError</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: true If true the file on the inbound-endpoint will not be deleted if an error occurs when writing to the outbound-endpoint. NOTE: This assumes that both the inbound and outbound endpoints are using the SFTP-Transport.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: true. If true the file on the inbound-endpoint is not deleted if an error occurs when writing to the outbound-endpoint. <strong>Note</strong>: This assumes that both the inbound and outbound endpoints are using the SFTP-Transport.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">duplicateHandling</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>duplicateHandling</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">duplicateHandlingType</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: throwException Determines what to do if a file already exist on the outbound endpoint with the specified name. throwException: Will throw an exception if a file already exists overwrite: Will overwrite an existing file addSeqNo: Will add a sequence number to the target filename making the filename unique, starting with 1 and incrementing the number until a unique filename is found The default behavior is to throw an exception.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: <code>throwException</code>. Determines what to do if a file already exist on the outbound endpoint with the specified name. + <code>throwException</code>: Throws an exception if a file already exists<br> <code>overwrite</code>: overwrites an existing file<br> <code>addSeqNo</code>: Adds a sequence number to the target filename making the filename unique, starting with 1 and incrementing the number until a unique filename is found The default behavior is to throw an exception.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">identityFile</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>identityFile</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled An identityFile location for a PKI private key.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. An <code>identityFile</code> location for a PKI private key.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">passphrase</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>passphrase</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no Default: disabled The passphrase (password) for the identityFile if required.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. The passphrase (password) for the identityFile if required.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">tempDir</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tempDir</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: No Default: disabled If specified then Mule tries to create the temp-directory in the endpoint folder if it doesn’t already exist. Ensure that the user Mule is configured to use to access the sftp server has privileges to create a temp folder if required! For inbound endpoints: A temporary directory on the ftp-server from where the download takes place. The file will be moved (locally on the sftp-server) to the tempDir, to mark that a download is taking place, before the download starts. NOTE: A file in the tempDir of an inbound endpoint is always correct (has only been moved locally on the sftp-server) and can therefore be used to restart a failing file transfer. For outbound endpoints: A temporary directory on the sftp-server to first upload the file to. When the file is fully uploaded the file is moved to its final destination. The tempDir will be created as a sub directory to the endpoint. NOTE: A file in the tempDir of an outbound endpoint might not be correct (since the upload takes place to this folder) and can therefore NOT be used to restart a failing file transfer.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: no. Default: disabled. If specified then Mule tries to create the temp-directory in the endpoint folder if it doesn’t already exist. Ensure that the user Mule is configured to use to access the SFTP server has privileges to create a temp folder if required! For inbound endpoints: A temporary directory on the ftp-server from where the download takes place. The file is moved (locally on the sftp-server) to the tempDir, to mark that a download is taking place, before the download starts. <strong>Note</strong>: A file in the tempDir of an inbound endpoint is always correct (has only been moved locally on the sftp-server) and can therefore be used to restart a failing file transfer. For outbound endpoints: A temporary directory on the sftp-server to first upload the file to. When the file is fully uploaded the file is moved to its final destination. The tempDir is created as a sub directory to the endpoint. <strong>Note</strong>: A file in the tempDir of an outbound endpoint might not be correct (since the upload takes place to this folder) and can therefore NOT be used to restart a failing file transfer.</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">useTempFileTimestampSuffix</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>useTempFileTimestampSuffix</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: No Default: disabled Used together with the tempDir - attribute to give the files in the tempDir a guaranteed unique name based on the local time when the file was moved to the tempDir.</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Required: No. Default: disabled. Used together with the tempDir - attribute to give the files in the tempDir a guaranteed unique name based on the local time when the file was moved to the tempDir.</p></td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-outbound-endpoint"><a class="anchor" href="#child-elements-of-outbound-endpoint"></a>Child Elements of &lt;outbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all" style="width: 10%;"> 
-    <colgroup> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>No child elements for <code>outbound-endpoint</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -2004,7 +1907,7 @@ sftp.password=icannottellyou</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#exchange-patterns-and-features-of-the-transport">Exchange Patterns and Features of the Transport</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#connector">Connector</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound endpoint</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li><li><a class="scroll-menu-link" href="#notes">Notes</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#considerations">Considerations</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#usage">Usage</a></li><li><a class="scroll-menu-link" href="#example-configurations">Example Configurations</a></li><li><a class="scroll-menu-link" href="#exchange-patterns-and-features-of-the-transport">Exchange Patterns and Features of the Transport</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#connector">Connector</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound Endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound Endpoint</a></li><li><a class="scroll-menu-link" href="#javadoc-api-reference">Javadoc API Reference</a></li><li><a class="scroll-menu-link" href="#maven">Maven</a></li><li><a class="scroll-menu-link" href="#best-practices">Best Practices</a></li><li><a class="scroll-menu-link" href="#notes">Notes</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
