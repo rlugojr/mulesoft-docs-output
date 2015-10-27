@@ -896,7 +896,7 @@
    <ul> 
     <li> <p>Defining flows, subflows, or any message processors as shared resources is not supported.&nbsp;</p> </li> 
     <li> <p>To share a WMQ connector as a shared resource, you need to remove the mule-transport-wmq-ee-&lt;mule-version&gt;.jar&nbsp;file from the $MULE_HOME/lib/mule/per-app/ directory and remove all the&nbsp;native jars for wmq connectivity in your application’s $MULE_HOME/apps/&lt;my-app&gt;/lib/ directory. Place all these jars in the $MULE_HOME/domains/&lt;my-domain&gt;/lib/ folder instead.</p> </li> 
-    <li> <p>Adding properties in the configuration files of applications that use shared resources can result in issues, as these properties will be shared with other apps in the domain and there may be conflicts. You can instead <a href="/mule-user-guide/v/3.7/setting-environment-variables">set environment variables</a>.</p> </li> 
+    <li> <p>Adding properties in the configuration files of applications that use shared resources can result in issues, as these properties are shared with other apps in the domain and there may be conflicts. You can instead <a href="/mule-user-guide/v/3.7/setting-environment-variables">set environment variables</a>.</p> </li> 
     <li> <p>Only the following connectors and related specifications can be specified as shared resources at this time:<br></p> 
      <div class="ulist"> 
       <ul> 
@@ -970,7 +970,7 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>In the top menu bar select&nbsp;<code>File &gt; New &gt; Mule Domain Project</code></p> 
+    <li> <p>In the top menu bar select&nbsp;<strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Domain Project</strong></p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/new+domain.png" alt="new+domain"></span><br></p> 
      </div> </li> 
@@ -1030,7 +1030,7 @@
     </table> 
    </div> 
    <div class="paragraph"> 
-    <p>To associate an existing application with a domain, edit the&nbsp;<code>mule-project.xml</code> file located at root level in the project. In the graphical view of this file, you will see a <strong>Domain</strong> field, which by default is set to <strong>default</strong>, this value gives each project its independent domain. Change this value, the dropdown list on this field will display all of the domains you’ve created in the current workspace.</p> 
+    <p>To associate an existing application with a domain, edit the&nbsp;<code>mule-project.xml</code> file located at root level in the project. In the graphical view of this file, you see a <strong>Domain</strong> field, which by default is set to <strong>default</strong>, this value gives each project its independent domain. Change this value, the dropdown list on this field displays all of the domains you’ve created in the current workspace.</p> 
    </div> 
    <div class="paragraph"> 
     <p><span class="image"><img src="./_images/assign+domain.png" alt="assign+domain"></span></p> 
@@ -1066,8 +1066,66 @@
    <div class="paragraph"> 
     <p>In the following example&nbsp;<code>mule-domain-config.xml</code>,&nbsp;an HTTP connector is defined as a shared resource.</p> 
    </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain http://www.mulesoft.org/schema/mule/domain/current/mule-domain.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
    <div class="paragraph"> 
     <p>Any Mule application associated with the domain can make use of the shared resource by referencing it within the configuration, just as you would reference a resource within the project itself. In the example below, the HTTP listener connector references the shared resource named <code>HTTP_Listener_Configuration</code>.&nbsp;</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;mule&gt;</span>
+   <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">httpService</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+      <span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">success</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+   <span class="tag">&lt;/flow&gt;</span>
+<span class="tag">&lt;/mule&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
    <div class="paragraph"> 
     <p>In Studio’s visual editor, you can simply pick the shared resource out of the dropdown list in the <strong>Connector Configuration</strong> field of the connector’s properties editor:</p> 
@@ -1135,7 +1193,7 @@
     <p><span class="image"><img src="./_images/domainBundle.png" alt="domainBundle"></span></p> 
    </div> 
    <div class="paragraph"> 
-    <p>The deployment behavior is the same as deploying a domain and apps separately: Mule will first deploy the domain itself, then the applications. Deploying domain bundles simplifies the deployment mechanism for teams by removing the manual step of deploying applications separately.</p> 
+    <p>The deployment behavior is the same as deploying a domain and apps separately: Mule first deploys the domain itself, then the applications. Deploying domain bundles simplifies the deployment mechanism for teams by removing the manual step of deploying applications separately.</p> 
    </div> 
   </div> 
  </div> 
@@ -1151,11 +1209,105 @@
    <div class="paragraph"> 
     <p>Sharing an HTTP connector within a domain allows you to reuse the same port within all the applications that belong to the domain.</p> 
    </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain http://www.mulesoft.org/schema/mule/domain/current/mule-domain.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="https"><a class="anchor" href="#https"></a>HTTPS</h3> 
    <div class="paragraph"> 
     <p>Sharing an HTTPS connector within a domain allows you to reuse the same port within all the applications that belong to the domain.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span>
+    <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">xmlns:domain</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/domain</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">xmlns:tls</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/tls</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+        <span class="content">http://www.mulesoft.org/schema/mule/domain http://www.mulesoft.org/schema/mule/domain/current/mule-domain.xsd</span>
+        <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+        <span class="content">http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd</span>
+        <span class="content">http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd</span>
+        <span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTPS_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">protocol</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTPS</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;tls:context</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">MyContext</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;tls:trust-store</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">ssltest-cacerts.jks</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">mypassword</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+            <span class="tag">&lt;tls:key-store</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">ssltest-keystore.jks</span><span class="delimiter">"</span></span> <span class="attribute-name">keyPassword</span>=<span class="string"><span class="delimiter">"</span><span class="content">mypassword</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">mypassword</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;/tls:context&gt;</span>
+    <span class="tag">&lt;/http:listener-config&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -1166,11 +1318,115 @@
    <div class="paragraph"> 
     <p>Sharing a VM connector allows multiple Mule applications within the same domain to communicate through VM queues. Defining a VM connector as a shared resource is a best practice for consuming services provided by other Mule applications within the same container.</p> 
    </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/domain</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:vm</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/vm</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;vm:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sharedVmConnector</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="jms"><a class="anchor" href="#jms"></a>JMS&nbsp;</h3> 
    <div class="paragraph"> 
     <p>Sharing a JMS connector creates a common connection to the broker between multiple applications, minimizing the number of client connections to the broker.&nbsp;</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:jms</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/jms</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:util</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/util</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+               <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+               <span class="content">http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-current.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/domain http://www.mulesoft.org/schema/mule/domain/current/mule-domain.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;spring:beans&gt;</span>
+        <span class="tag">&lt;util:properties</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">providerProperties</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;spring:prop</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">queue.jndi-queue-in</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>in<span class="tag">&lt;/spring:prop&gt;</span>
+            <span class="tag">&lt;spring:prop</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">topic.jndi-topic-in</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>in<span class="tag">&lt;/spring:prop&gt;</span>
+        <span class="tag">&lt;/util:properties&gt;</span>
+    <span class="tag">&lt;/spring:beans&gt;</span>
+
+    <span class="tag">&lt;jms:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sharedJmsConnector</span><span class="delimiter">"</span></span>
+                   <span class="attribute-name">connectionFactoryJndiName</span>=<span class="string"><span class="delimiter">"</span><span class="content">ConnectionFactory</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;jms:default-jndi-name-resolver</span>
+                <span class="attribute-name">jndiInitialFactory</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.apache.activemq.jndi.ActiveMQInitialContextFactory</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">jndiProviderUrl</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://localhost?broker.persistent=false</span><span class="entity">&amp;amp;</span><span class="content">broker.useJmx=false</span><span class="delimiter">"</span></span>
+                <span class="attribute-name">jndiProviderProperties-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">providerProperties</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/jms:connector&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -1178,11 +1434,123 @@
    <div class="paragraph"> 
     <p>Mule provides a caching connection factory for JMS connections to improve JMS resource utilization.</p> 
    </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:jms</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/jms</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+
+               <span class="content">http://www.mulesoft.org/schema/mule/domain http://www.mulesoft.org/schema/mule/domain/current/mule-domain.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;spring:bean</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">connectionFactory</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.apache.activemq.ActiveMQConnectionFactory</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">brokerURL</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://localhost?broker.persistent=false</span><span class="entity">&amp;amp;</span><span class="content">broker.useJmx=false</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/spring:bean&gt;</span>
+
+    <span class="tag">&lt;jms:caching-connection-factory</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">cachingConnectionFactory</span><span class="delimiter">"</span></span> <span class="attribute-name">connectionFactory-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">connectionFactory</span><span class="delimiter">"</span></span>
+                                    <span class="attribute-name">cacheProducers</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span> <span class="attribute-name">sessionCacheSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+    <span class="tag">&lt;jms:activemq-connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sharedJmsConnector</span><span class="delimiter">"</span></span>
+                            <span class="attribute-name">connectionFactory-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">cachingConnectionFactory</span><span class="delimiter">"</span></span>
+                            <span class="attribute-name">specification</span>=<span class="string"><span class="delimiter">"</span><span class="content">1.1</span><span class="delimiter">"</span></span>
+                            <span class="attribute-name">validateConnections</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span>
+                            <span class="attribute-name">maxRedelivery</span>=<span class="string"><span class="delimiter">"</span><span class="content">-1</span><span class="delimiter">"</span></span>
+                            <span class="attribute-name">numberOfConsumers</span>=<span class="string"><span class="delimiter">"</span><span class="content">1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="database-configuration"><a class="anchor" href="#database-configuration"></a>Database Configuration</h3> 
    <div class="paragraph"> 
     <p>Sharing a&nbsp;<code>db</code>&nbsp;configuration creates a common connection to a database between multiple applications, minimizing the number of client connections to the database.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:db</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/db</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/domain http://www.mulesoft.org/schema/mule/domain/current/mule-domain.xsd</span>
+               <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;spring:bean</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">jdbcDataSource</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.enhydra.jdbc.standard.StandardDataSource</span><span class="delimiter">"</span></span> <span class="attribute-name">destroy-method</span>=<span class="string"><span class="delimiter">"</span><span class="content">shutdown</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">driverName</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.apache.derby.jdbc.EmbeddedDriver</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">url</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">${database.connection}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/spring:bean&gt;</span>
+
+    <span class="tag">&lt;db:generic-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">dbConfig</span><span class="delimiter">"</span></span> <span class="attribute-name">dataSource-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">jdbcDataSource</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -1233,11 +1601,103 @@
      </tr> 
     </tbody> 
    </table> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/domain</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:wmq</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/wmq</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:context</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/context</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+               <span class="content">http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/ee/wmq http://www.mulesoft.org/schema/mule/ee/wmq/current/mule-wmq-ee.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;context:property-placeholder</span> <span class="attribute-name">location</span>=<span class="string"><span class="delimiter">"</span><span class="content">wmq-test.properties</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+    <span class="tag">&lt;wmq:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sharedJmsConnector</span><span class="delimiter">"</span></span>
+                   <span class="attribute-name">hostName</span>=<span class="string"><span class="delimiter">"</span><span class="content">${wmq.host}</span><span class="delimiter">"</span></span>
+                   <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${wmq.port}</span><span class="delimiter">"</span></span>
+                   <span class="attribute-name">queueManager</span>=<span class="string"><span class="delimiter">"</span><span class="content">${wmq.queue.manager}</span><span class="delimiter">"</span></span>
+                   <span class="attribute-name">transportType</span>=<span class="string"><span class="delimiter">"</span><span class="content">CLIENT_MQ_TCPIP</span><span class="delimiter">"</span></span>
+                   <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${wmq.username}</span><span class="delimiter">"</span></span>
+                   <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${wmq.password}</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/wmq:connector&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="jboss-transaction-manager"><a class="anchor" href="#jboss-transaction-manager"></a>JBoss Transaction Manager&nbsp;</h3> 
    <div class="paragraph"> 
     <p>When you define JMS connectors and&nbsp;<code>db</code>&nbsp;configurations as shared resources in your domain, you may have to use XA transactions in your applications. In this case, you must define the XA transaction manager in your domain configuration as well.&nbsp;</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xmlns:jbossts</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/jbossts</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+                <span class="content">http://www.mulesoft.org/schema/mule/domain http://www.mulesoft.org/schema/mule/domain/current/mule-domain.xsd</span>
+                <span class="content">http://www.mulesoft.org/schema/mule/jbossts http://www.mulesoft.org/schema/mule/jbossts/current/mule-jbossts.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;jbossts:transaction-manager</span><span class="tag">/&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -1248,8 +1708,112 @@
    <div class="paragraph"> 
     <p>When you define JMS connectors and&nbsp;<code>db</code>&nbsp;configurations as shared resources in your domain, you may have to use XA transactions in your applications. In this case, you must define the XA transaction manager in your domain configuration as well.&nbsp;</p> 
    </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/domain</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xmlns:jms</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/jms</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xmlns:bti</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/bti</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/ee/bti http://www.mulesoft.org/schema/mule/ee/bti/current/mule-bti-ee.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+    <span class="tag">&lt;bti:transaction-manager</span><span class="tag">/&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
    <div class="paragraph"> 
     <p>The Bitronix module integration also provides a JMS connection factory pool and a datasource pool to be used when using a datasource with XA transactions. You can define either or both of them as shared resources.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+</pre></td> 
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/domain</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xmlns:jms</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/jms</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xmlns:bti</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/bti</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
+      <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/ee/bti http://www.mulesoft.org/schema/mule/ee/bti/current/mule-bti-ee.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd</span>
+               <span class="content">http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+     <span class="tag">&lt;spring:bean</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">xaConnectionFactory</span><span class="delimiter">"</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">org.apache.activemq.ActiveMQXAConnectionFactory</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;spring:property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">brokerURL</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">vm://localhost?broker.persistent=false</span><span class="entity">&amp;amp;</span><span class="content">broker.useJmx=false</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/spring:bean&gt;</span>
+
+
+    <span class="tag">&lt;jms:activemq-xa-connector</span> <span class="attribute-name">connectionFactory-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">connectionFactoryPool</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">sharedJmsConnector</span><span class="delimiter">"</span></span>
+                               <span class="attribute-name">maxRedelivery</span>=<span class="string"><span class="delimiter">"</span><span class="content">-1</span><span class="delimiter">"</span></span> <span class="attribute-name">specification</span>=<span class="string"><span class="delimiter">"</span><span class="content">1.1</span><span class="delimiter">"</span></span> <span class="attribute-name">numberOfConsumers</span>=<span class="string"><span class="delimiter">"</span><span class="content">1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+    <span class="tag">&lt;bti:xa-connection-factory-pool</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">connectionFactoryPool</span><span class="delimiter">"</span></span> <span class="attribute-name">minPoolSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">5</span><span class="delimiter">"</span></span> <span class="attribute-name">maxPoolSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">15</span><span class="delimiter">"</span></span> <span class="attribute-name">maxIdleTime</span>=<span class="string"><span class="delimiter">"</span><span class="content">40</span><span class="delimiter">"</span></span>
+                                    <span class="attribute-name">connectionFactory-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">xaConnectionFactory</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+    <span class="tag">&lt;bti:transaction-manager</span><span class="tag">/&gt;</span>
+
+<span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
    </div> 
   </div> 
  </div> 
