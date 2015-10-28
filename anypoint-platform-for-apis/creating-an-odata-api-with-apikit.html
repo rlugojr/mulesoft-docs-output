@@ -879,7 +879,7 @@
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/pikit-odata-cycle.png" alt="APIKit Odata Extension Development Cycle"></span></p> 
+   <p><span class="image"><img src="./_images/apikit-odata-cycle.png" alt="APIKit Odata Extension Development Cycle"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -919,7 +919,7 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p><a href="#install">Install</a> the APIKit extension in Studio, using the appropriate update site.</p> </li> 
-    <li> <p><a href="#import">Import</a> the application template into Studio.</p> </li> 
+    <li> <p><a href="#import">Import</a> a provided application template into Studio. This template greatly simplifies building the OData-enabled application.</p> </li> 
     <li> <p><a href="#define">Define</a> your OData entity model in the JSON file provided in the template.</p> </li> 
     <li> <p><a href="#run_app">Run APIKit</a> to scaffold the application, generating a RAML file that exposes OData endpoints with the entities you defined.</p> </li> 
     <li> <p><a href="#implement">Implement</a> the flows in your application.</p> </li> 
@@ -979,7 +979,7 @@
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>Once you have imported the template into Studio, the folders and files included in the template appear in Studio’s <strong>Package Explorer</strong> pane on the left. In the Package Explorer, open the <code>src/main/api</code> folder, then open the file <code>model.json</code> for editing (right-click the file, then select <strong>Open</strong>).</p> </li> 
-     <li> <p>The <code>model.json</code> file contains the structure of the supported entity model. Enter the values for the entities and fields of your specific entity model. (For details on the entity model, <a href="#supported-data-types">Supported Data Types</a> in this page, or consult the <a href="https://github.com/mulesoft/apikit-odata-template">full specification</a>).</p> </li> 
+     <li> <p>The <code>model.json</code> file contains the structure of the supported entity model. Enter the values for the entities and fields of your specific entity model. (For details on the entity model, see <a href="#supported-data-types">Supported Data Types</a> in this page, or consult the <a href="https://github.com/mulesoft/apikit-odata-template">full specification</a>. An <a href="_attachments/model-schema.json">example JSON schema file</a> is also available.)</p> </li> 
     </ol> 
    </div> 
   </div> 
@@ -988,7 +988,7 @@
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>Once you have defined your entity model, use APIKit to generate the flows for the application. To do this: in the Package Explorer, right-click the application name or the <code>model.json</code> file, then select <strong>APIKit</strong> → <strong>Generate Flows</strong>.</p> </li> 
-     <li> <p>When you select to generate the flows, APIKit generates a RAML file (<code>api.raml</code>) in the same folder as the <code>model.json</code> file. The <code>api.raml</code> file contains definitions for as many resources as there are entities in the <code>model.json</code> file that you edited. APIKit then scaffolds your OData endpoints as flows, defined in a file called <code>api.xml</code>.<br> At this point, you can begin implementing the endpoints in the XML file. When implementing the endpoints, bear in mind that the flows' input and output <strong>must</strong> be in the JSON format. The input for each flow may contain the following variables:</p> 
+     <li> <p>When you select to generate the flows, APIKit generates a RAML file (<code>api.raml</code>) in the same folder as the <code>model.json</code> file. The <code>api.raml</code> file contains definitions for as many resources as there are entities in the <code>model.json</code> file that you edited. APIKit then scaffolds your OData endpoints as flows, which are defined in a file called <code>api.xml</code>.<br> At this point, you can begin implementing the endpoints in the XML file. When implementing the endpoints, bear in mind that the flows' input and output <strong>must</strong> be in the JSON format. The input for each flow may contain the following variables:</p> 
       <div class="ulist"> 
        <ul> 
         <li> <p><code>orderby</code></p> </li> 
@@ -1006,7 +1006,7 @@
       </div> </li> 
      <li> <p>Package your app by running <code>mvn clean package</code>.</p> </li> 
      <li> <p>Run your app locally.</p> </li> 
-     <li> <p>Deploy your app to CloudHub: Right-click your project, then select <strong>CloudHub</strong> → <strong>Deploy to CloudHub</strong>. (For further details, see <a href="/cloudhub/deploying-a-cloudhub-application">Deploying a CloudHub Application</a>.</p> </li> 
+     <li> <p>Deploy your app to CloudHub: Right-click your project, then select <strong>CloudHub</strong> → <strong>Deploy to CloudHub</strong>. (For further details, see <a href="/cloudhub/deploying-a-cloudhub-application">Deploying a CloudHub Application</a>).</p> </li> 
      <li> <p>Register your app in Salesforce. For details, see the <a href="https://help.salesforce.com/HTViewHelpDoc?id=platform_connect_add_external_data_source.htm&amp;language=en_US">Salesforce documentation</a>.</p> </li> 
     </ol> 
    </div> 
@@ -1014,7 +1014,7 @@
   <div class="sect2"> 
    <h3 id="using-the-apikit-odata-extension-without-the-template"><a class="anchor" href="#using-the-apikit-odata-extension-without-the-template"></a>Using the APIKit OData Extension Without the Template</h3> 
    <div class="paragraph"> 
-    <p>Using the template is the quickest and easiest way to build your OData-enabled application; however, if you do not wish to use the template, follow the steps below.</p> 
+    <p>Using the template is the quickest and easiest way to build your OData-enabled application; however, if you do not wish to use it, follow the steps below.</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
@@ -1059,7 +1059,7 @@
       </div> </li> 
      <li> <p>Package your app by running <code>mvn clean package</code>.</p> </li> 
      <li> <p>Run your app locally.</p> </li> 
-     <li> <p>Deploy your app to CloudHub: Right-click your project, then select <strong>CloudHub</strong> → <strong>Deploy to CloudHub</strong>. (For further details, see <a href="/cloudhub/deploying-a-cloudhub-application">Deploying a CloudHub Application</a>.</p> </li> 
+     <li> <p>Deploy your app to CloudHub: Right-click your project, then select <strong>CloudHub</strong> → <strong>Deploy to CloudHub</strong>. (For further details, see <a href="/cloudhub/deploying-a-cloudhub-application">Deploying a CloudHub Application</a>).</p> </li> 
      <li> <p>Register your app in Salesforce. For details, see the <a href="https://help.salesforce.com/HTViewHelpDoc?id=platform_connect_add_external_data_source.htm&amp;language=en_US">Salesforce documentation</a>.</p> </li> 
     </ol> 
    </div> 
@@ -1074,7 +1074,7 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-      <td class="content"> For the complete specification of the data model, see the <a href="https://github.com/mulesoft/apikit-odata-template/blob/master/README.md">README file</a> in the APIKit OData template. You can also check the <a href="https://github.com/mulesoft/apikit-odata-template/blob/master/examples-edm-types.md">examples of EDM types.</a> </td> 
+      <td class="content"> For the complete specification of the data model, see the <a href="https://github.com/mulesoft/apikit-odata-template/blob/master/README.md">README file</a> in the template for the OData-enabled application. You can also check the <a href="https://github.com/mulesoft/apikit-odata-template/blob/master/examples-edm-types.md">examples of EDM types</a>. </td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1203,10 +1203,23 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="full-working-example"><a class="anchor" href="#full-working-example"></a>Full Working Example</h2> 
+ <h2 id="additional-resources"><a class="anchor" href="#additional-resources"></a>Additional Resources</h2> 
  <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>A full working example of a MySQL data gateway, built using the template, is <a href="https://github.com/mulesoft/apikit-odata-example">available to view and download</a> in GitHub.</p> 
+  <div class="sect2"> 
+   <h3 id="full-working-example"><a class="anchor" href="#full-working-example"></a>Full Working Example</h3> 
+   <div class="paragraph"> 
+    <p>A full working example of a MySQL data gateway, built using the template, is <a href="https://github.com/mulesoft/apikit-odata-example">available to view and download</a> in GitHub.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="data-type-definitions-json-schema"><a class="anchor" href="#data-type-definitions-json-schema"></a>Data Type Definitions, JSON schema</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>The application template’s <a href="https://github.com/mulesoft/apikit-odata-template/blob/master/README.md">README file</a> contains the full specification of the supported data model</p> </li> 
+     <li> <p>You can also check the <a href="https://github.com/mulesoft/apikit-odata-template/blob/master/examples-edm-types.md">examples of EDM types</a></p> </li> 
+     <li> <p>A complete <a href="_attachments/model-schema.json">example JSON schema file</a> is also available</p> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div>
@@ -1214,7 +1227,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#apikit-2-0-beta">ApiKit 2.0 Beta</a></li><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#installing-and-using-the-apikit-odata-extension">Installing and Using the APIKit OData Extension</a></li><li><a class="scroll-menu-link" href="#supported-data-types">Supported Data Types</a></li><li><a class="scroll-menu-link" href="#full-working-example">Full Working Example</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#apikit-2-0-beta">ApiKit 2.0 Beta</a></li><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#installing-and-using-the-apikit-odata-extension">Installing and Using the APIKit OData Extension</a></li><li><a class="scroll-menu-link" href="#supported-data-types">Supported Data Types</a></li><li><a class="scroll-menu-link" href="#additional-resources">Additional Resources</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
