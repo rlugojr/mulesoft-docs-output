@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-platform-for-apis/creating-an-odata-api-with-apikit" />
-    <meta name="description" content="TODO: Remove final notes re: links etc. APIKit 2.0, currently in Beta, is an extension to APIKit that allows you to easily create APIs with OData s..." />
+    <meta name="description" content="APIKit 2.0, currently in Beta, is an extension to APIKit that allows you to easily create APIs with OData support, which you can then deploy to Clo..." />
     <meta class="swiftype" name="title" data-type="string" content="Creating an OData-Enabled API with APIKit" />
 
 </head>
@@ -862,14 +862,7 @@
         <div class="article-content col-md-7">
           
           <h1>Creating an OData-Enabled API with APIKit</h1>
-          <div id="preamble"> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><strong>TODO</strong>: Remove final notes re: links etc.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
+          <div class="sect1"> 
  <h2 id="apikit-2-0-beta"><a class="anchor" href="#apikit-2-0-beta"></a>ApiKit 2.0 Beta</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -884,6 +877,9 @@
      </tr> 
     </tbody> 
    </table> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/pikit-odata-cycle.png" alt="APIKit Odata Extension Development Cycle"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -908,7 +904,7 @@
    <ul> 
     <li> <p>Mule 3.7.x runtime or later</p> </li> 
     <li> <p>The latest version of <a href="https://www.mulesoft.com/platform/studio">Anypoint Studio</a></p> </li> 
-    <li> <p>APIKit with OData Extension, which you download from within Studio (see instructions <a href="#install">below</a>)</p> </li> 
+    <li> <p>APIKit with OData Extension, which you download from within Studio (see instructions <a href="#Installing the APIKit Extension in Studio">below</a>)</p> </li> 
     <li> <p>The latest version of <a href="https://maven.apache.org/download.cgi">Maven</a></p> </li> 
    </ul> 
   </div> 
@@ -923,7 +919,7 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p><a href="#install">Install</a> the APIKit extension in Studio, using the appropriate update site.</p> </li> 
-    <li> <p><a href="#import">Import</a> the Anypoint template into Studio.</p> </li> 
+    <li> <p><a href="#import">Import</a> the application template into Studio.</p> </li> 
     <li> <p><a href="#define">Define</a> your OData entity model in the JSON file provided in the template.</p> </li> 
     <li> <p><a href="#run_app">Run APIKit</a> to scaffold the application, generating a RAML file that exposes OData endpoints with the entities you defined.</p> </li> 
     <li> <p><a href="#implement">Implement</a> the flows in your application.</p> </li> 
@@ -939,7 +935,7 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-      <td class="content"> Using the template is the quickest, easiest way to build your OData-enabled application; however, it is also possible to do so without the template. For details, see <a href="#using-the-sdk-without-the-template">Using the SDK Without the Template</a> below. </td> 
+      <td class="content"> Using the template is the quickest, easiest way to build your OData-enabled application; however, it is also possible to do so without the template. For details, see <a href="#using-the-apikit-odata-extension-without-the-template">Using the APIKit OData Extension Without the Template</a> below. </td> 
      </tr> 
     </tbody> 
    </table> 
@@ -948,14 +944,14 @@
    <p>To use this functionality, ensure you have the latest version of Studio and Mule 3.7 or later runtime (see the prerequisites <a href="#prerequisites">above</a>).</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="install"><a class="anchor" href="#install"></a>Installing the APIKit Extension in Studio</h3> 
+   <h3 id="install"><a class="anchor" href="#install"></a>Installing the APIKit OData Extension in Studio</h3> 
    <div class="paragraph"> 
     <p>APIKit 2.0 Beta is available via a Studio update site. To install APIKit 2.0 Beta, follow these steps:</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>Under the <strong>Help</strong> menu in Anypoint Studio, select <strong>Install New Software</strong>.</p> </li> 
-     <li> <p>In the installation wizard’s <strong>Work with:</strong> field, enter: <code><a href="http://apikit-nightly.s3.amazonaws.com/k2-odata" class="bare">http://apikit-nightly.s3.amazonaws.com/k2-odata</a></code>.</p> </li> 
+     <li> <p>In the installation wizard’s <strong>Work with:</strong> field, enter: <code><a href="http://studio.mulesoft.org/r4/apikit-odata" class="bare">http://studio.mulesoft.org/r4/apikit-odata</a></code>.</p> </li> 
      <li> <p>Studio displays a list of items to select. Click the checkboxes next to <strong>APIKit Studio Plugin</strong> and <strong>RAML Editor</strong>, then click <strong>Next</strong>.</p> </li> 
      <li> <p>Studio displays details of the selected item. Click <strong>Next</strong>.</p> </li> 
      <li> <p>Click to accept the terms and conditions of the product, then click <strong>Finish</strong>.</p> </li> 
@@ -964,10 +960,10 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="import"><a class="anchor" href="#import"></a>Importing the Anypoint Template</h3> 
+   <h3 id="import"><a class="anchor" href="#import"></a>Importing the Template</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p><a href="https://github.com/mulesoft/apikit-odata-template">Download</a> the Anypoint template for the APIKit OData extension.</p> </li> 
+     <li> <p><a href="https://github.com/mulesoft/apikit-odata-template">Download</a> the template to use with the APIKit OData extension.</p> </li> 
      <li> <p>Import the template into Studio:</p> 
       <div class="olist loweralpha"> 
        <ol class="loweralpha" type="a"> 
@@ -1016,7 +1012,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="using-the-sdk-without-the-template"><a class="anchor" href="#using-the-sdk-without-the-template"></a>Using the SDK Without the Template</h3> 
+   <h3 id="using-the-apikit-odata-extension-without-the-template"><a class="anchor" href="#using-the-apikit-odata-extension-without-the-template"></a>Using the APIKit OData Extension Without the Template</h3> 
    <div class="paragraph"> 
     <p>Using the template is the quickest and easiest way to build your OData-enabled application; however, if you do not wish to use the template, follow the steps below.</p> 
    </div> 
@@ -1205,12 +1201,20 @@
    </div> 
   </div> 
  </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="full-working-example"><a class="anchor" href="#full-working-example"></a>Full Working Example</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>A full working example of a MySQL data gateway, built using the template, is <a href="https://github.com/mulesoft/apikit-odata-example">available to view and download</a> in GitHub.</p> 
+  </div> 
+ </div> 
 </div>
         </div>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#apikit-2-0-beta">ApiKit 2.0 Beta</a></li><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#installing-and-using-the-apikit-odata-extension">Installing and Using the APIKit OData Extension</a></li><li><a class="scroll-menu-link" href="#supported-data-types">Supported Data Types</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#apikit-2-0-beta">ApiKit 2.0 Beta</a></li><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#installing-and-using-the-apikit-odata-extension">Installing and Using the APIKit OData Extension</a></li><li><a class="scroll-menu-link" href="#supported-data-types">Supported Data Types</a></li><li><a class="scroll-menu-link" href="#full-working-example">Full Working Example</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
