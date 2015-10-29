@@ -908,7 +908,7 @@
     <p>Before, when using the @Connect annotation, DevKit enabled by default the <strong>Test Connectivity</strong> capability:</p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="/documentation/download/attachments/122752566/36TestConnection.png?version=1&amp;modificationDate=1419355330047" alt="image"></span></p> 
+    <p><span class="image"><img src="./_images/36TestConnection.png" alt="image"></span></p> 
    </div> 
    <div class="paragraph"> 
     <p>For version 3.6 and later, DevKit enhances the Test Connectivity capability for use in Connection Management scenarios other than just the @Connect method. A method annotated with @Connect must now also be annotated with @TestConnectivty to enable Test Connectivity capability, and <code>@TestConnectivity(active=false)</code> to disable it.</p> 
@@ -918,7 +918,26 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@ConnectionManagement</span>(configElementName = <span class="string"><span class="delimiter">"</span><span class="content">config-type</span><span class="delimiter">"</span></span>,
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@ConnectionManagement</span>(configElementName = <span class="string"><span class="delimiter">"</span><span class="content">config-type</span><span class="delimiter">"</span></span>,
   friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">Basic Auth type strategy</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">ConnectorConnectionStrategy</span>
 {
@@ -930,7 +949,10 @@
         ...
     }
     ...
-}</code></pre> 
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -938,7 +960,24 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(...)
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@Connector</span>(...)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">ConnectorConnectionStrategy</span>
 {
     ...
@@ -948,7 +987,10 @@
         ...
     }
     ...
-}</code></pre> 
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="sect3"> 
@@ -958,7 +1000,26 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@ConnectionManagement</span>(configElementName = <span class="string"><span class="delimiter">"</span><span class="content">config-type</span><span class="delimiter">"</span></span>,
+      <pre class="CodeRay highlight"><code data-lang="java">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+</pre></td> 
+           <td class="code"><pre><span class="annotation">@ConnectionManagement</span>(configElementName = <span class="string"><span class="delimiter">"</span><span class="content">config-type</span><span class="delimiter">"</span></span>,
     friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">Basic Auth type strategy</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">ConnectorConnectionStrategy</span>
 {
@@ -970,11 +1031,14 @@
         ...
     }
     ...
-}</code></pre> 
+}</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
-     <p><span class="image"><img src="/documentation/download/attachments/122752566/36BasicAuthTypeStrategy.png?version=1&amp;modificationDate=1420477952340" alt="image"></span></p> 
+     <p><span class="image"><img src="./_images/36BasicAuthTypeStrategy.png" alt="image"></span></p> 
     </div> 
    </div> 
   </div> 
@@ -988,7 +1052,23 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(name = <span class="string"><span class="delimiter">"</span><span class="content">my</span><span class="delimiter">"</span></span>, schemaVersion = <span class="string"><span class="delimiter">"</span><span class="content">2.0</span><span class="delimiter">"</span></span>, friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>)
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@Connector</span>(name = <span class="string"><span class="delimiter">"</span><span class="content">my</span><span class="delimiter">"</span></span>, schemaVersion = <span class="string"><span class="delimiter">"</span><span class="content">2.0</span><span class="delimiter">"</span></span>, friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>)
 <span class="annotation">@TestConnectivity</span>(active=<span class="predefined-constant">false</span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnector</span>{
     ...
@@ -997,7 +1077,10 @@
         <span class="directive">throws</span> ConnectionException
     {...}
 ...
-}</code></pre> 
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1005,7 +1088,23 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(name = <span class="string"><span class="delimiter">"</span><span class="content">my</span><span class="delimiter">"</span></span>, schemaVersion = <span class="string"><span class="delimiter">"</span><span class="content">2.0</span><span class="delimiter">"</span></span>, friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>, minMuleVersion = <span class="string"><span class="delimiter">"</span><span class="content">3.5</span><span class="delimiter">"</span></span>, metaData = MetaDataSwitch.OFF,
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@Connector</span>(name = <span class="string"><span class="delimiter">"</span><span class="content">my</span><span class="delimiter">"</span></span>, schemaVersion = <span class="string"><span class="delimiter">"</span><span class="content">2.0</span><span class="delimiter">"</span></span>, friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>, minMuleVersion = <span class="string"><span class="delimiter">"</span><span class="content">3.5</span><span class="delimiter">"</span></span>, metaData = MetaDataSwitch.OFF,
 connectivityTesting = ConnectivityTesting.DISABLED <span class="comment">//DEPRECATED)</span>
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnector</span>{
     ...
@@ -1014,7 +1113,10 @@ connectivityTesting = ConnectivityTesting.DISABLED <span class="comment">//DEPRE
         <span class="predefined-type">String</span> secretKey) <span class="directive">throws</span> ConnectionException
     {...}
 ...
-}</code></pre> 
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1089,10 +1191,23 @@ connectivityTesting = ConnectivityTesting.DISABLED <span class="comment">//DEPRE
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(name = <span class="string"><span class="delimiter">"</span><span class="content">my</span><span class="delimiter">"</span></span>, schemaVersion = <span class="string"><span class="delimiter">"</span><span class="content">2.0</span><span class="delimiter">"</span></span>, friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>)
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@Connector</span>(name = <span class="string"><span class="delimiter">"</span><span class="content">my</span><span class="delimiter">"</span></span>, schemaVersion = <span class="string"><span class="delimiter">"</span><span class="content">2.0</span><span class="delimiter">"</span></span>, friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnector</span>
     ...
-{</code></pre> 
+{</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1100,12 +1215,27 @@ connectivityTesting = ConnectivityTesting.DISABLED <span class="comment">//DEPRE
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(name = <span class="string"><span class="delimiter">"</span><span class="content">my</span><span class="delimiter">"</span></span>, schemaVersion = <span class="string"><span class="delimiter">"</span><span class="content">2.0</span><span class="delimiter">"</span></span>, friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>,
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@Connector</span>(name = <span class="string"><span class="delimiter">"</span><span class="content">my</span><span class="delimiter">"</span></span>, schemaVersion = <span class="string"><span class="delimiter">"</span><span class="content">2.0</span><span class="delimiter">"</span></span>, friendlyName = <span class="string"><span class="delimiter">"</span><span class="content">MyConnector</span><span class="delimiter">"</span></span>,
 minMuleVersion = <span class="string"><span class="delimiter">"</span><span class="content">3.5</span><span class="delimiter">"</span></span>,
 metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnector</span>
     ...
-{</code></pre> 
+{</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1116,7 +1246,22 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(...)
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@Connector</span>(...)
 <span class="directive">public</span> myConnector(){
     ...
     <span class="annotation">@Disconnect</span>
@@ -1124,7 +1269,10 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
         ...
     }
     ...
-}</code></pre> 
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1132,7 +1280,22 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(...)
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@Connector</span>(...)
 <span class="directive">public</span> myConnector(){
     ...
     <span class="annotation">@Disconnect</span>
@@ -1140,7 +1303,10 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
         ...
     }
     ...
-}</code></pre> 
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
   </div> 
@@ -1161,7 +1327,44 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">connector</span><span class="delimiter">"</span></span>, schemaVersion=<span class="string"><span class="delimiter">"</span><span class="content">1.0</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">My Connector</span><span class="delimiter">"</span></span>)
+      <pre class="CodeRay highlight"><code data-lang="java">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong>30</strong>
+31
+</pre></td> 
+           <td class="code"><pre><span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">connector</span><span class="delimiter">"</span></span>, schemaVersion=<span class="string"><span class="delimiter">"</span><span class="content">1.0</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">My Connector</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnectionManagementConnector</span>
 {
     <span class="annotation">@Connect</span>
@@ -1191,7 +1394,10 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
         <span class="comment">//Processor Logic</span>
     }
 
-}</code></pre> 
+}</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1207,7 +1413,38 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
       <li> <p>Move the four connection methods (@Connect, @Disconnect, @ValidateConnection and @ConnectionIdentifier) from the old @Connector class to the new Connection Strategy class:</p> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@ConnectionManagement</span>(friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">ConnectionManagement</span><span class="delimiter">"</span></span>, configElementName=<span class="string"><span class="delimiter">"</span><span class="content">config-name</span><span class="delimiter">"</span></span>)
+         <pre class="CodeRay highlight"><code data-lang="java">
+              
+           <table class="CodeRay"> 
+            <tbody> 
+             <tr> 
+              <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+</pre></td> 
+              <td class="code"><pre><span class="annotation">@ConnectionManagement</span>(friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">ConnectionManagement</span><span class="delimiter">"</span></span>, configElementName=<span class="string"><span class="delimiter">"</span><span class="content">config-name</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">ConnectionManagementStrategy</span>
 {
     <span class="annotation">@Connect</span>
@@ -1231,13 +1468,44 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
         <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">001</span><span class="delimiter">"</span></span>;
     }
 
-}</code></pre> 
+}</pre></td> 
+             </tr> 
+            </tbody> 
+           </table></code></pre> 
         </div> 
        </div> </li> 
       <li> <p>After moving the connection methods to the Connection Strategy class, set&nbsp; @Connector to reference the connection strategy class by creating a @ConnectionStategy field with the reference to the new strategy.&nbsp;The @Connector is then detached from how it connects with a service:<br></p> 
        <div class="listingblock"> 
         <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">myconnector</span><span class="delimiter">"</span></span>, schemaVersion=<span class="string"><span class="delimiter">"</span><span class="content">1.0</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">Connector</span><span class="delimiter">"</span></span>)
+         <pre class="CodeRay highlight"><code data-lang="java">
+              
+           <table class="CodeRay"> 
+            <tbody> 
+             <tr> 
+              <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+</pre></td> 
+              <td class="code"><pre><span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">myconnector</span><span class="delimiter">"</span></span>, schemaVersion=<span class="string"><span class="delimiter">"</span><span class="content">1.0</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">Connector</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnector</span>
 {
     <span class="annotation">@ConnectionStrategy</span>
@@ -1258,7 +1526,10 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
     {
         <span class="comment">//Processor Logic</span>
     }
-}</code></pre> 
+}</pre></td> 
+             </tr> 
+            </tbody> 
+           </table></code></pre> 
         </div> 
        </div> </li> 
      </ol> 
@@ -1287,27 +1558,69 @@ metaData = MetaDataSwitch.OFF <span class="comment">//DEPRECATED)</span>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@OAuth2</span>( configElementName = <span class="string"><span class="delimiter">"</span><span class="content">config-oauth2</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">OAuth2 type Strategy</span><span class="delimiter">"</span></span>,
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@OAuth2</span>( configElementName = <span class="string"><span class="delimiter">"</span><span class="content">config-oauth2</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">OAuth2 type Strategy</span><span class="delimiter">"</span></span>,
 authorizationUrl = <span class="string"><span class="delimiter">"</span><span class="content">https://api.myconnector.com/uas/oauth/authorize</span><span class="delimiter">"</span></span>,
 accessTokenUrl = <span class="string"><span class="delimiter">"</span><span class="content">https://api.myconnector.com/uas/oauth/accessToken</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">ConnectorOAuth2Strategy</span>
 {
-    <span class="comment">/** * The OAuth2 access token */</span>
+    <span class="comment">/**
+     * The OAuth2 access token
+     */</span>
     <span class="annotation">@OAuthAccessToken</span>
     <span class="directive">private</span> <span class="predefined-type">String</span> accessToken;
 
-    <span class="comment">/** * The OAuth2 consumer key */</span>
+    <span class="comment">/**
+     * The OAuth2 consumer key
+     */</span>
     <span class="annotation">@Configurable</span>
     <span class="annotation">@OAuthConsumerKey</span>
     <span class="directive">private</span> <span class="predefined-type">String</span> consumerKey;
 
-    <span class="comment">/** * The OAuth2 consumer secret */</span>
+    <span class="comment">/**
+     * The OAuth2 consumer secret
+     */</span>
     <span class="annotation">@Configurable</span>
     <span class="annotation">@OAuthConsumerSecret</span>
     <span class="directive">private</span> <span class="predefined-type">String</span> consumerSecret;
 
     ...
-}</code></pre> 
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1323,7 +1636,7 @@ accessTokenUrl = <span class="string"><span class="delimiter">"</span><span clas
          <p><strong>About Connection Strategies</strong><br></p> 
         </div> 
         <div class="paragraph"> 
-         <p>Connection Strategies supports&nbsp; @ConnectionManagement ,&nbsp; @OAuth2 , @Configuration, and&nbsp; @HttpBasicAuth components. Read more about this&nbsp;http://www.mulesoft.org/documentation/display/current/Annotation+Reference#AnnotationReference-connstratan[here].</p> 
+         <p>Connection Strategies supports&nbsp; @ConnectionManagement ,&nbsp; @OAuth2 , @Configuration, and&nbsp; @HttpBasicAuth components. Read more about this <a href="http://www.mulesoft.org/documentation/display/current/Annotation+Reference#AnnotationReference-connstratan">here</a>.</p> 
         </div> </td> 
       </tr> 
      </tbody> 
