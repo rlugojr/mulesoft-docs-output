@@ -877,7 +877,7 @@
  <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This tutorial assumes that you have <a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">downloaded and installed Anypoint Studio</a>.&nbsp;If you do not have any previous experience with Eclipse or an Eclipse-based IDE, please review the brief introduction to the <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>.</p> 
+   <p>This tutorial assumes that you have <a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">downloaded and installed Anypoint Studio</a>.&nbsp;If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -980,7 +980,7 @@
    </colgroup> 
    <tbody> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP Connector</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="/mule-user-guide/v/3.7/http-connector">HTTP Connector</a></strong></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">Allows your Mule application to connect to Web resources through the HTTP or HTTPS protocol. Find this in the Connectors section of the palette. &nbsp;</p></td> 
     </tr> 
     <tr> 
@@ -1078,7 +1078,7 @@
      </div> </li> 
     <li> <p>For this element to work, you must reference an abstract element called a <strong>Connector Configuration</strong>, which is a kind of <a href="/mule-fundamentals/v/3.7/global-elements">Global Element</a>&nbsp;that contains several of the high level necessary configuration properties. One single Connector Configuration element can be referenced by as many HTTP connectors as you like. Create a new Connector Configuration element by clicking the green plus sign next to the Connector Configuration field.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/http+basic+<strong>.png" alt="http+basic+</strong>"></span></p> 
+      <p><span class="image"><img src="./_images/http-basic.png" alt="http-basic"></span></p> 
      </div> </li> 
     <li> <p>A new window appears. Fill in the two required fields: <strong>Host</strong> and <strong>Port</strong>. Set&nbsp;<code>localhost</code> as the host and leave the default value <code>8081</code> as the port.</p> 
      <div class="paragraph"> 
@@ -1353,22 +1353,22 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Logs the unique message id that Mule automatically assigns to each message that passes through a flow</p> </li> 
+    <li> <p>Logs the unique message ID that Mule automatically assigns to each message that passes through a flow</p> </li> 
     <li> <p>Writes the message payload that you see in your browser to a new .txt file on your local drive&nbsp;</p> </li> 
-    <li> <p>Names each .txt file using the message ID</p> </li> 
+    <li> <p>Names each .txt file using the message ID.</p> </li> 
    </ol> 
   </div> 
   <div class="paragraph"> 
    <p>To achieve this, add another message processor to your flow to direct Mule to write your payload to a <a href="/mule-user-guide/v/3.7/file-connector">file</a>. You also need to use another Mule expression that you haven’t seen before in order to log and use the <a href="/mule-user-guide/v/3.7/mule-expression-language-reference">unique message id</a>. Use the hints below if you need help.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/icon-question-blue-big%281%29.png" alt="icon-question-blue-big%281%29"></span>&nbsp;<strong>Hints</strong></p> 
+   <p><span class="image"><img src="./_images/icon-question-blue-big.png" alt="icon-question-blue-big"></span>&nbsp;<strong>Hints</strong></p> 
   </div> 
   <div class="paragraph"> 
    <p><strong>How do I log the message ID?</strong></p> 
   </div> 
   <div class="paragraph"> 
-   <p>The Mule expression that resolves to the unique message ID of the current message is <code>#[message.id]</code></p> 
+   <p>The Mule expression that resolves to the unique message ID of the current message is <code>#[message.id]</code>.</p> 
   </div> 
   <div class="paragraph"> 
    <p><strong>How do I write to a file?</strong></p> 
@@ -1383,7 +1383,7 @@
    <p>Fill in the <strong>Output Pattern</strong> field in the File Endpoint to tell Mule how to name the file and what file type to use. Note that you can use the same Mule expression here that you used to log the message ID.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/icon-checkmark-blue-big%283%29.png" alt="icon-checkmark-blue-big%283%29"></span>&nbsp;<strong>Answer</strong></p> 
+   <p><span class="image"><img src="./_images/icon-checkmark-blue-big.png" alt="icon-checkmark-blue-big"></span>&nbsp;<strong>Answer</strong></p> 
   </div> 
   <div class="paragraph"> 
    <p>View the answer, including explanation of steps and complete code.</p> 
@@ -1397,7 +1397,7 @@
     <li> <p>Revise the <strong>Message</strong> field to read:</p> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre>Current path is #[message.inboundProperties.'http.request.path']</pre> 
+       <pre class="CodeRay highlight"><code data-lang="code">Current path is #[message.inboundProperties.'http.request.path']</code></pre> 
       </div> 
      </div> </li> 
     <li> <p>Drag and drop a <strong>File Endpoint</strong> onto your canvas, immediately after the Set Payload transformer.</p> 
@@ -1443,7 +1443,7 @@
             <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:file</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/file</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:tracking</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/tracking</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
-    <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.6.0</span><span class="delimiter">"</span></span>
+    <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.7.0</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
     <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
 <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
