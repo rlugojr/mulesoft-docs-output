@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/microsoft-sharepoint-2010-connector" />
-    <meta name="description" content="Select Release Notes: Microsoft SharePoint 2010 Connector Release Notes Samples: sharepoint-2010-connector-samples.zip Microsoft SharePoi..." />
+    <meta name="description" content="Select Latest version: 1.0.3 Microsoft SharePoint is a web application platform for content and document management, intranet portals, collaboratio..." />
     <meta class="swiftype" name="title" data-type="string" content="Microsoft SharePoint 2010 Connector" />
 
 </head>
@@ -869,13 +869,21 @@
    <p><strong><em>Select</em></strong></p> 
   </div> 
   <div class="paragraph"> 
+   <p><strong>Latest version: 1.0.3</strong></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Microsoft SharePoint is a web application platform for content and document management, intranet portals, collaboration, extranets, websites,and enterprise search. The Microsoft SharePoint connector for Anypoint platform enables integration with SharePoint 2010 through its SOAP API.</p> 
+  </div> 
+  <div class="paragraph"> 
    <p><strong>Release Notes:</strong>&nbsp;<a href="/release-notes/microsoft-sharepoint-2010-connector-release-notes">Microsoft SharePoint 2010 Connector Release Notes</a></p> 
   </div> 
   <div class="paragraph"> 
    <p><strong>Samples</strong>:&nbsp;<a href="_attachments/sharepoint-2010-connector-samples.zip">sharepoint-2010-connector-samples.zip</a></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Microsoft SharePoint is a web application platform for content and document management, intranet portals, collaboration, extranets, websites,and enterprise search. The Microsoft SharePoint connector for Anypoint platform enables integration with SharePoint 2010 through its SOAP API.</p> 
   </div> 
  </div> 
 </div> 
@@ -904,122 +912,124 @@
     <li> <p>After Studio restarts, expand the&nbsp;<strong>Connectors</strong>&nbsp;palette group to see your recently added&nbsp;<strong>Microsoft SharePoint 2010 Connector</strong>.</p> </li> 
    </ol> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="example-use-case"><a class="anchor" href="#example-use-case"></a>Example Use Case</h2> 
+ <div class="sectionbody"> 
   <div class="sect2"> 
-   <h3 id="running-your-first-flow"><a class="anchor" href="#running-your-first-flow"></a>Running your First Flow</h3> 
-   <div class="sect3"> 
-    <h4 id="step-1-create-a-new-mule-project"><a class="anchor" href="#step-1-create-a-new-mule-project"></a>Step 1: Create a New Mule Project</h4> 
-    <div class="paragraph"> 
-     <p>Once Anypoint Studio has launched, create a new project:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>From the menu, select&nbsp;<strong>File</strong>&nbsp;&gt;&nbsp;<strong>New</strong>&nbsp;&gt;&nbsp;<strong>Mule Project</strong>.</p> </li> 
-      <li> <p>In the&nbsp;<strong>New Mule Project</strong>&nbsp;window, enter&nbsp;<strong>sharepoint2010-demo</strong>&nbsp;as the&nbsp;<strong>Project Name</strong>.</p> </li> 
-      <li> <p>Click&nbsp;<strong>Finish</strong>.</p> </li> 
-     </ol> 
-    </div> 
+   <h3 id="step-1-create-a-new-mule-project"><a class="anchor" href="#step-1-create-a-new-mule-project"></a>Step 1: Create a New Mule Project</h3> 
+   <div class="paragraph"> 
+    <p>Once Anypoint Studio has launched, create a new project:</p> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="step-2-create-and-configure-a-new-sharepoint-global-element"><a class="anchor" href="#step-2-create-and-configure-a-new-sharepoint-global-element"></a>Step 2: Create and Configure a New SharePoint Global Element</h4> 
-    <div class="paragraph"> 
-     <p>Configure the connector to connect to a SharePoint 2010 instance:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Click the&nbsp;<strong>Global Elements</strong>&nbsp;tab.</p> </li> 
-      <li> <p>Click &nbsp;<strong>Create</strong>&nbsp;to bring up&nbsp;<strong>Global Type</strong>&nbsp;dialog box.</p> </li> 
-      <li> <p>In the&nbsp;<strong>Filter</strong>&nbsp;text box, enter&nbsp;<strong>sha</strong>.</p> </li> 
-      <li> <p>Select&nbsp;<strong>Microsoft SharePoint 2010</strong>&nbsp;and click&nbsp;<strong>OK</strong>.</p> </li> 
-      <li> <p>Fill in the required parameters. Refer to Connection Configuration&nbsp;for details.</p> </li> 
-      <li> <p>Click <strong>Test Connection</strong>&nbsp;to make sure the connection works correctly.</p> </li> 
-      <li> <p>Once the connection is successful, click&nbsp;<strong>OK</strong>.</p> </li> 
-     </ol> 
-    </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>From the menu, select&nbsp;<strong>File</strong>&nbsp;&gt;&nbsp;<strong>New</strong>&nbsp;&gt;&nbsp;<strong>Mule Project</strong>.</p> </li> 
+     <li> <p>In the&nbsp;<strong>New Mule Project</strong>&nbsp;window, enter&nbsp;<strong>sharepoint2010-demo</strong>&nbsp;as the&nbsp;<strong>Project Name</strong>.</p> </li> 
+     <li> <p>Click&nbsp;<strong>Finish</strong>.</p> </li> 
+    </ol> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="step-3-create-a-flow-to-query-sharepoint-2010"><a class="anchor" href="#step-3-create-a-flow-to-query-sharepoint-2010"></a>Step 3: Create a Flow to Query SharePoint 2010</h4> 
-    <div class="paragraph"> 
-     <p>Create a Mule flow to query the "Shared Documents" List.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/SharepointCanvas.png" alt="image"></span></p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>To create the Mule flow, follow these steps:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Click the&nbsp;<strong>Message Flow</strong>&nbsp;tab.</p> </li> 
-      <li> <p>Search for&nbsp;<strong>http</strong>&nbsp;and drag an&nbsp;<strong>HTTP</strong>&nbsp;connector onto the canvas. This creates a new flow.</p> </li> 
-      <li> <p>Search for&nbsp;<strong>sharepoint</strong>&nbsp;and drag&nbsp;<strong>Microsoft SharePoint 2010</strong>&nbsp;next to the&nbsp;<strong>HTTP</strong>&nbsp;connector, on the&nbsp;<strong>Process</strong> area.</p> </li> 
-      <li> <p>Search for&nbsp;<strong>json</strong>&nbsp;and drag an&nbsp;<strong>Object to JSON</strong>&nbsp;transformer next to the&nbsp;<strong>Microsoft SharePoint 2010</strong>.</p> </li> 
-      <li> <p>Double-click the&nbsp;<strong>HTTP</strong>&nbsp;connector. Click the&nbsp;<strong>+</strong>&nbsp;beside the&nbsp;<strong>Connector Configuration</strong>&nbsp;list.</p> </li> 
-      <li> <p>In the&nbsp;<strong>HTTP Listener Configuration</strong>&nbsp;window, set&nbsp;<strong>Protocol</strong>&nbsp;to&nbsp;<strong>HTTP</strong>,&nbsp;<strong>Host</strong>&nbsp;to&nbsp;<strong>All Interfaces [0.0.0.0] (Default)</strong>&nbsp;and&nbsp;<strong>Port</strong>&nbsp;to&nbsp;<strong>8081</strong>. Click&nbsp;<strong>OK</strong>.</p> </li> 
-      <li> <p>Under&nbsp;<strong>Basic Settings</strong>, set the&nbsp;<strong>Path</strong>&nbsp;to&nbsp;<strong>/query</strong>.</p> </li> 
-      <li> <p>Double-click the&nbsp;<strong>Microsoft Dynamics SharePoint 2010</strong>&nbsp;and update the following configuration values:</p> 
-       <div class="olist loweralpha"> 
-        <ol class="loweralpha" type="a"> 
-         <li> <p>From the&nbsp;<strong>Connector Configuration</strong>&nbsp;list, select the&nbsp;<strong>Microsoft SharePoint 2010</strong>&nbsp;configuration that was previously created.</p> </li> 
-         <li> <p>From the&nbsp;<strong>Operation</strong>&nbsp;list, select&nbsp;<strong>List Item query</strong>.</p> </li> 
-         <li> <p>From the&nbsp;<strong>Language</strong>&nbsp;list, click&nbsp;<strong>DataSense Query Language</strong>.</p> </li> 
-         <li> <p>Click&nbsp;<strong>Query Builder…</strong></p> </li> 
-         <li> <p>From the list of&nbsp;<strong>Types</strong>, select&nbsp;<strong>Shared Documents</strong>.</p> </li> 
-         <li> <p>From the list of&nbsp;<strong>Fields</strong>, select&nbsp;<strong>ID</strong>&nbsp;and&nbsp;<strong>Title</strong>.</p> </li> 
-         <li> <p>From&nbsp;<strong>Order By</strong>&nbsp;list, select&nbsp;<strong>Title</strong>.</p> </li> 
-         <li> <p>From&nbsp;<strong>Direction</strong>&nbsp;list, select&nbsp;<strong>DESCENDING</strong>.</p> </li> 
-        </ol> 
-       </div> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/SharepointQueryBuilder.png" alt="image"></span></p> 
-       </div> </li> 
-      <li> <p>Click&nbsp;<strong>OK</strong>.</p> </li> 
-     </ol> 
-    </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="step-2-create-and-configure-a-new-sharepoint-global-element"><a class="anchor" href="#step-2-create-and-configure-a-new-sharepoint-global-element"></a>Step 2: Create and Configure a New SharePoint Global Element</h3> 
+   <div class="paragraph"> 
+    <p>Configure the connector to connect to a SharePoint 2010 instance:</p> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="step-4-running-the-flow"><a class="anchor" href="#step-4-running-the-flow"></a>Step 4: Running the Flow</h4> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>In&nbsp;<strong>Package Explorer</strong>, right-click&nbsp;<strong>sharepoint2010-demo</strong>&nbsp;and select&nbsp;<strong>Run As</strong> &gt;&nbsp;<strong>Mule Application</strong>.</p> </li> 
-      <li> <p>Check the console to see when the application starts. You should see the following message if no errors occurred:</p> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Click the&nbsp;<strong>Global Elements</strong>&nbsp;tab.</p> </li> 
+     <li> <p>Click &nbsp;<strong>Create</strong>&nbsp;to bring up&nbsp;<strong>Global Type</strong>&nbsp;dialog box.</p> </li> 
+     <li> <p>In the&nbsp;<strong>Filter</strong>&nbsp;text box, enter&nbsp;<strong>sha</strong>.</p> </li> 
+     <li> <p>Select&nbsp;<strong>Microsoft SharePoint 2010</strong>&nbsp;and click&nbsp;<strong>OK</strong>.</p> </li> 
+     <li> <p>Fill in the required parameters. Refer to Connection Configuration&nbsp;for details.</p> </li> 
+     <li> <p>Click <strong>Test Connection</strong>&nbsp;to make sure the connection works correctly.</p> </li> 
+     <li> <p>Once the connection is successful, click&nbsp;<strong>OK</strong>.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="step-3-create-a-flow-to-query-sharepoint-2010"><a class="anchor" href="#step-3-create-a-flow-to-query-sharepoint-2010"></a>Step 3: Create a Flow to Query SharePoint 2010</h3> 
+   <div class="paragraph"> 
+    <p>Create a Mule flow to query the "Shared Documents" List.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/SharepointCanvas.png" alt="image"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To create the Mule flow, follow these steps:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Click the&nbsp;<strong>Message Flow</strong>&nbsp;tab.</p> </li> 
+     <li> <p>Search for&nbsp;<strong>http</strong>&nbsp;and drag an&nbsp;<strong>HTTP</strong>&nbsp;connector onto the canvas. This creates a new flow.</p> </li> 
+     <li> <p>Search for&nbsp;<strong>sharepoint</strong>&nbsp;and drag&nbsp;<strong>Microsoft SharePoint 2010</strong>&nbsp;next to the&nbsp;<strong>HTTP</strong>&nbsp;connector, on the&nbsp;<strong>Process</strong> area.</p> </li> 
+     <li> <p>Search for&nbsp;<strong>json</strong>&nbsp;and drag an&nbsp;<strong>Object to JSON</strong>&nbsp;transformer next to the&nbsp;<strong>Microsoft SharePoint 2010</strong>.</p> </li> 
+     <li> <p>Double-click the&nbsp;<strong>HTTP</strong>&nbsp;connector. Click the&nbsp;<strong>+</strong>&nbsp;beside the&nbsp;<strong>Connector Configuration</strong>&nbsp;list.</p> </li> 
+     <li> <p>In the&nbsp;<strong>HTTP Listener Configuration</strong>&nbsp;window, set&nbsp;<strong>Protocol</strong>&nbsp;to&nbsp;<strong>HTTP</strong>,&nbsp;<strong>Host</strong>&nbsp;to&nbsp;<strong>All Interfaces [0.0.0.0] (Default)</strong>&nbsp;and&nbsp;<strong>Port</strong>&nbsp;to&nbsp;<strong>8081</strong>. Click&nbsp;<strong>OK</strong>.</p> </li> 
+     <li> <p>Under&nbsp;<strong>Basic Settings</strong>, set the&nbsp;<strong>Path</strong>&nbsp;to&nbsp;<strong>/query</strong>.</p> </li> 
+     <li> <p>Double-click the&nbsp;<strong>Microsoft Dynamics SharePoint 2010</strong>&nbsp;and update the following configuration values:</p> 
+      <div class="olist loweralpha"> 
+       <ol class="loweralpha" type="a"> 
+        <li> <p>From the&nbsp;<strong>Connector Configuration</strong>&nbsp;list, select the&nbsp;<strong>Microsoft SharePoint 2010</strong>&nbsp;configuration that was previously created.</p> </li> 
+        <li> <p>From the&nbsp;<strong>Operation</strong>&nbsp;list, select&nbsp;<strong>List Item query</strong>.</p> </li> 
+        <li> <p>From the&nbsp;<strong>Language</strong>&nbsp;list, click&nbsp;<strong>DataSense Query Language</strong>.</p> </li> 
+        <li> <p>Click&nbsp;<strong>Query Builder…</strong></p> </li> 
+        <li> <p>From the list of&nbsp;<strong>Types</strong>, select&nbsp;<strong>Shared Documents</strong>.</p> </li> 
+        <li> <p>From the list of&nbsp;<strong>Fields</strong>, select&nbsp;<strong>ID</strong>&nbsp;and&nbsp;<strong>Title</strong>.</p> </li> 
+        <li> <p>From&nbsp;<strong>Order By</strong>&nbsp;list, select&nbsp;<strong>Title</strong>.</p> </li> 
+        <li> <p>From&nbsp;<strong>Direction</strong>&nbsp;list, select&nbsp;<strong>DESCENDING</strong>.</p> </li> 
+       </ol> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/SharepointQueryBuilder.png" alt="image"></span></p> 
+      </div> </li> 
+     <li> <p>Click&nbsp;<strong>OK</strong>.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="step-4-running-the-flow"><a class="anchor" href="#step-4-running-the-flow"></a>Step 4: Running the Flow</h3> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>In&nbsp;<strong>Package Explorer</strong>, right-click&nbsp;<strong>sharepoint2010-demo</strong>&nbsp;and select&nbsp;<strong>Run As</strong> &gt;&nbsp;<strong>Mule Application</strong>.</p> </li> 
+     <li> <p>Check the console to see when the application starts. You should see the following message if no errors occurred:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="code">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
 2
 </pre></td> 
-              <td class="code"><pre>
+             <td class="code"><pre>
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Mule is up and kicking (every 5000ms)                    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++org.mule.module.launcher.StartupSummaryDeploymentListener:***              - - + DOMAIN + - -               * - - + STATUS + - - ** default                                       * DEPLOYED           ** - - + APPLICATION + - -            *       - - + DOMAIN + - -      * - - + STATUS *** sharepoint2010-demo               * default                       * DEPLOYED     **</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> </li> 
-      <li> <p>Open a browser and visit&nbsp; <a href="http://localhost:8081/query" class="bare">http://localhost:8081/query</a></p> </li> 
-      <li> <p>The list of documents ordered by descending file name should be returned in JSON format (results vary depending on your SharePoint instance).</p> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> </li> 
+     <li> <p>Open a browser and visit&nbsp; <a href="http://localhost:8081/query" class="bare">http://localhost:8081/query</a></p> </li> 
+     <li> <p>The list of documents ordered by descending file name should be returned in JSON format (results vary depending on your SharePoint instance).</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="code">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
 2
 </pre></td> 
-              <td class="code"><pre>
+             <td class="code"><pre>
 [{"_ModerationStatus":"0","Editor":{"id":"8","lookUpListName":"User Information List"},"MetaInfo":"vti_parserversion:SR|14.0.0.7015\r\nvti_modifiedby:SR|i:0#.w|mule\\\\muletest\r\nListOneRef:IW|1\r\nvti_folderitemcount:IR|0\r\nvti_foldersubfolderitemcount:IR|0\r\nContentTypeId:SW|0x01010003DD4D13EF6C8446AB329E6FC42FE7BE\r\nvti_title:SW|\r\nvti_author:SR|i:0#.w|mule\\\\muletest\r\n","owshiddenversion":"2","lookUpListName":"Shared Documents","FileLeafRef":"error.txt","UniqueId":"{F0F6C9B9-6942-4866-B254-063EE8B70D59}","_Level":"1","PermMask":"0x7fffffffffffffff","ProgId":"","Last_x0020_Modified":"2015-04-09 16:21:35","Modified":"2015-04-09 16:21:20","DocIcon":"txt","ID":"1","FSObjType":"0","Created_x0020_Date":"2015-04-09 14:57:18","FileRef":"Shared Documents/error.txt"}]</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> </li> 
-     </ol> 
-    </div> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> </li> 
+    </ol> 
    </div> 
   </div> 
  </div> 
@@ -1659,7 +1669,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#supported-operations">Supported Operations</a></li><li><a class="scroll-menu-link" href="#installing-the-sharepoint-2010-connector-in-anypoint-studio">Installing the SharePoint 2010 Connector in Anypoint Studio</a></li><li><a class="scroll-menu-link" href="#authentication-schemes">Authentication Schemes</a></li><li><a class="scroll-menu-link" href="#operations">Operations</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#supported-operations">Supported Operations</a></li><li><a class="scroll-menu-link" href="#installing-the-sharepoint-2010-connector-in-anypoint-studio">Installing the SharePoint 2010 Connector in Anypoint Studio</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#authentication-schemes">Authentication Schemes</a></li><li><a class="scroll-menu-link" href="#operations">Operations</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
