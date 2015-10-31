@@ -874,7 +874,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This tutorial assumes that you have <a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">downloaded and installed Anypoint Studio</a>.&nbsp;If you do not have any previous experience with Eclipse or an Eclipse-based IDE, you can review the brief introduction to the <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>.</p> 
@@ -944,7 +944,7 @@
     <li> <p>Studio opens the&nbsp;<strong>New Mule Project</strong>&nbsp;wizard. Fill in the&nbsp;<strong>Name</strong>&nbsp;field with the value Basic Tutorial.</p> </li> 
     <li> <p>Click the <strong>Server Runtime</strong> to which you want to deploy your project. Anypoint Studio automatically populates the&nbsp;Server Runtime&nbsp;field with a default server that comes bundled with your download. You can change to a different runtime if you have others installed –&nbsp;this project works with any runtime. For more about installing additional runtime versions, see <a href="/mule-user-guide/v/3.7/installing-extensions">Installing Extensions</a>.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/new.png" alt="new"></span></p> 
+      <p><span class="image"><img src="./_images/basic-studio-new-mule-project.png" alt="basic-studio-new-mule-project"></span></p> 
      </div> </li> 
     <li> <p>Click&nbsp;<strong>Finish</strong>&nbsp;to create the project.</p> </li> 
     <li> <p>In the&nbsp;<strong>Package Explorer</strong>, <code>Basic Tutorial.xml</code> appears inside the <code>src/main/app</code> folder.</p> 
@@ -952,16 +952,13 @@
       <p><span class="image"><img src="./_images/packages.png" alt="packages"></span></p> 
      </div> 
      <div class="paragraph"> 
-      <p>The&nbsp;<code>.xml</code> file stores flow information for the visual editor.&nbsp;When your new project opens for the first time, Mule Studio automatically opens the&nbsp;<code>.xml file</code>&nbsp;and presents you with a blank canvas. The main sections of the UI are the following:</p> 
+      <p>The&nbsp;<code>.xml</code> file stores flow information for the visual editor.&nbsp;When your new project opens for the first time, Anypoint Studio automatically opens the&nbsp;<code>.xml file</code>&nbsp;and presents you with a blank canvas. The main sections of the UI are the following:</p> 
      </div> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/blank+canvas.png" alt="blank+canvas"></span></p> 
      </div> 
      <div class="paragraph"> 
-      <p>Find out more about the .mflow and mule-project.xml files</p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>The <strong>mule-project.xml</strong> file is the Mule project descriptor file. Open this file to change the project runtime, set or edit environment variables, or edit the project description. Commit this file, along with your &lt;name&gt;.xml file to your source control systems to avoid errors when sharing your project.</p> 
+      <p>Find out more about mule-project.xml file:<br> The <strong>mule-project.xml</strong> file is the Mule project descriptor file. Open this file to change the project runtime, set or edit environment variables, or edit the project description. Commit this file, along with your &lt;name&gt;.xml file to your source control systems to avoid errors when sharing your project.</p> 
      </div> </li> 
    </ol> 
   </div> 
@@ -1029,13 +1026,13 @@
          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
          <td class="content"> 
           <div class="paragraph"> 
-           <p><strong>Tip: Use the Palette Filter</strong></p> 
+           <p><strong>Tip: Use Studio Search</strong></p> 
           </div> 
           <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/Studio_Palette_filter.png" alt="Studio_Palette_filter"></span></p> 
+           <p><span class="image"><img src="./_images/basic-studio-search.png" alt="basic-studio-search.png"></span></p> 
           </div> 
           <div class="paragraph"> 
-           <p><strong>Note</strong>: Building blocks in each category of the palette are organized alphabetically. To avoid scrolling, use the Filter tool in the upper right corner of the palette to find the building blocks that you want more quickly.</p> 
+           <p><strong>Note</strong>: Building blocks in each category of the palette are organized alphabetically. To avoid scrolling, use the search tool in the upper right corner of the palette to find the building blocks that you want more quickly. You can also use this area to view more information about the building block in <a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a>.</p> 
           </div> </td> 
         </tr> 
        </tbody> 
@@ -1071,15 +1068,12 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Click the HTTP building block in your flow to open its <a href="/mule-user-guide/v/3.7/the-properties-editor">Properties Editor</a>.&nbsp;</p> </li> 
+    <li> <p>Click the <strong>HTTP</strong> building block in your flow to open its <a href="/mule-user-guide/v/3.7/the-properties-editor">Properties Editor</a>.&nbsp;</p> </li> 
     <li> <p>Change the <strong>Path</strong> field from the default&nbsp;<code>/</code> to <code>*</code>. In this way, the connector listens not only to the base path – which is defined elsewhere – but also to every subpath inside it.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/http+path.png" alt="http+path"></span></p> 
+      <p><span class="image"><img src="./_images/basic-studio-tutorial-star-path.png" alt="basic-studio-tutorial-star-pat"></span></p> 
      </div> </li> 
-    <li> <p>For this element to work, you must reference an abstract element called a <strong>Connector Configuration</strong>, which is a kind of <a href="/mule-fundamentals/v/3.7/global-elements">Global Element</a>&nbsp;that contains several of the high level necessary configuration properties. One single Connector Configuration element can be referenced by as many HTTP connectors as you like. Create a new Connector Configuration element by clicking the green plus sign next to the Connector Configuration field.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/http-basic.png" alt="http-basic"></span></p> 
-     </div> </li> 
+    <li> <p>Use the <strong>Connector Configuration</strong> <a href="/mule-fundamentals/v/3.7/global-elements">Global Element</a>&nbsp;menu to set necessary configuration properties. Click the green plus sign next to the Connector Configuration field.</p> </li> 
     <li> <p>A new window appears. Fill in the two required fields: <strong>Host</strong> and <strong>Port</strong>. Set&nbsp;<code>localhost</code> as the host and leave the default value <code>8081</code> as the port.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/global+element.png" alt="global+element"></span></p> 
@@ -1501,7 +1495,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#goals">Goals</a></li><li><a class="scroll-menu-link" href="#launching-studio">Launching Studio</a></li><li><a class="scroll-menu-link" href="#creating-a-new-project">Creating a New Project</a></li><li><a class="scroll-menu-link" href="#modeling-a-mule-flow">Modeling a Mule Flow</a></li><li><a class="scroll-menu-link" href="#configuring-the-flow-elements">Configuring the Flow Elements</a></li><li><a class="scroll-menu-link" href="#running-the-application">Running the Application</a></li><li><a class="scroll-menu-link" href="#using-the-application">Using the Application</a></li><li><a class="scroll-menu-link" href="#stopping-the-application">Stopping the Application</a></li><li><a class="scroll-menu-link" href="#editing-the-application">Editing the Application</a></li><li><a class="scroll-menu-link" href="#extra-credit">Extra Credit</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#goals">Goals</a></li><li><a class="scroll-menu-link" href="#launching-studio">Launching Studio</a></li><li><a class="scroll-menu-link" href="#creating-a-new-project">Creating a New Project</a></li><li><a class="scroll-menu-link" href="#modeling-a-mule-flow">Modeling a Mule Flow</a></li><li><a class="scroll-menu-link" href="#configuring-the-flow-elements">Configuring the Flow Elements</a></li><li><a class="scroll-menu-link" href="#running-the-application">Running the Application</a></li><li><a class="scroll-menu-link" href="#using-the-application">Using the Application</a></li><li><a class="scroll-menu-link" href="#stopping-the-application">Stopping the Application</a></li><li><a class="scroll-menu-link" href="#editing-the-application">Editing the Application</a></li><li><a class="scroll-menu-link" href="#extra-credit">Extra Credit</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
