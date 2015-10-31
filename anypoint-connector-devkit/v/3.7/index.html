@@ -957,22 +957,22 @@
     </div> 
     <div class="ulist"> 
      <ul> 
-      <li> <p><strong>Main Java class</strong>.&nbsp;Java code that you annotate with the @Connector attribute.&nbsp;See the&nbsp;<a href="/anypoint-connector-devkit/v/3.7/annotation-reference">Annotation Reference</a> for information about Anypoint Connector DevKit annotations.&nbsp;See&nbsp; <a href="http://en.wikipedia.org/wiki/Java_annotation">Java annotations</a> for information on how annotations work.&nbsp;</p> </li> 
-      <li> <p><strong>Connector attributes</strong>. Properties of the @Connector class that you annotate with the @Configurable attribute.&nbsp;</p> </li> 
-      <li> <p><strong>Methods</strong>.&nbsp;Functionality that you annotate with the @Processor attribute.</p> </li> 
+      <li> <p><strong>Main Java class</strong>.&nbsp;Java code that you annotate with the <code>@Connector</code> attribute.&nbsp;See the&nbsp;<a href="/anypoint-connector-devkit/v/3.7/annotation-reference">Annotation Reference</a> for information about Anypoint Connector DevKit annotations.&nbsp;See&nbsp; <a href="http://en.wikipedia.org/wiki/Java_annotation">Java annotations</a> for information on how annotations work.&nbsp;</p> </li> 
+      <li> <p><strong>Connector attributes</strong>. Properties of the <code>@Connector</code> class that you annotate with the <code>@Configurable</code> attribute.&nbsp;</p> </li> 
+      <li> <p><strong>Methods</strong>.&nbsp;Functionality that you annotate with the <code>@Processor</code> attribute.</p> </li> 
      </ul> 
     </div> 
     <div class="paragraph"> 
      <p>Additional annotations define authentication-related functionality, such as connection management. Annotations allow you to control the layout of the Anypoint Studio dialogues for the connector as well. The data model and exceptions that either raise or propagate are also Mule-facing classes.</p> 
     </div> 
     <div class="paragraph"> 
-     <p>DevKit generates a scaffold connector when you create your Anypoint Connector project in Studio. This scaffold&nbsp;connector includes the @Connector class, the @Configurable attributes, the @Processor methods, and authentication logic to build out your connector.</p> 
+     <p>DevKit generates a scaffold connector when you create your Anypoint Connector project in Studio. This scaffold&nbsp;connector includes the <code>@Connector</code> class, the <code>@Configurable</code> attributes, the <code>@Processor</code> methods, and authentication logic to build out your connector.</p> 
     </div> 
    </div> 
    <div class="sect3"> 
     <h4 id="target-facing-functionality"><a class="anchor" href="#target-facing-functionality"></a>Target-Facing Functionality</h4> 
     <div class="paragraph"> 
-     <p>The target facing or client facing side of a connector depends on the client technology that enables access to the resource. This functionality consists of a class library and one or more classes that @Connector classes use to access client functionality. This functionality is called the client class.</p> 
+     <p>The target facing or client facing side of a connector depends on the client technology that enables access to the resource. This functionality consists of a class library and one or more classes that <code>@Connector</code> classes use to access client functionality. This functionality is called the client class.</p> 
     </div> 
     <div class="paragraph"> 
      <p>The client class in turn generally depends on other classes to actually implement calls to the targeted resource. Depending on your target, some of these classes may be generated or provided for you. For example, if you have a Java client library, or are working with a SOAP or REST services, most of the client code is implemented there. In other cases, you have to write the code yourself.</p> 
@@ -999,16 +999,16 @@
     <p>REST simplifies access to HTTP using POST, GET, PUT, and DELETE calls to provide access to creating, getting, putting, and deleting information on a resource.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>DevKit provides a set of annotations called @RestCall annotations that helps building a Connector for a RESTful API.</p> 
+    <p>DevKit provides a set of annotations called <code>@RestCall</code> annotations that helps building a Connector for a RESTful API.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>SOAP is a traditional means of communicating with a resource and requires a WSDL file, which is an XML file that specifies all aspects of a Java class’s structure, methods, properties, and documentation. SOAP is an industry standard with tools for governance, building, and schema information.&nbsp; DevKit provides a tools that helps building a connector using a WSDL file.&nbsp;</p> 
+    <p>SOAP is a traditional means of communicating with a resource and requires a WSDL file, which is an XML file that specifies all aspects of a Java class’s structure, methods, properties, and documentation. SOAP is an industry standard with tools for governance, building, and schema information. DevKit provides a tools that helps building a connector using a WSDL file.&nbsp;</p> 
    </div> 
   </div> 
   <div class="sect3"> 
    <h4 id="devkit-3-7-example-default-connector"><a class="anchor" href="#devkit-3-7-example-default-connector"></a>DevKit 3.7 Example Default Connector</h4> 
    <div class="paragraph"> 
-    <p>The following is an example of the starting @Connector and @Configuration classes&nbsp;that DevKit 3.7 creates:</p> 
+    <p>The following is an example of the starting <code>@Connector</code> and <code>@Configuration</code> classes&nbsp;that DevKit 3.7 creates:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1088,7 +1088,7 @@
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>The DevKit 3.7 @Configuration class is as follows:</p> 
+    <p>The DevKit 3.7 <code>@Configuration</code> class is as follows:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 

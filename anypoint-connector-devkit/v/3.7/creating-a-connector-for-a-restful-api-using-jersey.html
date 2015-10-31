@@ -1033,17 +1033,16 @@
     <div class="paragraph"> 
      <p>The following <code>&lt;dependency&gt;</code> elements add Jersey, Jackson, and Mule JSON support to your project:</p> 
     </div> 
-    <div class="listingblock"> 
-     <div class="title">
-       POM Dependencies for Jersey, Jackson, and JSON 
-     </div> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
+    <div class="sect4"> 
+     <h5 id="pom-dependencies-for-jersey-jackson-and-json"><a class="anchor" href="#pom-dependencies-for-jersey-jackson-and-json"></a>POM Dependencies for Jersey, Jackson, and JSON</h5> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1058,7 +1057,7 @@
 13
 14
 </pre></td> 
-           <td class="code"><pre><span class="comment">&lt;!-- Add this to use Jersey Client --&gt;</span>
+            <td class="code"><pre><span class="comment">&lt;!-- Add this to use Jersey Client --&gt;</span>
   <span class="tag">&lt;dependency&gt;</span>
       <span class="tag">&lt;groupId&gt;</span>com.sun.jersey<span class="tag">&lt;/groupId&gt;</span>
       <span class="tag">&lt;artifactId&gt;</span>jersey-client<span class="tag">&lt;/artifactId&gt;</span>
@@ -1072,53 +1071,53 @@
       <span class="tag">&lt;version&gt;</span>${mule.version}<span class="tag">&lt;/version&gt;</span>
       <span class="tag">&lt;scope&gt;</span>provided<span class="tag">&lt;/scope&gt;</span>
   <span class="tag">&lt;/dependency&gt;</span></pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
      </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Add these to the <code>&lt;dependencies&gt;</code> element in your POM, along with any other dependencies required by your project. For example, the Dropbox sample connector adds the following additional dependency for OAuth support:</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
+     <div class="paragraph"> 
+      <p>Add these to the <code>&lt;dependencies&gt;</code> element in your POM, along with any other dependencies required by your project. For example, the Dropbox sample connector adds the following additional dependency for OAuth support:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
 5
 6
 </pre></td> 
-           <td class="code"><pre><span class="comment">&lt;!-- Add this to use OAuth support in DevKit--&gt;</span>
+            <td class="code"><pre><span class="comment">&lt;!-- Add this to use OAuth support in DevKit--&gt;</span>
   <span class="tag">&lt;dependency&gt;</span>
       <span class="tag">&lt;groupId&gt;</span>oauth.signpost<span class="tag">&lt;/groupId&gt;</span>
       <span class="tag">&lt;artifactId&gt;</span>signpost-core<span class="tag">&lt;/artifactId&gt;</span>
       <span class="tag">&lt;version&gt;</span>1.2.1.2<span class="tag">&lt;/version&gt;</span>
   <span class="tag">&lt;/dependency&gt;</span></pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
      </div> 
     </div> 
-    <div class="paragraph"> 
-     <p>The complete POM for the Dropbox sample connector project as generated from the Devkit 3.6 connector Maven archetype is:</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="title">
-       Dropbox RESTful Connector pom.xml 
+    <div class="sect4"> 
+     <h5 id="dropbox-restful-connector-pom-xml"><a class="anchor" href="#dropbox-restful-connector-pom-xml"></a>Dropbox RESTful Connector pom.xml</h5> 
+     <div class="paragraph"> 
+      <p>The complete POM for the Dropbox sample connector project as generated from the Devkit 3.6 connector Maven archetype is:</p> 
      </div> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="xml">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1171,7 +1170,7 @@
 51
 52
 </pre></td> 
-           <td class="code"><pre><span class="tag">&lt;project</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://maven.apache.org/POM/4.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+            <td class="code"><pre><span class="tag">&lt;project</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://maven.apache.org/POM/4.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
        <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;modelVersion&gt;</span>4.0.0<span class="tag">&lt;/modelVersion&gt;</span>
   <span class="tag">&lt;groupId&gt;</span>org.mule.samples.devkit<span class="tag">&lt;/groupId&gt;</span>
@@ -1223,9 +1222,10 @@
     <span class="tag">&lt;/dependency&gt;</span>
   <span class="tag">&lt;/dependencies&gt;</span>
 <span class="tag">&lt;/project&gt;</span></pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
      </div> 
     </div> 
    </div> 
@@ -1293,7 +1293,7 @@
     </div> 
    </div> 
    <div class="sect3"> 
-    <h4 id="create-client-class-and-code-connector-code-class"><a class="anchor" href="#create-client-class-and-code-connector-code-class"></a>Create Client Class and <code>@Connector</code> Class</h4> 
+    <h4 id="create-client-class-and-connector-class"><a class="anchor" href="#create-client-class-and-connector-class"></a>Create Client Class and @Connector Class</h4> 
     <div class="paragraph"> 
      <p>The client class does the real work of preparing and making calls to the remote Web service. It serializes and deserializes the request and response entities as JSON. The <code>@Connector</code> class creates an instance of the client class when needed, and calls methods to perform operations on resources. The two related tasks here are to create the client class, and update the&nbsp;<code>@Connector</code> class to instantiate and reference it.</p> 
     </div> 
@@ -1596,7 +1596,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="completing-the-code-connector-code-class"><a class="anchor" href="#completing-the-code-connector-code-class"></a>Completing the <code>@Connector</code> Class</h3> 
+   <h3 id="completing-the-connector-class"><a class="anchor" href="#completing-the-connector-class"></a>Completing the @Connector Class</h3> 
    <div class="paragraph"> 
     <p>When you create your connector project, Maven generates a scaffold&nbsp;<code>@Connector</code> class for you. Now you can enhance it to add needed properties (some of them&nbsp;<code>@Configurable</code>),&nbsp;initialize the client class when the <code>@Connector</code> is initialized, and add authentication functionality.</p> 
    </div> 
