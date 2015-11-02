@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/microsoft-dynamics-crm-connector" />
-    <meta name="description" content="The Microsoft Dynamics Customer Relationship Management (CRM) connector lets you access Microsoft Dynamics CRM’s SOAP Organization Service. Yo..." />
+    <meta name="description" content="Select Latest version: 2.4.4 The Microsoft Dynamics Customer Relationship Management (CRM) connector lets you access Microsoft Dynamics CRM’s ..." />
     <meta class="swiftype" name="title" data-type="string" content="Microsoft Dynamics CRM Connector" />
 
 </head>
@@ -866,6 +866,12 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
+   <p><strong>Select</strong></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Latest version: 2.4.4</strong></p> 
+  </div> 
+  <div class="paragraph"> 
    <p>The Microsoft Dynamics Customer Relationship Management (CRM) connector lets you access&nbsp;Microsoft Dynamics CRM’s SOAP Organization Service. You can add this connector to an Anypoint Studio flow.</p> 
   </div> 
   <div class="paragraph"> 
@@ -1270,14 +1276,22 @@ myrealm.com = MYREALM.COM</pre></td>
    <div class="ulist"> 
     <ul> 
      <li> <p>Sts Metadata Url (optional): The STS’s metadata exchange URL. For ADFS, this is usually&nbsp;link:https://mycompany-sts.com/adfs/services/trust/mex.</p> </li> 
-     <li> <p>Sts Username Port Qname (optional): The name of port that accepts username and password credentials as described in the STS’s metadata exchange URL. Specify this value as a Qname in the format <code>‘{namespace}/port_name’</code>. For ADFS this is usually:<br></p> </li> 
+     <li> <p>Sts Username Port Qname (optional): The name of port that accepts username and password credentials as described in the STS’s metadata exchange URL. Specify this value as a <code>Qname</code> in the format <code>{namespace}/port_name</code>. For ADFS, this is usually:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="code">{http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice}UserNameWSTrustBinding_IWSTrust13Async}</code></pre> 
+       </div> 
+      </div> </li> 
     </ul> 
    </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">{http://schemas.microsoft.com/ws/2008/06/identity/securitytokenservice}UserNameWSTrustBinding_IWSTrust13Async}</code></pre> 
-    </div> 
-   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="proxy"><a class="anchor" href="#proxy"></a>Proxy</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Configure the proxy that is used by the connector. This can be specified in the connector’s Global Element configuration, under the <code>Proxy</code> tab. The value of the proxy address has to be in the format <code>{hostname/IP}:{port}</code>. For example, if the proxy is running in the same server under the port 8080: <code>127.0.0.1:8080</code> or <code>localhost:8080</code>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1838,10 +1852,10 @@ myrealm.com = MYREALM.COM</pre></td>
     <p>To avoid conflicts, don’t add fields to your CRM instance using this reserved naming scheme: <code><em class="<strong>">referenceto</em>[]</code>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>As an example, the Contact Entity Reference attribute TransactionCurrencyId is Lookup field that targets the entity transactioncurrency. The transactioncurrencyid of the <code>transactioncurrency</code> is accessible as a String in the attribute <code>transactioncurrencyid_referenceto_transactioncurrency</code>.</p> 
+    <p>As an example, the Contact Entity Reference attribute <code>TransactionCurrencyId</code> is Lookup field that targets the entity <code>transactioncurrency</code>. The <code>transactioncurrencyid</code> of the <code>transactioncurrency</code> is accessible as a String in the attribute <code>transactioncurrencyid_referenceto_transactioncurrency</code>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The Create and Update operations accept entity reference attributes. Following the example above, to create a Contact targeting a transactioncurrency, set the value of the attribute <code>transactioncurrencyid_referenceto_transactioncurrency</code> to the <code>transactioncurrencyid</code> of the record to reference.</p> 
+    <p>The Create and Update operations accept entity reference attributes. Following the example above, to create a Contact targeting a <code>transactioncurrency</code>, set the value of the attribute <code>transactioncurrencyid_referenceto_transactioncurrency</code> to the <code>transactioncurrencyid</code> of the record to reference.</p> 
    </div> 
    <div class="paragraph"> 
     <p>The Retrieve Multiple Records operation also allows selecting and filtering of Entity Reference attributes. As an example for Contact, the following DataSense Query returns all the contact full names that where created by a particular <code>systemuserid</code>:</p> 
@@ -1998,7 +2012,7 @@ myrealm.com = MYREALM.COM</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#installing-and-configuring">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#crm-authentication">CRM Authentication</a></li><li><a class="scroll-menu-link" href="#operations">Operations</a></li><li><a class="scroll-menu-link" href="#update-record">Update Record</a></li><li><a class="scroll-menu-link" href="#associate-records">Associate Records</a></li><li><a class="scroll-menu-link" href="#exceptions-handling">Exceptions Handling</a></li><li><a class="scroll-menu-link" href="#data-considerations">Data Considerations</a></li><li><a class="scroll-menu-link" href="#frequently-asked-questions">Frequently Asked Questions</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#installing-and-configuring">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#crm-authentication">CRM Authentication</a></li><li><a class="scroll-menu-link" href="#proxy">Proxy</a></li><li><a class="scroll-menu-link" href="#operations">Operations</a></li><li><a class="scroll-menu-link" href="#update-record">Update Record</a></li><li><a class="scroll-menu-link" href="#associate-records">Associate Records</a></li><li><a class="scroll-menu-link" href="#exceptions-handling">Exceptions Handling</a></li><li><a class="scroll-menu-link" href="#data-considerations">Data Considerations</a></li><li><a class="scroll-menu-link" href="#frequently-asked-questions">Frequently Asked Questions</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
