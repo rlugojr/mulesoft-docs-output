@@ -181,19 +181,19 @@
 <li><i></i><a href="/mule-fundamentals/v/3.7/flow-architecture-advanced-use-case">Flow Architecture Advanced Use Case</a></li></ul></li>
 <li><i></i><a href="/mule-fundamentals/v/3.7/deploying-mule-applications">Deploying Mule Applications</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/keyboard-shortcuts-in-studio">Keyboard Shortcuts in Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/mule-security">Security in Mule</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/extending-mule">Extending Mule</a></li></ul></li>
 </ul></li>
-<li>
+<li class="expanded">
 <i></i>
-<a href="/mule-user-guide/v/3.7/">Mule User Guide</a><ul>
+<a href="/mule-user-guide/v/3.7/">Mule User Guide</a><ul style="display: block;">
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/installing">Installing</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/hardware-and-software-requirements">Hardware and Software Requirements</a></li><li><i></i><a href="/mule-user-guide/v/3.7/compatibility">Compatibility</a></li><li><i></i><a href="/mule-user-guide/v/3.7/downloading-and-starting-mule-esb">Downloading and Starting Mule ESB</a></li><li><i></i><a href="/mule-user-guide/v/3.7/adding-community-runtime">Adding Community Runtime</a></li><li><i></i><a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Installing an Enterprise License</a></li><li><i></i><a href="/mule-user-guide/v/3.7/installing-extensions">Installing Extensions</a></li><li><i></i><a href="/mule-user-guide/v/3.7/studio-update-sites">Studio Update Sites</a></li><li><i></i><a href="/mule-user-guide/v/3.7/studio-in-eclipse">Studio in Eclipse</a></li></ul></li>
-<li>
+<li class="expanded">
 <i></i>
-<a href="/mule-user-guide/v/3.7/developing">Developing</a><ul>
-<li>
+<a href="/mule-user-guide/v/3.7/developing">Developing</a><ul style="display: block;">
+<li class="expanded">
 <i></i>
-<a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a><ul>
+<a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a><ul style="display: block;">
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
@@ -238,7 +238,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/servicenow-connector-5.0">ServiceNow Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector-5.0-migration-guide">ServiceNow Connector 5.0 Migration Guide</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/servlet-connector">Servlet Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sftp-connector">SFTP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/siebel-connector">Siebel Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twilio-connector">Twilio Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twitter-connector">Twitter Connector</a></li><li>
+<li class="active"><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector">ServiceNow Connector 4.0</a></li><li><i></i><a href="/mule-user-guide/v/3.7/servlet-connector">Servlet Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sftp-connector">SFTP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/siebel-connector">Siebel Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twilio-connector">Twilio Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twitter-connector">Twitter Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/web-service-consumer">Web Service Consumer</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/web-service-consumer-reference">Web Service Consumer Reference</a></li></ul></li>
@@ -861,7 +861,7 @@
         <!-- END older version notification -->
         <!-- START article content -->
         <div class="article-content col-md-7">
-          
+          <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="developing">Developing</a>/<a href="anypoint-connectors">Anypoint Connectors</a>/<a href="servicenow-connector" class="breadcrumb-active-link">ServiceNow Connector 4.0</a></div>
           <h1>ServiceNow Connector</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
@@ -876,32 +876,34 @@
   </div> 
  </div> 
 </div> 
-<div class="sect2"> 
- <h3 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h3> 
- <div class="paragraph"> 
-  <p>This document assumes that you are familiar with Mule, <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint connectors</a>, and the <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>. To increase your familiarity with Studio, consider completing one or more <a href="/mule-fundamentals/v/3.7/basic-studio-tutorial">Anypoint Studio Tutorials</a>. Further, this page assumes that you have a basic understanding of&nbsp;<a href="/mule-fundamentals/v/3.7/mule-concepts">Mule flows</a> and <a href="/mule-fundamentals/v/3.7/global-elements">Mule Global Elements</a>.&nbsp;</p> 
- </div> 
- <div class="paragraph"> 
-  <p>This document describes implementation examples within the context of Anypoint Studio, Mule ESB’s graphical user interface, and, also includes configuration details for doing the same in the XML Editor.&nbsp;</p> 
- </div> 
- <div class="paragraph"> 
-  <p>If you don’t use Anypoint Studio for development, follow the instructions to&nbsp;<a href="http://mulesoft.github.io/servicenow-connector/guide/install">install the ServiceNow Maven dependencies</a> into your&nbsp;<code>pom.xml</code> file.</p> 
- </div> 
- <div class="paragraph"> 
-  <p>For ServiceNow connector v4.0 to function properly, the namespace for locally declared elements must be qualified by the target namespace. Make the following change in your ServiceNow instance to do so:</p> 
- </div> 
- <div class="olist arabic"> 
-  <ol class="arabic"> 
-   <li> <p>Go to&nbsp;<strong>System Properties</strong> &gt; <strong>Web Services</strong></p> </li> 
-   <li> <p>Click&nbsp;<strong>Properties</strong></p> </li> 
-   <li> <p>De-select the&nbsp;<strong>YES|NO</strong>&nbsp;box for the&nbsp;<strong>elementFormDefault&nbsp;</strong>property as shown below.</p> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/snow-screen.png" alt="snow-screen"></span>&nbsp;</p> 
-    </div> </li> 
-  </ol> 
- </div> 
- <div class="paragraph"> 
-  <p>Note that the box is selected by default, setting the&nbsp;<strong>elementFormDefault</strong>&nbsp;property to&nbsp;<strong>true</strong>. &nbsp;&nbsp;By de-selecting the box, we set the property to&nbsp;<strong>false</strong>&nbsp;thereby specifying that locally declared elements must be qualified by the target namespace.&nbsp;</p> 
+<div class="sect1"> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This document assumes that you are familiar with Mule, <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint connectors</a>, and the <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio interface</a>. To increase your familiarity with Studio, consider completing one or more <a href="/mule-fundamentals/v/3.7/basic-studio-tutorial">Anypoint Studio Tutorials</a>. Further, this page assumes that you have a basic understanding of&nbsp;<a href="/mule-fundamentals/v/3.7/mule-concepts">Mule flows</a> and <a href="/mule-fundamentals/v/3.7/global-elements">Mule Global Elements</a>.&nbsp;</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>This document describes implementation examples within the context of Anypoint Studio, Mule ESB’s graphical user interface, and, also includes configuration details for doing the same in the XML Editor.&nbsp;</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If you don’t use Anypoint Studio for development, follow the instructions to&nbsp;<a href="http://mulesoft.github.io/servicenow-connector/guide/install">install the ServiceNow Maven dependencies</a> into your&nbsp;<code>pom.xml</code> file.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For ServiceNow connector v4.0 to function properly, the namespace for locally declared elements must be qualified by the target namespace. Make the following change in your ServiceNow instance to do so:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Go to&nbsp;<strong>System Properties</strong> &gt; <strong>Web Services</strong></p> </li> 
+    <li> <p>Click&nbsp;<strong>Properties</strong></p> </li> 
+    <li> <p>De-select the&nbsp;<strong>YES|NO</strong>&nbsp;box for the&nbsp;<strong>elementFormDefault&nbsp;</strong>property as shown below.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/snow-screen.png" alt="snow-screen"></span>&nbsp;</p> 
+     </div> </li> 
+   </ol> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Note that the box is selected by default, setting the&nbsp;<strong>elementFormDefault</strong>&nbsp;property to&nbsp;<strong>true</strong>. &nbsp;&nbsp;By de-selecting the box, we set the property to&nbsp;<strong>false</strong>&nbsp;thereby specifying that locally declared elements must be qualified by the target namespace.&nbsp;</p> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -940,12 +942,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-f5c2d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-0c1d6" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-f6b25" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-ad394" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f5c2d"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f6b25"> 
      <div class="paragraph"> 
       <p>Follow these steps to create a global ServiceNow configuration in a Mule application:</p> 
      </div> 
@@ -1038,7 +1040,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-0c1d6"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-ad394"> 
      <div class="paragraph"> 
       <p>First, ensure that you have included the ServiceNow namespaces in your configuration file.</p> 
      </div> 
@@ -1217,12 +1219,12 @@ http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd</pre>
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-85b45" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-8ca23" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-f7c1d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-31374" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-85b45"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f7c1d"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Drag an HTTP connector into a new flow. Open the connector’s properties editor. Set the exchange pattern to&nbsp;<code>one-way</code> and the Path to <code>onboard</code>.</p> 
@@ -1520,7 +1522,7 @@ http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd</pre>
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-8ca23"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-31374"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Add a <strong>servicenow:config</strong> global element to your project, then configure its attributes according to the table below (see code below for a complete sample).</p> 
@@ -2077,7 +2079,7 @@ http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd</pre>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#installing-servicenow-connector-in-anypoint-studio">Installing ServiceNow Connector in Anypoint Studio</a></li><li><a class="scroll-menu-link" href="#configuration">Configuration</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#example-code">Example Code</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#installing-servicenow-connector-in-anypoint-studio">Installing ServiceNow Connector in Anypoint Studio</a></li><li><a class="scroll-menu-link" href="#configuration">Configuration</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#example-code">Example Code</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

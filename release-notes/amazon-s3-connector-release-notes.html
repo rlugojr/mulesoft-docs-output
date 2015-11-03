@@ -237,7 +237,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/servicenow-connector-5.0">ServiceNow Connector</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector-5.0-migration-guide">ServiceNow Connector 5.0 Migration Guide</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/servlet-connector">Servlet Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sftp-connector">SFTP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/siebel-connector">Siebel Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twilio-connector">Twilio Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twitter-connector">Twitter Connector</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/servicenow-connector">ServiceNow Connector 4.0</a></li><li><i></i><a href="/mule-user-guide/v/3.7/servlet-connector">Servlet Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/sftp-connector">SFTP Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/siebel-connector">Siebel Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twilio-connector">Twilio Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/twitter-connector">Twitter Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/web-service-consumer">Web Service Consumer</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/web-service-consumer-reference">Web Service Consumer Reference</a></li></ul></li>
@@ -868,10 +868,81 @@
    <p><em>Community</em></p> 
   </div> 
   <div class="paragraph"> 
-   <p>The Anypoint Amazon S3 Connector provides connectivity to the the Amazon S3 API, enabling you to interface with Amazon S3 to store objects, download and use data with other AWS services, and build applications that call for internet storage.&nbsp;Instant access to the Amazon S3 API enables seamless integrations between Amazon S3 and other databases, CMS applications such as Drupal, and CRM applications such as Salesforce.&nbsp;</p> 
+   <p>The Anypoint Amazon S3 Connector provides connectivity to the the Amazon S3 API, enabling you to interface with Amazon S3 to store objects, download and use data with other AWS services, and build applications that call for internet storage. Instant access to the Amazon S3 API enables seamless integrations between Amazon S3 and other databases, CMS applications such as Drupal, and CRM applications such as Salesforce.</p> 
   </div> 
   <div class="paragraph"> 
    <p><strong>Guide</strong>: <a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="version-3-1-0-oct-21-2015"><a class="anchor" href="#version-3-1-0-oct-21-2015"></a>Version 3.1.0 - Oct 21, 2015</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="version-3-1-0-compatibility"><a class="anchor" href="#version-3-1-0-compatibility"></a>Version 3.1.0 Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>The Amazon S3 connector 3.0 is compatible with:</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Application/Service</th> 
+      <th class="tableblock halign-left valign-top">Version</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Mule Runtime</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>3.5.0 or later</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>AWS SDK for Java</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>1.10.1</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-3-1-0-features"><a class="anchor" href="#version-3-1-0-features"></a>Version 3.1.0 Features</h3> 
+   <div class="paragraph"> 
+    <p>Upgraded AWS SDK to v1.10.1</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-3-1-0-fixes"><a class="anchor" href="#version-3-1-0-fixes"></a>Version 3.1.0 Fixes</h3> 
+   <div class="paragraph"> 
+    <p>Fixed Joda Time library issue when the connector is deployed on 3.7.2 Mule Runtime with JDK 8.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-3-1-0-known-issues"><a class="anchor" href="#version-3-1-0-known-issues"></a>Version 3.1.0 Known Issues</h3> 
+   <div class="paragraph"> 
+    <p>None.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1054,7 +1125,7 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>Updated the Anypoint Connector DevKit to version 3.5.1.</p> </li> 
-    <li> <p>Updated AWS Java SDK to version 1.7.13.&nbsp;</p> </li> 
+    <li> <p>Updated AWS Java SDK to version 1.7.13.</p> </li> 
     <li> <p>Updated the demo project to support the Anypoint Studio version 3.5.1.</p> </li> 
    </ul> 
   </div> 
@@ -1065,9 +1136,9 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Learn how to&nbsp;<a href="/mule-user-guide/v/3.7/installing-connectors">Install and Configure Anypoint Connectors</a>&nbsp;in Anypoint Studio.</p> </li> 
-    <li> <p>Access MuleSoft’s&nbsp;http://forum.mulesoft.org/mulesoft[Forum]&nbsp;to pose questions and get help from Mule’s broad community of users.</p> </li> 
-    <li> <p>To access MuleSoft’s expert support team,&nbsp;http://www.mulesoft.com/mule-esb-subscription[subscribe]&nbsp;to Mule ESB Enterprise and log in to MuleSoft’s&nbsp;http://www.mulesoft.com/support-login[Customer Portal].&nbsp;</p> </li> 
+    <li> <p>Learn how to <a href="/mule-user-guide/v/3.7/installing-connectors">Install and Configure Anypoint Connectors</a> in Anypoint Studio.</p> </li> 
+    <li> <p>Access MuleSoft’s <a href="http://forum.mulesoft.org/mulesoft">Forum</a> to pose questions and get help from Mule’s broad community of users.</p> </li> 
+    <li> <p>To access MuleSoft’s expert support team, <a href="http://www.mulesoft.com/mule-esb-subscription">subscribe</a> to Mule ESB Enterprise and log in to MuleSoft’s <a href="http://www.mulesoft.com/support-login">Customer Portal</a>.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1076,7 +1147,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#version-3-0-july-31-2015">Version 3.0 - July 31, 2015</a></li><li><a class="scroll-menu-link" href="#version-2-8-3-april-10-2015">Version 2.8.3 - April 10, 2015</a></li><li><a class="scroll-menu-link" href="#version-2-8-2-september-02-2014">Version 2.8.2 - September 02, 2014</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#version-3-1-0-oct-21-2015">Version 3.1.0 - Oct 21, 2015</a></li><li><a class="scroll-menu-link" href="#version-3-0-july-31-2015">Version 3.0 - July 31, 2015</a></li><li><a class="scroll-menu-link" href="#version-2-8-3-april-10-2015">Version 2.8.3 - April 10, 2015</a></li><li><a class="scroll-menu-link" href="#version-2-8-2-september-02-2014">Version 2.8.2 - September 02, 2014</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
