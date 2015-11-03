@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PeopleSoft Connector // MuleSoft Documentation </title>
+    <title>PeopleSoft Connector User Guide // MuleSoft Documentation </title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/asciidoctor.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
@@ -19,8 +19,8 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/peoplesoft-connector" />
-    <meta name="description" content="Premium Anypoint Connector for PeopleSoft provides real-time connectivity to query and update all PeopleSoft modules, using a common integration in..." />
-    <meta class="swiftype" name="title" data-type="string" content="PeopleSoft Connector" />
+    <meta name="description" content="Premium The PeopleSoft Connector is a closed source connector that uses the Component Interface (CI) to communicate in real-time with the service. ..." />
+    <meta class="swiftype" name="title" data-type="string" content="PeopleSoft Connector User Guide" />
 
 </head>
 <body>
@@ -862,44 +862,286 @@
         <!-- START article content -->
         <div class="article-content col-md-7">
           <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="developing">Developing</a>/<a href="anypoint-connectors">Anypoint Connectors</a>/<a href="peoplesoft-connector" class="breadcrumb-active-link">PeopleSoft Connector</a></div>
-          <h1>PeopleSoft Connector</h1>
+          <h1>PeopleSoft Connector User Guide</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p><em>Premium</em></p> 
   </div> 
+  <div id="toc" class="toc"> 
+   <div id="toctitle" class="title">
+     Contents 
+   </div> 
+   <ul class="sectlevel1"> 
+    <li><a href="#intro">Introduction</a> 
+     <ul class="sectlevel2"> 
+      <li><a href="#prerequisites">Prerequisites</a></li> 
+      <li><a href="#component-interfaces-ci">Component Interfaces (CI)</a> 
+       <ul class="sectlevel3"> 
+        <li><a href="#attributes-and-architecture">Attributes and Architecture</a></li> 
+       </ul> </li> 
+      <li><a href="#requirements">Requirements</a></li> 
+      <li><a href="#dependencies">Dependencies</a></li> 
+     </ul> </li> 
+    <li><a href="#install-and-config">Installing and Configuring</a> 
+     <ul class="sectlevel2"> 
+      <li><a href="#install">Installing</a></li> 
+      <li><a href="#config">Configuring</a> 
+       <ul class="sectlevel3"> 
+        <li><a href="#config-global">Setting up the Global Configuration</a></li> 
+       </ul> </li> 
+      <li><a href="#upgrading">Upgrading From an Older Version</a> 
+       <ul class="sectlevel3"> 
+        <li><a href="#from-1-x-x-to-2-0-0">From 1.x.x to 2.0.0</a></li> 
+       </ul> </li> 
+     </ul> </li> 
+    <li><a href="#using-the-connector">Using The Connector</a> 
+     <ul class="sectlevel2"> 
+      <li><a href="#use-cases-and-demos">Use Cases and Demos</a></li> 
+      <li><a href="#tips">Tips</a> 
+       <ul class="sectlevel3"> 
+        <li><a href="#test-the-connection">Test the Connection</a></li> 
+        <li><a href="#avoid-datasense-timeout">Avoid DataSense Timeout</a></li> 
+       </ul> </li> 
+      <li><a href="#adding-to-a-flow">Adding to a Flow</a></li> 
+     </ul> </li> 
+    <li><a href="#example-use-case">Example Use Case</a> 
+     <ul class="sectlevel2"> 
+      <li><a href="#run-time">Run Time</a></li> 
+      <li><a href="#demo">Demo</a></li> 
+      <li><a href="#see-also">See Also</a></li> 
+     </ul> </li> 
+   </ul> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2> 
+ <h2 id="intro"><a class="anchor" href="#intro"></a>Introduction</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Anypoint Connector for PeopleSoft provides real-time connectivity to query and update all PeopleSoft modules, using a common integration interface known as the Component Interface.</p> 
+   <p>The PeopleSoft Connector is a closed source connector that uses the Component Interface (CI) to communicate in real-time with the service. This is a component provided by Oracle’s People Tools.</p> 
   </div> 
-  <div class="paragraph"> 
-   <p>The connector has been developed for the PeopleSoft v9.2 and PeopleTools v8.53.02 or higher, which makes it compatible only with a Mule ESB or CloudHub instance running on Java v1.7.&nbsp;</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">Download JRE 1.7</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>View information at the Oracle site on <a href="http://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/index.html?content=i_product">PeopleTools</a>.</p> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> Read more about Oracle’s <a href="http://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/index.html?content=i_product">PeopleTools</a>. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
   <div class="paragraph"> 
    <p><strong>Release Notes:</strong> <a href="/release-notes/peoplesoft-connector-release-notes">PeopleSoft Connector Release Notes</a>.</p> 
   </div> 
+  <div class="sect2"> 
+   <h3 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h3> 
+   <div class="paragraph"> 
+    <p>Because of how closely the connector is coupled with PeopleSoft, this document assumes you have:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>A working knowledge of PeopleSoft.</p> </li> 
+     <li> <p>Read the relevant documentation on <a href="#component-interfaces-ci">Component Interfaces</a> and Integration Scenarios for your PeopleTools version.</p> </li> 
+    </ul> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> The definition and detailed explanation of the PeopleSoft terms and concepts used here are freely available in the PeopleBooks documentation set of your PeopleSoft installation. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="paragraph"> 
+    <p>This document assumes you are familiar with Mule, <a href="https://developer.mulesoft.com/docs/display/current/Anypoint+Connectors">Anypoint Connectors</a>, and <a href="https://developer.mulesoft.com/docs/display/current/Anypoint+Studio+Essentials">Anypoint Studio Essentials</a>. To increase your familiarity with Studio, consider completing one or more <a href="https://developer.mulesoft.com/docs/display/current/Anypoint+Connector+Tutorial">Anypoint Studio Tutorials</a>. Further, this page assumes that you have a basic understanding of <a href="https://developer.mulesoft.com/docs/display/current/Elements+in+a+Mule+Flow">Mule flows</a> and <a href="https://developer.mulesoft.com/docs/display/current/Global+Elements">Mule Global Elements</a>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To use the PeopleSoft connector, you must have the following:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><strong>Anypoint Studio:</strong> if you don’t use Anypoint Studio for development, follow the instructions to install the PeopleSoft Maven dependencies into your pom.xml file .</p> </li> 
+     <li> <p><strong>Java 7:</strong> PeopleSoft connector does not work unless you are using JRE 1.7. <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">Download JRE 1.7</a>.</p> </li> 
+     <li> <p><strong>Component Interface:</strong> at least one Component Interface must be created and exposed within the PeopleSoft instance using the Application Designer.</p> </li> 
+     <li> <p><strong>PeopleSoft Java Object Adapter JAR File:</strong> the <code>psjoa.jar</code> library is compiled and provided by a PeopleSoft administrator, and is unique to each installation of PeopleSoft.</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="component-interfaces-ci"><a class="anchor" href="#component-interfaces-ci"></a>Component Interfaces (CI)</h3> 
+   <div class="paragraph"> 
+    <p>PeopleSoft’s Component Interfaces are a “one-way”, real-time interface to your PeopleSoft database instance. A component in PeopleSoft is a logical grouping of PeopleSoft pages representing a complete business transaction, such as Employee Onboarding. Component Interfaces expose the underlying APIs used by PeopleSoft Components and, therefore, ensure that validations, defaults, and business logic are preserved from the original definition of those components.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The Component Interfaces allow you to query PeopleSoft for specific records, update data, and create new instances of the records.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-and-architecture"><a class="anchor" href="#attributes-and-architecture"></a>Attributes and Architecture</h4> 
+    <div class="paragraph"> 
+     <p>A component interface has the following four main attributes:</p> 
+    </div> 
+    <div class="paragraph center text-center"> 
+     <p><span class="image"><img src="./_images/ps_ci_architecture.jpeg" alt="CI+archtecture"></span></p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p><strong>Component Interface Name</strong>: each component interface requires a unique name. The programs calling a component use the name of the component interface to access properties and methods.&nbsp;</p> </li> 
+      <li> <p><strong>Keys (Get keys, Create keys, and Find keys)</strong>: keys are special properties containing values that retrieve an instance (get keys) or a list of instances (find keys) of the component interface. You can add, remove, or change keys in PeopleSoft Application Designer. Keys are created automatically when you create a component interface.<br></p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p><strong>Get keys:</strong> map to fields marked as search keys in the Components Search record.</p> </li> 
+         <li> <p><strong>Create keys:</strong> generated in CI when the Use tab on the Component Properties dialog allows the Add action.</p> </li> 
+         <li> <p><strong>Find keys:</strong> map to fields marked as both Alternate Search keys and Search Key in the Component Search Record.</p> </li> 
+        </ul> 
+       </div> </li> 
+      <li> <p><strong>Properties and Collections (Fields and Records):</strong> properties provide access to both component data and component interface settings. A property can correspond to a field or a scroll (collection). A component interface collection is a special type of property that corresponds to a scroll and contains fields and subordinate scrolls as defined in its underlying component. There are two types of properties:&nbsp;&nbsp;<br></p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p><strong>Standard properties</strong> are assigned automatically when a component interface is created.&nbsp;</p> </li> 
+         <li> <p><strong>User-defined properties</strong> map to record fields on the PeopleSoft component and are displayed in the PeopleSoft Application Designer.</p> </li> 
+        </ul> 
+       </div> </li> 
+      <li> <p><strong>Methods:</strong> a method is a function that performs a specific task on a component interface at run time. There are two main types of methods: standard and user-defined.</p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p><strong>Standard methods</strong> are those that are available for all component interfaces. The following are the standard methods that the connector supports:</p> 
+          <table class="tableblock frame-all grid-all spread"> 
+           <colgroup> 
+            <col style="width: 50%;"> 
+            <col style="width: 50%;"> 
+           </colgroup> 
+           <thead> 
+            <tr> 
+             <th class="tableblock halign-left valign-top">Method</th> 
+             <th class="tableblock halign-left valign-top">Description</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create</strong></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Add a new instance of the Component Interface to the PeopleSoft database. This is similar to clicking Add and entering the relevant keys through the PeopleSoft Web UI.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cancel</strong></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Cancel an instance of the Component Interface. This is equivalent of the Cancel operation in the Web UI when working on a particular component.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Find</strong></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Search for any instances of the component that match the provided Search Keys. This returns a list of possible matches.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Get</strong></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve instances that match the specific keys you provide. This returns a single record or none at all.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Save</strong></p></td> 
+             <td class="tableblock halign-left valign-top"> 
+              <div> 
+               <div class="paragraph"> 
+                <p>Save changes made to the component, new, or existing.</p> 
+               </div> 
+               <div class="admonitionblock warning"> 
+                <table> 
+                 <tbody> 
+                  <tr> 
+                   <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
+                   <td class="content"> The Save operation tries to update an existing record before creating a new one. For new records, the connector automatically populates the keys with default values provided by the PeopleSoft instance, thereby reducing the need for the user to provide the default key/values pairs. </td> 
+                  </tr> 
+                 </tbody> 
+                </table> 
+               </div> 
+              </div></td> 
+            </tr> 
+           </tbody> 
+          </table> </li> 
+         <li> <p><strong>User-defined methods</strong> are created in PeopleSoft Application Designer to provide added functionality to the component interface.</p> </li> 
+        </ul> 
+       </div> </li> 
+     </ul> 
+    </div> 
+    <div class="admonitionblock note"> 
+     <table> 
+      <tbody> 
+       <tr> 
+        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+        <td class="content"> Read more about Oracle’s <a href="http://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tcpi/index.html">Component Interfaces</a>. </td> 
+       </tr> 
+      </tbody> 
+     </table> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="requirements"><a class="anchor" href="#requirements"></a>Requirements</h3> 
+   <div class="paragraph"> 
+    <p>For Hardware and software requirements, please visit <a href="https://www.mulesoft.com/lp/dl/mule-esb-enterprise">Mulesoft.com</a>.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="dependencies"><a class="anchor" href="#dependencies"></a>Dependencies</h3> 
+   <div class="paragraph"> 
+    <p>The PeopleSoft connector requires the following dependencies:</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all"> 
+    <colgroup> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Application/Service</th> 
+      <th class="tableblock halign-left valign-top">Version</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule Runtime</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">3.6.x or higher</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">PeopleSoft</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">9.2</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">PeopleTools</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">8.53.02 or higher</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Java</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">1.7.0_x</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Anypoint Studio</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">5.2 or higher</p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> PeopleSoft 9.2 includes several modules, such as: Human Capital Management (HCM), Financial Management (FM), Enterprise Services Automation (ESA), Supplier Relationship Management (SRM), Customer Relationship Management (CRM) and Campus Solution (CS). </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
+ <h2 id="install-and-config"><a class="anchor" href="#install-and-config"></a>Installing and Configuring</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Because of how closely the connector is coupled with PeopleSoft, this document assumes you have :</p> 
+   <p>To use the PeopleSoft connector in a production environment, you must have either:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>A working knowledge of PeopleSoft.</p> </li> 
-    <li> <p>Read the relevant documentation on Component Interfaces and Integration Scenarios for your PeopleTools version.</p> </li> 
+    <li> <p>An Enterprise license to use Mule.</p> </li> 
+    <li> <p>A CloudHub Starter, Professional, or Enterprise account.</p> </li> 
    </ul> 
   </div> 
   <div class="admonitionblock note"> 
@@ -907,638 +1149,446 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> The definition and detailed explanation of the PeopleSoft terms and concepts used here are freely available in the PeopleBooks documentation set of your PeopleSoft installation. </td> 
+      <td class="content"> Contact the <a href="mailto:info@mulesoft.com">MuleSoft Sales Team</a> to obtain either of these. Read more about <a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Installing an Enterprise License</a>. </td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
-  <div class="paragraph"> 
-   <p>This document assumes you are familiar with Mule, <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>, and <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a>. To increase your familiarity with Studio, consider completing one or more <a href="/mule-fundamentals/v/3.7/anypoint-connector-tutorial">Anypoint Studio Tutorials</a>. Further, this page assumes that you have a basic understanding of <a href="/mule-fundamentals/v/3.7/elements-in-a-mule-flow">Mule flows</a> and <a href="/mule-fundamentals/v/3.7/global-elements">Mule Global Elements</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The document also assumes that you are familiar with <a href="http://maven.apache.org/">Apache Maven</a>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>To use the PeopleSoft connector, you must have the following:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><strong>Apache Maven 3.x</strong>: If you want to create Mule application using Maven.</p> </li> 
-    <li> <p><strong>Java 7</strong>: PeopleSoft connector does not work unless you are using JRE 1.7. <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">Download JRE 1.7</a>.</p> </li> 
-    <li> <p><strong>Component Interface</strong>: At least one Component Interface must be created and exposed within the PeopleSoft instance using the Application Designer.</p> </li> 
-    <li> <p><strong>PeopleSoft Java Object Adapter JAR File (psjoa.jar)</strong>: The psjoa.jar library is compiled and provided by a PeopleSoft administrator, and is unique to each installation of PeopleSoft.</p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="compatibility"><a class="anchor" href="#compatibility"></a>Compatibility</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>PeopleSoft connector is compatible with:</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: 50%;"> 
-    <col style="width: 50%;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Application/Service</th> 
-     <th class="tableblock halign-left valign-top">Version</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PeopleTools</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">8.53.02 or higher</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PeopleSoft</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">9.2</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mule Runtime</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">3.6.0 or higher</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Java</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">1.7.0_x</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="peoplesoft-component-interfaces"><a class="anchor" href="#peoplesoft-component-interfaces"></a>PeopleSoft Component Interfaces</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>PeopleSoft Component Interfaces (CI) are a “one-way”, real-time interface to your PeopleSoft database instance. A component in PeopleSoft is a logical grouping of PeopleSoft pages representing a complete business transaction, such as Employee Onboarding. Component Interfaces expose the underlying APIs used by PeopleSoft Components and, therefore, ensure that validations, defaults, and business logic are preserved from the original definition of those components.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The Component Interfaces allow you to query PeopleSoft for specific records, update data, and create new instances of the records.</p> 
-  </div> 
-  <div class="sect3"> 
-   <h4 id="component-interface-attributes-and-architecture"><a class="anchor" href="#component-interface-attributes-and-architecture"></a>Component Interface Attributes and Architecture</h4> 
+  <div class="sect2"> 
+   <h3 id="install"><a class="anchor" href="#install"></a>Installing</h3> 
    <div class="paragraph"> 
-    <p>A component interface has the following four main attributes:</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/CI+archtecture.jpeg" alt="CI+archtecture"></span></p> 
+    <p>To install PeopleSoft connector in Anypoint Studio, follow the steps below:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p><strong>Component Interface Name</strong>: Each component interface requires a unique name. The programs calling a component use the name of the component interface to access properties and methods.&nbsp;</p> </li> 
-     <li> <p><strong>Keys (Get keys, Create keys, and Find keys)</strong>: Keys are special properties containing values that retrieve an instance (get keys) or a list of instances (find keys) of the component interface. You can add, remove, or change keys in PeopleSoft Application Designer. Keys are created automatically when you create a component interface.<br></p> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p><strong>Get keys:</strong> Map to fields marked as search keys in the Components Search record.</p> </li> 
-        <li> <p><strong>Create keys:</strong> Generated in CI when the Use tab on the Component Properties dialog allows the Add action.</p> </li> 
-        <li> <p><strong>Find keys:</strong> Map to fields marked as both Alternate Search keys and Search Key in the Component Search Record.</p> </li> 
-       </ul> 
-      </div> </li> 
-     <li> <p><strong>Properties and Collections (Fields and Records):</strong> Properties provide access to both component data and component interface settings. A property can correspond to a field or a scroll (collection). A component interface collection is a special type of property that corresponds to a scroll and contains fields and subordinate scrolls as defined in its underlying component. There are two types of properties:&nbsp;&nbsp;<br></p> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p><strong>Standard properties</strong> are assigned automatically when a component interface is created.&nbsp;</p> </li> 
-        <li> <p><strong>User-defined properties</strong> map to record fields on the PeopleSoft component and are displayed in the PeopleSoft Application Designer.</p> </li> 
-       </ul> 
-      </div> </li> 
-     <li> <p><strong>Methods:</strong> A method is a function that performs a specific task on a component interface at run time. There are two main types of methods: standard and user-defined.</p> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p><strong>Standard methods</strong> are those that are available for all component interfaces. The following are the standard methods that the connector supports:</p> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top">Method</th> 
-            <th class="tableblock halign-left valign-top">Description</th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Add a new instance of the Component Interface to the PeopleSoft database. This is similar to clicking Add and entering the relevant keys through the PeopleSoft Web UI.</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cancel</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Cancel an instance of the Component Interface. This is equivalent of the Cancel operation in the Web UI when working on a particular component.</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Find</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Search for any instances of the component that match the provided Search Keys. This returns a list of possible matches.</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Get</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve instances that match the specific keys you provide. This returns a single record or none at all.</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Save</strong></p></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Save changes made to the component, new, or existing.</p> 
-              </div> 
-              <div class="admonitionblock warning"> 
-               <table> 
-                <tbody> 
-                 <tr> 
-                  <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-                  <td class="content"> The Save operation tries to update an existing record before creating a new one. For new records, the connector automatically populates the keys with default values provided by the PeopleSoft instance, thereby reducing the need for the user to provide the default key/values pairs. </td> 
-                 </tr> 
-                </tbody> 
-               </table> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p><strong>User-defined methods</strong> are created in PeopleSoft Application Designer to provide added functionality to the component interface.</p> </li> 
-       </ul> 
-      </div> </li> 
+     <li> <p>Open Anypoint Studio and got to <strong>Help &gt; Install New Software</strong>.</p> </li> 
+     <li> <p>Select <strong>Anypoint Connectors Update Site - <a href="http://repository.mulesoft.org/connectors/releases/3.5.0" class="bare">http://repository.mulesoft.org/connectors/releases/3.5.0</a></strong>.</p> </li> 
+     <li> <p>Locate the PeopleSoft Connector.</p> </li> 
     </ul> 
    </div> 
-   <div class="paragraph"> 
-    <p><a href="http://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tcpi/index.html">View information at the Oracle site on Component Interfaces</a>.&nbsp;</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="installing-and-configuring"><a class="anchor" href="#installing-and-configuring"></a>Installing and Configuring</h2> 
- <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="installing"><a class="anchor" href="#installing"></a>Installing</h3> 
-   <div class="paragraph"> 
-    <p>You can "test drive" the PeopleSoft connector in Anypoint Studio using the instructions in&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>.&nbsp;</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To use the PeopleSoft connector in a production environment, you must have either:</p> 
+   <div class="paragraph center text-center"> 
+    <p><span class="image"><img src="./_images/ps_install_updatesite.png" alt="Anypoint Studio Install Window"></span></p> 
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>An&nbsp;Enterprise license&nbsp;to use Mule&nbsp;</p> </li> 
-     <li> <p>A CloudHub Starter, Professional, or Enterprise account</p> </li> 
+     <li> <p>Click <strong>Next</strong> and accept the License Agreement.</p> </li> 
+     <li> <p>Restart Studio when prompted.</p> </li> 
+     <li> <p>Now, the PeopleSoft connector should appear in your Studio Palette:<br></p> </li> 
     </ul> 
    </div> 
-   <div class="paragraph"> 
-    <p>Contact the <a href="mailto:info@mulesoft.com">MuleSoft Sales Team</a>&nbsp;to obtain either of these. (Read more about&nbsp;<a href="http://www.mulesoft.org/documentation/display/current/Installing+an+Enterprise+License">Installing an Enterprise License</a>.)</p> 
+   <div class="paragraph center text-center"> 
+    <p><span class="image"><img src="./_images/ps_install_palette.png" alt="Anypoint Studio palette - PeopleSoft Connector"></span></p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> Read more about <a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a>. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="creating-a-new-project"><a class="anchor" href="#creating-a-new-project"></a>Creating a New Project</h3> 
+   <h3 id="config"><a class="anchor" href="#config"></a>Configuring</h3> 
    <div class="paragraph"> 
-    <p>To use the PeopleSoft connector in a Mule application project:</p> 
+    <p>To use the PeopleSoft connector in your Mule application, you must configure a global PeopleSoft element that can be used by all the PeopleSoft connectors in the application.</p> 
    </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>In Studio, select <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>.</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/PS_0001B_installing_new.png" alt="PS_0001B_installing_new"></span></p> 
-      </div> </li> 
-     <li> <p>Enter a name for your new project and leave the remaining options with their default values. Make sure the <strong>Use Maven</strong> option is not selected.<br> <span class="image"><img src="./_images/PS_0001_installing.png" alt="PS_0001_installing"></span></p> </li> 
-     <li> <p>Select the <strong>Create a .gitignore file</strong> check box.</p> </li> 
-     <li> <p>Click <strong>Next</strong> to verify that Java 1.7 is set as your default JRE.<br></p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/JRE1.7.png" alt="JRE1.7"></span></p> 
-      </div> </li> 
-     <li> <p>Click <strong>Finish</strong> to create the project.</p> </li> 
-    </ol> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> Read more about <a href="https://developer.mulesoft.com/docs/display/current/Global+Elements">Global Elements</a>. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="using-maven-with-the-project"><a class="anchor" href="#using-maven-with-the-project"></a>Using Maven with the Project</h3> 
-   <div class="paragraph"> 
-    <p>To build a Mule application in Studio using Maven:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Select <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>.<br> <span class="image"><img src="./_images/PS_0001B_installing_new.png" alt="PS_0001B_installing_new"></span><br></p> </li> 
-     <li> <p>Enter a name for your new project and select the <strong>Use Maven</strong> check box. Define <strong>Group Id</strong>, <strong>Artifact Id</strong>, and <strong>Version</strong>.</p> 
-      <div class="admonitionblock warning"> 
-       <table> 
-        <tbody> 
-         <tr> 
-          <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-          <td class="content"> &nbsp;If the <strong>Use Maven</strong> option is inactive, displaying the "<em>Maven is currently disabled, configure Maven</em>" message, click the <strong>Configure Maven</strong> link to browse and select the&nbsp;<strong>Maven installation home directory</strong>&nbsp;on your local drive. <a href="/mule-user-guide/v/3.7/maven-support-in-anypoint-studio">Learn more about setting your Maven preferences in Anypoint Studio</a>. </td> 
-         </tr> 
-        </tbody> 
-       </table> 
-      </div> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/PS_0001C_installing_maven.png" alt="PS_0001C_installing_maven"></span></p> 
-      </div> </li> 
-     <li> <p>Select the <strong>Create a .gitignore</strong> <strong>file</strong> checkbox.</p> </li> 
-     <li> <p>Click <strong>Next</strong> to verify that Java 1.7 is set as your default JRE.&nbsp;</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/JRE1.7.png" alt="JRE1.7"></span>&nbsp; &nbsp;</p> 
-      </div> </li> 
-     <li> <p>Click <strong>Finish</strong>. Studio builds your Maven Project automatically and displays a&nbsp;<em>Build Success</em>&nbsp;message.</p> </li> 
-     <li> <p>Next, add your psjoa.jar file to the Build Path (Learn how to compile the psjoa.jar file) as follows:</p> 
-      <div class="olist loweralpha"> 
-       <ol class="loweralpha" type="a"> 
-        <li> <p>Install the psjoa.jar file&nbsp;locally.&nbsp;</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="code">mvn install:install-file -Dfile=psjoa.jar -DgroupId=peoplesoft -DartifactId=psjoa -Dversion=1.0 -Dpackaging=jar</code></pre> 
-          </div> 
-         </div> 
-         <div class="paragraph"> 
-          <p>Click the following link to learn more about third-party JARs:&nbsp;http://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html.<em>&nbsp;</em></p> 
-         </div> </li> 
-        <li> <p>Based on the command above, add the following dependency to your project’s&nbsp;<strong>pom.xml</strong>:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-4
-5
-</pre></td> 
-                <td class="code"><pre><span class="tag">&lt;dependency&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-<span class="tag">&lt;groupId&gt;</span>peoplesoft<span class="tag">&lt;/groupId&gt;</span>
-<span class="tag">&lt;artifactId&gt;</span>psjoa<span class="tag">&lt;/artifactId&gt;</span>
-<span class="tag">&lt;version&gt;</span>1.0<span class="tag">&lt;/version&gt;</span>
-<span class="tag">&lt;/dependency&gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-       </ol> 
-      </div> </li> 
-    </ol> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="configuring-a-global-element"><a class="anchor" href="#configuring-a-global-element"></a>Configuring a Global Element</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>To use the PeopleSoft connector in your Mule application, you must configure&nbsp;a global PeopleSoft element that can be used by all the PeopleSoft connectors in the application (read more about <a href="/mule-fundamentals/v/3.7/global-elements">global elements</a>).</p> 
-  </div> 
-  <div class="panel panel-default no-padding"> 
-   <div class="panel-heading no-padding"> 
-    <!-- Nav tabs --> 
-    <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-bbc57" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-07568" role="tab" data-toggle="tab">XML Editor</a></li> 
-    </ul> 
-   </div> 
-   <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-bbc57"> 
-     <div class="paragraph"> 
-      <p>Follow these steps to create a global PeopleSoft element:<br></p> 
+   <div class="sect3"> 
+    <h4 id="config-global"><a class="anchor" href="#config-global"></a>Setting up the Global Configuration</h4> 
+    <div class="panel panel-default no-padding"> 
+     <div class="panel-heading no-padding"> 
+      <!-- Nav tabs --> 
+      <ul class="nav nav-tabs" role="tablist"> 
+       <li class="active"><a href="#studio-visual-editor-e9195" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-862ff" role="tab" data-toggle="tab">XML Editor</a></li> 
+      </ul> 
      </div> 
-     <div class="olist arabic"> 
-      <ol class="arabic"> 
-       <li> <p>Click the <strong>Global Elements</strong> tab at the base of the canvas.</p> </li> 
-       <li> <p>On the Global Mule Configuration Elements screen, click <strong>Create</strong>.</p> </li> 
-       <li> <p>In the Choose Global Type wizard, expand <strong>Connector Configuration</strong>, and then select <strong>PeopleSoft: Configuration</strong>.<br> &nbsp; <span class="image"><img src="./_images/ConnectorCfgPS.png" alt="ConnectorCfgPS"></span></p> </li> 
-       <li> <p>Click <strong>Ok</strong>.</p> </li> 
-       <li> <p>Configure the parameters according to instructions below.<br> <span class="image"><img src="./_images/PS_0002_globalelement.png" alt="PS_0002_globalelement"></span></p> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col style="width: 50%;"> 
-          <col style="width: 50%;"> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Field</th> 
-           <th class="tableblock halign-left valign-top">Description</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the configuration with which it can be referenced later.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Server</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the URL of the server from where to access the services. It is entered in the form of Server_Name:Server_Port.<br></p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Username</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a username to log in to PeopleSoft.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the password.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required Dependencies</strong></p></td> 
-           <td class="tableblock halign-left valign-top"> 
-            <div> 
-             <div class="paragraph"> 
-              <p>Click <strong>Add File</strong> to attach the psjoa.jar file that is compiled from your PeopleSoft instance to your project’s Build path. Learn how to compile the psjoa.jar file.</p> 
-             </div> 
-            </div></td> 
-          </tr> 
-         </tbody> 
-        </table> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/PS_0003_globalelement_success.png" alt="PS_0003_globalelement_success"></span></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>After the psjoa.jar file is attached, it appears in the lib/peoplesoft directory of your project’s root folder.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/PS_0004_globalelement_libsfolder.png" alt="PS_0004_globalelement_libsfolder"></span></p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>If you provide the wrong file (either an invalid psjoa.jar or a completely different library), Studio displays the following error message:</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/PS_0005_globalelement_invalidlibs.png" alt="PS_0005_globalelement_invalidlibs"></span></p> 
-        </div> 
-        <div class="admonitionblock note"> 
-         <table> 
-          <tbody> 
-           <tr> 
-            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-            <td class="content"> For more information, see <a href="#psjoa-jar-file">psjoa JAR File</a>. </td> 
-           </tr> 
-          </tbody> 
-         </table> 
-        </div> </li> 
-       <li> <p>Keep the <strong>Pooling Profile</strong> and the <strong>Reconnection</strong> tabs with their default entries.<br></p> </li> 
-       <li> <p>Click&nbsp;<strong>Test Connection</strong> to receive a <em>Connection Successful</em> message. If you receive an error, try the following resolutions based on the error message:</p> 
-        <div class="olist loweralpha"> 
-         <ol class="loweralpha" type="a"> 
-          <li> <p><code>Unsupported major/minor version 51.0</code>: Indicates that you are running with a 1.6 JRE. To resolve this, ensure that you are running with Java 1.7 and restart Studio.</p> </li> 
-          <li> <p><code>java.lang.NoClassDefFoundError: psft/pt8/joa/ISession</code> and <code>java.lang.ClassNotFoundException: psft.pt8.joa.ISession</code>: These exceptions indicate that you haven’t installed the psjoa.jar file. To access PeopleSoft Component Interface in your Mule flows, you must add the PeopleSoft Component Interface API to your project. Compile the API using the PeopleSoft Application Designer Build Window and provide the archive name as psjoa.jar. To solve the issue, go back to the Required dependencies panel and select the corresponding JAR file.</p> </li> 
-         </ol> 
-        </div> </li> 
-       <li> <p>Configure your Component Interface Whitelist according to the steps below:</p> 
-        <div class="olist loweralpha"> 
-         <ol class="loweralpha" type="a"> 
-          <li> <p>Click <strong>Create Object manually</strong> and click the button next to it.&nbsp;</p> 
-           <div class="paragraph"> 
-            <p><span class="image"><img src="./_images/PS_0006_globalelement_whitelist.png" alt="PS_0006_globalelement_whitelist"></span>&nbsp;</p> 
-           </div> </li> 
-          <li> <p>On the pop-up window, select the (+) plus button to set the names of your component interfaces.</p> 
-           <div class="paragraph"> 
-            <p><span class="image"><img src="./_images/PS_0007_globalelement_whitelist2.png" alt="PS_0007_globalelement_whitelist2"></span></p> 
-           </div> </li> 
-          <li> <p>Right-click a metadata item and click <strong>Edit the selected metadata field</strong> to enter the values.<br> <span class="image"><img src="./_images/Edit+Meta+Data.png" alt="Edit+Meta+Data"></span></p> </li> 
-          <li> <p>Click <strong>OK</strong> to save the list.</p> </li> 
-          <li> <p>Click <strong>OK</strong> to save the global connector configurations.</p> </li> 
-         </ol> 
-        </div> </li> 
-      </ol> 
-     </div> 
-     <div class="sect2"> 
-      <h3 id="psjoa-jar-file"><a class="anchor" href="#psjoa-jar-file"></a>psjoa JAR File</h3> 
-      <div class="paragraph"> 
-       <p>The psjoa.jar file is unique to each installation of PeopleSoft. It is compiled and provided by your PeopleSoft administrator.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>If the psjoa.jar isn’t provided to you, follow the steps below to build the component interface bindings:</p> 
-      </div> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>Start PeopleSoft Application Designer and open any Component Interface definition.&nbsp;</p> </li> 
-        <li> <p>Select <strong>Build</strong> &gt; <strong>PeopleSoft APIs</strong> to launch the Build PeopleSoft API Bindings dialog box.</p> </li> 
-        <li> <p>Under the <strong>Java Classes</strong> group box, select the <strong>Build</strong> check box. Specify the target directory in which you want the Java class source files to be created.</p> </li> 
-        <li> <p>Click <strong>OK</strong> to build the selected bindings. The files that constitute the bindings are built in the location that you specify. If the operation is successful, a <em>Done</em> message appears in the PeopleSoft Application Designer Build window.</p> </li> 
-        <li> <p>Compile the generated APIs using the following commands:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="code">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td> 
-                <td class="code"><pre>For Windows:
-&nbsp;
-cd %PS_HOME%\class\PeopleSoft\Generated\CompIntfc
+     <div class="panel-body tab-content no-padding"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-e9195"> 
+       <div class="olist arabic"> 
+        <ol class="arabic"> 
+         <li> <p>Click the <strong>Global Elements</strong> tab at the base of the canvas.</p> </li> 
+         <li> <p>On the <strong>Global Mule Configuration Elements</strong> screen, click <strong>Create</strong>.</p> </li> 
+         <li> <p>In the <strong>Choose Global Type</strong> wizard, expand <strong>Connector Configuration</strong> and select <strong>PeopleSoft: Configuration</strong> and click <strong>Ok.</strong></p> 
+          <div class="paragraph center text-center"> 
+           <p><span class="image"><img src="./_images/ps_config_global_wizard.png" alt="Global Element Configuration Wizard"></span></p> 
+          </div> </li> 
+         <li> <p>Configure the parameters according to instructions below.</p> 
+          <div class="paragraph center text-center"> 
+           <p><span class="image"><img src="./_images/ps_config_global.png" alt="Global Element Configuration"></span></p> 
+          </div> 
+          <table class="tableblock frame-all grid-all spread"> 
+           <colgroup> 
+            <col style="width: 50%;"> 
+            <col style="width: 50%;"> 
+           </colgroup> 
+           <thead> 
+            <tr> 
+             <th class="tableblock halign-left valign-top">Field</th> 
+             <th class="tableblock halign-left valign-top">Description</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the configuration with which it can be referenced later.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Server</strong></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the URL of the server from where to access the services. It must comply with the form of <strong>HOST:PORT</strong>.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Username</strong></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a username to log in to the PeopleSoft instance.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the password to log in to the PeopleSoft instance.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required dependencies</strong></p></td> 
+             <td class="tableblock halign-left valign-top"> 
+              <div> 
+               <div class="paragraph"> 
+                <p>Click <strong>Add File</strong> to attach the psjoa.jar file that is compiled from your PeopleSoft instance to your project’s Build path. Learn how to compile the psjoa.jar file.</p> 
+               </div> 
+              </div></td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <div class="paragraph center text-center"> 
+           <p><span class="image"><img src="./_images/ps_config_global_requiredlibs.png" alt="Global Element - Required dependencies"></span></p> 
+          </div> 
+          <div class="paragraph"> 
+           <p>After the psjoa.jar file is attached, the file will appear in the <code>lib/peoplesoft</code> directory of your project’s root folder.</p> 
+          </div> 
+          <div class="paragraph center text-center"> 
+           <p><span class="image"><img src="./_images/ps_config_global_classpath.png" alt="Dependencies folder"></span></p> 
+          </div> 
+          <div class="paragraph"> 
+           <p>If you provide the wrong file (either an invalid psjoa.jar or a completely different library), Studio displays the following error message:</p> 
+          </div> 
+          <div class="paragraph center text-center"> 
+           <p><span class="image"><img src="./_images/ps_config_global_invalidlibs.png" alt="Global Element - Invalid dependencies" width="70%"></span></p> 
+          </div> 
+          <div class="admonitionblock important"> 
+           <table> 
+            <tbody> 
+             <tr> 
+              <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
+              <td class="content"> 
+               <div class="paragraph"> 
+                <p>The psjoa.jar file is unique to each installation of PeopleSoft. It is compiled and provided by your PeopleSoft administrator. If the psjoa.jar isn’t provided to you, follow the steps below to build the component interface bindings:</p> 
+               </div> 
+               <div class="olist arabic"> 
+                <ol class="arabic"> 
+                 <li> <p>Start <strong>PeopleSoft Application Designer</strong> and open any Component Interface definition.</p> </li> 
+                 <li> <p>Select <strong>Build &gt; PeopleSoft APIs</strong> to launch the Build PeopleSoft API Bindings dialog box.</p> </li> 
+                 <li> <p>Under the <strong>Java Classes</strong> group box, select the <strong>Build</strong> check box. Specify the target directory in which you want the Java class source files to be created.</p> </li> 
+                 <li> <p>Click <strong>OK</strong> to build the selected bindings. The files that constitute the bindings are built in the location that you specify. If the operation is successful, a Done message appears in the PeopleSoft Application Designer Build window.</p> </li> 
+                 <li> <p>Compile the generated APIs using the following commands:</p> </li> 
+                </ol> 
+               </div> 
+               <div class="paragraph"> 
+                <p><strong>For Windows:</strong></p> 
+               </div> 
+               <div class="listingblock"> 
+                <div class="content"> 
+                 <pre class="CodeRay highlight"><code>cd %PS_HOME%\class\PeopleSoft\Generated\CompIntfc
 javac −classpath %PS_HOME%\class\psjoa.jar *.java
-&nbsp;
-cd c:\pt8\class\PeopleSoft\ Generated\ PeopleSoft
-javac −classpath %PS_HOME%\class\psjoa.jar *.java</pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="code">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td> 
-                <td class="code"><pre>For Mac/Linux:
 
-cd $PS_HOME/class/PeopleSoft/Generated/CompIntfc
+cd c:\pt8\class\PeopleSoft\ Generated\ PeopleSoft
+javac −classpath %PS_HOME%\class\psjoa.jar *.java</code></pre> 
+                </div> 
+               </div> 
+               <div class="paragraph"> 
+                <p><strong>For Mac/Linux:</strong></p> 
+               </div> 
+               <div class="listingblock"> 
+                <div class="content"> 
+                 <pre class="CodeRay highlight"><code>cd $PS_HOME/class/PeopleSoft/Generated/CompIntfc
 javac classpath $PS_HOME/class/psjoa.jar *.java
 
 cd $PS_HOME/class/PeopleSoft/Generated/PeopleSoft
-javac classpath $PS_HOME/class/psjoa.jar *.java</pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
+javac classpath $PS_HOME/class/psjoa.jar *.java</code></pre> 
+                </div> 
+               </div> </td> 
+             </tr> 
+            </tbody> 
+           </table> 
           </div> 
-         </div> </li> 
-       </ol> 
+          <div class="admonitionblock note"> 
+           <table> 
+            <tbody> 
+             <tr> 
+              <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+              <td class="content"> Read more about compiling the PeopleSoft API in <a href="http://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tcpi/task_BuildingAPIsinJava-076b85.html">Building APIs in Java</a>. </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </div> </li> 
+         <li> <p>Keep the <strong>Pooling Profile</strong> and the <strong>Reconnection</strong> tabs with their default entries. Click <strong>Test Connection</strong> to receive a <em>Connection Successful</em> message. If you receive an error, try the following resolutions based on the error message:</p> 
+          <div class="olist loweralpha"> 
+           <ol class="loweralpha" type="a"> 
+            <li> <p><code>Unsupported major/minor version 51.0:</code> Indicates that you are running with a 1.6 JRE. To resolve this, ensure that you are running with Java 1.7 and restart Studio.</p> </li> 
+            <li> <p><code>java.lang.NoClassDefFoundError: psft/pt8/joa/ISession and java.lang.ClassNotFoundException: psft.pt8.joa.ISession:</code> This exception indicates that you haven’t installed the psjoa.jar file. To access PeopleSoft Component Interface in your Mule flows, you must add the PeopleSoft Component Interface API to your project. Compile the API using the PeopleSoft Application Designer Build Window and provide the archive name as psjoa.jar. To resolve the issue, go back to the Required dependencies panel and select the corresponding JAR file.</p> </li> 
+           </ol> 
+          </div> </li> 
+         <li> <p>Configure your <strong>Component Interface White List</strong> according to the steps below:</p> 
+          <div class="olist loweralpha"> 
+           <ol class="loweralpha" type="a"> 
+            <li> <p>Click <strong>Create Object manually</strong> and click the button next to it.</p> 
+             <div class="paragraph center text-center"> 
+              <p><span class="image"><img src="./_images/ps_config_global_whitelist.png" alt="Global Element - White List"></span></p> 
+             </div> </li> 
+            <li> <p>In the pop-up window, select the (+) plus button to set the names of your component interfaces.</p> 
+             <div class="paragraph center text-center"> 
+              <p><span class="image"><img src="./_images/ps_config_global_whitelist2.png" alt="Global Element - Object Builder" width="60%"></span></p> 
+             </div> </li> 
+            <li> <p>Right-click a metadata item and select <strong>Edit the selected metadata field</strong> to set the values. You can also double-click each item to modify the value inline.</p> 
+             <div class="paragraph center text-center"> 
+              <p><span class="image"><img src="./_images/ps_config_global_whitelist3.png" alt="Global Element - Object Builder Item"></span></p> 
+             </div> </li> 
+            <li> <p>Click <strong>OK</strong> to save the list.</p> </li> 
+           </ol> 
+          </div> </li> 
+         <li> <p>Click <strong>OK</strong> to save the global connector configurations.</p> </li> 
+        </ol> 
+       </div> 
+      </div> 
+      <div class="tab-pane fade no-padding" id="xml-editor-862ff"> 
+       <div class="olist arabic"> 
+        <ol class="arabic"> 
+         <li> <p>Ensure you have included the <strong>PeopleSoft namespaces</strong> in your configuration file.</p> 
+          <div class="listingblock"> 
+           <div class="content"> 
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:peoplesoft="http://www.mulesoft.org/schema/mule/peoplesoft"
+      xsi:schemaLocation="
+               http://www.mulesoft.org/schema/mule/core
+               http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+               http://www.mulesoft.org/schema/mule/peoplesoft
+               http://www.mulesoft.org/schema/mule/peoplesoft/current/mule-peoplesoft.xsd"<span class="entity">&amp;gt;</span>
+
+      <span class="entity">&amp;lt;</span>!-- here go your flows and configuration elements --<span class="entity">&amp;gt;</span>
+
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></code></pre> 
+           </div> 
+          </div> </li> 
+         <li> <p>Create a global element for PeopleSoft configuration using the following global configuration code:</p> 
+          <div class="listingblock"> 
+           <div class="content"> 
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>peoplesoft:config name="PeopleSoft" server="${mule.peoplesoft.server}" username="${mule.peoplesoft.username}" password="${mule.peoplesoft.password}" doc:name="PeopleSoft"<span class="entity">&amp;gt;</span></code></pre> 
+           </div> 
+          </div> 
+          <table class="tableblock frame-all grid-all"> 
+           <colgroup> 
+            <col> 
+            <col> 
+           </colgroup> 
+           <thead> 
+            <tr> 
+             <th class="tableblock halign-left valign-top">Parameter</th> 
+             <th class="tableblock halign-left valign-top">Description</th> 
+            </tr> 
+           </thead> 
+           <tbody> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the configuration with which it can be referenced later.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><code>server</code></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the URL of the PeopleSoft instance.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><code>username</code></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a username to log into PeopleSoft.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><code>password</code></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the password.</p></td> 
+            </tr> 
+            <tr> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock"><code>doc:name</code></p></td> 
+             <td class="tableblock halign-left valign-top"><p class="tableblock">The default value is PeopleSoft.</p></td> 
+            </tr> 
+           </tbody> 
+          </table> </li> 
+         <li> <p>Configure your Component Interface. Find the internal tag <strong><code>&lt;peoplesoft:component-interface-ids-white-list ref="#[payload]"/&gt;</code></strong> and replace it with the following code snippet:</p> 
+          <div class="listingblock"> 
+           <div class="content"> 
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
+        COMPONENT_INTERFACE_NAME_1
+    <span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
+        COMPONENT_INTERFACE_NAME_2
+    <span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span></code></pre> 
+           </div> 
+          </div> </li> 
+         <li> <p>Save the changes made to the XML file.</p> </li> 
+        </ol> 
+       </div> 
       </div> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-07568"> 
-     <div class="paragraph"> 
-      <p>Ensure you have included the PeopleSoft namespaces in your configuration file.</p> 
-     </div> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="xml">
-    
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-</pre></td> 
-            <td class="code"><pre><span class="entity">&amp;lt;</span>mule xmlns="http://www.mulesoft.org/schema/mule/core"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:peoplesoft="http://www.mulesoft.org/schema/mule/peoplesoft"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xsi:schemaLocation="
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/peoplesoft
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/peoplesoft/current/mule-peoplesoft.xsd"<span class="entity">&amp;gt;</span>
-&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>!-- here go your flows and configuration elements --<span class="entity">&amp;gt;</span>
-&nbsp;
-<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
-      </div> 
-     </div> 
-     <div class="paragraph"> 
-      <p>Follow these steps to configure a PeopleSoft connector in your application.</p> 
-     </div> 
-     <div class="olist arabic"> 
-      <ol class="arabic"> 
-       <li> <p>Create a global element for PeopleSoft configuration using the following global configuration code:</p> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>peoplesoft:config name="PeopleSoft" server="${mule.peoplesoft.server}" username="${mule.peoplesoft.username}" password="${mule.peoplesoft.password}" doc:name="PeopleSoft"<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col style="width: %;"> 
-          <col style="width: %;"> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Parameter</th> 
-           <th class="tableblock halign-left valign-top">Description</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>name</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the configuration with which it can be referenced later.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>server</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the URL of the PeopleSoft instance.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>username</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a username to log into PeopleSoft.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>password</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the password.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>doc:name</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">The default value is PeopleSoft.</p></td> 
-          </tr> 
-         </tbody> 
-        </table> </li> 
-       <li> <p>Configure your Component Interface. Find the * <em>&lt;peoplesoft:component-interface-ids-white-list ref="#[payload]"/&gt;</em> internal tag and replace it with the following:</p> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
-YOUR_COMPONENT_INTERFACE_NAME_1
-<span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
-YOUR_COMPONENT_INTERFACE_NAME_2
-<span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> </li> 
-       <li> <p>Save the changes made to the XML file.</p> </li> 
-      </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="upgrading"><a class="anchor" href="#upgrading"></a>Upgrading From an Older Version</h3> 
+   <div class="sect3"> 
+    <h4 id="from-1-x-x-to-2-0-0"><a class="anchor" href="#from-1-x-x-to-2-0-0"></a>From 1.x.x to 2.0.0</h4> 
+    <div class="paragraph"> 
+     <p>Inside your flow, identify the <code>peoplesoft:invoke-operation</code> tag. It should look similar to the following snippet:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;peoplesoft:invoke-operation</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">PeopleSoft</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Find</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">CI_PERSONAL_DATA##Find</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
      </div> 
     </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Replace the parameter <strong>type</strong> with <strong>key</strong>.</p> </li> 
+      <li> <p>Replace the operation symbol <code>##</code> (double hash) with <code>||</code> (double pipe).</p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p>The final result should look like the following snippet:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;peoplesoft:invoke-operation</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">PeopleSoft</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Find</span><span class="delimiter">"</span></span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">CI_PERSONAL_DATA||Find</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
+     </div> 
+    </div> 
+    <hr> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="using-the-connector"><a class="anchor" href="#using-the-connector"></a>Using the Connector</h2> 
+ <h2 id="using-the-connector"><a class="anchor" href="#using-the-connector"></a>Using The Connector</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>PeopleSoft connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation (Invoke operation) for the connector to perform. The XML element for the Invoke operation is <strong>peoplesoft:invoke-operation</strong>. After you call the Invoke operation, you can use the Type field to select a method that you want to execute on a particular Component Interface. PeopleSoft connector allows you to perform five standard operations (Create, Find, Get, Save, Cancel) on each Component Interface, along with any CI-specific custom operations.</p> 
+   <p>PeopleSoft connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation, <strong>Invoke Component Interface</strong>, for the connector to perform. After you call the Invoke Component Interface, you can use the Component Name field to select a particular Component Interface and the Operation field to specify the method that you want it to execute. PeopleSoft connector allows you to perform five standard operations (Create, Find, Get, Save, Cancel) on each Component Interface (if available in your PeopleSoft instance), along with any CI-specific custom operations.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="use-cases"><a class="anchor" href="#use-cases"></a>Use Cases</h3> 
+   <h3 id="use-cases-and-demos"><a class="anchor" href="#use-cases-and-demos"></a>Use Cases and Demos</h3> 
    <div class="paragraph"> 
     <p>Listed below are the most common use cases for the PeopleSoft connector:</p> 
    </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Polling records from PeopleSoft and writing them to a .CSV file.</p> </li> 
-     <li> <p>Polling records from a .CSV file and writing them to PeopleSoft.</p> </li> 
-    </ol> 
+   <table class="tableblock frame-all grid-all"> 
+    <colgroup> 
+     <col> 
+     <col> 
+    </colgroup> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Find Employees</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves one or more Employee records by invoking the Find operation of CI_PERSONAL_DATA</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Get Employee</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the complete information of a single Employee Personal Data record by invoking the Get operation of CI_PERSONAL_DATA.</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Save Employee</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Updates the fields of a single Employee Personal Data record by invoking the Save operation of CI_PERSONAL_DATA Component Interface.</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Save Employee From CSV File</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Updates a single Employee Personal Data record by invoking the Save operation of CI_PERSONAL_DATA Component Interface.</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Save Position From CSV File</strong></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Updates a single Position Data record by invoking the Save operation of CI_POSITION_DATA Component Interface.</p></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="tips"><a class="anchor" href="#tips"></a>Tips</h3> 
+   <div class="sect3"> 
+    <h4 id="test-the-connection"><a class="anchor" href="#test-the-connection"></a>Test the Connection</h4> 
+    <div class="paragraph"> 
+     <p>Use the <strong>Test Connection</strong> feature to validate not only the connection to the PeopleSoft instance, but also the Component Interfaces defined in the White List.</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Open the <strong>PeopleSoft Global Element Configuration</strong>.</p> </li> 
+      <li> <p>Click the <strong>Test Connection</strong> button. If one ore more Component Interfaces names are invalid, you will get an error message.</p> </li> 
+      <li> <p>To solve this issue, just click the […​] button next to the <strong>Create Object manually</strong> option and provide the correct name for the Component.</p> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph center text-center"> 
+     <p><span class="image"><img src="./_images/ps_tips_testconnection.png" alt="DataSense Timeout"></span></p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="avoid-datasense-timeout"><a class="anchor" href="#avoid-datasense-timeout"></a>Avoid DataSense Timeout</h4> 
+    <div class="paragraph"> 
+     <p>The metadata retrieval for the <strong>Save</strong> operation takes longer than the rest of the operations. Therefore, Studio might throw a timeout exception with the message: "Problem while fetching metadata. The operation timed out and was not successful. You can configure this timeout in the Studio Preferences dialog."</p> 
+    </div> 
+    <div class="paragraph center text-center"> 
+     <p><span class="image"><img src="./_images/ps_tips_timeout.png" alt="DataSense Timeout"></span></p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Go to <strong>Windows &gt; Preferences</strong>.</p> </li> 
+      <li> <p>Expand the <strong>Anypoint Studio</strong> menu and select <strong>DataSense</strong>.</p> </li> 
+      <li> <p>Set the option <strong>DataSense Connection Timeout (in seconds)</strong> to 120.</p> </li> 
+      <li> <p>Click <strong>Apply</strong>.</p> </li> 
+      <li> <p>Click <strong>OK</strong>.</p> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph center text-center"> 
+     <p><span class="image"><img src="./_images/ps_tips_timeout_config.png" alt="DataSense Timeout Config"></span></p> 
+    </div> 
+    <div class="admonitionblock note"> 
+     <table> 
+      <tbody> 
+       <tr> 
+        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+        <td class="content"> If you click the <strong>Refresh metadata</strong> link in your flow settings and wait a few moments, the metadata for the Save operation should now be correctly populated. </td> 
+       </tr> 
+      </tbody> 
+     </table> 
+    </div> 
+    <div class="paragraph center text-center"> 
+     <p><span class="image"><img src="./_images/ps_tips_timeout_fix.png" alt="DataSense Timeout Fix"></span></p> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="adding-to-a-flow"><a class="anchor" href="#adding-to-a-flow"></a>Adding to a Flow</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Create a new Mule project in Anypoint Studio. If you prefer, you can also start a Maven-based project.</p> </li> 
-     <li> <p>Add a suitable Mule Inbound endpoint, such as the HTTP listener or File endpoint, to begin the flow.</p> </li> 
-     <li> <p>Search for and drag the PeopleSoft connector onto the canvas, then select it to open the properties editor.</p> </li> 
-     <li> <p>Configure the PeopleSoft connector’s parameters.</p> 
-      <table class="tableblock frame-all grid-all spread"> 
+     <li> <p>Create a new <strong>Mule Project</strong> in Anypoint Studio.</p> </li> 
+     <li> <p>Add a suitable Mule <strong>Inbound Endpoint</strong>, such as the HTTP listener or File endpoint, to begin the flow.</p> </li> 
+     <li> <p>Drag and drop the <strong>PeopleSoft Connector</strong> onto the canvas.</p> </li> 
+     <li> <p>Click on the connector component to open the <strong>Properties Editor</strong>.</p> 
+      <div class="paragraph center text-center"> 
+       <p><span class="image"><img src="./_images/ps_usecase_settings.png" alt="Flow Settings"></span></p> 
+      </div> </li> 
+     <li> <p>Configure the following parameters:</p> 
+      <table class="tableblock frame-all grid-all"> 
        <colgroup> 
-        <col style="width: 50%;"> 
-        <col style="width: 50%;"> 
+        <col> 
+        <col> 
        </colgroup> 
        <thead> 
         <tr> 
@@ -1548,49 +1598,50 @@ YOUR_COMPONENT_INTERFACE_NAME_2
        </thead> 
        <tbody> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+         <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Basic Settings</strong></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Display Name</p></td> 
          <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a unique label for the connector in your application.</p></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"> 
-          <div> 
-           <div class="paragraph"> 
-            <p><strong>Connector Configuration</strong></p> 
-           </div> 
-          </div></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Connector Configuration</p></td> 
          <td class="tableblock halign-left valign-top"><p class="tableblock">Connect to a global element linked to this connector. Global elements encapsulate reusable data about the connection to the target resource or service. Select the global PeopleSoft connector element that you just created.</p></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Invoke operation</strong> from the drop-down.</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Operation</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Invoke Component Interface</strong> from the drop-down menu.</p></td> 
         </tr> 
         <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type</strong></p></td> 
+         <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>General</strong></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Component Name</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Select the ID of the Components Interface you want to work with.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Operation</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Select the operation you want to perform on the Component Interface previously defined. The PeopleSoft Connector lets you execute five standard operations on each Component Interface along with any CI-specific custom operations: <strong>Cancel, Create, Find, Get, Save</strong>.</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Payload</p></td> 
          <td class="tableblock halign-left valign-top"> 
           <div> 
-           <div class="paragraph"> 
-            <p>Select the operation you want to perform on a particular Component Interface. The PeopleSoft Connector lets you execute five standard operations on each Component Interface along with any CI-specific custom operations:</p> 
-           </div> 
-           <div class="olist arabic"> 
-            <ol class="arabic"> 
-             <li> <p>&lt;Component Interface&gt;#Create</p> </li> 
-             <li> <p>&lt;Component Interface&gt;#Find</p> </li> 
-             <li> <p>&lt;Component Interface&gt;#Get</p> </li> 
-             <li> <p>&lt;Component Interface&gt;#Save</p> </li> 
-             <li> <p>&lt;Component Interface&gt;#Cancel</p> </li> 
-            </ol> 
+           <div class="ulist"> 
+            <ul> 
+             <li> <p><strong>None:</strong> Select this option if the input parameters are not required for the operation.</p> </li> 
+             <li> <p><strong>From Message:</strong> Select this option to define the operation based on the incoming payload.</p> </li> 
+             <li> <p><strong>Create Object manually:</strong> Select this option to define the search values manually. Mule provides an editor to facilitate this task.</p> </li> 
+            </ul> 
            </div> 
           </div></td> 
         </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Params</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>None:</strong> Select this option if the input parameters are not required for the operation.<br> <strong>From Message</strong>: Select this option to define the operation based on the incoming payload. <strong>Create Object manually</strong>: Select this option to define the search values manually. Mule provides an editor to facilitate this task.</p></td> 
-        </tr> 
        </tbody> 
       </table> </li> 
-     <li> <p>Click the blank space on the canvas to save your configurations.&nbsp;</p> </li> 
+     <li> <p>Click the blank space on the canvas to save your configurations.</p> </li> 
     </ol> 
    </div> 
+   <hr> 
   </div> 
  </div> 
 </div> 
@@ -1598,292 +1649,28 @@ YOUR_COMPONENT_INTERFACE_NAME_2
  <h2 id="example-use-case"><a class="anchor" href="#example-use-case"></a>Example Use Case</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Insert new position data from a .CSV file to PeopleSoft.&nbsp;</p> 
+   <p>Retrieve a collection of employee records.</p> 
+  </div> 
+  <div class="paragraph center text-center"> 
+   <p><span class="image"><img src="./_images/ps_usecase_flow.png" alt="Find Employees Flow"></span></p> 
   </div> 
   <div class="panel panel-default no-padding"> 
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-46eb0" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-4e4c5" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-7b0ca" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-1de55" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-46eb0"> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/sample-flow.jpg" alt="sample-flow"></span></p> 
-     </div> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-7b0ca"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>Create a new Mule project in Anypoint Studio. If you prefer, you can also start a Maven-based project.</p> </li> 
-       <li> <p>Drag a File input endpoint into the canvas.</p> </li> 
-       <li> <p>On the Message Flow canvas, double-click the <strong>File</strong> icon to open the Properties pane.</p> </li> 
-       <li> <p>Configure the following File parameters:</p> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col style="width: 50%;"> 
-          <col style="width: 50%;"> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Field</th> 
-           <th class="tableblock halign-left valign-top">Value</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Display Name</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Employee-Position (or any other name you prefer)</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Path</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Navigate to the location of the file with Employee Position data.</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Polling Frequency</p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">1000 (or Specify how often the endpoint should check for incoming messages in milliseconds)</p></td> 
-          </tr> 
-         </tbody> 
-        </table> </li> 
-       <li> <p>Add a <strong>Foreach</strong> scope to the flow.</p> </li> 
-       <li> <p>Drag the <strong>PeopleSoft</strong> connector in the Foreach scope area, then configure it according to the steps below:</p> 
-        <div class="olist loweralpha"> 
-         <ol class="loweralpha" type="a"> 
-          <li> <p>Add a new PeopleSoft Global Element by clicking the plus sign next to the <strong>Connector Configuration</strong> field.</p> </li> 
-          <li> <p>Configure the global element according to the table below.</p> 
-           <table class="tableblock frame-all grid-all spread"> 
-            <colgroup> 
-             <col style="width: %;"> 
-             <col style="width: %;"> 
-            </colgroup> 
-            <thead> 
-             <tr> 
-              <th class="tableblock halign-left valign-top">Field</th> 
-              <th class="tableblock halign-left valign-top">Value</th> 
-             </tr> 
-            </thead> 
-            <tbody> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">Upsert data (or any other name you prefer)</p></td> 
-             </tr> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Server</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;URL of your PeopleSoft instance&gt;</p></td> 
-             </tr> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Username</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Your PeopleSoft username&gt;</p></td> 
-             </tr> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Your PeopleSoft Password&gt;</p></td> 
-             </tr> 
-            </tbody> 
-           </table> </li> 
-          <li> <p>Click <strong>Test Connection</strong> to confirm that Mule can connect with the PeopleSoft instance. If the connection is successful, click <strong>OK</strong> to save the configurations. If unsuccessful, revise or correct any incorrect parameters, then test again.</p> </li> 
-          <li> <p>Back in the properties editor of the PeopleSoft connector, configure the remaining parameters according to the table below.</p> 
-           <table class="tableblock frame-all grid-all spread"> 
-            <colgroup> 
-             <col style="width: 50%;"> 
-             <col style="width: 50%;"> 
-            </colgroup> 
-            <thead> 
-             <tr> 
-              <th class="tableblock halign-left valign-top">Field</th> 
-              <th class="tableblock halign-left valign-top">Value</th> 
-             </tr> 
-            </thead> 
-            <tbody> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">Save Employee Position data to CI_Position_Data (or any other name you prefer)</p></td> 
-             </tr> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Config Reference</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">PeopleSoft (Enter name of the global element you have created)</p></td> 
-             </tr> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">Invoke operation</p></td> 
-             </tr> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type</strong></p></td> 
-              <td class="tableblock halign-left valign-top"> 
-               <div> 
-                <div class="paragraph"> 
-                 <p>CI_POSITION_DATA#Save</p> 
-                </div> 
-                <div class="paragraph"> 
-                 <p>(CI_POSITION_DATA#Save)</p> 
-                </div> 
-               </div></td> 
-             </tr> 
-             <tr> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Params</strong></p></td> 
-              <td class="tableblock halign-left valign-top"><p class="tableblock">From Message #[payload]</p></td> 
-             </tr> 
-            </tbody> 
-           </table> </li> 
-         </ol> 
-        </div> </li> 
-       <li> <p>Add a <strong>DataMapper</strong> transformer between the File endpoint and the PeopleSoft connector to map the data in the File endpoint to the structure required by the PeopleSoft connector.</p> </li> 
-       <li> <p>Configure the Input properties of the DataMapper according to the steps below.</p> 
-        <div class="olist loweralpha"> 
-         <ol class="loweralpha" type="a"> 
-          <li> <p>In the <strong>Input type</strong>, select <strong>CSV</strong>, then provide the path for the CSV file.</p> </li> 
-          <li> <p>The Output properties are automatically configured to correspond to the PeopleSoft connector.</p> </li> 
-          <li> <p>Click <strong>Create Mapping</strong></p> </li> 
-          <li> <p>Drag each input data field to its corresponding output PeopleSoft field.</p> </li> 
-          <li> <p>Click the blank space on the canvas to save the changes.</p> </li> 
-         </ol> 
-        </div> </li> 
-       <li> <p>Add a <strong>Logger</strong> scope right after the Data Mapper to print the data that is being passed to the PeopleSoft connector in the Mule Console. Configure the Logger according to the table below.</p> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col style="width: %;"> 
-          <col style="width: %;"> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Field</th> 
-           <th class="tableblock halign-left valign-top">Value</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Log Mapped CI_Position_Data (or any other name you prefer)</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Message</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Output from Datamapper is #[payload]</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Level</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">INFO (Default)</p></td> 
-          </tr> 
-         </tbody> 
-        </table> </li> 
-       <li> <p>Add a <strong>Object To Json</strong> transformer after the PeopleSoft connector to convert the response from PeopleSoft after saving each record into JSON.</p> </li> 
-       <li> <p>Add a <strong>Logger</strong> to print the PeopleSoft response in the Mule Console. Configure the Logger according to the table below.</p> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col style="width: %;"> 
-          <col style="width: %;"> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Field</th> 
-           <th class="tableblock halign-left valign-top">Value</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Log Save Operation Response (or any other name you prefer)</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Message</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Response from Peoplesoft is: #[payload]</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Level</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">INFO (Default)</p></td> 
-          </tr> 
-         </tbody> 
-        </table> </li> 
-       <li> <p>Finally, outside the Foreach scope, add a <strong>Logger</strong> to print a success message if all the data in the input file has been saved in PeopleSoft without errors. Configure it according to the table below.</p> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col style="width: %;"> 
-          <col style="width: %;"> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Field</th> 
-           <th class="tableblock halign-left valign-top">Value</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Saving Employee Data Complete (or any other name you prefer)</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Message</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Data transfer completed</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Level</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">INFO (Default)</p></td> 
-          </tr> 
-         </tbody> 
-        </table> </li> 
-       <li> <p>Save and run the project as a Mule Application.</p> </li> 
-      </ol> 
-     </div> 
-    </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-4e4c5"> 
-     <div class="olist arabic"> 
-      <ol class="arabic"> 
-       <li> <p>Add a&nbsp;&nbsp;<code>peoplesoft:config</code> global element to your project, then configure its attributes according to the table below.</p> 
+       <li> <p>Create a new <strong>Mule Project</strong> in Anypoint Studio.</p> </li> 
+       <li> <p>Create a <code>peoplesoft.properties</code> file to hold your PeopleSoft credentials and place it in <code>src/main/resources</code>.</p> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>peoplesoft:config name="PeopleSoft" server="${mule.peoplesoft.server}" username="${mule.peoplesoft.username}" password="${mule.peoplesoft.password}" doc:name="PeopleSoft"<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> 
-        <table class="tableblock frame-all grid-all spread"> 
-         <colgroup> 
-          <col style="width: %;"> 
-          <col style="width: %;"> 
-         </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Field</th> 
-           <th class="tableblock halign-left valign-top">Value</th> 
-          </tr> 
-         </thead> 
-         <tbody> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>name</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Upsert data (or any other name you prefer)</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>server</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;URL of your PeopleSoft instance&gt;</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>username</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Your PeopleSoft username&gt;</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>password</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Your PeopleSoft Password&gt;</p></td> 
-          </tr> 
-          <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>doc:name</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">PeopleSoft</p></td> 
-          </tr> 
-         </tbody> 
-        </table> 
-        <div class="paragraph"> 
-         <p>Configure your People Component Interface in the Mule application. To do so, find the <code>&lt;peoplesoft:component-interface-ids-white-list ref="#[payload]"/&gt;</code> internal tag and replace it with the following:</p> 
-        </div> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
+          <pre class="CodeRay highlight"><code data-lang="code">
        
                
             <table class="CodeRay"> 
@@ -1894,98 +1681,165 @@ YOUR_COMPONENT_INTERFACE_NAME_2
 3
 4
 5
+6
 </pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
-YOUR_COMPONENT_INTERFACE_NAME
-<span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span></pre></td> 
+               <td class="code"><pre>config.server=&amp;lt;HOST:PORT&amp;gt;
+config.username=&amp;lt;USERNAME&amp;gt;
+config.password=&amp;lt;PASSWORD&amp;gt;
+config.componentInterfaceEditHistoryItems=&amp;lt;TRUE_OR_FALSE&amp;gt;
+config.componentInterfaceInteractiveMode=&amp;lt;TRUE_OR_FALSE&amp;gt;
+config.componentInterfaceGetHistoryItems=&amp;lt;TRUE_OR_FALSE&amp;gt;</pre></td> 
               </tr> 
              </tbody> 
             </table></code></pre> 
          </div> 
         </div> </li> 
-       <li> <p>Begin the flow with a File endpoint, configuring the endpoint according to the table below.&nbsp;</p> 
+       <li> <p>Configure a <strong>Property Placeholder</strong> component and set the path to your credentials file.</p> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>file:inbound-endpoint path="src/test/resources" responseTimeout="10000" doc:name="employee-position.csv"<span class="entity">&amp;gt;</span> <span class="entity">&amp;lt;</span>file:filename-regex-filter pattern="employee-position.csv" caseSensitive="true"/<span class="entity">&amp;gt;</span> <span class="entity">&amp;lt;</span>/file:inbound-endpoint<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
+          <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>context:property-placeholder location="peoplesoft.properties"/<span class="entity">&amp;gt;</span></code></pre> 
          </div> 
-        </div> 
+        </div> </li> 
+       <li> <p>Drag a <strong>HTTP endpoint</strong> onto the canvas and configure the following parameters:</p> 
         <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
           <col style="width: 50%;"> 
           <col style="width: 50%;"> 
          </colgroup> 
-         <thead> 
-          <tr> 
-           <th class="tableblock halign-left valign-top">Attribute</th> 
-           <th class="tableblock halign-left valign-top">Value</th> 
-          </tr> 
-         </thead> 
          <tbody> 
           <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>path</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Specify the location of the file with Employee Position data.</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Value</p></td> 
           </tr> 
           <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>responseTimeout</code></strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">1000 (how often the endpoint should check for incoming messages in milliseconds)</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">HTTP</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">If no HTTP element has been created yet, click the plus sign to add a new <strong>HTTP Listener Configuration</strong> and click <strong>OK</strong> (leave the values to its defaults).</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Path</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">/find</p></td> 
           </tr> 
          </tbody> 
         </table> </li> 
-       <li> <p>Add a Data Mapper to the flow to map the data in the file to Position Data Component Interface.</p> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
+       <li> <p>Drag the <strong>PeopleSoft connector</strong> next to the HTTP endpoint component and configure it according to the steps below:</p> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>Add a new <strong>PeopleSoft Global Element</strong> by clicking the plus sign <span class="image"><img src="./_images/plus-1.png" alt="plus icon"></span> next to the <strong>Connector Configuration</strong> field.</p> </li> 
+          <li> <p>Configure the global element according to the table below:</p> 
+           <table class="tableblock frame-all grid-all"> 
+            <colgroup> 
+             <col> 
+             <col> 
+             <col> 
+            </colgroup> 
+            <thead> 
+             <tr> 
+              <th class="tableblock halign-left valign-top">Parameter</th> 
+              <th class="tableblock halign-left valign-top">Description</th> 
+              <th class="tableblock halign-left valign-top">Value</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the configuration with which it can be referenced later.</p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Configuration_Name&gt;</p></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Server</strong></p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock">The URL of the PeopleSoft instance</p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${config.server}</code></p></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Username</strong></p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock">The username credential to log into the PeopleSoft instance</p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${config.username}</code></p></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock">The password credential to log into the PeopleSoft instance</p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${config.password}</code></p></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Required dependencies</strong></p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock">Click <strong>Add File</strong> to attach the psjoa.jar file that is compiled from your PeopleSoft instance to your project’s Build path. Learn how to compile the psjoa.jar file.</p></td> 
+              <td class="tableblock halign-left valign-top"></td> 
+             </tr> 
+            </tbody> 
+           </table> 
+           <div class="admonitionblock tip"> 
+            <table> 
              <tbody> 
               <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:transform doc:name="Employee Position Data to CI_POSITION_DATA"/<span class="entity">&amp;gt;</span></pre></td> 
+               <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+               <td class="content"> Server, Username and Password use <strong>property placeholder syntax</strong> to load the credentials in a simple and reusable way. Read more about this practice at <a href="https://developer.mulesoft.com/docs/display/current/Configuring+Properties">Configuring Properties</a>. </td> 
               </tr> 
              </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> 
-        <div class="paragraph"> 
-         <p>Leave the DataMapper without configuring for now, as it is easier to do so after the mapping’s destination is configured.</p> 
+            </table> 
+           </div> 
+           <div class="listingblock"> 
+            <div class="content"> 
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>peoplesoft:config name="PeopleSoft" server="${config.server}" username="${config.username}" password="${config.password}" doc:name="PeopleSoft"<span class="entity">&amp;gt;</span></code></pre> 
+            </div> 
+           </div> </li> 
+         </ol> 
         </div> </li> 
-       <li> <p>Now, add <code>&lt;foreach doc:name="For Each"&gt;</code> to the flow.&nbsp;</p> </li> 
-       <li> <p>Add the&nbsp;<code>peoplesoft:invoke-operation</code> element now to save the new employee position data to the <strong>Position Data Component Interface</strong> in your PeopleSoft instance.</p> 
+       <li> <p>Click <strong>Test Connection</strong> to confirm that Mule can connect with the PeopleSoft instance. If the connection is successful, click <strong>OK</strong> to save the configurations. Otherwise, review or correct any incorrect parameters, then test again.</p> </li> 
+       <li> <p>Back in the properties editor of the PeopleSoft connector, configure the remaining parameters:</p> 
+        <table class="tableblock frame-all grid-all"> 
+         <colgroup> 
+          <col> 
+          <col> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">Parameter</th> 
+           <th class="tableblock halign-left valign-top">Value</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Basic Settings</strong></p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Display Name</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Find Employees (or any other name you prefer).</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Connector Configuration</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">PeopleSoft (the reference name to the global element you have created).</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Operation</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Invoke Component Interface</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>General</strong></p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Component Name</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">CI_PERSONAL_DATA (the component interface name that holds the employee data).</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Operation</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Find</p></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>Check that your XML looks as follows:</p> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>peoplesoft:invoke-operation config-ref="PeopleSoft" type="CI_POSITION_DATA#Save" doc:name="Save Employee Position Data to CI_POSITION_DATA"<span class="entity">&amp;gt;</span> <span class="entity">&amp;lt;</span>peoplesoft:params ref="#[payload]"/<span class="entity">&amp;gt;</span> <span class="entity">&amp;lt;</span>/peoplesoft:invoke-operation<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
+          <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>peoplesoft:invoke-operation config-ref="PeopleSoft" key="CI_PERSONAL_DATA||Find" doc:name="Find Employees" /<span class="entity">&amp;gt;</span></code></pre> 
          </div> 
         </div> 
-        <table class="tableblock frame-all grid-all spread"> 
+        <table class="tableblock frame-all grid-all"> 
          <colgroup> 
-          <col style="width: 50%;"> 
-          <col style="width: 50%;"> 
+          <col> 
+          <col> 
          </colgroup> 
          <thead> 
           <tr> 
@@ -1995,121 +1849,152 @@ YOUR_COMPONENT_INTERFACE_NAME
          </thead> 
          <tbody> 
           <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>config-ref</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>config-ref</code></p></td> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">PeopleSoft</p></td> 
           </tr> 
           <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>type</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">CI_POSITION_DATA#Save</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>key</code></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">CI_PERSONAL_DATA||Find</p></td> 
           </tr> 
           <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Save Employee Position Data to CI_POSITION_DATA</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>doc:name</code></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Find</p></td> 
           </tr> 
          </tbody> 
-        </table> 
-        <div class="paragraph"> 
-         <p>In the Child Element&nbsp;<code>peoplesoft:params</code> include the following parameter:</p> 
-        </div> 
-        <table class="tableblock frame-all grid-all spread"> 
+        </table> </li> 
+       <li> <p>Add a <strong>Transform Message</strong> (DataWeave) element between the HTTP endpoint and the PeopleSoft endpoint to map the structure required by the <code>FIND</code> method. (Alternatively, you may use a DataMapper element in place of a DataWeave element.) If DataSense is enabled, the input fields should be automatically populated:</p> 
+        <div class="paragraph center text-center"> 
+         <p><span class="image"><img src="./_images/ps_usecase_dataweave.png" alt="DataWeave - Input"></span></p> 
+        </div> </li> 
+       <li> <p>The <strong>input parameters</strong> expected by the FIND operation are:</p> 
+        <table class="tableblock frame-all grid-all"> 
          <colgroup> 
-          <col style="width: %;"> 
-          <col style="width: %;"> 
+          <col> 
+          <col> 
+          <col> 
          </colgroup> 
          <thead> 
           <tr> 
-           <th class="tableblock halign-left valign-top">Child Element</th> 
-           <th class="tableblock halign-left valign-top">&nbsp;</th> 
+           <th class="tableblock halign-left valign-top">PeopleSoft Field</th> 
+           <th class="tableblock halign-left valign-top">Query Param</th> 
+           <th class="tableblock halign-left valign-top">Optional?</th> 
           </tr> 
          </thead> 
          <tbody> 
           <tr> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ref</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">#[payload]</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>KEYPROP_EMPLID</code></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>PROP_NAME</code></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>PROP_LAST_NAME_SRCH</code></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">last_name</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>PROP_NAME_AC</code></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">name_ac</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
           </tr> 
          </tbody> 
         </table> </li> 
-       <li> <p>Add a&nbsp;<code>json:object-to-json-transformer</code> element to convert the response from PeopleSoft into a Json object, after each record in saved in PeopleSoft CI_POSITION_DATA.&nbsp;</p> </li> 
-       <li> <p>Add a logger element to print the responses from PeopleSoft in Mule Console.</p> 
+       <li> <p>Inside the DataWeave code, you can use a <strong>MEL expression</strong> to define a <strong>HTTP Query Param</strong> for all the fields. This way, each value can be dynamically set from the URL.</p> 
+        <div class="paragraph center text-center"> 
+         <p><span class="image"><img src="./_images/ps_usecase_dataweave2.png" alt="DataWeave - Map To CI_PERSONAL_DATA"></span></p> 
+        </div> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
+          <pre class="CodeRay highlight"><code data-lang="dataweave">
        
                
             <table class="CodeRay"> 
              <tbody> 
               <tr> 
                <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
 </pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>logger message="Response from Peoplesoft is: #[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span></pre></td> 
+               <td class="code"><pre>%dw 1.0
+%output application/java
+---
+{
+        KEYPROP_EMPLID: inboundProperties['http.query.params'].id,
+        PROP_NAME: inboundProperties['http.query.params'].name,
+        PROP_LAST_NAME_SRCH: inboundProperties['http.query.params'].lastname,
+        PROP_NAME_AC: inboundProperties['http.query.params'].nameac
+}</pre></td> 
               </tr> 
              </tbody> 
             </table></code></pre> 
          </div> 
+        </div> 
+        <div class="admonitionblock note"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+            <td class="content"> Read more about MEL notation in <a href="https://developer.mulesoft.com/docs/display/current/Mule+Expression+Language+Examples">Mule Expression Language Examples</a>. </td> 
+           </tr> 
+          </tbody> 
+         </table> 
         </div> </li> 
-       <li> <p>Close the foreach scope, then add another logger element outside the foreach to print a message in the Studio Console after all the data in the file is saved in PeopleSoft.</p> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>logger message="Data transfer completed." level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> </li> 
-       <li> <p>In order to to configure the DataMapper, you must switch Studio to the Visual Editor tab and click on the DataMapper to open its GUI.</p> 
-        <div class="olist loweralpha"> 
-         <ol class="loweralpha" type="a"> 
-          <li> <p>In the&nbsp;<strong>Input type</strong>, select&nbsp;<strong>CSV</strong>, then provide the path for the CSV file.</p> </li> 
-          <li> <p>The Output properties are automatically configured to correspond to the PeopleSoft connector.</p> </li> 
-          <li> <p>Click&nbsp;<strong>Create Mapping</strong></p> </li> 
-          <li> <p>Drag each input data field to its corresponding output PeopleSoft field.</p> </li> 
-          <li> <p>Click the blank space on the canvas to save the changes.</p> </li> 
-         </ol> 
-        </div> </li> 
-       <li> <p>Return to the XML view in Studio. Add a logger element after the datamapper element to print the data that is being passed to PeopleSoft on the Studio Console.</p> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>logger message="Output from Datamapper is #[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> </li> 
-       <li> <p>Save and run the project as a Mule Application.&nbsp;</p> </li> 
+       <li> <p>Add an <strong>Object to JSON transformer</strong> after the PeopleSoft element to display the response in the browser.</p> </li> 
+       <li> <p>Add a <strong>Logger</strong> scope after the JSON transformer to print the data that is being passed to the PeopleSoft connector in the Mule Console. Configure the Logger according to the table below.</p> 
+        <table class="tableblock frame-all grid-all"> 
+         <colgroup> 
+          <col> 
+          <col> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">Parameter</th> 
+           <th class="tableblock halign-left valign-top">Value</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Employee List (or any other name you prefer)</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Message</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload]</code> (the output from DataWeave)</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Level</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">INFO</p></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
       </ol> 
      </div> 
     </div> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="example-code"><a class="anchor" href="#example-code"></a>Example Code</h2> 
- <div class="sectionbody"> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+    <div class="tab-pane fade no-padding" id="xml-editor-1de55"> 
+     <div class="sect2"> 
+      <h3 id="example-code"><a class="anchor" href="#example-code"></a>Example Use Case Code</h3> 
+      <div class="paragraph"> 
+       <p>Paste this code into your XML Editor to quickly load the flow for this example use case into your Mule application.</p> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+     
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2155,69 +2040,163 @@ YOUR_COMPONENT_INTERFACE_NAME
 44
 45
 46
+47
+48
+49
+<strong>50</strong>
+51
+52
+53
+54
+55
+56
+57
+58
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:data-mapper</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/data-mapper</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:json</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/json</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:file</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/file</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:tracking</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/tracking</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:peoplesoft</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/peoplesoft</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
-<span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.6.1</span><span class="delimiter">"</span></span>
-<span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-<span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/peoplesoft http://www.mulesoft.org/schema/mule/peoplesoft/current/mule-peoplesoft.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;peoplesoft:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">PeopleSoft</span><span class="delimiter">"</span></span> <span class="attribute-name">server</span>=<span class="string"><span class="delimiter">"</span><span class="content">${mule.peoplesoft.server}</span><span class="delimiter">"</span></span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${mule.peoplesoft.username}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${mule.peoplesoft.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">PeopleSoft</span><span class="delimiter">"</span></span> <span class="attribute-name">componentInterfaceInteractiveMode</span>=<span class="string"><span class="delimiter">"</span><span class="content">${mule.peoplesoft.mode.interfacemode}</span><span class="delimiter">"</span></span> <span class="attribute-name">componentInterfaceEditHistoryItems</span>=<span class="string"><span class="delimiter">"</span><span class="content">${mule.peoplesoft.mode.edithistoryitems}</span><span class="delimiter">"</span></span> <span class="attribute-name">componentInterfaceGetHistoryItems</span>=<span class="string"><span class="delimiter">"</span><span class="content">${mule.peoplesoft.mode.gethistoryitems}</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;peoplesoft:component-interface-ids-white-list&gt;</span>
-        <span class="tag">&lt;peoplesoft:component-interface-ids-white-list&gt;</span>CI_POSITION_DATA<span class="tag">&lt;/peoplesoft:component-interface-ids-white-list&gt;</span>
-        <span class="tag">&lt;/peoplesoft:component-interface-ids-white-list&gt;</span>
-    <span class="tag">&lt;/peoplesoft:config&gt;</span>
-    <span class="tag">&lt;data-mapper:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Employee_Position_Data_to_CI_POSITION_DATA</span><span class="delimiter">"</span></span> <span class="attribute-name">transformationGraphPath</span>=<span class="string"><span class="delimiter">"</span><span class="content">employee_position_data_to_ci_position_data.grf</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Employee_Position_Data_to_CI_POSITION_DATA</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;asynchronous-processing-strategy</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Asynchronous_Processing_Strategy</span><span class="delimiter">"</span></span> <span class="attribute-name">maxThreads</span>=<span class="string"><span class="delimiter">"</span><span class="content">5</span><span class="delimiter">"</span></span> <span class="attribute-name">minThreads</span>=<span class="string"><span class="delimiter">"</span><span class="content">2</span><span class="delimiter">"</span></span> <span class="attribute-name">threadTTL</span>=<span class="string"><span class="delimiter">"</span><span class="content">10</span><span class="delimiter">"</span></span> <span class="attribute-name">poolExhaustedAction</span>=<span class="string"><span class="delimiter">"</span><span class="content">WAIT</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Asynchronous Processing Strategy</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Save_Employee_Position_Flow</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Save_Employee_Position_Flow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;file:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">input</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Read Employee Position Data</span><span class="delimiter">"</span></span> <span class="attribute-name">moveToDirectory</span>=<span class="string"><span class="delimiter">"</span><span class="content">output</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;file:filename-regex-filter</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">employee-position.csv</span><span class="delimiter">"</span></span> <span class="attribute-name">caseSensitive</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;/file:inbound-endpoint&gt;</span>
-        <span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Employee_Position_Data_to_CI_POSITION_DATA</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Map Employee Position Data to CI_POSITION_DATA</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;data-mapper:input-arguments&gt;</span>
-                <span class="tag">&lt;data-mapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">GBI</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>GBI<span class="tag">&lt;/data-mapper:input-argument&gt;</span>
-                <span class="tag">&lt;data-mapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">Y</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>Y<span class="tag">&lt;/data-mapper:input-argument&gt;</span>
-                <span class="tag">&lt;data-mapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">USA</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>USA<span class="tag">&lt;/data-mapper:input-argument&gt;</span>
-                <span class="tag">&lt;data-mapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">N</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>N<span class="tag">&lt;/data-mapper:input-argument&gt;</span>
-                <span class="tag">&lt;data-mapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">STP</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>STP<span class="tag">&lt;/data-mapper:input-argument&gt;</span>
-                <span class="tag">&lt;data-mapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">C</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>C<span class="tag">&lt;/data-mapper:input-argument&gt;</span>
-                <span class="tag">&lt;data-mapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">A</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>A<span class="tag">&lt;/data-mapper:input-argument&gt;</span>
-                <span class="tag">&lt;data-mapper:input-argument</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">I</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>I<span class="tag">&lt;/data-mapper:input-argument&gt;</span>
-            <span class="tag">&lt;/data-mapper:input-arguments&gt;</span>
-        <span class="tag">&lt;/data-mapper:transform&gt;</span>
-        <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Mapped CI_POSITION_DATA : #[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Log mapped CI_POSITION_DATA </span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;foreach</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">For Each : Save Position Data Collection</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-            <span class="tag">&lt;async</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Async : Process each record concurrently</span><span class="delimiter">"</span></span> <span class="attribute-name">processingStrategy</span>=<span class="string"><span class="delimiter">"</span><span class="content">Asynchronous_Processing_Strategy</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-                <span class="tag">&lt;peoplesoft:invoke-operation</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">PeopleSoft</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">CI_POSITION_DATA#Save</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Save Employee Position Data to CI_POSITION_DATA</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-                    <span class="tag">&lt;peoplesoft:params</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-                <span class="tag">&lt;/peoplesoft:invoke-operation&gt;</span>
-                <span class="tag">&lt;json:object-to-json-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Convert payload Object to JSON</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-                <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Response from Peoplesoft is: #[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Log Save Operation Response</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-            <span class="tag">&lt;/async&gt;</span>
-        <span class="tag">&lt;/foreach&gt;</span>
-        <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Data transfer completed.</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Saving Employee Data Complete</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/flow&gt;</span>
-<span class="tag">&lt;/mule&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:http="http://www.mulesoft.org/schema/mule/http"
+      xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper"
+      xmlns:json="http://www.mulesoft.org/schema/mule/json"
+      xmlns:file="http://www.mulesoft.org/schema/mule/file"
+      xmlns:peoplesoft="http://www.mulesoft.org/schema/mule/peoplesoft"
+      xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+      xmlns:spring="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.mulesoft.org/schema/mule/core"
+      version="EE-3.7.0"
+      xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/peoplesoft http://www.mulesoft.org/schema/mule/peoplesoft/current/mule-peoplesoft.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd"<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>context:property-placeholder location="peoplesoft.properties"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>spring:beans<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>spring:import resource="classpath:DemoSpringBeans.xml"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>/spring:beans<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>peoplesoft:config name="PeopleSoft" server="${config.server}" username="${config.username}" password="${config.password}" doc:name="PeopleSoft"<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
+            <span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>CI_PERSONAL_DATA<span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
+            <span class="entity">&amp;lt;</span>peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>CI_POSITION_DATA<span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>/peoplesoft:component-interface-ids-white-list<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>reconnect count="3"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>/peoplesoft:config<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>asynchronous-processing-strategy name="Asynchronous_Processing_Strategy" maxThreads="5" minThreads="2" threadTTL="10" poolExhaustedAction="WAIT"
+                                      doc:name="Asynchronous Processing Strategy"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>file:connector name="File" autoDelete="true" streaming="true" validateConnections="true" doc:name="File"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>data-mapper:config name="Employee_Position_Data_to_CI_POSITION_DATA" transformationGraphPath="employee_position_data_to_ci_position_data.grf"
+                        doc:name="Employee_Position_Data_to_CI_POSITION_DATA"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>data-mapper:config name="Employee_Data_to_CI_PERSONAL_DATA" transformationGraphPath="employee_data_to_ci_personal_data.grf"
+                        doc:name="Employee_Data_to_CI_PERSONAL_DATA"/<span class="entity">&amp;gt;</span>
+
+    <span class="entity">&amp;lt;</span>flow name="Find_Employee_Flow"<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener" path="/find" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>dw:transform-message doc:name="Map To CI_PERSONAL_DATA"<span class="entity">&amp;gt;</span>
+            <span class="entity">&amp;lt;</span>dw:set-payload<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[%dw 1.0
+%output application/java
+---
+{
+        KEYPROP_EMPLID: inboundProperties['http.query.params'].id,
+        PROP_NAME: inboundProperties['http.query.params'].name,
+        PROP_LAST_NAME_SRCH: inboundProperties['http.query.params'].lastname,
+        PROP_NAME_AC: inboundProperties['http.query.params'].nameac
+}]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/dw:set-payload<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>/dw:transform-message<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>peoplesoft:invoke-operation config-ref="PeopleSoft" key="CI_PERSONAL_DATA||Find" doc:name="PeopleSoft"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>json:object-to-json-transformer doc:name="List<span class="entity">&amp;amp;</span>lt;CI_PERSONAL_DATA<span class="entity">&amp;amp;</span>gt; To JSON"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>logger level="INFO" doc:name="Employee List" message="#[payload]"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
    </div> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
- <div class="sectionbody"> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Learn more about working with <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>.</p> </li> 
-    <li> <p>Access PeopleSoft connector <a href="/release-notes/peoplesoft-connector-release-notes">release notes</a>.</p> </li> 
-    <li> <p>Learn how to <a href="/mule-user-guide/v/3.7/using-maven-with-mule">use Maven with Mule</a>.</p> </li> 
-   </ol> 
+  <div class="sect2"> 
+   <h3 id="run-time"><a class="anchor" href="#run-time"></a>Run Time</h3> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Save and <strong>run</strong> the project as a Mule Application.</p> </li> 
+     <li> <p>Open a web browser and check the response after entering the URL <code><strong><a href="http://localhost:8081/find?id=MULE&amp;name=&amp;last_name=&amp;name_ac=" class="bare">http://localhost:8081/find?id=MULE&amp;name=&amp;last_name=&amp;name_ac=</a></strong></code>. If in your PeopleSoft database there are records whose KEYPROP_EMPLID contains the value "MULE", you should get a JSON collection with those records. Otherwise, you receive an empty collection.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="json">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+</pre></td> 
+          <td class="code"><pre>[
+    {
+    <span class="key"><span class="delimiter">"</span><span class="content">KEYPROP_EMPLID</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">MULE0001</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">PROP_NAME</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Muley</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">PROP_LAST_NAME_SRCH</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">The Mule</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">PROP_NAME_AC</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>
+    },
+    {
+    <span class="key"><span class="delimiter">"</span><span class="content">KEYPROP_EMPLID</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">MULE0002</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">PROP_NAME</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Second Muley</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">PROP_LAST_NAME_SRCH</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">The Backup Mule</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">PROP_NAME_AC</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>
+    },
+    <span class="error">.</span><span class="error">.</span><span class="error">.</span>
+]</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> In this example, all input parameters for the FIND operation are optional. If none of them defined (<code><a href="http://localhost:8081/find?id=&amp;name=&amp;last_name=&amp;name_ac=" class="bare">http://localhost:8081/find?id=&amp;name=&amp;last_name=&amp;name_ac=</a></code>), then PeopleSoft will retrieve the first 300 records available (the maximum limited by the server). </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="demo"><a class="anchor" href="#demo"></a>Demo</h3> 
+   <div class="paragraph"> 
+    <p>You can download a fully functional example from <a href="http://mulesoft.github.io/peoplesoft-connector/">this link</a>.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>For additional technical information regarding the PeopleSoft Connector, visit our <a href="http://mulesoft.github.io/peoplesoft-connector/2.0.0/apidocs/mule/peoplesoft-config.html">online documentation</a>.</p> </li> 
+     <li> <p>Visit Oracle’s <a href="http://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tcpi/index.html">PeopleSoft Component Interface API site</a>.</p> </li> 
+     <li> <p>Read more about <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>.</p> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div>
@@ -2225,7 +2204,7 @@ YOUR_COMPONENT_INTERFACE_NAME
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#peoplesoft-component-interfaces">PeopleSoft Component Interfaces</a></li><li><a class="scroll-menu-link" href="#installing-and-configuring">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#configuring-a-global-element">Configuring a Global Element</a></li><li><a class="scroll-menu-link" href="#using-the-connector">Using the Connector</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#example-code">Example Code</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#intro">Introduction</a></li><li><a class="scroll-menu-link" href="#install-and-config">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#using-the-connector">Using The Connector</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
