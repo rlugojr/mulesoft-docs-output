@@ -883,12 +883,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-5ea7b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#studio-xml-editor-or-standalone-d2e74" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+     <li class="active"><a href="#studio-visual-editor-79c49" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#studio-xml-editor-or-standalone-001c4" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5ea7b"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-79c49"> 
      <div class="paragraph"> 
       <p>In Studio, drag the&nbsp;<strong>Choice</strong>&nbsp;icon from the Studio palette to the canvas, positioning it within the sequence of&nbsp;<a href="/mule-fundamentals/v/3.7/elements-in-a-mule-flow">building blocks</a>&nbsp;that form the flow (below).&nbsp;</p> 
      </div> 
@@ -896,7 +896,7 @@
       <p><span class="image"><img src="./_images/choice+flow+2.png" alt="choice+flow+2"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-d2e74"> 
+    <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-001c4"> 
      <div class="paragraph"> 
       <p>Add a&nbsp;<code>choice</code>&nbsp;element in your flow, with one attribute and, at minimum, two child elements as per the table below. Refer to the code sample below.</p> 
      </div> 
@@ -992,168 +992,139 @@
   <div class="paragraph"> 
    <p>After you determine your routing goals, follow this procedure to define the routing options, then the routing instructions.</p> 
   </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Insert message processors within the dashed line area that signifies the choice flow control scope to define the routing options, making sure to place one of them within the "Default" box to define it as the default routing option. You can place several message processors in a chain for each routing option, as needed. In our example, shown below, we have defined three routing options to reply in Spanish, French, or English:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/Studio_Choice_routingoptions.png" alt="Studio_Choice_routingoptions"></span></p> 
-     </div> </li> 
-    <li> <p>Click the <strong>Choice Router</strong> building block to open its Properties Editor. Here, enter Mule expressions to define the routing logic that Mule applies to incoming messages (see table below; detailed instructions follow).</p> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: 50%;"> 
-       <col style="width: 50%;"> 
-      </colgroup> 
-      <thead> 
-       <tr> 
-        <th class="tableblock halign-left valign-top">When</th> 
-        <th class="tableblock halign-left valign-top">Route Message to</th> 
-       </tr> 
-      </thead> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">` #[flowVars.language == 'Spanish'] `</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Set Payload</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">` #[flowVars.language == 'French'] `</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Set Payload</code></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Default</code></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Variable</code></p></td> 
-       </tr> 
-      </tbody> 
-     </table> </li> 
-    <li> <p>In the table, double-click the first empty row under <strong>When</strong>:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/ChoiceClickHere.png" alt="ChoiceClickHere"></span></p> 
-     </div> </li> 
-    <li> <p>In the Route Properties dialog, enter: <code>#[flowVars.language == 'Spanish']</code></p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/ChoiceRouteProperties.png" alt="ChoiceRouteProperties"></span></p> 
-     </div> </li> 
-    <li> <p>Click <strong>OK</strong>. This expression tells Mule to look for a flow variable called <code>language</code> on the incoming message and check whether it equals Spanish. If this expression evaluates to true, Mule routes the message to the message processor in that path.</p> </li> 
-    <li> <p>Click the next empty row, and enter: <code>#[flowVars.language == 'French']</code></p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Just as in the previous row, this expression tells Mule to look for a flow variable called <code>language</code> on the incoming message. This time, the expression indicates Mule should check whether <code>language</code> equals French. If this expression evaluates to true, Mule routes the message to the message processor in that path.</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic" start="7"> 
-    <li> <p>Click <strong>OK</strong> to save the routing configurations.</p> </li> 
-    <li> <p>Double-click the&nbsp;<strong>Default&nbsp;</strong>line item to open its Route Properties panel.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Notice that:</p> 
-  </div> 
-  <div class="olist loweralpha"> 
-   <ol class="loweralpha" type="a"> 
-    <li> <p>You cannot edit the&nbsp;<strong>Expression</strong>&nbsp;field</p> </li> 
-    <li> <p>The&nbsp;<strong>Otherwise</strong>&nbsp;box is checked</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/Studio_Choice_default_routeproperties.png" alt="Studio_Choice_default_routeproperties"></span></p> 
-     </div> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The&nbsp;<strong>Otherwise</strong>&nbsp;box identifies this route as the&nbsp;<strong>Default</strong>&nbsp; for the choice flow control. If the flow control cannot route a message to any of the preceding routing options in its scope, it directs the message to the default route.</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic" start="9"> 
-    <li> <p>Next, click the topmost <strong>Set Payload</strong> building block within your Choice Router scope to open its Properties Editor and set Value to: <code>Hola!&nbsp;&nbsp;</code></p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/HolaAmigos.png" alt="HolaAmigos"></span></p> 
-     </div> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If Mule finds the flow variable <code>language=Spanish</code>, your message produces this payload as a response.</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Click the next <strong>Set Payload</strong> building block for <strong>Reply in French</strong> and set the value to:</p> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
-            
-         <table class="CodeRay"> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-59d12" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#studio-xml-editor-or-standalone-97d51" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+    </ul> 
+   </div> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-59d12"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Insert message processors within the dashed line area that signifies the choice flow control scope to define the routing options, making sure to place one of them within the "Default" box to define it as the default routing option. You can place several message processors in a chain for each routing option, as needed. In our example, shown below, we have defined three routing options to reply in Spanish, French, or English:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/Studio_Choice_routingoptions.png" alt="Studio_Choice_routingoptions"></span></p> 
+        </div> </li> 
+       <li> <p>Click the <strong>Choice Router</strong> building block to open its Properties Editor. Here, enter Mule expressions to define the routing logic that Mule applies to incoming messages (see table below; detailed instructions follow).</p> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: 50%;"> 
+          <col style="width: 50%;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top">When</th> 
+           <th class="tableblock halign-left valign-top">Route Message to</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[flowVars.language == 'Spanish']</code></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Set Payload</code></p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[flowVars.language == 'French']</code></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Set Payload</code></p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Default</code></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Variable</code></p></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>In the table, double-click the first empty row under <strong>When</strong>:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/ChoiceClickHere.png" alt="ChoiceClickHere"></span></p> 
+        </div> </li> 
+       <li> <p>In the Route Properties dialog, enter: <code>#[flowVars.language == 'Spanish']</code></p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/ChoiceRouteProperties.png" alt="ChoiceRouteProperties"></span></p> 
+        </div> </li> 
+       <li> <p>Click <strong>OK</strong>. This expression tells Mule to look for a flow variable called <code>language</code> on the incoming message and check whether it equals Spanish. If this expression evaluates to true, Mule routes the message to the message processor in that path.</p> </li> 
+       <li> <p>Click the next empty row, and enter: <code>#[flowVars.language == 'French']</code></p> 
+        <div class="paragraph"> 
+         <p>Just as in the previous row, this expression tells Mule to look for a flow variable called <code>language</code> on the incoming message. This time, the expression indicates Mule should check whether <code>language</code> equals French. If this expression evaluates to true, Mule routes the message to the message processor in that path.</p> 
+        </div> </li> 
+       <li> <p>Click <strong>OK</strong> to save the routing configurations.</p> </li> 
+       <li> <p>Double-click the&nbsp;<strong>Default&nbsp;</strong>line item to open its Route Properties panel.</p> 
+        <div class="paragraph"> 
+         <p>Notice that:</p> 
+        </div> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>You cannot edit the&nbsp;<strong>Expression</strong>&nbsp;field</p> </li> 
+          <li> <p>The&nbsp;<strong>Otherwise</strong>&nbsp;box is checked</p> 
+           <div class="paragraph"> 
+            <p><span class="image"><img src="./_images/Studio_Choice_default_routeproperties.png" alt="Studio_Choice_default_routeproperties"></span></p> 
+           </div> 
+           <div class="paragraph"> 
+            <p>The&nbsp;<strong>Otherwise</strong>&nbsp;box identifies this route as the&nbsp;<strong>Default</strong>&nbsp; for the choice flow control. If the flow control cannot route a message to any of the preceding routing options in its scope, it directs the message to the default route.</p> 
+           </div> </li> 
+         </ol> 
+        </div> </li> 
+       <li> <p>Next, click the topmost <strong>Set Payload</strong> building block within your Choice Router scope to open its Properties Editor and set Value to: <code>Hola!&nbsp;&nbsp;</code></p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/HolaAmigos.png" alt="HolaAmigos"></span></p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>If Mule finds the flow variable <code>language=Spanish</code>, your message produces this payload as a response.</p> 
+        </div> </li> 
+       <li> <p>Click the next <strong>Set Payload</strong> building block for <strong>Reply in French</strong> and set the value to:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="code">Bonjour!</code></pre> 
+         </div> 
+        </div> 
+        <div class="paragraph"> 
+         <p>If Mule finds the flow variable <code>language=French</code>, your message produces this payload as a response.</p> 
+        </div> </li> 
+       <li> <p>Click the <strong>Variable Transformer</strong> inside the Default box to open its Properties Editor, then configure it as:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/VarSetLangToEnv.png" alt="VarSetLangToEnv"></span></p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>This Variable Transformer, and the Set Payload that follows it, are only invoked if neither of the expressions in the choice routing logic evaluate to true. Thus, if Mule does not find either the flow variable <code>language=Spanish</code> or the flow variable <code>language=French</code>, Mule routes the message to this default processing option, which sets the flow variable <code>language</code> with the value <code>English</code>.</p> 
+        </div> 
+        <div class="admonitionblock note"> 
+         <table> 
           <tbody> 
            <tr> 
-            <td class="line-numbers"><pre>1
-</pre></td> 
-            <td class="code"><pre>Bonjour!</pre></td> 
+            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+            <td class="content"> Note that in this configuration you are setting a literal value for the variable, rather than using Mule expression language to extract a value from the message, as you did in the previous Variable Transformer. </td> 
            </tr> 
           </tbody> 
-         </table></code></pre> 
-      </div> 
-     </div> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If Mule finds the flow variable <code>language=French</code>, your message produces this payload as a response.</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic" start="10"> 
-    <li> <p>Click the <strong>Variable Transformer</strong> inside the Default box to open its Properties Editor, then configure it as:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/VarSetLangToEnv.png" alt="VarSetLangToEnv"></span></p> 
-     </div> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>This Variable Transformer, and the Set Payload that follows it, are only invoked if neither of the expressions in the choice routing logic evaluate to true. Thus, if Mule does not find either the flow variable <code>language=Spanish</code> or the flow variable <code>language=French</code>, Mule routes the message to this default processing option, which sets the flow variable <code>language</code> with the value <code>English</code>.</p> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> 
-       <div class="paragraph"> 
-        <p>Note that in this configuration you are setting a literal value for the variable, rather than using Mule expression language to extract a value from the message, as you did in the previous Variable Transformer.</p> 
-       </div> </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic" start="12"> 
-    <li> <p>Click the <strong>Set Payload</strong> after the Variable Transformer inside the Default box to open its Properties Editor, then configure it as:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/SetPayLoadEnglish.png" alt="SetPayLoadEnglish"></span>&nbsp;</p> 
-     </div> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>This Set Payload transformer sets a payload for the default option you configured above in your choice routing logic.&nbsp;</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>As it processes messages, Mule evaluates the expressions defined in your routing options in order, top down, until one of them evaluates to "true".</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If necessary, drag and drop building blocks within the choice flow control scope on the canvas to reorder routing options.</p> 
-  </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>[tab,title="Studio XML Editor or Standalone"]</pre> 
-   </div> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>To the first <code>when</code> element within your choice element, add message processors as child elements to form a routing option to which the choice element can direct messages. Add as many additional <code>when</code> elements as needed.</p> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="xml">
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
+         </table> 
+        </div> </li> 
+       <li> <p>Click the <strong>Set Payload</strong> after the Variable Transformer inside the Default box to open its Properties Editor, then configure it as:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/SetPayLoadEnglish.png" alt="SetPayLoadEnglish"></span>&nbsp;</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>This Set Payload transformer sets a payload for the default option you configured above in your choice routing logic.&nbsp;</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>As it processes messages, Mule evaluates the expressions defined in your routing options in order, top down, until one of them evaluates to "true".</p> 
+        </div> </li> 
+       <li> <p>If necessary, drag and drop building blocks within the choice flow control scope on the canvas to reorder routing options.</p> </li> 
+      </ol> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-97d51"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>To the first <code>when</code> element within your choice element, add message processors as child elements to form a routing option to which the choice element can direct messages. Add as many additional <code>when</code> elements as needed.</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1171,37 +1142,38 @@
 16
 17
 </pre></td> 
-            <td class="code"><pre><span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">New_Studio_ProjectFlow1</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">New_Studio_ProjectFlow1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-filter</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.'http.request.uri' != '/favicon.ico']</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Expression</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">language</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.'http.query.params'.language]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Language Variable</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Hola!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Reply in Spanish</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="tag">&lt;/when&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Bonjour!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Reply in French</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;otherwise&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/otherwise&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/choice&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>&nbsp;&nbsp;
-<span class="tag">&lt;/flow&gt;</span></pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
-      </div> 
-     </div> </li> 
-    <li> <p>Configure the contents of the <code>otherwise</code> child element to define the default routing option to which your choice router can direct messages if all the previous when expressions evaluate to false. Refer to code sample below.</p> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="xml">
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>flow name="New_Studio_ProjectFlow1" doc:name="New_Studio_ProjectFlow1"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-filter expression="#[message.inboundProperties.'http.request.uri' != '/favicon.ico']" doc:name="Expression"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="language" value="#[message.inboundProperties.'http.query.params'.language]" doc:name="Set Language Variable"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression=""<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Hola!" doc:name="Reply in Spanish"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression=""<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Bonjour!" doc:name="Reply in French"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="#[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span>&nbsp;&nbsp;
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Configure the contents of the <code>otherwise</code> child element to define the default routing option to which your choice router can direct messages if all the previous when expressions evaluate to false. Refer to code sample below.</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1221,162 +1193,166 @@
 18
 19
 </pre></td> 
-            <td class="code"><pre><span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">New_Studio_ProjectFlow1</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">New_Studio_ProjectFlow1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-filter</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.'http.request.uri' != '/favicon.ico']</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Expression</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">language</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.'http.query.params'.language]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Language Variable</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Hola!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Reply in Spanish</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Bonjour!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Reply in French</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;otherwise&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">language</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">English</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Language to English</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Hello!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Reply in English</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/otherwise&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/choice&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>&nbsp;&nbsp;
-<span class="tag">&lt;/flow&gt;</span></pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
-      </div> 
-     </div> </li> 
-    <li> <p>For each <code>when</code> element, enter an expression for the choice router to use to evaluate the contents of a message. If, during processing, the expression associated with a routing option evaluates to true, Mule directs the message to that route. Refer to example expression below.</p> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="xml">
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>flow name="New_Studio_ProjectFlow1" doc:name="New_Studio_ProjectFlow1"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-filter expression="#[message.inboundProperties.'http.request.uri' != '/favicon.ico']" doc:name="Expression"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="language" value="#[message.inboundProperties.'http.query.params'.language]" doc:name="Set Language Variable"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression=""<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Hola!" doc:name="Reply in Spanish"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression=""<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Bonjour!" doc:name="Reply in French"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="language" value="English" doc:name="Set Language to English"/<span class="entity">&amp;gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Hello!" doc:name="Reply in English"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="#[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span>&nbsp;&nbsp;
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>For each <code>when</code> element, enter an expression for the choice router to use to evaluate the contents of a message. If, during processing, the expression associated with a routing option evaluates to true, Mule directs the message to that route. Refer to example expression below.</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-            <td class="code"><pre><span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.language == 'Spanish']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
-      </div> 
-     </div> </li> 
-    <li> <p>As it processes messages, Mule evaluates the expressions defined in your routing options in the order they appear in the config, top down, until one of them evaluates to "true". Adjust the order of the <code>when</code> elements in your flow with this in mind.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="configuration-summary"><a class="anchor" href="#configuration-summary"></a>Configuration Summary</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Element</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>choice</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Dynamically routes messages based on message payload or properties, adding conditional programming to a flow, similar to an&nbsp;<code>if/then/else</code>&nbsp;code block.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 50%;"> 
-     <col style="width: 50%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Element Attribute</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Customize to display a unique name for the flow control in your application.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>Note: Attribute not required in Mule Standalone configuration.</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Child Element</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>when</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define all non-default routing options within the choice flow control.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Child Element Attribute</th> 
-      <th class="tableblock halign-left valign-top">Value</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>expression</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule expression</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use MEL to define an expression that the choice router will use to evaluate the contents of a message. If the expression evaluates to "true", Mule directs the message to this routing option.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Child Element</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>otherwise</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the default routing option for the message, should none of the preceding <code>when</code> expressions evaluate to "true"</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <div class="admonitionblock tip"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> To run and test this example, you might find it useful to take a look at <a href="/mule-fundamentals/v/3.7/content-based-routing-tutorial">Content-Based Routing Tutorial</a>. There you’ll find details about the configuration of the other building blocks in the flow, as well as instructions on how to send requests to it. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
+               <td class="code"><pre><span class="entity">&amp;lt;</span>when expression="#[flowVars.language == 'Spanish']"<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>As it processes messages, Mule evaluates the expressions defined in your routing options in the order they appear in the config, top down, until one of them evaluates to "true". Adjust the order of the <code>when</code> elements in your flow with this in mind.</p> </li> 
+      </ol> 
+     </div> 
+     <div class="sect2"> 
+      <h3 id="configuration-summary"><a class="anchor" href="#configuration-summary"></a>Configuration Summary</h3> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Element</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>choice</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Dynamically routes messages based on message payload or properties, adding conditional programming to a flow, similar to an&nbsp;<code>if/then/else</code>&nbsp;code block.</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 50%;"> 
+        <col style="width: 50%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Element Attribute</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Customize to display a unique name for the flow control in your application.</p> 
+           </div> 
+           <div class="paragraph"> 
+            <p>Note: Attribute not required in Mule Standalone configuration.</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Child Element</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>when</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define all non-default routing options within the choice flow control.</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Child Element Attribute</th> 
+         <th class="tableblock halign-left valign-top">Value</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>expression</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Mule expression</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Use MEL to define an expression that the choice router will use to evaluate the contents of a message. If the expression evaluates to "true", Mule directs the message to this routing option.</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top">Child Element</th> 
+         <th class="tableblock halign-left valign-top">Description</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>otherwise</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Use to define the default routing option for the message, should none of the preceding <code>when</code> expressions evaluate to "true"</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+    </div> 
    </div> 
+  </div> 
+  <div class="admonitionblock tip"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+      <td class="content"> To run and test this example, you might find it useful to take a look at <a href="/mule-fundamentals/v/3.7/content-based-routing-tutorial">Content-Based Routing Tutorial</a>. There you’ll find details about the configuration of the other building blocks in the flow, as well as instructions on how to send requests to it. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
  </div> 
 </div> 
@@ -1386,42 +1362,50 @@
   <div class="paragraph"> 
    <p>You can change the choice flow control configuration to identify a different default routing option.</p> 
   </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Open the Choice Flow Control’s Properties Editor, then, in the table, double-click the line item of whichever routing option that you would like to specify as the new default route.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/choice+select+default+1.png" alt="choice+select+default+1"></span></p> 
-     </div> </li> 
-    <li> <p>Check the&nbsp;<strong>Otherwise</strong>&nbsp;box (see below), then click&nbsp;<strong>OK</strong>.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/select+default.png" alt="select+default"></span></p> 
-     </div> </li> 
-    <li> <p>Mule applies the&nbsp;<strong>Default</strong>&nbsp;label to the new default routing option in the table on the Properties Editor (below). (Note that the English routing option now needs a "when" expression defined.)</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/select+default+2.png" alt="select+default+2"></span></p> 
-     </div> </li> 
-    <li> <p>Define a <code>when</code> expression for the routing option previously identified as the default. (In the example, the english routing option.)</p> </li> 
-   </ol> 
-  </div> 
-  <div class="literalblock"> 
-   <div class="content"> 
-    <pre>[tab,title="Studio XML Editor or Standalone"]</pre> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-181ba" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#studio-xml-editor-or-standalone-88809" role="tab" data-toggle="tab">Studio XML Editor or Standalone</a></li> 
+    </ul> 
    </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Adjust your XML configuration to swap the contents of a <code>when</code> element and the <code>otherwise</code> element.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The code sample below has been adjusted to make the Spanish language the default routing option and change the English language to a <code>when</code> element. Note that the <code>otherwise</code> element requires no further configuration, but we defined a new expression for the new <code>when</code> element.</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-181ba"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Open the Choice Flow Control’s Properties Editor, then, in the table, double-click the line item of whichever routing option that you would like to specify as the new default route.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/choice+select+default+1.png" alt="choice+select+default+1"></span></p> 
+        </div> </li> 
+       <li> <p>Check the&nbsp;<strong>Otherwise</strong>&nbsp;box (see below), then click&nbsp;<strong>OK</strong>.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/select+default.png" alt="select+default"></span></p> 
+        </div> </li> 
+       <li> <p>Mule applies the&nbsp;<strong>Default</strong>&nbsp;label to the new default routing option in the table on the Properties Editor (below). (Note that the English routing option now needs a "when" expression defined.)</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/select+default+2.png" alt="select+default+2"></span></p> 
+        </div> </li> 
+       <li> <p>Define a <code>when</code> expression for the routing option previously identified as the default. (In the example, the English routing option.)</p> </li> 
+      </ol> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="studio-xml-editor-or-standalone-88809"> 
+     <div class="paragraph"> 
+      <p>Adjust your XML configuration to swap the contents of a <code>when</code> element and the <code>otherwise</code> element.</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>The code sample below has been adjusted to make the Spanish language the default routing option and change the English language to a <code>when</code> element. Note that the <code>otherwise</code> element requires no further configuration, but we defined a new expression for the new <code>when</code> element.</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+    
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1441,28 +1425,31 @@
 18
 19
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">New_Studio_ProjectFlow1</span><span class="delimiter">"</span></span> <span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;expression-filter</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.'http.request.uri' != '/favicon.ico']</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Expression</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">language</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.'http.query.params'.language]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Language Variable</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;choice</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Choice</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.language == 'french']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Bonjour!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Reply in French</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;otherwise</span> <span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">language</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">spanish</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Language to Spanish</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Hola!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Reply in Spanish</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/otherwise&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.language == 'english']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">Hello!</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Reply in English</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/when&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/choice&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>&nbsp;&nbsp;&nbsp;
-<span class="tag">&lt;/flow&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+            <td class="code"><pre><span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>flow name="New_Studio_ProjectFlow1" <span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>expression-filter expression="#[message.inboundProperties.'http.request.uri' != '/favicon.ico']" doc:name="Expression"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="language" value="#[message.inboundProperties.'http.query.params'.language]" doc:name="Set Language Variable"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>choice doc:name="Choice"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="#[flowVars.language == 'french']"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Bonjour!" doc:name="Reply in French"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>otherwise <span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-variable variableName="language" value="spanish" doc:name="Set Language to Spanish"/<span class="entity">&amp;gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Hola!" doc:name="Reply in Spanish"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/otherwise<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>when expression="#[flowVars.language == 'english']"<span class="entity">&amp;gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>set-payload value="Hello!" doc:name="Reply in English"/<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/when<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/choice<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="#[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span>&nbsp;&nbsp;&nbsp;
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+    </div> 
    </div> 
   </div> 
  </div> 
