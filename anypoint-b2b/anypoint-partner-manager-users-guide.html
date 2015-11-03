@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-b2b/anypoint-partner-manager-users-guide" />
-    <meta name="description" content="Anypoint Partner Manager enables all configuration and monitoring for AnyPoint B2B flows.  The following steps are required to configure settings f..." />
+    <meta name="description" content="Anypoint Partner Manager (APM) provides configuration and monitoring for AnyPoint B2B messaging flows. This page identifies the APM features you us..." />
     <meta class="swiftype" name="title" data-type="string" content="Anypoint Partner Manager User’s Guide" />
 
 </head>
@@ -719,7 +719,7 @@
 <i></i>
 <a href="/anypoint-b2b/anypoint-partner-manager">Anypoint Partner Manager</a><ul style="display: block;">
 <li class="active"><i></i><a href="/anypoint-b2b/anypoint-partner-manager-users-guide">Anypoint Partner Manager User’s Guide</a></li><li><i></i><a href="/anypoint-b2b/as2-and-edi-x12-purchase-order-walkthrough">AS2 and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/ftps-and-edi-x12-purchase-order-walkthrough">FTPS and EDI X12 Purchase Order Walkthrough</a></li><li><i></i><a href="/anypoint-b2b/transmission-tracking-walkthrough">Transmission Tracking Walkthrough</a></li></ul></li>
-<li><i></i><a href="/anypoint-b2b/as2-connector">AS2 Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector-2.0.0-rc">AS2 Connector 2.0.0 RC</a></li><li><i></i><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a></li><li><i></i><a href="/anypoint-b2b/edi-x12-order-processing-example">EDI X12 Order Processing Example</a></li><li><i></i><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></li></ul></li>
+<li><i></i><a href="/anypoint-b2b/b2b-connector">B2B Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector">AS2 Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector-2.0.0-rc">AS2 Connector 2.0.0 RC</a></li><li><i></i><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a></li><li><i></i><a href="/anypoint-b2b/edi-x12-order-processing-example">EDI X12 Order Processing Example</a></li><li><i></i><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></li></ul></li>
 <li>
 <i></i>
 <a href="/anypoint-connector-devkit/v/3.7/">Anypoint Connector DevKit</a><ul>
@@ -869,224 +869,3030 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> Anypoint Partner Manager is currently in beta. For access or more information, talk to your account executive. </td> 
+      <td class="content"> This page documents a Beta release of Anypoint Partner Manager (APM). For access to or for more information about APM, see your Mulesoft account representative. </td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>Anypoint Partner Manager enables all configuration and monitoring for AnyPoint B2B flows.</p> 
+   <p>Anypoint Partner Manager (APM) provides configuration and monitoring for AnyPoint B2B messaging flows. This page identifies the APM features you use to configure and monitor B2B configurations and messages.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/b2b_intro_03.png" alt="b2b_intro_03"></span></p> 
+   <p>To configure a trading partnership using APM:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p><a href="#set-up-the-home-organization">Set up the home organization</a></p> </li> 
+    <li> <p><a href="#set-up-a-trading-partner">Set up a trading partner</a></p> </li> 
+   </ol> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="trading-partner-management"><a class="anchor" href="#trading-partner-management"></a>Trading Partner Management</h2> 
+ <h2 id="set-up-the-home-organization"><a class="anchor" href="#set-up-the-home-organization"></a>Set up the home organization</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The following steps are required to configure settings for a B2B flow using Anypoint Partner Manager.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>In Anypoint Partner Manager:</p> 
+   <p>The <em>home organization</em>, or <em>home org</em>, is you - that is, the company licensing Anypoint B2B. To use <a href="/anypoint-b2b/anypoint-b2b">Anypoint B2B</a>, you must first create this home org in APM. You can configure the following:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><a href="#set-up-the-home-organization">Set up the home organization</a></p> </li> 
-    <li> <p><a href="#set-up-an-external-trading-partner">Set up an external trading partner</a></p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>In AnyPoint Studio:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Build your flow</p> </li> 
-    <li> <p>Configure the B2B Connector</p> </li> 
-    <li> <p>Configure B2B-enabled Connectors to use the B2B Connector</p> </li> 
-    <li> <p>Complete the flow</p> </li> 
-    <li> <p>Use standard MuleSoft connectors and processors to complete the processing and integration of the message into downstream systems as required.</p> </li> 
+    <li> <p><a href="#contacts-home-org">Contacts - Home org</a></p> </li> 
+    <li> <p><a href="#transport-home-org">Transport - Home org</a></p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><a href="#as2-identity-settings-home-org">AS2 Identity Settings - Home org</a></p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p><a href="#format-home-org">Format - Home org</a></p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><a href="#x12-identity-settings-home-org">X12 Identity Settings - Home org</a></p> </li> 
+       <li> <p><a href="#edifact-identity-settings-home-org">EDIFACT Identity Settings - Home org</a></p> </li> 
+      </ul> 
+     </div> </li> 
    </ul> 
   </div> 
   <div class="sect2"> 
-   <h3 id="set-up-the-home-organization"><a class="anchor" href="#set-up-the-home-organization"></a>Set up the home organization</h3> 
-   <div class="paragraph"> 
-    <p>The <em>home organization</em> is the company using Anypoint B2B. There is no setup required, but you may configure the following settings:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Company Name that is displayed in the Portal&nbsp;</p> </li> 
-     <li> <p>Contact information</p> </li> 
-     <li> <p>AS2 Identity Settings</p> </li> 
-    </ul> 
+   <h3 id="contacts-home-org"><a class="anchor" href="#contacts-home-org"></a>Contacts - Home org</h3> 
+   <div class="dlist"> 
+    <dl> 
+     <dt class="hdlist1">
+       Company Name 
+     </dt> 
+     <dd> 
+      <p>Enter the name for your home org</p> 
+     </dd> 
+     <dt class="hdlist1">
+       API Key 
+     </dt> 
+     <dd> 
+      <p>Create an API key. The API Application Program Interface (API) Key is a 32-bit alphanumeric universal unique identifier (UUID) string that APM generates for you; you use it to access the Anypoint B2B API. Store your API key in a secure location. If you lose it, you will need to create a new API key. APM does not store your API key.</p> 
+     </dd> 
+     <dt class="hdlist1">
+       Contact type 
+     </dt> 
+     <dd> 
+      <p>Use this field to add contacts for your Company. A contact may be technical, business, or both.</p> 
+     </dd> 
+    </dl> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="set-up-an-external-trading-partner"><a class="anchor" href="#set-up-an-external-trading-partner"></a>Set up an external trading partner</h3> 
+   <h3 id="transport-home-org"><a class="anchor" href="#transport-home-org"></a>Transport - Home org</h3> 
    <div class="paragraph"> 
-    <p>In order to exchange B2B messages with another company, you must create a Trading Partner in APM. You can configure trading partner information for:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><a href="#contacts">Contacts</a></p> </li> 
-     <li> <p><a href="#transport">Transport</a></p> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p><a href="#as2">AS2</a></p> </li> 
-        <li> <p><a href="#ftp">FTP</a></p> </li> 
-       </ul> 
-      </div> </li> 
-     <li> <p><a href="#format">Format</a></p> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p><a href="#x12">X12</a></p> </li> 
-        <li> <p><a href="#edifact">EDIFACT</a></p> </li> 
-       </ul> 
-      </div> </li> 
-     <li> <p><a href="#transactions">Transactions</a></p> </li> 
-    </ul> 
+    <p>You can configure default options for B2B-enabled Home org transport connectors, currently, this includes AS2.</p> 
    </div> 
    <div class="sect3"> 
-    <h4 id="contacts"><a class="anchor" href="#contacts"></a>Contacts</h4> 
+    <h4 id="as2"><a class="anchor" href="#as2"></a>AS2</h4> 
     <div class="paragraph"> 
-     <p>In the contacts section you can configure the name that is displayed for the trading partner, and optionally technical and business contacts for the partner.</p> 
+     <p>AS2 is a secure transport protocol that enables files to be signed, encrypted and sent between a company and its trading partners. You can configure both inbound and outbound settings.</p> 
     </div> 
-    <div class="sect5"> 
-     <h6 id="to-enter-contact-information"><a class="anchor" href="#to-enter-contact-information"></a>To enter contact information</h6> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="as2-identity-settings-home-org"><a class="anchor" href="#as2-identity-settings-home-org"></a>AS2 Identity Settings - Home org</h4> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>In the <strong>AS2 Identity</strong> box, enter the name you want to use for your company’s AS2 ID.</p> </li> 
+      <li> <p>Click <strong>Choose File</strong> to select and upload this trading partner’s AS2 Certificate.</p> 
+       <div class="paragraph"> 
+        <p>The <strong>Certificate Name</strong>, <strong>Expiration</strong> and <strong>Thumbprint</strong> fields automatically populate when an AS2 certificate is uploaded.</p> 
+       </div> </li> 
+     </ol> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="format-home-org"><a class="anchor" href="#format-home-org"></a>Format - Home org</h3> 
+   <div class="paragraph"> 
+    <p>You can configure default options for supported B2B format standards (currently EDI X12 and EDIFACT).</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="x12"><a class="anchor" href="#x12"></a>X12</h4> 
+    <div class="paragraph"> 
+     <p>X12 standards define the structure, format, and content of business transactions conducted through Electronic Data Interchange (EDI) and are used in conjunction with AS2 or FTPS as transport for these transaction sets.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="x12-identity-settings-home-org"><a class="anchor" href="#x12-identity-settings-home-org"></a>X12 Identity Settings - Home org</h4> 
+    <div class="dlist"> 
+     <dl> 
+      <dt class="hdlist1">
+        Interchange ID qualifier 
+      </dt> 
+      <dd> 
+       <p>This is the qualifier your company will use as a default X12 Qualifier. If you have exceptions, you can change them at the transaction level for an individual trading partner.</p> 
+      </dd> 
+      <dt class="hdlist1">
+        Interchange ID (ISA) 
+      </dt> 
+      <dd> 
+       <p>This is the X12 EDI identifier your company will be using as a default EDI ID. If you have exceptions, you can change them at the transaction level for the individual trading partner.</p> 
+      </dd> 
+     </dl> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="edifact-identity-settings-home-org"><a class="anchor" href="#edifact-identity-settings-home-org"></a>EDIFACT Identity Settings - Home org</h4> 
+    <div class="dlist"> 
+     <dl> 
+      <dt class="hdlist1">
+        Interchange ID Qualifier (UNB) 
+      </dt> 
+      <dd> 
+       <p>Qualifier your company uses as a default EDIFACT Qualifier. If you have exceptions, you can change them at the transaction level for the individual trading partner.</p> 
+      </dd> 
+      <dt class="hdlist1">
+        Interchange ID (UNB) 
+      </dt> 
+      <dd> 
+       <p>Enter your EDIFACT trading partner ID.</p> 
+      </dd> 
+     </dl> 
+    </div> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="set-up-a-trading-partner"><a class="anchor" href="#set-up-a-trading-partner"></a>Set up a trading partner</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>In order to exchange B2B messages with another company, you must create a <em>Trading Partner</em> in APM. You can configure trading partner information for:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="#company-partner">Company - Partner</a></p> </li> 
+    <li> <p><a href="#transport-partner">Transport - Partner</a></p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><a href="#as2-partner">AS2 - Partner</a></p> </li> 
+       <li> <p><a href="#ftps-partner">FTPS - Partner</a></p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p><a href="#format-partner">Format - Partner</a></p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><a href="#x12-partner">X12 - Partner</a></p> </li> 
+       <li> <p><a href="#edifact-partner">EDIFACT - Partner</a></p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p><a href="#transactions-partner">Transactions - Partner</a></p> </li> 
+   </ul> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="company-partner"><a class="anchor" href="#company-partner"></a>Company - Partner</h3> 
+   <div class="paragraph"> 
+    <p>In this section you can configure the name that is displayed for a trading partner, and, optionally technical and business contacts for the partner.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="enter-contact-information"><a class="anchor" href="#enter-contact-information"></a>Enter contact information</h4> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Start APM. The <strong>Anypoint Platform</strong> page appears, with <strong>B2B Transmissions</strong> selected.</p> </li> 
+      <li> <p>Click <strong>Trading Partners</strong>. The <strong>Trading Partners</strong> page appears.</p> </li> 
+      <li> <p>Click <strong>Create</strong>. The <strong>Partnership</strong> page appears.</p> </li> 
+      <li> <p>In the <strong>Contacts</strong> section of the <strong>Partnership</strong> page, enter the following:</p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p><strong>Company Name</strong></p> </li> 
+         <li> <p><strong>Contact type</strong><br> (In the dropdown listbox, select <strong>Technical</strong>, <strong>Business</strong>, or <strong>Both</strong>)</p> </li> 
+        </ul> 
+       </div> </li> 
+      <li> <p>After you enter a contact type, you can enter the following contact-specific information:</p> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p><strong>First Name</strong></p> </li> 
+         <li> <p><strong>Last Name</strong></p> </li> 
+         <li> <p><strong>Title</strong></p> </li> 
+         <li> <p><strong>E-mail</strong></p> </li> 
+         <li> <p><strong>Office Phone</strong></p> </li> 
+         <li> <p><strong>Mobile Phone</strong></p> </li> 
+         <li> <p><strong>Fax</strong></p> </li> 
+         <li> <p><strong>Address Line 1</strong></p> </li> 
+         <li> <p><strong>Address Line 2</strong></p> </li> 
+         <li> <p><strong>City</strong></p> </li> 
+         <li> <p><strong>State</strong></p> </li> 
+         <li> <p><strong>Postal Code</strong></p> </li> 
+         <li> <p><strong>Country</strong></p> </li> 
+        </ul> 
+       </div> </li> 
+      <li> <p>Click <strong>Save</strong> to save the values you entered in the previous steps.</p> </li> 
+      <li> <p>Click <strong>Next</strong>.</p> 
+       <div class="paragraph"> 
+        <p>The AS/2 Settings page appears.</p> 
+       </div> </li> 
+     </ol> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="transport-partner"><a class="anchor" href="#transport-partner"></a>Transport - Partner</h3> 
+   <div class="paragraph"> 
+    <p>In this section, you can configure the default options for any B2B-enabled transport connectors, currently AS2 and FTPS.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="as2-partner"><a class="anchor" href="#as2-partner"></a>AS2 - Partner</h4> 
+    <div class="paragraph"> 
+     <p>AS2 is a secure transport protocol that enables files to be signed, encrypted and sent between your organization and your trading partners. You can configure both inbound and outbound settings.</p> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="enter-as2-identity-settings"><a class="anchor" href="#enter-as2-identity-settings"></a>Enter AS2 Identity Settings</h5> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>Start APM. The <strong>Anypoint Platform</strong> page appears, with <strong>B2B Transmisssions</strong> selected.</p> </li> 
-       <li> <p>Click <strong>Trading Partners</strong>. The <strong>Trading Partners</strong> page appears.</p> </li> 
-       <li> <p>Click <strong>Create</strong>. The <strong>Partnership</strong> page appears.</p> </li> 
-       <li> <p>In the <strong>Contacts</strong> section of the <strong>Partnership</strong> page, enter the following:</p> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p><strong>Company Name</strong> — <strong>Contact type</strong></p> </li> 
-         </ul> 
-        </div> </li> 
-       <li> <p>When you enter a contact type, you can enter the following contact-specific information:</p> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p><strong>First Name</strong></p> </li> 
-          <li> <p><strong>Last Name</strong></p> </li> 
-          <li> <p><strong>Title</strong></p> </li> 
-          <li> <p><strong>E-mail</strong></p> </li> 
-          <li> <p><strong>Office Phone</strong></p> </li> 
-          <li> <p><strong>Mobile Phone</strong></p> </li> 
-          <li> <p><strong>Fax</strong></p> </li> 
-          <li> <p><strong>Address Line 1</strong></p> </li> 
-          <li> <p><strong>Address Line 2</strong></p> </li> 
-          <li> <p><strong>City</strong></p> </li> 
-          <li> <p><strong>State</strong></p> </li> 
-          <li> <p><strong>Postal Code</strong></p> </li> 
-          <li> <p><strong>Country</strong></p> </li> 
-         </ul> 
-        </div> </li> 
-       <li> <p>Click <strong>Save</strong> to save the values you entered in the previous steps.</p> </li> 
-       <li> <p>Click <strong>Next</strong>.</p> 
+       <li> <p>In the <strong>AS2 Identity</strong> box, enter the trading partner-assigned name associated with this trading partner’s Production AS2 ID.</p> </li> 
+       <li> <p>Click <strong>Choose File</strong> to select and upload this trading partner’s AS2 Certificate.</p> 
         <div class="paragraph"> 
-         <p>The AS/2 Settings page appears.</p> 
+         <p>The <strong>Certificate Name</strong>, <strong>Expiration</strong> and <strong>Thumbprint</strong> fields automatically populate when an AS2 certificate is uploaded.</p> 
         </div> </li> 
       </ol> 
      </div> 
     </div> 
+    <div class="sect4"> 
+     <h5 id="enter-as2-settings-inbound"><a class="anchor" href="#enter-as2-settings-inbound"></a>Enter AS2 Settings - Inbound</h5> 
+     <hr> 
+     <div class="dlist"> 
+      <dl> 
+       <dt class="hdlist1">
+         URL 
+       </dt> 
+       <dd> 
+        <p>Enter this trading partner’s URL, including port</p> 
+       </dd> 
+      </dl> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required"><a class="anchor" href="#required"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>Yes, if AS2 is the transport protocol.</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="example"><a class="anchor" href="#example"></a>Example</h6> 
+      <div class="paragraph"> 
+       <p>'www.midsizesupplier.com:8080'</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          MDN Subject 
+        </dt> 
+        <dd> 
+         <p>Subject of the MDN (Message Disposition Notification) sent</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-2"><a class="anchor" href="#required-2"></a>Required?</h6> 
+      <div class="verseblock"> 
+       <pre class="content">Yes</pre> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values"><a class="anchor" href="#valid-values"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default"><a class="anchor" href="#default"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>Message Disposition Notification</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Preferred Digest Algorithm 
+        </dt> 
+        <dd> 
+         <p>MIC alogorithm for use in signing the returned receipt.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-3"><a class="anchor" href="#required-3"></a>Required?</h6> 
+      <div class="exampleblock"> 
+       <div class="content"> 
+        <div class="paragraph"> 
+         <p>Yes</p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-2"><a class="anchor" href="#valid-values-2"></a>Valid values</h6> 
+      <div class="exampleblock"> 
+       <div class="content"> 
+        <div class="paragraph"> 
+         <p><strong>None</strong></p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><strong>SHA1</strong></p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><strong>MD5</strong></p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-2"><a class="anchor" href="#default-2"></a>Default</h6> 
+      <div class="exampleblock"> 
+       <div class="content"> 
+        <div class="paragraph"> 
+         <p><code>None</code></p> 
+        </div> 
+       </div> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="preferred-digest-algorithm"><a class="anchor" href="#preferred-digest-algorithm"></a>Preferred Digest Algorithm</h6> 
+      <div class="paragraph"> 
+       <p>MIC algorithm for use in signing the returned receipt.</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required 
+        </dt> 
+        <dd> 
+         <p>Yes</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p><code>None</code><br> <code>SHA1</code><br> <code>MD5</code></p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>None</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="checkbox-options"><a class="anchor" href="#checkbox-options"></a>Checkbox options</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Compress 
+        </dt> 
+        <dd> 
+         <p>Compresses message-size</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Message Encrypted 
+        </dt> 
+        <dd> 
+         <p>Adds an encryption wrapper around the document, signature, and compression payloads</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Message Signed 
+        </dt> 
+        <dd> 
+         <p>Adds a signature wrapper around the document payload</p> 
+        </dd> 
+        <dt class="hdlist1">
+          MDN Required 
+        </dt> 
+        <dd> 
+         <p>An Async MDN will return the MDN to the URL at a later time for files sent if an MDN is required. If you are using Async MDN, enter the URL and port to which it should be sent.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <div class="admonitionblock note"> 
+       <table> 
+        <tbody> 
+         <tr> 
+          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+          <td class="content"> If this checkbox is selected, the <strong>Require Receipt for Unsupported Digest Algorithm</strong> and <strong>Require Receipt for Unsupported Signature Format</strong> checkboxes appear. </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          MDN Signed 
+        </dt> 
+        <dd> 
+         <p>Ensures trading partner validation and security</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="enter-as2-settings-outbound"><a class="anchor" href="#enter-as2-settings-outbound"></a>Enter AS2 Settings - Outbound</h5> 
+     <div class="paragraph"> 
+      <p>The AS2 Outbound Settings are for your trading partner’s specific AS2 settings such as <strong>certificate</strong> and <strong>URL</strong>.</p> 
+     </div> 
+     <hr> 
+     <div class="sect5"> 
+      <h6 id="url"><a class="anchor" href="#url"></a>URL</h6> 
+      <div class="paragraph"> 
+       <p>URL, including port<br></p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required 
+        </dt> 
+        <dd> 
+         <p>Yes, if AS2 is the transport protocol</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Example 
+        </dt> 
+        <dd> 
+         <p>'www.midsizesupplier.com:8080'</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="content-type"><a class="anchor" href="#content-type"></a>Content Type</h6> 
+      <div class="paragraph"> 
+       <p>Content type you use AS2 to receive</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Valid Values 
+        </dt> 
+        <dd> 
+         <p><code>Application/edi-consent</code><br> <code>Custom</code><br> <code>application/edi-x12</code></p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>application/edi-x12</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="digest-algorithm"><a class="anchor" href="#digest-algorithm"></a>Digest Algorithm</h6> 
+      <div class="paragraph"> 
+       <p>MIC algorithm for use in signing the returned receipt</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p><code>SHA1</code><br> <code>MD5</code></p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>SHA1</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="failback-digest-algorithm"><a class="anchor" href="#failback-digest-algorithm"></a>Failback Digest Algorithm</h6> 
+      <div class="paragraph"> 
+       <p>Digest algorithm the receiver uses to create the MIC and signature</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required 
+        </dt> 
+        <dd> 
+         <p>No</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p><code>None</code><br> <code>SHA1</code><br> <code>MD5</code></p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>None</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="subject"><a class="anchor" href="#subject"></a>Subject</h6> 
+      <div class="paragraph"> 
+       <p>Subject of the message being sent</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required 
+        </dt> 
+        <dd> 
+         <p>No</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Alphanumeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>AS2 Message</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="filename"><a class="anchor" href="#filename"></a>Filename</h6> 
+      <div class="paragraph"> 
+       <p>Name of file to send</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required 
+        </dt> 
+        <dd> 
+         <p>No</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Alphanumeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p>None</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="encoding"><a class="anchor" href="#encoding"></a>Encoding</h6> 
+      <div class="paragraph"> 
+       <p>Type of encoding to use when sending a message with AS2</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required 
+        </dt> 
+        <dd> 
+         <p>Yes</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <div class="ulist"> 
+          <ul> 
+           <li> <p><strong>Binary</strong><br> Description</p> </li> 
+           <li> <p><strong>7-bit</strong></p> 
+            <div class="paragraph"> 
+             <p>Data that is all represented as relatively short lines with 998 bytes or less between CRLF line separation sequences. No bytes with decimal values greater than 127 are allowed and neither are NULLs (bytes with decimal value 0). CR (decimal value 13) and LF (decimal value 10) bytes only occur as part of CRLF line separation sequences.</p> 
+            </div> </li> 
+           <li> <p><strong>8-bit</strong></p> 
+            <div class="paragraph"> 
+             <p>Data that is all represented as relatively short lines with 998 bytes or less between CRLF line separation sequences, but bytes with decimal values greater than 127 may be used. As with "7bit data" CR and LF bytes only occur as part of CRLF line separation sequences and no NULLs are allowed.</p> 
+            </div> </li> 
+           <li> <p><strong>Quoted-Printable</strong></p> 
+            <div class="paragraph"> 
+             <p>Intended to represent data that largely consists of bytes that correspond to printable characters in the US-ASCII character set. It encodes the data in such a way that the resulting bytes are unlikely to be modified by mail transport. If the data being encoded are mostly US-ASCII text, the encoded form of the data remains largely recognizable by humans. A body which is entirely US-ASCII may also be encoded in Quoted-Printable to ensure the integrity of the data should the message pass through a character-translating, and/or line-wrapping gateway.</p> 
+            </div> </li> 
+          </ul> 
+         </div> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="encryption-algorithm"><a class="anchor" href="#encryption-algorithm"></a>Encryption Algorithm</h6> 
+      <div class="paragraph"> 
+       <p>3DES is an encryption that uses 3 different “Keys”,or encryptions, to encrypt the messages. No other choices are available at this time.</p> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="mdn-async-url"><a class="anchor" href="#mdn-async-url"></a>MDN Async URL</h6> 
+      <div class="paragraph"> 
+       <p>An Async Message Disposal Notification (MDN) returns the MDN to this URL at a later time for files sent if an MDN is required. If you are using Async MDN, enter the URL and port to which it should be sent.</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required 
+        </dt> 
+        <dd> 
+         <p>No</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Alphanumeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>None</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="checkbox-options-2"><a class="anchor" href="#checkbox-options-2"></a>Checkbox Options</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Compress 
+        </dt> 
+        <dd> 
+         <p>Compresses message-size</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Message Encrypted 
+        </dt> 
+        <dd> 
+         <p>Adds an encryption wrapper around the document, signature, and compression payloads</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Message Signed 
+        </dt> 
+        <dd> 
+         <p>Adds a signature wrapper around the document payload</p> 
+        </dd> 
+        <dt class="hdlist1">
+          MDN Required 
+        </dt> 
+        <dd> 
+         <p>An Async MDN will return the MDN to the URL at a later time for files sent if an MDN is required. If you are using Async MDN, enter the URL and port to which it should be sent.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <div class="admonitionblock note"> 
+       <table> 
+        <tbody> 
+         <tr> 
+          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+          <td class="content"> If this checkbox is selected, the <strong>Require Receipt for Unsupported Digest Algorithm</strong> and <strong>Require Receipt for Unsupported Signature Format</strong> checkboxes appear. </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="mdn-signed"><a class="anchor" href="#mdn-signed"></a>MDN Signed</h6> 
+      <div class="paragraph"> 
+       <p>Ensures trading partner validation and security</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="mdn-async"><a class="anchor" href="#mdn-async"></a>MDN Async</h6> 
+      <div class="paragraph"> 
+       <p>Allows AS2 MDNs to be returned to the AS2 message sender’s server at a later time. Typically used when large files are involved, or when a trading partner’s AS2 server has poor Internet service.</p> 
+      </div> 
+      <hr> 
+     </div> 
+    </div> 
    </div> 
    <div class="sect3"> 
-    <h4 id="transport"><a class="anchor" href="#transport"></a>Transport</h4> 
+    <h4 id="ftps-partner"><a class="anchor" href="#ftps-partner"></a>FTPS - Partner</h4> 
     <div class="paragraph"> 
-     <p>In the Transport Settings section, you can configure the default options for any B2B-enabled transport connectors, currently AS2 and FTP/S.</p> 
+     <p><em>FTPS</em> is an extension to the commonly used File Transfer Protocol (FTP) that adds support for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) cryptographic protocols.</p> 
     </div> 
     <div class="sect4"> 
-     <h5 id="as2"><a class="anchor" href="#as2"></a>AS2</h5> 
-     <div class="paragraph"> 
-      <p>intro</p> 
+     <h5 id="enter-ftps-settings-inbound"><a class="anchor" href="#enter-ftps-settings-inbound"></a>Enter FTPS Settings - Inbound</h5> 
+     <hr> 
+     <div class="dlist"> 
+      <dl> 
+       <dt class="hdlist1">
+         Server Address 
+       </dt> 
+       <dd> 
+        <p>Address to which inbound documents are delivered.</p> 
+       </dd> 
+      </dl> 
      </div> 
      <div class="sect5"> 
-      <h6 id="to-enter-as2-information"><a class="anchor" href="#to-enter-as2-information"></a>To enter AS2 information</h6> 
+      <h6 id="required-4"><a class="anchor" href="#required-4"></a>Required?</h6> 
       <div class="paragraph"> 
-       <p>procedure and box info</p> 
+       <p>Yes</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-3"><a class="anchor" href="#valid-values-3"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-3"><a class="anchor" href="#default-3"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>localhost</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Port 
+        </dt> 
+        <dd> 
+         <p>Specific inbound port to be used with this trading partner. Set the host of your FTP server, this can be an IP address or a host name.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-5"><a class="anchor" href="#required-5"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>Yes</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-4"><a class="anchor" href="#valid-values-4"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Numeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-4"><a class="anchor" href="#default-4"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>990</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          User Name 
+        </dt> 
+        <dd> 
+         <p>def</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-6"><a class="anchor" href="#required-6"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>Yes</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-5"><a class="anchor" href="#valid-values-5"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-5"><a class="anchor" href="#default-5"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>None</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Password 
+        </dt> 
+        <dd> 
+         <p>def</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-7"><a class="anchor" href="#required-7"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>Yes</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-6"><a class="anchor" href="#valid-values-6"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-6"><a class="anchor" href="#default-6"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>None</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Transfer Mode 
+        </dt> 
+        <dd> 
+         <p>For ease of client use, use passive mode when possible.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-8"><a class="anchor" href="#required-8"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>Yes</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-7"><a class="anchor" href="#valid-values-7"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Active|Passive</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-7"><a class="anchor" href="#default-7"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>Passive</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          SSL Mode 
+        </dt> 
+        <dd> 
+         <p>Def</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-9"><a class="anchor" href="#required-9"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>Yes</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-8"><a class="anchor" href="#valid-values-8"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Explicit|Implicit</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-8"><a class="anchor" href="#default-8"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>Implicit</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Enable Server Validation (Checkbox) 
+        </dt> 
+        <dd> 
+         <p>Selecting this checkbox validate the servers identity; only JKS format is supported at this time.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-9"><a class="anchor" href="#default-9"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>Not selected</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Maximum Number of Download Threads 
+        </dt> 
+        <dd> 
+         <p>def</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-10"><a class="anchor" href="#required-10"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-9"><a class="anchor" href="#valid-values-9"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Numeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-10"><a class="anchor" href="#default-10"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Path 
+        </dt> 
+        <dd> 
+         <p>def</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-11"><a class="anchor" href="#required-11"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-10"><a class="anchor" href="#valid-values-10"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-11"><a class="anchor" href="#default-11"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>/</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Filename 
+        </dt> 
+        <dd> 
+         <p>def</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-12"><a class="anchor" href="#required-12"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-11"><a class="anchor" href="#valid-values-11"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-12"><a class="anchor" href="#default-12"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Move to directory 
+        </dt> 
+        <dd> 
+         <p>Places the files in the specified location until they complete uploading.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-13"><a class="anchor" href="#required-13"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-12"><a class="anchor" href="#valid-values-12"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-13"><a class="anchor" href="#default-13"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="enter-ftps-settings-outbound"><a class="anchor" href="#enter-ftps-settings-outbound"></a>Enter FTPS Settings - Outbound</h5> 
+     <div class="paragraph"> 
+      <p>FTPS Outbound has the same settings as FTPS Inbound.</p> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="format-partner"><a class="anchor" href="#format-partner"></a>Format - Partner</h3> 
+   <div class="paragraph"> 
+    <p>In the Format Settings section you can configure the default options for supported B2B format standards (currently EDI X12 and EDIFACT).</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="x12-partner"><a class="anchor" href="#x12-partner"></a>X12 - Partner</h4> 
+    <div class="paragraph"> 
+     <p>X12 standards define the structure, format, and content of business transactions conducted through Electronic Data Interchange (EDI) and are used in conjunction with AS2 or FTPS as transport for these transaction sets.</p> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="enter-x12-identity-settings"><a class="anchor" href="#enter-x12-identity-settings"></a>Enter X12 Identity Settings</h5> 
+     <div class="dlist"> 
+      <dl> 
+       <dt class="hdlist1">
+         Interchange ID qualifier (ISA) 
+       </dt> 
+       <dd> 
+        <p>def</p> 
+       </dd> 
+      </dl> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-14"><a class="anchor" href="#required-14"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>Yes</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-13"><a class="anchor" href="#valid-values-13"></a>Valid values</h6> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p><code>01 (DUNS Number)</code></p> </li> 
+        <li> <p><code>08 (UCC EDI Number)</code></p> </li> 
+        <li> <p><code>12 (Phone Number)</code></p> </li> 
+        <li> <p><code>14 (DUNS Number plus Suffix Number)</code></p> </li> 
+        <li> <p><code>ZZ (Mutually Defined)</code></p> </li> 
+        <li> <p><code>01 (Custom)</code></p> </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-14"><a class="anchor" href="#default-14"></a>Default</h6> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p><code>None</code></p> </li> 
+       </ul> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange ID (ISA) 
+        </dt> 
+        <dd> 
+         <p>def</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-15"><a class="anchor" href="#required-15"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>Yes</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-14"><a class="anchor" href="#valid-values-14"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-15"><a class="anchor" href="#default-15"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>No default provided</p> 
+      </div> 
+      <hr> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="enter-x12-settings-inbound-read"><a class="anchor" href="#enter-x12-settings-inbound-read"></a>Enter X12 Settings Inbound (Read)</h5> 
+     <div class="sect5"> 
+      <h6 id="envelope-headers-isa"><a class="anchor" href="#envelope-headers-isa"></a>Envelope Headers (ISA)</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Auth. Info. Qualifier (ISA 01) 
+        </dt> 
+        <dd> 
+         <p>Most common value is <strong>00</strong>.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-16"><a class="anchor" href="#required-16"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-15"><a class="anchor" href="#valid-values-15"></a>Valid values</h6> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p><code>00</code></p> </li> 
+        <li> <p><code>01</code></p> </li> 
+        <li> <p><code>02</code></p> </li> 
+        <li> <p><code>03</code></p> </li> 
+        <li> <p><code>04</code></p> </li> 
+        <li> <p><code>05</code></p> </li> 
+        <li> <p><code>06</code></p> </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-16"><a class="anchor" href="#default-16"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>00</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Authorization Information (ISA 02) 
+        </dt> 
+        <dd> 
+         <p>Enter a value if appropriate for your organization</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-17"><a class="anchor" href="#required-17"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-16"><a class="anchor" href="#valid-values-16"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-17"><a class="anchor" href="#default-17"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>Defaults to ten blank spaces</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Security Inf. Qualifier (ISA 03) 
+        </dt> 
+        <dd> 
+         <p>Enter a value if appropriate for your organization</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-18"><a class="anchor" href="#required-18"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-17"><a class="anchor" href="#valid-values-17"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-18"><a class="anchor" href="#default-18"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>00</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Security Information (ISA 04) 
+        </dt> 
+        <dd> 
+         <p>Enter a value if appropriate for your organization</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-19"><a class="anchor" href="#required-19"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-18"><a class="anchor" href="#valid-values-18"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-19"><a class="anchor" href="#default-19"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>Defaults to ten blank spaces</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange sender ID qualifier (ISA 05) 
+        </dt> 
+        <dd> 
+         <p>Enter a valid trading partner qualifier if appropriate for your organization</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-20"><a class="anchor" href="#required-20"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-19"><a class="anchor" href="#valid-values-19"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-20"><a class="anchor" href="#default-20"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>Defaults to ten blank spaces</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange sender ID (ISA 06) 
+        </dt> 
+        <dd> 
+         <p>Free form field to enter your trading partner’s EDI ID.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-21"><a class="anchor" href="#required-21"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-20"><a class="anchor" href="#valid-values-20"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric with max of 15 characters</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-21"><a class="anchor" href="#default-21"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>None provided</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange receiver ID qualifier (ISA 07) 
+        </dt> 
+        <dd> 
+         <p>drop down populated with the more common EDI Partner qualifiers. If you need a different value choose Custom in the drop down and enter your valid qualifier.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-22"><a class="anchor" href="#required-22"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-21"><a class="anchor" href="#valid-values-21"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-22"><a class="anchor" href="#default-22"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>None provided</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange receiver ID (ISA 08) 
+        </dt> 
+        <dd> 
+         <p>Enter a valid EDI if appropriate for your organization</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-23"><a class="anchor" href="#required-23"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-22"><a class="anchor" href="#valid-values-22"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric, 15-character max</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-23"><a class="anchor" href="#default-23"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p>None provided</p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Control Version (ISA 12) 
+        </dt> 
+        <dd> 
+         <p>Identifies the X12 version this partner uses.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-24"><a class="anchor" href="#required-24"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-23"><a class="anchor" href="#valid-values-23"></a>Valid values</h6> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p><code>14 (DUNS Number plus Suffix Number)</code></p> </li> 
+        <li> <p><code>ZZ (Mutually Defined)</code></p> </li> 
+        <li> <p><code>01 (Custom)</code></p> </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-24"><a class="anchor" href="#default-24"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="parser-checkbox-settings"><a class="anchor" href="#parser-checkbox-settings"></a>Parser checkbox settings</h6> 
+      <div class="paragraph"> 
+       <p>There are eight optional Parser settings that you can select for trading partners inbound documents. The expected behavior if these options are selected is a <strong>997</strong> stating a failure will be sent for the condition.</p> 
+      </div> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Fail document when value length outside allowed range</p> </li> 
+        <li> <p>Fail document when invalid character in value</p> </li> 
+        <li> <p>Allow only ASCII characters for AN values</p> </li> 
+        <li> <p>Fail document if unknown segments are used</p> </li> 
+        <li> <p>Fail document when segments are out of order</p> </li> 
+        <li> <p>Fail document when unused segments are included</p> </li> 
+        <li> <p>Fail document when too many repeats of a segment</p> </li> 
+        <li> <p>Generate 999<br> If a 999 acknowledgement is needed check this box. The default X12 acknowledgement will be 997.</p> </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="character-set-and-encoding"><a class="anchor" href="#character-set-and-encoding"></a>Character Set and Encoding</h6> 
+      <div class="paragraph"> 
+       <p>The Character Set field is a drop down. Basic, Extended and Unrestricted are the field value choices supported.</p> 
       </div> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/b2b_intro_04.png" alt="b2b_intro_04"></span></p> 
+       <p>The Basic character set includes the following uppercase letters, digits, space, and special characters: A through Z, 0 through 9, ! “ &amp; ’ ( ) * + , - . / : ; ? = (space). The Extended character set includes the characters in the Basic character set, and lowercase letters, select language characters, and other special characters: a through z, % @ [ ] _ { } \ | &lt; &gt; ~ # $.</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>The Unrestricted character set takes in all characters.</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="control-number-settings"><a class="anchor" href="#control-number-settings"></a>Control Number Settings</h6> 
+      <div class="paragraph"> 
+       <p>These settings, if checked, will require unique inbound ISA 13, GS 06 and ST 02 control numbers on all inbound documents for this trading partner.</p> 
+      </div> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Require unique ISA control numbers (ISA 13)</p> </li> 
+        <li> <p>Require unique GS control numbers (GS 06)</p> </li> 
+        <li> <p>Require unique transaction set control numbers (ST 02)</p> </li> 
+       </ul> 
       </div> 
      </div> 
     </div> 
     <div class="sect4"> 
-     <h5 id="ftp"><a class="anchor" href="#ftp"></a>FTP</h5> 
-     <div class="paragraph"> 
-      <p>intro</p> 
+     <h5 id="enter-x12-settings-outbound"><a class="anchor" href="#enter-x12-settings-outbound"></a>Enter X12 Settings - Outbound</h5> 
+     <div class="dlist"> 
+      <dl> 
+       <dt class="hdlist1">
+         Envelope Headers (ISA) 
+       </dt> 
+       <dd> 
+        <p>====== Required? No</p> 
+       </dd> 
+      </dl> 
      </div> 
      <div class="sect5"> 
-      <h6 id="to-enter-ftp-information"><a class="anchor" href="#to-enter-ftp-information"></a>To enter FTP information</h6> 
+      <h6 id="valid-values-24"><a class="anchor" href="#valid-values-24"></a>Valid values</h6> 
       <div class="paragraph"> 
-       <p>procedure and box info</p> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-25"><a class="anchor" href="#default-25"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Auth Info. Qualifier (ISA 01) 
+        </dt> 
+        <dd> 
+         <p>Defaulted to a 00 but there are six other valid values in the dropdown. The most common value is <strong>00</strong>.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-25"><a class="anchor" href="#required-25"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-25"><a class="anchor" href="#valid-values-25"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-26"><a class="anchor" href="#default-26"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Authorization Information (ISA 02) 
+        </dt> 
+        <dd> 
+         <p>defaults to a blank value. This field is editable if another value is needed in this field.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-26"><a class="anchor" href="#required-26"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-26"><a class="anchor" href="#valid-values-26"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-27"><a class="anchor" href="#default-27"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Security Inf. Qualifier (ISA 03) 
+        </dt> 
+        <dd> 
+         <p>is defaulted to a 00 but is an editable field if another value is needed.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-27"><a class="anchor" href="#required-27"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-27"><a class="anchor" href="#valid-values-27"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-28"><a class="anchor" href="#default-28"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Security Information (ISA 04) 
+        </dt> 
+        <dd> 
+         <p>defaults to a blank value. This field is editable if another value is needed in this field.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-28"><a class="anchor" href="#required-28"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-28"><a class="anchor" href="#valid-values-28"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-29"><a class="anchor" href="#default-29"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Sender ID qualifier (ISA 05) 
+        </dt> 
+        <dd> 
+         <p>is a drop down populated with the more common EDI Partner qualifiers. If you need a different value choose Custom in the drop down and enter your Company’s valid qualifier.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-29"><a class="anchor" href="#required-29"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-29"><a class="anchor" href="#valid-values-29"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-30"><a class="anchor" href="#default-30"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Sender ID (ISA 06) 
+        </dt> 
+        <dd> 
+         <p>is a free form field to enter your Company’s EDI ID. This field is alphanumeric with a max of 15 characters</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-30"><a class="anchor" href="#required-30"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-30"><a class="anchor" href="#valid-values-30"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-31"><a class="anchor" href="#default-31"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Receiver ID qualifier (ISA 07) 
+        </dt> 
+        <dd> 
+         <p>is a drop down populated with the more common EDI Partner qualifiers. If you need a different value choose Custom in the drop down and enter your trading partner’s valid qualifier.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-31"><a class="anchor" href="#required-31"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-31"><a class="anchor" href="#valid-values-31"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-32"><a class="anchor" href="#default-32"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Receiver ID (ISA 08) 
+        </dt> 
+        <dd> 
+         <p>is a free form field to enter EDI ID. This field is alphanumeric with a max of 15 characters. Enter your trading partner’s EDI ID here.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-32"><a class="anchor" href="#required-32"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-32"><a class="anchor" href="#valid-values-32"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-33"><a class="anchor" href="#default-33"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Repetition separator character (ISA 11) 
+        </dt> 
+        <dd> 
+         <p>is a drop down to indicate your Company’s repetition character.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-33"><a class="anchor" href="#required-33"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-33"><a class="anchor" href="#valid-values-33"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-34"><a class="anchor" href="#default-34"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Control Version (ISA 12) 
+        </dt> 
+        <dd> 
+         <p>is a drop down value to choose which X12 version Your Company will be using. At this time 4010 and 5010 are the current supported versions.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-34"><a class="anchor" href="#required-34"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-34"><a class="anchor" href="#valid-values-34"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-35"><a class="anchor" href="#default-35"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Request Interchange Acknowledgements (ISA 14) 
+        </dt> 
+        <dd> 
+         <p>is a dropdown to indicate whether a 997</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-35"><a class="anchor" href="#required-35"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-35"><a class="anchor" href="#valid-values-35"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-36"><a class="anchor" href="#default-36"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Default Interchange usage indicator (ISA 15) 
+        </dt> 
+        <dd> 
+         <p>is where you indicate if you are in Test or Production for your Company with this trading partner.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-36"><a class="anchor" href="#required-36"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-36"><a class="anchor" href="#valid-values-36"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-37"><a class="anchor" href="#default-37"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Component element separator character (ISA 16) 
+        </dt> 
+        <dd> 
+         <p>is a free form field with a min/max of 1. A commonly used character in this field is “*”</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-37"><a class="anchor" href="#required-37"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-37"><a class="anchor" href="#valid-values-37"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-38"><a class="anchor" href="#default-38"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="group-headers-gs"><a class="anchor" href="#group-headers-gs"></a>Group Headers (GS)</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Version identifier code suffix (GS 08) 
+        </dt> 
+        <dd> 
+         <p>This field is a dropdown field to identify the X12 version being used in the outbound message. 4010 and 5010 are the current versions supported.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-38"><a class="anchor" href="#required-38"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-38"><a class="anchor" href="#valid-values-38"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-39"><a class="anchor" href="#default-39"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="terminator-delimiter"><a class="anchor" href="#terminator-delimiter"></a>Terminator/Delimiter</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Segment terminator character 
+        </dt> 
+        <dd> 
+         <p>is a free form field with a min/max of 1. This shows the end of a Segment. One of the most common values used in this field is “~”</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-39"><a class="anchor" href="#required-39"></a>Required?</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>No</pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-39"><a class="anchor" href="#valid-values-39"></a>Valid values</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>Alphanumeric</pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-40"><a class="anchor" href="#default-40"></a>Default</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>`None`</pre> 
+       </div> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Data element Delimiter 
+        </dt> 
+        <dd> 
+         <p>is a free form field with a min/max of 1.This separates the elements from each other. One of the most common values used in this field is “+”</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-40"><a class="anchor" href="#required-40"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-40"><a class="anchor" href="#valid-values-40"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-41"><a class="anchor" href="#default-41"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          String substitution character 
+        </dt> 
+        <dd> 
+         <p>if checked will allow you to enter a character in the value field.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-41"><a class="anchor" href="#required-41"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-41"><a class="anchor" href="#valid-values-41"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-42"><a class="anchor" href="#default-42"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="character-set-and-encoding-2"><a class="anchor" href="#character-set-and-encoding-2"></a>Character Set and Encoding</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Character Set 
+        </dt> 
+        <dd> 
+         <p>field is a drop down. Basic, Extended and Unrestricted are the field value choices supported.<br> The Basic character set includes the following uppercase letters, digits, space, and special characters: A through Z, 0 through 9, ! “ &amp; ’ ( ) * + , - . / : ; ? = (space). The Extended character set includes the characters in the Basic character set, and lowercase letters, select language characters, and other special characters: a through z, % @ [ ] _ { } \ | &lt; &gt; ~ # $.<br> The Unrestricted character set takes in all characters.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-42"><a class="anchor" href="#required-42"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-42"><a class="anchor" href="#valid-values-42"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-43"><a class="anchor" href="#default-43"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Character Encoding 
+        </dt> 
+        <dd> 
+         <p>The supported character encoding choices are ASCII, ISO-88590-1, UTF8 and IBM 1047.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-43"><a class="anchor" href="#required-43"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-43"><a class="anchor" href="#valid-values-43"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-44"><a class="anchor" href="#default-44"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Line ending between segments 
+        </dt> 
+        <dd> 
+         <p>is a drop down field to specify on your outbound data you would like CR (Carriage return) or Line feed (LF) or Line feed carriage return (LFCR) or none.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-44"><a class="anchor" href="#required-44"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-44"><a class="anchor" href="#valid-values-44"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-45"><a class="anchor" href="#default-45"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="control-number-settings-2"><a class="anchor" href="#control-number-settings-2"></a>Control Number Settings</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Initial Interchange control number (ISA 13) 
+        </dt> 
+        <dd> 
+         <p>A whole number can be specified in the ISA control number to begin on your outbound documents with this Trading Partner. If a single digit is specified it will be padded with leading zeros.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-45"><a class="anchor" href="#required-45"></a>Required?</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>No</pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-45"><a class="anchor" href="#valid-values-45"></a>Valid values</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>Alphanumeric</pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-46"><a class="anchor" href="#default-46"></a>Default</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>`None`</pre> 
+       </div> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Initial GS control number (GS 06) 
+        </dt> 
+        <dd> 
+         <p>A whole number can be specified in the GS control number to begin on your outbound documents with this Trading Partner. If a single digit is specified it will be padded with leading zeros.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-46"><a class="anchor" href="#required-46"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-46"><a class="anchor" href="#valid-values-46"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-47"><a class="anchor" href="#default-47"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Initial transaction set control numbers (ST 02) 
+        </dt> 
+        <dd> 
+         <p>A whole number can be specified in the ST control number to begin on your outbound documents with this Trading Partner. If a single digit is specified it will be padded with leading zeros.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-47"><a class="anchor" href="#required-47"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-47"><a class="anchor" href="#valid-values-47"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-48"><a class="anchor" href="#default-48"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Implementation Convention reference (ST 03) 
+        </dt> 
+        <dd> 
+         <p>This field is currently used in the Healthcare space in X12 versions 5010 and above.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-48"><a class="anchor" href="#required-48"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-48"><a class="anchor" href="#valid-values-48"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-49"><a class="anchor" href="#default-49"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Require unique GS control numbers (GS06) 
+        </dt> 
+        <dd> 
+         <p>Checkbox</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Require unique transaction set control numbers (ST02) 
+        </dt> 
+        <dd> 
+         <p>Checkbox</p> 
+        </dd> 
+       </dl> 
       </div> 
      </div> 
     </div> 
    </div> 
    <div class="sect3"> 
-    <h4 id="format"><a class="anchor" href="#format"></a>Format</h4> 
+    <h4 id="edifact-partner"><a class="anchor" href="#edifact-partner"></a>EDIFACT - Partner</h4> 
     <div class="paragraph"> 
-     <p>In the Format Settings section you can configure the default options for supported B2B format standards, currently EDI X12 and EDIFACT.</p> 
+     <p>intro</p> 
     </div> 
     <div class="sect4"> 
-     <h5 id="x12"><a class="anchor" href="#x12"></a>X12</h5> 
-     <div class="paragraph"> 
-      <p>intro</p> 
+     <h5 id="enter-edifact-identity-settings"><a class="anchor" href="#enter-edifact-identity-settings"></a>Enter EDIFACT Identity Settings</h5> 
+     <div class="dlist"> 
+      <dl> 
+       <dt class="hdlist1">
+         Interchange ID qualifier (UNB) 
+       </dt> 
+       <dd> 
+        <p>Choose from common used qualifiers or enter a custom qualifier.</p> 
+       </dd> 
+      </dl> 
      </div> 
      <div class="sect5"> 
-      <h6 id="to-enter-x12-information"><a class="anchor" href="#to-enter-x12-information"></a>To enter X12 information</h6> 
+      <h6 id="required-49"><a class="anchor" href="#required-49"></a>Required?</h6> 
       <div class="paragraph"> 
-       <p>procedure and box info</p> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-49"><a class="anchor" href="#valid-values-49"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-50"><a class="anchor" href="#default-50"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange ID (UNB) 
+        </dt> 
+        <dd> 
+         <p>Enter your EDIFACT ID here</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-50"><a class="anchor" href="#required-50"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-50"><a class="anchor" href="#valid-values-50"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-51"><a class="anchor" href="#default-51"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="enter-edifact-settings-inbound"><a class="anchor" href="#enter-edifact-settings-inbound"></a>Enter EDIFACT Settings - Inbound</h5> 
+     <div class="sect5"> 
+      <h6 id="header-settings-unb"><a class="anchor" href="#header-settings-unb"></a>Header Settings (UNB)</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Request Acknowledgements (UNB 9) 
+        </dt> 
+        <dd> 
+         <p>This setting correlates to the EDIFACT document CONTRL.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-51"><a class="anchor" href="#required-51"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-51"><a class="anchor" href="#valid-values-51"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-52"><a class="anchor" href="#default-52"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Sender ID (UNB 2.1) 
+        </dt> 
+        <dd> 
+         <p>is the EDI ID for your EDIFACT trading partner. The maximum field length is 35 characters.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-52"><a class="anchor" href="#required-52"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-52"><a class="anchor" href="#valid-values-52"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-53"><a class="anchor" href="#default-53"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange sender ID qualifier (UNB 2.2) 
+        </dt> 
+        <dd> 
+         <p>is a field for your trading partners EDIFACT qualifier. You can choose some of the most popular options or enter your own.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-53"><a class="anchor" href="#required-53"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-53"><a class="anchor" href="#valid-values-53"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-54"><a class="anchor" href="#default-54"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Receiver ID (UNB 3.1) 
+        </dt> 
+        <dd> 
+         <p>is your Company’s EDIFACT ID.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-54"><a class="anchor" href="#required-54"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-54"><a class="anchor" href="#valid-values-54"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-55"><a class="anchor" href="#default-55"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange receiver ID qualifier (UNB 3.2) 
+        </dt> 
+        <dd> 
+         <p>def</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-55"><a class="anchor" href="#required-55"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-55"><a class="anchor" href="#valid-values-55"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-56"><a class="anchor" href="#default-56"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="parser-settings"><a class="anchor" href="#parser-settings"></a>Parser Settings</h6> 
+      <div class="paragraph"> 
+       <p>There are eight optional parser settings that can be chosen for your trading partners inbound documents. The fields are listed below. The expected behavior if these options are checked is a 997 stating a failure will be sent for the condition.</p> 
+      </div> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Fail document when value length outside allowed range</p> </li> 
+        <li> <p>Fail document when invalid character in value</p> </li> 
+        <li> <p>Fail document if value is repeated too many times</p> </li> 
+        <li> <p>Fail document if unknown segments are used</p> </li> 
+        <li> <p>Fail document when segments are out of order</p> </li> 
+        <li> <p>Fail document when unused segments are included</p> </li> 
+        <li> <p>Fail document when too many repeats of a segment</p> </li> 
+        <li> <p>Invalid character checking (UNA/UNB)</p> 
+         <div class="admonitionblock note"> 
+          <table> 
+           <tbody> 
+            <tr> 
+             <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+             <td class="content"> Validation checking only applies to the EDIFACT UNA/UNB Segments in the EDIFACT documents) </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> </li> 
+       </ul> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="terminator-delimiter-settings"><a class="anchor" href="#terminator-delimiter-settings"></a>Terminator/Delimiter* settings</h6> 
+      <div class="paragraph"> 
+       <p>These settings specify which special characters your Company wants to use to separate and use as terminators in the EDIFACT data. The min/max for this field is 1. All these fields are editable.</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Data element separator character 
+        </dt> 
+        <dd> 
+         <p>The default value is “+”</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Component element separator character 
+        </dt> 
+        <dd> 
+         <p>The default value is “:”</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Repetition separator character 
+        </dt> 
+        <dd> 
+         <p>The default value is “*”</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Segment terminator character 
+        </dt> 
+        <dd> 
+         <p>The default value is “ ‘ “</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Release character 
+        </dt> 
+        <dd> 
+         <p>The default value is “? “</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="control-number-settings-3"><a class="anchor" href="#control-number-settings-3"></a>Control Number settings</h6> 
+      <div class="paragraph"> 
+       <p>These settings if checked will require unique inbound control numbers on all inbound documents for this trading partner.</p> 
+      </div> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Require unique Message Reference Numbers</p> </li> 
+        <li> <p>Require unique Interchange Control Numbers</p> </li> 
+        <li> <p>Require unique Group Numbers</p> </li> 
+       </ul> 
       </div> 
      </div> 
     </div> 
     <div class="sect4"> 
-     <h5 id="edifact"><a class="anchor" href="#edifact"></a>EDIFACT</h5> 
-     <div class="paragraph"> 
-      <p>intro</p> 
+     <h5 id="enter-edifact-settings-outbound"><a class="anchor" href="#enter-edifact-settings-outbound"></a>Enter EDIFACT Settings - Outbound</h5> 
+     <div class="sect5"> 
+      <h6 id="header-settings-unb-2"><a class="anchor" href="#header-settings-unb-2"></a>Header Settings (UNB)</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Sender ID (UNB 2.1) 
+        </dt> 
+        <dd> 
+         <p>is the EDI ID for your Company.</p> 
+        </dd> 
+       </dl> 
+      </div> 
      </div> 
      <div class="sect5"> 
-      <h6 id="to-enter-edifact-information"><a class="anchor" href="#to-enter-edifact-information"></a>To enter EDIFACT information</h6> 
+      <h6 id="required-56"><a class="anchor" href="#required-56"></a>Required?</h6> 
       <div class="paragraph"> 
-       <p>procedure and box info</p> 
+       <p>No</p> 
       </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-56"><a class="anchor" href="#valid-values-56"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-57"><a class="anchor" href="#default-57"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange sender ID qualifier (UNB 2.2) 
+        </dt> 
+        <dd> 
+         <p>is a field for your EDIFACT qualifier. You can choose some of the most common options or enter your own.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-57"><a class="anchor" href="#required-57"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-57"><a class="anchor" href="#valid-values-57"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-58"><a class="anchor" href="#default-58"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange Receiver ID (UNB 3.1) 
+        </dt> 
+        <dd> 
+         <p>is your trading partners EDIFACT ID.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-58"><a class="anchor" href="#required-58"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-58"><a class="anchor" href="#valid-values-58"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-59"><a class="anchor" href="#default-59"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Interchange receiver ID qualifier (UNB 3.2) 
+        </dt> 
+        <dd> 
+         <p>is a field for your trading partner’s EDIFACT qualifier. You can choose some of the most common options or enter your own.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-59"><a class="anchor" href="#required-59"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-59"><a class="anchor" href="#valid-values-59"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-60"><a class="anchor" href="#default-60"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Request Acknowledgements (UNB 9) 
+        </dt> 
+        <dd> 
+         <p>This setting correlates to the EDIFACT document CONTRL.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-60"><a class="anchor" href="#required-60"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-60"><a class="anchor" href="#valid-values-60"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-61"><a class="anchor" href="#default-61"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Select Default test indicator (UNB 11) 
+        </dt> 
+        <dd> 
+         <p>If this trading partner is testing inbound EDIFACT documents.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-61"><a class="anchor" href="#required-61"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-61"><a class="anchor" href="#valid-values-61"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-62"><a class="anchor" href="#default-62"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Syntax version (UNB 1.2) 
+        </dt> 
+        <dd> 
+         <p>The current supported Syntax versions are 2, 3 and 4.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-62"><a class="anchor" href="#required-62"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-62"><a class="anchor" href="#valid-values-62"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-63"><a class="anchor" href="#default-63"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="parser-settings-checkboxes"><a class="anchor" href="#parser-settings-checkboxes"></a>Parser Settings (checkboxes)</h6> 
+      <div class="paragraph"> 
+       <p><strong>Invalid character checking (UNA/UNB)</strong></p> 
+      </div> 
+      <div class="admonitionblock note"> 
+       <table> 
+        <tbody> 
+         <tr> 
+          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+          <td class="content"> Validation checking only applies to the EDIFACT UNA/UNB Segments in the EDIFACT documents </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="terminator-delimiter-2"><a class="anchor" href="#terminator-delimiter-2"></a>Terminator/Delimiter</h6> 
+      <div class="paragraph"> 
+       <p>These settings specify which special characters your Company wants to use to separate and use as terminators in the EDIFACT data. The min/max for this field is 1. All these fields are editable.</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Data element separator character 
+        </dt> 
+        <dd> 
+         <p>The default value is “+”</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Component element separator character 
+        </dt> 
+        <dd> 
+         <p>The default value is “:”</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Repetition separator character 
+        </dt> 
+        <dd> 
+         <p>The default value is “*”</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Segment terminator character 
+        </dt> 
+        <dd> 
+         <p>The default value is “ ‘ “</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Release character 
+        </dt> 
+        <dd> 
+         <p>The default value is “? “</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Line ending between segments 
+        </dt> 
+        <dd> 
+         <p>is a drop down field to specify on your outbound data you would like CR (Carriage return) or Line feed (LF) or Line feed carriage return (LFCR) or none.</p> 
+        </dd> 
+        <dt class="hdlist1">
+          String substitution character 
+        </dt> 
+        <dd> 
+         <p>String substitution character if checked will allow you to enter a character in the value field</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="control-number-settings-4"><a class="anchor" href="#control-number-settings-4"></a>Control Number Settings</h6> 
+      <div class="paragraph"> 
+       <p>Checkbox options:</p> 
+      </div> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Use groups</p> </li> 
+        <li> <p>Use unique Message Reference Numbers</p> </li> 
+        <li> <p>Use unique Group Reference Numbers</p> </li> 
+       </ul> 
+      </div> 
+      <div class="paragraph"> 
+       <p>Other options:</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Initial Interchange Control Reference 
+        </dt> 
+        <dd> 
+         <p>A whole number can be specified in the Initial Interchange Control Reference number to begin on your outbound documents with this Trading Partner. If a single digit is specified it will be padded with leading zeros.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-63"><a class="anchor" href="#required-63"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-63"><a class="anchor" href="#valid-values-63"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-64"><a class="anchor" href="#default-64"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Initial Message Reference Number 
+        </dt> 
+        <dd> 
+         <p>A whole number can be specified to begin on your outbound documents with this Trading Partner. If a single digit is specified it will be padded with leading zeros.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-64"><a class="anchor" href="#required-64"></a>Required?</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>No</pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-64"><a class="anchor" href="#valid-values-64"></a>Valid values</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>Alphanumeric</pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-65"><a class="anchor" href="#default-65"></a>Default</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>`None`</pre> 
+       </div> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Initial Group Reference 
+        </dt> 
+        <dd> 
+         <p>A whole number can be specified to begin on your outbound documents with this Trading Partner. If a single digit is specified it will be padded with leading zeros.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-65"><a class="anchor" href="#required-65"></a>Required?</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>No</pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-65"><a class="anchor" href="#valid-values-65"></a>Valid values</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>Alphanumeric</pre> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-66"><a class="anchor" href="#default-66"></a>Default</h6> 
+      <div class="literalblock"> 
+       <div class="content"> 
+        <pre>`None`</pre> 
+       </div> 
+      </div> 
+      <hr> 
      </div> 
     </div> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="transactions"><a class="anchor" href="#transactions"></a>Transactions</h4> 
-    <div class="paragraph"> 
-     <p>In the Transactions section you can configure specific transactions you expect to process with this trading partner. Transactions can be inbound or outbound and each is defined by a transport protocol and format protocol. For example, if you expect to receive X12 850 messages and to respond with X12 856 messages, you would set those transactions up as inbound and outbound respectively.</p> 
-    </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="transactions-partner"><a class="anchor" href="#transactions-partner"></a>Transactions - Partner</h3> 
+   <div class="paragraph"> 
+    <p>In the Transactions section you can configure specific transactions you expect to process with this trading partner. Transactions can be inbound or outbound and each is defined by a transport protocol and format protocol. For example, if you expect to receive X12 850 messages and to respond with X12 856 messages, you would set those transactions up as inbound and outbound respectively.</p> 
    </div> 
    <div class="sect3"> 
     <h4 id="to-enter-transaction-information"><a class="anchor" href="#to-enter-transaction-information"></a>To enter transaction information</h4> 
-    <div class="paragraph"> 
-     <p>procedure and box info</p> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>In left-hand pane of the <strong>Partnership</strong> page, click <strong>Transactions</strong>.</p> </li> 
+      <li> <p>In the upper right of the page, click <strong>New</strong>.</p> </li> 
+      <li> <p>In the <strong>Direction</strong> listbox, select <strong>Inbound</strong> or <strong>Outbound</strong>.</p> </li> 
+     </ol> 
     </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="format-settings"><a class="anchor" href="#format-settings"></a>Format Settings</h4> 
-    <div class="paragraph"> 
-     <p>In the Format Settings section you can configure the default options for supported B2B format standards, currently EDI X12 and EDIFACT.</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="transactions-2"><a class="anchor" href="#transactions-2"></a>Transactions</h4> 
-    <div class="paragraph"> 
-     <p>In the Transactions section you can configure specific transactions you expect to process with this trading partner. Transactions can be inbound or outbound and each is defined by a transport protocol and format protocol. For example, if you expect to receive X12 850 messages and to respond with X12 856 messages, you would set those transactions up as inbound and outbound respectively.</p> 
-    </div> 
-    <div class="admonitionblock note"> 
-     <table> 
-      <tbody> 
-       <tr> 
-        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-        <td class="content"> In Beta 1, you are only required to set up transactions if you are using the FTP/S transport. Future versions of Anypoint B2B provide options to override the default partner settings in specific transactions, and to control which transactions can be exchanged with a specific trading partner. </td> 
-       </tr> 
-      </tbody> 
-     </table> 
+    <div class="sect4"> 
+     <h5 id="direction"><a class="anchor" href="#direction"></a>Direction</h5> 
+     <div class="dlist"> 
+      <dl> 
+       <dt class="hdlist1">
+         Inbound/Outbound 
+       </dt> 
+       <dd> 
+        <p>Select the direction this transaction will be going. Outbound is from your Company to your Trading Partner’s. Inbound is from your Trading Partner to your Company.</p> 
+       </dd> 
+      </dl> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="format-partner-2"><a class="anchor" href="#format-partner-2"></a>Format - Partner</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Standard 
+        </dt> 
+        <dd> 
+         <p>Select X12 or EDIFACT. If you check the “Use default for Inbound X12 for partner” This will use the settings already set up in X12 or EDIFACT as defaults. If you wish to configure a different format leave the check box unselected and enter the information pertaining to this specific transaction.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-66"><a class="anchor" href="#required-66"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-66"><a class="anchor" href="#valid-values-66"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-67"><a class="anchor" href="#default-67"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Version 
+        </dt> 
+        <dd> 
+         <p>Select the version of the standard you will be using for this specific transaction.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-67"><a class="anchor" href="#required-67"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-67"><a class="anchor" href="#valid-values-67"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-68"><a class="anchor" href="#default-68"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Message Type 
+        </dt> 
+        <dd> 
+         <p>Pick one of the Message Types in the dropdown or select other and enter your transaction type. For X12 it is the numeric number of the transaction.(Ie: 860) For EDIFACT it is the formal name of the document.</p> 
+        </dd> 
+       </dl> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="required-68"><a class="anchor" href="#required-68"></a>Required?</h6> 
+      <div class="paragraph"> 
+       <p>No</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="valid-values-68"><a class="anchor" href="#valid-values-68"></a>Valid values</h6> 
+      <div class="paragraph"> 
+       <p>Alphanumeric</p> 
+      </div> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="default-69"><a class="anchor" href="#default-69"></a>Default</h6> 
+      <div class="paragraph"> 
+       <p><code>None</code></p> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="transport-partner-2"><a class="anchor" href="#transport-partner-2"></a>Transport - Partner</h6> 
+      <div class="paragraph"> 
+       <p>Pick the method of transport you are going to use for this transaction.</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>If you have not defined the parameters for the transport chosen, go back to the AS2 or FTPS areas by clicking on the appropriate one in the left navigation bar to enter your default transport information. If you check the “Use default for Inbound AS2 for partner” this will use the settings already set up in AS2 or FTPS as defaults</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>You will then be able to click on the Transaction Type (In blue) and see your parameters and make any changes needed. If you make changes be sure and click the Update button. If you need to delete a Transaction the Blue “X” on the far right should be selected and a warning about are you sure you want to delete will appear.</p> 
+      </div> 
+     </div> 
     </div> 
    </div> 
   </div> 
@@ -1096,31 +3902,31 @@
  <h2 id="monitoring-b2b-transmissions"><a class="anchor" href="#monitoring-b2b-transmissions"></a>Monitoring B2B Transmissions</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Partner Manager also supports monitoring the tracking data for B2B Transmissions.</p> 
+   <p>APM supports monitoring tracking data for B2B transmissions.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/b2b_intro_05.png" alt="b2b_intro_05"></span></p> 
+   <p>You can use the settings in the following areas to filter for the specific data for which you are looking as well as to review and monitor errors and acknowledgements.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>YOu can use the settings in the following sections to filter for the specific data you are looking for.</p> 
+   <p>You can also search for metadata.</p> 
   </div> 
   <div class="sect3"> 
    <h4 id="partner"><a class="anchor" href="#partner"></a>Partner</h4> 
    <div class="paragraph"> 
-    <p>Leave unselected to search all trading partners, or select a specific partner.</p> 
+    <p>Leave unselected to search all trading partners, or select a specific partner by name.</p> 
    </div> 
   </div> 
   <div class="sect3"> 
    <h4 id="type"><a class="anchor" href="#type"></a>Type</h4> 
    <div class="paragraph"> 
-    <p>Select “All” to search all types of B2B messages. Select X12, EDIFACT, AS2, or FTP/S to filter for messages by a specific format or transport. The Type selection also adjusts the fields that are displayed.</p> 
+    <p>Select “All” to search all types of B2B messages. Select X12, EDIFACT, AS2, or FTPS to filter for messages by a specific format or transport. The Type selection also adjusts the fields that are displayed.</p> 
    </div> 
    <div class="paragraph"> 
     <p>Select “All” to search all types of B2B messages. Select X12, EDIFACT, AS2, or FTP/S to filter for messages by a specific format or transport. The Type selection also adjusts the fields that are displayed.</p> 
    </div> 
   </div> 
   <div class="sect3"> 
-   <h4 id="direction"><a class="anchor" href="#direction"></a>Direction</h4> 
+   <h4 id="direction-2"><a class="anchor" href="#direction-2"></a>Direction</h4> 
    <div class="paragraph"> 
     <p>Select the direction to view inbound messages only, outbound messages only, or both.</p> 
    </div> 
@@ -1132,7 +3938,7 @@
    </div> 
   </div> 
   <div class="sect3"> 
-   <h4 id="filename"><a class="anchor" href="#filename"></a>FileName</h4> 
+   <h4 id="filename-2"><a class="anchor" href="#filename-2"></a>FileName</h4> 
    <div class="paragraph"> 
     <p>Search for a specific file or all files that start with the same text.</p> 
    </div> 
@@ -1140,7 +3946,13 @@
   <div class="sect3"> 
    <h4 id="isa-control"><a class="anchor" href="#isa-control"></a>ISA Control #</h4> 
    <div class="paragraph"> 
-    <p>Search for a message by Control#. (Only enabled when the Type is X12 or EDIFACT.</p> 
+    <p>Search for a message by Control# (only enabled when the Type is X12 or EDIFACT).</p> 
+   </div> 
+  </div> 
+  <div class="sect3"> 
+   <h4 id="metadata-search"><a class="anchor" href="#metadata-search"></a>Metadata search</h4> 
+   <div class="paragraph"> 
+    <p>Insert screenshot</p> 
    </div> 
   </div> 
  </div> 
@@ -1160,7 +3972,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#trading-partner-management">Trading Partner Management</a></li><li><a class="scroll-menu-link" href="#monitoring-b2b-transmissions">Monitoring B2B Transmissions</a></li><li><a class="scroll-menu-link" href="#getting-started">Getting Started</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#set-up-the-home-organization">Set up the home organization</a></li><li><a class="scroll-menu-link" href="#set-up-a-trading-partner">Set up a trading partner</a></li><li><a class="scroll-menu-link" href="#monitoring-b2b-transmissions">Monitoring B2B Transmissions</a></li><li><a class="scroll-menu-link" href="#getting-started">Getting Started</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
