@@ -883,7 +883,7 @@
  <h3 id="attachments"><a class="anchor" href="#attachments"></a>Attachments</h3> 
  <div class="ulist"> 
   <ul> 
-   <li> <p><a href="_attachments/as2-x12-doc.zip">as2-x12-doc.zip</a></p> </li> 
+   <li> <p><a href="_attachments/as2-x12-walkthrough.zip">as2-x12-walkthrough.zip</a></p> </li> 
    <li> <p><a href="_attachments/as2-x12-po.xml">as2-x12-po.xml</a></p> </li> 
    <li> <p><a href="_attachments/as2-x12-po.xsd">as2-x12-po.xsd</a></p> </li> 
   </ul> 
@@ -897,12 +897,12 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Download the <a href="_attachments/as2-x12-doc.zip">as2-x12-doc.zip application</a>, and unzip.</p> </li> 
+    <li> <p>Download the <a href="_attachments/as2-x12-walkthrough.zip">as2-x12-walkthrough.zip application</a>, and unzip.</p> </li> 
     <li> <p>Import the application in Anypoint Studio: click <strong>File</strong> &gt; <strong>Import</strong> &gt; <strong>Anypoint Studio Project from External Location</strong>. Click <strong>Next</strong>, select the downloaded application, and click <strong>Finish</strong>.</p> </li> 
     <li> <p>From your web browser, log into Anypoint Partner Manager (contact your MuleSoft account manager for access).</p> </li> 
     <li> <p>Click the home organization view in the top right corner. Create your API key (reference step 3.2).</p> </li> 
     <li> <p>In Anypoint Studio, click the file <em>customer.xml</em> in the app directory, and select the Global view tab. Double-click the B2B global element configuration and insert the API key you created from Anypoint Partner Manager.</p> </li> 
-    <li> <p>Right-click on the imported project directory <em>as2-x12-doc</em>. Select <strong>Run As</strong> and click <strong>Mule Application</strong>.</p> </li> 
+    <li> <p>Right-click on the imported project directory <em>as2-x12-walkthrough</em>. Select <strong>Run As</strong> and click <strong>Mule Application</strong>.</p> </li> 
     <li> <p>Inside the project is a file in <em>src/test/resources</em> called <a href="_attachments/as2-x12-po.xml">po.xml</a>. Create a copy and place it in the <em>outbox</em> directory.</p> </li> 
     <li> <p>The file should disappear from the directory since the File message source deletes the file once it reads it.</p> </li> 
     <li> <p>Access the B2B Transmissions view in Anypoint Partner Manager to confirm that the AS2 and X12 transmissions have taken place.</p> </li> 
@@ -914,7 +914,7 @@
  <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This example shows how to leverage Anypoint Partner Manager to manage and track B2B processes. The goal is to develop a Mule application, representing a customer, that transforms an XML purchase order read from the filesystem to an X12 850 and sends it to a supplier over AS2. The supplier returns an X12 997 to an AS2 endpoint the application is listening on in order to inform the customer whether the 850 was accepted or rejected. All B2B exchanges are managed and recorded by Anypoint Partner Manager while the actual files exchanged are stored on an Amazon S3 bucket.</p> 
+   <p>This example shows how to leverage Anypoint Partner Manager to manage and track B2B processes. The goal is to develop a Mule application, representing a customer, that transforms an XML purchase order read from the filesystem to an X12 850 and sends it to a supplier over AS2. The supplier returns an X12 997 to an AS2 endpoint the application is listening on in order to inform the customer whether the 850 was accepted or rejected. Anypoint Partner Manager manages and records all B2B exchanges while the actual files exchanged are stored on an Amazon S3 bucket.</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/B2B_AS2EDI_01.png" alt="B2B_AS2EDI_01"></span></p> 
@@ -931,7 +931,7 @@
    <h3 id="create-partnership"><a class="anchor" href="#create-partnership"></a>Create Partnership</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Login into Anypoint Partner Manager:</p> </li> 
+     <li> <p>Login into Anypoint Partner Manager.</p> </li> 
      <li> <p>Click <strong>Trading Partners</strong> found on the left hand side menu.</p> </li> 
      <li> <p>Press <strong>New Partner</strong> on the upper right hand side corner.</p> </li> 
      <li> <p>Enter <em>My Supplier</em> as <strong>Company Name</strong> and press <strong>Save</strong>.</p> </li> 
@@ -1075,8 +1075,8 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>Launch Anypoint Studio and create a new Mule project.</p> </li> 
-    <li> <p>Rename the initial Mule configuration file created by Studio to <em>customer.xml</em>&nbsp;</p> </li> 
-    <li> <p>Create a new Mule configuration file and name it <em>mock-supplier</em></p> 
+    <li> <p>Rename the initial Mule configuration file created by Studio to <em>customer.xml</em>&nbsp;.</p> </li> 
+    <li> <p>Create a new Mule configuration file and name it <em>mock-supplier</em>.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/B2B_AS2EDI_10.png" alt="B2B_AS2EDI_10"></span></p> 
      </div> </li> 
@@ -1093,12 +1093,12 @@
   <div class="sect2"> 
    <h3 id="create-b2b-connector-config"><a class="anchor" href="#create-b2b-connector-config"></a>Create B2B Connector Config</h3> 
    <div class="paragraph"> 
-    <p>The B2B Connector acts like a bridge between Mule and Anypoint Partner Manager. It allows the AS2 Connector and the X12 module to fetch partnerships and record transmissions.</p> 
+    <p>The B2B Connector acts like a bridge between Mule and Anypoint Partner Manager. It enables the management of AS2 Connector and the X12 module in addition to the recording of B2B exchanges.</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Click the <strong>Global Elements</strong> view. Go to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B: Basic Configuration</strong> . If you have an Amazon S3 bucket available, you should go to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B: Amazon S3 File Storage</strong>. Choosing this configuration tells the B2B Connector to persist X12 documents and AS2 message content to Amazon S3.</p> </li> 
-     <li> <p>Enter your secret API key which is obtained from your home organization’s <strong>Company</strong> settings page in Anypoint Partner Manager.</p> 
+     <li> <p>Click the <strong>Global Elements</strong> view. Go to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B: Basic Configuration</strong> . If you have an Amazon S3 bucket available, you should go instead to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B: Amazon S3 File Storage</strong>. The latter configuration type allows the B2B Connector to persist X12 documents and AS2 message content to Amazon S3.</p> </li> 
+     <li> <p>Enter your secret API key which is obtained from your home organization’s <strong>Company</strong> settings page in Anypoint Partner Manager:</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/B2B_AS2EDI_13.png" alt="B2B_AS2EDI_13"></span></p> 
       </div> 
@@ -1195,7 +1195,7 @@ Application sender/receiver code = _MY-SUPPLIER_</pre></td>
        </div> 
       </div> 
       <div class="paragraph"> 
-       <p>The interchange identifiers are the key for looking up the partnership to use for X12 processing.</p> 
+       <p>The interchange identifiers serve as the lookup key for finding the partnership to use for X12 processing.</p> 
       </div> 
       <div class="paragraph"> 
        <p>The following screenshot should match what you have in the&nbsp;<strong>Global Elements</strong>&nbsp;view:</p> 
@@ -1212,7 +1212,7 @@ Application sender/receiver code = _MY-SUPPLIER_</pre></td>
  <h2 id="transform-and-send-850-over-as2"><a class="anchor" href="#transform-and-send-850-over-as2"></a>Transform and Send 850 over AS2</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>With the connector configs out of the way, construct a flow to read an XML purchase order from the filesystem, transform it to a canonical EDI message structure, and finally, and write it out as an X12 850 document to send it out to your supplier over AS2.</p> 
+   <p>With the connector configs out of the way, construct a flow to read an XML purchase order from the filesystem, transform it to a canonical EDI message structure, and finally, write it out as an X12 850 document to send it out to your supplier over AS2.</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
@@ -1292,7 +1292,7 @@ AS2-To = _MY-SUPPLIER_</pre></td>
       </div> 
      </div> 
      <div class="paragraph"> 
-      <p>Note that these identifiers were configured in Anypoint Partner Manager. The AS2 identifiers serve as lookup keys for selecting the partnership to use.</p> 
+      <p>Note that these identifiers were set in Anypoint Partner Manager. The AS2 identifiers serve as lookup keys for finding the partnership to use for transmitting the AS2 message.</p> 
      </div> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/B2B_AS2EDI_17.png" alt="B2B_AS2EDI_17"></span></p> 
@@ -1305,7 +1305,7 @@ AS2-To = _MY-SUPPLIER_</pre></td>
  <h2 id="receive-997-over-as2"><a class="anchor" href="#receive-997-over-as2"></a>Receive 997 over AS2</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The subsequent flow to develop receives a 997 over AS2 from the supplier in response to the 850 sent by you. In the <em>customer.xml</em> Mule config:</p> 
+   <p>The subsequent flow to develop will receive a 997 over AS2 from the supplier in response to the 850 sent by you. In the <em>customer.xml</em> Mule config:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
@@ -1331,10 +1331,10 @@ AS2-To = _MY-SUPPLIER_</pre></td>
      <div class="ulist"> 
       <ul> 
        <li> <p><strong>Use B2B Provider</strong> remains disabled for all EDI configs.</p> </li> 
-       <li> <p>Basic AS2 Connector configs are created: <strong>Create</strong> → <strong>Connector Configuration</strong> → <strong>AS2: Configuration</strong></p> </li> 
-       <li> <p>Each AS2 endpoint is bound to its respective HTTP global endpoint</p> </li> 
-       <li> <p>X12 Module config schema path is set to <em>/x12/005010/850.esl</em></p> </li> 
-       <li> <p>Unique names are given to the configs</p> 
+       <li> <p>Basic AS2 Connector configs are created: <strong>Create</strong> → <strong>Connector Configuration</strong> → <strong>AS2: Configuration</strong>.</p> </li> 
+       <li> <p>Each AS2 endpoint is bound to its respective HTTP global endpoint.</p> </li> 
+       <li> <p>X12 Module config schema path is set to <em>/x12/005010/850.esl</em>.</p> </li> 
+       <li> <p>Unique names are given to the configs.</p> 
         <div class="paragraph"> 
          <p>The following screenshot should match what you have in the mock supplier’s <strong>Global Elements</strong> view:</p> 
         </div> 
@@ -1345,7 +1345,7 @@ AS2-To = _MY-SUPPLIER_</pre></td>
      </div> </li> 
     <li> <p>Switch to the <strong>Message Flow</strong> view. Drag the AS2 processor to the canvas and select the <strong>Receive</strong> operation. Make sure that <strong>Connector Configuration</strong> points to the mock supplier’s AS2 config.</p> </li> 
     <li> <p>Add an <strong>X12</strong> processor to the flow. Select the mock supplier’s X12 config for <strong>Connector Configuration</strong> and set &nbsp;its <strong>Operation</strong> to <strong>Read</strong>.</p> </li> 
-    <li> <p>After the 850 is parsed by the X12 processor, the generated 997 needs to be extracted from the payload. Add the <strong>Set Payload</strong> processor to the processor chain and enter in its <strong>Value</strong> attribute: <em>#[ ['TransactionSets' : [ 'v005010' : [ '997' : payload.FunctionalAcksGenerated ] ] ] ]</em></p> </li> 
+    <li> <p>After the 850 is parsed by the X12 processor, the generated 997 needs to be extracted from the payload. Add the <strong>Set Payload</strong> processor to the processor chain and enter in its <strong>Value</strong> attribute: <em>#[ ['TransactionSets' : [ 'v005010' : [ '997' : payload.FunctionalAcksGenerated ] ] ] ]</em>.</p> </li> 
     <li> <p>Add another <strong>X12</strong> processor to serialize the 997. Select the mock supplier’s X12 config for <strong>Connector Configuration</strong>. Expand the <strong>Operation</strong> drop-down list and select <strong>Write</strong>.</p> </li> 
     <li> <p>The last step in the flow to send the 997 over AS2. Append an AS2 processor to the flow and enter <em>MY-SUPPLIER</em> in <strong>AS2-From</strong> and <em>MOUNTAINOUT</em> in <strong>AS2-To</strong>.</p> 
      <div class="paragraph"> 
