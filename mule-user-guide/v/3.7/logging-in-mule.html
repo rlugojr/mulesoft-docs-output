@@ -869,13 +869,21 @@
    <p>You can configure what gets logged, where it gets logged, and how by editing a configuration file that sits in your project.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Mule logs multiple messages and specific elements in your applications' flows, in order to help you debug and keep track of events. You can also include the <a href="/mule-user-guide/v/3.7/logger-component-reference"><code>&lt;logger&gt;</code> Element</a> anywhere in a flow and set it up to output any message you want. By creating a configuration file, you can define what kinds of messages will be logged, in what way (asynchronously or synchronously), and where they get logged (e.g. to the console, to disk, to an endpoint or to a database).</p> 
+   <p>Mule logs multiple messages and specific elements in your applications' flows, in order to help you debug and keep track of events. You can also include the <a href="/mule-user-guide/v/3.7/logger-component-reference"><code>&lt;logger&gt;</code> Element</a> anywhere in a flow and set it up to output any message you want. By creating a configuration file, you can define what kinds of messages to log, in what way (asynchronously or synchronously), and where they get logged (such as to the console, to disk, to an endpoint or to a database).</p> 
   </div> 
   <div class="paragraph"> 
    <p>For logging, Mule ESB uses <a href="http://www.slf4j.org/">slf4j</a>, which is a logging facade that discovers and uses a logging strategy from the classpath, such as <a href="http://logging.apache.org/log4j/2.x/">Log4J2</a> or the JDK Logger. By default, Mule includes <a href="http://logging.apache.org/log4j/2.x/">Log4J2</a>, which is configured with a file called <code>log4j2.xml</code>.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The Mule server has a&nbsp;<code>log4j2.xml</code> in its <code>conf</code> directory, which you can customize when running the server in standalone mode. Additionally, all the examples included with Mule have&nbsp;<code>log4j2.xml</code> files in their <code>conf</code> directories.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Note</strong>: If you are using Anypoint Studio, the log output appears in the <code>.mule</code> directory of your Studio workspace. For example on a Mac, for an application called <code>Basic Tutorial</code>, the log output is in this file:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="code">/Users/me/AnypointStudio/workspace/.mule/logs/basic_tutorial.log</code></pre> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -931,16 +939,19 @@
  <h2 id="configuring-custom-logging-settings"><a class="anchor" href="#configuring-custom-logging-settings"></a>Configuring Custom Logging Settings</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>By default, the logging in Mule is done asynchronously and at a level greater than or equal to INFO, and thus will discard log messages at the DEBUG or TRACE level.</p> 
+   <p>By default, logging in Mule is done asynchronously and at a level greater than or equal to INFO, and thus discards log messages at the DEBUG or TRACE level.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>If you need to use synchronized logging, adjust the logging level or define custom categories, you can configure these properties via the file <code>$MULE_HOME/conf/log4j2.xml</code>. This file specifies how the logger behaves. Not editing this XML file implies that you will be using the default properties.</p> 
+   <p>If you need to use synchronized logging, adjust the logging level or define custom categories, you can configure these properties via the file <code>$MULE_HOME/conf/log4j2.xml</code>. This file specifies how the logger behaves. Not editing this XML file implies that you are using the default properties.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>In Anypoint Studio, <code>log4j2.xml</code> appears in the <code>src/main/resources</code> path.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The default config defines the standard loggers exactly as Mule did before the introduction of asynchronous logging. The only difference is that the new config defines all loggers (including the root one) as asynchronous.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>You can override this config at the domain or application level. When an application is deployed, Mule will look for a config file following a child-first pattern, as listed below:</p> 
+   <p>You can override this config at the domain or application level. When an application is deployed, Mule looks for a config file following a child-first pattern, as listed below:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
@@ -1041,7 +1052,7 @@
   <div class="sect2"> 
    <h3 id="exception-handling-with-asynchronous-logging"><a class="anchor" href="#exception-handling-with-asynchronous-logging"></a>Exception Handling With Asynchronous Logging</h3> 
    <div class="paragraph"> 
-    <p>If you’re using asynchronous logging and experience a system crash that could have caused incomplete logs, there is an exception handler designed to help you in this situation. By default Mule will register an LMAX&nbsp;<code>ExceptionHandler</code> that will log&nbsp;any issues dumping log events to disk, to the console and to&nbsp;<code>logs/mule_ee.log</code>. Alternatively, you can provide your own exception handler by setting the system property&nbsp;<code>AsyncLoggerConfig.ExceptionHandler</code> to the canonical name of a class implementing the interface.</p> 
+    <p>If you’re using asynchronous logging and experience a system crash that could have caused incomplete logs, there is an exception handler designed to help you in this situation. By default Mule registers an LMAX&nbsp;<code>ExceptionHandler</code> that logs&nbsp;any issues dumping log events to disk, to the console and to&nbsp;<code>logs/mule_ee.log</code>. Alternatively, you can provide your own exception handler by setting the system property&nbsp;<code>AsyncLoggerConfig.ExceptionHandler</code> to the canonical name of a class implementing the interface.</p> 
    </div> 
    <div class="paragraph"> 
     <p>This is what the default exception handler class looks like:</p> 
@@ -1110,7 +1121,7 @@
 
 <span class="comment">/**
  * Implementation of {@link com.lmax.disruptor.ExceptionHandler} to be used
- * when async loggers fail to log their messages. It will log this event
+ * when async loggers fail to log their messages. It logs this event
  * using the {@link org.apache.logging.log4j.status.StatusLogger}
  *
  * @since 3.6.0
@@ -1153,7 +1164,7 @@
     <p>As from Mule runtime 3.6.0, Log4j1 has been replaced by Log4j2 as the backend tool for managing logging. This implies some backwards compatibility issues as the necessary configuration files in this new framework are different.&nbsp;Log4j2 allows for asynchronous logging, which wasn’t previously available; Mule now implements asynchronous logging by default, as it implies a very substantial improvement in performance. Although Mule has a policy of not breaking backwards compatibility on minor releases, the extent of the improvement in performance brought by this change outweighed any inconveniences by far, and made it worthwhile to implement the change.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>Migrated applications from versions of Mule that are older than&nbsp;3.6.0 but use the default logging settings won’t experience any issues and will keep working as normal (except that logging will be asynchronous). For applications that are older than&nbsp;3.6.0 and do include a custom logging configuration file – both with .xml and .properties&nbsp;extensions – this file won’t be recognized anymore; in these cases, logging will be managed according to the default settings.</p> 
+    <p>Migrated applications from versions of Mule that are older than&nbsp;3.6.0 but use the default logging settings don’t experience any issues and keep working as normal (except that logging is asynchronous). For applications that are older than&nbsp;3.6.0 and do include a custom logging configuration file – both with .xml and .properties&nbsp;extensions – this file isn’t recognized anymore; in these cases, logging is managed according to the default settings.</p> 
    </div> 
    <div class="admonitionblock tip"> 
     <table> 
@@ -1172,7 +1183,7 @@
   <div class="sect2"> 
    <h3 id="configuration-reloading"><a class="anchor" href="#configuration-reloading"></a>Configuration Reloading</h3> 
    <div class="paragraph"> 
-    <p>By default, Mule will poll modified config files every 60 seconds to check for changes. If any of those files have changed, the logger config will be modified on the fly. You can customize this interval by setting the&nbsp;<code>monitorInterval</code> attribute in the root element (check <a href="http://logging.apache.org/log4j/2.x/manual/">log4j2 manual</a> for further reference).</p> 
+    <p>By default, Mule polls modified config files every 60 seconds to check for changes. If any of those files have changed, the logger config is modified on the fly. You can customize this interval by setting the&nbsp;<code>monitorInterval</code> attribute in the root element (check <a href="http://logging.apache.org/log4j/2.x/manual/">log4j2 manual</a> for further reference).</p> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -1226,7 +1237,7 @@
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>This parameter will write the Log4J2 startup information, including the location of the configuration file being used, to <code>stdout</code>. You must remove that configuration file before your modified configuration will work.</p> 
+    <p>This parameter writes the Log4j2 startup information, including the location of the configuration file being used, to <code>stdout</code>. You must remove that configuration file before your modified configuration can work.</p> 
    </div> 
   </div> 
  </div> 

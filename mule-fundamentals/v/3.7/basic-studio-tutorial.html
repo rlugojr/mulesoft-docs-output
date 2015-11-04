@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-fundamentals/v/3.7/basic-studio-tutorial" />
-    <meta name="description" content="This exercise is designed to introduce you to Anypoint Studio and help you get comfortable building applications. This tutorial walks you thro..." />
+    <meta name="description" content="This exercise helps you understand Anypoint Studio and get comfortable building applications. This tutorial walks you through how to use Anypo..." />
     <meta class="swiftype" name="title" data-type="string" content="Basic Studio Tutorial" />
 
 </head>
@@ -866,7 +866,7 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This exercise is designed to introduce you to Anypoint Studio and help you get comfortable building applications.</p> 
+   <p>This exercise helps you understand Anypoint Studio and get comfortable building applications.</p> 
   </div> 
   <div class="paragraph"> 
    <p>This&nbsp;tutorial walks you through how to use Anypoint Studio to build a simple HTTP request-response application.&nbsp;After creating and running the example locally, you are able to apply what you have learned to create <a href="/mule-fundamentals/v/3.7/content-based-routing-tutorial">more complex applications</a>.</p> 
@@ -885,25 +885,49 @@
  <h2 id="goals"><a class="anchor" href="#goals"></a>Goals</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In this tutorial, our goals are to:</p> 
+   <p>This tutorial consists of these parts:</p> 
   </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Create an application in Anypoint Studio containing a single flow that:</p> 
-     <div class="ulist"> 
-      <ul> 
-       <li> <p>Receives an HTTP request&nbsp;</p> </li> 
-       <li> <p>Logs the message payload&nbsp;</p> </li> 
-       <li> <p>Returns a modified payload as an HTTP response</p> </li> 
-      </ul> 
-     </div> </li> 
-    <li> <p>Run the application on a local runtime embedded in Anypoint Studio.</p> </li> 
-    <li> <p>Test the application using your browser.&nbsp;</p> </li> 
-    <li> <p>Stop the application.</p> </li> 
-    <li> <p>Edit the application and rerun it.</p> </li> 
-    <li> <p><em>(Optional)</em>&nbsp;Apply your knowledge to an extra credit challenge.</p> </li> 
-   </ol> 
-  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: %;"> 
+    <col style="width: %;"> 
+    <col style="width: %;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">#</th> 
+     <th class="tableblock halign-left valign-top">Task</th> 
+     <th class="tableblock halign-left valign-top">Section</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Launch Anypoint Studio</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#launching-studio">Launching Studio</a></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Create a simple application that displays a message in a browser</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#constructing-an-application">Constructing an Application</a></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Learn about logging to display information in a log file</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#adding-logging">Adding Logging</a></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Learn about flows in your application</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#working-with-flows">Working With Flows</a></p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Add more features to your application</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#extending-your-application">Extending Your Application</a></p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -927,48 +951,78 @@
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/workspacelauncher.png" alt="workspacelauncher"></span></p> 
      </div> </li> 
-    <li> <p>If this is the first time you have launched Studio, you may see a&nbsp;<strong>Welcome</strong>&nbsp;screen. Click&nbsp;<strong>Create a Project</strong>&nbsp;to dismiss the screen and jump straight to the New Mule Project wizard.</p> 
+    <li> <p>If this is the first time you have launched Studio, you see a&nbsp;Welcome&nbsp;screen. Click&nbsp;<strong>Create a Project</strong>&nbsp;to dismiss the screen and jump straight to the New Mule Project wizard.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/WelcomeScreen.png" alt="WelcomeScreen"></span></p> 
      </div> </li> 
    </ol> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="creating-a-new-project"><a class="anchor" href="#creating-a-new-project"></a>Creating a New Project</h2> 
- <div class="sectionbody"> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Unless the New Project Wizard is already open, click&nbsp;<strong>File</strong>&nbsp;&gt;&nbsp;<strong>New</strong>&nbsp;&gt;&nbsp;<strong>Mule Project</strong>.</p> </li> 
-    <li> <p>Studio opens the&nbsp;<strong>New Mule Project</strong>&nbsp;wizard. Fill in the&nbsp;<strong>Name</strong>&nbsp;field with the value Basic Tutorial.</p> </li> 
-    <li> <p>Click the <strong>Server Runtime</strong> to which you want to deploy your project. Anypoint Studio automatically populates the&nbsp;Server Runtime&nbsp;field with a default server that comes bundled with your download. You can change to a different runtime if you have others installed –&nbsp;this project works with any runtime. For more about installing additional runtime versions, see <a href="/mule-user-guide/v/3.7/installing-extensions">Installing Extensions</a>.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/basic-studio-new-mule-project.png" alt="basic-studio-new-mule-project"></span></p> 
-     </div> </li> 
-    <li> <p>Click&nbsp;<strong>Finish</strong>&nbsp;to create the project.</p> </li> 
-    <li> <p>In the&nbsp;<strong>Package Explorer</strong>, <code>Basic Tutorial.xml</code> appears inside the <code>src/main/app</code> folder.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/packages.png" alt="packages"></span></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>The&nbsp;<code>.xml</code> file stores flow information for the visual editor.&nbsp;When your new project opens for the first time, Anypoint Studio automatically opens the&nbsp;<code>.xml file</code>&nbsp;and presents you with a blank canvas. The main sections of the UI are the following:</p> 
-     </div> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/blank+canvas.png" alt="blank+canvas"></span></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>Find out more about mule-project.xml file:<br> The <strong>mule-project.xml</strong> file is the Mule project descriptor file. Open this file to change the project runtime, set or edit environment variables, or edit the project description. Commit this file, along with your &lt;name&gt;.xml file to your source control systems to avoid errors when sharing your project.</p> 
-     </div> </li> 
-   </ol> 
+  <div class="sect2"> 
+   <h3 id="creating-a-new-project"><a class="anchor" href="#creating-a-new-project"></a>Creating a New Project</h3> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>If the New Mule Project screen is not open, click&nbsp;<strong>File</strong>&nbsp;&gt;&nbsp;<strong>New</strong>&nbsp;&gt;&nbsp;<strong>Mule Project</strong>.</p> </li> 
+     <li> <p>Studio opens the&nbsp;<strong>New Mule Project</strong>&nbsp;wizard. Fill in the&nbsp;<strong>Name</strong>&nbsp;field with the value <code>Basic Tutorial</code>.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/basic-studio-new-mule-project.png" alt="basic-studio-new-mule-project"></span></p> 
+      </div> </li> 
+     <li> <p>Click&nbsp;<strong>Finish</strong>&nbsp;to create the project.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The main sections of the UI are the following:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/blank+canvas.png" alt="blank+canvas"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The blue area in the center is the canvas where you build a visual representation of your Mule program by dragging building blocks from the palette outlined in green to the canvas. We explain this in greater detail in the next section.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If necessary, see this&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">quick overview</a>&nbsp;on how to use the visual editor to drag and drop building blocks from the palette onto the canvas.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>At the bottom of the canvas are 3 tabs that let you alternate between visual and XML editing.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/basic-t-canvas-tabs.png" alt="basic-t-canvas-tabs"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>These tabs are:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><strong>Message Flow</strong> - The visual editor in the canvas.</p> </li> 
+     <li> <p><strong>Global Elements</strong> - Lets you set properties for the building blocks.</p> </li> 
+     <li> <p><strong>Configuration XML</strong> - A text editor that lets you view and change the XML file behind the visual representation.</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="more-on-the-xml-file"><a class="anchor" href="#more-on-the-xml-file"></a>More on the XML File</h3> 
+   <div class="paragraph"> 
+    <p>When you create a Mule Project, Anypoint Studio creates an XML file for you. Because you named the project Basic Tutorial, Studio creates the <code>Basic Tutorial.xml</code> for you, which appears in the&nbsp;<strong>Package Explorer</strong>, which is outlined in orange. This XML file appears inside the <code>src/main/app</code> folder:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/packages.png" alt="packages"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The&nbsp;<code>.xml</code> file stores flow information for the visual editor.&nbsp;When your new project opens for the first time, Anypoint Studio automatically opens the&nbsp;<code>.xml file</code>&nbsp;and presents you with a blank canvas.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The <strong>mule-project.xml</strong> file is the Mule project descriptor file. Open this file to change the project runtime, set or edit environment variables, or edit the project description. After you finish creating your project, you can commit this file, along with your &lt;project_name&gt;.xml file to your source control systems to avoid errors when sharing your project.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="modeling-a-mule-flow"><a class="anchor" href="#modeling-a-mule-flow"></a>Modeling a Mule Flow</h2> 
+ <h2 id="constructing-an-application"><a class="anchor" href="#constructing-an-application"></a>Constructing an Application</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In this tutorial, your goal is to build an application&nbsp;that&nbsp;receives an HTTP request, logs the message payload, and then modifies the payload before returning it as an HTTP response. You can build this application using three building blocks in Studio:</p> 
+   <p>In this section of the tutorial, we build an application&nbsp;that&nbsp;just displays a message you set in your browser.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>This section uses these building blocks:</p> 
   </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
@@ -981,78 +1035,186 @@
      <td class="tableblock halign-left valign-top"><p class="tableblock">Allows your Mule application to connect to Web resources through the HTTP or HTTPS protocol. Find this in the Connectors section of the palette. &nbsp;</p></td> 
     </tr> 
     <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="/mule-user-guide/v/3.7/logger-component-reference">Logger Component</a></strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Logs messages or activity based on the value of a Mule expression. Find this in the Components section of the palette.</p></td> 
-    </tr> 
-    <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="/mule-user-guide/v/3.7/set-payload-transformer-reference">Set Payload Transformer</a></strong></p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">Modifies your payload into a "Hello, World" message. Find this in the Transformers section of the palette.</p></td> 
     </tr> 
    </tbody> 
   </table> 
-  <div class="paragraph"> 
-   <p>Drag and drop these three building blocks into place on the canvas to visually construct, or model, your flow, in the order shown:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/flow.png" alt="flow"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>More detailed instructions:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If necessary, consult this&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">quick overview</a>&nbsp;on how to use the visual editor to drag and drop building blocks from the palette onto the canvas.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Or, follow this step-by-step guide to model the flow for this example.</p> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p><strong>Tip: Use Studio Search</strong></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/basic-studio-search.png" alt="basic-studio-search.png"></span></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><strong>Note</strong>: Building blocks in each category of the palette are organized alphabetically. To avoid scrolling, use the search tool in the upper right corner of the palette to find the building blocks that you want more quickly. You can also use this area to view more information about the building block in <a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a>.</p> 
+       </div> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Click and drag an&nbsp;<strong>HTTP Connector</strong>&nbsp;from the Connectors section of the palette onto the canvas.</p> 
+    <li> <p>Search for "http" and drag the <strong>HTTP Connector</strong> to the canvas followed by <strong>Set Payload</strong>:</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/add-http.png" alt="add-http"></span></p> 
+      <p><span class="image"><img src="./_images/basic-t-starting-flow.png" alt="basic-t-starting-flow"></span></p> 
      </div> </li> 
-    <li> <p>Click and drag a&nbsp;<strong>Logger</strong>&nbsp;from the Components section of the palette and drop it to the right of the HTTP endpoint on the canvas.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/add-logger.png" alt="add-logger"></span></p> 
+    <li> <p>Click each block to set its properties:</p> 
+     <div class="olist loweralpha"> 
+      <ol class="loweralpha" type="a"> 
+       <li> <p>For the HTTP connector, click the green plus sign to the right of <strong>Connector Configuration</strong>:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/basic-t-http-cfg.png" alt="basic-t-http-cfg"></span></p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>+ When the menu appears, click <strong>OK</strong> to accept the default settings. This sets the host to <code>0.0.0.0</code> and the port to <code>8081</code>. When you test the application, you can view its information at <code><a href="http://0.0.0.0:8081" class="bare">http://0.0.0.0:8081</a></code>:</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/basic-t-http-props.png" alt="basic-t-http-props"></span></p> 
+        </div> </li> 
+      </ol> 
      </div> </li> 
-    <li> <p>Lastly, place a <strong>Set Payload</strong> transformer immediately to the right of the Logger component, making sure to drop it inside the dashed line area.</p> 
+    <li> <p>For the Set Payload, in the <strong>Value</strong> field, erase the <code>#[]</code> value and add a statement such as <code>Hello MuleSoft</code>:</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/add-set-payload.png" alt="add-set-payload."></span></p> 
+      <p>image:basic-t-set-payload</p> 
      </div> 
-     <div class="admonitionblock note"> 
-      <table> 
-       <tbody> 
-        <tr> 
-         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-         <td class="content"> 
-          <div class="paragraph"> 
-           <p><strong>Tip: Use Studio Search</strong></p> 
-          </div> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/basic-studio-search.png" alt="basic-studio-search.png"></span></p> 
-          </div> 
-          <div class="paragraph"> 
-           <p><strong>Note</strong>: Building blocks in each category of the palette are organized alphabetically. To avoid scrolling, use the search tool in the upper right corner of the palette to find the building blocks that you want more quickly. You can also use this area to view more information about the building block in <a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a>.</p> 
-          </div> </td> 
-        </tr> 
-       </tbody> 
-      </table> 
+     <div class="paragraph"> 
+      <p>With just a few clicks, you have created (also known as modeled) an application on the Studio canvas.</p> 
      </div> </li> 
    </ol> 
   </div> 
-  <div class="paragraph"> 
-   <p>With just a few clicks, you have modeled your entire application on the Studio canvas.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>After you configure individual elements within it, which occurs in the next section, this flow accomplishes the goals that you set out to achieve with this application. Each building block you select and place on the canvas performs part of the functionality of your application, as shown in the image below.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/explanation.png" alt="explanation"></span></p> 
+  <div class="sect2"> 
+   <h3 id="verifying-that-your-application-works"><a class="anchor" href="#verifying-that-your-application-works"></a>Verifying That Your Application Works</h3> 
+   <div class="paragraph"> 
+    <p>Anypoint Studio makes it easy to test applications:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Click the top project line name in <strong>Package Explorer</strong> and click <strong>Run</strong> &gt; <strong>Run As</strong> &gt; <strong>Mule Application</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/basic-t-run-as-mule-app.png" alt="basic-t-run-as-mule-app"></span></p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>The console lists output and should end with statements similar to:</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/basic-t-mule-is-up-and-kicking.png" alt="basic-t-mule-is-up-and-kicking"></span></p> 
+      </div> </li> 
+     <li> <p>Open a browser and type the address as 0.0.0.0:8081. The results are:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/basic-t-browser-results.png" alt="basic-t-browser-results"></span></p> 
+      </div> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Now you know your application works. Let’s add more capabilities.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="configuring-the-flow-elements"><a class="anchor" href="#configuring-the-flow-elements"></a>Configuring the Flow Elements</h2> 
+ <h2 id="adding-logging"><a class="anchor" href="#adding-logging"></a>Adding Logging</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Logging is very useful for applications in that you can store messages from your application for errors, information, warnings, tracing, and debugging. Logging is configured with the log4j2.xml file which is in your project’s <code>src/main/resources</code> path. You can view this path in the <strong>Package Explorer</strong>. You don’t need to change anything in this file, but you can view it for more information on how logging works.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To add the Logger component, type "log" in the search and drag the Logger to your canvas:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/basic-t-logging.png" alt="basic-t-logging"></span></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Where does the logging output appear?</strong></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The log4j2.xml file provides this definition:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;Appenders&gt;</span>
+  <span class="tag">&lt;RollingFile</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">file</span><span class="delimiter">"</span></span> <span class="attribute-name">fileName</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sys:mule.home}${sys:file.separator}logs${sys:file.separator}basic_tutorial.log</span><span class="delimiter">"</span></span>
+           <span class="attribute-name">filePattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">${sys:mule.home}${sys:file.separator}logs${sys:file.separator}basic_tutorial-%i.log</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;PatternLayout</span> <span class="attribute-name">pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">%d [%t] %-5p %c - %m%n</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;SizeBasedTriggeringPolicy</span> <span class="attribute-name">size</span>=<span class="string"><span class="delimiter">"</span><span class="content">10 MB</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;DefaultRolloverStrategy</span> <span class="attribute-name">max</span>=<span class="string"><span class="delimiter">"</span><span class="content">10</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/RollingFile&gt;</span>
+<span class="tag">&lt;/Appenders&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>This code contains definitions that Studio plugs in depending on where you locate your Studio workspace and your computer’s operating system. The <code>mule.home</code> value is the path to where your workspace resides. The <code>file.separator</code> value is a backslash (\) in Windows or a forward slash in Mac and Linux. The actual log file name is your project’s name with the <code>.log</code> file type. The log file appears in your Studio workspace in the <code>.mule</code> directory.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For example on a Mac, the path is:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="code">/Users/me/AnypointStudio/workspace/.mule/logs/basic_tutorial.log</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The first few entries are:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="code">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+         <td class="code"><pre>2015-11-03 11:07:28,951 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication -
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'basic_tutorial'                        +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2015-11-03 11:07:29,065 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2015-11-03 11:07:29,184 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2015-11-03 11:07:29,313 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2015-11-03 11:07:29,313 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.7)</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>More information on logging is at <a href="/mule-user-guide/v/3.7/logging-in-mule">Logging in Mule</a> and <a href="/mule-user-guide/v/3.7/logging">Logging</a>.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="working-with-flows"><a class="anchor" href="#working-with-flows"></a>Working With Flows</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Nearly all Mule elements provide configuration options, which you can set in one of two ways:</p> 
@@ -1068,17 +1230,6 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Click the <strong>HTTP</strong> building block in your flow to open its <a href="/mule-user-guide/v/3.7/the-properties-editor">Properties Editor</a>.&nbsp;</p> </li> 
-    <li> <p>Change the <strong>Path</strong> field from the default&nbsp;<code>/</code> to <code>*</code>. In this way, the connector listens not only to the base path – which is defined elsewhere – but also to every subpath inside it.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/basic-studio-tutorial-star-path.png" alt="basic-studio-tutorial-star-pat"></span></p> 
-     </div> </li> 
-    <li> <p>Use the <strong>Connector Configuration</strong> <a href="/mule-fundamentals/v/3.7/global-elements">Global Element</a>&nbsp;menu to set necessary configuration properties. Click the green plus sign next to the Connector Configuration field.</p> </li> 
-    <li> <p>A new window appears. Fill in the two required fields: <strong>Host</strong> and <strong>Port</strong>. Set&nbsp;<code>localhost</code> as the host and leave the default value <code>8081</code> as the port.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/global+element.png" alt="global+element"></span></p> 
-     </div> </li> 
-    <li> <p>Click <strong>Ok</strong> to close this dialogue. Notice how the Connector Configuration field now contains a reference to the element you just created. You can edit it further by clicking the&nbsp;<code>edit</code> icon. Notice that now, as all required fields are provided, there are no more error notifications.</p> </li> 
     <li> <p>Click <strong>Configuration XML</strong> at the bottom of the canvas to switch to the XML editor view.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/canvas_tabs_xml.png" alt="canvas_tabs_xml"></span></p> 
@@ -1100,7 +1251,7 @@
       <p><span class="image"><img src="./_images/canvas_tabs_flow.png" alt="canvas_tabs_flow"></span>&nbsp;&nbsp;</p> 
      </div> </li> 
     <li> <p>Click the <strong>Logger</strong> building block to switch the Properties Editor&nbsp;to the Logger component.</p> </li> 
-    <li> <p>In the <strong>Message</strong> field, enter:` Current path is <mark><code class="message.inboundProperties.'http.request.path'">.&nbsp; Notice how a menu with suggestions pops open as soon as you type `</code></mark>, and narrows down its suggestions as you keep typing.</p> 
+    <li> <p>In the <strong>Message</strong> field, enter: <code>Current path is <mark>[message.inboundProperties.'http.request.path']</mark></code>.&nbsp; Notice how a menu with suggestions pops open as soon as you type <code></code>, and narrows down its suggestions as you keep typing.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/logger+for+path.png" alt="logger+for+path"></span></p> 
      </div> 
@@ -1186,161 +1337,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="running-the-application"><a class="anchor" href="#running-the-application"></a>Running the Application</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Having built, configured, and saved your new application, you are ready to run it on the embedded Mule server (included as part of the bundled download of Anypoint Studio).</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>In the&nbsp;<strong>Package Explorer</strong>&nbsp;pane, right-click project name, then select&nbsp;<strong>Run As</strong>&nbsp;&gt;&nbsp;<strong>Mule Application</strong>. (If you have not already saved, Mule prompts you to save now.)</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/run.png" alt="run"></span></p> 
-     </div> </li> 
-    <li> <p>Mule immediately kicks into gear, starting your application and letting it run. When the startup process is complete, Studio displays a message in the console that reads,&nbsp;<code>Started app 'basic_tutorial'</code>.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/BasicTutorial_Console_started.png" alt="BasicTutorial_Console_started"></span></p> 
-     </div> </li> 
-   </ol> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="using-the-application"><a class="anchor" href="#using-the-application"></a>Using the Application</h2> 
- <div class="sectionbody"> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Open any Web browser, then navigate to`&nbsp;http://localhost:8081/world`</p> 
-     <div class="admonitionblock note"> 
-      <table> 
-       <tbody> 
-        <tr> 
-         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-         <td class="content"> Since you set the HTTP Connector’s path to&nbsp;<code>*</code>, any requests done to any subpath under&nbsp;<code>localhost:8081</code> are picked up by your app. </td> 
-        </tr> 
-       </tbody> 
-      </table> 
-     </div> </li> 
-    <li> <p>Your browser presents a message that reads, &nbsp;<code>Hello, /world. Today is [today’s date].</code></p> </li> 
-    <li> <p>In your browser’s address bar, replace the word&nbsp;<code>world</code>&nbsp;with your own name, then press&nbsp;<strong>enter</strong>.</p> </li> 
-    <li> <p>Your browser presents the same message, but includes your name instead of "world".</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/BasicTutorial_Browser.png" alt="BasicTutorial_Browser"></span></p> 
-     </div> </li> 
-    <li> <p>Next, check your console in Anypoint Studio to verify that Mule logged the payload before the message reached the expression transformer.&nbsp;</p> </li> 
-    <li> <p>Place your cursor in the console window, press CTRL+F or CMD+F to open a Find dialog, then search for <code>Current path</code>. Look for results corresponding to the paths that you entered in your browser. For example:</p> 
-     <div class="paragraph"> 
-      <p><code>INFO&nbsp; 2014-12-04 09:22:26,446 [[basic_tutorial].connector.http.mule.default.receiver.02] org.mule.api.processor.LoggerMessageProcessor: Current path is /Aaron</code><br> You may also see some other results for a payload of “/favicon.ico”. These results are automatically generated by your browser. You can filter out these results in the <a href="#editing-the-application">Editing the Application</a> section, below.</p> 
-     </div> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Congratulations! You’ve run and tested your application!</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>You submitted a request to the inbound endpoint of your application via your Web browser.&nbsp;</p> </li> 
-    <li> <p>The Mule application received your request and logged the payload (whatever you typed after <code><a href="http://localhost:8081/" class="bare">http://localhost:8081/</a></code>) to the console.&nbsp;</p> </li> 
-    <li> <p>The application then sent the message on to the Set Payload transformer, which transformed the payload per its instructions, then returned the results to your HTTP endpoint.&nbsp;</p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="stopping-the-application"><a class="anchor" href="#stopping-the-application"></a>Stopping the Application</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>To stop the application, click the red, square&nbsp;<strong>Terminate</strong>&nbsp;icon above the console panel.&nbsp;</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/stopbasictutorial.png" alt="stopbasictutorial"></span></p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="editing-the-application"><a class="anchor" href="#editing-the-application"></a>Editing the Application</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>If you take a look at the console output in Anypoint Studio, you may notice that some of the logged messages aren’t for the requests you generated, they have print a value of “/favicon.ico” to the console, these are generated by your browser when it requests for an icon to display on the browser tab. You can add a filter element into your flow to exclude the messages with this path. Here’s how:</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Drag and drop an <strong>Expression Filter</strong>&nbsp;from the Filters section of the palette onto your canvas, positioning it between the HTTP endpoint and the Logger.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/add+filter.png" alt="add+filter"></span></p> 
-     </div> </li> 
-    <li> <p>Click the Expression Filter to open its properties tab and enter the following in the <strong>Expression</strong> field:</p> 
-     <div class="paragraph"> 
-      <p><code>#[message.inboundProperties.'http.request.uri' != '/favicon.ico']</code></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/filter+new.png" alt="filter+new"></span></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>This expression tells Mule to check that the inbound property 'http.request.url' <em>is not equal to</em> the string '/favicon.ico'. If the expression evaluates to true, Mule passes the message on to the next step in the flow. If the expression evaluates to false, Mule stops processing the message.</p> 
-     </div> </li> 
-    <li> <p>Save your application and run it again. (Right-click the project name in&nbsp;your Package Explorer, then click <strong>Run As</strong> &gt; <strong>Mule Application</strong>.)</p> </li> 
-    <li> <p>Wait for the message in the console that reads,&nbsp;<code>Started app 'basic_tutorial'</code>.</p> </li> 
-    <li> <p>Return to your Web browser and go to <code><a href="http://localhost:8081/world" class="bare">http://localhost:8081/world</a></code></p> </li> 
-    <li> <p>Replace <code>world</code> with another word of your choice and refresh.&nbsp;Repeat this step several times with different words.</p> </li> 
-    <li> <p>Check the logged paths in your console: place your cursor in the console window,&nbsp;press CTRL+F or CMD+F to open a Find dialog, then search for <code>Current path</code>.</p> </li> 
-    <li> <p>All&nbsp;payloads that you see should correspond to the words you entered in your browser, and <code>/favicon.ico</code> should no longer be included.&nbsp;</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Your complete application XML, once edited, should look like the following:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-13
-14
-15
-16
-17
-</pre></td> 
-         <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-
-<span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:tracking</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/tracking</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
-    <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.6.2</span><span class="delimiter">"</span></span>
-    <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">basic_tutorialFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">*</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;expression-filter</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload != '/favicon.ico']</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Expression</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;logger</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Current path is #[message.inboundProperties.'http.request.path']</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;set-payload</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Payload</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#['Hello, ' + message.inboundProperties.'http.request.path' + '. Today is ' + server.dateTime.format('dd/MM/yy') + '.' ]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/flow&gt;</span>
-<span class="tag">&lt;/mule&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="extra-credit"><a class="anchor" href="#extra-credit"></a>Extra Credit</h2> 
+ <h2 id="extending-your-application"><a class="anchor" href="#extending-your-application"></a>Extending Your Application</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Now that you know your way around Anypoint Studio, try applying your knowledge to an extra task.&nbsp;Revise your application so that, in addition to returning the transformed payload as an HTTP response in your browser as it does now, Mule also:</p> 
@@ -1479,11 +1476,16 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <h2 id="next"><a class="anchor" href="#next"></a>Next</h2> 
  <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The following topics help you augment your knowledge of Studio:</p> 
+  </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><strong>NEXT STEP:</strong> Continue the hands-on learning experience with the <a href="/mule-fundamentals/v/3.7/content-based-routing-tutorial">Content-Based Routing Tutorial</a>.</p> </li> 
+    <li> <p>Making decisions: <a href="/mule-user-guide/v/3.7/choice-flow-control-reference">Choice Flow Control Reference</a></p> </li> 
+    <li> <p>Transforming data: <a href="/mule-user-guide/v/3.7/dataweave-tutorial">DataWeave Tutorial</a></p> </li> 
+    <li> <p>Learn about routing information: <a href="/mule-fundamentals/v/3.7/content-based-routing-tutorial">Content-Based Routing Tutorial</a>.</p> </li> 
     <li> <p>Want to learn more about Mule Expression Language (MEL)? Check out&nbsp;the <a href="/mule-user-guide/v/3.7/mule-expression-language-mel">complete reference</a>.</p> </li> 
     <li> <p>Get a deeper explanation about the Mule message and anatomy of a Mule flow in <a href="/mule-fundamentals/v/3.7/mule-concepts">Mule Concepts</a>.</p> </li> 
     <li> <p>Want to try a Hello World example using <a href="/cloudhub">CloudHub</a> instead? Check out&nbsp;<a href="/cloudhub/hello-world-on-cloudhub">Hello World on CloudHub</a>.</p> </li> 
@@ -1495,7 +1497,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#goals">Goals</a></li><li><a class="scroll-menu-link" href="#launching-studio">Launching Studio</a></li><li><a class="scroll-menu-link" href="#creating-a-new-project">Creating a New Project</a></li><li><a class="scroll-menu-link" href="#modeling-a-mule-flow">Modeling a Mule Flow</a></li><li><a class="scroll-menu-link" href="#configuring-the-flow-elements">Configuring the Flow Elements</a></li><li><a class="scroll-menu-link" href="#running-the-application">Running the Application</a></li><li><a class="scroll-menu-link" href="#using-the-application">Using the Application</a></li><li><a class="scroll-menu-link" href="#stopping-the-application">Stopping the Application</a></li><li><a class="scroll-menu-link" href="#editing-the-application">Editing the Application</a></li><li><a class="scroll-menu-link" href="#extra-credit">Extra Credit</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#goals">Goals</a></li><li><a class="scroll-menu-link" href="#launching-studio">Launching Studio</a></li><li><a class="scroll-menu-link" href="#constructing-an-application">Constructing an Application</a></li><li><a class="scroll-menu-link" href="#adding-logging">Adding Logging</a></li><li><a class="scroll-menu-link" href="#working-with-flows">Working With Flows</a></li><li><a class="scroll-menu-link" href="#extending-your-application">Extending Your Application</a></li><li><a class="scroll-menu-link" href="#next">Next</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

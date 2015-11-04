@@ -877,10 +877,18 @@
  <p>The less high-tech and most popular of all debugging techniques is the usage of log statements in order to follow the evolution of an application’s state. In Mule, the state you’re interested in resides in the messages that are flowing through your configuration and, possibly, custom code.</p> 
 </div> 
 <div class="paragraph"> 
- <p>If you’re running your Mule configuration from Eclipse, the log outputs will be visible right in Eclipse console window. If you’re running Mule from the command line, the logs will then be visible in your OS console.</p> 
+ <p>If you’re running your Mule configuration from Eclipse, the log outputs are visible right in Eclipse console window. If you’re running Mule from the command line, the logs are visible in your OS console.</p> 
 </div> 
 <div class="paragraph"> 
  <p>Mule’s standalone logging configuration is stored in &lt;Mule Installation Directory&gt;/conf/log4j2.properties: edit this file if you need to change the verbosity of the log output.</p> 
+</div> 
+<div class="paragraph"> 
+ <p><strong>Note</strong>: If you are using Anypoint Studio, the log output appears in the <code>.mule</code> directory of your Studio workspace. For example on a Mac, for an application called <code>Basic Tutorial</code>, the log output is in this file:</p> 
+</div> 
+<div class="listingblock"> 
+ <div class="content"> 
+  <pre class="CodeRay highlight"><code data-lang="code">/Users/me/AnypointStudio/workspace/.mule/logs/basic_tutorial.log</code></pre> 
+ </div> 
 </div> 
 <div class="paragraph"> 
  <p>The log component is a quick and easy way to log the payload of an in-flight message. Add it anywhere in a message flow you want to probe your message:</p> 
