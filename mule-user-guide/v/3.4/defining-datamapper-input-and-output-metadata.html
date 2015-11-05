@@ -1085,15 +1085,11 @@
     <div class="olist arabic"> 
      <ol class="arabic"> 
       <li> <p>Select Type <strong>JSON.</strong></p> </li> 
-      <li> <p>Choose&nbsp;<strong>From Example.</strong><br> +</p> 
+      <li> <p>Choose&nbsp;<strong>From Example.</strong></p> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/image2013-5-7+1+57+58.png" alt="image2013-5-7+1+57+58"></span><br></p> 
-       </div> 
-       <div class="literalblock"> 
-        <div class="content"> 
-         <pre>&nbsp; +. Click the ellipsis "**…**" and browse to or enter the path to the sample JSON&nbsp;file.</pre> 
-        </div> 
        </div> </li> 
+      <li> <p>Click the ellipsis "<strong>…</strong>" and browse to or enter the path to the sample JSON&nbsp;file.</p> </li> 
      </ol> 
     </div> 
    </div> 
@@ -1172,7 +1168,7 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre>     return [name:"John",lastName:"Harrison",address:"4th Street",zipCode:1002]</pre> 
+      <pre class="CodeRay highlight"><code data-lang="code">     return [name:"John",lastName:"Harrison",address:"4th Street",zipCode:1002]</code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1180,13 +1176,23 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre>     return [</pre> 
-     </div> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre>        [name:"John",lastName:"Harrison",address:"4th Street",zipCode:1002],
-        [name:"Dan",lastName:"Tomson",address:"6th Street",zipCode:1003]</pre> 
+      <pre class="CodeRay highlight"><code data-lang="code">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+           <td class="code"><pre>     return [
+
+        [name:"John",lastName:"Harrison",address:"4th Street",zipCode:1002],
+        [name:"Dan",lastName:"Tomson",address:"6th Street",zipCode:1003]</pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
@@ -1372,14 +1378,14 @@
     <li> <p>Save the above text as contacts.json in a convenient directory.</p> </li> 
     <li> <p>Create a new DataMapper, then start the Mapping Flow wizard. Enter a name for the flow and click <strong>Next</strong>.</p> </li> 
     <li> <p>In the Input section of the the Select Input and Output Type pane, select Type&nbsp;<strong>JSON</strong>, select From Example, and for Json sample, enter the path to your contacts.json file.</p> </li> 
-    <li> <p>In the Output section, select a different structured format for Type—for this example,&nbsp; <strong>Map&lt;k,v&gt;</strong> . Select <strong>User Defined</strong> , and click <strong>Generate default&nbsp;</strong> under the <strong>Name&nbsp;</strong> field.<br> + <span class="image"><img src="./_images/image2013-5-8+0+33+56.png" alt="image2013-5-8+0+33+56"></span><br></p> 
-     <div class="literalblock"> 
-      <div class="content"> 
-       <pre> +
-DataMapper duplicates the structure of the JSON file as a key-value map.
-. Under Output, click *Edit Fields* to see the result. The generated name *object* has been inserted, and the Type is *Element*. The structure of the input is reproduced, as a starting point for the output metadata definition.</pre> 
-      </div> 
+    <li> <p>In the Output section, select a different structured format for Type—for this example,&nbsp; <strong>Map&lt;k,v&gt;</strong> . Select <strong>User Defined</strong> , and click <strong>Generate default&nbsp;</strong> under the <strong>Name&nbsp;</strong> field.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/image2013-5-8+0+33+56.png" alt="image2013-5-8+0+33+56"></span></p> 
      </div> 
+     <div class="paragraph"> 
+      <p>DataMapper duplicates the structure of the JSON file as a key-value map.</p> 
+     </div> </li> 
+    <li> <p>Under Output, click <strong>Edit Fields</strong> to see the result. The generated name <strong>object</strong> has been inserted, and the Type is <strong>Element</strong>. The structure of the input is reproduced, as a starting point for the output metadata definition.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/image2013-5-7+1+54+33.png" alt="image2013-5-7+1+54+33"></span></p> 
      </div> 
