@@ -869,7 +869,7 @@
    <p>Windows Gateway Services provides connectivity to proprietary functionality on the Windows platform, and is used by the MSMQ connector, PowerShell Connector, Dynamics CRM Connector, and Dynamics AX Connector.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><a href="https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/modules/anypoint-windows-gateway-service/1.7.0/anypoint-windows-gateway-service-1.7.0.zip">Install Windows Gateway Services</a></p> 
+   <p><a href="https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/modules/anypoint-windows-gateway-service/1.8.0/anypoint-windows-gateway-service-1.8.0.zip">Install Windows Gateway Services</a></p> 
   </div> 
   <div class="paragraph"> 
    <p>See <a href="/release-notes/msmq-connector-release-notes">MSMQ Connector Release Notes</a> for version information.</p> 
@@ -977,6 +977,42 @@
   <p><code>Register-SslCert.ps1 a495cbf8c4af496f1ef81efb224c8097d039f922 everyone 9333</code></p> 
  </div> 
 </div> 
+<div class="sect2"> 
+ <h3 id="load-balanced-configuration"><a class="anchor" href="#load-balanced-configuration"></a>Load-balanced configuration</h3> 
+ <div class="paragraph"> 
+  <p>Windows Gateway Services supports running in a load-balanced configuration to allow for fault tolerance. When running multiple gateway services instances, each member should be configured to perform MSMQ background jobs at a non-overlapping interval.</p> 
+ </div> 
+ <div class="paragraph"> 
+  <p>MSMQ background job processing is by default performed at zero minutes past the hour, but to prevent overlap when multiple service instances are running, a configuration property called background-job-interval-offset should be set on each gateway instance. The recommended value to use for this on each machine is (60 / instanceCount) * (instanceNumber - 1) where instanceNumber is an integer value 1..n.</p> 
+ </div> 
+ <div class="paragraph"> 
+  <p>For example, a cluster of 2 machines would use background-job-interval-offset of 0 on machine 1, 30 on machine 2. A cluster of 3 machines would use backgroundJobInterval of 0 on machine 1, 20 on machine 2, and 40 on machine 3.</p> 
+ </div> 
+ <div class="paragraph"> 
+  <p>This setting is found in the Mule.SelfHost.config file:</p> 
+ </div> 
+ <div class="listingblock"> 
+  <div class="content"> 
+   <pre class="CodeRay highlight"><code data-lang="xml">
+        
+     <table class="CodeRay"> 
+      <tbody> 
+       <tr> 
+        <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+        <td class="code"><pre><span class="tag">&lt;appSettings&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- MSMQ: Delay in minutes to launch the cleanup process for sub-queues --&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;add</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">cleanup-delay</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">0</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/appSettings&gt;</span></pre></td> 
+       </tr> 
+      </tbody> 
+     </table></code></pre> 
+  </div> 
+ </div> 
+</div> 
 <div class="sect1"> 
  <h2 id="security-considerations"><a class="anchor" href="#security-considerations"></a>Security Considerations</h2> 
  <div class="sectionbody"> 
@@ -1059,7 +1095,7 @@ Mule-Api-Version: 1
 2
 3
 </pre></td> 
-           <td class="code"><pre><span class="tag">&lt;appSettings&gt;</span>&nbsp;&nbsp;&nbsp;
+           <td class="code"><pre><span class="tag">&lt;appSettings&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;add</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule-auth-token</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">test-token</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/appSettings&gt;</span></pre></td> 
           </tr> 
