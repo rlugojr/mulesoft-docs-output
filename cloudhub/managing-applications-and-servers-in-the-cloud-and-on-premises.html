@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/cloudhub/managing-applications-and-servers-in-the-cloud-and-on-premises" />
-    <meta name="description" content="With the Anypoint Management Center, CloudHub has gained an important new capability - in addition to managing your applications in the cloud, it c..." />
+    <meta name="description" content="With Anypoint Runtime Manager, CloudHub has gained an important new capability - in addition to managing your applications in the cloud, it can now..." />
     <meta class="swiftype" name="title" data-type="string" content="Managing Applications and Servers in the Cloud and On Premises" />
 
 </head>
@@ -865,7 +865,7 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>With the Anypoint Management Center, CloudHub has gained an important new capability - in addition to managing your applications in the cloud, it can now manage applications, and servers, server groups, and clusters in your organization (on premises) as well. The Anypoint Management Center provides a single management interface where you can manage applications running in the cloud or on servers or groups of servers that are on premises within your data center. Applications that are on premises run on Mule Runtime instance(s) on a single server or a group of servers. For cluster information, see <a href="/cloudhub/creating-and-managing-clusters">Creating and Managing Clusters</a>.</p> 
+   <p>With Anypoint Runtime Manager, CloudHub has gained an important new capability - in addition to managing your applications in the cloud, it can now manage applications, and servers, server groups, and clusters in your organization (on premises) as well. Anypoint Runtime Manager provides a single management interface where you can manage applications running in the cloud or on servers or groups of servers that are on premises within your data center. Applications that are on premises run on Mule Runtime instance(s) on a single server or a group of servers. For cluster information, see <a href="/cloudhub/creating-and-managing-clusters">Creating and Managing Clusters</a>.</p> 
   </div> 
   <div class="admonitionblock tip"> 
    <table> 
@@ -919,7 +919,7 @@
   <div class="sect2"> 
    <h3 id="servers-tab"><a class="anchor" href="#servers-tab"></a>Servers Tab</h3> 
    <div class="paragraph"> 
-    <p>A server is a Mule or API Gateway instance that you register in the Anypoint Management Center&nbsp;console.</p> 
+    <p>A server is a Mule or API Gateway instance that you register in the Anypoint Runtime Manager&nbsp;console.</p> 
    </div> 
    <div class="paragraph"> 
     <p><span class="image"><img src="./_images/AMC_Servers.png" alt="AMC_Servers"></span></p> 
@@ -929,7 +929,7 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p><a href="#add-a-server">Add a Server</a>&nbsp;(registers the server with the&nbsp;Anypoint Management Center console)</p> </li> 
+     <li> <p><a href="#add-a-server">Add a Server</a>&nbsp;(registers the server with the&nbsp;Anypoint Runtime Manager console)</p> </li> 
      <li> <p><a href="#start-mule-or-api-gateway">Start Mule or API Gateway</a></p> </li> 
      <li> <p><a href="#create-a-server-group">Create a Server Group</a></p> </li> 
      <li> <p><a href="#add-a-server-to-a-server-group">Add a Server to a Server Group</a></p> </li> 
@@ -1009,7 +1009,7 @@
         </tr> 
        </tbody> 
       </table> </li> 
-     <li> <p><strong>Application File</strong> - A zip file created by Anypoint Studio. To create the file in Studio, export your project from Studio as a zip file and import it into Anypoint Management Center.</p> </li> 
+     <li> <p><strong>Application File</strong> - A zip file created by Anypoint Studio. To create the file in Studio, export your project from Studio as a zip file and import it into Anypoint Runtime Manager.</p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
@@ -1086,7 +1086,7 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p><a href="#add-a-server">Add a Server</a>&nbsp;(registers the server with the&nbsp;Anypoint Management Center console)</p> </li> 
+     <li> <p><a href="#add-a-server">Add a Server</a>&nbsp;(registers the server with the&nbsp;Anypoint Runtime Manager console)</p> </li> 
      <li> <p><a href="#start-mule-or-api-gateway">Start Mule or API Gateway</a></p> </li> 
      <li> <p><a href="#create-a-server-group">Create a Server Group</a></p> </li> 
      <li> <p><a href="#add-a-server-to-a-server-group">Add a Server to a Server Group</a></p> </li> 
@@ -1112,13 +1112,13 @@
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/empty_servers-add_server_1st_srv-CORR.COMM-REAL-2.png" alt="empty_servers-add_server_1st_srv-CORR.COMM-REAL-2"></span></p> 
       </div> </li> 
-     <li> <p>Run the displayed command (listed below) to add each Mule server, or API Gateway (that runs on a server). Running this command enables the Mule server or API Gateway to communicate with the Anypoint Management Center. The key included in the <code>-H</code> parameter (partly redacted in the image above) is a token generated specifically for your Mule server or API Gateway to authenticate against Anypoint Management Center.</p> 
+     <li> <p>Run the displayed command (listed below) to add each Mule server, or API Gateway (that runs on a server). Running this command enables the Mule server or API Gateway to communicate with Anypoint Runtime Manager. The key included in the <code>-H</code> parameter (partly redacted in the image above) is a token generated specifically for your Mule server or API Gateway to authenticate against Anypoint Runtime Manager.</p> 
       <div class="paragraph"> 
        <p>To run this command:</p> 
       </div> 
       <div class="olist loweralpha"> 
        <ol class="loweralpha" type="a"> 
-        <li> <p>In Anypoint Management Center, click <strong>Copy</strong> to copy the displayed command to your clipboard.</p> </li> 
+        <li> <p>In Anypoint Runtime Manager, click <strong>Copy</strong> to copy the displayed command to your clipboard.</p> </li> 
         <li> <p>Open a terminal in the server where your Mule server or API Gateway resides.</p> </li> 
         <li> <p>Go to the <code>bin</code> directory inside the Mule server or API Gateway root directory.</p> </li> 
         <li> <p>Paste the command into your terminal.</p> </li> 
@@ -1152,7 +1152,7 @@
        </ol> 
       </div> </li> 
      <li> <p>Check that the command output on your terminal states that the credentials extracted correctly:</p> </li> 
-     <li> <p>In the <strong>Servers</strong> screen of Anypoint Management Console, you should see that your server (named <code>srv1</code> in this example) is listed as <strong>Created</strong>:</p> 
+     <li> <p>In the <strong>Servers</strong> screen of Anypoint Runtime Manager, you should see that your server (named <code>srv1</code> in this example) is listed as <strong>Created</strong>:</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/srv1_created.png" alt="srv1_created"></span></p> 
       </div> </li> 
@@ -1170,7 +1170,7 @@
         <li> <p>For API Gateway: Run <code>./gateway</code> or <code>./gateway start</code>. The first command retains the gateway process in the terminal foreground; when you want to stop the gateway, press <code>CTRL-C</code>. If you are running API Gateway in the foreground, your terminal fills with startup messages.</p> </li> 
        </ul> 
       </div> </li> 
-     <li> <p>In the <strong>Servers</strong> screen of Anypoint Management Console, your server’s status changes first to&nbsp;<strong>Connected</strong>, then to <strong>Running:</strong></p> 
+     <li> <p>In the <strong>Servers</strong> screen of Anypoint Runtime Manager, your server’s status changes first to&nbsp;<strong>Connected</strong>, then to <strong>Running:</strong></p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/srv1_running.png" alt="srv1_running"></span></p> 
       </div> </li> 
@@ -1200,13 +1200,13 @@
      </div> 
     </div> 
     <div class="paragraph"> 
-     <p>The <code>amc_setup</code> script actually invokes the <a href="/cloudhub/the-mule-agent">Mule agent</a> installation script, which has several useful parameters for configuring security and proxies. For details on the options, see <strong>Installation Options</strong> in <a href="/mule-agent/v/1.2.0/installing-mule-agent">Installing Mule Agent</a>.</p> 
+     <p>The <code>amc_setup</code> script actually invokes the <a href="/mule-agent/v/1.2.0/">Mule agent</a> installation script, which has several useful parameters for configuring security and proxies. For details on the options, see <strong>Installation Options</strong> in <a href="/mule-agent/v/1.2.0/installing-mule-agent">Installing Mule Agent</a>.</p> 
     </div> 
    </div> 
    <div class="sect3"> 
     <h4 id="about-the-server-registration-token"><a class="anchor" href="#about-the-server-registration-token"></a>About the Server Registration Token</h4> 
     <div class="paragraph"> 
-     <p>The registration token provided by Anypoint Management Console (included in the command with the&nbsp;<code>-H</code> parameter) is specific to a single environment. For example, if you register a server in a QA environment by clicking&nbsp;<strong>Add Server</strong>, you get one token. However if you try to register into your&nbsp;<strong>Production</strong> environment by also clicking&nbsp;<strong>Add Server,</strong> &nbsp;you get a different token. Tokens are specific to the environment in which you register a server. You can only copy and paste a token to register multiple Mules if you want all servers to be in the same environment.</p> 
+     <p>The registration token provided by Anypoint Runtime Manager (included in the command with the&nbsp;<code>-H</code> parameter) is specific to a single environment. For example, if you register a server in a QA environment by clicking&nbsp;<strong>Add Server</strong>, you get one token. However if you try to register into your&nbsp;<strong>Production</strong> environment by also clicking&nbsp;<strong>Add Server,</strong> &nbsp;you get a different token. Tokens are specific to the environment in which you register a server. You can only copy and paste a token to register multiple Mules if you want all servers to be in the same environment.</p> 
     </div> 
    </div> 
   </div> 
