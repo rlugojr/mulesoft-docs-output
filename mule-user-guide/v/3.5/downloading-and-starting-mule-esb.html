@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.5/downloading-and-starting-mule-esb" />
-    <meta name="description" content="   Running Studio on a Mac?  If you’re using Mac OS X Mountain Lion, there are two extra considerations to be mindful of when running Anypoint Stud..." />
+    <meta name="description" content="    The steps below describe what you need to do to install and run Mule ESB, the same steps apply for both the Community runtime and the Enterpris..." />
     <meta class="swiftype" name="title" data-type="string" content="Downloading and Starting Mule ESB" />
 
 </head>
@@ -810,21 +810,21 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#mule-studio-ef131" role="tab" data-toggle="tab">Mule Studio</a></li> 
-     <li><a href="#mule-ee-runtime-mmc-trial-version-9b2ad" role="tab" data-toggle="tab">Mule EE Runtime + MMC (Trial Version)</a></li> 
-     <li><a href="#mule-ee-or-ce-runtime-eae12" role="tab" data-toggle="tab">Mule EE or CE Runtime</a></li> 
+     <li class="active"><a href="#anypoint-studio-1e466" role="tab" data-toggle="tab">Anypoint Studio</a></li> 
+     <li><a href="#mule-ee-runtime-mmc-trial-version-278ca" role="tab" data-toggle="tab">Mule EE Runtime + MMC (Trial Version)</a></li> 
+     <li><a href="#mule-ee-or-ce-runtime-4177c" role="tab" data-toggle="tab">Mule EE or CE Runtime</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="mule-studio-ef131"> 
+    <div class="tab-pane in active fade no-padding" id="anypoint-studio-1e466"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>Before installing Mule Studio, be sure to install one of the compatible <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Development Kits</a> on your host machine, refer to <a href="https://developer.mulesoft.com/docs/display/35X/Hardware+and+Software+Requirements">Hardware and Software Requirements</a> for reference. <a href="https://developer.mulesoft.com/docs/display/35X/Downloading+and+Starting+Mule+ESB#DownloadingandStartingMuleESB-studioMac">Running Studio on a Mac?</a></p> 
+       <li> <p>Before installing Anypoint Studio, be sure to install <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">Java SE Development Kit 7</a> on your host machine, refer to <a href="/mule-user-guide/v/3.5/hardware-and-software-requirements">Hardware and Software Requirements</a> for reference. See also <a href="#runningstudioonamac">Running Studio on a Mac</a>.</p> 
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/anypoint_Studio.png" alt="anypoint_Studio"></span></p> 
         </div> </li> 
        <li> <p>Set your <code>JAVA_HOME</code> environment variable to the path in which you installed the JDK.</p> </li> 
-       <li> <p>Visit <a href="http://www.mulesoft.com/mule-esb-open-source-esb">mulesoft.com</a> to download <strong>Mule ESB Enterprise with Anypoint Studio</strong>.</p> </li> 
+       <li> <p>Visit <a href="https://www.mulesoft.com/platform/studio">mulesoft.com</a> to download <strong>Mule ESB Enterprise with Anypoint Studio</strong>.</p> </li> 
        <li> <p>Click to download the version of Studio that is compatible with your operating system: Windows, Mac, or Linux.</p> </li> 
        <li> <p>Unzip the downloaded file to a directory on a hard drive located on your host machine. The <strong>Anypoint Studio</strong> folder or directory appears when the unzip operation completes.</p> </li> 
        <li> <p>If using a Mac OS, double-click the <strong>AnypointStudio.app</strong> file, located in the <strong>AnypointStudio</strong> folder. If using Windows, the <strong>anypointStudio.exe</strong> file, located in the <strong>AnypointStudio</strong> directory. If using Linux, double-click the anypointStudio file icon, located in the AnypointStudio directory.</p> 
@@ -836,110 +836,38 @@
          <p><span class="image"><img src="./_images/launcher.png" alt="launcher"></span></p> 
         </div> </li> 
        <li> <p>Studio launches, then displays a Welcome page. Click <strong>Create a Project</strong> to begin development immediately.</p> </li> 
-       <li> <p>Optional: <a href="https://developer.mulesoft.com/docs/display/35X/Adding+Community+Runtime">Add Community runtime</a> to your Studio instance.</p> </li> 
-       <li> <p>Optional: <a href="https://developer.mulesoft.com/docs/display/35X/Installing+an+Enterprise+License">Acquire an Enterprise license</a> (recommended for running applications in production).</p> </li> 
+       <li> <p>Optional: <a href="/mule-user-guide/v/3.5/adding-community-runtime">Add the Community Runtime</a> to your Studio instance.</p> </li> 
+       <li> <p>Optional: <a href="/mule-user-guide/v/3.5/installing-an-enterprise-license">Installing an Enterprise License</a> (recommended for running applications in production).</p> </li> 
       </ol> 
      </div> 
-     <div class="admonitionblock warning"> 
-      <table> 
-       <tbody> 
-        <tr> 
-         <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-         <td class="content"> 
-          <div class="paragraph"> 
-           <p>Running Studio on a Mac?<br> <br> If you’re using Mac OS X Mountain Lion, there are two extra considerations to be mindful of when running Anypoint Studio.<br> <br> Java Runtime Environment<br> <br> Check to confirm that Java runtime environment 7 is in place on your system. From the command line (Terminal app), run: java -version<br> <br> The response should appear similar to the following:<br> <br></p> 
-          </div> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="code">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-                 <td class="code"><pre>java version "1.7.0_60"
-Java(TM) SE Runtime Environment (build 1.7.0_60-b19)
-Java HotSpot(TM) 64-Bit Server VM (build 24.60-b09, mixed mode)</pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> 
-          <div class="paragraph"> 
-           <p>If a Java runtime environment is not installed, the command triggers a prompt to install the JDK tools directly from Apple. Follow the instructions to download and install JDK 7.</p> 
-          </div> 
-          <div class="paragraph"> 
-           <p><strong>Application Execution</strong></p> 
-          </div> 
-          <div class="paragraph"> 
-           <p>By default, Mac OS X restricts execution of applications acquired outside the Apple App Store. Because you download Anypoint Studio outside the App Store, your system may prevent you from running Studio applications and issue a warning message advising you to change your security settings to proceed. (Note: you must have Administrator privileges to adjust the security settings.)</p> 
-          </div> 
-          <div class="olist arabic"> 
-           <ol class="arabic"> 
-            <li> <p>On your Mac, open <strong>System Preferences</strong>, then navigate to <strong>Security &amp; Privacy</strong>.</p> </li> 
-            <li> <p>In the <strong>General</strong> tab, under "Allow applications downloaded from:" select the radio button for <strong>Anywhere</strong>.</p> </li> 
-           </ol> 
-          </div> </td> 
-        </tr> 
-       </tbody> 
-      </table> 
-     </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="mule-ee-runtime-mmc-trial-version-9b2ad"> 
+    <div class="tab-pane fade no-padding" id="mule-ee-runtime-mmc-trial-version-278ca"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>Before installing Mule Studio, be sure to install one of the compatible <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Development Kits</a> on your host machine, refer to <a href="https://developer.mulesoft.com/docs/display/35X/Hardware+and+Software+Requirements">Hardware and Software Requirements</a> for reference.</p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/anypoint_Studio.png" alt="anypoint_Studio"></span></p> 
-        </div> </li> 
+       <li> <p>Install <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">Java SE Development Kit 7</a> on your host machine. Refer to <a href="/mule-user-guide/v/3.5/hardware-and-software-requirements">Hardware and Software Requirements</a> for reference.</p> </li> 
        <li> <p>Set your <code>JAVA_HOME</code> environment variable to the path in which you installed the JDK.</p> </li> 
-       <li> <p>Visit <a href="http://www.mulesoft.com/mule-esb-open-source-esb">mulesoft.com</a> to download <strong>Mule ESB Enterprise with Anypoint Studio</strong>.</p> </li> 
-       <li> <p>Navigate to the folder that contains your copy of <strong>Mule Enterprise Standalone</strong>, then unpack and uncompress the file.</p> </li> 
-       <li> <p>Open a system terminal and navigate to the freshly extracted folder, for example by running cd <code>mmc-distribution-mule-console-bundle-3.5.0</code>.</p> </li> 
+       <li> <p>Download and unzip <a href="https://www.mulesoft.com/platform/soa/mule-esb-enterprise">Mule Runtime</a>. See also <a href="#runningstudioonamac">Running Studio on a Mac</a> for additional Mac-related install information.</p> </li> 
+       <li> <p>Start Mule from the software download’s <code>bin</code> folder by typing <code>./mule</code> for Mac and Linux, or <code>mule.bat</code> for Windows.</p> </li> 
+       <li> <p>Download and unzip the Mule Management Console (MMC) separately from <a href="https://www.mulesoft.com/dl/mmc">Mule Enterprise Management Center</a></p> </li> 
+       <li> <p>Open a command line and navigate to the freshly extracted folder.</p> </li> 
        <li> <p>From the terminal, run the appropriate startup command for your operating system.</p> 
         <div class="olist loweralpha"> 
          <ol class="loweralpha" type="a"> 
           <li> <p>Windows:</p> 
            <div class="listingblock"> 
             <div class="content"> 
-             <pre class="CodeRay highlight"><code data-lang="code">
-          
-                  
-               <table class="CodeRay"> 
-                <tbody> 
-                 <tr> 
-                  <td class="line-numbers"><pre>1
-</pre></td> 
-                  <td class="code"><pre>startup.bat</pre></td> 
-                 </tr> 
-                </tbody> 
-               </table></code></pre> 
+             <pre class="CodeRay highlight"><code data-lang="code">startup.bat</code></pre> 
             </div> 
            </div> </li> 
           <li> <p>Linux or Mac:</p> 
            <div class="listingblock"> 
             <div class="content"> 
-             <pre class="CodeRay highlight"><code data-lang="code">
-          
-                  
-               <table class="CodeRay"> 
-                <tbody> 
-                 <tr> 
-                  <td class="line-numbers"><pre>1
-</pre></td> 
-                  <td class="code"><pre>./startup.sh</pre></td> 
-                 </tr> 
-                </tbody> 
-               </table></code></pre> 
+             <pre class="CodeRay highlight"><code data-lang="code">./startup.sh</code></pre> 
             </div> 
            </div> </li> 
          </ol> 
         </div> </li> 
-       <li> <p>Wait for Mule to start running, which may take a minute or two. MMC will automatically deploy and start running from an embedded Tomcat server. Once Mule and MMC are running, you should see a message similar to the following:</p> 
+       <li> <p>Wait for Mule to start running, which may take a minute or two. MMC automatically deploys and starts running from an embedded Tomcat server. Once Mule and MMC are running, you should see a message similar to the following:</p> 
         <div class="listingblock"> 
          <div class="content"> 
           <pre class="CodeRay highlight"><code data-lang="code">
@@ -961,18 +889,21 @@ Finished starting Mule and MMC.</pre></td>
          </div> 
         </div> </li> 
        <li> <p>The Mule startup messages displays the URL where Tomcat is serving the MMC application, for example <code><a href="http://localhost:8585/mmc-3.5.0" class="bare">http://localhost:8585/mmc-3.5.0</a>.</code> Use a Web browser to navigate to this URL.</p> </li> 
-       <li> <p>You will be greeted by the MMC welcome screen, shown below. Log in with username admin, password admin.<br> <br> <span class="image"><img src="./_images/mmc_welcome_screen.png" alt="mmc_welcome_screen"></span></p> </li> 
+       <li> <p>You are greeted by the MMC welcome screen, shown below. Log in with username <code>admin</code>, password <code>admin</code>.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/mmc_welcome_screen.png" alt="mmc_welcome_screen"></span></p> 
+        </div> 
+        <div class="admonitionblock note"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+            <td class="content"> To stop Mule, run the shutdown.sh script (or shutdown.bat if on Windows) from the root folder of your installation. </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> </li> 
       </ol> 
-     </div> 
-     <div class="admonitionblock note"> 
-      <table> 
-       <tbody> 
-        <tr> 
-         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-         <td class="content"> To stop Mule, run the shutdown.sh script (or shutdown.bat if on Windows) from the root folder of your installation. </td> 
-        </tr> 
-       </tbody> 
-      </table> 
      </div> 
      <div class="admonitionblock tip"> 
       <table> 
@@ -989,80 +920,80 @@ Finished starting Mule and MMC.</pre></td>
        <tbody> 
         <tr> 
          <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-         <td class="content"> The trial version is not suitable for running applications in production. To run applications in production, <a href="https://developer.mulesoft.com/docs/display/35X/Installing+an+Enterprise+License">acquire an Enterprise license</a>. </td> 
+         <td class="content"> The trial version is not suitable for running applications in production. To run applications in production, <a href="/mule-user-guide/v/3.5/installing-an-enterprise-license">Installing an Enterprise License</a>. </td> 
         </tr> 
        </tbody> 
       </table> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="mule-ee-or-ce-runtime-eae12"> 
+    <div class="tab-pane fade no-padding" id="mule-ee-or-ce-runtime-4177c"> 
      <div class="paragraph"> 
       <p>The steps below describe what you need to do to install and run Mule ESB, the same steps apply for both the Community runtime and the Enterprise runtime.</p> 
      </div> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>Before installing Mule Studio, be sure to install one of the compatible <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Development Kits</a> on your host machine, refer to <a href="https://developer.mulesoft.com/docs/display/35X/Hardware+and+Software+Requirements">Hardware and Software Requirements</a> for reference.</p> 
+       <li> <p>Install <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">Java SE Development Kit 7</a>.</p> </li> 
+       <li> <p>Download&nbsp;and unzip <a href="https://www.mulesoft.com/platform/soa/mule-esb-enterprise">Mule ESB Enterprise</a>.</p> </li> 
+       <li> <p>Start Mule from a command line by changing directory to where you unzipped the Mule software distribution and then changing to the <code>bin</code> directory. Type the <code>./mule</code> command for Mac or Linux, or type <code>mule.bat</code> for Windows.</p> 
         <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/anypoint_Studio.png" alt="anypoint_Studio"></span></p> 
+         <p>Wait for Mule to start running, which may take a minute or two.</p> 
         </div> </li> 
-       <li> <p>Set your <code>JAVA_HOME</code> environment variable to the path in which you installed the JDK.</p> </li> 
-       <li> <p>Visit <a href="http://www.mulesoft.com/mule-esb-open-source-esb">mulesoft.com</a> to download <strong>Mule ESB Enterprise with Anypoint Studio</strong>.</p> </li> 
-       <li> <p>Navigate to the folder that contains your copy of <strong>Mule Enterprise Standalone</strong>, then unpack and uncompress the file.</p> </li> 
-       <li> <p>From the command line, start Mule using the following command:</p> 
-        <div class="olist loweralpha"> 
-         <ol class="loweralpha" type="a"> 
-          <li> <p>Windows:</p> 
-           <div class="listingblock"> 
-            <div class="content"> 
-             <pre class="CodeRay highlight"><code data-lang="code">
-          
-                  
-               <table class="CodeRay"> 
-                <tbody> 
-                 <tr> 
-                  <td class="line-numbers"><pre>1
-</pre></td> 
-                  <td class="code"><pre>mule.bat</pre></td> 
-                 </tr> 
-                </tbody> 
-               </table></code></pre> 
-            </div> 
-           </div> </li> 
-          <li> <p>Linux or Mac:</p> 
-           <div class="listingblock"> 
-            <div class="content"> 
-             <pre class="CodeRay highlight"><code data-lang="code">
-          
-                  
-               <table class="CodeRay"> 
-                <tbody> 
-                 <tr> 
-                  <td class="line-numbers"><pre>1
-</pre></td> 
-                  <td class="code"><pre>./bin/mule</pre></td> 
-                 </tr> 
-                </tbody> 
-               </table></code></pre> 
-            </div> 
-           </div> </li> 
-         </ol> 
-        </div> </li> 
-       <li> <p>Mule starts running locally on your hard drive.</p> </li> 
-       <li> <p>To stop Mule, type <strong>CTRL-C</strong>.</p> </li> 
+       <li> <p>To stop Mule, type&nbsp;<strong>CTRL-C</strong>.</p> </li> 
       </ol> 
-     </div> 
-     <div class="admonitionblock tip"> 
-      <table> 
-       <tbody> 
-        <tr> 
-         <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-         <td class="content"> For information on advanced use of configuration parameters when launching Mule Enterprise runtime, read <a href="https://developer.mulesoft.com/docs/display/35X/Starting+and+Stopping+Mule+ESB">Starting and Stopping Mule ESB</a> </td> 
-        </tr> 
-       </tbody> 
-      </table> 
      </div> 
     </div> 
    </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="runningstudioonamac"><a class="anchor" href="#runningstudioonamac"></a>Running Studio on a Mac</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>If you’re using Mac OS X Mountain Lion, there are two extra considerations to be mindful of when running Anypoint Studio.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Java Runtime Environment</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Check to confirm that Java runtime environment 7 is in place on your system. From the command line (Terminal app), run: java -version</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The response should appear similar to the following:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="code">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+         <td class="code"><pre>java version "1.7.0_60"
+Java(TM) SE Runtime Environment (build 1.7.0_60-b19)
+Java HotSpot(TM) 64-Bit Server VM (build 24.60-b09, mixed mode)</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If a Java runtime environment is not installed, the command triggers a prompt to install the JDK tools directly from Apple. Follow the instructions to download and install JDK 7.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Application Execution</strong></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>By default, Mac OS X restricts execution of applications acquired outside the Apple App Store. Because you download Anypoint Studio outside the App Store, your system may prevent you from running Studio applications and issue a warning message advising you to change your security settings to proceed. <strong>Note</strong>: You must have Administrator privileges to adjust the security settings.</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>On your Mac, open <strong>System Preferences</strong> and navigate to <strong>Security &amp; Privacy</strong>.</p> </li> 
+    <li> <p>In the <strong>General</strong> tab, under "Allow applications downloaded from:" select the radio button for <strong>Anywhere</strong>.</p> </li> 
+   </ol> 
   </div> 
  </div> 
 </div> 
@@ -1074,9 +1005,9 @@ Finished starting Mule and MMC.</pre></td>
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><a href="/mule-user-guide/v/3.6/installing-anypoint-enterprise-security">Anypoint Enterprise Security</a>&nbsp;</p> </li> 
-    <li> <p><a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>&nbsp;</p> </li> 
-    <li> <p><a href="mailto:sales@mulesoft.com">Contact MuleSoft</a>&nbsp;to acquire entitlements to access the&nbsp;<a href="/mule-user-guide/v/3.7/mulesoft-enterprise-java-connector-for-sap-reference">SAP Connector</a>&nbsp;and/or&nbsp;<a href="/mule-user-guide/v/3.6/mule-high-availability-ha-clusters">High Availability Clustering</a></p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.5/installing-anypoint-enterprise-security">Anypoint Enterprise Security</a>&nbsp;</p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.5/anypoint-connectors">Anypoint Connectors</a>&nbsp;</p> </li> 
+    <li> <p><a href="mailto:sales@mulesoft.com">Contact MuleSoft</a>&nbsp;to acquire entitlements to access the&nbsp;<a href="/mule-user-guide/v/3.5/mulesoft-enterprise-java-connector-for-sap-reference">SAP Connector</a>&nbsp;and/or&nbsp;<a href="/mule-user-guide/v/3.5/mule-high-availability-ha-clusters">High Availability Clustering</a></p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1086,12 +1017,12 @@ Finished starting Mule and MMC.</pre></td>
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Learn more about acquiring and installing an&nbsp;http://www.mulesoft.org/documentation/display/current/Installing+an+Enterprise+License[Enterprise license].</p> </li> 
-    <li> <p>Read a&nbsp;http://blogs.mulesoft.org/one-studio/[blog post]&nbsp;explaining the Single Studio distribution.</p> </li> 
-    <li> <p>Get started&nbsp;with <a href="/mule-fundamentals/v/3.7">Mule Fundamentals</a>.</p> </li> 
-    <li> <p>Learn more about the&nbsp;<a href="/mule-management-console/v/3.7">Mule Management Console</a>.</p> </li> 
-    <li> <p><a href="/mule-user-guide/v/3.7/installing-extensions">Extend Mule</a>&nbsp;with plugins, modules, runtimes and connectors.</p> </li> 
-    <li> <p>Access a list of all the <a href="/mule-user-guide/v/3.6/studio-update-sites">update sites</a> available for your version of Studio.</p> </li> 
+    <li> <p>Learn more about acquiring and installing an <a href="/mule-user-guide/v/3.5/installing-an-enterprise-license">Installing an Enterprise License</a>.</p> </li> 
+    <li> <p>Read <a href="http://blogs.mulesoft.com/?s=one+studio">One Studio</a>&nbsp;that explains the Single Studio distribution.</p> </li> 
+    <li> <p>Get started&nbsp;with <a href="/mule-fundamentals/v/3.5">Mule Fundamentals</a>.</p> </li> 
+    <li> <p>Learn more about the&nbsp;<a href="/mule-management-console/v/3.5">Mule Management Console</a>.</p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.5/installing-extensions">Extend Mule</a>&nbsp;with plugins, modules, runtimes and connectors.</p> </li> 
+    <li> <p>Access a list of all the <a href="/mule-user-guide/v/3.5/studio-update-sites">update sites</a> available for your version of Studio.</p> </li> 
     <li> <p>Learn more about our new release strategy for CloudHub and Mule ESB.</p> </li> 
    </ul> 
   </div> 
@@ -1101,7 +1032,7 @@ Finished starting Mule and MMC.</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#downloading-and-launching-mule">Downloading and Launching Mule </a></li><li><a class="scroll-menu-link" href="#downloading-enterprise-additions">Downloading Enterprise Additions</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#downloading-and-launching-mule">Downloading and Launching Mule </a></li><li><a class="scroll-menu-link" href="#runningstudioonamac">Running Studio on a Mac</a></li><li><a class="scroll-menu-link" href="#downloading-enterprise-additions">Downloading Enterprise Additions</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
