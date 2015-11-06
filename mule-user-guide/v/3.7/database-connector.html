@@ -927,7 +927,7 @@
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>For more information on best design-time practices with DataSense and DataMapper, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector">DataSense documentation</a>.</p> 
+   <p>For more information on best design-time practices with DataSense, DataMapper, and DataWeave, see <a href="/anypoint-connector-devkit/v/3.7/adding-datasense">Adding DataSense</a>, <a href="/mule-user-guide/v/3.4/datamapper-user-guide-and-reference">Anypoint DataMapper User Guide and Reference</a>, and <a href="/mule-user-guide/v/3.7/dataweave">DataWeave</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1128,14 +1128,14 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-baa8a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-c90ec" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-879b6" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-4f93e" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-baa8a"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-879b6"> 
      <div class="paragraph"> 
-      <p><strong>Required:</strong> &nbsp;The following table describes the attributes of the Global Database connector element that you&nbsp; <em>must</em> configure to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, see <a href="/mule-user-guide/v/3.7/database-connector">Database Connector Reference</a>. See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>.&nbsp;</p> 
+      <p><strong>Required:</strong> &nbsp;The following table describes the attributes of the Global Database connector element that you&nbsp; <em>must</em> configure to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, see <a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>.&nbsp;</p> 
      </div> 
      <div class="sect2"> 
       <h3 id="oracle"><a class="anchor" href="#oracle"></a>Oracle</h3> 
@@ -1262,13 +1262,13 @@
          <td class="tableblock halign-left valign-top"> 
           <div> 
            <div class="paragraph"> 
-            <p><strong>Database Configuration Parameters</strong> OR <strong>Configure via spring-bean</strong> OR <strong>Database URL&nbsp;</strong></p> 
+            <p><strong>Database Configuration Parameters</strong> OR <strong>Configure via spring-bean</strong> OR <strong>Database URL</strong></p> 
            </div> 
           </div></td> 
          <td class="tableblock halign-left valign-top"> 
           <div> 
            <div class="paragraph"> 
-            <p>Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p> 
+            <p>Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection</strong> to confirm that you have established a valid, working connection to your database.</p> 
            </div> 
           </div></td> 
         </tr> 
@@ -1324,13 +1324,13 @@
          <td class="tableblock halign-left valign-top"> 
           <div> 
            <div class="paragraph"> 
-            <p><strong>Database Configuration Parameters</strong> OR <strong>Configure via spring-bean</strong> OR <strong>Database URL&nbsp;</strong></p> 
+            <p><strong>Database Configuration Parameters</strong> OR <strong>Configure via spring-bean</strong> OR <strong>Database URL</strong></p> 
            </div> 
           </div></td> 
          <td class="tableblock halign-left valign-top"> 
           <div> 
            <div class="paragraph"> 
-            <p>Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection…​</strong> to confirm that you have established a valid, working connection to your database.</p> 
+            <p>Use to define the details needed for your connector to actually connect with your database. When you have completed the configuration, click <strong>Test Connection</strong> to confirm that you have established a valid, working connection to your database.</p> 
            </div> 
           </div></td> 
         </tr> 
@@ -1463,7 +1463,10 @@
       </table> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-c90ec"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-4f93e"> 
+     <div class="paragraph"> 
+      <p><strong>DB Config &lt;db:generic-config&gt;</strong></p> 
+     </div> 
      <table class="tableblock frame-all grid-all" style="width: 99%;"> 
       <colgroup> 
        <col style="width: 30%;"> 
@@ -1471,21 +1474,11 @@
       </colgroup> 
       <thead> 
        <tr> 
-        <th class="tableblock halign-left valign-top"><strong>Attribute</strong></th> 
-        <th class="tableblock halign-left valign-top"><strong>Use</strong></th> 
+        <th class="tableblock halign-left valign-top">Attribute</th> 
+        <th class="tableblock halign-left valign-top">Use</th> 
        </tr> 
       </thead> 
       <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"> 
-         <div> 
-          <div class="paragraph"> 
-           <p>DB Config <code>&lt;db:generic-config&gt;</code></p> 
-          </div> 
-         </div></td> 
-        <td class="tableblock halign-left valign-top"> 
-         <div></div></td> 
-       </tr> 
        <tr> 
         <td class="tableblock halign-left valign-top"> 
          <div> 
@@ -1533,6 +1526,9 @@
        </tr> 
       </tbody> 
      </table> 
+     <div class="paragraph"> 
+      <p><strong>Pooling Profile&nbsp;&lt;db:pooling-profile /&gt;</strong></p> 
+     </div> 
      <table class="tableblock frame-all grid-all" style="width: 99%;"> 
       <colgroup> 
        <col style="width: 30%;"> 
@@ -1540,21 +1536,11 @@
       </colgroup> 
       <thead> 
        <tr> 
-        <th class="tableblock halign-left valign-top"><strong>Attribute</strong></th> 
-        <th class="tableblock halign-left valign-top"><strong>Use</strong></th> 
+        <th class="tableblock halign-left valign-top">Attribute</th> 
+        <th class="tableblock halign-left valign-top">Use</th> 
        </tr> 
       </thead> 
       <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"> 
-         <div> 
-          <div class="paragraph"> 
-           <p>Pooling Profile&nbsp; `&lt;db:pooling-profile `/&gt;</p> 
-          </div> 
-         </div></td> 
-        <td class="tableblock halign-left valign-top"> 
-         <div></div></td> 
-       </tr> 
        <tr> 
         <td class="tableblock halign-left valign-top"> 
          <div> 
@@ -1592,16 +1578,23 @@
           </div> 
          </div></td> 
        </tr> 
+      </tbody> 
+     </table> 
+     <div class="paragraph"> 
+      <p><strong>Connection Properties&nbsp; &lt;db:connection-properties&gt;</strong></p> 
+     </div> 
+     <table class="tableblock frame-all grid-all" style="width: 99%;"> 
+      <colgroup> 
+       <col style="width: 30%;"> 
+       <col style="width: 70%;"> 
+      </colgroup> 
+      <thead> 
        <tr> 
-        <td class="tableblock halign-left valign-top"> 
-         <div> 
-          <div class="paragraph"> 
-           <p><strong>Connection Properties</strong>&nbsp; <code>&lt;db:connection-properties&gt;</code></p> 
-          </div> 
-         </div></td> 
-        <td class="tableblock halign-left valign-top"> 
-         <div></div></td> 
+        <th class="tableblock halign-left valign-top">Attribute</th> 
+        <th class="tableblock halign-left valign-top">Use</th> 
        </tr> 
+      </thead> 
+      <tbody> 
        <tr> 
         <td class="tableblock halign-left valign-top"> 
          <div> 
@@ -1646,7 +1639,7 @@
   <div class="sect2"> 
    <h3 id="database-engines-not-supported-out-of-the-box-generic-installation"><a class="anchor" href="#database-engines-not-supported-out-of-the-box-generic-installation"></a>Database Engines Not Supported Out of the Box - Generic Installation</h3> 
    <div class="paragraph"> 
-    <p>All databases that are not configured <a href="#database-engines-supported-out-of-the-box">Database Engines Supported Out of the Box</a> must be added through the generic database instalation, and then configured accordingly.</p> 
+    <p>All databases that are not configured <a href="#database-engines-supported-out-of-the-box">Database Engines Supported Out of the Box</a> must be added through the generic database installation, and then configured accordingly.</p> 
    </div> 
    <div class="sect3"> 
     <h4 id="adding-the-database-driver-for-generic-db-configuration"><a class="anchor" href="#adding-the-database-driver-for-generic-db-configuration"></a>Adding the Database Driver for Generic DB Configuration</h4> 
@@ -1657,15 +1650,15 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-5a57d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#xml-editor-or-standalone-fc781" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+       <li class="active"><a href="#studio-visual-editor-f10b0" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-or-standalone-32497" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5a57d"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f10b0"> 
        <div class="olist arabic"> 
         <ol class="arabic"> 
-         <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available for&nbsp;<a href="http://dev.mysql.com/downloads/connector/j/">download</a> online. &nbsp;</p> </li> 
+         <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available at&nbsp;<a href="http://dev.mysql.com/downloads/connector/j/">download Connector/j</a> online. &nbsp;</p> </li> 
          <li> <p>Drag and drop the driver’s&nbsp;.<code>jar</code>&nbsp;file from your local drive to the&nbsp;<code>root</code>&nbsp;folder in your&nbsp;project.</p> </li> 
          <li> <p>Add the <code>.jar</code> file to the build path of your project. Right click the project name, then select&nbsp;<strong>Build Path</strong>&nbsp;&gt;&nbsp;<strong>Configure Build Path…</strong></p> </li> 
          <li> <p>In the wizard that appears, click the <strong>Libraries</strong> tab, then click <strong>Add Jars…</strong></p> </li> 
@@ -1677,7 +1670,7 @@
         <p><span class="image"><img src="./_images/pack_explorer.png" alt="pack_explorer"></span></p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-fc781"> 
+      <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-32497"> 
        <div class="olist arabic"> 
         <ol class="arabic"> 
          <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available for&nbsp;<a href="http://dev.mysql.com/downloads/connector/j/">download</a> online. &nbsp;</p> </li> 
@@ -1698,12 +1691,12 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-b32e5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#xml-editor-458df" role="tab" data-toggle="tab">XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-3c7a8" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-c5d2e" role="tab" data-toggle="tab">XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b32e5"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-3c7a8"> 
        <div class="paragraph"> 
         <p><strong>Required:</strong>&nbsp;The following table describes the attributes of the Global Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>. &nbsp;</p> 
        </div> 
@@ -1807,7 +1800,7 @@
         </tbody> 
        </table> 
       </div> 
-      <div class="tab-pane fade no-padding" id="xml-editor-458df"> 
+      <div class="tab-pane fade no-padding" id="xml-editor-c5d2e"> 
        <table class="tableblock frame-all grid-all" style="width: 99%;"> 
         <colgroup> 
          <col style="width: 30%;"> 
@@ -2054,7 +2047,7 @@
   <div class="sect2"> 
    <h3 id="configuring-a-database-connector-instance-inside-a-flow"><a class="anchor" href="#configuring-a-database-connector-instance-inside-a-flow"></a>Configuring a Database Connector Instance Inside a Flow</h3> 
    <div class="paragraph"> 
-    <p><strong>Required:</strong>&nbsp;The following table describes the attributes of the Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector">Database Connector Reference</a>.&nbsp;See also <a href="#fields-that-support-mel-expressions">Fields That Support MEL Expressions</a>.</p> 
+    <p><strong>Required:</strong>&nbsp;The following table describes the attributes of the Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>.&nbsp;See also <a href="#fields-that-support-mel-expressions">Fields That Support MEL Expressions</a>.</p> 
    </div> 
    <div class="admonitionblock warning"> 
     <table> 
@@ -2063,7 +2056,7 @@
        <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
        <td class="content"> 
         <div class="paragraph"> 
-         <p>Oracle and Derby databases are supported by Mule, but to configure them correctly you cannot do it via Studio’s Visual Interface, but rather through Studio’s XML Editor.</p> 
+         <p>The Oracle and Derby databases are supported by Mule, but you can only configure them correctly using Studio’s XML Editor, not using Studio’s Visual Editor.</p> 
         </div> </td> 
       </tr> 
      </tbody> 
@@ -2179,7 +2172,7 @@
     <p><span class="image"><img src="./_images/truncate.png" alt="truncate"></span></p> 
    </div> 
    <div class="paragraph"> 
-    <p><strong>Optional:</strong>&nbsp;The following table describes the attributes of the element that you&nbsp;can&nbsp;<em>optionally</em>&nbsp;configure to customize some functionality of the Database Connector. For a full list of elements, attributes and default values, consult the&nbsp; <a href="/mule-user-guide/v/3.7/database-connector">Database Connector Reference</a>.</p> 
+    <p><strong>Optional:</strong>&nbsp;The following table describes the attributes of the element that you&nbsp;can&nbsp;<em>optionally</em>&nbsp;configure to customize some functionality of the Database Connector. For a full list of elements, attributes and default values, consult the&nbsp; <a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>.</p> 
    </div> 
    <div class="admonitionblock tip"> 
     <table> 
@@ -2441,12 +2434,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-9618f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-or-standalone-fc060" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-4ca97" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-or-standalone-05a9a" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-9618f"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4ca97"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>From within the&nbsp;<strong>Properties Editor</strong>&nbsp;of the&nbsp;<strong>Database Connector</strong>&nbsp;element in your flow, use the drop-down next to <strong>Type</strong> to select <code>From Template</code>.&nbsp;</p> </li> 
@@ -2488,7 +2481,7 @@
        </div> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-fc060"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-05a9a"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>At the top of your project’s XML config file, above all flows, add a <code>db:template-query</code> element. Configure the attributes of the element according to the code sample below.</p> </li> 
@@ -2661,12 +2654,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-ff5d7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-d446b" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-8a5e9" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-40cfc" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ff5d7"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-8a5e9"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2680,7 +2673,7 @@
        <p><span class="image"><img src="./_images/dllexample2.png" alt="dllexample2"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-d446b"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-40cfc"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2788,12 +2781,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-0d8b0" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-4a59e" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-6f06a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-c9887" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-0d8b0"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6f06a"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2807,7 +2800,7 @@
        <p><span class="image"><img src="./_images/bulkex2.png" alt="bulkex2"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-4a59e"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-c9887"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2963,9 +2956,7 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Study several&nbsp;<a href="/mule-user-guide/v/3.7/database-connector">example applications</a>&nbsp;which utilize the Database connector.</p> </li> 
-    <li> <p><a href="/mule-user-guide/v/3.7/database-connector">Database Connector Reference</a>.</p> </li> 
-    <li> <p>Learn more about&nbsp;<a href="/mule-user-guide/v/3.7/database-connector">DataMapper</a>.</p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>.</p> </li> 
     <li> <p>See also <a href="#fields-that-support-mel-expressions">Fields That Support MEL Expressions</a>.</p> </li> 
    </ul> 
   </div> 

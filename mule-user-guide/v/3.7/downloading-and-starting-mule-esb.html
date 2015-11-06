@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/downloading-and-starting-mule-esb" />
-    <meta name="description" content="    MMC displays its startup messages. Look for these:  Starting MMC. Please wait.  Tomcat Started.  initialization started  MMC started + After Mu..." />
+    <meta name="description" content="    MMC displays its startup messages. Look for these: After Mule and MMC are running, this message appears:  To stop Mule, run the shutdown.sh scr..." />
     <meta class="swiftype" name="title" data-type="string" content="Downloading and Starting Mule ESB" />
 
 </head>
@@ -870,13 +870,13 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#anypoint-studio-a680d" role="tab" data-toggle="tab">Anypoint Studio</a></li> 
-     <li><a href="#mule-ee-runtime-mmc-ff02c" role="tab" data-toggle="tab">Mule EE Runtime + MMC</a></li> 
-     <li><a href="#mule-ee-or-ce-runtime-33d21" role="tab" data-toggle="tab">Mule EE or CE Runtime</a></li> 
+     <li class="active"><a href="#anypoint-studio-2c3f5" role="tab" data-toggle="tab">Anypoint Studio</a></li> 
+     <li><a href="#mule-ee-runtime-mmc-7b239" role="tab" data-toggle="tab">Mule EE Runtime + MMC</a></li> 
+     <li><a href="#mule-ee-or-ce-runtime-0bcb5" role="tab" data-toggle="tab">Mule EE or CE Runtime</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="anypoint-studio-a680d"> 
+    <div class="tab-pane in active fade no-padding" id="anypoint-studio-2c3f5"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/anypoint_Studio.png" alt="anypoint_Studio"></span></p> 
      </div> 
@@ -901,7 +901,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="mule-ee-runtime-mmc-ff02c"> 
+    <div class="tab-pane fade no-padding" id="mule-ee-runtime-mmc-7b239"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mule_enterprise.png" alt="mule_enterprise"></span></p> 
      </div> 
@@ -915,33 +915,38 @@
        <li> <p>Open the <code>mmc-distribution-mule-console-bundle-&lt;version&gt;</code> folder and open either <code>startup.bat</code> for Windows or <code>startup.sh</code> for Mac and Linux from the command line.</p> </li> 
        <li> <p>At the prompt, <code>Please enter the desired port for Mule [Default 7777]:</code> press Return to accept the default or type a new port number.</p> 
         <div class="paragraph"> 
-         <p>MMC displays its startup messages. Look for these: <strong> <code>Starting MMC. Please wait.</code> </strong> <code>Tomcat Started.</code> <strong> <code>initialization started</code> </strong> <code>MMC started</code></p> 
+         <p>MMC displays its startup messages. Look for these:</p> 
         </div> 
-        <div class="paragraph"> 
-         <p>+ After Mule and MMC are running, this message appears:</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p>+</p> 
-        </div> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="code">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
+        <div class="ulist"> 
+         <ul> 
+          <li> <p><code>Starting MMC. Please wait.</code></p> </li> 
+          <li> <p><code>Tomcat Started.</code></p> </li> 
+          <li> <p><code>initialization started</code></p> </li> 
+          <li> <p><code>MMC started</code></p> 
+           <div class="paragraph"> 
+            <p>After Mule and MMC are running, this message appears:</p> 
+           </div> 
+           <div class="listingblock"> 
+            <div class="content"> 
+             <pre class="CodeRay highlight"><code data-lang="code">
+          
+                  
+               <table class="CodeRay"> 
+                <tbody> 
+                 <tr> 
+                  <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-               <td class="code"><pre>Mule running as PID=#####
+                  <td class="code"><pre>Mule running as PID=#####
 Tomcat and MMC running as PID=#####
 Finished starting Mule and MMC.</pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
+                 </tr> 
+                </tbody> 
+               </table></code></pre> 
+            </div> 
+           </div> </li> 
+         </ul> 
         </div> </li> 
        <li> <p>The Mule startup messages displays the URL where Tomcat is serving the MMC application, for example <code><a href="http://localhost:8585/mmc-3.6.0" class="bare">http://localhost:8585/mmc-3.6.0</a></code>. Use a Web browser to navigate to this URL.</p> </li> 
        <li> <p>You are greeted by the MMC welcome screen, shown below. Log in with username&nbsp;<code>admin</code>, password&nbsp;<code>admin</code>.</p> 
@@ -990,7 +995,7 @@ Finished starting Mule and MMC.</pre></td>
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="mule-ee-or-ce-runtime-33d21"> 
+    <div class="tab-pane fade no-padding" id="mule-ee-or-ce-runtime-0bcb5"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mule_community.png" alt="mule_community"></span></p> 
      </div> 
@@ -999,43 +1004,14 @@ Finished starting Mule and MMC.</pre></td>
      </div> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
-       <li> <p>Install <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE Development Kit</a>.</p> </li> 
-       <li> <p>Set your&nbsp;<code>JAVA_HOME</code>&nbsp;environment variable to the path in which you installed the JDK.</p> </li> 
-       <li> <p>Download <a href="https://developer.mulesoft.com/anypoint-platform">download&nbsp;Mule Standalone Runtime (without Studio)</a>.</p> </li> 
-       <li> <p>Navigate to the folder that contains your copy of&nbsp;<strong>mule standalone</strong>, then unzip the file. Alternatively, use&nbsp;<code>unzip</code>&nbsp;command from the terminal or command line.</p> </li> 
-       <li> <p>From the command line, start Mule using the following command:</p> 
-        <div class="olist loweralpha"> 
-         <ol class="loweralpha" type="a"> 
-          <li> <p>Windows:</p> 
-           <div class="listingblock"> 
-            <div class="content"> 
-             <pre class="CodeRay highlight"><code data-lang="code">mule.bat</code></pre> 
-            </div> 
-           </div> </li> 
-          <li> <p>Linux or Mac:</p> 
-           <div class="listingblock"> 
-            <div class="content"> 
-             <pre class="CodeRay highlight"><code data-lang="code">./bin/mule</code></pre> 
-            </div> 
-           </div> </li> 
-         </ol> 
+       <li> <p>Install <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">Java SE Development Kit 7</a> or <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK 8</a>.</p> </li> 
+       <li> <p>Download&nbsp;and unzip <a href="https://www.mulesoft.com/platform/soa/mule-esb-enterprise">Mule ESB Enterprise</a>.</p> </li> 
+       <li> <p>Start Mule from a command line by changing directory to where you unzipped the Mule software distribution and then changing to the <code>bin</code> directory. Type the <code>./mule</code> command for Mac or Linux, or type <code>mule.bat</code> for Windows.</p> 
+        <div class="paragraph"> 
+         <p>Wait for Mule to start running, which may take a minute or two.</p> 
         </div> </li> 
-       <li> <p>Mule starts running locally on your hard drive.</p> </li> 
        <li> <p>To stop Mule, type&nbsp;<strong>CTRL-C</strong>.</p> </li> 
       </ol> 
-     </div> 
-     <div class="admonitionblock tip"> 
-      <table> 
-       <tbody> 
-        <tr> 
-         <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-         <td class="content"> 
-          <div class="paragraph"> 
-           <p>For information on advanced use of configuration parameters when launching Mule Enterprise runtime, read <a href="/mule-user-guide/v/3.7/starting-and-stopping-mule-esb">Starting and Stopping Mule ESB</a></p> 
-          </div> </td> 
-        </tr> 
-       </tbody> 
-      </table> 
      </div> 
     </div> 
    </div> 
@@ -1135,8 +1111,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.51-b03, mixed mode)</pre></td>
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Learn more about acquiring and installing an&nbsp;<a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Enterprise license</a>.</p> </li> 
-    <li> <p>Read a&nbsp;<a href="http://blogs.mulesoft.com/">blog post</a>&nbsp;explaining the Single Studio distribution.</p> </li> 
+    <li> <p>Learn more about acquiring and installing an <a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Installing an Enterprise License</a>.</p> </li> 
+    <li> <p>Read <a href="http://blogs.mulesoft.com/?s=one+studio">One Studio</a>&nbsp;that explains the Single Studio distribution.</p> </li> 
     <li> <p>Get started&nbsp;with <a href="/mule-fundamentals/v/3.7">Mule Fundamentals</a>.</p> </li> 
     <li> <p>Learn more about the&nbsp;<a href="/mule-management-console/v/3.7">Mule Management Console</a>.</p> </li> 
     <li> <p><a href="/mule-user-guide/v/3.7/installing-extensions">Extend Mule</a>&nbsp;with plugins, modules, runtimes, and connectors.</p> </li> 
