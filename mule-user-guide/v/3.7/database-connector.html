@@ -922,12 +922,10 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><strong>DataSense</strong>: When enabled, DataSense uses information in the query statement (configured within the Database connector) to automatically extract metadata about the message your application must deliver to, or can expect from, the database. By enabling this functionality (in the Global Database connector element), Mule does the heavy lifting of discovering the type of data you must send to, or be prepared to receive from the database.</p> </li> 
-    <li> <p><strong>DataMapper transformer</strong>: When used in conjunction with a DataSense-enabled Database connector, DataMapper can automatically extract message metadata that you can use to visually map and/or transform to a different data format or structure. For example, if you configure a Database connector in your application, then drop a DataMapper after it, the DataMapper uses the information that DataSense extracted to pre-populate the input values for mapping, so that you only need to confirm (or adjust) the selections, then proceed to mapping to your desired output.&nbsp; In other words, DataSense makes sure that DataMapper&nbsp;<em>knows</em>&nbsp;the data format and structure with which it must work so you don’t have to figure it out manually.</p> </li> 
+    <li> <p><strong>DataSense</strong>: When enabled, DataSense uses information in the query statement (configured within the Database connector) to automatically extract metadata about the message your application must deliver to, or can expect from, the database. By enabling this functionality (in the Global Database connector element), Mule does the heavy lifting of discovering the type of data you must send to, or be prepared to receive from the database. For more information, see <a href="/mule-user-guide/v/3.7/datasense">DataSense</a>.</p> </li> 
+    <li> <p><strong>DataMapper</strong>: When used in conjunction with a DataSense-enabled Database connector, DataMapper can automatically extract message metadata that you can use to visually map and/or transform to a different data format or structure. For example, if you configure a Database connector in your application, then drop a DataMapper after it, the DataMapper uses the information that DataSense extracted to pre-populate the input values for mapping, so that you only need to confirm (or adjust) the selections, then proceed to mapping to your desired output.&nbsp; In other words, DataSense makes sure that DataMapper&nbsp;<em>knows</em>&nbsp;the data format and structure with which it must work so you don’t have to figure it out manually. For more information, see <a href="/mule-user-guide/v/3.7/datamapper-concepts">DataMapper Concepts</a></p> </li> 
+    <li> <p><strong>DataWeave</strong>: Replacement for DataMapper. When used in conjunction with a DataSense-enabled Database connector, DataWeave can extract message metadata and transform to a different data format or structure. For more information, see <a href="/mule-user-guide/v/3.7/dataweave">DataWeave</a>.</p> </li> 
    </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>For more information on best design-time practices with DataSense, DataMapper, and DataWeave, see <a href="/anypoint-connector-devkit/v/3.7/adding-datasense">Adding DataSense</a>, <a href="/mule-user-guide/v/3.4/datamapper-user-guide-and-reference">Anypoint DataMapper User Guide and Reference</a>, and <a href="/mule-user-guide/v/3.7/dataweave">DataWeave</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1128,12 +1126,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-33ec1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-93a96" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-36cb2" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-13d40" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-33ec1"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-36cb2"> 
      <div class="paragraph"> 
       <p><strong>Required:</strong> &nbsp;The following table describes the attributes of the Global Database connector element that you&nbsp; <em>must</em> configure to be able to connect, then submit queries to a database. For a full list of elements, attributes, and default values, see <a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>.&nbsp;</p> 
      </div> 
@@ -1463,7 +1461,7 @@
       </table> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-93a96"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-13d40"> 
      <div class="paragraph"> 
       <p><strong>DB Config &lt;db:generic-config&gt;</strong></p> 
      </div> 
@@ -1650,12 +1648,12 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-b0da5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#xml-editor-or-standalone-318ba" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+       <li class="active"><a href="#studio-visual-editor-a0ca7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-or-standalone-b106f" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b0da5"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a0ca7"> 
        <div class="olist arabic"> 
         <ol class="arabic"> 
          <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available at&nbsp;<a href="http://dev.mysql.com/downloads/connector/j/">download Connector/j</a> online. &nbsp;</p> </li> 
@@ -1670,7 +1668,7 @@
         <p><span class="image"><img src="./_images/pack_explorer.png" alt="pack_explorer"></span></p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-318ba"> 
+      <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-b106f"> 
        <div class="olist arabic"> 
         <ol class="arabic"> 
          <li> <p>If you haven’t already done so, download the driver for your particular database. For example, the driver for a MySQL database is available for&nbsp;<a href="http://dev.mysql.com/downloads/connector/j/">download</a> online. &nbsp;</p> </li> 
@@ -1691,12 +1689,12 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-9778b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-       <li><a href="#xml-editor-0090c" role="tab" data-toggle="tab">XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-9646b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-2c2d3" role="tab" data-toggle="tab">XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-9778b"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-9646b"> 
        <div class="paragraph"> 
         <p><strong>Required:</strong>&nbsp;The following table describes the attributes of the Global Database Connector element that you&nbsp;<em>must</em>&nbsp;configure in order to be able to connect, then submit queries to a database. For a full list of elements, attributes and default values, consult the&nbsp;<a href="/mule-user-guide/v/3.7/database-connector-reference">Database Connector Reference</a>. See also <a href="#Fields That Support MEL Expressions">Fields That Support MEL Expressions</a>. &nbsp;</p> 
        </div> 
@@ -1800,7 +1798,7 @@
         </tbody> 
        </table> 
       </div> 
-      <div class="tab-pane fade no-padding" id="xml-editor-0090c"> 
+      <div class="tab-pane fade no-padding" id="xml-editor-2c2d3"> 
        <table class="tableblock frame-all grid-all" style="width: 99%;"> 
         <colgroup> 
          <col style="width: 30%;"> 
@@ -2434,12 +2432,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-8bdb2" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-or-standalone-4bbce" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
+      <li class="active"><a href="#studio-visual-editor-0572e" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-or-standalone-ab263" role="tab" data-toggle="tab">XML Editor or Standalone</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-8bdb2"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-0572e"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>From within the&nbsp;<strong>Properties Editor</strong>&nbsp;of the&nbsp;<strong>Database Connector</strong>&nbsp;element in your flow, use the drop-down next to <strong>Type</strong> to select <code>From Template</code>.&nbsp;</p> </li> 
@@ -2481,7 +2479,7 @@
        </div> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-4bbce"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-or-standalone-ab263"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>At the top of your project’s XML config file, above all flows, add a <code>db:template-query</code> element. Configure the attributes of the element according to the code sample below.</p> </li> 
@@ -2654,12 +2652,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-af189" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-97859" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-4e0db" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-80f55" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-af189"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4e0db"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2673,7 +2671,7 @@
        <p><span class="image"><img src="./_images/dllexample2.png" alt="dllexample2"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-97859"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-80f55"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2781,12 +2779,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-728fe" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-cf649" role="tab" data-toggle="tab">XML Editor</a></li> 
+      <li class="active"><a href="#studio-visual-editor-ac6ee" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-editor-5d270" role="tab" data-toggle="tab">XML Editor</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-728fe"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ac6ee"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
@@ -2800,7 +2798,7 @@
        <p><span class="image"><img src="./_images/bulkex2.png" alt="bulkex2"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-cf649"> 
+     <div class="tab-pane fade no-padding" id="xml-editor-5d270"> 
       <div class="paragraph"> 
        <p><strong>Example 1</strong></p> 
       </div> 
