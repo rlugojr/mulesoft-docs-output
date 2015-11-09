@@ -4137,12 +4137,134 @@ classrooms: payload.school.teachers.*teacher groupBy $.subject mapObject ((teach
    </div> 
   </div> 
  </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="rename-some-keys-and-replicate-the-rest"><a class="anchor" href="#rename-some-keys-and-replicate-the-rest"></a>Rename Some Keys and Replicate the Rest</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This example takes in a JSON object that contains several fields. Most of them must be kept identical, except for a couple that should be renamed. Instead of referencing each field individually, this example renames two fields in particular and handles the rest without any changes.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Input</strong></p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="json">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+         <td class="code"><pre>{
+<span class="key"><span class="delimiter">"</span><span class="content">flight</span><span class="delimiter">"</span></span>:{
+  <span class="key"><span class="delimiter">"</span><span class="content">availableSeats</span><span class="delimiter">"</span></span>:<span class="integer">45</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">airlineName</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">Ryan Air</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">aircraftBrand</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">Boeing</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">aircraftType</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">737</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">departureDate</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">12/14/2015</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">origin</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">BCN</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">destination</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">FCO</span><span class="delimiter">"</span></span>
+  }
+}</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Transform</strong></p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="DataWeave">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+         <td class="code"><pre>%dw 1.0
+%output application/json
+---
+payload map {
+($ mapObject {
+    (emptySeats: $) when $$ as :string == 'availableSeats',
+    (airline: $) when $$ as :string == 'airlineName',
+    (($$):$) when ($$ as :string !='availableSeats') and ($$ as :string != 'airlineName')
+  }
+)
+}</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Output</strong></p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="json">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+         <td class="code"><pre>[
+  {
+    <span class="key"><span class="delimiter">"</span><span class="content">emptySeats</span><span class="delimiter">"</span></span>: <span class="integer">45</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">airline</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Ryan Air</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">aircraftBrand</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Boeing</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">aircraftType</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">737</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">departureDate</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">12/14/2015</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">origin</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">BCN</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">destination</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">FCO</span><span class="delimiter">"</span></span>
+  }
+]</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+ </div> 
 </div>
         </div>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#xml-to-json">XML to JSON</a></li><li><a class="scroll-menu-link" href="#xml-to-json-2">XML to JSON 2</a></li><li><a class="scroll-menu-link" href="#json-to-xml">JSON to XML</a></li><li><a class="scroll-menu-link" href="#multiple-inputs">Multiple Inputs</a></li><li><a class="scroll-menu-link" href="#create-mule-config">Create Mule Config</a></li><li><a class="scroll-menu-link" href="#create-mule-pom">Create Mule POM</a></li><li><a class="scroll-menu-link" href="#xml-basic">XML Basic</a></li><li><a class="scroll-menu-link" href="#xml-removal">XML Removal</a></li><li><a class="scroll-menu-link" href="#xml-replacement">XML Replacement</a></li><li><a class="scroll-menu-link" href="#xml-group-by">XML Group By</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#xml-to-json">XML to JSON</a></li><li><a class="scroll-menu-link" href="#xml-to-json-2">XML to JSON 2</a></li><li><a class="scroll-menu-link" href="#json-to-xml">JSON to XML</a></li><li><a class="scroll-menu-link" href="#multiple-inputs">Multiple Inputs</a></li><li><a class="scroll-menu-link" href="#create-mule-config">Create Mule Config</a></li><li><a class="scroll-menu-link" href="#create-mule-pom">Create Mule POM</a></li><li><a class="scroll-menu-link" href="#xml-basic">XML Basic</a></li><li><a class="scroll-menu-link" href="#xml-removal">XML Removal</a></li><li><a class="scroll-menu-link" href="#xml-replacement">XML Replacement</a></li><li><a class="scroll-menu-link" href="#xml-group-by">XML Group By</a></li><li><a class="scroll-menu-link" href="#rename-some-keys-and-replicate-the-rest">Rename Some Keys and Replicate the Rest</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
