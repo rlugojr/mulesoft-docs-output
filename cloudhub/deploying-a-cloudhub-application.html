@@ -1160,13 +1160,28 @@
   <div class="sect2"> 
    <h3 id="static-ips-tab"><a class="anchor" href="#static-ips-tab"></a>Static IPs Tab</h3> 
    <div class="paragraph"> 
-    <p>You can enable a static IP for your application by checking the <strong>Use Static IP</strong> checkbox. If you want to pre-allocate static IPs for your application, you can choose a region from the <strong>Region</strong> dropdown, and click <strong>Allocate Static IP</strong> to allocate a static IP for the chosen region. The static IP will be allocated when the application is deployed to that region. If the application is already running, applying the static IP change will trigger a restart of the application with the newly applied static IP. Note that applications with static IPs can only have one instance (i.e. scale out is not enabled).</p> 
+    <p>To enable a static IP for your application, go to the <strong>Static IPs</strong> tab, then check the <strong>Use Static IP</strong> checkbox.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>By default, your allocation of static IPs is equal to twice the number of Production vCores in your subscription. If you need to increase this quota, please contact MuleSoft Support.</p> 
+    <p><span class="image"><img src="./_images/static-ip-tab.png" alt="Static IP tab"></span></p> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/CHStaticIPsTab.png" alt="CHStaticIPsTab"></span></p> 
+    <p>To pre-allocate static IPs for your application, select a region from the <strong>Region</strong> dropdown menu, then click <strong>Allocate Static IP</strong> to allocate a static IP for the chosen region. The static IP will be allocated when the application is deployed to that region. If the application is already running, applying the static IP change will trigger a restart of the application with the newly-applied static IP.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/static-ip-regions.png" alt="Static IPs by region"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Applications with static IPs can only have one instance.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>By default, the number of static IPs allocated to your organization is equal to twice the number of Production vCores in your subscription. This number is displayed under the <strong>Use Static IP</strong> checkbox. If you need to increase this quota, please contact MuleSoft Support.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If an application has static IPs reserved in multiple regions, it will pick up the IP from whichever region it is deployed to. This allows you to pre-configure IP rules for multiple regions, for disaster recovery (DR) scenario.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If you need to free up some of your overall static IP allocation, you can release a static IP that is currently allocated to an application.</p> 
    </div> 
   </div> 
  </div> 
