@@ -892,7 +892,7 @@
  <h2 id="set-up-a-home-organization"><a class="anchor" href="#set-up-a-home-organization"></a>Set up a home organization</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Home Organization_, or <em>Home Org</em>, is you - that is, the company licensing Anypoint B2B. To use <a href="/anypoint-b2b/anypoint-b2b">Anypoint B2B</a>, you must first create this Home Org in APM. After <a href="#getting-started">Getting Started</a>, you can configure the following:</p> 
+   <p>The Home Organization, or <em>Home Org</em>, is you - that is, the company licensing Anypoint B2B. To use <a href="/anypoint-b2b/anypoint-b2b">Anypoint B2B</a>, you must first create this Home Org in APM. After <a href="#getting-started">Getting Started</a>, you can configure the following:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
@@ -949,6 +949,16 @@
    <h3 id="company-contact-information"><a class="anchor" href="#company-contact-information"></a>Company contact information</h3> 
    <div class="paragraph"> 
     <p>Use this section to add contact information for your company.</p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> Adding contact information is optional. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
    <div class="sect3"> 
     <h4 id="enter-company-contact-information"><a class="anchor" href="#enter-company-contact-information"></a>Enter Company contact information</h4> 
@@ -1019,40 +1029,32 @@
    </div> 
    <div class="sect3"> 
     <h4 id="x12-identity-settings-home-org"><a class="anchor" href="#x12-identity-settings-home-org"></a>X12 Identity Settings - Home Org</h4> 
-    <div class="dlist"> 
-     <dl> 
-      <dt class="hdlist1">
-        Interchange ID qualifier 
-      </dt> 
-      <dd> 
-       <p>This is the qualifier your company will use as a default X12 Qualifier. If you have exceptions, you can change them at the transaction level for an individual trading partner.</p> 
-      </dd> 
-      <dt class="hdlist1">
-        Interchange ID (ISA) 
-      </dt> 
-      <dd> 
-       <p>This is the X12 EDI identifier your company will be using as a default EDI ID. If you have exceptions, you can change them at the transaction level for the individual trading partner.</p> 
-      </dd> 
-     </dl> 
+    <div class="sect4"> 
+     <h5 id="interchange-id-qualifier-isa-home-org"><a class="anchor" href="#interchange-id-qualifier-isa-home-org"></a>Interchange ID qualifier - ISA - Home Org</h5> 
+     <div class="paragraph"> 
+      <p>This is the qualifier your company will use as a default X12 Qualifier. If you have exceptions, you can change them at the transaction level for an individual trading partner.</p> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="interchange-id-isa-home-org"><a class="anchor" href="#interchange-id-isa-home-org"></a>Interchange ID - ISA - Home Org</h5> 
+     <div class="paragraph"> 
+      <p>This is the X12 EDI identifier your company will be using as a default EDI ID. If you have exceptions, you can change them at the transaction level for the individual trading partner.</p> 
+     </div> 
     </div> 
    </div> 
    <div class="sect3"> 
     <h4 id="edifact-identity-settings-home-org"><a class="anchor" href="#edifact-identity-settings-home-org"></a>EDIFACT Identity Settings - Home Org</h4> 
-    <div class="dlist"> 
-     <dl> 
-      <dt class="hdlist1">
-        Interchange ID Qualifier (UNB) 
-      </dt> 
-      <dd> 
-       <p>Qualifier your company uses as a default EDIFACT Qualifier. If you have exceptions, you can change them at the transaction level for the individual trading partner.</p> 
-      </dd> 
-      <dt class="hdlist1">
-        Interchange ID - UNB 
-      </dt> 
-      <dd> 
-       <p>EDIFACT ID your Company uses as a default ID. If you have exceptions, you can change them at the transaction level for an individual trading partner.</p> 
-      </dd> 
-     </dl> 
+    <div class="sect5"> 
+     <h6 id="interchange-id-qualifier-unb-home-org"><a class="anchor" href="#interchange-id-qualifier-unb-home-org"></a>Interchange ID Qualifier - UNB - Home Org</h6> 
+     <div class="paragraph"> 
+      <p>Qualifier your company uses as a default EDIFACT Qualifier. If you have exceptions, you can change them at the transaction level for the individual trading partner.</p> 
+     </div> 
+    </div> 
+    <div class="sect5"> 
+     <h6 id="interchange-id-unb-home-org"><a class="anchor" href="#interchange-id-unb-home-org"></a>Interchange ID - UNB - Home Org</h6> 
+     <div class="paragraph"> 
+      <p>EDIFACT ID your Company uses as a default ID. If you have exceptions, you can change them at the transaction level for an individual trading partner.</p> 
+     </div> 
     </div> 
    </div> 
   </div> 
@@ -1912,9 +1914,9 @@
     <div class="sect4"> 
      <h5 id="enter-x12-identity-settings"><a class="anchor" href="#enter-x12-identity-settings"></a>Enter X12 Identity Settings</h5> 
      <div class="sect5"> 
-      <h6 id="interchange-id-qualifier-isa"><a class="anchor" href="#interchange-id-qualifier-isa"></a>Interchange ID qualifier (ISA)</h6> 
+      <h6 id="interchange-id-qualifier-isa-partner"><a class="anchor" href="#interchange-id-qualifier-isa-partner"></a>Interchange ID qualifier - ISA - Partner</h6> 
       <div class="paragraph"> 
-       <p>Value of the EDI ID Qualifier for your trading partner. Some of the most common values are listed below. If you choose <strong>Custom</strong>, you can define the trading partners EDI X12 qualifier.</p> 
+       <p>Value of the EDI ID Qualifier for your trading partner. Some of the most common values are listed below. If you choose <strong>Custom</strong>, you can define the trading partner’s EDI X12 qualifier.</p> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -1945,7 +1947,7 @@
         <dd> 
          <div class="ulist"> 
           <ul> 
-           <li> <p><code>None</code></p> </li> 
+           <li> <p><code>00</code></p> </li> 
           </ul> 
          </div> 
         </dd> 
@@ -1954,7 +1956,7 @@
       <hr> 
      </div> 
      <div class="sect5"> 
-      <h6 id="interchange-id-isa"><a class="anchor" href="#interchange-id-isa"></a>Interchange ID (ISA)</h6> 
+      <h6 id="interchange-id-isa-partner"><a class="anchor" href="#interchange-id-isa-partner"></a>Interchange ID - ISA - Partner</h6> 
       <div class="paragraph"> 
        <p>EDI X12 ISA ID for your trading partner; can be up to 15 characters. Your trading partner will supply you with the proper EDI X12 Interchange ID.</p> 
       </div> 
@@ -1987,14 +1989,14 @@
      <h5 id="enter-x12-settings-inbound-read"><a class="anchor" href="#enter-x12-settings-inbound-read"></a>Enter X12 Settings Inbound (Read)</h5> 
      <div class="sect5"> 
       <h6 id="envelope-headers-isa"><a class="anchor" href="#envelope-headers-isa"></a>Envelope Headers (ISA)</h6> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="auth-info-qualifier-isa-01"><a class="anchor" href="#auth-info-qualifier-isa-01"></a>Auth. Info. Qualifier (ISA 01)</h6> 
+      <div class="paragraph"> 
+       <p>Most common value is <strong>00</strong>; rarely is another used.</p> 
+      </div> 
       <div class="dlist"> 
        <dl> 
-        <dt class="hdlist1">
-          Auth. Info. Qualifier (ISA 01) 
-        </dt> 
-        <dd> 
-         <p>Most common value is <strong>00</strong>; rarely is another used.</p> 
-        </dd> 
         <dt class="hdlist1">
           Required? 
         </dt> 
@@ -2127,7 +2129,7 @@
      <div class="sect5"> 
       <h6 id="interchange-sender-id-qualifier-isa-05"><a class="anchor" href="#interchange-sender-id-qualifier-isa-05"></a>Interchange sender ID qualifier (ISA 05)</h6> 
       <div class="paragraph"> 
-       <p>Enter a valid trading partner qualifier if appropriate for your organization</p> 
+       <p>This value populates based on the value saved in <a href="#interchange-id-qualifier-isa-partner">Interchange ID qualifier - ISA - Partner</a></p> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -2135,19 +2137,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Valid values 
-        </dt> 
-        <dd> 
-         <p>Alphanumeric</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Default 
-        </dt> 
-        <dd> 
-         <p>Defaults to ten blank spaces</p> 
+         <p>Yes (must be entered and saved in <a href="#interchange-id-qualifier-isa-partner">Interchange ID qualifier - ISA - Partner</a>)</p> 
         </dd> 
        </dl> 
       </div> 
@@ -2156,7 +2146,7 @@
      <div class="sect5"> 
       <h6 id="interchange-sender-id-isa-06"><a class="anchor" href="#interchange-sender-id-isa-06"></a>Interchange sender ID (ISA 06)</h6> 
       <div class="paragraph"> 
-       <p>Free form field to enter your trading partner’s EDI ID.</p> 
+       <p>This value populates based on the value entered and saved in <a href="#interchange-id-isa-partner">Interchange ID - ISA - Partner</a></p> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -2164,19 +2154,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Valid values 
-        </dt> 
-        <dd> 
-         <p>Alphanumeric with max of 15 characters</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Default 
-        </dt> 
-        <dd> 
-         <p>None provided</p> 
+         <p>Yes (must be entered and saved in <a href="#interchange-id-isa-partner">Interchange ID - ISA - Partner</a>)</p> 
         </dd> 
        </dl> 
       </div> 
@@ -2185,7 +2163,7 @@
      <div class="sect5"> 
       <h6 id="interchange-receiver-id-qualifier-isa-07"><a class="anchor" href="#interchange-receiver-id-qualifier-isa-07"></a>Interchange receiver ID qualifier (ISA 07)</h6> 
       <div class="paragraph"> 
-       <p>Drop-down listbox auto-populated with the value selected in &lt;&lt;&gt;&gt;. If you need a different value, choose <strong>Custom</strong> in the listbox, then enter a valid qualifier.</p> 
+       <p>This value populates based on the value entered and saved in <a href="#interchange-id-qualifier-isa-home-org">Interchange ID qualifier - ISA - Home Org</a></p> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -2193,19 +2171,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Valid values 
-        </dt> 
-        <dd> 
-         <p>Alphanumeric</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Default 
-        </dt> 
-        <dd> 
-         <p>X12 EDI Qualifier chosen in <a href="#X12 Identity Settings - Home org">[X12 Identity Settings - Home org]</a>).</p> 
+         <p>Yes (must be entered and saved in <a href="#interchange-id-qualifier-isa-home-org">Interchange ID qualifier - ISA - Home Org</a>)</p> 
         </dd> 
        </dl> 
       </div> 
@@ -2214,7 +2180,7 @@
      <div class="sect5"> 
       <h6 id="interchange-receiver-id-isa-08"><a class="anchor" href="#interchange-receiver-id-isa-08"></a>Interchange receiver ID (ISA 08)</h6> 
       <div class="paragraph"> 
-       <p>EDI X12 ID chosen in <a href="#X12 Identity Settings - Home org">[X12 Identity Settings - Home org]</a>).</p> 
+       <p>This value populates based on the value entered and saved in <a href="#interchange-id-isa-home-org">Interchange ID - ISA - Home Org</a></p> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -2222,19 +2188,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Valid values 
-        </dt> 
-        <dd> 
-         <p>Alphanumeric, 15-character max</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Default 
-        </dt> 
-        <dd> 
-         <p>None provided</p> 
+         <p>Yes (must be entered and saved in <a href="#interchange-id-isa-home-org">Interchange ID - ISA - Home Org</a>)</p> 
         </dd> 
        </dl> 
       </div> 
@@ -2378,7 +2332,7 @@
       </div> 
      </div> 
      <div class="sect5"> 
-      <h6 id="auth-info-qualifier-isa-01"><a class="anchor" href="#auth-info-qualifier-isa-01"></a>Auth Info. Qualifier (ISA 01)</h6> 
+      <h6 id="auth-info-qualifier-isa-01-2"><a class="anchor" href="#auth-info-qualifier-isa-01-2"></a>Auth Info. Qualifier (ISA 01)</h6> 
       <div class="paragraph"> 
        <p>The most common value is <code>00</code>.</p> 
       </div> 
@@ -2460,7 +2414,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
+         <p>Yes</p> 
         </dd> 
         <dt class="hdlist1">
           Valid values 
@@ -2513,19 +2467,72 @@
        </dl> 
       </div> 
       <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="interchange-sender-id-qualifier-isa-05-2"><a class="anchor" href="#interchange-sender-id-qualifier-isa-05-2"></a>Interchange sender ID qualifier (ISA 05)</h6> 
       <div class="paragraph"> 
-       <p>The following fields are populated with the values entered in <a href="#x12-identity-settings-home-org">X12 Identity Settings - Home Org</a>:</p> 
+       <p>This value populates based on the value saved in <a href="#interchange-id-qualifier-isa-home-org">Interchange ID qualifier - ISA - Home Org</a></p> 
       </div> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p><strong>Interchange Sender ID qualifier (ISA 05)</strong></p> </li> 
-        <li> <p><strong>Interchange Sender ID (ISA 06)</strong></p> </li> 
-        <li> <p><strong>Interchange Receiver ID qualifier (ISA 07)</strong></p> </li> 
-        <li> <p><strong>Interchange Receiver ID (ISA 08)</strong></p> </li> 
-       </ul> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes (must be entered and saved in <a href="#interchange-id-qualifier-isa-home-org">Interchange ID qualifier - ISA - Home Org</a>)</p> 
+        </dd> 
+       </dl> 
       </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="interchange-sender-id-isa-06-2"><a class="anchor" href="#interchange-sender-id-isa-06-2"></a>Interchange sender ID (ISA 06)</h6> 
       <div class="paragraph"> 
-       <p>They may be edited if necessary.</p> 
+       <p>This value populates based on the value entered and saved in <a href="#interchange-id-isa-home-org">Interchange ID - ISA - Home Org</a></p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes (must be entered and saved in <a href="#interchange-id-isa-home-org">Interchange ID - ISA - Home Org</a>)</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="interchange-receiver-id-qualifier-isa-07-2"><a class="anchor" href="#interchange-receiver-id-qualifier-isa-07-2"></a>Interchange receiver ID qualifier (ISA 07)</h6> 
+      <div class="paragraph"> 
+       <p>This value populates based on the value entered and saved in <a href="#interchange-id-qualifier-isa-partner">Interchange ID qualifier - ISA - Partner</a></p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes (must be entered and saved in <a href="#interchange-id-qualifier-isa-partner">Interchange ID qualifier - ISA - Partner</a>)</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="interchange-receiver-id-isa-08-2"><a class="anchor" href="#interchange-receiver-id-isa-08-2"></a>Interchange receiver ID (ISA 08)</h6> 
+      <div class="paragraph"> 
+       <p>This value populates based on the value entered and saved in <a href="#interchange-id-isa-partner">Interchange ID - ISA - Partner</a></p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes (must be entered and saved in <a href="#interchange-id-isa-partner">Interchange ID - ISA - Partner</a>)</p> 
+        </dd> 
+       </dl> 
       </div> 
       <hr> 
       <div class="dlist"> 
@@ -2610,7 +2617,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
+         <p>Yes</p> 
         </dd> 
         <dt class="hdlist1">
           Valid values 
@@ -2648,7 +2655,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
+         <p>Yes</p> 
         </dd> 
         <dt class="hdlist1">
           Valid values 
@@ -2721,7 +2728,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
+         <p>Yes</p> 
         </dd> 
         <dt class="hdlist1">
           Valid values 
@@ -2822,13 +2829,12 @@
         <dd> 
          <p>No</p> 
         </dd> 
-       </dl> 
-      </div> 
-      <div class="paragraph"> 
-       <p>Valid values::'' Most special characters except whole numbers; must be a single character only.</p> 
-      </div> 
-      <div class="dlist"> 
-       <dl> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Most special characters except whole numbers; must be a single character only.</p> 
+        </dd> 
         <dt class="hdlist1">
           Default 
         </dt> 
@@ -2898,7 +2904,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
+         <p>Yes</p> 
         </dd> 
         <dt class="hdlist1">
           Valid values 
@@ -2933,7 +2939,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
+         <p>Yes</p> 
         </dd> 
         <dt class="hdlist1">
           Valid values 
