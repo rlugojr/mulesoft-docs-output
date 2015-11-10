@@ -1584,7 +1584,6 @@
     </div> 
     <div class="sect4"> 
      <h5 id="enter-ftps-settings-inbound"><a class="anchor" href="#enter-ftps-settings-inbound"></a>Enter FTPS Settings - Inbound</h5> 
-     <hr> 
      <div class="sect5"> 
       <h6 id="server-address"><a class="anchor" href="#server-address"></a>Server Address</h6> 
       <div class="paragraph"> 
@@ -1645,9 +1644,6 @@
      </div> 
      <div class="sect5"> 
       <h6 id="user-name"><a class="anchor" href="#user-name"></a>User Name</h6> 
-      <div class="paragraph"> 
-       <p>def</p> 
-      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
@@ -1674,9 +1670,6 @@
      </div> 
      <div class="sect5"> 
       <h6 id="password"><a class="anchor" href="#password"></a>Password</h6> 
-      <div class="paragraph"> 
-       <p>def</p> 
-      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
@@ -1732,9 +1725,6 @@
      </div> 
      <div class="sect5"> 
       <h6 id="ssl-mode"><a class="anchor" href="#ssl-mode"></a>SSL Mode</h6> 
-      <div class="paragraph"> 
-       <p>Def</p> 
-      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
@@ -1777,39 +1767,7 @@
       <hr> 
      </div> 
      <div class="sect5"> 
-      <h6 id="maximum-number-of-download-threads"><a class="anchor" href="#maximum-number-of-download-threads"></a>Maximum Number of Download Threads</h6> 
-      <div class="paragraph"> 
-       <p>def</p> 
-      </div> 
-      <div class="dlist"> 
-       <dl> 
-        <dt class="hdlist1">
-          Required? 
-        </dt> 
-        <dd> 
-         <p>No</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Valid values 
-        </dt> 
-        <dd> 
-         <p>Numeric</p> 
-        </dd> 
-        <dt class="hdlist1">
-          Default 
-        </dt> 
-        <dd> 
-         <p><code>None</code></p> 
-        </dd> 
-       </dl> 
-      </div> 
-      <hr> 
-     </div> 
-     <div class="sect5"> 
       <h6 id="path"><a class="anchor" href="#path"></a>Path</h6> 
-      <div class="paragraph"> 
-       <p>def</p> 
-      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
@@ -1836,9 +1794,6 @@
      </div> 
      <div class="sect5"> 
       <h6 id="filename-2"><a class="anchor" href="#filename-2"></a>Filename</h6> 
-      <div class="paragraph"> 
-       <p>def</p> 
-      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
@@ -1851,7 +1806,7 @@
           Valid values 
         </dt> 
         <dd> 
-         <p>Alphanumeric</p> 
+         <p>Numeric</p> 
         </dd> 
         <dt class="hdlist1">
           Default 
@@ -1892,11 +1847,320 @@
       </div> 
       <hr> 
      </div> 
+     <div class="sect5"> 
+      <h6 id="polling-frequency"><a class="anchor" href="#polling-frequency"></a>Polling frequency</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>No</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Alphanumeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>1000</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="maximum-number-of-download-threads"><a class="anchor" href="#maximum-number-of-download-threads"></a>Maximum Number of Download Threads</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>No</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Numeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>None</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
     </div> 
     <div class="sect4"> 
      <h5 id="enter-ftps-settings-outbound"><a class="anchor" href="#enter-ftps-settings-outbound"></a>Enter FTPS Settings - Outbound</h5> 
-     <div class="paragraph"> 
-      <p>FTPS Outbound has the same settings as FTPS Inbound.</p> 
+     <div class="sect5"> 
+      <h6 id="server-address-2"><a class="anchor" href="#server-address-2"></a>Server Address</h6> 
+      <div class="paragraph"> 
+       <p>Address to which outbound documents are sent.</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Alphanumeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>localhost</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="port-2"><a class="anchor" href="#port-2"></a>Port</h6> 
+      <div class="paragraph"> 
+       <p>Specific outbound port to be used with this trading partner. Set the host of the partner’s FTP server; this can be an IP address or a host name.</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Numeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>990</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="user-name-2"><a class="anchor" href="#user-name-2"></a>User Name</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Alphanumeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p>None</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="password-2"><a class="anchor" href="#password-2"></a>Password</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Alphanumeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p>None</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="transfer-mode-2"><a class="anchor" href="#transfer-mode-2"></a>Transfer Mode</h6> 
+      <div class="paragraph"> 
+       <p>For ease of client use, use passive mode when possible.</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Active|Passive</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>Passive</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="ssl-mode-2"><a class="anchor" href="#ssl-mode-2"></a>SSL Mode</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>Yes</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Explicit|Implicit</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>Implicit</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="enable-server-validation-checkbox-2"><a class="anchor" href="#enable-server-validation-checkbox-2"></a>Enable Server Validation (Checkbox)</h6> 
+      <div class="paragraph"> 
+       <p>Selecting this checkbox validate the servers identity; only JKS format is supported at this time.</p> 
+      </div> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p>Not selected</p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="path-2"><a class="anchor" href="#path-2"></a>Path</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>No</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Alphanumeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>/</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="filename-3"><a class="anchor" href="#filename-3"></a>Filename</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>No</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Numeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>None</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
+     </div> 
+     <div class="sect5"> 
+      <h6 id="upload-temporary-directory"><a class="anchor" href="#upload-temporary-directory"></a>Upload Temporary Directory</h6> 
+      <div class="dlist"> 
+       <dl> 
+        <dt class="hdlist1">
+          Required? 
+        </dt> 
+        <dd> 
+         <p>No</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Valid values 
+        </dt> 
+        <dd> 
+         <p>Alphanumeric</p> 
+        </dd> 
+        <dt class="hdlist1">
+          Default 
+        </dt> 
+        <dd> 
+         <p><code>None</code></p> 
+        </dd> 
+       </dl> 
+      </div> 
+      <hr> 
      </div> 
     </div> 
    </div> 
@@ -2032,7 +2296,17 @@
      <div class="sect5"> 
       <h6 id="authorization-information-isa-02"><a class="anchor" href="#authorization-information-isa-02"></a>Authorization Information (ISA 02)</h6> 
       <div class="paragraph"> 
-       <p>Enter a value if appropriate for your organization. NOTE: If the value in the previous box (ISA 01) is <code>00</code> (the default), then this box is disabled</p> 
+       <p>Enter a value if appropriate for your organization.</p> 
+      </div> 
+      <div class="admonitionblock note"> 
+       <table> 
+        <tbody> 
+         <tr> 
+          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+          <td class="content"> If the value in the previous box (ISA 01) is <code>00</code> (the default), then this box is disabled </td> 
+         </tr> 
+        </tbody> 
+       </table> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -3856,7 +4130,7 @@
    </div> 
   </div> 
   <div class="sect3"> 
-   <h4 id="filename-3"><a class="anchor" href="#filename-3"></a>FileName</h4> 
+   <h4 id="filename-4"><a class="anchor" href="#filename-4"></a>FileName</h4> 
    <div class="paragraph"> 
     <p>Search for a specific file by its specific filename, or for all files that start with the same text.</p> 
    </div> 
