@@ -876,6 +876,9 @@
        </div> 
        <div class="paragraph"> 
         <p>The legacy endpoint-based connector will be removed in a future version. See <a href="/mule-user-guide/v/3.7/http-connector">HTTP Connector</a> for more information about the HTTP operation-based connector and how to <a href="/mule-user-guide/v/3.7/migrating-to-the-new-http-connector">migrate</a> your projects to it.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><strong>Note</strong>: This guide is for the new HTTP connector. See <a href="#configuration-reference">Configuration Reference</a> for the most current information.</p> 
        </div> </td> 
      </tr> 
     </tbody> 
@@ -1803,7 +1806,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
   <div class="sect2"> 
    <h3 id="receiving"><a class="anchor" href="#receiving"></a>Receiving</h3> 
    <div class="paragraph"> 
-    <p>When receiving HTTP responses, the payload of the MuleMessage will always be the InputStream of the HTTP response.</p> 
+    <p>When receiving HTTP responses, the payload of the Mule Message is always the InputStream of the HTTP response.</p> 
    </div> 
   </div> 
  </div> 
@@ -1972,7 +1975,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
  <h2 id="response-timeout"><a class="anchor" href="#response-timeout"></a>Response Timeout</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>If no response is received for a set period of time, the connector will cease its attempts. By default, this time period is 1000 milliseconds, but you can set another value through the parameter&nbsp;<code>responseTimeout</code>.</p> 
+   <p>If no response is received for a set period of time, the connector ceases its attempts. By default, this time period is 1000 milliseconds, but you can set another value through the parameter&nbsp;<code>responseTimeout</code>.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1990,7 +1993,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>If you set&nbsp;<code>responseTimeout</code> to 0, you will disable the timeout entirely.</p> 
+   <p>If you set&nbsp;<code>responseTimeout</code> to 0, you disable the timeout entirely.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -2158,7 +2161,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre>image/png                   pngtext/plain                 txt cgi java</pre> 
+     <pre class="CodeRay highlight"><code data-lang="code">image/png                   pngtext/plain                 txt cgi java</code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -2751,7 +2754,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
        <td class="tableblock halign-left valign-top"> 
         <div> 
          <div class="paragraph"> 
-          <p>Identifies the configuration in the registry, so that it can be referenced by the request message processor.<br> Type: name (no spaces)<br> Required: yes<br></p> 
+          <p>Identifies the configuration in the registry, so that it can be referenced by the request message processor.<br> Type: name (no spaces)<br> Required: yes<br> Default: none</p> 
          </div> 
         </div></td> 
       </tr> 
@@ -2793,7 +2796,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
        <td class="tableblock halign-left valign-top"> 
         <div> 
          <div class="paragraph"> 
-          <p>Port where the requests are received. If the protocol attribute is HTTP (default) then the default value is 80, if the protocol attribute is HTTPS then the default value is 443.<br> Type: integer<br> Required: no<br> Default: none</p> 
+          <p>Port where the requests are received. If the protocol attribute is HTTP (default) then the default value is 80, if the protocol attribute is HTTPS then the default value is 443.<br> Type: integer<br> Required: no<br> Default: 80 if HTTP, 443 if HTTPS</p> 
          </div> 
         </div></td> 
       </tr> 
@@ -2849,7 +2852,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
        <td class="tableblock halign-left valign-top"> 
         <div> 
          <div class="paragraph"> 
-          <p>The number of milliseconds that a connection can remain idle before it is closed. The value of this attribute is only used when persistent connections are enabled. Type: integer<br> Required: no<br> Default: 30000</p> 
+          <p>The number of milliseconds that a connection can remain idle before it is closed. The value of this attribute is only used when persistent connections are enabled.<br> Type: integer<br> Required: no<br> Default: 30000</p> 
          </div> 
         </div></td> 
       </tr> 
@@ -3032,7 +3035,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
        <td class="tableblock halign-left valign-top"> 
         <div> 
          <div class="paragraph"> 
-          <p>Port where the requests is sent. If the protocol attribute is HTTP (default) then the default value is 80, if the protocol attribute is HTTPS then the default value is 443.<br> Type: integer<br> Required: no<br> Default: none</p> 
+          <p>Port where the requests is sent. If the protocol attribute is HTTP (default) then the default value is 80, if the protocol attribute is HTTPS then the default value is 443.<br> Type: integer<br> Required: no<br> Default: 80 if HTTP, 443 if HTTPS</p> 
          </div> 
         </div></td> 
       </tr> 
@@ -3182,11 +3185,8 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
     <div class="paragraph"> 
      <p><code>name</code>: Identifies the builder so that other elements can reference it.</p> 
     </div> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p>Type: name (no spaces)</p> </li> 
-      <li> <p>Required: no</p> </li> 
-     </ul> 
+    <div class="paragraph"> 
+     <p>Type: name (no spaces)<br> Required: no<br> Default: none</p> 
     </div> 
     <div class="paragraph"> 
      <p>No child elements of request-builder</p> 
@@ -3230,7 +3230,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
        <td class="tableblock halign-left valign-top"> 
         <div> 
          <div class="paragraph"> 
-          <p>Identifies the configuration in the registry, so that it can be referenced by the request message processor.<br> Type: name (no spaces)<br> Required: yes Default: none</p> 
+          <p>Identifies the configuration in the registry, so that it can be referenced by the request message processor.<br> Type: name (no spaces)<br> Required: yes<br> Default: none</p> 
          </div> 
         </div></td> 
       </tr> 
@@ -3370,7 +3370,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
        <td class="tableblock halign-left valign-top"> 
         <div> 
          <div class="paragraph"> 
-          <p>Port where the requests are sent. If the protocol attribute is HTTP (default) then the default value is 80, if the protocol attribute is HTTPS then the default value is 443.<br> Type: integer<br> Required: no<br> Default: none</p> 
+          <p>Port where the requests are sent. If the protocol attribute is HTTP (default) then the default value is 80, if the protocol attribute is HTTPS then the default value is 443.<br> Type: integer<br> Required: no<br> Default: 80 if HTTP, 443 if HTTPS</p> 
          </div> 
         </div></td> 
       </tr> 
