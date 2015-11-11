@@ -909,8 +909,8 @@
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
     <col style="width: 20%;"> 
-    <col style="width: 10%;"> 
-    <col style="width: 70%;"> 
+    <col style="width: 30%;"> 
+    <col style="width: 50%;"> 
    </colgroup> 
    <thead> 
     <tr> 
@@ -1165,8 +1165,8 @@
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
     <col style="width: 20%;"> 
-    <col style="width: 10%;"> 
-    <col style="width: 70%;"> 
+    <col style="width: 30%;"> 
+    <col style="width: 50%;"> 
    </colgroup> 
    <thead> 
     <tr> 
@@ -2561,799 +2561,1264 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
 <div class="sect1"> 
  <h2 id="configuration-reference"><a class="anchor" href="#configuration-reference"></a>Configuration Reference</h2> 
  <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>This connector also accepts all the attributes from the <a href="/mule-user-guide/v/3.7/tcp-transport-reference">TCP connector</a>.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="connector"><a class="anchor" href="#connector"></a>Connector</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Allows Mule to communicate over HTTP. All parts of the HTTP spec are covered by Mule, so you can expect ETags to be honored as well as keep alive semantics and cookies.</p> 
-  </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-connector"><a class="anchor" href="#attributes-of-connector"></a>Attributes of &lt;connector…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">cookieSpec</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The cookie specification to be used by this connector when cookies are enabled.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyHostname</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The proxy host name or address.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyPassword</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The password to use for proxy access.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyPort</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port number</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The proxy port number.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyUsername</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The username to use for proxy access.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyNtlmAuthentication</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the proxy authentication scheme is NTLM or not. This property is required in order to use the right credentials under that scheme. Default is false</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enableCookies</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether to support cookies.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-connector"><a class="anchor" href="#child-elements-of-connector"></a>Child Elements of &lt;connector…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <h3 id="http-module"><a class="anchor" href="#http-module"></a>HTTP Module</h3> 
    <div class="paragraph"> 
-    <p>For example:</p> 
+    <p><strong>Schema</strong>: <a href="http://www.mulesoft.org/schema/mule/httpn/3.7/mule-httpn.xsd" class="bare">http://www.mulesoft.org/schema/mule/httpn/3.7/mule-httpn.xsd</a></p> 
    </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-</pre></td> 
-          <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span>
-       <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-       <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
-       <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span>
-    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
-       <span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-       <span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.6/mule.xsd</span>
-       <span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.6/mule-http.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-
-    <span class="tag">&lt;http:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HttpConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">enableCookies</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">keepAlive</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-...
-<span class="tag">&lt;/mule&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+   <div class="paragraph"> 
+    <p>Mule Utilities for HTTP Services.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="listener"><a class="anchor" href="#listener"></a>Listener</h3> 
+   <div class="paragraph"> 
+    <p>Listener for incoming HTTP requests.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-listener"><a class="anchor" href="#attributes-of-listener"></a>Attributes of listener</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 70%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>path</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Path to listen for incoming requests.<br> Type: string<br> Required: yes<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>allowedMethods</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Comma separated list of allowed HTTP methods by this listener. To allow all methods, do not define the attribute.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>config-ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A reference to the configuration element for this listener. If no reference is provided, a default configuration is created.<br> Type: string<br> Required: yes<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>responseStreamingMode</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Defines if the response should be sent using streaming or not. If this attribute is not present, the behavior depends on the type of the payload (it streams only for InputStream). If set to true, it always streams. If set to false, it never streams. As streaming is done, the response is sent to the user.<br> Transfer-Encoding: chunked.<br> Type: enumeration<br> Required: no<br> Default: AUTO</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>parseRequest</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>By default, the request is parsed (for example, a multi-part request is mapped as a Mule message with null payload and inbound attachments with each part). If this property is set to false, no parsing is done, and the payload always contains the raw contents of the HTTP request.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-listener"><a class="anchor" href="#child-elements-of-listener"></a>Child Elements of listener</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 60%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>response-builder</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Contains the definition of all the parameters that should be sent in the response (headers, status code, response phrase).</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>error-response-builder</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Contains the definition of all the parameters that should be sent in the response (headers, status code, response phrase).</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="listener-config"><a class="anchor" href="#listener-config"></a>Listener config</h3> 
+   <div class="paragraph"> 
+    <p>Grouping configuration for a set of listener elements.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-listener-config"><a class="anchor" href="#attributes-of-listener-config"></a>Attributes of listener-config</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 70%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>name</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Identifies the configuration in the registry, so that it can be referenced by the request message processor.<br> Type: name (no spaces)<br> Required: yes<br></p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>protocol</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Protocol to use for communication. Valid values are HTTP and HTTPS. Default value is HTTP. When using HTTPS the HTTP communication is going to be secured using TLS or SSL. If HTTPS was configured as protocol, then the user needs to configure at least the keystore in the tls:context child element of this listener-config.<br> Type: httpProtocol<br> Required: no<br> Default: HTTP</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>host</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Host where requests are sent.<br> Type: string<br> Required: yes<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>port</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Port where the requests are received. If the protocol attribute is HTTP (default) then the default value is 80, if the protocol attribute is HTTPS then the default value is 443.<br> Type: integer<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>basePath</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Base path to use for all requests that reference this config.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>tlsContext-ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Reference to a TLS config element. This enables HTTPS for this config.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>parseRequest</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>By default, the request is parsed (for example, a multi part request is mapped as a Mule message with null payload and inbound attachments with each part). If this property is set to false, no parsing is done, and the payload always contains the raw contents of the HTTP request.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>connectionIdleTimeout</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The number of milliseconds that a connection can remain idle before it is closed. The value of this attribute is only used when persistent connections are enabled. Type: integer<br> Required: no<br> Default: 30000</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>usePersistentConnections</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>If false, each connection is closed after the first request is completed.<br> Type: boolean<br> Required: no<br> Default: true</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-listener-config"><a class="anchor" href="#child-elements-of-listener-config"></a>Child Elements of listener-config</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: %;"> 
+      <col style="width: %;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">tls:context</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">worker-threading-profile</p></td> 
+       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="http-response-builder"><a class="anchor" href="#http-response-builder"></a>HTTP Response Builder</h3> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-response-builder"><a class="anchor" href="#attributes-of-response-builder"></a>Attributes of response-builder</h4> 
+    <div class="paragraph"> 
+     <p>No attributes of response-builder.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>No child elements of response-builder.</p> 
     </div> 
    </div> 
-   <div class="paragraph"> 
-    <p>This connector also accepts all the attributes from the&nbsp;<a href="/mule-user-guide/v/3.7/tcp-transport-reference">TCP connector</a>.</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="request"><a class="anchor" href="#request"></a>Request</h3> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-request"><a class="anchor" href="#attributes-of-request"></a>Attributes of request</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 70%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>path</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Path where the request is sent.<br> Type: string<br> Required: yes<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>method</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The HTTP method for the request.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>config-ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A reference to the configuration element for this requester. If no reference is provided, a default configuration is created.<br> Type: string<br> Required: yes<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>source</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The expression used to obtain the body that is sent in the request. Default is empty, so the payload is used as the body.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>target</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The enricher expression used to enrich the current message with the body of the response. Default is "#payload", so after processing the response, the contents of its body is set as payload of the message.<br> Type: string<br> Required: no<br> Default: #payload</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>followRedirects</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Specifies whether to follow redirects or not.<br> Type: boolean<br> Required: no<br> Default: true</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>host</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Host where requests are sent.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>port</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Port where the requests is sent. If the protocol attribute is HTTP (default) then the default value is 80, if the protocol attribute is HTTPS then the default value is 443.<br> Type: integer<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>parseResponse</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>By default, the response is parsed (for example, a multi part response is mapped as a Mule message with null payload and inbound attachments with each part). If this property is set to false, no parsing is done, and the payload always contains the raw contents of the HTTP response.<br> Type: boolean<br> Required: no<br> Default: true</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>requestStreamingMode</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Defines if the request should be sent using streaming or not. If this attribute is not present, the behavior depends on the type of the payload (it streams only for InputStream). If set to true, it always streams. If set to false, it never streams. As streaming is done the request is sent user Transfer-Encoding: chunked.<br> Type: enumeration<br> Required: no<br> Default: AUTO</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>sendBodyMode</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Defines if the request should contain a body or not. If AUTO, it depends on the method (GET, HEAD, and OPTIONS do not send a body).<br> Type: enumeration<br> Required: no<br> Default: AUTO</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>responseTimeout</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Maximum time that the request element blocks the execution of the flow waiting for the HTTP response. If this value is not present, the default response timeout from the Mule configuration is used.<br> Type: integer<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-request"><a class="anchor" href="#child-elements-of-request"></a>Child Elements of request</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 60%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>request-builder</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Contains the definition of all the parameters that should be sent in the request (uri params, query params and headers).</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>success-status-code-validator</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Configures error handling of the response based on the status code.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>failure-status-code-validator</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Configures error handling of the response based on the status code.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="polling-connector"><a class="anchor" href="#polling-connector"></a>Polling connector</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Allows Mule to poll an external HTTP server and generate events from the result. This is useful for pull-only web services.</p> 
-  </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-polling-connector"><a class="anchor" href="#attributes-of-polling-connector"></a>Attributes of &lt;polling-connector…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">cookieSpec</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The cookie specification to be used by this connector when cookies are enabled.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyHostname</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The proxy host name or address.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyPassword</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The password to use for proxy access.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyPort</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port number</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The proxy port number.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyUsername</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The username to use for proxy access.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">proxyNtlmAuthentication</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the proxy authentication scheme is NTLM or not. This property is required in order to use the right credentials under that scheme. Default is false</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enableCookies</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether to support cookies.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">pollingFrequency</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The time in milliseconds to wait between each request to the remote HTTP server.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">checkEtag</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the ETag header from the remote server is processed if the header is present.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">discardEmptyContent</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Whether Mule should discard any messages from the remote server that have a zero content length. For many services a zero length would mean there was no data to return. If the remote HTTP server does return content to say that that the request is empty, users can configure a content filter on the endpoint to filter these messages out.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-polling-connector"><a class="anchor" href="#child-elements-of-polling-connector"></a>Child Elements of &lt;polling-connector…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="rest-service-component"><a class="anchor" href="#rest-service-component"></a>Rest service component</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Built-in RestServiceWrapper can be used to proxy REST style services as local Mule components.</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="attributes-of-rest-service-component"><a class="anchor" href="#attributes-of-rest-service-component"></a>Attributes of &lt;rest-service-component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">httpMethod</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">enumeration</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP method to use when making the service request.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">serviceUrl</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The service URL to use when making the request. This should not contain any parameters, since these should be configured on the component. The service URL can contain Mule expressions, so the URL can be dynamic for each message request.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-rest-service-component"><a class="anchor" href="#child-elements-of-rest-service-component"></a>Child Elements of &lt;rest-service-component…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">error-filter</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">An error filter can be used to detect whether the response from the remote service resulted in an error.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">payloadParameterName</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If the payload of the message is to be attached as a URL parameter, this should be set to the parameter name. If the message payload is an array of objects that multiple parameters can be set to, use each element in the array.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">requiredParameter</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">These are parameters that must be available on the current message for the request to be successful. The Key maps to the parameter name, the value can be any one of the valid expressions supported by Mule.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">optionalParameter</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">0..*</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">These are parameters that if they are on the current message will be added to the request, otherwise they will be ignored. The Key maps to the parameter name, the value can be any one of the valid expressions supported by Mule.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="inbound-endpoint"><a class="anchor" href="#inbound-endpoint"></a>Inbound endpoint</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>An inbound HTTP endpoint exposes a service over HTTP, essentially making it an HTTP server. If polling of a remote HTTP service is required, this endpoint should be configured with a polling HTTP connector.</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="attributes-of-inbound-endpoint"><a class="anchor" href="#attributes-of-inbound-endpoint"></a>Attributes of &lt;inbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The user name (if any) that will be used to authenticate against.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The password for the user.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">host</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The host to connect to. For inbound endpoints, this should be an address of a local network interface.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port number</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The port number to use when a connection is made.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The path for the HTTP URL. It must not start with a slash.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">contentType</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP ContentType to use.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">httpMethodTypes</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP method to use.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">keep-alive</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">DEPRECATED: Use keepAlive attribute instead.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">keepAlive</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Controls if the connection is kept alive.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-inbound-endpoint"><a class="anchor" href="#child-elements-of-inbound-endpoint"></a>Child Elements of &lt;inbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
-   <div class="paragraph"> 
-    <p>For example:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre><span class="tag">&lt;http:inbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">63081</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">services/Echo</span><span class="delimiter">"</span></span> <span class="attribute-name">keepAlive</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+   <h3 id="request-builder"><a class="anchor" href="#request-builder"></a>Request Builder</h3> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-request-builder"><a class="anchor" href="#attributes-of-request-builder"></a>Attributes of request-builder</h4> 
+    <div class="paragraph"> 
+     <p><code>name</code>: Identifies the builder so that other elements can reference it.</p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p>Type: name (no spaces)</p> </li> 
+      <li> <p>Required: no</p> </li> 
+     </ul> 
+    </div> 
+    <div class="paragraph"> 
+     <p>No child elements of request-builder</p> 
     </div> 
    </div> 
-   <div class="paragraph"> 
-    <p>The HTTP inbound endpoint attributes override those specified for the <a href="/mule-user-guide/v/3.7/endpoint-configuration-reference">default inbound endpoint attributes</a>.</p> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-request-config"><a class="anchor" href="#attributes-of-request-config"></a>Attributes of request-config</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 70%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>protocol</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Protocol to use for communication. Valid values are HTTP and HTTPS. Default value is HTTP. When using HTTPS the HTTP communication is going to be secured using TLS and SSL. If HTTPS was configured as protocol then the user can customize the tls/ssl configuration by defining the tls:context child element of this listener-config. If not tls:context is defined then the default JVM certificates are going to be used to establish communication.<br> Type: httpProtocol<br> Required: no<br> Default: HTTP</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>name</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Identifies the configuration in the registry, so that it can be referenced by the request message processor.<br> Type: name (no spaces)<br> Required: yes Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>basePath</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Base path to use for all requests that reference this config.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>tlsContext-ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Reference to a TLS context element. This enables HTTPS for this config.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>clientSocketProperties-ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Reference to a TCP Client Socket properties element.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>proxy-ref</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Reference to a proxy context element.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>maxConnections</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The maximum number of outbound connections that is kept open at the same time. By default the number of connections is unlimited.<br> Type: integer<br> Required: no<br> Default: -1</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>connectionIdleTimeout</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The number of milliseconds that a connection can remain idle before it is closed. The value of this attribute is only used when persistent connections are enabled.<br> Type: integer<br> Required: no<br> Default: 30000</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>usePersistentConnections</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>If false, each connection is closed after the first request is completed.<br> Type: boolean<br> Required: no<br> Default: true</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>followRedirects</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Specifies whether to follow redirects or not.<br> Type: boolean<br> Required: no<br> Default: true</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>host</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Host where the requests are sent.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>port</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Port where the requests are sent. If the protocol attribute is HTTP (default) then the default value is 80, if the protocol attribute is HTTPS then the default value is 443.<br> Type: integer<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>parseResponse</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>By default, the response is parsed (for example, a multi part response is mapped as a Mule message with null payload and inbound attachments with each part). If this property is set to false, no parsing is done, and the payload always contain the raw contents of the HTTP response.<br> Type: boolean<br> Required: no<br> Default: true</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>requestStreamingMode</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Defines if the request should be sent using streaming or not. If this attribute is not present, the behavior depends on the type of the payload (it streams only for InputStream). If set to true, it always streams. If set to false, it never streams. As streaming is done the request is sent user Transfer-Encoding: chunked.<br> Type: enumeration<br> Required: no<br> Default: AUTO</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>sendBodyMode</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Defines if the request should contain a body or not. If AUTO, it depends on the method (GET, HEAD, and OPTIONS do not send a body).<br> Type: enumeration<br> Required: no<br> Default: AUTO</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>responseTimeout</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Maximum time that the request element blocks the execution of the flow waiting for the HTTP response. If this value is not present, the default response timeout from the Mule configuration is used.<br> Type: integer<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="child-elements-of-request-config"><a class="anchor" href="#child-elements-of-request-config"></a>Child Elements of request-config</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 10%;"> 
+      <col style="width: 60%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Cardinality</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>abstract-http-request-authentication-provider</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>A security manager is a container for security providers. More than one security manager may be configured; each contains providers from a particular module and has that module type. This element is abstract - a security-related module or transport provides a suitable implementation.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>tcp:client-socket-properties</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>tls:context</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>raml-api-configuration</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Specifies a RAML configuration file for the API that is being consumed.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>proxy</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Reusable configuration element for outbound connections through a proxy. A proxy element must define a host name and a port attributes, and optionally can define a username and a password.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>ntlm-proxy</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>0..1</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Reusable configuration element for outbound connections through a proxy. A proxy element must define a host name and a port attributes, and optionally can define a username and a password.</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
   </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="outbound-endpoint"><a class="anchor" href="#outbound-endpoint"></a>Outbound endpoint</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>The HTTP outbound endpoint allows Mule to send requests to external servers or Mule inbound HTTP endpoints using the HTTP protocol.</p> 
-  </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-outbound-endpoint"><a class="anchor" href="#attributes-of-outbound-endpoint"></a>Attributes of &lt;outbound-endpoint…​&gt;</h3> 
+   <h3 id="basic-authentication"><a class="anchor" href="#basic-authentication"></a>Basic Authentication</h3> 
+   <div class="paragraph"> 
+    <p>Configures basic authentication for the requests.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Attributes of basic-authentication</p> 
+   </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
+     <col style="width: 30%;"> 
+     <col style="width: 70%;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
       <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">followRedirects</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If a request is made using GET that responds with a redirectLocation header, setting this to true will make the request on the redirect URL. This only works when using GET since you cannot automatically follow redirects when perfroming a POST (a restriction according to RFC 2616).</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>username</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>The username to authenticate.<br> Type: string<br> Required: yes<br> Default: none</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exceptionOnMessageError</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If a request returns a status code greater or equal than 400 an exception will be thrown.</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>password</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>The password to authenticate.<br> Type: string<br> Required: yes<br> Default: none</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The user name (if any) that will be used to authenticate against.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The password for the user.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">host</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The host to connect to. For inbound endpoints, this should be an address of a local network interface.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port number</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The port number to use when a connection is made.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The path for the HTTP URL. It must not start with a slash.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">contentType</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP ContentType to use.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">httpMethodTypes</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP method to use.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">keep-alive</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">DEPRECATED: Use keepAlive attribute instead.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">keepAlive</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Controls if the connection is kept alive.</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>preemptive</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Configures if authentication should be preemptive or not. Preemptive authentication sends the authentication header in the first request, instead of waiting for a 401 response code to send it.<br> Type: boolean<br> Required: no<br> Default: false</p> 
+        </div> 
+       </div></td> 
      </tr> 
     </tbody> 
    </table> 
+   <div class="paragraph"> 
+    <p>No child elements of basic-authentication.</p> 
+   </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-outbound-endpoint"><a class="anchor" href="#child-elements-of-outbound-endpoint"></a>Child Elements of &lt;outbound-endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <h3 id="digest-authentication"><a class="anchor" href="#digest-authentication"></a>Digest Authentication</h3> 
    <div class="paragraph"> 
-    <p>For example:</p> 
+    <p>Configures digest authentication for the requests.</p> 
    </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre><span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8080</span><span class="delimiter">"</span></span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">POST</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-digest-authentication"><a class="anchor" href="#attributes-of-digest-authentication"></a>Attributes of digest-authentication</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 70%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>username</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The username to authenticate.<br> Type: string<br> Required: yes<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>password</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The password to authenticate.<br> Type: string<br> Required: yes<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p>No child elements of digest-authentication.</p> 
     </div> 
    </div> 
-   <div class="paragraph"> 
-    <p>The HTTP outbound endpoint attributes override those specified for the <a href="/mule-user-guide/v/3.7/endpoint-configuration-reference">default outbound endpoint attributes</a>.</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="endpoint"><a class="anchor" href="#endpoint"></a>Endpoint</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Configures a 'global' HTTP endpoint that can be referenced by services. Services can augment the configuration defined in the global endpoint with local configuration elements.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="attributes-of-endpoint"><a class="anchor" href="#attributes-of-endpoint"></a>Attributes of &lt;endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-     <col style="width: 20%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">followRedirects</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If a request is made using GET that responds with a redirectLocation header, setting this to true will make the request on the redirect URL. This only works when using GET since you cannot automatically follow redirects when perfroming a POST (a restriction according to RFC 2616).</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">exceptionOnMessageError</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">If a request returns a status code greater or equal than 400 an exception will be thrown.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The user name (if any) that will be used to authenticate against.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The password for the user.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">host</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The host to connect to. For inbound endpoints, this should be an address of a local network interface.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">port number</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The port number to use when a connection is made.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The path for the HTTP URL. It must not start with a slash.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">contentType</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP ContentType to use.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">httpMethodTypes</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP method to use.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">keep-alive</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">DEPRECATED: Use keepAlive attribute instead.</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">keepAlive</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Controls if the connection is kept alive.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="child-elements-of-endpoint"><a class="anchor" href="#child-elements-of-endpoint"></a>Child Elements of &lt;endpoint…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <h3 id="ntlm-authentication"><a class="anchor" href="#ntlm-authentication"></a>NTLM Authentication</h3> 
    <div class="paragraph"> 
-    <p>For example:</p> 
+    <p>Configures NTLM authentication for the requests.</p> 
    </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre><span class="tag">&lt;http:endpoint</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">serverEndpoint1</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">60199</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">test1</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-ntlm-authentication"><a class="anchor" href="#attributes-of-ntlm-authentication"></a>Attributes of ntlm-authentication</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 30%;"> 
+      <col style="width: 70%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Name</th> 
+       <th class="tableblock halign-left valign-top">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>username</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The username to authenticate.<br> Type: string<br> Required: yes<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>password</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The username to authenticate.<br> Type: string<br> Required: yes<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>domain</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The domain to authenticate.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>workstation</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>The workstation to authenticate.<br> Type: string<br> Required: no<br> Default: none</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <div class="paragraph"> 
+     <p>No child elements of ntlm-authentication.</p> 
     </div> 
    </div> 
-   <div class="paragraph"> 
-    <p>The HTTP endpoint attributes override those specified for the <a href="/mule-user-guide/v/3.7/endpoint-configuration-reference">default global endpoint attributes</a>.</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="request-wildcard-filter"><a class="anchor" href="#request-wildcard-filter"></a>Request wildcard filter</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>(As of 2.2.2) The request-wildcard-filter element can be used to restrict the request by applying wildcard expressions to the URL.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="child-elements-of-request-wildcard-filter"><a class="anchor" href="#child-elements-of-request-wildcard-filter"></a>Child Elements of &lt;request-wildcard-filter…​&gt;</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <h3 id="proxy"><a class="anchor" href="#proxy"></a>Proxy</h3> 
+   <div class="paragraph"> 
+    <p>Reusable configuration element for outbound connections through a proxy. A proxy element must define a host name and a port attributes, and optionally can define a username and a password.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-proxy"><a class="anchor" href="#attributes-of-proxy"></a>Attributes of Proxy</h4> 
+    <div class="paragraph"> 
+     <p><code>name</code>: Identifies the proxy configuration in the registry, so that it can be referenced by the request config.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Type: name (no spaces)<br> Required: yes<br> Default: none</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>No child elements of proxy.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="ntlm-proxy"><a class="anchor" href="#ntlm-proxy"></a>NTLM Proxy</h3> 
+   <div class="paragraph"> 
+    <p>Reusable configuration element for outbound connections through a proxy. A proxy element must define a host name and a port attributes, and optionally can define a username and a password.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-ntlm-proxy"><a class="anchor" href="#attributes-of-ntlm-proxy"></a>Attributes of ntlm-proxy</h4> 
+    <div class="paragraph"> 
+     <p><code>name</code>: Identifies the proxy configuration in the registry, so that it can be referenced by the request config.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Type: name (no spaces)<br> Required: yes<br> Default: no</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>No child elements of ntlm-proxy.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="config"><a class="anchor" href="#config"></a>Config</h3> 
+   <div class="paragraph"> 
+    <p>HTTP global configuration.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="attributes-of-config"><a class="anchor" href="#attributes-of-config"></a>Attributes of config</h4> 
+    <div class="paragraph"> 
+     <p><code>useTransportForUris</code>: Backwards Compatabilty Flag: Since Mule 3.6, default HTTP URIs are resolved with the new HTTP connector (for example when using MuleClient). If set to true, this behavior is changed so that the HTTP transport is used.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Type: boolean<br> Required: no<br> Default: false</p> 
+    </div> 
+   </div> 
   </div> 
  </div> 
 </div>
@@ -3361,7 +3826,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#transport-info">Transport Info</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#basic-usage">Basic Usage</a></li><li><a class="scroll-menu-link" href="#security">Security</a></li><li><a class="scroll-menu-link" href="#polling-http-services">Polling HTTP Services</a></li><li><a class="scroll-menu-link" href="#handling-http-content-type-and-encoding">Handling HTTP Content-Type and Encoding</a></li><li><a class="scroll-menu-link" href="#including-custom-header-properties">Including Custom Header Properties</a></li><li><a class="scroll-menu-link" href="#building-the-target-url-from-the-request">Building the Target URL from the Request</a></li><li><a class="scroll-menu-link" href="#handling-redirects">Handling Redirects</a></li><li><a class="scroll-menu-link" href="#response-timeout">Response Timeout</a></li><li><a class="scroll-menu-link" href="#getting-a-hash-map-of-post-body-parameters">Getting a Hash Map of POST Body Parameters</a></li><li><a class="scroll-menu-link" href="#processing-get-query-parameters">Processing GET Query Parameters</a></li><li><a class="scroll-menu-link" href="#serving-static-content">Serving Static Content</a></li><li><a class="scroll-menu-link" href="#http-properties">HTTP Properties</a></li><li><a class="scroll-menu-link" href="#examples">Examples</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li><li><a class="scroll-menu-link" href="#connector">Connector</a></li><li><a class="scroll-menu-link" href="#polling-connector">Polling connector</a></li><li><a class="scroll-menu-link" href="#rest-service-component">Rest service component</a></li><li><a class="scroll-menu-link" href="#inbound-endpoint">Inbound endpoint</a></li><li><a class="scroll-menu-link" href="#outbound-endpoint">Outbound endpoint</a></li><li><a class="scroll-menu-link" href="#endpoint">Endpoint</a></li><li><a class="scroll-menu-link" href="#request-wildcard-filter">Request wildcard filter</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#transport-info">Transport Info</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#basic-usage">Basic Usage</a></li><li><a class="scroll-menu-link" href="#security">Security</a></li><li><a class="scroll-menu-link" href="#polling-http-services">Polling HTTP Services</a></li><li><a class="scroll-menu-link" href="#handling-http-content-type-and-encoding">Handling HTTP Content-Type and Encoding</a></li><li><a class="scroll-menu-link" href="#including-custom-header-properties">Including Custom Header Properties</a></li><li><a class="scroll-menu-link" href="#building-the-target-url-from-the-request">Building the Target URL from the Request</a></li><li><a class="scroll-menu-link" href="#handling-redirects">Handling Redirects</a></li><li><a class="scroll-menu-link" href="#response-timeout">Response Timeout</a></li><li><a class="scroll-menu-link" href="#getting-a-hash-map-of-post-body-parameters">Getting a Hash Map of POST Body Parameters</a></li><li><a class="scroll-menu-link" href="#processing-get-query-parameters">Processing GET Query Parameters</a></li><li><a class="scroll-menu-link" href="#serving-static-content">Serving Static Content</a></li><li><a class="scroll-menu-link" href="#http-properties">HTTP Properties</a></li><li><a class="scroll-menu-link" href="#examples">Examples</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
