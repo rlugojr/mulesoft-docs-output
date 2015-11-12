@@ -890,19 +890,7 @@
  <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The HTTP transport provides support for exposing applications&nbsp;over HTTP and making HTTP client requests from Mule flows to external services. Mule supports inbound, outbound, and polling HTTP endpoints. These endpoints support all common features of the HTTP spec, such as ETag processing, cookies, and keepAlive. Both HTTP 1.0 and 1.1 are supported.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>HTTP/S endpoints are synchronous by default, so you do not have to set <code>exchange-pattern="request-response"</code>. If you set <code>exchange-pattern="one-way"</code>, the messages are sent asynchronously.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><strong>Notes</strong>:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>For asynchronous POST, streaming is disabled.</p> </li> 
-    <li> <p>In code examples in this guide,&nbsp; <code>spring-beans-current.xsd</code>&nbsp;is a placeholder. To locate the correct version, see <a href="http://www.springframework.org/schema/beans/" class="bare">http://www.springframework.org/schema/beans/</a>.</p> </li> 
-   </ul> 
+   <p>The HTTP transport provides support for exposing applications&nbsp;over HTTP and making HTTP client requests from Mule flows to external services. Mule supports <strong>listener connectors</strong>, that receive HTTP requests, and <strong>request connectors</strong> that send requests and receive a response.</p> 
   </div> 
  </div> 
 </div> 
@@ -1165,262 +1153,6 @@
     </tr> 
    </tbody> 
   </table> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: 20%;"> 
-    <col style="width: 30%;"> 
-    <col style="width: 50%;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Item</th> 
-     <th class="tableblock halign-left valign-top">Value</th> 
-     <th class="tableblock halign-left valign-top">Description</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Transport</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>HTTPS</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>The name/protocol of the transport</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>JavaDoc</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><a href="http://www.mulesoft.org/docs/site/current3/apidocs/org/mule/transport/http/package-summary.html">org.mule.transport.http</a></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>-</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Schema</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><a href="http://www.mulesoft.org/schema/mule/https/3.7/mule-https.xsd">mule-httpn.xsd</a></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>New HTTPS XML schema</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Inbound</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/check.png" alt="check"></span></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Whether the transport can receive inbound events and be used as an inbound endpoint</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Outbound</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/check.png" alt="check"></span></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Whether the transport can produce outbound events and be used with an outbound endpoint</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Request</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/check.png" alt="check"></span></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Whether this endpoint can be queried directly with a request call (via Mule Client or the EventContext)</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Transactions</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/error.png" alt="error"></span></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Whether transactions are supported by the transport. Transports that support transactions can be configured in either local or distributed two-phase commit (XA) transaction.</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Streaming</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/check.png" alt="check"></span></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Whether this transport can process messages that come in on an input stream. This allows for very efficient processing of large data. For more information, see Streaming.</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Retries</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/error.png" alt="error"></span></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Whether this transport supports retry policies. Note that all transports can be configured with Retry policies, but only the ones marked here are officially supported by MuleSoft</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>MEPs</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><code>one-way</code>, <code>request-response</code></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Message Exchange Patterns supported by this transport</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Default MEP</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p><code>request-response</code></p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>The default MEP for endpoints that use this transport that do not explicitly configure a MEP</p> 
-       </div> 
-      </div></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>Maven Artifact</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>org.mule.transport:mule-transport-http</p> 
-       </div> 
-      </div></td> 
-     <td class="tableblock halign-left valign-top"> 
-      <div> 
-       <div class="paragraph"> 
-        <p>The group name a artifact name for this transport in <a href="http://maven.apache.org/">Maven</a></p> 
-       </div> 
-      </div></td> 
-    </tr> 
-   </tbody> 
-  </table> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -1474,7 +1206,7 @@
     <li> <p>Makes HTTP requests to external services</p> </li> 
     <li> <p>Supports for polling an HTTP endpoints including ETag support</p> </li> 
     <li> <p>Provides transfer binary or text files, including forms and attachment</p> </li> 
-    <li> <p>Provides security includes SSL, certificates, and authentication</p> </li> 
+    <li> <p>Provides security includes TLS, certificates, and authentication</p> </li> 
     <li> <p>Builds flows to different paths on the same port</p> </li> 
     <li> <p>Supports reading and writing cookies</p> </li> 
     <li> <p>Provides streaming for transferring large files</p> </li> 
@@ -1571,85 +1303,16 @@ MuleMessage result = client.send("http://localhost:8080/foo", "");</pre></td>
       </table></code></pre> 
    </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>Finally, you can reference an endpoint by name from your Mule configuration in the Mule client. Using the previous example, you can create a global HTTP endpoint from the flow or code:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;http:endpoint</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">deleteEndpoint</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8080</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">foo</span><span class="delimiter">"</span></span>
-            <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">"</span><span class="content">DELETE</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">OutboundDelete</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;vm:inbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">doDelete</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">one-way</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-    <span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">deleteEndpoint</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/flow&gt;</span>
-<span class="tag">&lt;http:request-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Request_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">example.com</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Request Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-</pre></td> 
-         <td class="code"><pre>MuleClient client = muleContext.getClient();
-MuleMessage result = client.send("deleteEndpoint", "");</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Global endpoints allow you to remove actual addresses from your code and flows so that you can move Mule applications between environments.</p> 
-  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
  <h2 id="security"><a class="anchor" href="#security"></a>Security</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can use the <a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a> to create secure connections over HTTP. If you want to secure requests to your HTTP endpoint, the HTTP connector supports HTTP Basic/Digest authentication methods (as well as the Mule generic header authentication). To configure HTTP Basic, you configure a <a href="/mule-user-guide/v/3.7/configuring-security">Security Endpoint Filter</a> on an HTTP endpoint.</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;http:inbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost:4567</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-  <span class="tag">&lt;spring-sec:http-security-filter</span> <span class="attribute-name">realm</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule-realm</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/http:inbound-endpoint&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
+   <p>You can send your requests through HTTPS protocol by simply setting the protocol attribute to HTTPS . This makes the HTTP Request Connector use the default JVM values for the HTTPS connection, which likely already includes a trust store with certificates for all the major certifying authorities.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>You must configure the security manager on the Mule instance against which this security filter authenticates. For information about security configuration options and examples, see <a href="/mule-user-guide/v/3.7/configuring-security">Configuring Security</a>. For general information about endpoint configuration, see <a href="/mule-user-guide/v/3.7/endpoint-configuration-reference">Endpoint Configuration Reference</a>.</p> 
+   <p>If you want to use a different set of HTTPS certificates, you can customize them by setting the <a href="/mule-user-guide/v/3.7/tls-configuration">TLS</a> configuration in the HTTP Request Connector’s global configuration element. You can also create a separate <a href="/mule-user-guide/v/3.7/tls-configuration">TLS</a> global element and reference it through your HTTP Connector.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="http-response-header"><a class="anchor" href="#http-response-header"></a>HTTP Response Header</h3> 
@@ -1686,17 +1349,6 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
       </tr> 
      </tbody> 
     </table> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="sending-credentials"><a class="anchor" href="#sending-credentials"></a>Sending Credentials</h3> 
-   <div class="paragraph"> 
-    <p>If you want to make an HTTP request that requires authentication, you can set the credentials on the endpoint:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>http://user:password@mycompany.com/secure</pre> 
-    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -1812,66 +1464,6 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="including-custom-header-properties"><a class="anchor" href="#including-custom-header-properties"></a>Including Custom Header Properties</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>When making a new HTTP client request, Mule filters out any existing HTTP request headers because they are often from a previous request. For example, if you have an HTTP endpoint that proxies another HTTP endpoint, you wouldn’t want to copy the <code>Content-Type</code> header property from the first HTTP request to the second request.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If you do want to include HTTP headers, you can specify them as properties on the outbound endpoint as follows:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-4
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost:9002/events</span><span class="delimiter">"</span></span>
-                        <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HttpConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">contentType</span>=<span class="string"><span class="delimiter">"</span><span class="content">image/png</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;set-property</span> <span class="attribute-name">propertyName</span>=<span class="string"><span class="delimiter">"</span><span class="content">Accept</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">*.*</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/http:outbound-endpoint&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>or use Message Properties Transformer, as follows:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;message-properties-transformer</span> <span class="attribute-name">scope</span>=<span class="string"><span class="delimiter">"</span><span class="content">outbound</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;add-message-property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">Accept</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">*.*</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/message-properties-transformer&gt;</span>
-
-<span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost:9002/events</span><span class="delimiter">"</span></span>
-                        <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HttpConnector</span><span class="delimiter">"</span></span> <span class="attribute-name">contentType</span>=<span class="string"><span class="delimiter">"</span><span class="content">image/png</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
  <h2 id="building-the-target-url-from-the-request"><a class="anchor" href="#building-the-target-url-from-the-request"></a>Building the Target URL from the Request</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -1886,7 +1478,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
         <tr> 
          <td class="line-numbers"><pre>1
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;http:outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost:8080#[message.inboundProperties['http.request']</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+         <td class="code"><pre><span class="tag">&lt;http:request</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost:8080#[message.inboundProperties['http.request']</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -3826,7 +3418,7 @@ MuleMessage result = client.send("deleteEndpoint", "");</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#transport-info">Transport Info</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#basic-usage">Basic Usage</a></li><li><a class="scroll-menu-link" href="#security">Security</a></li><li><a class="scroll-menu-link" href="#polling-http-services">Polling HTTP Services</a></li><li><a class="scroll-menu-link" href="#handling-http-content-type-and-encoding">Handling HTTP Content-Type and Encoding</a></li><li><a class="scroll-menu-link" href="#including-custom-header-properties">Including Custom Header Properties</a></li><li><a class="scroll-menu-link" href="#building-the-target-url-from-the-request">Building the Target URL from the Request</a></li><li><a class="scroll-menu-link" href="#handling-redirects">Handling Redirects</a></li><li><a class="scroll-menu-link" href="#response-timeout">Response Timeout</a></li><li><a class="scroll-menu-link" href="#getting-a-hash-map-of-post-body-parameters">Getting a Hash Map of POST Body Parameters</a></li><li><a class="scroll-menu-link" href="#processing-get-query-parameters">Processing GET Query Parameters</a></li><li><a class="scroll-menu-link" href="#serving-static-content">Serving Static Content</a></li><li><a class="scroll-menu-link" href="#http-properties">HTTP Properties</a></li><li><a class="scroll-menu-link" href="#examples">Examples</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#transport-info">Transport Info</a></li><li><a class="scroll-menu-link" href="#namespace-and-syntax">Namespace and Syntax</a></li><li><a class="scroll-menu-link" href="#features">Features</a></li><li><a class="scroll-menu-link" href="#basic-usage">Basic Usage</a></li><li><a class="scroll-menu-link" href="#security">Security</a></li><li><a class="scroll-menu-link" href="#polling-http-services">Polling HTTP Services</a></li><li><a class="scroll-menu-link" href="#handling-http-content-type-and-encoding">Handling HTTP Content-Type and Encoding</a></li><li><a class="scroll-menu-link" href="#building-the-target-url-from-the-request">Building the Target URL from the Request</a></li><li><a class="scroll-menu-link" href="#handling-redirects">Handling Redirects</a></li><li><a class="scroll-menu-link" href="#response-timeout">Response Timeout</a></li><li><a class="scroll-menu-link" href="#getting-a-hash-map-of-post-body-parameters">Getting a Hash Map of POST Body Parameters</a></li><li><a class="scroll-menu-link" href="#processing-get-query-parameters">Processing GET Query Parameters</a></li><li><a class="scroll-menu-link" href="#serving-static-content">Serving Static Content</a></li><li><a class="scroll-menu-link" href="#http-properties">HTTP Properties</a></li><li><a class="scroll-menu-link" href="#examples">Examples</a></li><li><a class="scroll-menu-link" href="#configuration-reference">Configuration Reference</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
