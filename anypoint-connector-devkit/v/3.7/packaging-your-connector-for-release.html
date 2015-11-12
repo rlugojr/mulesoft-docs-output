@@ -935,22 +935,19 @@
   <div class="paragraph"> 
    <p>Run the following command to install your connector with your updated license information into your local Maven repository.&nbsp;</p> 
   </div> 
-  <div class="paragraph"> 
-   <p><strong>Important</strong>: Run <strong>mvn license:format</strong> before running this Maven install command because Maven verifies the license headers first before installing:&nbsp;</p> 
+  <div class="admonitionblock important"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
+      <td class="content"> Run <code>mvn license:format</code> before running this Maven install command because Maven verifies the license headers first before installing:&nbsp; </td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre>mvn clean install</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">mvn clean install</code></pre> 
    </div> 
   </div> 
   <div class="admonitionblock note"> 
@@ -962,20 +959,8 @@
        <div class="paragraph"> 
         <p>To enable verbose logging, use:</p> 
        </div> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="code">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
-</pre></td> 
-              <td class="code"><pre>mvn clean install -Ddevkit.verbose.logging=true</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
+       <div class="paragraph"> 
+        <p><code>mvn clean install -Ddevkit.verbose.logging=true</code></p> 
        </div> </td> 
      </tr> 
     </tbody> 
@@ -989,17 +974,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre>mvn clean package</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">mvn clean package</code></pre> 
    </div> 
   </div> 
  </div> 
@@ -1013,7 +988,7 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>In Anypoint Studio, right-click your project name in the Package Explorer, and click <strong>Export</strong>.</p> </li> 
-    <li> <p>Click <strong>General</strong> &gt; <strong>Archive</strong> File with these settings. Choose whether you want a TAR file (for Linux or Mac) or a ZIP file for Mac or Windows. (Windows users can also uncompress TAR files using third-party software such as 7zip.)<br> <strong>Important</strong>: Uncheck the <strong>target</strong> folder.<br></p> 
+    <li> <p>Click <strong>General</strong> &gt; <strong>Archive</strong> File with these settings. Choose whether you want a TAR file (for Linux or Mac) or a ZIP file for Mac or Windows. (Windows users can also uncompress TAR files using third-party software such as 7zip.)<br> IMPORTANT: Uncheck the <strong>target</strong> folder.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/ArchiveFile.png" alt="ArchiveFile"></span></p> 
      </div> </li> 
