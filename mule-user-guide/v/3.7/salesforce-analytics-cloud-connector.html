@@ -863,7 +863,36 @@
         <div class="article-content col-md-7">
           <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="developing">Developing</a>/<a href="anypoint-connectors">Anypoint Connectors</a>/<a href="salesforce-analytics-cloud-connector" class="breadcrumb-active-link">Salesforce Analytics Cloud Connector</a></div>
           <h1>Salesforce Analytics Cloud Connector</h1>
-          <div class="sect1"> 
+          <div id="preamble"> 
+ <div class="sectionbody"> 
+  <div id="toc" class="toc"> 
+   <div id="toctitle" class="title">
+     Contents 
+   </div> 
+   <ul class="sectlevel1"> 
+    <li><a href="#introduction">Introduction</a></li> 
+    <li><a href="#prerequisites">Prerequisites</a></li> 
+    <li><a href="#requirements">Requirements</a></li> 
+    <li><a href="#compatibility">Compatibility</a></li> 
+    <li><a href="#installing-and-configuring">Installing and Configuring</a> 
+     <ul class="sectlevel2"> 
+      <li><a href="#installing">Installing</a></li> 
+      <li><a href="#using-the-connector-in-a-new-project">Using the Connector in a New Project</a></li> 
+      <li><a href="#configuring-the-salesforce-analytics-cloud-global-element">Configuring the Salesforce Analytics Cloud Global Element</a></li> 
+      <li><a href="#salesforce-analytics-cloud-connector-authentication">Salesforce Analytics Cloud Connector Authentication</a></li> 
+      <li><a href="#using-the-connector">Using the Connector</a></li> 
+      <li><a href="#use-cases">Use cases</a> 
+       <ul class="sectlevel3"> 
+        <li><a href="#adding-the-salesforce-analytics-cloud-connector-to-a-flow">Adding the Salesforce Analytics Cloud Connector to a Flow</a></li> 
+       </ul> </li> 
+     </ul> </li> 
+    <li><a href="#example-use-cases">Example Use Cases</a></li> 
+    <li><a href="#see-also">See Also</a></li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -1493,12 +1522,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-f4e82" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-f7563" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-5f9ed" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-e60e3" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f4e82"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5f9ed"> 
      <div class="sect2"> 
       <h3 id="example-use-case-1"><a class="anchor" href="#example-use-case-1"></a>Example Use Case 1</h3> 
       <div class="paragraph"> 
@@ -1578,7 +1607,20 @@
         <p>Create a dataset and upload data into it by processing the data in several chunks.</p> 
        </div> 
        <div class="paragraph"> 
-        <p>Create a new Mule Project by clicking on <strong>File &gt; New &gt; Mule Project</strong>. In the new project dialog box, the only thing you are required to enter is the name of the project. Click <strong>Finish</strong>.</p> 
+        <p>+</p> 
+       </div> 
+       <div class="admonitionblock note"> 
+        <table> 
+         <tbody> 
+          <tr> 
+           <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+           <td class="content"> When using the batch component tune it based on the amount of memory that you provide to the Mule ESB server. If you use DataMapper, be sure that streaming is enabled in order to avoid loading the entire input in memory. Bear in mind that the default threading profile uses 16 threads and each thread is loading data in chunks of 100 records until it reaches the "Commit size" set on the "Batch Commit" component. You can minimize the memory used by decreasing the number of threads. Finally you have to be aware of the fact that "Salesforce Analytics Cloud Connector" is also using some memory internally and you should tune "Commit Size" in order to find a good balance but do not set it too low because this will make it inefficient. </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+       </div> 
+       <div class="paragraph"> 
+        <p>+ Create a new Mule Project by clicking on <strong>File &gt; New &gt; Mule Project</strong>. In the new project dialog box, the only thing you are required to enter is the name of the project. Click <strong>Finish</strong>.</p> 
        </div> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/new_project_dialog.png" alt="New project dialog"></span></p> 
@@ -1685,7 +1727,7 @@
       </div> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-f7563"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-e60e3"> 
      <div class="sect2"> 
       <h3 id="example-use-case-1"><a class="anchor" href="#example-use-case-1"></a>Example Use Case 1</h3> 
       <div class="olist arabic"> 
