@@ -498,7 +498,7 @@
 <i></i>
 <a href="/mule-user-guide/v/3.7/connecting-using-transports">Connecting Using Transports</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/configuring-a-transport">Configuring a Transport</a></li></ul></li>
-<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
+<li><i></i><a href="/mule-user-guide/v/3.7/ajax-transport-reference">AJAX Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ejb-transport-reference">EJB Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/email-transport-reference">Email Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/file-transport-reference">File Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/ftp-transport-reference">FTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/deprecated-http-transport-reference">HTTP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/https-transport-reference">HTTPS Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/imap-transport-reference">IMAP Transport Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/jdbc-transport-reference">JDBC Transport Reference</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/jetty-transport-reference">Jetty Transport Reference</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/jetty-ssl-transport">Jetty SSL Transport</a></li></ul></li>
@@ -899,7 +899,7 @@
    <p>The final architecture looks like the image below.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/image2013-8-11+173A213A7.png" alt="image2013-8-11+173A213A7"></span></p> 
+   <p><span class="image"><img src="./_images/create-connector-architecture.png" alt="create-connector-architecture"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -907,7 +907,7 @@
  <h2 id="the-example-service-sunsetriseservice"><a class="anchor" href="#the-example-service-sunsetriseservice"></a>The Example Service: SunSetRiseService</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Web service for the demo is the&nbsp;http://www.webservicex.net/ws/WSDetails.aspx?WSID=65&amp;CATID=12[SunSetRise Web service] at <a href="http://www.webservicex.net/">WebserviceX.net</a>.&nbsp;</p> 
+   <p>The Web service for the demo is the&nbsp;<a href="http://www.webservicex.net/ws/WSDetails.aspx?WSID=65&amp;CATID=12">SunSetRise Web service</a> at <a href="http://www.webservicex.net/">WebserviceX.net</a>.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
    <p>The request and response are both represented by an XML document that specifies:</p> 
@@ -968,7 +968,7 @@
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>The SunSetTime and SunRiseTime elements are omitted because those are computed by the service. The response will include them populated.</p> 
+   <p>The SunSetTime and SunRiseTime elements are omitted because those are computed by the service. The response includes them populated.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Here is a sample response:</p> 
@@ -1040,7 +1040,7 @@
    <p>All SOAP APIs provide a WSDL file that defines&nbsp;how and at what endpoint&nbsp;and ports a SOAP Web service can be called, what operations and parameters it expects, and what data types (simple or complex) the operations return.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>CXF includes the wsdl2java utility that can generate Java stub client code to call any method on the service, and marshal and unmarshal request parameters and responses as Java objects for further processing. This generated stub client will be the core of your connector.</p> 
+   <p>CXF includes the wsdl2java utility that can generate Java stub client code to call any method on the service, and marshall and unmarshall request parameters and responses as Java objects for further processing. This generated stub client becomes the core of your connector.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The sections below describe the steps to create the stub client and add it to your project.</p> 
@@ -1048,7 +1048,7 @@
   <div class="sect2"> 
    <h3 id="preparations"><a class="anchor" href="#preparations"></a>Preparations</h3> 
    <div class="paragraph"> 
-    <p>You must download a copy of the WSDL file to your local disk and include it in your Maven project. &nbsp;For the Web service in this example, you can download the WSDL from <a href="http://www.webservicex.net/sunsetriseservice.asmx?WSDL" class="bare">http://www.webservicex.net/sunsetriseservice.asmx?WSDL</a>.</p> 
+    <p>You must download a copy of the WSDL file to your local disk and include it in your Maven project. &nbsp;For the Web service in this example, you can download the WSDL from link:http://www.webservicex.net/sunsetriseservice.asmx?WSDL.</p> 
    </div> 
    <div class="paragraph"> 
     <p>See <a href="/anypoint-connector-devkit/v/3.5/setting-up-your-api-access">Setting Up Your API Access</a> for steps that may be required to gain access to other APIs, including how to get access to the WSDL file.</p> 
@@ -2048,22 +2048,20 @@
    <div class="ulist"> 
     <ul> 
      <li> <p><code>clean</code> tells Maven to wipe out all previous build contents</p> </li> 
-     <li> <p><code>install</code> tells Maven to use wsdl2java to generate the CXF client code; compile all the code for the project; run any defined tests, package the compiled code as an Eclipse update site, and install it in the local Maven repository. (Any failure during this process, such as a failed build or test, will stop Maven from attempting subsequent goals.)</p> </li> 
+     <li> <p><code>install</code> tells Maven to use wsdl2java to generate the CXF client code; compile all the code for the project; run any defined tests, package the compiled code as an Eclipse update site, and install it in the local Maven repository. (Any failure during this process, such as a failed build or test, stops Maven from attempting subsequent goals.)</p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
-    <p>For more details on this process, see&nbsp;http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html[Introduction to the Build Lifecycle] at the Apache Maven project.</p> 
+    <p>For more details on this process, see&nbsp;<a href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">Introduction to the Build Lifecycle</a> at the Apache Maven project.</p> 
    </div> 
    <div class="paragraph"> 
     <p>Your preferred IDE should include support for this process as well. For example, in Eclipse you can select the project, then invoke <strong>Run as &gt; Maven Build.</strong></p> 
    </div> 
    <div class="paragraph"> 
-    <p>When the build is complete, you will find the files generated by Maven using <code>wsdl2java</code> in the folder&nbsp;<code>target/generated-sources/cxf</code>.</p> 
+    <p>When the build is complete, you finds the files generated by Maven using <code>wsdl2java</code> in the folder&nbsp;<code>target/generated-sources/cxf</code>.</p> 
    </div> 
-   <div class="literalblock"> 
-    <div class="content"> 
-     <pre>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;image:folder-structure.png[folder-structure]</pre> 
-    </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/folder-structure.png" alt="folder-structure"></span></p> 
    </div> 
    <div class="sect3"> 
     <h4 id="adding-the-generated-source-folder-to-the-ide-build-path"><a class="anchor" href="#adding-the-generated-source-folder-to-the-ide-build-path"></a>Adding the Generated Source Folder to the IDE Build Path</h4> 
@@ -2084,7 +2082,10 @@
      <ol class="arabic"> 
       <li> <p>Import or re-import your Maven project to your IDE, as described in "Importing a Maven Project into Eclipse/Mule Studio" in&nbsp;<a href="/anypoint-connector-devkit/v/3.5/creating-an-anypoint-connector-project">Creating an Anypoint Connector Project</a>.</p> </li> 
       <li> <p>Look for the folder <code>target/generated-sources/cxf</code>.</p> </li> 
-      <li> <p>Right-click the folder name, then select <strong>Build Path</strong> &gt; <strong>Use as Source Folder</strong>. <br> <span class="image"><img src="./_images/SOAP1.png" alt="SOAP1"></span></p> </li> 
+      <li> <p>Right-click the folder name, then select <strong>Build Path</strong> &gt; <strong>Use as Source Folder</strong>.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/SOAP1.png" alt="SOAP1"></span></p> 
+       </div> </li> 
      </ol> 
     </div> 
     <div class="paragraph"> 
@@ -2239,7 +2240,7 @@ import org.tutorial.sunsetrise.definition.LatLonDate;</pre></td>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="comment">// Add parameters as needed to initialize() to pass them in from connector</span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>}
 <span class="error">&nbsp;</span>
-<span class="comment">/* operations will be added here */</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>
+<span class="comment">/* Add operations here */</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>
 }</pre></td> 
          </tr> 
         </tbody> 
@@ -2685,7 +2686,7 @@ public class SunsetriseConnector
        <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
        <td class="content"> 
         <div class="paragraph"> 
-         <p><strong>Apply a Test-Driven Approach</strong><br></p> 
+         <p><strong>Apply a Test-Driven Approach</strong></p> 
         </div> 
         <div class="paragraph"> 
          <p>Based on MuleSoft experience, most successful connector implementation projects follow a cycle similar to&nbsp;test-driven development when building out operations on a connector:</p> 
@@ -2979,7 +2980,7 @@ public LatLonDate getSunSetRiseTime(@Optional @Default("#[payload]") LatLonDate 
     <p>When you build the JavaDoc, the sample above is inserted into the documentation.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>See <a href="/docs/v/3.5/Creating+Reference+Documentation">Creating DevKit Connector Documentation</a>&nbsp;for full information on filling in the JavaDoc for your connector.</p> 
+    <p>See <a href="/anypoint-connector-devkit/v/3.5/creating-reference-documentation">Creating DevKit Connector Documentation</a> for full information on filling in the JavaDoc for your connector.</p> 
    </div> 
   </div> 
  </div> 
@@ -2999,10 +3000,10 @@ public LatLonDate getSunSetRiseTime(@Optional @Default("#[payload]") LatLonDate 
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>See <a href="/docs/v/3.5/Installing+and+Testing+Your+Connector+in+Studio">Installing and Testing Your Connector</a> for the steps to follow in order to build your connector and install it into Studio.</p> 
+   <p>See <a href="/docs/v/3.5/installing-and-testing-your-connector-in-studio">Installing and Testing Your Connector</a> for the steps to follow in order to build your connector and install it into Studio.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Once you complete this process, you will see the SunSetRise connector in the palette.</p> 
+   <p>Once you complete this process, you can locate the SunSetRise connector in the palette.</p> 
   </div> 
   <div class="paragraph"> 
    <p>You can build a simple flow to demo the connector, as shown below.</p> 
@@ -3011,12 +3012,12 @@ public LatLonDate getSunSetRiseTime(@Optional @Default("#[payload]") LatLonDate 
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-d4341" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-04abf" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-0180d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-c0f74" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d4341"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-0180d"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/studio-config-2.png" alt="studio-config-2"></span></p> 
      </div> 
@@ -3024,7 +3025,7 @@ public LatLonDate getSunSetRiseTime(@Optional @Default("#[payload]") LatLonDate 
       <p><span class="image"><img src="./_images/studio-config.png" alt="studio-config"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-04abf"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-c0f74"> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="xml">
@@ -3095,7 +3096,7 @@ public LatLonDate getSunSetRiseTime(@Optional @Default("#[payload]") LatLonDate 
   <div class="ulist"> 
    <ul> 
     <li> <p>Add more operations using the same process</p> </li> 
-    <li> <p>Check out other <a href="/docs/v/3.5/Anypoint+Connector+Examples">examples</a></p> </li> 
+    <li> <p>Check out other <a href="/docs/v/3.5/anypoint-connector-examples">examples</a></p> </li> 
    </ul> 
   </div> 
  </div> 
