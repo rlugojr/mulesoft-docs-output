@@ -1099,12 +1099,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-9d678" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-7b860" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-7bbf7" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-bf228" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-9d678"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-7bbf7"> 
      <div class="paragraph"> 
       <p>Follow these steps to create an Oracle EBS global element:</p> 
      </div> 
@@ -1223,7 +1223,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-7b860"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-bf228"> 
      <div class="paragraph"> 
       <p>Ensure you have included the Oracle EBS namespaces in your configuration file.</p> 
      </div> 
@@ -1366,11 +1366,99 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
   <div class="paragraph"> 
    <p>Use the Oracle EBS connector as a message source if you wish to <strong>subscribe to queues</strong>, or as an operation-based connector, if your goal is to <strong>invoke web service operations</strong>.</p> 
   </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>To <strong>subscribe to a queue or topic</strong> (such as the XML Gateway Outbound queue or the Business Events topic), you need to drag the connector to the "Source" section of your flow. After doing so, and selecting a Connector Configuration, you will have to choose the queue/topic you wish to subscribe to, from the <strong>Operation</strong> dropdown.</p> </li> 
-    <li> <p>To <strong>invoke a web service operation</strong>, you must drag the connector to the "Process" section of your flow and fill in its input parameters. If the operation you need to invoke is a PL/SQL function exposed as a web service, select the <strong>Invoke PL/SQL</strong> Operation, and then make a selection from the <strong>PL/SQL</strong> and <strong>Function</strong> dropdown menus that appear in the General tab.</p> </li> 
-   </ul> 
+  <div class="sect2"> 
+   <h3 id="subscribing-to-a-queue-or-a-topic"><a class="anchor" href="#subscribing-to-a-queue-or-a-topic"></a>Subscribing to a Queue or a Topic</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>To <strong>subscribe to a queue or topic</strong> (such as the XML Gateway Outbound queue or the Business Events topic), you need to drag the connector to the "Source" section of your flow. After doing so, and selecting a Connector Configuration, you will have to choose the queue/topic you wish to subscribe to, from the <strong>Operation</strong> dropdown.</p> 
+      <div class="olist arabic"> 
+       <ol class="arabic"> 
+        <li> <p>Create a new Mule project in Anypoint Studio.</p> </li> 
+        <li> <p>Drag a new Flow scope element onto the canvas.</p> </li> 
+        <li> <p>Add an Oracle EBS connector as an Inbound endpoint at the beginning of the flow.</p> </li> 
+        <li> <p>Drag a Logger to the Process section of the flow.</p> </li> 
+        <li> <p>Configure the connector’s parameters according to the table below.</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/oracle_ebs_config_source_2.png" alt="oracle_ebs_config_source_2"></span></p> 
+         </div> 
+         <table class="tableblock frame-all grid-all spread"> 
+          <colgroup> 
+           <col style="width: %;"> 
+           <col style="width: %;"> 
+          </colgroup> 
+          <tbody> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a unique label for the connector in your application.</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Connect to a global element linked to this connector. Global elements encapsulate reusable data about the connection to the target resource or service. Select the global Oracle EBS connector element that you just created.</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Select the queue or topic you wish to subscribe to from the dropdown. In this example, we will select Business Events, but you could also pick XML Gateway Outbound.</p></td> 
+           </tr> 
+          </tbody> 
+         </table> </li> 
+        <li> <p>Click the blank space on the canvas to save your configurations.</p> </li> 
+       </ol> 
+      </div> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="invoking-a-web-service-operation"><a class="anchor" href="#invoking-a-web-service-operation"></a>Invoking a Web Service Operation</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>To <strong>invoke a web service operation</strong>, you must drag the connector to the "Process" section of your flow and fill in its input parameters. If the operation you need to invoke is a PL/SQL function exposed as a web service, select the <strong>Invoke PL/SQL</strong> Operation, and then make a selection from the <strong>PL/SQL</strong> and <strong>Function</strong> dropdown menus that appear in the General tab.</p> 
+      <div class="olist arabic"> 
+       <ol class="arabic"> 
+        <li> <p>Create a new Mule project in Anypoint Studio.</p> </li> 
+        <li> <p>Add a suitable Mule Inbound endpoint, such as the HTTP listener or File endpoint, to begin the flow.</p> </li> 
+        <li> <p>Drag the Oracle EBS connector onto the canvas, then select it to open the properties editor.</p> </li> 
+        <li> <p>Configure the connector’s parameters according to the table below.</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/oracle_ebs_config.png" alt="oracle_ebs_config"></span></p> 
+         </div> 
+         <table class="tableblock frame-all grid-all spread"> 
+          <colgroup> 
+           <col style="width: %;"> 
+           <col style="width: %;"> 
+          </colgroup> 
+          <tbody> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a unique label for the connector in your application.</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Connect to a global element linked to this connector. Global elements encapsulate reusable data about the connection to the target resource or service. Select the global Oracle EBS connector element that you just created.</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Select the operation from the dropdown. You can select any of the operations displayed or the <strong>Invoke PL/SQL</strong> operation, which allows you to execute a web service published from PL/SQL.</p></td> 
+           </tr> 
+           <tr> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Params</strong></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock">Complete the parameters needed for the operation selected. If the <strong>Invoke PL/SQL</strong> operation is selected, you need to select the <strong>PL/SQL</strong> and <strong>Function</strong> parameters with an operation to be executed.</p></td> 
+           </tr> 
+          </tbody> 
+         </table> </li> 
+        <li> <p>Click the blank space on the canvas to save your configurations.</p> </li> 
+        <li> <p>If you select the <strong>Invoke PL/SQL</strong> operation, you need to add a <strong>Transform Message</strong> transformer to map the values from the flow to the input parameters for the PL/SQL operation.</p> </li> 
+       </ol> 
+      </div> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1384,12 +1472,12 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-6c624" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-e1395" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-17433" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-1dcbb" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-6c624"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-17433"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/oracle_ebs_example_flow.png" alt="oracle_ebs_example_flow"></span></p> 
      </div> 
@@ -1757,7 +1845,7 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
          </tbody> 
         </table> </li> 
        <li> <p>Add a <strong>Transform Message</strong> transformer between the HTTP endpoint and the Oracle EBS connector to map the data in the HTTP endpoint to the structure required by the Oracle EBS connector.</p> </li> 
-       <li> <p>Configure the Input properties of the DataMapper according to the steps below.</p> 
+       <li> <p>Configure the Input properties of the <strong>Transform Message</strong> component according to the steps below.</p> 
         <div class="olist loweralpha"> 
          <ol class="loweralpha" type="a"> 
           <li> <p>On the left, under the <strong>Inbound Properties</strong> tree, click on <strong>http.query.params</strong> and then click on the <strong>Edit</strong> button. Enter the following code:</p> 
@@ -1912,7 +2000,7 @@ http://xmlns.oracle.com/apps/fnd/soaprovider/plsql/fnd_web_sec/validate_login/
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-e1395"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-1dcbb"> 
      <div class="sect2"> 
       <h3 id="example-code"><a class="anchor" href="#example-code"></a>Example Code</h3> 
       <div class="listingblock"> 
@@ -1953,35 +2041,57 @@ http://xmlns.oracle.com/apps/fnd/soaprovider/plsql/fnd_web_sec/validate_login/
 28
 29
 <strong>30</strong>
+31
+32
+33
+34
+35
+36
+37
+38
+39
+<strong>40</strong>
+41
 </pre></td> 
-             <td class="code"><pre><span class="entity">&amp;lt;</span>mule xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:oracle-ebs="http://www.mulesoft.org/schema/mule/oracle-ebs" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.6.1"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
-http://www.mulesoft.org/schema/mule/core
-http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-http://www.mulesoft.org/schema/mule/http
-http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
-http://www.mulesoft.org/schema/mule/oracle-ebs http://www.mulesoft.org/schema/mule/oracle-ebs/current/mule-oracle-ebs.xsd
-http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
-http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
-http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd"<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>oracle-ebs:config name="OracleEBS__Configuration" username="${username}" password="${password}" host="${host}" port="${port}" dbUser="${db.username}" dbPassword="${db.password}" dbHost="${db.host}" dbPort="${db.port}" dbSid="${db.sid}" responsibilityName="${responsibilityName}" responsibilityApplName="${responsibilityApplName}" doc:name="OracleEBS: Configuration"<span class="entity">&amp;gt;</span>
+             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
+
+<span class="entity">&amp;lt;</span>mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:oracle-ebs="http://www.mulesoft.org/schema/mule/oracle-ebs" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+        xmlns:spring="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/oracle-ebs http://www.mulesoft.org/schema/mule/oracle-ebs/current/mule-oracle-ebs.xsd"<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>oracle-ebs:config name="OracleEBS__Configuration" username="${username}" password="${password}" host="${host}" port="${port}" dbUser="${dbUser}" dbPassword="${dbPassword}" dbHost="${dbHost}" dbPort="${dbPort}" dbSid="${dbSid}" responsibilityName="${responsibilityName}" responsibilityApplName="${responsibilityApplName}" doc:name="OracleEBS: Configuration"<span class="entity">&amp;gt;</span>
         <span class="entity">&amp;lt;</span>oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>
             <span class="entity">&amp;lt;</span>oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>FND_WEB_SEC<span class="entity">&amp;lt;</span>/oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>
         <span class="entity">&amp;lt;</span>/oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>/oracle-ebs:config-name<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>data-mapper:config name="Map_To_Xml_InputParameters_" transformationGraphPath="map_to_xml_inputparameters_.grf" doc:name="Map_To_Xml_InputParameters_"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>/oracle-ebs:config<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>flow name="oracle-ebs-exampleFlow"<span class="entity">&amp;gt;</span>
         <span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>data-mapper:transform config-ref="Map_To_Xml_InputParameters_" input-ref="#[message.inboundProperties["http.query.params"]]" doc:name="Map To Xml<span class="entity">&amp;lt;</span>InputParameters<span class="entity">&amp;gt;</span>"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>dw:transform-message doc:name="Transform Message"<span class="entity">&amp;gt;</span>
+            <span class="entity">&amp;lt;</span>dw:input-inbound-property doc:sample="map_string_string.dwl" propertyName="http.query.params"/<span class="entity">&amp;gt;</span>
+            <span class="entity">&amp;lt;</span>dw:set-payload<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>![CDATA[%dw 1.0
+%output application/xml
+%namespace ns0
+http://xmlns.oracle.com/apps/fnd/soaprovider/plsql/fnd_web_sec/validate_login/
+---
+{
+        ns0#InputParameters: {
+                ns0#"P_USER": inboundProperties."http.query.params".user,
+                ns0#"P_PWD": inboundProperties."http.query.params".password
+        }
+}]]<span class="entity">&amp;gt;</span><span class="entity">&amp;lt;</span>/dw:set-payload<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>/dw:transform-message<span class="entity">&amp;gt;</span>
         <span class="entity">&amp;lt;</span>oracle-ebs:invoke-pl-sql config-ref="OracleEBS__Configuration" type="fnd_web_sec||VALIDATE_LOGIN" doc:name="OracleEBS"/<span class="entity">&amp;gt;</span>
         <span class="entity">&amp;lt;</span>mulexml:dom-to-xml-transformer doc:name="DOM to XML"/<span class="entity">&amp;gt;</span>
         <span class="entity">&amp;lt;</span>logger message="### EBS Test #[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>catch-exception-strategy name="oracle-ebs-exampleCatch_Exception_Strategy"<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>logger message="#[payload]" level="ERROR" doc:name="Logger"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>logger message="Error: #[payload]" level="ERROR" doc:name="Logger"/<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
             </tr> 
@@ -2005,12 +2115,12 @@ http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-0f7dd" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-90955" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-44f2e" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-843dc" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-0f7dd"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-44f2e"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/oracle_ebs_example_flow_source.png" alt="oracle_ebs_example_flow_source"></span></p> 
      </div> 
@@ -2370,7 +2480,7 @@ http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-90955"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-843dc"> 
      <div class="sect2"> 
       <h3 id="example-code"><a class="anchor" href="#example-code"></a>Example Code</h3> 
       <div class="listingblock"> 
