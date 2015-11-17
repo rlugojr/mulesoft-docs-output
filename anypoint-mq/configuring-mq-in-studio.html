@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-mq/configuring-mq-in-studio" />
-    <meta name="description" content="To add a client app to Studio:    The flow for the previous Anypoint Studio example is as follows: ..." />
+    <meta name="description" content="This section describes how to install the Anypoint MQ connector in Anypoint Studio and how to configure Studio to handle applications. To add the A..." />
     <meta class="swiftype" name="title" data-type="string" content="Configuring MQ in Anypoint Studio" />
 
 </head>
@@ -862,7 +862,36 @@
         <div class="article-content col-md-7">
           
           <h1>Configuring MQ in Anypoint Studio</h1>
-          <div id="preamble"> 
+          <div class="sect1"> 
+ <h2 id="anypoint-studio-mq-connector"><a class="anchor" href="#anypoint-studio-mq-connector"></a>Anypoint Studio MQ Connector</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This section describes how to install the Anypoint MQ connector in Anypoint Studio and how to configure Studio to handle applications.</p> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="add-mq-connector-to-studio"><a class="anchor" href="#add-mq-connector-to-studio"></a>Add MQ Connector to Studio</h3> 
+   <div class="paragraph"> 
+    <p>To add the Anypoint MQ connector to Studio:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>In Studio, click <strong>Help</strong> &gt; <strong>Install New Software</strong>.</p> </li> 
+     <li> <p>Paste this URL into the <strong>Work with</strong> field and press Enter:</p> 
+      <div class="paragraph"> 
+       <p><code><a href="http://studio.mulesoft.org/r4/addons/beta" class="bare">http://studio.mulesoft.org/r4/addons/beta</a></code></p> 
+      </div> </li> 
+     <li> <p>Click the checkbox for <strong>Anypoint Messaging Connector</strong> and click <strong>Next</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-connector-install.png" alt="Type URL and click Anypoint Messaging Connector"></span></p> 
+      </div> </li> 
+     <li> <p>Follow the prompts to install the software.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="add-a-client-app-to-studio"><a class="anchor" href="#add-a-client-app-to-studio"></a>Add a Client App to Studio</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>To add a client app to Studio:</p> 
@@ -897,21 +926,19 @@
      </div> </li> 
    </ol> 
   </div> 
- </div> 
-</div> 
-<div class="sect2"> 
- <h3 id="example-studio-flow"><a class="anchor" href="#example-studio-flow"></a>Example Studio Flow</h3> 
- <div class="paragraph"> 
-  <p>The flow for the previous Anypoint Studio example is as follows:</p> 
- </div> 
- <div class="listingblock"> 
-  <div class="content"> 
-   <pre class="CodeRay highlight"><code data-lang="xml">
-        
-     <table class="CodeRay"> 
-      <tbody> 
-       <tr> 
-        <td class="line-numbers"><pre>1
+  <div class="sect2"> 
+   <h3 id="example-studio-flow"><a class="anchor" href="#example-studio-flow"></a>Example Studio Flow</h3> 
+   <div class="paragraph"> 
+    <p>The flow for the previous Anypoint Studio example is as follows:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
 2
 3
 4
@@ -944,7 +971,7 @@
 31
 32
 </pre></td> 
-        <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:dw</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/dw</span><span class="delimiter">"</span></span>
         <span class="attribute-name">xmlns:anypoint-mq</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/anypoint-mq</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
@@ -976,9 +1003,11 @@
         <span class="tag">&lt;/anypoint-mq:publish&gt;</span>
 <span class="tag">&lt;/flow&gt;</span>
 <span class="tag">&lt;/mule&gt;</span></pre></td> 
-       </tr> 
-      </tbody> 
-     </table></code></pre> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
  </div> 
 </div>
@@ -986,7 +1015,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#example-studio-flow">Example Studio Flow</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#anypoint-studio-mq-connector">Anypoint Studio MQ Connector</a></li><li><a class="scroll-menu-link" href="#add-a-client-app-to-studio">Add a Client App to Studio</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

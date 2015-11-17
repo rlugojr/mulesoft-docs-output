@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-mq/mq-access-management" />
-    <meta name="description" content="Anypoint Platform lets you manage the roles of those who administer the MQ features in Anypoint Platform for your organization.     This section de..." />
+    <meta name="description" content="Anypoint Platform lets you manage the roles of those who administer the MQ features in Anypoint Platform for your organization. Assign user permiss..." />
     <meta class="swiftype" name="title" data-type="string" content="MQ Access Management" />
 
 </head>
@@ -867,6 +867,60 @@
   <div class="paragraph"> 
    <p>Anypoint Platform lets you manage the <a href="/anypoint-platform-administration/managing-accounts-roles-and-permissions">roles</a> of those who administer the MQ features in Anypoint Platform for your organization.</p> 
   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="giving-users-mq-access-permissions"><a class="anchor" href="#giving-users-mq-access-permissions"></a>Giving Users MQ Access Permissions</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="assign-user-permissions"><a class="anchor" href="#assign-user-permissions"></a>Assign User Permissions</h3> 
+   <div class="paragraph"> 
+    <p>Assign user permissions to yourself for use with MQ. These permissions let you create client applications, and destinations by creating queues and exchanges. You can use this same information to assign user permissions for others in your organization.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To assign user permissions:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
+     <li> <p>Click the gear icon and <strong>Users</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-tut-gear-and-users.png" alt="mq-tut-gear-and-users"></span></p> 
+      </div> </li> 
+     <li> <p>Click your username value:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-tut-click-username.png" alt="mq-tut-click-username"></span></p> 
+      </div> </li> 
+     <li> <p>Click <strong>MQ</strong> and click the green box to set an environment and permissions:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-tut-users-mq.png" alt="mq-tut-users-mq"></span></p> 
+      </div> </li> 
+     <li> <p>After you click the green box, the field changes to <strong>+ Add an environment by name</strong>. Click the plus sign <strong>+</strong> and in the drop-down menu, click <strong>Production</strong> as shown in this composite illustration:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-tut-env-permissions.png" alt="mq-tut-env-permissions"></span></p> 
+      </div> </li> 
+     <li> <p>Under <strong>Permission(s)</strong>, click <strong>Select Access</strong> &gt; <strong>Select All</strong>. When you click <strong>Select All</strong>, <code>Select Access</code> changes to <strong>Manage destinations, Manage clients, (Total: 5)</strong> to show which which permissions you chose.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-tut-manager-dests.png" alt="mq-tut-manager-dests"></span></p> 
+      </div> </li> 
+     <li> <p>Click the green checkmark to save your settings: <span class="image"><img src="./_images/mq-tut-green-checkmark-icon.png" alt="mq-tut-green-checkmark-icon"></span></p> 
+      <div class="paragraph"> 
+       <p>A summary list appears:</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-tut-permissions-summary.png" alt="mq-tut-permissions-summary"></span></p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>You can use this display to delete permissions if needed. For this tutorial, you can leave all as shown.</p> 
+      </div> </li> 
+    </ol> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="creating-mq-roles"><a class="anchor" href="#creating-mq-roles"></a>Creating MQ Roles</h2> 
+ <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Click the gear icon in the Anypoint Platform taskbar:</p> 
@@ -890,40 +944,12 @@
    </ol> 
   </div> 
  </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="anypoint-studio-mq-connector"><a class="anchor" href="#anypoint-studio-mq-connector"></a>Anypoint Studio MQ Connector</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>This section describes how to install the Anypoint MQ connector in Anypoint Studio and how to configure Studio to handle applications.</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="add-mq-connector-to-studio"><a class="anchor" href="#add-mq-connector-to-studio"></a>Add MQ Connector to Studio</h3> 
-   <div class="paragraph"> 
-    <p>To add the Anypoint MQ connector to Studio:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>In Studio, click <strong>Help</strong> &gt; <strong>Install New Software</strong>.</p> </li> 
-     <li> <p>Paste this URL into the <strong>Work with</strong> field and press Enter:</p> 
-      <div class="paragraph"> 
-       <p><code><a href="http://studio.mulesoft.org/r4/addons/beta" class="bare">http://studio.mulesoft.org/r4/addons/beta</a></code></p> 
-      </div> </li> 
-     <li> <p>Click the checkbox for <strong>Anypoint Messaging Connector</strong> and click <strong>Next</strong>:</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/mq-connector-install.png" alt="Type URL and click Anypoint Messaging Connector"></span></p> 
-      </div> </li> 
-     <li> <p>Follow the prompts to install the software.</p> </li> 
-    </ol> 
-   </div> 
-  </div> 
- </div> 
 </div>
         </div>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#anypoint-studio-mq-connector">Anypoint Studio MQ Connector</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#giving-users-mq-access-permissions">Giving Users MQ Access Permissions</a></li><li><a class="scroll-menu-link" href="#creating-mq-roles">Creating MQ Roles</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
