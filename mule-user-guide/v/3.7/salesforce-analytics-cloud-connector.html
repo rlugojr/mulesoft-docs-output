@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/salesforce-analytics-cloud-connector" />
-    <meta name="description" content="The Anypoint™ Connector for Salesforce Analytics Cloud lets you connect to the Salesforce Analytics Cloud application using External Data API. The ..." />
+    <meta name="description" content="Select Upload data from multiple sources into the Salesforce Wave Analytics Cloud. Release Notes: Salesforce Analytics Cloud Connector Release..." />
     <meta class="swiftype" name="title" data-type="string" content="Salesforce Analytics Cloud Connector" />
 
 </head>
@@ -163,7 +163,7 @@
 <li>
 <i></i>
 <a href="/mule-fundamentals/v/3.7/first-30-minutes-with-mule">First 30 Minutes with Mule</a><ul>
-<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
+<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/glossary">Glossary</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-fundamentals/v/3.7/first-day-with-mule">First Day with Mule</a><ul>
@@ -865,6 +865,15 @@
           <h1>Salesforce Analytics Cloud Connector</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p><em>Select</em></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Upload data from multiple sources into the Salesforce Wave Analytics Cloud.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>Release Notes</strong>:&nbsp;<a href="/release-notes/salesforce-analytics-cloud-connector-release-notes">Salesforce Analytics Cloud Connector Release Notes</a>.</p> 
+  </div> 
   <div id="toc" class="toc"> 
    <div id="toctitle" class="title">
      Contents 
@@ -886,7 +895,8 @@
         <li><a href="#adding-the-salesforce-analytics-cloud-connector-to-a-flow">Adding the Salesforce Analytics Cloud Connector to a Flow</a></li> 
        </ul> </li> 
      </ul> </li> 
-    <li><a href="#example-use-cases">Example Use Cases</a></li> 
+    <li><a href="#example-use-case-1">Example Use Case 1</a></li> 
+    <li><a href="#example-use-case-2">Example Use Case 2</a></li> 
     <li><a href="#see-also">See Also</a></li> 
    </ul> 
   </div> 
@@ -896,13 +906,10 @@
  <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Anypoint™ Connector for Salesforce Analytics Cloud lets you connect to the Salesforce Analytics Cloud application using <a href="https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_ext_data.meta/bi_dev_guide_ext_data/">External Data API</a>. The connector exposes convenient methods for creating and populating data sets into Salesforce Analytics Cloud system. Load data into Analytics Cloud from many different data sources whether they are on-premise or on the cloud. Go beyond .csv files with this connector.</p> 
+   <p>The Anypoint™ Connector for Salesforce Analytics Cloud lets you connect to the Salesforce Analytics Cloud application using <a href="https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_ext_data.meta/bi_dev_guide_ext_data/">External Data API</a>. The connector exposes convenient methods for creating and populating datasets into Salesforce Analytics Cloud system. Load data into Analytics Cloud from many different data sources whether they are on-premise or on the cloud. Go beyond .csv files with this connector.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Read through this User Guide to understand how to set up and configure a basic integration flow using the connector. Read through the <a href="http://mulesoft.github.io/salesforce-analytics-connector/">Technical Reference</a> to understand how the connector operations tie in with the External Data API calls. You will also find <strong>demo applications</strong> here that illustrate how to use the connector operations using a static data set.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><strong>Release Notes</strong>:&nbsp;<a href="/release-notes/salesforce-analytics-cloud-connector-release-notes">Salesforce Analytics Cloud Connector Release Notes</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1516,416 +1523,283 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="example-use-cases"><a class="anchor" href="#example-use-cases"></a>Example Use Cases</h2> 
+ <h2 id="example-use-case-1"><a class="anchor" href="#example-use-case-1"></a>Example Use Case 1</h2> 
  <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Create a dataset and upload data into it by processing all the data in one big chunk.</p> 
+  </div> 
   <div class="panel panel-default no-padding"> 
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-e51f1" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-ee5b3" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-b3c47" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-637fe" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-e51f1"> 
-     <div class="sect2"> 
-      <h3 id="example-use-case-1"><a class="anchor" href="#example-use-case-1"></a>Example Use Case 1</h3> 
-      <div class="paragraph"> 
-       <p>Create a dataset and upload data into it by processing all the data in one big chunk.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>Create a new Mule Project by clicking on <strong>File &gt; New &gt; Mule Project</strong>. In the new project dialog box, the only thing you are required to enter is the name of the project. Click on <strong>Finish</strong>.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/new_project_dialog.png" alt="New project dialog"></span></p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>Now let’s create the flow. Navigate through the project’s structure and double-click on <strong>src/main/app/project-name.xml</strong> and follow the steps below:</p> 
-      </div> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>On the right side of studio search for <strong>File</strong>.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/search_for_file.png" alt="Search for File"></span></p> 
-         </div> </li> 
-        <li> <p>Drag the <strong>File</strong> element onto the canvas.</p> </li> 
-        <li> <p>Search for <strong>DataMapper</strong> and drag it after <strong>File</strong>.</p> </li> 
-        <li> <p>Search for <strong>Salesforce Analytics Cloud</strong> and drag it after <strong>DataMapper</strong>.</p> </li> 
-        <li> <p>After completing the previous steps you should see:</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/all_flow_unconfigured.png" alt="Unconfigured All In One flow"></span></p> 
-         </div> </li> 
-        <li> <p>Let’s start configuring each element. Double-click on the <strong>File</strong> element.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/file_component.jpg" alt="File component"></span></p> 
-         </div> </li> 
-        <li> <p>Click on <code>…​</code> next to the <strong>Path</strong> field.</p> </li> 
-        <li> <p>Choose a folder with only the csv file that you want to upload. You can download our example file and save it into chosen folder.</p> 
-         <div class="paragraph"> 
-          <p><a href="_attachments/CsvDemoTestData.csv">CsvDemoTestData.csv</a></p> 
-         </div> </li> 
-        <li> <p>Double-click on <strong>Salesforce Analytics Cloud</strong> connector.</p> </li> 
-        <li> <p>Click on the plus sign next to the <strong>Connector configuration</strong> dropdown.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/create_data_set_config.jpg" alt="Create data set config"></span></p> 
-         </div> </li> 
-        <li> <p>A pop-up appears asking for type of configuration. Choose <strong>Salesforce Analytics Cloud: Basic Authentication</strong> option and click <strong>OK</strong>.</p> </li> 
-        <li> <p>A new pop-up appears asking for information required for basic authentication. For more info see the <a href="#Installing and Configuring">Installing and Configuring</a> section</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/basic_authentication_config.png" alt="Basic Auth config"></span></p> 
-         </div> </li> 
-        <li> <p>In the <strong>Connection</strong> section enter the credentials used to access the Salesforce instance.</p> </li> 
-        <li> <p>In the <strong>DataSense metadata</strong> section for the <strong>Metadata file name</strong> field enter the filename that describes the data structure you are going to upload. The filename has to be relative to the <strong>src/main/resources</strong> directory of your Studio project. For the file provided a few steps earlier (CsvDemoTestData.csv) you can use the metadata file provided below but do not forget to copy it into the <strong>src/main/resources</strong> directory.</p> 
-         <div class="paragraph"> 
-          <p><a href="_attachments/metadata.json">metadata.json</a></p> 
-         </div> </li> 
-        <li> <p>Click <strong>OK</strong> to return to the Salesforce Analytics Cloud tab.</p> </li> 
-        <li> <p>From the <strong>Operation</strong> dropdown in the <strong>Basic Settings</strong> section choose <strong>Upload external data into new data set and start processing</strong>.</p> </li> 
-        <li> <p>From the <strong>Operation</strong> dropdown in the <strong>DataSet info</strong> section choose <strong>OVERWRITE</strong>.</p> </li> 
-        <li> <p>In the <strong>Description</strong> enter <strong>Test data set</strong>.</p> </li> 
-        <li> <p>In the <strong>Label</strong> field under <strong>DataSet info</strong> enter <strong>Test data set</strong>.</p> </li> 
-        <li> <p>In the <strong>Name</strong> field under <strong>DataSet info</strong> enter <strong>test_data_set</strong>.</p> </li> 
-        <li> <p>Double-click on the <strong>DataMapper</strong> element.</p> </li> 
-        <li> <p>Click on the <strong>Type</strong> dropdown in the Input section and choose <strong>CSV</strong></p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/csv_list_record.png" alt="Data Mapper set CSV as input type"></span></p> 
-         </div> </li> 
-        <li> <p>Click on <code>…​</code> next to the <strong>CSV</strong> field of the Input section and browse to the csv file in the same folder you selected for the <strong>File</strong> connector.</p> </li> 
-        <li> <p>Click the <strong>Create mapping</strong> button and you should see something similar to the picture below.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/DM_mappings.png" alt="Data mapper mappings"></span></p> 
-         </div> </li> 
-        <li> <p>Now everything is set up and the application can be deployed.</p> </li> 
-       </ol> 
-      </div> 
-      <div class="paragraph"> 
-       <p>It’s time to test the app. Run the app in Anypoint Studio (Right-click on project name &gt; <strong>Run as &gt; Mule Application</strong>). Monitor the studio console and check Salesforce Wave Analytics UI to see if the data was uploaded.</p> 
-      </div> 
-      <div class="sect3"> 
-       <h4 id="example-use-case-2"><a class="anchor" href="#example-use-case-2"></a>Example Use Case 2</h4> 
-       <div class="paragraph"> 
-        <p>Create a dataset and upload data into it by processing the data in several chunks.</p> 
-       </div> 
-       <div class="paragraph"> 
-        <p>+</p> 
-       </div> 
-       <div class="admonitionblock note"> 
-        <table> 
-         <tbody> 
-          <tr> 
-           <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-           <td class="content"> When using the batch component tune it based on the amount of memory that you provide to the Mule ESB server. If you use DataMapper, be sure that streaming is enabled in order to avoid loading the entire input in memory. Bear in mind that the default threading profile uses 16 threads and each thread is loading data in chunks of 100 records until it reaches the "Commit size" set on the "Batch Commit" component. You can minimize the memory used by decreasing the number of threads. Finally you have to be aware of the fact that "Salesforce Analytics Cloud Connector" is also using some memory internally and you should tune "Commit Size" in order to find a good balance but do not set it too low because this will make it inefficient. </td> 
-          </tr> 
-         </tbody> 
-        </table> 
-       </div> 
-       <div class="paragraph"> 
-        <p>+ Create a new Mule Project by clicking on <strong>File &gt; New &gt; Mule Project</strong>. In the new project dialog box, the only thing you are required to enter is the name of the project. Click <strong>Finish</strong>.</p> 
-       </div> 
-       <div class="paragraph"> 
-        <p><span class="image"><img src="./_images/new_project_dialog.png" alt="New project dialog"></span></p> 
-       </div> 
-       <div class="paragraph"> 
-        <p>Now let’s create the flow. Navigate through the project’s structure and double click on <strong>src/main/app/project-name.xml</strong> and follow the steps below:</p> 
-       </div> 
-       <div class="olist arabic"> 
-        <ol class="arabic"> 
-         <li> <p>On the right side of Studio search for <strong>Batch</strong>.</p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/search_for_batch.jpg" alt="Search for batch"></span></p> 
-          </div> </li> 
-         <li> <p>Select <strong>Batch</strong> and drag it onto the canvas.</p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/batch_component.jpg" alt="Batch component on canvas"></span></p> 
-          </div> </li> 
-         <li> <p>Similar to what was done in step 1, search for <strong>File</strong>.</p> </li> 
-         <li> <p>Drag <strong>File</strong> into the <strong>Input</strong> section of the batch element created earlier.</p> </li> 
-         <li> <p>Search for <strong>Message Enricher</strong>, then drag and drop it after <strong>File</strong>.</p> </li> 
-         <li> <p>Search for <strong>DataMapper</strong> and drag it after <strong>Message Enricher</strong>.</p> </li> 
-         <li> <p>Search for <strong>Salesforce Analytics Cloud</strong> and drag it into <strong>Message Enricher</strong>.</p> </li> 
-         <li> <p>Search for <strong>Batch commit</strong> and drag it into the <strong>Batch step</strong> section of <strong>Batch</strong>.</p> </li> 
-         <li> <p>Search for <strong>Salesforce Analytics Cloud</strong> and drag it into the <strong>Batch commit</strong> section of <strong>Batch step</strong>.</p> </li> 
-         <li> <p>Drag another <strong>Salesforce Analytics Cloud</strong> connector into the <strong>On complete</strong> section of <strong>Batch</strong>.</p> </li> 
-         <li> <p>After completing all the above steps you should see:</p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/batch_flow_unconfigured.png" alt="Unconfigured Batch flow"></span></p> 
-          </div> </li> 
-         <li> <p>Lets start configuring each element. Double click on the <strong>File</strong> element.</p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/file_component.jpg" alt="File component"></span></p> 
-          </div> </li> 
-         <li> <p>Click on <code>…​</code> next to the <strong>Path</strong> field.</p> </li> 
-         <li> <p>Choose a folder with only the csv file that you want to upload. You can download our example file and save it into your chosen folder.</p> 
-          <div class="paragraph"> 
-           <p><a href="_attachments/CsvDemoTestData.csv">CsvDemoTestData.csv</a></p> 
-          </div> </li> 
-         <li> <p>Double-click on the <strong>Salesforce Analytics Cloud</strong> connector in the <strong>Message Enricher</strong>.</p> </li> 
-         <li> <p>Click on the plus sign next to the <strong>Connector configuration</strong> dropdown.</p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/create_data_set_config.jpg" alt="Create data set config"></span></p> 
-          </div> </li> 
-         <li> <p>A pop-up asking for type of configuration appears. Choose the <strong>Salesforce Analytics Cloud: Basic Authentication</strong> option and click <strong>OK</strong>.</p> </li> 
-         <li> <p>A new pop-up asks for information required for basic authentication. For more info see the <a href="#Installing and Configuring">Installing and Configuring</a> section</p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/basic_authentication_config.png" alt="Basic Auth config"></span></p> 
-          </div> </li> 
-         <li> <p>In the <strong>Connection</strong> section enter the credentials used to access the Salesforce instance.</p> </li> 
-         <li> <p>In the <strong>DataSense metadata</strong> section for the <strong>Metadata file name</strong> field enter the filename that describes the data structure you are going to upload. The filename has to be relative to the <strong>src/main/resources</strong> directory of your Studio project. For the file provided a few steps earlier (CsvDemoTestData.csv) you can use the metadata file provided below, but do not forget to copy it into the <strong>src/main/resources</strong> directory.</p> 
-          <div class="paragraph"> 
-           <p><a href="_attachments/metadata.json">metadata.json</a></p> 
-          </div> </li> 
-         <li> <p>Click <strong>OK</strong> to return to the Salesforce Analytics Cloud tab.</p> </li> 
-         <li> <p>From the <strong>Operation</strong> dropdown in the <strong>Basic Settings</strong> section choose <strong>Create data set</strong>.</p> </li> 
-         <li> <p>From the <strong>Operation</strong> dropdown in the <strong>DataSet info</strong> section choose <strong>OVERWRITE</strong>.</p> </li> 
-         <li> <p>In the <strong>Description</strong> field enter <strong>Test data set</strong>.</p> </li> 
-         <li> <p>In the <strong>Label</strong> field under <strong>DataSet info</strong> enter <strong>Test data set</strong>.</p> </li> 
-         <li> <p>In the <strong>Name</strong> field under <strong>DataSet info</strong> enter <strong>test_data_set</strong>.</p> </li> 
-         <li> <p>Double-click on <strong>Message Enricher</strong> and fill in the fields as below.</p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/message_enricher_config.jpg" alt="Message Enricher Config"></span></p> 
-          </div> </li> 
-         <li> <p>Double-click on <strong>Batch commit</strong> from <strong>Batch step</strong>.</p> </li> 
-         <li> <p>For <strong>Commit size</strong> enter the number of records you want to process in one step. (e.g. 5000)</p> 
-          <div class="admonitionblock note"> 
-           <table> 
-            <tbody> 
-             <tr> 
-              <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-              <td class="content"> The application is logging a warning message if the data provided for processing in one step exceeds the size of data accepted by Analytics Cloud System in one step. The message looks like this: "The size of data provided for processing in one step exceeded the maximum size of one chunk allowed by Analytics Cloud System. In order to optimize the memory used you should decrease the size of data provided in one step.". If you see this message then you should tune the <strong>Commit Size</strong> by decreasing it until you do not see the message anymore. </td> 
-             </tr> 
-            </tbody> 
-           </table> 
-          </div> </li> 
-         <li> <p>Double-click on <strong>Salesforce Analytics Cloud</strong> from <strong>Batch commit</strong>.</p> </li> 
-         <li> <p>From the <strong>Connector configuration</strong> dropdown choose <strong>Salesforce_Analytics_Cloud__Basic_authentication</strong> (only this option should be available).</p> </li> 
-         <li> <p>Choose <strong>Upload external data</strong> as the operation.</p> </li> 
-         <li> <p>Check the bottom corner on the right-hand side and wait for DataSense to fetch metadata.</p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/fetch_metadata_bar.jpg" alt="Fetch metadata progress bar"></span></p> 
-          </div> </li> 
-         <li> <p>For <strong>Data Set Id</strong> enter <strong>#[variable:dataSetId]</strong></p> </li> 
-         <li> <p>Double-click on the <strong>DataMapper</strong> element.</p> </li> 
-         <li> <p>Click on the <strong>Type</strong> dropdown in the Input section and choose <strong>CSV</strong></p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/csv_list_record.png" alt="Data Mapper set CSV as input type"></span></p> 
-          </div> </li> 
-         <li> <p>Click on <code>…​</code> next to the <strong>CSV</strong> field of the Input section and browse to the csv file in the same folder you selected for the <strong>File</strong> connector.</p> </li> 
-         <li> <p>Click the <strong>Create mapping</strong> button and you should see something like the following.</p> 
-          <div class="paragraph"> 
-           <p><span class="image"><img src="./_images/DM_mappings.png" alt="Data mapper mappings"></span></p> 
-          </div> </li> 
-         <li> <p>Double-click on <strong>Salesforce Analytics Cloud</strong> from the <strong>On complete</strong> section of <strong>Batch</strong>.</p> </li> 
-         <li> <p>From the <strong>Connector configuration</strong> dropdown select <strong>Salesforce_Analytics_Cloud__Basic_authentication</strong> (only this option should be available).</p> </li> 
-         <li> <p>From the <strong>Operation</strong> dropdown select <strong>Start data processing</strong>.</p> </li> 
-         <li> <p>In the <strong>Data Set Id</strong> field enter <code>#[variable:dataSetId]</code></p> </li> 
-         <li> <p>At this point, everything should be set up and the application can be deployed.</p> </li> 
-        </ol> 
-       </div> 
-       <div class="paragraph"> 
-        <p>It is time to test the application. Run the application in Anypoint Studio (Right click on the project name in Studio’s package explorer and select <strong>Run as -&gt; Mule Application</strong>). Monitor the studio console and check Salesforce Wave Analytics UI to see if the data was uploaded.</p> 
-       </div> 
-      </div> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b3c47"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Create a new Mule Project by clicking on <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>. In the new project dialog box, the only thing you are required to enter is the name of the project. Click on <strong>Finish</strong>.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/new_project_dialog.png" alt="New project dialog"></span></p> 
+        </div> </li> 
+       <li> <p>Now let’s create the flow. Navigate through the project’s structure and double-click on <strong>src/main/app/project-name.xml</strong> and follow the steps below.</p> </li> 
+       <li> <p>On the right side of studio search for <strong>File</strong>.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/search_for_file.png" alt="Search for File"></span></p> 
+        </div> </li> 
+       <li> <p>Drag the <strong>File</strong> element onto the canvas.</p> </li> 
+       <li> <p>Search for <strong>DataMapper</strong> and drag it after <strong>File</strong>.</p> </li> 
+       <li> <p>Search for <strong>Salesforce Analytics Cloud</strong> and drag it after <strong>DataMapper</strong>.</p> </li> 
+       <li> <p>After completing the previous steps you should see:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/all_flow_unconfigured.png" alt="Unconfigured All In One flow"></span></p> 
+        </div> </li> 
+       <li> <p>Let’s start configuring each element. Double-click on the <strong>File</strong> element.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/file_component.jpg" alt="File component"></span></p> 
+        </div> </li> 
+       <li> <p>Click on <code>…​</code> next to the <strong>Path</strong> field.</p> </li> 
+       <li> <p>Choose a folder with only the csv file that you want to upload. You can download our example file and save it into chosen folder.</p> 
+        <div class="paragraph"> 
+         <p><a href="_attachments/CsvDemoTestData.csv">CsvDemoTestData.csv</a></p> 
+        </div> </li> 
+       <li> <p>Double-click on <strong>Salesforce Analytics Cloud</strong> connector.</p> </li> 
+       <li> <p>Click on the plus sign next to the <strong>Connector configuration</strong> dropdown.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/create_data_set_config.jpg" alt="Create data set config"></span></p> 
+        </div> </li> 
+       <li> <p>A pop-up appears asking for type of configuration. Choose <strong>Salesforce Analytics Cloud: Basic Authentication</strong> option and click <strong>OK</strong>.</p> </li> 
+       <li> <p>A new pop-up appears asking for information required for basic authentication. For more info see the <a href="#Installing and Configuring">Installing and Configuring</a> section</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/basic_authentication_config.png" alt="Basic Auth config"></span></p> 
+        </div> </li> 
+       <li> <p>In the <strong>Connection</strong> section enter the credentials used to access the Salesforce instance.</p> </li> 
+       <li> <p>In the <strong>DataSense metadata</strong> section for the <strong>Metadata file name</strong> field enter the filename that describes the data structure you are going to upload. The filename has to be relative to the <strong>src/main/resources</strong> directory of your Studio project. For the file provided a few steps earlier (CsvDemoTestData.csv) you can use the metadata file provided below but do not forget to copy it into the <strong>src/main/resources</strong> directory.</p> 
+        <div class="paragraph"> 
+         <p><a href="_attachments/metadata.json">metadata.json</a></p> 
+        </div> </li> 
+       <li> <p>Click <strong>OK</strong> to return to the Salesforce Analytics Cloud tab.</p> </li> 
+       <li> <p>From the <strong>Operation</strong> dropdown in the <strong>Basic Settings</strong> section choose <strong>Upload external data into new data set and start processing</strong>.</p> </li> 
+       <li> <p>From the <strong>Operation</strong> dropdown in the <strong>DataSet info</strong> section choose <strong>OVERWRITE</strong>.</p> </li> 
+       <li> <p>In the <strong>Description</strong> enter <strong>Test data set</strong>.</p> </li> 
+       <li> <p>In the <strong>Label</strong> field under <strong>DataSet info</strong> enter <strong>Test data set</strong>.</p> </li> 
+       <li> <p>In the <strong>Name</strong> field under <strong>DataSet info</strong> enter <strong>test_data_set</strong>.</p> </li> 
+       <li> <p>Double-click on the <strong>DataMapper</strong> element.</p> </li> 
+       <li> <p>Click on the <strong>Type</strong> dropdown in the Input section and choose <strong>CSV</strong></p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/csv_list_record.png" alt="Data Mapper set CSV as input type"></span></p> 
+        </div> </li> 
+       <li> <p>Click on <code>…​</code> next to the <strong>CSV</strong> field of the Input section and browse to the csv file in the same folder you selected for the <strong>File</strong> connector.</p> </li> 
+       <li> <p>Click the <strong>Create mapping</strong> button and you should see something similar to the picture below.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/DM_mappings.png" alt="Data mapper mappings"></span></p> 
+        </div> </li> 
+       <li> <p>Now everything is set up and the application can be deployed.</p> </li> 
+      </ol> 
+     </div> 
+     <div class="paragraph"> 
+      <p>It’s time to test the app. Run the app in Anypoint Studio (Right-click on project name &gt; <strong>Run as &gt; Mule Application</strong>). Monitor the studio console and check Salesforce Wave Analytics UI to see if the data was uploaded.</p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-ee5b3"> 
-     <div class="sect2"> 
-      <h3 id="example-use-case-1"><a class="anchor" href="#example-use-case-1"></a>Example Use Case 1</h3> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>Add the sfdc-analytics namespace to the mule element as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+    <div class="tab-pane fade no-padding" id="xml-editor-637fe"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Add the sfdc-analytics namespace to the mule element as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                <td class="code"><pre>xmlns:sfdc-analytics="http://www.mulesoft.org/schema/mule/sfdc-analytics"</pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add the location of the analytics schema referred to by the sfdc-analytics namespace:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+               <td class="code"><pre>xmlns:sfdc-analytics="http://www.mulesoft.org/schema/mule/sfdc-analytics"</pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add the location of the analytics schema referred to by the sfdc-analytics namespace:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                <td class="code"><pre>http://www.mulesoft.org/schema/mule/sfdc-analytics http://www.mulesoft.org/schema/mule/sfdc-analytics/current/mule-sfdc-analytics.xsd</pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add the data-mapper namespace as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+               <td class="code"><pre>http://www.mulesoft.org/schema/mule/sfdc-analytics http://www.mulesoft.org/schema/mule/sfdc-analytics/current/mule-sfdc-analytics.xsd</pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add the data-mapper namespace as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                <td class="code"><pre>xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper"</pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add location of data mapper schema referred by data-mapper namespace with the following value:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+               <td class="code"><pre>xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper"</pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add location of data mapper schema referred by data-mapper namespace with the following value:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                <td class="code"><pre>http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd</pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add a context:property-placeholder element to your project, then configure its attributes as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>context:property-placeholder location="mule-app.properties"/<span class="entity">&amp;gt;</span></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add a data-mapper:config element to your project, then configure its attributes as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+               <td class="code"><pre>http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd</pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a context:property-placeholder element to your project, then configure its attributes as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>context:property-placeholder location="mule-app.properties"/<span class="entity">&amp;gt;</span></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a data-mapper:config element to your project, then configure its attributes as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:config name="CSV_To_List_Record_" transformationGraphPath="csv_to_list_record_.grf" doc:name="CSV_To_List_Record_"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add a sfdc-analytics:config element to your project, then configure its attributes as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:config name="CSV_To_List_Record_" transformationGraphPath="csv_to_list_record_.grf" doc:name="CSV_To_List_Record_"/<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a sfdc-analytics:config element to your project, then configure its attributes as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:config name="Salesforce_Analytics_Cloud__Basic_authentication" username="${salesforce.username}" password="${salesforce.password}" securityToken="${salesforce.securityToken}" metadataFileName="${metadata.file.analytics}" doc:name="Salesforce Analytics Cloud: Basic authentication" url="${salesforce.url}"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add an empty flow element to your project as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:config name="Salesforce_Analytics_Cloud__Basic_authentication" username="${salesforce.username}" password="${salesforce.password}" securityToken="${salesforce.securityToken}" metadataFileName="${metadata.file.analytics}" doc:name="Salesforce Analytics Cloud: Basic authentication" url="${salesforce.url}"/<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add an empty flow element to your project as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 </pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="analytics_performanceFlow"<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>flow name="analytics_performanceFlow"<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Within the flow element add a file:inbound-endpoint element as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Within the flow element add a file:inbound-endpoint element as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 </pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>file:inbound-endpoint path="path_to_folder_to_monitor" moveToDirectory="path_to_folder_where_to_move_processed_files" responseTimeout="10000" doc:name="File"<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>file:inbound-endpoint path="path_to_folder_to_monitor" moveToDirectory="path_to_folder_where_to_move_processed_files" responseTimeout="10000" doc:name="File"<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/file:inbound-endpoint<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Within the flow element add a data-mapper:transform element as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Within the flow element add a data-mapper:transform element as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:transform config-ref="CSV_To_List_Record_" doc:name="CSV To List<span class="entity">&amp;amp;</span>lt;Record<span class="entity">&amp;amp;</span>gt;"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Within the flow element add a sfdc-analytics:upload-external-data-into-new-data-set-and-start-processing element as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:transform config-ref="CSV_To_List_Record_" doc:name="CSV To List<span class="entity">&amp;amp;</span>lt;Record<span class="entity">&amp;amp;</span>gt;"/<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Within the flow element add a sfdc-analytics:upload-external-data-into-new-data-set-and-start-processing element as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:upload-external-data-into-new-data-set-and-start-processing config-ref="Salesforce_Analytics_Cloud__Basic_authentication1" type="recordId" operation="UPSERT" description="Test upload of 2500 records all in one step" label="records_2500_in_one_step" dataSetName="records_2500_in_one_step_with_app" edgemartContainer="TestContainer" notificationSent="ALWAYS" notificationEmail="name@email.com" doc:name="Salesforce Analytics Cloud"<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:upload-external-data-into-new-data-set-and-start-processing config-ref="Salesforce_Analytics_Cloud__Basic_authentication1" type="recordId" operation="UPSERT" description="Test upload of 2500 records all in one step" label="records_2500_in_one_step" dataSetName="records_2500_in_one_step_with_app" edgemartContainer="TestContainer" notificationSent="ALWAYS" notificationEmail="name@email.com" doc:name="Salesforce Analytics Cloud"<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>sfdc-analytics:payload ref="#[payload]"/<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/sfdc-analytics:upload-external-data-into-new-data-set-and-start-processing<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>In the end the xml file should look like this:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-        
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>In the end the xml file should look like this:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1952,7 +1826,7 @@
 25
 26
 </pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>mule xmlns:file="http://www.mulesoft.org/schema/mule/file"
         xmlns:context="http://www.springframework.org/schema/context"
         xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
@@ -1978,127 +1852,282 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
         <span class="entity">&amp;lt;</span>/sfdc-analytics:upload-external-data-into-new-data-set-and-start-processing<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-       </ol> 
-      </div> 
-      <div class="sect3"> 
-       <h4 id="example-use-case-2"><a class="anchor" href="#example-use-case-2"></a>Example Use Case 2</h4> 
-       <div class="paragraph"> 
-        <p>Create a dataset and upload data into it by processing the data in several chunks.</p> 
-       </div> 
-       <div class="olist arabic"> 
-        <ol class="arabic"> 
-         <li> <p>Add sfdc-analytics namespace to mule element as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+      </ol> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="example-use-case-2"><a class="anchor" href="#example-use-case-2"></a>Example Use Case 2</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Create a dataset and upload data into it by processing the data in several chunks.</p> 
+  </div> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-9bd42" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-b6b65" role="tab" data-toggle="tab">XML Editor</a></li> 
+    </ul> 
+   </div> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-9bd42"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Create a new Mule Project by clicking on <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>. In the new project dialog box, the only thing you are required to enter is the name of the project. Click <strong>Finish</strong>.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/new_project_dialog.png" alt="New project dialog"></span></p> 
+        </div> </li> 
+       <li> <p>Now let’s create the flow. Navigate through the project’s structure and double click on <strong>src/main/app/project-name.xml</strong> and follow the steps below.</p> </li> 
+       <li> <p>On the right side of Studio search for <strong>Batch</strong>.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/search_for_batch.jpg" alt="Search for batch"></span></p> 
+        </div> </li> 
+       <li> <p>Select <strong>Batch</strong> and drag it onto the canvas.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/batch_component.jpg" alt="Batch component on canvas"></span></p> 
+        </div> 
+        <div class="admonitionblock note"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+            <td class="content"> When using the <strong>Batch</strong> component, tune it based on the amount of memory that you provide to the Mule ESB server. </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> </li> 
+       <li> <p>Similar to what was done in step 1, search for <strong>File</strong>.</p> </li> 
+       <li> <p>Drag <strong>File</strong> into the <strong>Input</strong> section of the batch element created earlier.</p> </li> 
+       <li> <p>Search for <strong>Message Enricher</strong>, then drag and drop it after <strong>File</strong>.</p> </li> 
+       <li> <p>Search for <strong>DataMapper</strong> and drag it after <strong>Message Enricher</strong>.</p> </li> 
+       <li> <p>Search for the connector named <strong>Salesforce Analytics Cloud</strong> and drag it into <strong>Message Enricher</strong>.</p> </li> 
+       <li> <p>Search for the <strong>Batch Commit</strong> component in the palette and drag it into the <strong>Batch step</strong> section of <strong>Batch</strong>.</p> 
+        <div class="admonitionblock note"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+            <td class="content"> When using <strong>DataMapper</strong>, ensure the "Streaming" option in the <strong>Batch Commit</strong> component is enabled. This way you avoid loading the entire input in memory. </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> </li> 
+       <li> <p>Search for the connector named <strong>Salesforce Analytics Cloud</strong> and drag it into the <strong>Batch Commit</strong> section of <strong>Batch step</strong>.</p> 
+        <div class="admonitionblock note"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+            <td class="content"> 
+             <div class="paragraph"> 
+              <p>Bear in mind that the default threading profile uses 16 threads and each thread is loading data in chunks of 100 records until it reaches the "Commit size" set on the <strong>Batch Commit</strong> component. You can minimize the memory used by decreasing the number of threads.</p> 
+             </div> 
+             <div class="paragraph"> 
+              <p>Finally you have to be aware of the fact that Salesforce Analytics Cloud connector is also using some memory internally and you should tune the "Commit Size" in the <strong>Batch Commit</strong> component for the purpose of efficiency, therefore do not set the parameter too low.</p> 
+             </div> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> </li> 
+       <li> <p>Drag another <strong>Salesforce Analytics Cloud</strong> connector into the <strong>On complete</strong> section of <strong>Batch</strong>.</p> </li> 
+       <li> <p>After completing all the above steps you should see:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/batch_flow_unconfigured.png" alt="Unconfigured Batch flow"></span></p> 
+        </div> </li> 
+       <li> <p>Lets start configuring each element. Double click on the <strong>File</strong> element.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/file_component.jpg" alt="File component"></span></p> 
+        </div> </li> 
+       <li> <p>Click on <code>…​</code> next to the <strong>Path</strong> field.</p> </li> 
+       <li> <p>Choose a folder with only the csv file that you want to upload. You can download our example file and save it into your chosen folder.</p> 
+        <div class="paragraph"> 
+         <p><a href="_attachments/CsvDemoTestData.csv">CsvDemoTestData.csv</a></p> 
+        </div> </li> 
+       <li> <p>Double-click on the <strong>Salesforce Analytics Cloud</strong> connector in the <strong>Message Enricher</strong>.</p> </li> 
+       <li> <p>Click on the plus sign next to the <strong>Connector configuration</strong> dropdown.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/create_data_set_config.jpg" alt="Create data set config"></span></p> 
+        </div> </li> 
+       <li> <p>A pop-up asking for type of configuration appears. Choose the <strong>Salesforce Analytics Cloud: Basic Authentication</strong> option and click <strong>OK</strong>.</p> </li> 
+       <li> <p>A new pop-up asks for information required for basic authentication. For more info see the <a href="#Installing and Configuring">Installing and Configuring</a> section</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/basic_authentication_config.png" alt="Basic Auth config"></span></p> 
+        </div> </li> 
+       <li> <p>In the <strong>Connection</strong> section enter the credentials used to access the Salesforce instance.</p> </li> 
+       <li> <p>In the <strong>DataSense metadata</strong> section for the <strong>Metadata file name</strong> field enter the filename that describes the data structure you are going to upload. The filename has to be relative to the <strong>src/main/resources</strong> directory of your Studio project. For the file provided a few steps earlier (CsvDemoTestData.csv) you can use the metadata file provided below, but do not forget to copy it into the <strong>src/main/resources</strong> directory.</p> 
+        <div class="paragraph"> 
+         <p><a href="_attachments/metadata.json">metadata.json</a></p> 
+        </div> </li> 
+       <li> <p>Click <strong>OK</strong> to return to the Salesforce Analytics Cloud tab.</p> </li> 
+       <li> <p>From the <strong>Operation</strong> dropdown in the <strong>Basic Settings</strong> section choose <strong>Create data set</strong>.</p> </li> 
+       <li> <p>From the <strong>Operation</strong> dropdown in the <strong>DataSet info</strong> section choose <strong>OVERWRITE</strong>.</p> </li> 
+       <li> <p>In the <strong>Description</strong> field enter <strong>Test data set</strong>.</p> </li> 
+       <li> <p>In the <strong>Label</strong> field under <strong>DataSet info</strong> enter <strong>Test data set</strong>.</p> </li> 
+       <li> <p>In the <strong>Name</strong> field under <strong>DataSet info</strong> enter <strong>test_data_set</strong>.</p> </li> 
+       <li> <p>Double-click on <strong>Message Enricher</strong> and fill in the fields as below.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/message_enricher_config.jpg" alt="Message Enricher Config"></span></p> 
+        </div> </li> 
+       <li> <p>Double-click on <strong>Batch Commit</strong> from <strong>Batch step</strong>.</p> </li> 
+       <li> <p>For <strong>Commit size</strong> enter the number of records you want to process in one step. (e.g. 5000)</p> 
+        <div class="admonitionblock note"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+            <td class="content"> The application is logging a warning message if the data provided for processing in one step exceeds the size of data accepted by Analytics Cloud System in one step. The message looks like this: "The size of data provided for processing in one step exceeded the maximum size of one chunk allowed by Analytics Cloud System. In order to optimize the memory used you should decrease the size of data provided in one step. If you see this message then you should tune the <strong>Commit Size</strong> by decreasing it until you do not see the message anymore. </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> </li> 
+       <li> <p>Double-click on <strong>Salesforce Analytics Cloud</strong> from <strong>Batch Commit</strong>.</p> </li> 
+       <li> <p>From the <strong>Connector configuration</strong> dropdown choose <strong>Salesforce_Analytics_Cloud__Basic_authentication</strong> (only this option should be available).</p> </li> 
+       <li> <p>Choose <strong>Upload external data</strong> as the operation.</p> </li> 
+       <li> <p>Check the bottom corner on the right-hand side and wait for DataSense to fetch metadata.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/fetch_metadata_bar.jpg" alt="Fetch metadata progress bar"></span></p> 
+        </div> </li> 
+       <li> <p>For <strong>Data Set Id</strong> enter <strong>#[variable:dataSetId]</strong></p> </li> 
+       <li> <p>Double-click on the <strong>DataMapper</strong> element.</p> </li> 
+       <li> <p>Click on the <strong>Type</strong> dropdown in the Input section and choose <strong>CSV</strong></p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/csv_list_record.png" alt="Data Mapper set CSV as input type"></span></p> 
+        </div> </li> 
+       <li> <p>Click on <code>…​</code> next to the <strong>CSV</strong> field of the Input section and browse to the csv file in the same folder you selected for the <strong>File</strong> connector.</p> </li> 
+       <li> <p>Click the <strong>Create mapping</strong> button and you should see something like the following.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/DM_mappings.png" alt="Data mapper mappings"></span></p> 
+        </div> </li> 
+       <li> <p>Double-click on <strong>Salesforce Analytics Cloud</strong> from the <strong>On complete</strong> section of <strong>Batch</strong>.</p> </li> 
+       <li> <p>From the <strong>Connector configuration</strong> dropdown select <strong>Salesforce_Analytics_Cloud__Basic_authentication</strong> (only this option should be available).</p> </li> 
+       <li> <p>From the <strong>Operation</strong> dropdown select <strong>Start data processing</strong>.</p> </li> 
+       <li> <p>In the <strong>Data Set Id</strong> field enter <code>#[variable:dataSetId]</code></p> </li> 
+       <li> <p>At this point, everything should be set up and the application can be deployed.</p> </li> 
+      </ol> 
+     </div> 
+     <div class="paragraph"> 
+      <p>It is time to test the application. Run the application in Anypoint Studio (Right click on the project name in Studio’s package explorer and select <strong>Run as -&gt; Mule Application</strong>). Monitor the studio console and check Salesforce Wave Analytics UI to see if the data was uploaded.</p> 
+     </div> 
+    </div> 
+    <div class="tab-pane fade no-padding" id="xml-editor-b6b65"> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Add sfdc-analytics namespace to mule element as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                 <td class="code"><pre>xmlns:sfdc-analytics="http://www.mulesoft.org/schema/mule/sfdc-analytics"</pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add location of analytics schema referred by sfdc-analytics namespace with the following value:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+               <td class="code"><pre>xmlns:sfdc-analytics="http://www.mulesoft.org/schema/mule/sfdc-analytics"</pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add location of analytics schema referred by sfdc-analytics namespace with the following value:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                 <td class="code"><pre>http://www.mulesoft.org/schema/mule/sfdc-analytics http://www.mulesoft.org/schema/mule/sfdc-analytics/current/mule-sfdc-analytics.xsd</pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add data-mapper namespace as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper"</code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add location of data mapper schema referred by data-mapper namespace with the following value:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+               <td class="code"><pre>http://www.mulesoft.org/schema/mule/sfdc-analytics http://www.mulesoft.org/schema/mule/sfdc-analytics/current/mule-sfdc-analytics.xsd</pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add data-mapper namespace as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper"</code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add location of data mapper schema referred by data-mapper namespace with the following value:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                 <td class="code"><pre>http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd</pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add a context:property-placeholder element to your project, then configure its attributes as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>context:property-placeholder location="mule-app.properties"/<span class="entity">&amp;gt;</span></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add a data-mapper:config element to your project, then configure its attributes as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+               <td class="code"><pre>http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd</pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a context:property-placeholder element to your project, then configure its attributes as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml"><span class="entity">&amp;lt;</span>context:property-placeholder location="mule-app.properties"/<span class="entity">&amp;gt;</span></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a data-mapper:config element to your project, then configure its attributes as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:config name="CSV_To_List_Record_" transformationGraphPath="csv_to_list_record_.grf" doc:name="CSV_To_List_Record_"/<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add a sfdc-analytics:config element to your project, then configure its attributes as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:config name="CSV_To_List_Record_" transformationGraphPath="csv_to_list_record_.grf" doc:name="CSV_To_List_Record_"/<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a sfdc-analytics:config element to your project, then configure its attributes as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:config name="Salesforce_Analytics_Cloud__Basic_authentication" username="${salesforce.username}" password="${salesforce.password}" securityToken="${salesforce.securityToken}" metadataFileName="${metadata.file.analytics}" doc:name="Salesforce Analytics Cloud: Basic authentication" url="${salesforce.url}"/<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add an empty batch:job element to your project as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:config name="Salesforce_Analytics_Cloud__Basic_authentication" username="${salesforce.username}" password="${salesforce.password}" securityToken="${salesforce.securityToken}" metadataFileName="${metadata.file.analytics}" doc:name="Salesforce Analytics Cloud: Basic authentication" url="${salesforce.url}"/<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add an empty batch:job element to your project as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2107,7 +2136,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 7
 8
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>batch:job name="demoBatch"<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>batch:job name="demoBatch"<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>batch:input<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>/batch:input<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>batch:process-records<span class="entity">&amp;gt;</span>
@@ -2115,171 +2144,171 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
     <span class="entity">&amp;lt;</span>batch:on-complete<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>/batch:on-complete<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add a file:inbound-endpoint element into batch:input of batch:job, then configure it as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a file:inbound-endpoint element into batch:input of batch:job, then configure it as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>file:inbound-endpoint path="path_to_folder_to_monitor" moveToDirectory="path_to_folder_where_to_move_processed_files" responseTimeout="10000"
+               <td class="code"><pre><span class="entity">&amp;lt;</span>file:inbound-endpoint path="path_to_folder_to_monitor" moveToDirectory="path_to_folder_where_to_move_processed_files" responseTimeout="10000"
                        doc:name="File For Batch"<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/file:inbound-endpoint<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add an empty enricher element into batch:input of batch:job, then configure it as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add an empty enricher element into batch:input of batch:job, then configure it as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>enricher source="#[payload]" target="#[variable:dataSetId]" doc:name="Message Enricher"<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>enricher source="#[payload]" target="#[variable:dataSetId]" doc:name="Message Enricher"<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/enricher<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add a sfdc-analytics:create-data-set element into enricher, then configure it as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a sfdc-analytics:create-data-set element into enricher, then configure it as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:create-data-set config-ref="Salesforce_Analytics_Cloud__Basic_authentication" operation="OVERWRITE" description="${batch.dataSetDescription}" label="${batch.dataSetLabel}" dataSetName="${batch.dataSetName}" edgemartContainer="${batch.dataSetEdgemartContainer}" notificationSent="ALWAYS" notificationEmail="name@email.com" doc:name="Salesforce Analytics Cloud"/<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add a data-mapper:transform element into batch:input of batch:job, then configure it as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:create-data-set config-ref="Salesforce_Analytics_Cloud__Basic_authentication" operation="OVERWRITE" description="${batch.dataSetDescription}" label="${batch.dataSetLabel}" dataSetName="${batch.dataSetName}" edgemartContainer="${batch.dataSetEdgemartContainer}" notificationSent="ALWAYS" notificationEmail="name@email.com" doc:name="Salesforce Analytics Cloud"/<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a data-mapper:transform element into batch:input of batch:job, then configure it as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:transform config-ref="CSV_To_List_Record_" doc:name="CSV To List<span class="entity">&amp;amp;</span>lt;Record<span class="entity">&amp;amp;</span>gt;"/<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add an empty batch:step element into batch:process-records of batch:job, then configure it as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:transform config-ref="CSV_To_List_Record_" doc:name="CSV To List<span class="entity">&amp;amp;</span>lt;Record<span class="entity">&amp;amp;</span>gt;"/<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add an empty batch:step element into batch:process-records of batch:job, then configure it as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>batch:step name="Batch_Step"<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>batch:step name="Batch_Step"<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/batch:step<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add an empty batch:commit element into batch:step of batch:process-records, then configure it as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add an empty batch:commit element into batch:step of batch:process-records, then configure it as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>batch:commit  doc:name="Batch Commit" size="3000"<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>batch:commit  doc:name="Batch Commit" size="3000"<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/batch:commit<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add a sfdc-analytics:upload-external-data element into batch:commit of batch:step of batch:process-records, then configure it as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a sfdc-analytics:upload-external-data element into batch:commit of batch:step of batch:process-records, then configure it as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 3
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:upload-external-data config-ref="Salesforce_Analytics_Cloud__Basic_authentication" type="recordId" dataSetId="#[variable:dataSetId]" doc:name="Salesforce Analytics Cloud"<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:upload-external-data config-ref="Salesforce_Analytics_Cloud__Basic_authentication" type="recordId" dataSetId="#[variable:dataSetId]" doc:name="Salesforce Analytics Cloud"<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>sfdc-analytics:payload ref="#[payload]"/<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/sfdc-analytics:upload-external-data<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>Add a sfdc-analytics:start-data-processing element into batch:on-complete of batch:job, then configure it as follows:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>Add a sfdc-analytics:start-data-processing element into batch:on-complete of batch:job, then configure it as follows:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:start-data-processing config-ref="Salesforce_Analytics_Cloud__Basic_authentication" dataSetId="#[variable:dataSetId]" doc:name="Salesforce Analytics Cloud"/<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-         <li> <p>In the end the xml file should look like this:</p> 
-          <div class="listingblock"> 
-           <div class="content"> 
-            <pre class="CodeRay highlight"><code data-lang="xml">
-         
-                 
-              <table class="CodeRay"> 
-               <tbody> 
-                <tr> 
-                 <td class="line-numbers"><pre>1
+               <td class="code"><pre><span class="entity">&amp;lt;</span>sfdc-analytics:start-data-processing config-ref="Salesforce_Analytics_Cloud__Basic_authentication" dataSetId="#[variable:dataSetId]" doc:name="Salesforce Analytics Cloud"/<span class="entity">&amp;gt;</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+       <li> <p>In the end the xml file should look like this:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="xml">
+       
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2324,7 +2353,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 43
 44
 </pre></td> 
-                 <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
+               <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>mule xmlns:batch="http://www.mulesoft.org/schema/mule/batch"
         xmlns:file="http://www.mulesoft.org/schema/mule/file"
         xmlns:context="http://www.springframework.org/schema/context"
@@ -2368,14 +2397,12 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
         <span class="entity">&amp;lt;</span>/batch:on-complete<span class="entity">&amp;gt;</span>
     <span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
-                </tr> 
-               </tbody> 
-              </table></code></pre> 
-           </div> 
-          </div> </li> 
-        </ol> 
-       </div> 
-      </div> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+      </ol> 
      </div> 
     </div> 
    </div> 
@@ -2387,7 +2414,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Learn about the <a href="/mule-user-guide/v/3.7/datamapper-user-guide-and-reference">Data Mapper</a> transformer, the most efficient way to assign mappings to data.</p> </li> 
+    <li> <p>Access the <a href="/release-notes/salesforce-analytics-cloud-connector-release-notes">Salesforce Analytics Cloud Connector Release Notes</a>.</p> </li> 
     <li> <p>Learn about <a href="/mule-user-guide/v/3.7/batch-processing">Batch Processing</a>.</p> </li> 
     <li> <p>Read more about <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>.</p> </li> 
    </ul> 
@@ -2398,7 +2425,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#requirements">Requirements</a></li><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#installing-and-configuring">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#example-use-cases">Example Use Cases</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#requirements">Requirements</a></li><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#installing-and-configuring">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#example-use-case-1">Example Use Case 1</a></li><li><a class="scroll-menu-link" href="#example-use-case-2">Example Use Case 2</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

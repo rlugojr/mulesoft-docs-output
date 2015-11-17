@@ -163,7 +163,7 @@
 <li>
 <i></i>
 <a href="/mule-fundamentals/v/3.7/first-30-minutes-with-mule">First 30 Minutes with Mule</a><ul>
-<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
+<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/glossary">Glossary</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-fundamentals/v/3.7/first-day-with-mule">First Day with Mule</a><ul>
@@ -1099,12 +1099,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-38b69" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-d0aeb" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-ee733" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-f7248" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-38b69"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ee733"> 
      <div class="paragraph"> 
       <p>Follow these steps to create an Oracle EBS global element:</p> 
      </div> 
@@ -1223,7 +1223,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-d0aeb"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-f7248"> 
      <div class="paragraph"> 
       <p>Ensure you have included the Oracle EBS namespaces in your configuration file.</p> 
      </div> 
@@ -1364,7 +1364,13 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
  <h2 id="using-the-connector"><a class="anchor" href="#using-the-connector"></a>Using the Connector</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Oracle EBS connector can be used both as a message source, if you wish to subscribe to queues, and as an operation-based connector, if your goal is to invoke web service operations. If you intend to subscribe to a queue or topic (such as the XML Gateway Outbound queue or the Business Events topic), you will need to drag the connector to the "Source" section of your flow. After doing so, and selecting a Connector Configuration, you will have to choose the queue/topic you wish to subscribe to, from the <strong>Operation</strong> dropdown. If you drag the connector to the "Process" section of your flow, you will need to select a web service operation and fill in its input parameters. If the operation you need to invoke is a PL/SQL function exposed as a web service, you will select the Invoke PL/SQL Operation, and then the PL/SQL and Function from the two dropdowns that appear below.</p> 
+   <p>Use the Oracle EBS connector as a message source if you wish to <strong>subscribe to queues</strong>, or as an operation-based connector, if your goal is to <strong>invoke web service operations</strong>.</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>To <strong>subscribe to a queue or topic</strong> (such as the XML Gateway Outbound queue or the Business Events topic), you need to drag the connector to the "Source" section of your flow. After doing so, and selecting a Connector Configuration, you will have to choose the queue/topic you wish to subscribe to, from the <strong>Operation</strong> dropdown.</p> </li> 
+    <li> <p>To <strong>invoke a web service operation</strong>, you must drag the connector to the "Process" section of your flow and fill in its input parameters. If the operation you need to invoke is a PL/SQL function exposed as a web service, select the <strong>Invoke PL/SQL</strong> Operation, and then make a selection from the <strong>PL/SQL</strong> and <strong>Function</strong> dropdown menus that appear in the General tab.</p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div> 
@@ -1372,783 +1378,552 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
  <h2 id="pl-sql-operation-use-case"><a class="anchor" href="#pl-sql-operation-use-case"></a>PL/SQL Operation Use Case</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The following is a common use case for the Oracle EBS connector:&nbsp;</p> 
+   <p>Continue below to walk through a basic example that executes a PL/SQL operation from the custom PL/SQL web service.</p> 
   </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Execute a PL/SQL operation from the custom PL/SQL web service.&nbsp;</p> </li> 
-   </ul> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="adding-to-a-flow"><a class="anchor" href="#adding-to-a-flow"></a>Adding to a Flow</h3> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Create a new Mule project in Anypoint Studio.</p> </li> 
-     <li> <p>Add a suitable Mule Inbound endpoint, such as the HTTP listener or File endpoint, to begin the flow.</p> </li> 
-     <li> <p>Drag the Oracle EBS connector onto the canvas, then select it to open the properties editor.</p> </li> 
-     <li> <p>Configure the connector’s parameters according to the table below.</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/oracle_ebs_config.png" alt="oracle_ebs_config"></span></p> 
-      </div> 
-      <table class="tableblock frame-all grid-all spread"> 
-       <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-       </colgroup> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a unique label for the connector in your application.</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Connect to a global element linked to this connector. Global elements encapsulate reusable data about the connection to the target resource or service. Select the global Oracle EBS connector element that you just created.</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Select the operation from the dropdown. You can select any of the operations displayed or the <strong>Invoke PL/SQL</strong> operation, which allows you to execute a web service published from PL/SQL.</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Params</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Complete the parameters needed for the operation selected. If the <strong>Invoke PL/SQL</strong> operation is selected, you need to select the <strong>PL/SQL</strong> and <strong>Function</strong> parameters with an operation to be executed.</p></td> 
-        </tr> 
-       </tbody> 
-      </table> </li> 
-     <li> <p>Click the blank space on the canvas to save your configurations.</p> </li> 
-     <li> <p>If you select the <strong>Invoke PL/SQL</strong> operation, you need to add a <strong>DataMapper</strong> transformer to map the values from the flow to the input parameters for the PL/SQL operation.</p> </li> 
-    </ol> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-702c3" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-89df4" role="tab" data-toggle="tab">XML Editor</a></li> 
+    </ul> 
    </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="example-use-case"><a class="anchor" href="#example-use-case"></a>Example Use Case</h3> 
-   <div class="paragraph"> 
-    <p>Execute a custom PL/SQL operation from the custom PL/SQL web service.&nbsp;</p> 
-   </div> 
-   <div class="panel panel-default no-padding"> 
-    <div class="panel-heading no-padding"> 
-     <!-- Nav tabs --> 
-     <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-a10cb" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-34769" role="tab" data-toggle="tab">XML Editor</a></li> 
-     </ul> 
-    </div> 
-    <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a10cb"> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/oracle_ebs_example_flow.png" alt="oracle_ebs_example_flow"></span></p> 
-      </div> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>Create a Mule project in Anypoint Studio.</p> </li> 
-        <li> <p>Drag an HTTP connector onto the canvas, then select it to open the properties editor console.</p> </li> 
-        <li> <p>Add a new HTTP Listener Configuration global element:</p> 
-         <div class="olist loweralpha"> 
-          <ol class="loweralpha" type="a"> 
-           <li> <p>In&nbsp;<strong>General Settings</strong>, click the plus sign&nbsp;(<strong>+</strong>):</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/HTTP-1.png" alt="HTTP-1"></span></p> 
-            </div> </li> 
-           <li> <p>Configure the following HTTP parameters:</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/oracle_ebs_http_params.png" alt="oracle_ebs_http_params"></span></p> 
-            </div> 
-            <table class="tableblock frame-all grid-all spread"> 
-             <colgroup> 
-              <col style="width: 50%;"> 
-              <col style="width: 50%;"> 
-             </colgroup> 
-             <thead> 
-              <tr> 
-               <th class="tableblock halign-left valign-top">Field</th> 
-               <th class="tableblock halign-left valign-top">Value</th> 
-              </tr> 
-             </thead> 
-             <tbody> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Port</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>8090</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Host</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>localhost</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Display Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>HTTP_Listener_Configuration</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-             </tbody> 
-            </table> </li> 
-           <li> <p>Reference the HTTP Listener Configuration global element:</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/httpconfig.png" alt="httpconfig"></span></p> 
-            </div> </li> 
-          </ol> 
-         </div> </li> 
-        <li> <p>Drag the Oracle EBS connector, then configure it according to the steps below:</p> 
-         <div class="olist loweralpha"> 
-          <ol class="loweralpha" type="a"> 
-           <li> <p>Add a new Oracle EBS Global Element by clicking the plus sign (<strong>+</strong>).</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/connectorconfig.png" alt="connectorconfig"></span></p> 
-            </div> </li> 
-           <li> <p>Configure the global element according to the table below:</p> 
-            <table class="tableblock frame-all grid-all spread"> 
-             <colgroup> 
-              <col style="width: 50%;"> 
-              <col style="width: 50%;"> 
-             </colgroup> 
-             <thead> 
-              <tr> 
-               <th class="tableblock halign-left valign-top">Field</th> 
-               <th class="tableblock halign-left valign-top">Description</th> 
-              </tr> 
-             </thead> 
-             <tbody> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter a name you prefer</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Username</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Username to log into Oracle EBS web services.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Password</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Password for the username.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Host</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the host of the Oracle EBS instance.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Port</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the port of the Oracle EBS web services.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>DB Username</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Username for the Oracle EBS database.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>DB Password</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the password for the username.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>DB Host</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the host of the Oracle EBS database is located.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>DB Port</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the port of the Oracle EBS database.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Database SID</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the SID of the database.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Responsibility Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the responsibility name that is needed to execute the operation.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Responsibility Appl. Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the application short name that is needed to execute the operation.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Security Group Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the security group key of the Oracle EBS instance (optional).</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>NLS language</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the NLS language of the Oracle EBS instance (optional).</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Org. ID</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the organization ID of the Oracle EBS instance (optional).</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Custom PL/SQL web services</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Select <strong>Create Object manually</strong>, click the button on the right and add all custom PL/SQL web services you want to execute. In the example we use FND_WEB_SEC.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Required dependencies</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Select the location in your local file system for the Oracle AQ API and Oracle JDBC Driver. Both are used in the Test Connection process and subscription to queues and topics.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-             </tbody> 
-            </table> </li> 
-           <li> <p>Click <strong>Test Connection</strong> to confirm that Mule can connect with the Oracle EBS instance. If the connection is successful, click <strong>OK</strong> to save the configurations. If unsuccessful, revise or correct any incorrect parameters, then test again.</p> </li> 
-          </ol> 
-         </div> </li> 
-        <li> <p>Back in the properties editor of the Oracle EBS connector, configure the remaining parameters according to the table below:</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/oracle_ebs_connector_operation_config.png" alt="oracle_ebs_connector_operation_config"></span></p> 
-         </div> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: %;"> 
-           <col style="width: %;"> 
-          </colgroup> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Testing custom PL/SQL operation (or any other name you prefer)</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Oracle (Enter name of the global element you have created)</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Invoke PL/SQL</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PL/SQL</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Fnd Web Sec (custom)</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Function</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Validate Login</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Input Reference</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">From Message <code>#[payload]</code></p></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p>Add a <strong>DataMapper</strong> transformer between the HTTP endpoint and the Oracle EBS connector to map the data in the HTTP endpoint to the structure required by the Oracle EBS connector.</p> </li> 
-        <li> <p>Configure the Input properties of the DataMapper according to the steps below.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/datamapper.png" alt="datamapper"></span></p> 
-         </div> 
-         <div class="olist loweralpha"> 
-          <ol class="loweralpha" type="a"> 
-           <li> <p>In the <strong>Source</strong> field, select <strong>Inbound Property - http.query.params</strong> and click the <span class="image"><img src="./_images/edit_button.png" alt="edit_button"></span>(Edit) button located to the right of the <strong>Type</strong> drop-down list.</p> </li> 
-           <li> <p>In the <strong>Type</strong> field, select <strong>Map&lt;k,v&gt;</strong></p> </li> 
-           <li> <p>Select <strong>User Defined</strong> and then click the <strong>Create/Edit Structure</strong> button:</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/queryParamsDataMapper.png" alt="queryParamsDataMapper"></span></p> 
-            </div> 
-            <div class="olist lowerroman"> 
-             <ol class="lowerroman" type="i"> 
-              <li> <p>Add a name to the structure. In the example it is <strong>queryParams</strong>.</p> </li> 
-              <li> <p>In the <strong>Type</strong> dropdown select <strong>Element</strong></p> </li> 
-              <li> <p>Click the plus sign (<strong>+</strong>) and add a name to the field_0. In the example it is <strong>user</strong>.</p> </li> 
-              <li> <p>Click the plus sign (<strong>+</strong>) again and add a name to the field_1. In the example it is <strong>password</strong>.</p> </li> 
-              <li> <p>In the Output section of the DataMapper, specify the applicable output data type (e.g. xml), so the connector may perform the Validate Login operation specified earlier</p> </li> 
-             </ol> 
-            </div> </li> 
-          </ol> 
-         </div> </li> 
-        <li> <p>Add a <strong>DOM to XML</strong> transformer after the Oracle EBS Connector.</p> </li> 
-        <li> <p>Add a <strong>Logger</strong> scope right after the DOM to XML Transformer, to print the data that is being received from the Oracle EBS connector in the Mule Console. Configure the Logger according to the table below:</p> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top"><strong>Field</strong></th> 
-            <th class="tableblock halign-left valign-top"><strong>Value</strong></th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Display Name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Logger (or any other name you prefer)</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Message</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Output from Transformer is&nbsp;<code>"### EBS Test #[payload]"</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Level</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>INFO (Default)</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p>Add a <strong>Catch Exception Strategy</strong> and add a logger component inside it. Configure the logger message attribute with <code>#[payload]</code>, and set the level to ERROR.</p> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top"><strong>Field</strong></th> 
-            <th class="tableblock halign-left valign-top"><strong>Value</strong></th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Display Name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Logger (or any other name you prefer)</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Message</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Error: #[payload]</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Level</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>ERROR</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p>Save and run the project as a Mule Application.</p> </li> 
-       </ol> 
-      </div> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-702c3"> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/oracle_ebs_example_flow.png" alt="oracle_ebs_example_flow"></span></p> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-34769"> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>Add an oracle:config global element to your project, then configure its attributes as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>oracle-ebs:config name="OracleEBS__Configuration" username="${username}" password="${password}" host="${host}" port="${port}" dbUser="${dbUser}" dbPassword="${dbPassword}" dbHost="${dbHost}" dbPort="${dbPort}" dbSid="${dbSid}" responsibilityName="${responsibilityName}" responsibilityApplName="${responsibilityApplName}" doc:name="OracleEBS: Configuration"<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Do the same, but configure the HTTP endpoint as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Configure your Oracle EBS custom PL/SQL web services in the Mule application. To do so, find the <code>&lt;oracle-ebs:custom-pl-sql-name-list&gt;</code> internal tag and replace it with the following:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>FND_WEB_SEC<span class="entity">&amp;lt;</span>/oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Begin the flow with a HTTP endpoint, configuring the endpoint as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/get" allowedMethods="GET" doc:name="HTTP"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add a Data Mapper to the flow to map the data in the input parameters for the custom PL/SQL operation.</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>data-mapper:transform config-ref="Map_To_Xml_InputParameters_"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input-ref="#[message.inboundProperties[<span class="entity">&amp;amp;</span>quot;http.query.params<span class="entity">&amp;amp;</span>quot;]]"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Map To Xml<span class="entity">&amp;amp;</span>lt;InputParameters<span class="entity">&amp;amp;</span>gt;"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add the oracle:invoke-operation element now to validate login in your Oracle EBS instance.&nbsp;</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>oracle-ebs:invoke-pl-sql config-ref="OracleEBS__Configuration" type="fnd_web_sec||VALIDATE_LOGIN" doc:name="Testing custom PL/SQL operation"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add&nbsp;a DOM to XML Transformer.</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>mulexml:dom-to-xml-transformer doc:name="DOM to XML"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add &nbsp;a logger component and set message attribute value to <em><mark>#</mark> EBS Test #[payload]</em></p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>logger message="### EBS Test #[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add a Catch Exception Strategy and add logger inside it. Configure the logger message attribute with <strong>#</strong> <em>[payload]</em>, and set the level to <em>ERROR<strong>.</strong></em></p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-2
-3
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>catch-exception-strategy doc:name="Catch Exception Strategy"<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger message="Error: #[payload]" level="ERROR" doc:name="Logger"/<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Save and run the project as a Mule Application.</p> </li> 
-       </ol> 
-      </div> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Create a Mule project in Anypoint Studio.</p> </li> 
+       <li> <p>Drag an HTTP connector onto the canvas, then select it to open the properties editor console.</p> </li> 
+       <li> <p>Add a new HTTP Listener Configuration global element:</p> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>In&nbsp;<strong>General Settings</strong>, click the plus sign&nbsp;(<strong>+</strong>):</p> 
+           <div class="paragraph"> 
+            <p><span class="image"><img src="./_images/HTTP-1.png" alt="HTTP-1"></span></p> 
+           </div> </li> 
+          <li> <p>Configure the following HTTP parameters:</p> 
+           <table class="tableblock frame-all grid-all spread"> 
+            <colgroup> 
+             <col style="width: 50%;"> 
+             <col style="width: 50%;"> 
+            </colgroup> 
+            <thead> 
+             <tr> 
+              <th class="tableblock halign-left valign-top">Field</th> 
+              <th class="tableblock halign-left valign-top">Value</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Display Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>HTTP_Listener_Configuration</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Port</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>8081</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+            </tbody> 
+           </table> </li> 
+          <li> <p>Reference the HTTP Listener Configuration global element:</p> 
+           <div class="paragraph"> 
+            <p><span class="image"><img src="./_images/httpconfig.png" alt="httpconfig"></span></p> 
+           </div> </li> 
+         </ol> 
+        </div> </li> 
+       <li> <p>Drag the Oracle EBS connector, then configure it according to the steps below:</p> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>Add a new Oracle EBS Global Element by clicking the plus sign (<strong>+</strong>).</p> 
+           <div class="paragraph"> 
+            <p><span class="image"><img src="./_images/connectorconfig.png" alt="connectorconfig"></span></p> 
+           </div> </li> 
+          <li> <p>Configure the global element according to the table below:</p> 
+           <table class="tableblock frame-all grid-all spread"> 
+            <colgroup> 
+             <col style="width: 50%;"> 
+             <col style="width: 50%;"> 
+            </colgroup> 
+            <thead> 
+             <tr> 
+              <th class="tableblock halign-left valign-top">Field</th> 
+              <th class="tableblock halign-left valign-top">Description</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter a name you prefer</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Username</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Username to log into Oracle EBS web services.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Password</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Password for the username.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Host</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the host of the Oracle EBS instance.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Port</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the port of the Oracle EBS web services.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>DB Username</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Username for the Oracle EBS database.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>DB Password</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the password for the username.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>DB Host</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the host of the Oracle EBS database is located.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>DB Port</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the port of the Oracle EBS database.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Database SID</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the SID of the database.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Responsibility Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the responsibility name that is needed to execute the operation.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Responsibility Appl. Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the application short name that is needed to execute the operation.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Security Group Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the security group key of the Oracle EBS instance (optional).</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>NLS language</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the NLS language of the Oracle EBS instance (optional).</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Org. ID</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the organization ID of the Oracle EBS instance (optional).</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Custom PL/SQL web services</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Select <strong>Create Object manually</strong>, click the button on the right and add all custom PL/SQL web services you want to execute. In the example we use FND_WEB_SEC.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Required dependencies</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Select the location in your local file system for the Oracle AQ API and Oracle JDBC Driver. Both are used in the Test Connection process and subscription to queues and topics.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+            </tbody> 
+           </table> </li> 
+          <li> <p>Click <strong>Test Connection</strong> to confirm that Mule can connect with the Oracle EBS instance. If the connection is successful, click <strong>OK</strong> to save the configurations. If unsuccessful, revise or correct any incorrect parameters, then test again.</p> </li> 
+         </ol> 
+        </div> </li> 
+       <li> <p>Back in the properties editor of the Oracle EBS connector, configure the remaining parameters according to the table below:</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/oracle_ebs_connector_operation_config.png" alt="oracle_ebs_connector_operation_config"></span></p> 
+        </div> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: %;"> 
+          <col style="width: %;"> 
+         </colgroup> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Testing custom PL/SQL operation (or any other name you prefer)</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Oracle (Enter name of the global element you have created)</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Invoke PL/SQL</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PL/SQL</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Fnd Web Sec (custom)</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Function</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Validate Login</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Input Reference</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">From Message <code>#[payload]</code></p></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>Add a <strong>Transform Message</strong> transformer between the HTTP endpoint and the Oracle EBS connector to map the data in the HTTP endpoint to the structure required by the Oracle EBS connector.</p> </li> 
+       <li> <p>Configure the Input properties of the DataMapper according to the steps below.</p> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>On the left, under the <strong>Inbound Properties</strong> tree, click on <strong>http.query.params</strong> and then click on the <strong>Edit</strong> button. Enter the following code:</p> 
+           <div class="listingblock"> 
+            <div class="content"> 
+             <pre>%dw 1.0
+%output application/java
+---
+{
+	"user": "sampleUser",
+	"password": "samplePassword"
+}</pre> 
+            </div> 
+           </div> </li> 
+          <li> <p>Enter the following DataWeave code into the main <strong>Transform Message</strong> text window:</p> 
+           <div class="listingblock"> 
+            <div class="content"> 
+             <pre>%dw 1.0
+%output application/xml
+%namespace ns0
+http://xmlns.oracle.com/apps/fnd/soaprovider/plsql/fnd_web_sec/validate_login/
+---
+{
+	ns0#InputParameters: {
+		ns0#"P_USER": inboundProperties."http.query.params".user,
+		ns0#"P_PWD": inboundProperties."http.query.params".password
+	}
+}</pre> 
+            </div> 
+           </div> 
+           <div class="paragraph"> 
+            <p><span class="image"><img src="./_images/queryParamsDataMapper.png" alt="queryParamsDataMapper"></span></p> 
+           </div> </li> 
+         </ol> 
+        </div> </li> 
+       <li> <p>Add a <strong>DOM to XML</strong> transformer after the Oracle EBS Connector.</p> </li> 
+       <li> <p>Add a <strong>Logger</strong> scope right after the DOM to XML Transformer, to print the data that is being received from the Oracle EBS connector in the Mule Console. Configure the Logger according to the table below:</p> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: 50%;"> 
+          <col style="width: 50%;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top"><strong>Field</strong></th> 
+           <th class="tableblock halign-left valign-top"><strong>Value</strong></th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Display Name</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p>Logger (or any other name you prefer)</p> 
+             </div> 
+            </div></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Message</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p>Output from Transformer is&nbsp;<code>"### EBS Test #[payload]"</code></p> 
+             </div> 
+            </div></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Level</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p>INFO (Default)</p> 
+             </div> 
+            </div></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>Add a <strong>Catch Exception Strategy</strong> and add a logger component inside it. Configure the logger message attribute with <code>#[payload]</code>, and set the level to ERROR.</p> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: 50%;"> 
+          <col style="width: 50%;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top"><strong>Field</strong></th> 
+           <th class="tableblock halign-left valign-top"><strong>Value</strong></th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Display Name</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p>Logger (or any other name you prefer)</p> 
+             </div> 
+            </div></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Message</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p>Error: #[payload]</p> 
+             </div> 
+            </div></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Level</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p>ERROR</p> 
+             </div> 
+            </div></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>Save and run the project as a Mule Application.</p> </li> 
+      </ol> 
      </div> 
     </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="example-code"><a class="anchor" href="#example-code"></a>Example Code</h3> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+    <div class="tab-pane fade no-padding" id="xml-editor-89df4"> 
+     <div class="sect2"> 
+      <h3 id="example-code"><a class="anchor" href="#example-code"></a>Example Code</h3> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+     
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2179,39 +1954,42 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
 29
 <strong>30</strong>
 </pre></td> 
-          <td class="code"><pre><span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:mulexml</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/xml</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:data-mapper</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/data-mapper</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:oracle-ebs</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/oracle-ebs</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:json</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/json</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
-<span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.6.1</span><span class="delimiter">"</span></span>
-<span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-<span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/core</span>
-<span class="content">http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/http</span>
-<span class="content">http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/oracle-ebs http://www.mulesoft.org/schema/mule/oracle-ebs/current/mule-oracle-ebs.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;oracle-ebs:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">OracleEBS__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${username}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${password}</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${port}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbUser</span>=<span class="string"><span class="delimiter">"</span><span class="content">${db.username}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbPassword</span>=<span class="string"><span class="delimiter">"</span><span class="content">${db.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbHost</span>=<span class="string"><span class="delimiter">"</span><span class="content">${db.host}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbPort</span>=<span class="string"><span class="delimiter">"</span><span class="content">${db.port}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbSid</span>=<span class="string"><span class="delimiter">"</span><span class="content">${db.sid}</span><span class="delimiter">"</span></span> <span class="attribute-name">responsibilityName</span>=<span class="string"><span class="delimiter">"</span><span class="content">${responsibilityName}</span><span class="delimiter">"</span></span> <span class="attribute-name">responsibilityApplName</span>=<span class="string"><span class="delimiter">"</span><span class="content">${responsibilityApplName}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">OracleEBS: Configuration</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;oracle-ebs:custom-pl-sql-name-list&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;oracle-ebs:custom-pl-sql-name-list&gt;</span>FND_WEB_SEC<span class="tag">&lt;/oracle-ebs:custom-pl-sql-name-list&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/oracle-ebs:custom-pl-sql-name-list&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/oracle-ebs:config-name&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Map_To_Xml_InputParameters_</span><span class="delimiter">"</span></span> <span class="attribute-name">transformationGraphPath</span>=<span class="string"><span class="delimiter">"</span><span class="content">map_to_xml_inputparameters_.grf</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Map_To_Xml_InputParameters_</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">oracle-ebs-exampleFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:transform</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Map_To_Xml_InputParameters_</span><span class="delimiter">"</span></span> <span class="attribute-name">input-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties[</span><span class="entity">&amp;quot;</span><span class="content">http.query.params</span><span class="entity">&amp;quot;</span><span class="content">]]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Map To Xml</span><span class="entity">&amp;lt;</span><span class="content">InputParameters</span><span class="entity">&amp;gt;</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;oracle-ebs:invoke-pl-sql</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">OracleEBS__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">fnd_web_sec||VALIDATE_LOGIN</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">OracleEBS</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;mulexml:dom-to-xml-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">DOM to XML</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">### EBS Test #[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;catch-exception-strategy</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">oracle-ebs-exampleCatch_Exception_Strategy</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">ERROR</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/catch-exception-strategy&gt;</span>
-<span class="tag">&lt;/mule&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+             <td class="code"><pre><span class="entity">&amp;lt;</span>mule xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:oracle-ebs="http://www.mulesoft.org/schema/mule/oracle-ebs" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.6.1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core
+http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http
+http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/oracle-ebs http://www.mulesoft.org/schema/mule/oracle-ebs/current/mule-oracle-ebs.xsd
+http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd"<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>oracle-ebs:config name="OracleEBS__Configuration" username="${username}" password="${password}" host="${host}" port="${port}" dbUser="${db.username}" dbPassword="${db.password}" dbHost="${db.host}" dbPort="${db.port}" dbSid="${db.sid}" responsibilityName="${responsibilityName}" responsibilityApplName="${responsibilityApplName}" doc:name="OracleEBS: Configuration"<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>
+            <span class="entity">&amp;lt;</span>oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>FND_WEB_SEC<span class="entity">&amp;lt;</span>/oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>/oracle-ebs:custom-pl-sql-name-list<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>/oracle-ebs:config-name<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>data-mapper:config name="Map_To_Xml_InputParameters_" transformationGraphPath="map_to_xml_inputparameters_.grf" doc:name="Map_To_Xml_InputParameters_"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>flow name="oracle-ebs-exampleFlow"<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>data-mapper:transform config-ref="Map_To_Xml_InputParameters_" input-ref="#[message.inboundProperties["http.query.params"]]" doc:name="Map To Xml<span class="entity">&amp;lt;</span>InputParameters<span class="entity">&amp;gt;</span>"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>oracle-ebs:invoke-pl-sql config-ref="OracleEBS__Configuration" type="fnd_web_sec||VALIDATE_LOGIN" doc:name="OracleEBS"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>mulexml:dom-to-xml-transformer doc:name="DOM to XML"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>logger message="### EBS Test #[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>catch-exception-strategy name="oracle-ebs-exampleCatch_Exception_Strategy"<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>logger message="#[payload]" level="ERROR" doc:name="Logger"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>/catch-exception-strategy<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+     </div> 
     </div> 
    </div> 
   </div> 
@@ -2221,490 +1999,389 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
  <h2 id="business-events-use-case"><a class="anchor" href="#business-events-use-case"></a>Business Events Use Case</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This use case describes how a basic flow should be configured in order to use the connector as a source. More specifically, this sample will subscribe to the Business Events topic and log all messages that arrive from it.</p> 
+   <p>This use case describes how a basic flow should be configured in order to use the connector as a source. More specifically, this sample application will subscribe to the Business Events topic and log all messages that arrive from this topic.</p> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="adding-to-a-flow-2"><a class="anchor" href="#adding-to-a-flow-2"></a>Adding to a Flow</h3> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Create a new Mule project in Anypoint Studio.</p> </li> 
-     <li> <p>Drag a new Flow scope element onto the canvas.</p> </li> 
-     <li> <p>Add an Oracle EBS connector as an Inbound endpoint at the beginning of the flow.</p> </li> 
-     <li> <p>Drag a Logger to the Process section of the flow.</p> </li> 
-     <li> <p>Configure the connector’s parameters according to the table below.</p> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/oracle_ebs_config_source_2.png" alt="oracle_ebs_config_source_2"></span></p> 
-      </div> 
-      <table class="tableblock frame-all grid-all spread"> 
-       <colgroup> 
-        <col style="width: %;"> 
-        <col style="width: %;"> 
-       </colgroup> 
-       <tbody> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a unique label for the connector in your application.</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Connect to a global element linked to this connector. Global elements encapsulate reusable data about the connection to the target resource or service. Select the global Oracle EBS connector element that you just created.</p></td> 
-        </tr> 
-        <tr> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-         <td class="tableblock halign-left valign-top"><p class="tableblock">Select the queue or topic you wish to subscribe to from the dropdown. In this example, we will select Business Events, but you could also pick XML Gateway Outbound.</p></td> 
-        </tr> 
-       </tbody> 
-      </table> </li> 
-     <li> <p>Click the blank space on the canvas to save your configurations.</p> </li> 
-    </ol> 
+  <div class="panel panel-default no-padding"> 
+   <div class="panel-heading no-padding"> 
+    <!-- Nav tabs --> 
+    <ul class="nav nav-tabs" role="tablist"> 
+     <li class="active"><a href="#studio-visual-editor-4092d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-4a827" role="tab" data-toggle="tab">XML Editor</a></li> 
+    </ul> 
    </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="example-use-case-2"><a class="anchor" href="#example-use-case-2"></a>Example Use Case</h3> 
-   <div class="paragraph"> 
-    <p>Subscribe to the Business Events topic.</p> 
-   </div> 
-   <div class="panel panel-default no-padding"> 
-    <div class="panel-heading no-padding"> 
-     <!-- Nav tabs --> 
-     <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-34986" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-editor-a982a" role="tab" data-toggle="tab">XML Editor</a></li> 
-     </ul> 
-    </div> 
-    <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-34986"> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/oracle_ebs_example_flow_source.png" alt="oracle_ebs_example_flow_source"></span></p> 
-      </div> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>Create a Mule project in your Anypoint Studio.</p> </li> 
-        <li> <p>Drag a Flow into the canvas.</p> </li> 
-        <li> <p>Drag the Oracle EBS connector into the Source section of the flow, then configure it according to the steps below:</p> 
-         <div class="olist loweralpha"> 
-          <ol class="loweralpha" type="a"> 
-           <li> <p>Add a new Oracle EBS Global Element by clicking the plus sign (<strong>+</strong>).</p> 
-            <div class="paragraph"> 
-             <p><span class="image"><img src="./_images/connectorconfig_source.png" alt="connectorconfig_source"></span></p> 
-            </div> </li> 
-           <li> <p>Configure the global element according to the table below:</p> 
-            <table class="tableblock frame-all grid-all spread"> 
-             <colgroup> 
-              <col style="width: 50%;"> 
-              <col style="width: 50%;"> 
-             </colgroup> 
-             <thead> 
-              <tr> 
-               <th class="tableblock halign-left valign-top">Field</th> 
-               <th class="tableblock halign-left valign-top">Description</th> 
-              </tr> 
-             </thead> 
-             <tbody> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter a name you prefer</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Username</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Username to log into Oracle EBS web services.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Password</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Password for the username.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Host</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the host of the Oracle EBS instance.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Port</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the port of the Oracle EBS web services.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>DB Username</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Username for the Oracle EBS database.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>DB Password</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the password for the username.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>DB Host</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the host of the Oracle EBS database is located.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>DB Port</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the port of the Oracle EBS database.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Database SID</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the SID of the database.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Responsibility Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the responsibility name that is needed to execute the operation.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Responsibility Appl. Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the application short name that is needed to execute the operation.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Security Group Name</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the security group key of the Oracle EBS instance (optional).</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>NLS language</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the NLS language of the Oracle EBS instance (optional).</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Org. ID</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Enter the organization ID of the Oracle EBS instance (optional).</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Custom PL/SQL web services</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Select <strong>None</strong>.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-              <tr> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p><strong>Required dependencies</strong></p> 
-                 </div> 
-                </div></td> 
-               <td class="tableblock halign-left valign-top"> 
-                <div> 
-                 <div class="paragraph"> 
-                  <p>Select the location in your local file system for the Oracle AQ API and Oracle JDBC Driver. Both are used in the Test Connection process and subscription to queues and topics.</p> 
-                 </div> 
-                </div></td> 
-              </tr> 
-             </tbody> 
-            </table> </li> 
-           <li> <p>Click <strong>Test Connection</strong> to confirm that Mule can connect with the Oracle EBS instance. If the connection is successful, click <strong>OK</strong> to save the configurations. If unsuccessful, revise or correct any incorrect parameters, then test again.</p> </li> 
-          </ol> 
-         </div> </li> 
-        <li> <p>Back in the properties editor of the Oracle EBS connector, configure the remaining parameters according to the table below:</p> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: %;"> 
-           <col style="width: %;"> 
-          </colgroup> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Business Events (or any other name you prefer)</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">OracleEBS__Configuration (Enter name of the global element you have created)</p></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock">Business events</p></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p>Add a <strong>Logger</strong> scope right after the EBS Connector, to print the messages received from the Business Events topic in the Mule Console. Configure the Logger according to the table below:</p> 
-         <table class="tableblock frame-all grid-all spread"> 
-          <colgroup> 
-           <col style="width: 50%;"> 
-           <col style="width: 50%;"> 
-          </colgroup> 
-          <thead> 
-           <tr> 
-            <th class="tableblock halign-left valign-top"><strong>Field</strong></th> 
-            <th class="tableblock halign-left valign-top"><strong>Value</strong></th> 
-           </tr> 
-          </thead> 
-          <tbody> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Display Name</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>Logger (or any other name you prefer)</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Message</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><code>#[payload]</code></p> 
-              </div> 
-             </div></td> 
-           </tr> 
-           <tr> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p><strong>Level</strong></p> 
-              </div> 
-             </div></td> 
-            <td class="tableblock halign-left valign-top"> 
-             <div> 
-              <div class="paragraph"> 
-               <p>INFO (Default)</p> 
-              </div> 
-             </div></td> 
-           </tr> 
-          </tbody> 
-         </table> </li> 
-        <li> <p>Save and run the project as a Mule Application.</p> </li> 
-       </ol> 
-      </div> 
+   <div class="panel-body tab-content no-padding"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4092d"> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/oracle_ebs_example_flow_source.png" alt="oracle_ebs_example_flow_source"></span></p> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-editor-a982a"> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>Add an oracle:config global element to your project, then configure its attributes as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>oracle-ebs:config name="OracleEBS__Configuration" username="${username}" password="${password}" host="${host}" port="${port}" dbUser="${dbUser}" dbPassword="${dbPassword}" dbHost="${dbHost}" dbPort="${dbPort}" dbSid="${dbSid}" responsibilityName="${responsibilityName}" responsibilityApplName="${responsibilityApplName}" doc:name="OracleEBS: Configuration"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Begin the flow with a Oracle EBS connector source, configuring the endpoint as follows:</p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>oracle-ebs:business-events config-ref="OracleEBS__Configuration" doc:name="OracleEBS (Streaming)"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Add &nbsp;a logger component and set message attribute value to <em>#[payload]</em></p> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre class="CodeRay highlight"><code data-lang="xml">
-       
-                
-             <table class="CodeRay"> 
-              <tbody> 
-               <tr> 
-                <td class="line-numbers"><pre>1
-</pre></td> 
-                <td class="code"><pre><span class="entity">&amp;lt;</span>logger message="#[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span></pre></td> 
-               </tr> 
-              </tbody> 
-             </table></code></pre> 
-          </div> 
-         </div> </li> 
-        <li> <p>Save and run the project as a Mule Application.</p> </li> 
-       </ol> 
-      </div> 
+     <div class="olist arabic"> 
+      <ol class="arabic"> 
+       <li> <p>Create a new Mule project in Anypoint Studio.</p> </li> 
+       <li> <p>Drag a new <strong>Flow</strong> scope element onto the canvas.</p> </li> 
+       <li> <p>Add an Oracle EBS connector as an inbound endpoint at the beginning of the flow.</p> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/oracle_ebs_config_source_2.png" alt="oracle_ebs_config_source_2"></span></p> 
+        </div> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>Add a new Oracle EBS Global Element by clicking the plus sign (<strong>+</strong>).</p> 
+           <div class="paragraph"> 
+            <p><span class="image"><img src="./_images/connectorconfig_source.png" alt="connectorconfig_source"></span></p> 
+           </div> </li> 
+          <li> <p>Configure the global element according to the table below:</p> 
+           <table class="tableblock frame-all grid-all spread"> 
+            <colgroup> 
+             <col style="width: 50%;"> 
+             <col style="width: 50%;"> 
+            </colgroup> 
+            <thead> 
+             <tr> 
+              <th class="tableblock halign-left valign-top">Field</th> 
+              <th class="tableblock halign-left valign-top">Description</th> 
+             </tr> 
+            </thead> 
+            <tbody> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter a name you prefer</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Username</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Username to log into Oracle EBS web services.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Password</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Password for the username.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Host</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the host of the Oracle EBS instance.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Port</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the port of the Oracle EBS web services.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>DB Username</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Username for the Oracle EBS database.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>DB Password</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the password for the username.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>DB Host</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the host of the Oracle EBS database is located.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>DB Port</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the port of the Oracle EBS database.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Database SID</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the SID of the database.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Responsibility Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the responsibility name that is needed to execute the operation.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Responsibility Appl. Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the application short name that is needed to execute the operation.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Security Group Name</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the security group key of the Oracle EBS instance (optional).</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>NLS language</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the NLS language of the Oracle EBS instance (optional).</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Org. ID</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Enter the organization ID of the Oracle EBS instance (optional).</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Custom PL/SQL web services</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Select <strong>None</strong>.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p><strong>Required dependencies</strong></p> 
+                </div> 
+               </div></td> 
+              <td class="tableblock halign-left valign-top"> 
+               <div> 
+                <div class="paragraph"> 
+                 <p>Select the location in your local file system for the Oracle AQ API and Oracle JDBC Driver. Both are used in the Test Connection process and subscription to queues and topics.</p> 
+                </div> 
+               </div></td> 
+             </tr> 
+            </tbody> 
+           </table> </li> 
+          <li> <p>Click <strong>Test Connection</strong> to confirm that Mule can connect with the Oracle EBS instance. If the connection is successful, click <strong>OK</strong> to save the configurations. If unsuccessful, revise or correct any incorrect parameters, then test again.</p> </li> 
+         </ol> 
+        </div> </li> 
+       <li> <p>Back in the properties editor of the Oracle EBS connector, configure the remaining parameters according to the table below:</p> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: %;"> 
+          <col style="width: %;"> 
+         </colgroup> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Business Events (or any other name you prefer)</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connector Configuration</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">OracleEBS__Configuration (Enter name of the global element you have created)</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operation</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Business events</p></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>Add a <strong>Logger</strong> scope right after the EBS Connector, to print the messages received from the Business Events topic in the Mule Console. Configure the Logger according to the table below:</p> 
+        <table class="tableblock frame-all grid-all spread"> 
+         <colgroup> 
+          <col style="width: 50%;"> 
+          <col style="width: 50%;"> 
+         </colgroup> 
+         <thead> 
+          <tr> 
+           <th class="tableblock halign-left valign-top"><strong>Field</strong></th> 
+           <th class="tableblock halign-left valign-top"><strong>Value</strong></th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Display Name</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p>Logger (or any other name you prefer)</p> 
+             </div> 
+            </div></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Message</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><code>#[payload]</code></p> 
+             </div> 
+            </div></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p><strong>Level</strong></p> 
+             </div> 
+            </div></td> 
+           <td class="tableblock halign-left valign-top"> 
+            <div> 
+             <div class="paragraph"> 
+              <p>INFO (Default)</p> 
+             </div> 
+            </div></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+       <li> <p>Save and run the project as a Mule Application.</p> </li> 
+      </ol> 
      </div> 
     </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="example-code-2"><a class="anchor" href="#example-code-2"></a>Example Code</h3> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
+    <div class="tab-pane fade no-padding" id="xml-editor-4a827"> 
+     <div class="sect2"> 
+      <h3 id="example-code"><a class="anchor" href="#example-code"></a>Example Code</h3> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+     
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
 2
 3
 4
@@ -2719,24 +2396,27 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
 13
 14
 </pre></td> 
-          <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 
-<span class="tag">&lt;mule</span> <span class="attribute-name">xmlns:oracle-ebs</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/oracle-ebs</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/core</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:doc</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/documentation</span><span class="delimiter">"</span></span>
-        <span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
-        <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
-        <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
-<span class="content">http://www.mulesoft.org/schema/mule/oracle-ebs http://www.mulesoft.org/schema/mule/oracle-ebs/current/mule-oracle-ebs.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;oracle-ebs:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">OracleEBS__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">${username}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${password}</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">${host}</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${port}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbUser</span>=<span class="string"><span class="delimiter">"</span><span class="content">${dbUser}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbPassword</span>=<span class="string"><span class="delimiter">"</span><span class="content">${dbPassword}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbHost</span>=<span class="string"><span class="delimiter">"</span><span class="content">${dbHost}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbPort</span>=<span class="string"><span class="delimiter">"</span><span class="content">${dbPort}</span><span class="delimiter">"</span></span> <span class="attribute-name">dbSid</span>=<span class="string"><span class="delimiter">"</span><span class="content">${dbSid}</span><span class="delimiter">"</span></span> <span class="attribute-name">responsibilityName</span>=<span class="string"><span class="delimiter">"</span><span class="content">${responsibilityName}</span><span class="delimiter">"</span></span> <span class="attribute-name">responsibilityApplName</span>=<span class="string"><span class="delimiter">"</span><span class="content">${responsibilityApplName}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">OracleEBS: Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">demo-business-eventsFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-        <span class="tag">&lt;oracle-ebs:business-events</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">OracleEBS__Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">OracleEBS (Streaming)</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-    <span class="tag">&lt;/flow&gt;</span>
-<span class="tag">&lt;/mule&gt;</span>
+<span class="entity">&amp;lt;</span>mule xmlns:oracle-ebs="http://www.mulesoft.org/schema/mule/oracle-ebs" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+        xmlns:spring="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/oracle-ebs http://www.mulesoft.org/schema/mule/oracle-ebs/current/mule-oracle-ebs.xsd"<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>oracle-ebs:config name="OracleEBS__Configuration" username="${username}" password="${password}" host="${host}" port="${port}" dbUser="${dbUser}" dbPassword="${dbPassword}" dbHost="${dbHost}" dbPort="${dbPort}" dbSid="${dbSid}" responsibilityName="${responsibilityName}" responsibilityApplName="${responsibilityApplName}" doc:name="OracleEBS: Configuration"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>flow name="demo-business-eventsFlow"<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>oracle-ebs:business-events config-ref="OracleEBS__Configuration" doc:name="OracleEBS (Streaming)"/<span class="entity">&amp;gt;</span>
+        <span class="entity">&amp;lt;</span>logger message="#[payload]" level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span>
+    <span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span>
 </pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+     </div> 
     </div> 
    </div> 
   </div> 

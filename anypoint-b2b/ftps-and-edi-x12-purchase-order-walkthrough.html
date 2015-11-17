@@ -162,7 +162,7 @@
 <li>
 <i></i>
 <a href="/mule-fundamentals/v/3.7/first-30-minutes-with-mule">First 30 Minutes with Mule</a><ul>
-<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
+<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/glossary">Glossary</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-fundamentals/v/3.7/first-day-with-mule">First Day with Mule</a><ul>
@@ -865,7 +865,7 @@
           <div class="sect2"> 
  <h3 id="audience"><a class="anchor" href="#audience"></a>Audience</h3> 
  <div class="paragraph"> 
-  <p>This document is for a technical audience possessing basic knowledge of FTPS, X12, and Anypoint Platform. Familiarity of <a href="http://modusintegration.github.io/mule-connector-ftps/readme.html">FTPS Connector</a>, <a href="/anypoint-b2b/x12-module">X12 Module</a> and <a href="/mule-user-guide/v/3.7/datamapper-user-guide-and-reference">Anypoint DataMapper User Guide and Reference</a> is assumed.</p> 
+  <p>This document is for a technical audience possessing basic knowledge of FTPS, X12, and Anypoint Platform. Familiarity of <a href="http://modusintegration.github.io/mule-connector-ftps/">FTPS Connector</a>, <a href="/anypoint-b2b/x12-module">X12 Module</a> and <a href="/mule-user-guide/v/3.7/datamapper-user-guide-and-reference">Anypoint DataMapper User Guide and Reference</a> is assumed.</p> 
  </div> 
 </div> 
 <div class="sect2"> 
@@ -883,9 +883,9 @@
  <h3 id="attachments"><a class="anchor" href="#attachments"></a>Attachments</h3> 
  <div class="ulist"> 
   <ul> 
-   <li> <p><a href="_attachments/ftps-doc.zip">ftps-doc.zip</a></p> </li> 
-   <li> <p><a href="_attachments/ftps-po.xml">ftps-po.xml</a></p> </li> 
-   <li> <p><a href="_attachments/ftps-po.xsd">ftps-po.xsd</a></p> </li> 
+   <li> <p><a href="_attachments/ftps-x12-walkthrough.zip">ftps-x12-walkthrough.zip</a></p> </li> 
+   <li> <p><a href="_attachments/ftps-x12-po.xml">ftps-x12-po.xml</a></p> </li> 
+   <li> <p><a href="_attachments/ftps-x12-po.xsd">ftps-x12-po.xsd</a></p> </li> 
   </ul> 
  </div> 
 </div> 
@@ -893,7 +893,7 @@
  <h2 id="run-the-example"><a class="anchor" href="#run-the-example"></a>Run the Example</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To run this example follow the steps below:</p> 
+   <p>To run this example, follow the steps below:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
@@ -915,9 +915,6 @@
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This example shows how to leverage Anypoint Partner Manager to manage and track B2B processes. The goal is to develop a Mule application, representing a customer, that transforms an XML purchase order read from the filesystem to an X12 850 and sends it to a supplier over FTPS. The supplier returns an X12 997 via a FTPS server the application is polling from in order to inform the customer whether the 850 was accepted or rejected. Anypoint Partner Manager manages and records all B2B exchanges while the actual files exchanged are stored on an Amazon S3 bucket.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/b2b_ftps_walk_01.png" alt="b2b_ftps_01"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -948,17 +945,17 @@
      <li> <p>Sign up for an FTPS cloud service (for example, see <a href="https://hostedftp.com/signup" class="bare">https://hostedftp.com/signup</a>).</p> </li> 
      <li> <p>Click the <strong>FTPS</strong> transport settings on the left side of the menu.</p> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/b2b_ftps_walk_04.png" alt="b2b_ftps_04"></span></p> 
+       <p><span class="image"><img src="./_images/_images/b2b_ftps_walk_04.png" alt="b2b_ftps_04"></span></p> 
       </div> </li> 
      <li> <p>Enter the following values in the <strong>FTPS Settings - Inbound</strong> sections:</p> 
       <div class="olist loweralpha"> 
        <ol class="loweralpha" type="a"> 
         <li> <p>In the <strong>Server Address</strong> field, the address for the server you procured in Step 1.</p> </li> 
-        <li> <p>In the <strong>Port</strong> field, enter the number of the port for your server.</p> </li> 
-        <li> <p><em>demo</em> in the <strong>User Name</strong> field</p> </li> 
+        <li> <p>In the <strong>Port</strong> field, enter the number of the port for your server (typically 21).</p> </li> 
+        <li> <p>In the <strong>User Name</strong> field, the username for the account you created on the FTPS cloud service you procured in Step 1.</p> </li> 
         <li> <p>In the <strong>Password</strong> field, the password for the account you created on the FTPS cloud service you procured in Step 1.</p> </li> 
         <li> <p><em>Passive</em> in the <strong>Transfer Mode</strong> field</p> </li> 
-        <li> <p><em>Implicit</em> in the <strong>SSL Mode</strong> field</p> </li> 
+        <li> <p><em>Explicit</em> in the <strong>SSL Mode</strong> field</p> </li> 
        </ol> 
       </div> </li> 
      <li> <p>Leave checkbox, <strong>Enable server validation field</strong> unchecked.</p> </li> 
@@ -968,9 +965,101 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="specify-ftps-transactions"><a class="anchor" href="#specify-ftps-transactions"></a>Specify FTPS Transactions</h3> 
+   <h3 id="set-up-x12"><a class="anchor" href="#set-up-x12"></a>Set Up X12</h3> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Go to the home organization settings and open the <strong>X12</strong> settings. Select <strong>ZZ</strong> from the <strong>Interchange ID qualifier</strong> drop-down list. Enter <em>MOUNTAINOUT</em> in the <strong>Interchange ID</strong> text box.</p> </li> 
+     <li> <p>Return to the <strong>Trading Partners</strong> page and select <strong>My Supplier</strong> from your list of partners. Click the <strong>X12</strong> format settings found on the left hand side menu.</p> </li> 
+     <li> <p>In the <strong>Inbound</strong> section, fill in the fields as shown in the table below:</p> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Interchange sender ID qualifier (ISA 05)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">ZZ</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Interchange sender ID (ISA 06)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">MY-SUPPLIER</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique GS control numbers (GS 06)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">FALSE</p></td> 
+        </tr> 
+       </tbody> 
+      </table> </li> 
+     <li> <p>In the <strong>Outbound</strong> section, fill in the fields as shown in the table below:</p> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: %;"> 
+        <col style="width: %;"> 
+       </colgroup> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Interchange receiver ID qualifier (ISA 07)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">ZZ</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Interchange receiver ID (ISA 08)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">MY-SUPPLIER</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Repetition separator character (ISA 11)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Default Interchange usage indicator (ISA 15)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Test</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Component element separator character (ISA 16)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">&gt;</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Segment terminator character</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">~</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Data Element Delimiter</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Character set</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Extended</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Character encoding</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">ASCII</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Line ending between segments</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">LFCR</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique GS control numbers (GS 06)</p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">TRUE</p></td> 
+        </tr> 
+       </tbody> 
+      </table> </li> 
+     <li> <p>Press <strong>Save</strong>.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="setup-ftps-transactions"><a class="anchor" href="#setup-ftps-transactions"></a>Setup FTPS Transactions</h3> 
    <div class="paragraph"> 
-    <p>The settings configured in the previous section are meant to be reused by all inbound and outbound transactions within the application. Now we need to create transactions for exchanging files with the supplier.</p> 
+    <p>The settings configured in the 'Setup FTPS' section are meant to be reused by all inbound and outbound transactions within the application. Now we need to create transactions for exchanging files with the supplier.</p> 
    </div> 
    <div class="paragraph"> 
     <p>To send the 850 to the supplier, create an Outbound Transaction:</p> 
@@ -980,7 +1069,7 @@
      <li> <p>Click <strong>Transactions</strong> in the left side of the menu.</p> </li> 
      <li> <p>Click <strong>New</strong> in the top right corner.</p> </li> 
      <li> <p>In the <strong>Transaction</strong> section, select <em>Outbound</em> from the <strong>Direction</strong> the drop-down menu.</p> </li> 
-     <li> <p>Select <em>X12</em> as <strong>Standard</strong>, <em>5010</em> as <strong>Version</strong> and <em>850 (Purchase Order)</em> as <strong>Message Type</strong> in the <strong>Format</strong> section.</p> </li> 
+     <li> <p>Select <em>X12</em> as <strong>Standard</strong>, <em>4010</em> as <strong>Version</strong> and <em>850 (Purchase Order)</em> as <strong>Message Type</strong> in the <strong>Format</strong> section.</p> </li> 
      <li> <p>In the <strong>Transport</strong> section, select <em>FTPS</em> from the <strong>Type</strong> the drop-down menu.</p> </li> 
      <li> <p>Uncheck <strong>Use default Outbound FTPS for partner</strong> and enter the following details:</p> 
       <div class="ulist"> 
@@ -991,118 +1080,24 @@
       </div> </li> 
      <li> <p>Click <strong>Save</strong>.</p> 
       <div class="paragraph"> 
-       <p>Now the inbound transaction for receiving the 997 file from the supplier needs to be created</p> 
+       <p>Now the inbound transaction for receiving the 997 file from the supplier needs to be created:</p> 
       </div> </li> 
      <li> <p>Click <strong>Transactions</strong> on the left side of the menu.</p> </li> 
      <li> <p>Click <strong>New</strong> on the top right corner.</p> </li> 
-     <li> <p>In the <strong>Transaction</strong> section, select <em>Outbound</em> from the <strong>Direction</strong> the drop-down menu.</p> </li> 
-     <li> <p>Select <em>X12</em> as <strong>Standard</strong>, <em>5010</em> as <strong>Version</strong> and <em>997</em> as <strong>Message Type</strong> in the <strong>Format</strong> section.</p> </li> 
+     <li> <p>In the <strong>Transaction</strong> section, select <em>Inbound</em> from the <strong>Direction</strong> the drop-down menu.</p> </li> 
+     <li> <p>Select <em>X12</em> as <strong>Standard</strong>, <em>4010</em> as <strong>Version</strong> and <em>997</em> as <strong>Message Type</strong> in the <strong>Format</strong> section.</p> </li> 
      <li> <p>In the <strong>Transport</strong> section, select <em>FTPS</em> from the <strong>Type</strong> the drop-down menu.</p> </li> 
-     <li> <p>Uncheck <strong>Use default Outbound FTPS for partner</strong> and enter the following details:</p> 
+     <li> <p>Uncheck <strong>Use default Inbound FTPS for partner</strong> and enter the following details:</p> 
       <div class="ulist"> 
        <ul> 
         <li> <p><em>/demo/consumer-inbox/</em> as <strong>Path</strong></p> </li> 
         <li> <p><em>*.dat</em> as <strong>File Name</strong></p> </li> 
-        <li> <p><em>2000</em> as <strong>Polling Frequency</strong></p> </li> 
+        <li> <p><em>20000</em> as <strong>Polling Frequency</strong></p> </li> 
        </ul> 
       </div> </li> 
      <li> <p>Click <strong>Save</strong>.</p> </li> 
     </ol> 
    </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="set-up-x12"><a class="anchor" href="#set-up-x12"></a>Set Up X12</h2> 
- <div class="sectionbody"> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Return to the home organization settings and open the <strong>X12</strong> settings. Select <strong>ZZ</strong> from the <strong>Interchange ID qualifier</strong> drop-down list. Enter <em>MOUNTAINOUT</em> in the <strong>Interchange ID</strong> text box.</p> </li> 
-    <li> <p>Return to the <strong>Trading Partners</strong> page and select <strong>My Supplier</strong> from your list of partners. Click the <strong>X12</strong> format settings found on the left hand side menu.</p> </li> 
-    <li> <p>In the <strong>Inbound</strong> section, fill in the fields as shown in the table below:�</p> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Interchange sender ID qualifier �(ISA 05)</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">ZZ</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Interchange sender ID (ISA 06)</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">MY-SUPPLIER</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique GS control numbers (GS 06)</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">FALSE</p></td> 
-       </tr> 
-      </tbody> 
-     </table> </li> 
-    <li> <p>In the <strong>Outbound</strong> section, fill in the fields as shown in the table below:</p> 
-     <table class="tableblock frame-all grid-all spread"> 
-      <colgroup> 
-       <col style="width: %;"> 
-       <col style="width: %;"> 
-      </colgroup> 
-      <tbody> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Field</strong></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Interchange receiver ID qualifier (ISA 07)</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">ZZ</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Interchange receiver ID (ISA 08)</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">MY-SUPPLIER</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Repetition separator character (ISA 11)</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Default Interchange usage indicator (ISA 15)</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Test</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Component element separator character (ISA 16)</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">&gt;</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Segment terminator character</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">~</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Data Element Delimiter</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Character set</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Extended</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Character encoding</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">ASCII</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Line ending between segments</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">LFCR</p></td> 
-       </tr> 
-       <tr> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">Require unique GS control numbers (GS 06)</p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">TRUE</p></td> 
-       </tr> 
-      </tbody> 
-     </table> </li> 
-    <li> <p>Press <strong>Save</strong>.</p> </li> 
-   </ol> 
   </div> 
  </div> 
 </div> 
@@ -1124,10 +1119,10 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>Launch Anypoint Studio and create a new Mule project.</p> </li> 
-    <li> <p>Rename the initial Mule configuration file created by Studio to <em>customer.xml</em>�.</p> </li> 
+    <li> <p>Rename the initial Mule configuration file created by Studio to <em>customer.xml</em>.</p> </li> 
     <li> <p>Create a new Mule configuration file and name it <em>mock-supplier</em>.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/b2b_ftps_walk_63.png" alt="b2b_ftps_06"></span></p> 
+      <p><span class="image"><img src="./_images/_images/b2b_ftps_walk_06.png" alt="b2b_ftps_06"></span></p> 
      </div> </li> 
    </ul> 
   </div> 
@@ -1137,7 +1132,7 @@
  <h2 id="customer-connector-configs"><a class="anchor" href="#customer-connector-configs"></a>Customer Connector Configs</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In this section, go through the next steps to create the customer�s connector configs in the customer Mule config file before proceeding to build the customer flows.</p> 
+   <p>In this section, go through the next steps to create the customer’s connector configs in the customer Mule config file before proceeding to build the customer flows.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="create-b2b-connector-config"><a class="anchor" href="#create-b2b-connector-config"></a>Create B2B Connector Config</h3> 
@@ -1146,24 +1141,21 @@
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Click the <strong>Global Elements</strong> view. Go to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B: Basic Configuration</strong> . If you have an Amazon S3 bucket available, you should go instead to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B: Amazon S3 File Storage</strong>. The latter configuration type allows the B2B Connector to persist X12 documents and FTPS message content to Amazon S3.</p> </li> 
-     <li> <p>Enter your secret API key which is obtained from your home organization�s <strong>Company</strong> settings page in Anypoint Partner Manager:</p> 
+     <li> <p>Click the <strong>Global Elements</strong> view. Go to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B: Basic Configuration</strong>. If you have an Amazon S3 bucket available, you should go instead to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>B2B: Amazon S3 File Storage</strong>. The latter configuration type allows the B2B Connector to persist X12 documents and FTPS message content to Amazon S3.</p> </li> 
+     <li> <p>Enter your secret API key which is obtained from your home organization’s <strong>Company</strong> settings page in Anypoint Partner Manager:</p> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/b2b_ftps_walk_07.png" alt="b2b_ftps_07"></span></p> 
+       <p><span class="image"><img src="./_images/_images/B2B_AS2EDI_13.png" alt="B2B_AS2EDI_13"></span></p> 
       </div> 
       <div class="paragraph"> 
        <p>Remember, the home organization settings is accessed by clicking on the home organization settings link on the upper right corner, next to the home icon:</p> 
       </div> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/b2b_ftps_walk_08.png" alt="b2b_ftps_08"></span></p> 
+       <p><span class="image"><img src="./_images/_images/B2B_AS2EDI_11.png" alt="B2B_AS2EDI_11"></span></p> 
       </div> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/B2B_FTPSEDI_12.png" alt="B2B_FTPSEDI_12"></span></p> 
-      </div> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/b2b_ftps_walk_09.png" alt="b2b_ftps_09"></span></p> 
+       <p><span class="image"><img src="./_images/_images/B2B_AS2EDI_12.png" alt="B2B_AS2EDI_12"></span></p> 
       </div> </li> 
-     <li> <p>Click <strong>OK</strong>.</p> </li> 
+     <li> <p>Press <strong>OK</strong>.</p> </li> 
     </ol> 
    </div> 
   </div> 
@@ -1172,7 +1164,8 @@
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>Remain in the <strong>Global Elements</strong> view to create a FTPS Connector config by going to <strong>Create</strong> &gt; <strong>Connector Configuration</strong> &gt; <strong>FTPS: Partner Manager Configuration</strong>. Name it <em>b2b-based-ftps</em>.</p> </li> 
-     <li> <p>Select <strong>EDI_X12</strong> from the <strong>Standard</strong> drop-down list.</p> </li> 
+     <li> <p>Enter <em>My Supplier</em> as <strong>Partner Name</strong>.</p> </li> 
+     <li> <p>Select <em>EDI_X12</em> from the <strong>Standard</strong> drop-down list.</p> </li> 
     </ol> 
    </div> 
   </div> 
@@ -1184,11 +1177,11 @@
      <li> <p>Enable <strong>Use B2B Provider</strong> to allow Anypoint Partner Manager to manage and track X12 exchanges.</p> </li> 
      <li> <p>Check the <strong>Create Object Manually</strong> radio button and open the <strong>Object Builder</strong> to enter the schema path <em>/x12/005010/850.esl</em> in the first entry list.</p> 
       <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/b2b_ftps_walk_10.png" alt="b2b_ftps_10"></span></p> 
+       <p><span class="image"><img src="./_images/_images/B2B_AS2EDI_14.png" alt="B2B_AS2EDI_14"></span></p> 
       </div> </li> 
      <li> <p>Set the interchange identifier attributes so that they correspond with the interchange identifiers you configured in Anypoint Partner Manager:</p> 
       <div class="paragraph"> 
-       <p>Self identification:</p> 
+       <p>Self-identification:</p> 
       </div> 
       <div class="listingblock"> 
        <div class="content"> 
@@ -1201,9 +1194,9 @@
 2
 3
 </pre></td> 
-             <td class="code"><pre>Interchange sender/receiver ID qualifier = _ZZ_
-Interchange sender/receiver ID = _MOUNTAINOUT_
-Application sender/receiver code = _MOUNTAINOUT_</pre></td> 
+             <td class="code"><pre>Interchange sender/receiver ID qualifier = ZZ
+Interchange sender/receiver ID = MOUNTAINOUT
+Application sender/receiver code = MOUNTAINOUT</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1223,9 +1216,9 @@ Application sender/receiver code = _MOUNTAINOUT_</pre></td>
 2
 3
 </pre></td> 
-             <td class="code"><pre>Interchange sender/receiver ID qualifier = _ZZ_
-Interchange sender/receiver ID = _MY-SUPPLIER_
-Application sender/receiver code = _MY-SUPPLIER_</pre></td> 
+             <td class="code"><pre>Interchange sender/receiver ID qualifier = ZZ
+Interchange sender/receiver ID = MY-SUPPLIER
+Application sender/receiver code = MY-SUPPLIER</pre></td> 
             </tr> 
            </tbody> 
           </table></code></pre> 
@@ -1233,17 +1226,14 @@ Application sender/receiver code = _MY-SUPPLIER_</pre></td>
       </div> 
       <div class="paragraph"> 
        <p>The interchange identifiers serve as the lookup key for finding the partnership to use for X12 processing.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/b2b_ftps_walk_11.png" alt="b2b_ftps_11"></span></p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>The following screenshot should match what you have in the�<strong>Global Elements</strong>�view:</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p><span class="image"><img src="./_images/b2b_ftps_walk_12.png" alt="b2b_ftps_12"></span></p> 
       </div> </li> 
     </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The following screenshot should match what you have in the <strong>Global Elements</strong> view:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>+ <span class="image"><img src="./_images/_images/b2b_ftps_walk_12.png" alt="b2b_ftps_12"></span></p> 
    </div> 
   </div> 
  </div> 
@@ -1259,11 +1249,8 @@ Application sender/receiver code = _MY-SUPPLIER_</pre></td>
     <li> <p>Remain in the customer Mule config but change to the <strong>Message Flow</strong> view.</p> </li> 
     <li> <p>Drag a <strong>File</strong> message source to the canvas to create a flow. Set the <strong>Path</strong> attribute to <em>outbox</em>.</p> </li> 
     <li> <p>Add a <strong>DataMapper</strong> next to the <strong>File</strong> message source.</p> </li> 
-    <li> <p>Put an <strong>X12</strong> processor after the DataMapper. Set the <strong>Connector Configuration</strong> to the X12 config that you created in the previous section and select <strong>Write</strong> for the <strong>Operation</strong>.</p> </li> 
-    <li> <p>Go back to the DataMapper. Select for input type <strong>XML</strong> and use the schema <em>po.xsd</em> to derive the structure to be mapped. Click the <strong>Create mapping</strong> button. You can <a href="_attachments/FTPS-x12-po.xsd">download a copy of FTPS-x12-po.xsd</a> and rename it to be po.xsd.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/B2B_FTPSEDI_16.png" alt="B2B_FTPSEDI_16"></span></p> 
-     </div> </li> 
+    <li> <p>Put an <strong>X12 EDI</strong> processor after the DataMapper. Set the <strong>Connector Configuration</strong> to the X12 config that you created in the previous section and select <strong>Write</strong> for the <strong>Operation</strong>.</p> </li> 
+    <li> <p>Go back to the DataMapper. Select for input type <strong>XML</strong> and use the schema <em>po.xsd</em> to derive the structure to be mapped. Click the <strong>Create mapping</strong> button. You can <a href="_attachments/ftps-x12-po.xsd">download a copy of ftps-x12-po.xsd</a> and rename it to be po.xsd.</p> </li> 
     <li> <p>Perform the mapping from XML to X12 850 as follows:</p> 
      <table class="tableblock frame-all grid-all spread"> 
       <colgroup> 
@@ -1313,27 +1300,12 @@ Application sender/receiver code = _MY-SUPPLIER_</pre></td>
        </tr> 
       </tbody> 
      </table> </li> 
-    <li> <p>The last message processor in the flow is an FTPS processor that sends the 850. Set the the <strong>operation</strong> to <strong>Write</strong>:</p> 
-     <div class="listingblock"> 
-      <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="code">
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
-</pre></td> 
-            <td class="code"><pre>FTPS WRITE OP SPECIFICS</pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
-      </div> 
-     </div> 
+    <li> <p>The last message processor in the flow is an FTPS processor that sends the 850. Set the <strong>operation</strong> to <strong>Write</strong> and leave the other fields as they are.</p> 
      <div class="paragraph"> 
       <p>Note that these identifiers were set in Anypoint Partner Manager. The Partner Name set in the FTPS configuration serve as lookup key for finding the partnership to use for transmitting the message.</p> 
      </div> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/b2b_ftps_walk_15.png" alt="b2b_ftps_15"></span></p> 
+      <p><span class="image"><img src="./_images/_images/b2b_ftps_walk_15.png" alt="b2b_ftps_15"></span></p> 
      </div> </li> 
    </ol> 
   </div> 
@@ -1351,7 +1323,7 @@ Application sender/receiver code = _MY-SUPPLIER_</pre></td>
     <li> <p>Drag a <strong>Byte Array to String</strong> transformer next to the FTPS source.</p> </li> 
     <li> <p>Add an <strong>X12</strong> processor next to the message source and select the <strong>Read</strong> operation. Point the <strong>Connector Configuration</strong> to the X12 Module config that you created in the previous section</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/b2b_ftps_walk_18.png" alt="b2b_ftps_18"></span></p> 
+      <p><span class="image"><img src="./_images/_images/b2b_ftps_walk_18.png" alt="b2b_ftps_18"></span></p> 
      </div> </li> 
    </ol> 
   </div> 
@@ -1366,27 +1338,31 @@ Application sender/receiver code = _MY-SUPPLIER_</pre></td>
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Open the <em>mock-supplier.xml</em> Mule config.</p> </li> 
-    <li> <p>Similar to what you did for the customer, create a pair of HTTP global endpoints, a pair of FTPS Connector configs, and an X12 Module config. Ensure that:</p> 
+    <li> <p>Similar to what you did for the customer, create a pair of FTPS Connector configs and an X12 Module config. Ensure that:</p> 
      <div class="ulist"> 
       <ul> 
        <li> <p><strong>Use B2B Provider</strong> remains disabled for all EDI configs.</p> </li> 
-       <li> <p>Basic FTPS Connector configs are created: <strong>Create</strong> → <strong>Connector Configuration</strong> → <strong>FTPS: Configuration</strong>.</p> </li> 
-       <li> <p>Each FTPS endpoint is bound to its respective HTTP global endpoint.</p> </li> 
+       <li> <p>Basic FTPS Connector config is created: <strong>Create</strong> → <strong>Connector Configuration</strong> → <strong>FTPS: Basic Configuration</strong>.</p> </li> 
+       <li> <p>Same FTPS settings as APM are entered; also click on the <strong>Advanced</strong> tab and check <em>Disable certificate validation</em>.</p> </li> 
+       <li> <p>Click <strong>Test Connection…​</strong> and make sure the connection could be established.</p> </li> 
        <li> <p>X12 Module config schema path is set to <em>/x12/005010/850.esl</em>.</p> </li> 
        <li> <p>Unique names are given to the configs.</p> </li> 
       </ul> 
      </div> </li> 
-    <li> <p>Enter <em>/demo/supplier-inbox/</em> as <strong>Path</strong> and <em>*.dat</em> in <strong>Filename</strong>. Note that we’re leaving the B2B options unset. The polling setting can be safely ignored by now.</p> 
+    <li> <p>Drag a <em>FTPS Connector</em> to the flow.</p> </li> 
+    <li> <p>Select the <em>FTPS Basic Configuration</em> created above as <strong>Connector Configuration</strong> and select <strong>Read</strong> as operation.</p> </li> 
+    <li> <p>Enter <em>/demo/supplier-inbox/</em> as <strong>Path</strong> and <em>*.dat</em> in <strong>Filename</strong>. The polling setting should be set to 15000 (<em>this is due to a limitation on the hostedftp server</em>)</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/b2b_ftps_walk_20.png" alt="b2b_ftps_20"></span></p> 
+      <p><span class="image"><img src="./_images/_images/b2b_ftps_walk_20.png" alt="b2b_ftps_20"></span></p> 
      </div> </li> 
     <li> <p>Add a <strong>ByteArray to String</strong> transformer.</p> </li> 
     <li> <p>Add an <strong>X12</strong> processor to the flow. Select the mock supplier s X12 config for <strong>Connector Configuration</strong> and set its <strong>Operation</strong> to <strong>Read</strong>.</p> </li> 
     <li> <p>After the 850 is parsed by the X12 processor, the generated 997 needs to be extracted from the payload. Add the <strong>Set Payload</strong> processor to the processor chain and enter in its <strong>Value</strong> attribute: <em>#[ ['TransactionSets' : [ 'v005010' : [ '997' : payload.FunctionalAcksGenerated ] ] ] ]</em>.</p> </li> 
-    <li> <p>Add another <strong>X12</strong> processor to serialize the 997. Select the mock supplier�s X12 config for <strong>Connector Configuration</strong>. Expand the <strong>Operation</strong> drop-down list and select <strong>Write</strong>.</p> </li> 
-    <li> <p>The last step in the flow to send the 997 over FTPS. Append a FTPS processor to the flow; select the same local FTPS global configuration for the FTPS message source of point 3, select the <strong>Write</strong> operation and enter <em>MOUNTAINOUT</em> in <strong>Partner Name</strong>.</p> 
+    <li> <p>Add another <strong>X12</strong> processor to serialize the 997. Select the mock supplier’s X12 config for <strong>Connector Configuration</strong>. Expand the <strong>Operation</strong> drop-down list and select <strong>Write</strong>.</p> </li> 
+    <li> <p>The last step in the flow to send the 997 over FTPS. Append a FTPS processor to the flow; select the same local FTPS global configuration for the FTPS message source of point 4, select the <strong>Write</strong> operation.</p> </li> 
+    <li> <p>Enter <em>/demo/consumer-inbox/</em> in <strong>Path</strong>.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/b2b_ftps_walk_22.png" alt="b2b_ftps_22"></span></p> 
+      <p><span class="image"><img src="./_images/_images/b2b_ftps_walk_22.png" alt="b2b_ftps_22"></span></p> 
      </div> </li> 
    </ol> 
   </div> 
@@ -1397,12 +1373,9 @@ Application sender/receiver code = _MY-SUPPLIER_</pre></td>
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Run the application as a <strong>Mule Application</strong>. On startup, the application creates the <em>outbox</em> directory in the project�s root directory. If the <em>outbox</em> directory isn�t visible, try refreshing the project in the <strong>Package Explorer</strong> view.</p> </li> 
-    <li> <p>Drop the purchase order file <em>po.xml</em>, included with this document, in the <em>outbox</em> directory. The file should disappear from the directory since the <strong>File</strong> inbound endpoint deletes the file after it reads it.</p> </li> 
-    <li> <p>Access the B2B Transmissions view in Anypoint Partner Manager to confirm that the FTPS and X12 transmissions have taken place.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/b2b_ftps_walk_24.png" alt="b2b_ftps_24"></span></p> 
-     </div> </li> 
+    <li> <p>Run the application as a <strong>Mule Application</strong>. On startup, the application creates the <em>outbox</em> directory in the project’s root directory. If the <em>outbox</em> directory isn’t visible, try refreshing the project in the <strong>Package Explorer</strong> view.</p> </li> 
+    <li> <p>Drop the purchase order file <a href="_attachments/ftps-x12-po.xml">ftps-x12-po.xml</a>, included with this document, in the <em>outbox</em> directory. The file should disappear from the directory since the <strong>File</strong> inbound endpoint deletes the file after it reads it.</p> </li> 
+    <li> <p>Access the B2B Transmissions view in Anypoint Partner Manager to confirm that the FTPS and X12 transmissions have taken place.</p> </li> 
    </ol> 
   </div> 
  </div> 
@@ -1411,7 +1384,7 @@ Application sender/receiver code = _MY-SUPPLIER_</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#run-the-example">Run the Example</a></li><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#partnership-set-up">Partnership Set Up</a></li><li><a class="scroll-menu-link" href="#set-up-x12">Set Up X12</a></li><li><a class="scroll-menu-link" href="#mule-project-set-up">Mule Project Set Up</a></li><li><a class="scroll-menu-link" href="#customer-connector-configs">Customer Connector Configs</a></li><li><a class="scroll-menu-link" href="#transform-and-send-850-over-ftps">Transform and Send 850 over FTPS</a></li><li><a class="scroll-menu-link" href="#receive-997-over-ftps">Receive 997 over FTPS</a></li><li><a class="scroll-menu-link" href="#develop-mock-supplier">Develop Mock Supplier</a></li><li><a class="scroll-menu-link" href="#run-application">Run Application</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#run-the-example">Run the Example</a></li><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#partnership-set-up">Partnership Set Up</a></li><li><a class="scroll-menu-link" href="#mule-project-set-up">Mule Project Set Up</a></li><li><a class="scroll-menu-link" href="#customer-connector-configs">Customer Connector Configs</a></li><li><a class="scroll-menu-link" href="#transform-and-send-850-over-ftps">Transform and Send 850 over FTPS</a></li><li><a class="scroll-menu-link" href="#receive-997-over-ftps">Receive 997 over FTPS</a></li><li><a class="scroll-menu-link" href="#develop-mock-supplier">Develop Mock Supplier</a></li><li><a class="scroll-menu-link" href="#run-application">Run Application</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

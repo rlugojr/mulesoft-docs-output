@@ -163,7 +163,7 @@
 <li>
 <i></i>
 <a href="/mule-fundamentals/v/3.7/first-30-minutes-with-mule">First 30 Minutes with Mule</a><ul>
-<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
+<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/glossary">Glossary</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-fundamentals/v/3.7/first-day-with-mule">First Day with Mule</a><ul>
@@ -1025,7 +1025,7 @@
  <h2 id="example"><a class="anchor" href="#example"></a>Example</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Since SAML is used for single sign-on, authentication of the user is assumed to have already occurred, and the SAML token simply contains one or more <strong>subjects</strong>, which provide some information understood by other systems. In this case we will configure our flow to require a SAML subject of <code>AllowGreetingServices</code>. To our inbound connector we add a <code>SAMLVerifyInterceptor</code> with a callback, which will check for the correct SAML subject:</p> 
+   <p>Since SAML is used for single sign-on, authentication of the user is assumed to have already occurred, and the SAML token simply contains one or more <strong>subjects</strong>, which provide some information understood by other systems. In this case we configure our flow to require a SAML subject of <code>AllowGreetingServices</code>. To our inbound connector we add a <code>SAMLVerifyInterceptor</code> with a callback, which checks for the correct SAML subject:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1125,9 +1125,9 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
 <span class="attribute-name">xmlns:xsd</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema</span><span class="delimiter">"</span></span>
 <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
 <span class="attribute-name">AssertionID</span>=<span class="string"><span class="delimiter">"</span><span class="content">_40082eadbf045476e26a107e4f37861d</span><span class="delimiter">"</span></span>
-<span class="attribute-name">IssueInstant</span>=<span class="string"><span class="delimiter">"</span><span class="content">2009-11-13T02:26:06.569Z</span><span class="delimiter">"</span></span> <span class="attribute-name">Issuer</span>=<span class="string"><span class="delimiter">"</span><span class="content">self</span><span class="delimiter">"</span></span>
+<span class="attribute-name">IssueInstant</span>=<span class="string"><span class="delimiter">"</span><span class="content">2015-11-17T02:26:06.569Z</span><span class="delimiter">"</span></span> <span class="attribute-name">Issuer</span>=<span class="string"><span class="delimiter">"</span><span class="content">self</span><span class="delimiter">"</span></span>
 <span class="attribute-name">MajorVersion</span>=<span class="string"><span class="delimiter">"</span><span class="content">1</span><span class="delimiter">"</span></span> <span class="attribute-name">MinorVersion</span>=<span class="string"><span class="delimiter">"</span><span class="content">1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;<span class="tag">&lt;AuthenticationStatement</span> <span class="attribute-name">AuthenticationInstant</span>=<span class="string"><span class="delimiter">"</span><span class="content">2009-11-13T02:26:06.569Z</span><span class="delimiter">"</span></span>
+&nbsp;&nbsp;<span class="tag">&lt;AuthenticationStatement</span> <span class="attribute-name">AuthenticationInstant</span>=<span class="string"><span class="delimiter">"</span><span class="content">2015-11-17T02:26:06.569Z</span><span class="delimiter">"</span></span>
 <span class="attribute-name">AuthenticationMethod</span>=<span class="string"><span class="delimiter">"</span><span class="content">urn:oasis:names:tc:SAML:1.0:am:password</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;Subject&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;NameIdentifier&gt;</span>AllowGreetingServices<span class="tag">&lt;/NameIdentifier&gt;</span>
@@ -1144,7 +1144,7 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>To verify that the received SAML token is authentic, SAML offers two different modes of trust: <strong>Sender Vouches</strong> and <strong>Holder of Key</strong>. In this case, we are using Sender Vouches, which means that the sender of the message must be trusted (e.g., via a digital signature). In Holder of Key mode, the sender of the message does not matter, but the SAML token subject must contain a key from a trusted source (e.g., an X.509 certificate from Verisign).</p> 
+   <p>To verify that the received SAML token is authentic, SAML offers two different modes of trust: <strong>Sender Vouches</strong> and <strong>Holder of Key</strong>. In this case, we are using Sender Vouches, which means that the sender of the message must be trusted (e.g., via a digital signature). In Holder of Key mode, the sender of the message does not matter, but the SAML token subject must contain a key from a trusted source (for example, an X.509 certificate from Verisign).</p> 
   </div> 
  </div> 
 </div> 
@@ -1159,30 +1159,12 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
   </div> 
   <div class="sect2"> 
    <h3 id="security-manager"><a class="anchor" href="#security-manager"></a>Security manager</h3> 
+   <div class="paragraph"> 
+    <p>There are no attributes of <code>security-manager</code>.</p> 
+   </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
-      Table 1. Attributes of &lt;security-manager…​&gt; 
-    </caption> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Type</th> 
-      <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <caption class="title">
-      Table 2. Child Elements of &lt;security-manager…​&gt; 
+      Table 1. Child Elements of &lt;security-manager…​&gt; 
     </caption> 
     <colgroup> 
      <col style="width: %;"> 
@@ -1198,7 +1180,7 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">saml-security-provider</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>saml-security-provider</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">0..1</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">A security provider that delegates authorization to some other provider.</p></td> 
      </tr> 
@@ -1206,16 +1188,15 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="saml-security-provider"><a class="anchor" href="#saml-security-provider"></a>Saml security provider</h3> 
+   <h3 id="saml-security-provider"><a class="anchor" href="#saml-security-provider"></a>SAML Security Provider</h3> 
    <div class="paragraph"> 
     <p>A security provider that delegates authorization to some other provider.</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
-      Table 3. Attributes of &lt;saml-security-provider…​&gt; 
+      Table 2. Attributes of &lt;saml-security-provider…​&gt; 
     </caption> 
     <colgroup> 
-     <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
@@ -1227,32 +1208,28 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
       <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">saml-version</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>saml-version</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">samlVersion</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">1.1</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">default-realm</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>default-realm</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
       <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
    <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
-      Table 4. Child Elements of &lt;saml-security-provider…​&gt; 
+      Table 3. Child Elements of &lt;saml-security-provider…​&gt; 
     </caption> 
     <colgroup> 
-     <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
     </colgroup> 
@@ -1260,32 +1237,31 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
      <tr> 
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-key-provider</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-key-provider</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">1..*</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">abstract-security-realm</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>abstract-security-realm</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">1..*</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="sect2"> 
-   <h3 id="keystore-provider"><a class="anchor" href="#keystore-provider"></a>Keystore provider</h3> 
+   <h3 id="keystore-provider"><a class="anchor" href="#keystore-provider"></a>Keystore Provider</h3> 
+   <div class="paragraph"> 
+    <p>There are no default values for these objects.</p> 
+   </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
-      Table 5. Attributes of &lt;keystore-provider…​&gt; 
+      Table 4. Attributes of 
+     <code>keystore-provider</code> 
     </caption> 
     <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
@@ -1295,68 +1271,46 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">key-store-file</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>key-store-file</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">key-store-type</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>key-store-type</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">key-store-password</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>key-store-password</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <caption class="title">
-      Table 6. Child Elements of &lt;keystore-provider…​&gt; 
-    </caption> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>There are no child elements of <code>keystore-provider</code>.</p> 
+   </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="sender-vouches-realm"><a class="anchor" href="#sender-vouches-realm"></a>Sender vouches realm</h3> 
+   <h3 id="sender-vouches-realm"><a class="anchor" href="#sender-vouches-realm"></a>Sender Vouches Realm</h3> 
+   <div class="paragraph"> 
+    <p>There are no default values for these objects.</p> 
+   </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
-      Table 7. Attributes of &lt;sender-vouches-realm…​&gt; 
+      Table 5. Attributes of 
+     <code>sender-vouches-realm</code> 
     </caption> 
     <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
@@ -1366,75 +1320,51 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">key-provider-ref</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>key-provider-ref</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">sign-key-alias</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sign-key-alias</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">sign-key-password</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sign-key-password</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">resign-assertions</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>resign-assertions</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <caption class="title">
-      Table 8. Child Elements of &lt;sender-vouches-realm…​&gt; 
-    </caption> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>There are no child elements of <code>sender-vouches-realm</code>.</p> 
+   </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="holder-of-key-realm"><a class="anchor" href="#holder-of-key-realm"></a>Holder of key realm</h3> 
+   <h3 id="holder-of-key-realm"><a class="anchor" href="#holder-of-key-realm"></a>Holder of Key Realm</h3> 
+   <div class="paragraph"> 
+    <p>There are no default values for these objects.</p> 
+   </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <caption class="title">
-      Table 9. Attributes of &lt;holder-of-key-realm…​&gt; 
+      Table 6. Attributes of 
+     <code>holder-of-key-realm</code> 
     </caption> 
     <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
      <col style="width: %;"> 
@@ -1444,44 +1374,24 @@ samlAuthentication) <span class="directive">throws</span> <span class="exception
       <th class="tableblock halign-left valign-top">Name</th> 
       <th class="tableblock halign-left valign-top">Type</th> 
       <th class="tableblock halign-left valign-top">Required</th> 
-      <th class="tableblock halign-left valign-top">Default</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">key-provider-ref</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>key-provider-ref</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">name (no spaces)</p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"></td> 
      </tr> 
     </tbody> 
    </table> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <caption class="title">
-      Table 10. Child Elements of &lt;holder-of-key-realm…​&gt; 
-    </caption> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Name</th> 
-      <th class="tableblock halign-left valign-top">Cardinality</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-     </tr> 
-    </thead> 
-   </table> 
+   <div class="paragraph"> 
+    <p>There are no child elements of <code>holder-of-key-realm</code>.</p> 
+   </div> 
   </div> 
  </div> 
 </div>

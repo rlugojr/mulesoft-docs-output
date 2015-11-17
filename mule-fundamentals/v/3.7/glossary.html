@@ -157,13 +157,13 @@
             <div class="active-marker"></div>
             <nav>
                 <ul class="tree">
-                  <li>
+                  <li class="expanded">
 <i></i>
-<a href="/mule-fundamentals/v/3.7/">Mule Fundamentals</a><ul>
-<li>
+<a href="/mule-fundamentals/v/3.7/">Mule Fundamentals</a><ul style="display: block;">
+<li class="expanded">
 <i></i>
-<a href="/mule-fundamentals/v/3.7/first-30-minutes-with-mule">First 30 Minutes with Mule</a><ul>
-<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
+<a href="/mule-fundamentals/v/3.7/first-30-minutes-with-mule">First 30 Minutes with Mule</a><ul style="display: block;">
+<li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-platform-primer">Anypoint Platform Primer</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/setting-up-your-development-environment">Development Environment Setup</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/begin-with-the-basics">Begin with the Basics</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/download-and-launch-anypoint-studio">Download and Launch Anypoint Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/build-a-hello-world-application">Build a Hello World Application</a></li><li class="active"><i></i><a href="/mule-fundamentals/v/3.7/glossary">Glossary</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-fundamentals/v/3.7/first-day-with-mule">First Day with Mule</a><ul>
@@ -861,7 +861,7 @@
         <!-- END older version notification -->
         <!-- START article content -->
         <div class="article-content col-md-7">
-          
+          <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule Fundamentals</a>/<a href="first-30-minutes-with-mule">First 30 Minutes with Mule</a>/<a href="glossary" class="breadcrumb-active-link">Glossary</a></div>
           <h1>Glossary</h1>
           <div class="paragraph"> 
  <p>The following glossary helps you understand MuleSoft terminology.</p> 
@@ -893,6 +893,12 @@
 </div> 
 <div class="paragraph"> 
  <p>An integrated development environment with visual and XML editors for creating and managing Mule applications. Using the visual interface, you can drag and drop connectors, loggers, decision items, data transformers, and much more to the design canvas and create XML Mule flows that you can run and test. For more information, see <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a> or download from <a href="http://studio.mulesoft.org">Anypoint Studio</a>.</p> 
+</div> 
+<div class="paragraph"> 
+ <p><strong>Anypoint Platform</strong></p> 
+</div> 
+<div class="paragraph"> 
+ <p>May refer to both the entire suite of products offered by Mulesoft as a cohesive solution to connectivity challenges, and to the <a href="anypoint.mulesoft.com">Anypoint Platform portal</a> where a number of solutions are available as web applications.</p> 
 </div> 
 <div class="paragraph"> 
  <p><strong>application</strong></p> 
@@ -942,7 +948,7 @@
  <p><strong>CloudHub</strong></p> 
 </div> 
 <div class="paragraph"> 
- <p>Integration platform as a service that lets you manage applications in the cloud and manage clusters and servers located in your organization. For more information, see the <a href="/cloudhub/">CloudHub</a> documentation.</p> 
+ <p>Integration platform as a service that lets you manage applications in the cloud and manage clusters and servers located in your organization. When deploying an application to the cloud through the Runtime Manager console, CloudHub is used in the background. For more information, see the <a href="/cloudhub/">CloudHub</a> documentation.</p> 
 </div> 
 <div class="paragraph"> 
  <p><strong>cluster</strong></p> 
@@ -959,8 +965,11 @@
 <div class="paragraph"> 
  <p>Components can do one of the following:</p> 
 </div> 
-<div class="paragraph"> 
- <p>implement a Callable interface use annotations to express how a component method gets called rely on Mule’s runtime injection mechanism These components are managed in the Mule container that is built on top of Spring; this allows Spring users to take advantage of Spring’s DI, AOP, DAO, etc.</p> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>Implement a Callable interface use annotations to express how a component method gets called.</p> </li> 
+  <li> <p>Rely on Mule’s runtime injection mechanism. These components are managed in the Mule container that is built on top of Spring; this allows Spring users to take advantage of Spring’s DI, AOP, DAO, etc.</p> </li> 
+ </ul> 
 </div> 
 <div class="paragraph"> 
  <p>See also: <a href="#servicecomponent">service component</a>.</p> 
@@ -1066,6 +1075,12 @@
  <p>Introduced in Mule ESB 2.2.2 Enterprise Edition, the management console is a monitoring and management system that provides information about the hardware, services, and applications in your enterprise, including CPU usage and information about disks and network devices. The management console provides remote management, monitoring, patching, and alerts for all the assets in your infrastructure, including clusters. You can integrate the YourKit profiler with the management console to provide a more detailed level of information, showing memory usage all the way to the object level. The management console and YourKit profiler are included with the enterprise version of Mule ESB.</p> 
 </div> 
 <div class="paragraph"> 
+ <p><strong>MEL</strong></p> 
+</div> 
+<div class="paragraph"> 
+ <p>See <a href="#mel">Mule Expression Language</a> (MEL).</p> 
+</div> 
+<div class="paragraph"> 
  <p><strong>MEP</strong></p> 
 </div> 
 <div class="paragraph"> 
@@ -1087,7 +1102,13 @@
  <p><strong>message exchange pattern (MEP)</strong></p> 
 </div> 
 <div class="paragraph"> 
- <p>A well-defined interaction pattern that describes how a message request is handled in Mule and the potential responses to the message request. Mule supports various messaging styles such as synchronous or request-response, each of which has one or more corresponding message exchange patterns. For example, in the request-response messaging style the exchange pattern can be "in-out". In this pattern, the flow or service component receives a message from an inbound endpoint, processes or operates on the message payload, and finishes by delivering the message payload to an outbound endpoint. By contrast, the messaging exchange pattern for the one-way messaging style is "in-only", meaning that after the flow or service component receives a message from an inbound endpoint it puts it on a SEDA queue for further processing. However, nothing gets returned in response to the initial request. See also Message Exchange Patterns in Mule.</p> 
+ <p>A well-defined interaction pattern that describes how a message request is handled in Mule and the potential responses to the message request.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>Mule supports various messaging styles such as synchronous or request-response, each of which has one or more corresponding message exchange patterns.</p> 
+</div> 
+<div class="paragraph"> 
+ <p>For example, in the request-response messaging style, the exchange pattern can be "in-out". In this pattern, the flow or service component receives a message from an inbound endpoint, processes or operates on the message payload, and finishes by delivering the message payload to an outbound endpoint. By contrast, the messaging exchange pattern for the one-way messaging style is "in-only", meaning that after the flow or service component receives a message from an inbound endpoint, it puts it on a SEDA queue for further processing. However, nothing gets returned in response to the initial request.</p> 
 </div> 
 <div class="paragraph"> 
  <p><strong>message filter</strong></p> 
@@ -1131,6 +1152,12 @@
 <div class="paragraph"> 
  <p>A construct in Mule that allows you to extract information from the current message or determine how to handle the message. Expressions are very useful with routers and filters for defining routing logic and for filtering out unwanted messages. Mule expressions are also useful for querying request and response payloads and headers.</p> 
 </div> 
+<div id="mel" class="paragraph"> 
+ <p><strong>Mule Expression Language</strong></p> 
+</div> 
+<div class="paragraph"> 
+ <p>A lightweight, Mule-specific expression language that you can use to access and evaluate the data in the payload, properties and variables of a Mule message. See <a href="/mule-user-guide/v/3.7/mule-expression-language-mel">Mule Expression Language (MEL)</a>, <a href="m/mule-user-guide/v/3.7/mule-expression-language-examples">Mule Expression Language Examples</a>, and <a href="/mule-user-guide/v/3.7/mule-expression-language-reference">Mule Expression Language Reference</a>.</p> 
+</div> 
 <div class="paragraph"> 
  <p><strong>Mule Galaxy</strong></p> 
 </div> 
@@ -1154,6 +1181,21 @@
 </div> 
 <div class="paragraph"> 
  <p>The primary component for each instance of a Mule server. The Mule Manager manages Mule objects, including connectors, endpoints, and transformers. The Mule Manager constructs these objects and provides them to the service components in the Mule model. Each Mule instance has one Mule Manager and one or more Mule models.</p> 
+</div> 
+<div class="paragraph"> 
+ <p><strong>Mule message</strong></p> 
+</div> 
+<div class="paragraph"> 
+ <p>Data that passes through an application via one or more flows. A Mule message consists of two main parts:</p> 
+</div> 
+<div class="ulist"> 
+ <ul> 
+  <li> <p>The message header, which contains metadata about the message</p> </li> 
+  <li> <p>The message payload, which contains your business-specific data.</p> </li> 
+ </ul> 
+</div> 
+<div class="paragraph"> 
+ <p>A Mule message is embedded within a Mule message object. Some Mule message objects may contain variables, attachments, and exception payloads. However, as attachments and exception payloads are not frequently used or manipulated, this overview document does not include details about them. See <a href="/mule-fundamentals/v/3.7/mule-message-structure">Mule Message Structure</a>.</p> 
 </div> 
 <div class="paragraph"> 
  <p><strong>Mule model</strong></p> 
@@ -1218,6 +1260,12 @@
 </div> 
 <div class="paragraph"> 
  <p>A building block in service orchestration that determines where and how messages are transported between applications. See also inbound router, outbound router, and <a href="http://www.eaipatterns.com/MessageRouter.html">Message Router</a>.</p> 
+</div> 
+<div class="paragraph"> 
+ <p><strong>Runtime Manager</strong></p> 
+</div> 
+<div class="paragraph"> 
+ <p>The Runtime Manager (also referred to as Anypoint Runtime Manager or ARM) is one of the main features of the Anypoint Platfrom. It is the console that allows you to deploy and manage applications built with any Mule runtime, both to servers in the cloud (currently handled by CloudHub) and on premises. This console can be accesed as a web application through <a href="anypoint.mulesoft.com">anypoint.mulesoft.com</a> or you can download it as a standalone program to run in a local server.</p> 
 </div> 
 <div id="sects" class="paragraph"> 
  <p><strong>S</strong></p> 
