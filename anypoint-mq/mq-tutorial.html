@@ -1123,6 +1123,51 @@
   <div class="paragraph"> 
    <p>In this section, we use Anypoint Studio to create a simple application that you can use to send a message to a queue, or to consume the message, and to ack.</p> 
   </div> 
+  <div class="paragraph"> 
+   <p>For this section, you need to have the client ID and secret you created in <a href="#register-a-client-application">Register a Client Application</a>, so have Anypoint Platform &gt; <strong>MQ</strong> &gt; <strong>Client App</strong> open to copy the information to your Studio application.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To configure Studio:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Download and install the latest <a href="https://www.mulesoft.com/platform/studio">Studio</a> version.</p> </li> 
+    <li> <p>In Studio, click <strong>Help</strong> &gt; <strong>Install New Software</strong>.</p> </li> 
+    <li> <p>Paste this URL into the <strong>Work with</strong> field and press <code>Enter</code>:</p> 
+     <div class="paragraph"> 
+      <p><code><a href="http://studio.mulesoft.org/r4/addons/beta" class="bare">http://studio.mulesoft.org/r4/addons/beta</a></code></p> 
+     </div> </li> 
+    <li> <p>Click the checkbox for <strong>Anypoint Messaging Connector</strong> and click <strong>Next</strong>:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-connector-install.png" alt="Type URL and click Anypoint Messaging Connector"></span></p> 
+     </div> </li> 
+    <li> <p>Follow the prompts to install the software.</p> </li> 
+    <li> <p>Create a new Mule Project. Click <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>.</p> </li> 
+    <li> <p>Search for "transform" and drag the <strong>Transform Message</strong> icon to the canvas. You can rename Transform Message to a new value by right-clicking the icon and selecting <strong>Rename</strong>. For the example flow, rename the icon to "Create Customer".</p> </li> 
+    <li> <p>Use the DataWeave syntax to specify firstname, lastname, and company values:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-dataweave.png" alt="mq-dataweave"></span></p> 
+     </div> </li> 
+    <li> <p>Search for "mq" and drag the Anypoint MQ connector icon to the canvas.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-connector-visual-flow.png" alt="mq-connector-visual-flow"></span></p> 
+     </div> </li> 
+    <li> <p>Click the green plus sign to the right of <strong>Connector Configuration</strong>.</p> </li> 
+    <li> <p>In the Global Element Properties window plug in the information from Anypoint Platform:</p> 
+     <div class="olist loweralpha"> 
+      <ol class="loweralpha" type="a"> 
+       <li> <p>Copy the <strong>Client App</strong> &gt; <strong>Client App ID</strong> value to Studio’s <strong>Client ID</strong> field.</p> </li> 
+       <li> <p>Copy the <strong>Client App</strong> &gt; <strong>Client Secret</strong> value to Studio’s <strong>Client Secret</strong> field.</p> </li> 
+       <li> <p>Click OK.</p> </li> 
+      </ol> 
+     </div> </li> 
+    <li> <p>Click the <strong>Operation</strong> field and specify an operation such as Publish or Consume.</p> </li> 
+    <li> <p>Specify the <strong>Destination</strong> as the name of the Queue or Exchange that you set in Anypoint Platform.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-connector-properties.png" alt="mq-connector-properties"></span></p> 
+     </div> </li> 
+   </ol> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
