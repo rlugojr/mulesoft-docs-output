@@ -976,6 +976,22 @@
   </div> 
   <div class="sect2"> 
    <h3 id="create-a-queue"><a class="anchor" href="#create-a-queue"></a>Create a Queue</h3> 
+   <div class="paragraph"> 
+    <p>A queue provides a temporary stack for holding messages. Applications push messages to the queue and other applications consume the messages. An application that intends to consume messages either acks (acknowledges) the message acquires the message contents, or nacks (negative acknowledgement) the message to indicate that the application does not want to consume that message. When an application acks a message, MQ locks the message for a limited duration so only the application can consume it, and then removes the message after the application consumes the message.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To create a queue:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
+     <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
+     <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+     <li> <p>Click the blue plus circle.</p> </li> 
+     <li> <p>Specify the queue name <code>MyDemoQueue</code>. For this tutorial, you can leave the time-to-live (TTL) durations as shown, and leave the queue unencrypted.</p> </li> 
+     <li> <p>Click the queue name to list its details. After we create applications in Anypoint Studio, we return to the queue detail screen to see which messages are available and which are in flight.</p> </li> 
+    </ol> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="register-a-client-application"><a class="anchor" href="#register-a-client-application"></a>Register a Client Application</h3> 
@@ -1016,7 +1032,22 @@
  <h2 id="configuring-anypoint-studio-for-mq"><a class="anchor" href="#configuring-anypoint-studio-for-mq"></a>Configuring Anypoint Studio for MQ</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In this section, we use Anypoint Studio to create a simple application that you can use to send a message to a queue, or to consume the message, and to ack</p> 
+   <p>In this section, we use Anypoint Studio to create a simple application that you can use to send a message to a queue, or to consume the message, and to ack.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="/anypoint-mq/configuring-mq-in-studio">Configuring MQ in Studio</a></p> </li> 
+    <li> <p><a href="/anypoint-mq/understanding-anypoint-mq">Understanding Anypoint MQ</a></p> </li> 
+    <li> <p><a href="/anypoint-mq/mq-access-management">MQ Access Management</a></p> </li> 
+    <li> <p><a href="/anypoint-mq/mq-queues-and-exchanges">MQ Queues and Exchanges</a></p> </li> 
+    <li> <p><a href="/anypoint-mq/mq-rest-api-guide">MQ REST API Guide</a></p> </li> 
+    <li> <p><a href="/anypoint-mq/mq-release-notes">Anypoint MQ Release Notes</a></p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div>
@@ -1024,7 +1055,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-platform">Configure Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#configuring-anypoint-studio-for-mq">Configuring Anypoint Studio for MQ</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-platform">Configure Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#configuring-anypoint-studio-for-mq">Configuring Anypoint Studio for MQ</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
