@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/configuring-mule-stacktraces" />
-    <meta name="description" content="By default Mule will filter out some internal class references from stacktraces to produce a more readable output. This behavior can be controlled ..." />
+    <meta name="description" content="By default Mule filters out some internal class references from stacktraces to produce a more readable output. This behavior can be controlled one ..." />
     <meta class="swiftype" name="title" data-type="string" content="Configuring Mule Stacktraces" />
 
 </head>
@@ -866,13 +866,13 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>By default Mule will filter out some internal class references from stacktraces to produce a more readable output. This behavior can be controlled one of three ways:</p> 
+   <p>By default Mule filters out some internal class references from stacktraces to produce a more readable output. This behavior can be controlled one of three ways:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>command-line arguments</p> </li> 
-    <li> <p>setting properties in Mule Studio</p> </li> 
-    <li> <p>using JMX</p> </li> 
+    <li> <p>Command-line arguments</p> </li> 
+    <li> <p>Setting properties in Mule Studio</p> </li> 
+    <li> <p>Using JMX</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -881,21 +881,21 @@
  <h2 id="command-line-arguments"><a class="anchor" href="#command-line-arguments"></a>Command-Line Arguments</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Two command-line properties enable you to control this behavior using&nbsp;<code>-M-DpropertyName</code>:</p> 
+   <p>Two command-line properties let you control this behavior using&nbsp;<code>-M-DpropertyName</code>:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><code>mule.stacktrace.full</code>&nbsp;- when present, Mule will not filter stacktraces. Intended for Mule developers only, end user would probably never need to enable this.</p> </li> 
-    <li> <p><code>mule.stacktrace.filter</code>&nbsp;- a comma-separated list of packages and/or classes to remove from the stacktraces (matched via&nbsp;<code>string.startsWith() )</code></p> </li> 
+    <li> <p><code>mule.stacktrace.full</code>&nbsp;- When present, Mule does not filter stacktraces. Intended for Mule developers only, end users probably never need to enable this. (You can also use the property <code>mule.verbose.exceptions=true</code>, with the same result.)</p> </li> 
+    <li> <p><code>mule.stacktrace.filter</code>&nbsp;- A comma-separated list of packages and/or classes to remove from the stacktraces, which are matched via&nbsp;<code>string.startsWith()</code>.</p> </li> 
    </ul> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="setting-properties-in-mule-studio"><a class="anchor" href="#setting-properties-in-mule-studio"></a>Setting Properties in Mule Studio</h2> 
+ <h2 id="setting-properties-in-anypoint-studio"><a class="anchor" href="#setting-properties-in-anypoint-studio"></a>Setting Properties in Anypoint Studio</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In Studio, you can set the same properties specified above to instruct Mule to provide either unfiltered stacktraces or to configure a particular filter of packages or classes that should be removed. To adjust these settings, open your mule-project.xml file and define environment variables to specify the behavior you want. In the example below, the&nbsp;<strong>mule.stacktrace.full* property is set to *true</strong>.</p> 
+   <p>In Studio, you can set the same properties specified above to instruct Mule to provide either unfiltered stacktraces or to configure a particular filter of packages or classes to remove. To adjust these settings, open your <code>mule-project.xml</code> file and define environment variables to specify the behavior you want. In the example below, the&nbsp;<code>mule.stacktrace.full</code> property is set to <strong>true</strong>.</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/Studio-config-stacktrace.png" alt="Studio-config-stacktrace"></span></p> 
@@ -906,12 +906,12 @@
  <h2 id="using-jmx"><a class="anchor" href="#using-jmx"></a>Using JMX</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Configuration MBean now exposes two new options.</p> 
+   <p>The Configuration MBean now exposes two new options:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>FullStackTrace - same as above</p> </li> 
-    <li> <p>StackTraceFilter - same as above</p> </li> 
+    <li> <p><code>FullStackTrace</code> - Same as above</p> </li> 
+    <li> <p><code>StackTraceFilter</code> - Same as above</p> </li> 
    </ul> 
   </div> 
   <div class="admonitionblock note"> 
@@ -921,7 +921,7 @@
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
       <td class="content"> 
        <div class="paragraph"> 
-        <p>These settings are shared between apps even though each app has its own Configuration MBean. That means that modifying it in one app will affect others.</p> 
+        <p>These settings are shared between apps even though each app has its own configuration MBean. That means that modifying it in one app affects others.</p> 
        </div> </td> 
      </tr> 
     </tbody> 
@@ -933,7 +933,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#command-line-arguments">Command-Line Arguments</a></li><li><a class="scroll-menu-link" href="#setting-properties-in-mule-studio">Setting Properties in Mule Studio</a></li><li><a class="scroll-menu-link" href="#using-jmx">Using JMX</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#command-line-arguments">Command-Line Arguments</a></li><li><a class="scroll-menu-link" href="#setting-properties-in-anypoint-studio">Setting Properties in Anypoint Studio</a></li><li><a class="scroll-menu-link" href="#using-jmx">Using JMX</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
