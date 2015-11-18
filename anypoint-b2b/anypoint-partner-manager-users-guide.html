@@ -3543,7 +3543,7 @@
      <div class="sect5"> 
       <h6 id="parser-settings"><a class="anchor" href="#parser-settings"></a>Parser Settings</h6> 
       <div class="paragraph"> 
-       <p>There are eight optional parser settings that can be chosen for your trading partners inbound documents. The fields are listed below. The expected behavior if these options are checked is a 997 stating a failure will be sent for the condition.</p> 
+       <p>There are eight optional parser settings that can be chosen for your trading partners inbound documents. The fields are listed below. The expected behavior if these options are checked is a CONTRL stating a failure will be sent for the condition.</p> 
       </div> 
       <div class="ulist"> 
        <ul> 
@@ -3560,7 +3560,7 @@
      <div class="sect5"> 
       <h6 id="terminator-delimiter-settings"><a class="anchor" href="#terminator-delimiter-settings"></a>Terminator/Delimiter settings</h6> 
       <div class="paragraph"> 
-       <p>These settings specify which special characters a trading partner wants to use to separate and use as terminators in the EDIFACT data. The min/max for this field is 1. All these fields are editable.</p> 
+       <p>These settings specify which special characters a trading partner wants to use as separators and terminators in the EDIFACT data. The min/max for this field is 1. All these fields are editable.</p> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -3593,6 +3593,12 @@
         </dt> 
         <dd> 
          <p>The default value is “? “</p> 
+        </dd> 
+        <dt class="hdlist1">
+          String substitution character 
+        </dt> 
+        <dd> 
+         <p>Character to be used to replace invalid characters in string values; no default given.</p> 
         </dd> 
        </dl> 
       </div> 
@@ -3783,13 +3789,13 @@
           Line ending between segments 
         </dt> 
         <dd> 
-         <p>Drop-down box that enables yoyou to specify on your outbound data you would like CR (Carriage return) or Line feed (LF) or Line feed carriage return (LFCR) or none.</p> 
+         <p>Drop-down box that enables you to specify on your outbound data you would like CR (Carriage return) or Line feed (LF) or Line feed carriage return (LFCR) or none.</p> 
         </dd> 
         <dt class="hdlist1">
           String substitution character 
         </dt> 
         <dd> 
-         <p>String substitution character if checked will allow you to enter a character in the value field</p> 
+         <p>Character to be used to replace invalid characters in string values; no default given.</p> 
         </dd> 
        </dl> 
       </div> 
@@ -3832,7 +3838,7 @@
           Default 
         </dt> 
         <dd> 
-         <p>`UNOA (ISO 646)</p> 
+         <p><code>UNOA (ISO 646)`</code></p> 
         </dd> 
        </dl> 
       </div> 
@@ -3949,7 +3955,7 @@
   <div class="sect2"> 
    <h3 id="transactions-partner"><a class="anchor" href="#transactions-partner"></a>Transactions - Partner</h3> 
    <div class="paragraph"> 
-    <p>In the Transactions section you can configure specific transactions you expect to process with this trading partner. Transactions can be inbound or outbound and each is defined by a transport protocol and format protocol. For example, if you expect to receive X12 850 messages and to respond with X12 856 messages, you would set those transactions up as inbound and outbound respectively.</p> 
+    <p>In the Transactions section you can configure specific transaction sets that you expect to process with this trading partner. Transactions can be inbound or outbound and each is defined by a transport protocol and format protocol. For example, if you expect to receive X12 850 messages and to respond with X12 856 messages, you would set those transactions up as inbound and outbound respectively.</p> 
    </div> 
    <div class="sect3"> 
     <h4 id="to-enter-transaction-information"><a class="anchor" href="#to-enter-transaction-information"></a>To enter transaction information</h4> 
@@ -3968,7 +3974,7 @@
          Inbound/Outbound 
        </dt> 
        <dd> 
-        <p>Select the direction this transaction will be going. Outbound is from your Company to your Trading Partner’s. Inbound is from your Trading Partner to your Company.</p> 
+        <p>Select the direction this transaction will be going. Outbound is from your Company to your Trading Partner’s. Inbound is from your Trading Partner to your Company. <code>Inbound</code> is the default.</p> 
        </dd> 
       </dl> 
      </div> 
@@ -3986,7 +3992,7 @@
           Required? 
         </dt> 
         <dd> 
-         <p>No</p> 
+         <p>Yes</p> 
         </dd> 
         <dt class="hdlist1">
           Valid values 
@@ -4075,7 +4081,7 @@
           Message Type 
         </dt> 
         <dd> 
-         <p>Pick one of the Message Types in the dropdown or select other and enter your transaction type. For X12 it is the numeric number of the transaction. with the friendly name appended (for example, 850Purchase Order).<br> For EDIFACT. the formal name of the document precedes the friendly name, as in ORDERS(PurchaseOrder).</p> 
+         <p>Pick one of the Message Types in the dropdown. For X12 it is the numeric number of the transaction. with the friendly name appended (for example, 850Purchase Order).<br> For EDIFACT. the formal name of the document precedes the friendly name, as in ORDERS(Purchase Order).</p> 
         </dd> 
         <dt class="hdlist1">
           Required? 
@@ -4105,7 +4111,7 @@
        <p>Pick the method of transport you are going to use for this transaction.</p> 
       </div> 
       <div class="paragraph"> 
-       <p>If you have not defined the parameters for the transport chosen, go back to the AS2 or FTPS areas by clicking on the appropriate one in the left navigation bar to enter your default transport information. If you check the “Use default for Inbound AS2 for partner” this will use the settings already set up in AS2 or FTPS as defaults</p> 
+       <p>If you have not defined the parameters for the transport chosen, go back to the AS2 or FTPS areas by clicking on the appropriate one in the left navigation bar to enter your default transport information. If you check the “Use default for Inbound AS2 for partner” this will use the settings already set up in AS2 or FTPS as defaults (once you have saved them).</p> 
       </div> 
       <div class="paragraph"> 
        <p>You will then be able to click on the Transaction Type (In blue) and see your parameters and make any changes needed. If you make changes be sure and click the Update button. If you need to delete a Transaction the Blue “X” on the far right should be selected and a warning about are you sure you want to delete will appear.</p> 
@@ -4140,7 +4146,7 @@
     <p>Select “All” to search all types of B2B messages. Select X12, EDIFACT, AS2, or FTPS to filter for messages by a specific format or transport. The Type selection also adjusts the fields that are displayed.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>Select “All” to search all types of B2B messages. Select X12, EDIFACT, AS2, or FTP/S to filter for messages by a specific format or transport.</p> 
+    <p>Select “All” to search all types of B2B messages. Select X12, EDIFACT, AS2, or FTPS to filter for messages by a specific format or transport.</p> 
    </div> 
   </div> 
   <div class="sect3"> 
@@ -4156,13 +4162,13 @@
    </div> 
   </div> 
   <div class="sect3"> 
-   <h4 id="filename-4"><a class="anchor" href="#filename-4"></a>FileName</h4> 
+   <h4 id="file-name"><a class="anchor" href="#file-name"></a>File Name</h4> 
    <div class="paragraph"> 
     <p>Search for a specific file by its specific filename, or for all files that start with the same text.</p> 
    </div> 
   </div> 
   <div class="sect3"> 
-   <h4 id="isa-control"><a class="anchor" href="#isa-control"></a>ISA Control #</h4> 
+   <h4 id="control"><a class="anchor" href="#control"></a>Control #</h4> 
    <div class="paragraph"> 
     <p>Search for a message by Control# (only enabled when the Type is X12 or EDIFACT).</p> 
    </div> 
