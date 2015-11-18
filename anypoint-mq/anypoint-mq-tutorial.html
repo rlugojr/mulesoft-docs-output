@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-mq/anypoint-mq-tutorial" />
-    <meta name="description" content="This guide walks through the complete process of creating a queue and publishing to and consuming from a Mule message in the queue. In the sections..." />
+    <meta name="description" content="This guide walks through the complete process of creating a queue and publishing to and consuming from a Mule message in the queue. 1 Configure Any..." />
     <meta class="swiftype" name="title" data-type="string" content="Anypoint MQ Tutorial" />
 
 </head>
@@ -885,6 +885,95 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="tutorial-workflow"><a class="anchor" href="#tutorial-workflow"></a>Tutorial Workflow</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 10%;"> 
+    <col style="width: 20%;"> 
+    <col style="width: 70%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">#</th> 
+     <th class="tableblock halign-left valign-top">Task</th> 
+     <th class="tableblock halign-left valign-top">Description</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>1</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><a href="#configure-anypoint-platform">Configure Anypoint Platform</a></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Use <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a> to:</p> 
+       </div> 
+       <div class="olist loweralpha"> 
+        <ol class="loweralpha" type="a"> 
+         <li> <p><a href="#assign-user-permissions">Assign User Permissions</a> - Give yourself permission to view the user interface - Good model for when you add users in your organization to MQ.</p> </li> 
+         <li> <p><a href="#create-an-admin-role">Create an Admin Role</a> - Create an admin’s role for all permissions - Helps you define who in your organization should administer MQ versus have lesser permissions.</p> </li> 
+         <li> <p><a href="#create-a-queue">Create a Queue</a> - Create a queue where MQ messages are published and consumed by applications.</p> </li> 
+         <li> <p><a href="#register-a-client-application">Register a Client Application</a> - Register an application at the MQ server so that the application can publish messages and consume messages. The MQ server provides a client ID and client secret that you use with Anypoint Studio.</p> </li> 
+        </ol> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>2</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><a href="#configuring-anypoint-studio-for-mq">Configuring Anypoint Studio for MQ</a></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Obtain the MQ connector and create a flow for publishing or consuming messages.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>3</p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p><a href="#send-http-requests">Send HTTP Requests</a></p> 
+       </div> 
+      </div></td> 
+     <td class="tableblock halign-left valign-top"> 
+      <div> 
+       <div class="paragraph"> 
+        <p>Use the Chrome open-source Postman plugin to send messages to the MQ server.</p> 
+       </div> 
+      </div></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="configure-anypoint-platform"><a class="anchor" href="#configure-anypoint-platform"></a>Configure Anypoint Platform</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -935,7 +1024,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="assign-a-role-for-administration"><a class="anchor" href="#assign-a-role-for-administration"></a>Assign a Role For Administration</h3> 
+   <h3 id="create-an-admin-role"><a class="anchor" href="#create-an-admin-role"></a>Create an Admin Role</h3> 
    <div class="paragraph"> 
     <p>After you create permissions for yourself, you can create a role that you can apply to other users in your organization. While you don’t need roles to complete this tutorial, when you use MQ as an administrator or developer, you should create roles for all those in your organization who use MQ. After the previous section where you assigned permissions to yourself, the steps to create a role are very similar and this exercise takes little extra time now and benefits you later.</p> 
    </div> 
@@ -1037,6 +1126,11 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="send-http-requests"><a class="anchor" href="#send-http-requests"></a>Send HTTP Requests</h2> 
+ <div class="sectionbody"> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="ulist"> 
@@ -1055,7 +1149,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-platform">Configure Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#configuring-anypoint-studio-for-mq">Configuring Anypoint Studio for MQ</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#tutorial-workflow">Tutorial Workflow</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-platform">Configure Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#configuring-anypoint-studio-for-mq">Configuring Anypoint Studio for MQ</a></li><li><a class="scroll-menu-link" href="#send-http-requests">Send HTTP Requests</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
