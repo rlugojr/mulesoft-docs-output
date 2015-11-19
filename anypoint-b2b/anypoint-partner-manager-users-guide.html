@@ -1586,7 +1586,7 @@
      <div class="sect5"> 
       <h6 id="server-address"><a class="anchor" href="#server-address"></a>Server Address</h6> 
       <div class="paragraph"> 
-       <p>Address to which inbound documents are delivered.</p> 
+       <p>Server address to which inbound B2B documents are delivered.</p> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -1643,6 +1643,9 @@
      </div> 
      <div class="sect5"> 
       <h6 id="user-name"><a class="anchor" href="#user-name"></a>User Name</h6> 
+      <div class="paragraph"> 
+       <p>The user name you specify for this FTPS instance.</p> 
+      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
@@ -1669,6 +1672,9 @@
      </div> 
      <div class="sect5"> 
       <h6 id="password"><a class="anchor" href="#password"></a>Password</h6> 
+      <div class="paragraph"> 
+       <p>The password you are using with this trading partner.</p> 
+      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
@@ -1724,6 +1730,9 @@
      </div> 
      <div class="sect5"> 
       <h6 id="ssl-mode"><a class="anchor" href="#ssl-mode"></a>SSL Mode</h6> 
+      <div class="paragraph"> 
+       <p>Method of invoking client security</p> 
+      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
@@ -1735,8 +1744,17 @@
         <dt class="hdlist1">
           Valid values 
         </dt> 
+        <dt class="hdlist1"> 
+         <code>Explicit</code> 
+        </dt> 
         <dd> 
-         <p>Explicit|Implicit</p> 
+         <p>Uses standard FTPS commands and replies.</p> 
+        </dd> 
+        <dt class="hdlist1"> 
+         <code>Implicit</code> 
+        </dt> 
+        <dd> 
+         <p>Requires a Transport Layer Security to be established at the beginning of the connection.</p> 
         </dd> 
         <dt class="hdlist1">
           Default 
@@ -1751,7 +1769,7 @@
      <div class="sect5"> 
       <h6 id="enable-server-validation-checkbox"><a class="anchor" href="#enable-server-validation-checkbox"></a>Enable Server Validation (Checkbox)</h6> 
       <div class="paragraph"> 
-       <p>Selecting this checkbox validate the servers identity; only JKS format is supported at this time.</p> 
+       <p>Selecting this checkbox validates the servers identity; only JKS format is supported at this time.</p> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -1767,6 +1785,9 @@
      </div> 
      <div class="sect5"> 
       <h6 id="path"><a class="anchor" href="#path"></a>Path</h6> 
+      <div class="paragraph"> 
+       <p>Specific FTPS file location where inbound documents will reside.</p> 
+      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
@@ -1820,7 +1841,7 @@
      <div class="sect5"> 
       <h6 id="move-to-directory"><a class="anchor" href="#move-to-directory"></a>Move to directory</h6> 
       <div class="paragraph"> 
-       <p>Places the files in the specified location until they complete uploading.</p> 
+       <p>Places the files in the specified directory until they complete uploading.</p> 
       </div> 
       <div class="dlist"> 
        <dl> 
@@ -1874,6 +1895,9 @@
      </div> 
      <div class="sect5"> 
       <h6 id="maximum-number-of-download-threads"><a class="anchor" href="#maximum-number-of-download-threads"></a>Maximum Number of Download Threads</h6> 
+      <div class="paragraph"> 
+       <p>Controls the concurrency level at a given time.</p> 
+      </div> 
       <div class="dlist"> 
        <dl> 
         <dt class="hdlist1">
