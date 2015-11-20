@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-mq/mq-tutorial" />
-    <meta name="description" content="This guide walks through the complete process of creating a queue and publishing to and consuming from a Mule message in the queue. 1 Configure Any..." />
+    <meta name="description" content="This guide walks through the complete process of creating a queue and publishing to and consuming from a Mule message in the queue. To start Postma..." />
     <meta class="swiftype" name="title" data-type="string" content="Anypoint MQ Tutorial" />
 
 </head>
@@ -878,8 +878,18 @@
     <li> <p>Create an <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a> account to configure user permissions, register applications in MQ, and to create queues and exchanges.</p> </li> 
     <li> <p><a href="http://www.mulesoft.com/mule-esb-subscription">Subscribe</a>&nbsp;to Mule ESB Enterprise - An Enterprise license is required to use the MQ server software.</p> </li> 
     <li> <p>Install <a href="https://www.mulesoft.com/platform/studio">Anypoint Studio</a>. We use Studio to create each application that talks to MQ over HTTP.</p> </li> 
+    <li> <p>Install <a href="https://www.mulesoft.com/platform/soa/mule-esb-enterprise">Mule Runtime</a>. After doing so, locate the <code>bin</code> directory. We start Mule from this directory.</p> </li> 
     <li> <p>Install the <a href="https://www.google.com/chrome/browser/desktop/">Chrome browser</a>. Chrome provides valuable developer tools and supports the use of plugins such as Postman, which sends HTTP commands to the MQ server.</p> </li> 
-    <li> <p>Install the open-source <a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en">Chrome Postman plugin</a> - We use Postman to send HTTP commands to the MQ server.</p> </li> 
+    <li> <p>Install the open-source <a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en">Chrome Postman 3.0</a> - We use Postman to send HTTP commands to the MQ server.</p> 
+     <div class="paragraph"> 
+      <p>To start Postman:</p> 
+     </div> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Windows: Press the Windows key and type: <code>postman</code></p> </li> 
+       <li> <p>Mac: Press <code>Command</code> + <code>Space</code>, and type: <code>postman</code></p> </li> 
+      </ul> 
+     </div> </li> 
    </ul> 
   </div> 
  </div> 
@@ -889,9 +899,9 @@
  <div class="sectionbody"> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
-    <col style="width: 10%;"> 
+    <col style="width: 5%;"> 
     <col style="width: 20%;"> 
-    <col style="width: 70%;"> 
+    <col style="width: 75%;"> 
    </colgroup> 
    <thead> 
     <tr> 
@@ -939,13 +949,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><a href="#configuring-anypoint-studio-for-mq">Configuring Anypoint Studio for MQ</a></p> 
+        <p><a href="#configure-anypoint-studio-for-mq">Configure Anypoint Studio for MQ</a></p> 
        </div> 
       </div></td> 
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p>Obtain the MQ connector and create a flow for publishing or consuming messages.</p> 
+        <p>Obtain the MQ connector and create a flow for publishing or consuming messages, and run the Mule Application to ensure your application works and to serve HTTP requests on your localhost.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -959,13 +969,13 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><a href="#send-http-requests">Send HTTP Requests</a></p> 
+        <p><a href="#start-mule-runtime">Start Mule Runtime</a></p> 
        </div> 
       </div></td> 
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p>Use the Chrome open-source Postman plugin to send messages to the MQ server.</p> 
+        <p>Start the Mule Runtime to handle requests between the MQ server and your application.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -1108,71 +1118,235 @@
      <li> <p>Specify an application name such as <code>DemoClientApp</code> and click <strong>Save Changes</strong>.</p> 
       <div class="paragraph"> 
        <p><span class="image"><img src="./_images/mq-tut-create-client-app.png" alt="mq-tut-create-client-app"></span></p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>We use this information in the next section on configuring Anypoint Studio.</p> 
       </div> </li> 
     </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong>Note</strong>: Leave the Client Apps window open. We need to copy and paste the Client ID and Client Secret into the configuration for Anypoint Studio in the next step.</p> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="configuring-anypoint-studio-for-mq"><a class="anchor" href="#configuring-anypoint-studio-for-mq"></a>Configuring Anypoint Studio for MQ</h2> 
+ <h2 id="configure-anypoint-studio-for-mq"><a class="anchor" href="#configure-anypoint-studio-for-mq"></a>Configure Anypoint Studio for MQ</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In this section, we use Anypoint Studio to create a simple application that you can use to send a message to a queue, or to consume the message, and to ack.</p> 
+   <p>In this section, we use Anypoint Studio to create a simple application that you can use to publish a message to a queue, or to consume the message, and to ack and nack the message.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>For this section, you need to have the client ID and secret you created in <a href="#register-a-client-application">Register a Client Application</a>, so have Anypoint Platform &gt; <strong>MQ</strong> &gt; <strong>Client App</strong> open to copy the information to your Studio application.</p> 
+   <p>For this section, you need to have the client ID and secret you created in <a href="#register-a-client-application">Register a Client Application</a>, so have <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a> &gt; <strong>MQ</strong> &gt; <strong>Client App</strong> open to copy the information to your Studio application.</p> 
   </div> 
-  <div class="paragraph"> 
-   <p>To configure Studio:</p> 
+  <div class="sect2"> 
+   <h3 id="configure-studio-for-the-anypoint-mq-connector-plugin"><a class="anchor" href="#configure-studio-for-the-anypoint-mq-connector-plugin"></a>Configure Studio for the Anypoint MQ Connector Plugin</h3> 
+   <div class="paragraph"> 
+    <p>To configure Studio:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Download and install the latest <a href="https://www.mulesoft.com/platform/studio">Studio</a> version.</p> </li> 
+     <li> <p>In Studio, click <strong>Help</strong> &gt; <strong>Install New Software</strong>.</p> </li> 
+     <li> <p>Paste this URL into the <strong>Work with</strong> field and press <code>Enter</code>:</p> 
+      <div class="paragraph"> 
+       <p><code><a href="http://studio.mulesoft.org/r4/addons/beta" class="bare">http://studio.mulesoft.org/r4/addons/beta</a></code></p> 
+      </div> </li> 
+     <li> <p>Click the checkbox for <strong>Anypoint Messaging Connector</strong> and click <strong>Next</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-connector-install.png" alt="Type URL and click Anypoint Messaging Connector"></span></p> 
+      </div> </li> 
+     <li> <p>Follow the prompts to install the software.</p> </li> 
+    </ol> 
+   </div> 
   </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Download and install the latest <a href="https://www.mulesoft.com/platform/studio">Studio</a> version.</p> </li> 
-    <li> <p>In Studio, click <strong>Help</strong> &gt; <strong>Install New Software</strong>.</p> </li> 
-    <li> <p>Paste this URL into the <strong>Work with</strong> field and press <code>Enter</code>:</p> 
-     <div class="paragraph"> 
-      <p><code><a href="http://studio.mulesoft.org/r4/addons/beta" class="bare">http://studio.mulesoft.org/r4/addons/beta</a></code></p> 
-     </div> </li> 
-    <li> <p>Click the checkbox for <strong>Anypoint Messaging Connector</strong> and click <strong>Next</strong>:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-connector-install.png" alt="Type URL and click Anypoint Messaging Connector"></span></p> 
-     </div> </li> 
-    <li> <p>Follow the prompts to install the software.</p> </li> 
-    <li> <p>Create a new Mule Project. Click <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>.</p> </li> 
-    <li> <p>Search for "transform" and drag the <strong>Transform Message</strong> icon to the canvas. You can rename Transform Message to a new value by right-clicking the icon and selecting <strong>Rename</strong>. For the example flow, rename the icon to "Create Customer".</p> </li> 
-    <li> <p>Use the DataWeave syntax to specify firstname, lastname, and company values:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-dataweave.png" alt="mq-dataweave"></span></p> 
-     </div> </li> 
-    <li> <p>Search for "mq" and drag the Anypoint MQ connector icon to the canvas.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-connector-visual-flow.png" alt="mq-connector-visual-flow"></span></p> 
-     </div> </li> 
-    <li> <p>Click the green plus sign to the right of <strong>Connector Configuration</strong>.</p> </li> 
-    <li> <p>In the Global Element Properties window plug in the information from Anypoint Platform:</p> 
-     <div class="olist loweralpha"> 
-      <ol class="loweralpha" type="a"> 
-       <li> <p>Copy the <strong>Client App</strong> &gt; <strong>Client App ID</strong> value to Studio’s <strong>Client ID</strong> field.</p> </li> 
-       <li> <p>Copy the <strong>Client App</strong> &gt; <strong>Client Secret</strong> value to Studio’s <strong>Client Secret</strong> field.</p> </li> 
-       <li> <p>Click OK.</p> </li> 
-      </ol> 
-     </div> </li> 
-    <li> <p>Click the <strong>Operation</strong> field and specify an operation such as Publish or Consume.</p> </li> 
-    <li> <p>Specify the <strong>Destination</strong> as the name of the Queue or Exchange that you set in Anypoint Platform.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-connector-properties.png" alt="mq-connector-properties"></span></p> 
-     </div> </li> 
-   </ol> 
+  <div class="sect2"> 
+   <h3 id="use-studio-to-create-an-application"><a class="anchor" href="#use-studio-to-create-an-application"></a>Use Studio to Create an Application</h3> 
+   <div class="paragraph"> 
+    <p>To create an application:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Create a new Mule Project. Click <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>.</p> </li> 
+     <li> <p>Search for "http" and drag the <strong>HTTP Connector</strong> to the Studio Canvas. Here’s how the Canvas appears after pulling all the building blocks to the Canvas:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-connector-visual-flow.png" alt="mq-connector-visual-flow"></span></p> 
+      </div> 
+      <div class="olist loweralpha"> 
+       <ol class="loweralpha" type="a"> 
+        <li> <p>Search for "set" and drag <strong>Set Payload</strong> to the Canvas.</p> </li> 
+        <li> <p>Search for "mq" and drag the <strong>Anypoint MQ</strong> connector icon to the canvas.</p> </li> 
+        <li> <p>Search for "logger" and drag <strong>Logger</strong> to the Canvas.</p> </li> 
+       </ol> 
+      </div> </li> 
+     <li> <p>Click the HTTP Connector and click the green plus sign to the right of <strong>Connector Configuration</strong>.</p> </li> 
+     <li> <p>In the HTTP Connector’s Global Element Properties, set the host to <strong>localhost</strong> and the port to <strong>8081</strong>. Click <strong>OK</strong>.</p> </li> 
+     <li> <p>Set the <strong>Path</strong> to <code>/mq/{messageId}</code>.</p> </li> 
+     <li> <p>Click <strong>Set Payload</strong> in the Canvas and set the <strong>Value</strong> to:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="code">#[message.inboundProperties.'http.uri.params'.messageId]</code></pre> 
+       </div> 
+      </div> </li> 
+     <li> <p>Click the <strong>MQ Connector</strong> and click the green plus sign to the right of <strong>Connector Configuration</strong>.</p> </li> 
+     <li> <p>In the MQ Connector’s Global Element Properties window, add the information from Anypoint Platform:</p> 
+      <div class="olist loweralpha"> 
+       <ol class="loweralpha" type="a"> 
+        <li> <p>Copy the <strong>Client App</strong> &gt; <strong>Client App ID</strong> value to Studio’s <strong>Client ID</strong> field.</p> </li> 
+        <li> <p>Copy the <strong>Client App</strong> &gt; <strong>Client Secret</strong> value to Studio’s <strong>Client Secret</strong> field.</p> </li> 
+        <li> <p>Click OK.</p> </li> 
+       </ol> 
+      </div> </li> 
+     <li> <p>Click the <strong>Operation</strong> field and specify an operation such as <code>publish</code> or <code>consume</code>.</p> </li> 
+     <li> <p>Specify the <strong>Destination</strong> as the name of the Queue or Exchange that you set in Anypoint Platform.</p> </li> 
+     <li> <p>Click the Logger and set the Message field to: <code>MQ Message: #[payload]</code></p> </li> 
+     <li> <p>Save your project.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-connector-properties.png" alt="mq-connector-properties"></span></p> 
+      </div> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="run-the-application"><a class="anchor" href="#run-the-application"></a>Run the Application</h3> 
+   <div class="paragraph"> 
+    <p>Click the project name in Package Explorer, and click <strong>Run</strong> &gt; <strong>Run As</strong> &gt; <strong>Mule Application</strong>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The output should end with these statements:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="code">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td> 
+          <td class="code"><pre>++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Started app 'mqdemo'                                     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  &lt;date_and_time&gt; [main] org.mule.module.launcher.DeploymentDirectoryWatcher:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Mule is up and kicking (every 5000ms)                    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  &lt;date_and_time&gt; [main] org.mule.module.launcher.StartupSummaryDeploymentListener:
+**********************************************************************
+*              - - + DOMAIN + - -               * - - + STATUS + - - *
+**********************************************************************
+* default                                       * DEPLOYED           *
+**********************************************************************
+
+*******************************************************************************************************
+*            - - + APPLICATION + - -            *       - - + DOMAIN + - -       * - - + STATUS + - - *
+*******************************************************************************************************
+* mqdemo                                        * default                        * DEPLOYED           *
+*******************************************************************************************************</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="send-http-requests"><a class="anchor" href="#send-http-requests"></a>Send HTTP Requests</h2> 
+ <h2 id="start-mule-runtime"><a class="anchor" href="#start-mule-runtime"></a>Start Mule Runtime</h2> 
  <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>To start the Mule Runtime:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Open a command line:</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><strong>Windows</strong> - Press the Windows key and type R. Type <strong>cmd</strong>.</p> </li> 
+       <li> <p><strong>Mac</strong> - From Finder, click <strong>Go</strong> &gt; <strong>Utilties</strong> &gt; <strong>Terminal</strong>.</p> </li> 
+       <li> <p><strong>Linux</strong> - Click <strong>Terminal</strong> in the Dashboard.</p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p>Locate the <a href="https://www.mulesoft.com/platform/soa/mule-esb-enterprise">Mule Runtime software</a> installation directory. The current version is the `mule-enterprise-standalone-`<em>&lt;version&gt;</em> directory.</p> </li> 
+    <li> <p>Change directory to the <code>bin</code> directory.</p> </li> 
+    <li> <p>Start Mule Runtime:</p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><strong>Windows</strong> - Type <strong>mule.bat</strong></p> </li> 
+       <li> <p><strong>Mac</strong> and <strong>Linux</strong> - Type <strong>./mule</strong></p> 
+        <div class="paragraph"> 
+         <p>A successful startup ends with these messages:</p> 
+        </div> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="code">
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td> 
+               <td class="code"><pre>++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Started app 'default'                                    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  &lt;date&gt; &lt;time&gt; [WrapperListener_start_runner] org.mule.module.launcher.DeploymentDirectoryWatcher:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Mule is up and kicking (every 5000ms)                    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO  &lt;date&gt; &lt;time&gt; [WrapperListener_start_runner] org.mule.module.launcher.StartupSummaryDeploymentListener:
+**********************************************************************
+*              - - + DOMAIN + - -               * - - + STATUS + - - *
+**********************************************************************
+* default                                       * DEPLOYED           *
+**********************************************************************
+
+*******************************************************************************************************
+*            - - + APPLICATION + - -            *       - - + DOMAIN + - -       * - - + STATUS + - - *
+*******************************************************************************************************
+* default                                       * default                        * DEPLOYED           *
+*******************************************************************************************************</pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> </li> 
+      </ul> 
+     </div> </li> 
+   </ol> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -1195,7 +1369,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#tutorial-workflow">Tutorial Workflow</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-platform">Configure Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#configuring-anypoint-studio-for-mq">Configuring Anypoint Studio for MQ</a></li><li><a class="scroll-menu-link" href="#send-http-requests">Send HTTP Requests</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#tutorial-workflow">Tutorial Workflow</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-platform">Configure Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-studio-for-mq">Configure Anypoint Studio for MQ</a></li><li><a class="scroll-menu-link" href="#start-mule-runtime">Start Mule Runtime</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

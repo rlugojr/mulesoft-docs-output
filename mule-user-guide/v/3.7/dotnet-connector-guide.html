@@ -1106,12 +1106,12 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#studio-visual-editor-87632" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-      <li><a href="#xml-code-fcac0" role="tab" data-toggle="tab">XML Code</a></li> 
+      <li class="active"><a href="#studio-visual-editor-1f445" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+      <li><a href="#xml-code-ea0a7" role="tab" data-toggle="tab">XML Code</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-87632"> 
+     <div class="tab-pane in active fade no-padding" id="studio-visual-editor-1f445"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Drag an HTTP connector into the canvas, then select it to open the properties editor console.</p> </li> 
@@ -1185,7 +1185,7 @@
           <tbody> 
            <tr> 
             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td> 
-            <td class="tableblock halign-left valign-top"><p class="tableblock"><code>{ "name" : "bar", "lastName" : &nbsp;"foo", "id" : 1, "myRide" : \{ "Model" : "Coupe", "Brand" : "GM", "Color" : \{ "Name" : "red", "RGB" : "123,220,213" } } }}</code></p></td> 
+            <td class="tableblock halign-left valign-top"><p class="tableblock"><code>{ "name" : "bar", "lastName" : &nbsp;"foo", "id" : 1, "myRide" : { "Model" : "Coupe", "Brand" : "GM", "Color" : { "Name" : "red", "RGB" : "123,220,213" } } }}</code></p></td> 
            </tr> 
            <tr> 
             <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display Name</strong></p></td> 
@@ -1335,7 +1335,7 @@
                     <tr> 
                      <td class="line-numbers"><pre>1
 </pre></td> 
-                     <td class="code"><pre>"person" : { "name" : "bar", "lastName" :  "foo", "id" : 1, "myRide" : { "Model" : "Coupe", "Brand" : "GM", "Color" : { "Name" : "red", "RGB" : "123,220,213" }  } }}.</pre></td> 
+                     <td class="code"><pre>"person" : { "name" : "bar", "lastName" :  "foo", "id" : 1, "myRide" : { "Model" : "Coupe", "Brand" : "GM", "Color" : { "Name" : "red", "RGB" : "123,220,213" }  } }}</pre></td> 
                     </tr> 
                    </tbody> 
                   </table></code></pre> 
@@ -1352,6 +1352,19 @@
         <li> <p>Drag the DotNet connector in the Palette, then place it into the canvas after the set payload transformer. Configure the DotNet connector as shown below.</p> 
          <div class="paragraph"> 
           <p><span class="image"><img src="./_images/dotnet-connector-screen.png" alt="dotnet-connector-screen"></span></p> 
+         </div> 
+         <div class="admonitionblock note"> 
+          <table> 
+           <tbody> 
+            <tr> 
+             <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+             <td class="content"> 
+              <div class="paragraph"> 
+               <p>The “Type” drop down is the .Net type that will be reflected upon to see which method it should call. The “Method” reference is the method on the type that was selected in the “Type” dropdown which will be invoked by the connector.</p> 
+              </div> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
          </div> 
          <table class="tableblock frame-all grid-all spread"> 
           <colgroup> 
@@ -1405,7 +1418,7 @@
        <p><span class="image"><img src="./_images/complete-application-flow.png" alt="complete-application-flow"></span></p> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="xml-code-fcac0"> 
+     <div class="tab-pane fade no-padding" id="xml-code-ea0a7"> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="xml">
