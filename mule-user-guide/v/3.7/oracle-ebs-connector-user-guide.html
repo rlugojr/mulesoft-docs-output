@@ -1099,12 +1099,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-b7a10" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-e538d" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-2fe76" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-ff4c1" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b7a10"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-2fe76"> 
      <div class="paragraph"> 
       <p>Follow these steps to create an Oracle EBS global element:</p> 
      </div> 
@@ -1189,23 +1189,30 @@
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Org. ID</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the organization ID of the Oracle EBS instance (optional). Default value is <strong>204.</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the organization ID of the Oracle EBS instance (optional). Default value is <strong>204</strong>.</p></td> 
           </tr> 
          </tbody> 
         </table> </li> 
        <li> <p>Configure your custom web services list according to the steps below:</p> 
         <div class="olist loweralpha"> 
          <ol class="loweralpha" type="a"> 
-          <li> <p>Select <strong>Create Object manually</strong> and then click the button next to it.</p> 
+          <li> <p>Select <strong>Create Object manually</strong> and then click the <code>…​</code> button next to it.</p> 
            <div class="paragraph"> 
-            <p><span class="image"><img src="./_images/createobject1.png" alt="createobject1"></span></p> 
+            <p><span class="image"><img src="./_images/create-object-1.png" alt="create-object-1"></span></p> 
            </div> </li> 
-          <li> <p>On the pop-up window, select the plus sign (<strong>+</strong>) to add more entries.</p> </li> 
+          <li> <p>In the pop-up window, select the plus sign (<strong>+</strong>) to add more entries, as needed.</p> </li> 
           <li> <p>Right-click a metadata item and click <strong>Edit the selected metadata field</strong> to enter the values.</p> 
            <div class="paragraph"> 
             <p><span class="image"><img src="./_images/oracle_ebs_enter_metadata.png" alt="oracle_ebs_enter_metadata"></span></p> 
            </div> </li> 
           <li> <p>Click&nbsp;<strong>OK</strong>&nbsp;to save the list.</p> </li> 
+         </ol> 
+        </div> </li> 
+       <li> <p>Load the required external dependency JARs:</p> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>Click on the <strong>Modify</strong> button next to <strong>Oracle AQ API</strong>, and select the JAR file corresponding to this library. You can retrieve this file from your EBS instance, at <code>$ORACLE_HOME/rdbms/jlib/aqapi.jar</code>.</p> </li> 
+          <li> <p>Do the same for the <strong>Oracle Database JDBC Driver</strong>. This file can also be found in your instance, at the following path: <code>$ORACLE_HOME/jdbc/lib/ojdbc6.jar</code>.</p> </li> 
          </ol> 
         </div> </li> 
        <li> <p>Click&nbsp;<strong>Test Connection</strong> and confirm receipt of the <em>Connection Successful</em> message.</p> </li> 
@@ -1223,7 +1230,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-e538d"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-ff4c1"> 
      <div class="paragraph"> 
       <p>Ensure you have included the Oracle EBS namespaces in your configuration file.</p> 
      </div> 
@@ -1472,12 +1479,12 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-8fb71" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-4a459" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-bc7f9" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-866c6" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-8fb71"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-bc7f9"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/oracle_ebs_example_flow.png" alt="oracle_ebs_example_flow"></span></p> 
      </div> 
@@ -1795,7 +1802,7 @@ http: //www.mulesoft.org/schema/mule/core/current/mule.xsd
               <td class="tableblock halign-left valign-top"> 
                <div> 
                 <div class="paragraph"> 
-                 <p>Select the location in your local file system for the Oracle AQ API and Oracle JDBC Driver. Both are used in the Test Connection process and subscription to queues and topics.</p> 
+                 <p>Select the location in your local file system for the Oracle AQ API and Oracle JDBC Driver JAR files. Both are used in the Test Connection process and subscription to queues and topics.</p> 
                 </div> 
                </div></td> 
              </tr> 
@@ -1877,12 +1884,12 @@ http://xmlns.oracle.com/apps/fnd/soaprovider/plsql/fnd_web_sec/validate_login/
             </div> 
            </div> 
            <div class="paragraph"> 
-            <p><span class="image"><img src="./_images/queryParamsDataMapper.png" alt="queryParamsDataMapper"></span></p> 
+            <p><span class="image"><img src="./_images/queryParamsDataWeave.png" alt="queryParamsDataWeave"></span></p> 
            </div> </li> 
          </ol> 
         </div> </li> 
        <li> <p>Add a <strong>DOM to XML</strong> transformer after the Oracle EBS Connector.</p> </li> 
-       <li> <p>Add a <strong>Logger</strong> scope right after the DOM to XML Transformer, to print the data that is being received from the Oracle EBS connector in the Mule Console. Configure the Logger according to the table below:</p> 
+       <li> <p>Add a <strong>Logger</strong> scope right after the <strong>DOM to XML</strong> transformer to print the data that is being received from the Oracle EBS connector in the Mule Console. Configure the Logger according to the table below:</p> 
         <table class="tableblock frame-all grid-all spread"> 
          <colgroup> 
           <col style="width: 50%;"> 
@@ -1996,11 +2003,17 @@ http://xmlns.oracle.com/apps/fnd/soaprovider/plsql/fnd_web_sec/validate_login/
           </tr> 
          </tbody> 
         </table> </li> 
-       <li> <p>Save and run the project as a Mule Application.</p> </li> 
+       <li> <p>Save and run the project as a Mule Application.</p> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>Open a browser and load the following URL: <code><a href="http://localhost:8081/?user=<username>&amp;password=<password>" class="bare">http://localhost:8081/?user=&lt;username&gt;&amp;password=&lt;password&gt;</a>;</code>, replacing the <em>&lt;username&gt;</em> and <em>&lt;password&gt;</em> placeholders with a set of credentials.</p> </li> 
+          <li> <p>You will see the response of the FND_WEB_SEC PL/SQL operation, informing you if the provided credentials are valid or invalid.</p> </li> 
+         </ol> 
+        </div> </li> 
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-4a459"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-866c6"> 
      <div class="sect2"> 
       <h3 id="example-code"><a class="anchor" href="#example-code"></a>Example Code</h3> 
       <div class="listingblock"> 
@@ -2115,12 +2128,12 @@ http://xmlns.oracle.com/apps/fnd/soaprovider/plsql/fnd_web_sec/validate_login/
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-e5edd" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-a5ba9" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-7e83d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-dcc65" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-e5edd"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-7e83d"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/oracle_ebs_example_flow_source.png" alt="oracle_ebs_example_flow_source"></span></p> 
      </div> 
@@ -2385,7 +2398,7 @@ http://xmlns.oracle.com/apps/fnd/soaprovider/plsql/fnd_web_sec/validate_login/
               <td class="tableblock halign-left valign-top"> 
                <div> 
                 <div class="paragraph"> 
-                 <p>Select the location in your local file system for the Oracle AQ API and Oracle JDBC Driver. Both are used in the Test Connection process and subscription to queues and topics.</p> 
+                 <p>Select the location in your local file system for the Oracle AQ API and Oracle JDBC Driver JAR files. Both are used in the Test Connection process and subscription to queues and topics.</p> 
                 </div> 
                </div></td> 
              </tr> 
@@ -2476,11 +2489,16 @@ http://xmlns.oracle.com/apps/fnd/soaprovider/plsql/fnd_web_sec/validate_login/
           </tr> 
          </tbody> 
         </table> </li> 
-       <li> <p>Save and run the project as a Mule Application.</p> </li> 
+       <li> <p>Save and run the project as a Mule Application.</p> 
+        <div class="olist loweralpha"> 
+         <ol class="loweralpha" type="a"> 
+          <li> <p>For every Business Event that is fired, you will see the corresponding message taken from the queue in the console log.</p> </li> 
+         </ol> 
+        </div> </li> 
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-a5ba9"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-dcc65"> 
      <div class="sect2"> 
       <h3 id="example-code"><a class="anchor" href="#example-code"></a>Example Code</h3> 
       <div class="listingblock"> 
