@@ -888,16 +888,40 @@
  <h2 id="multicast-versus-unicast"><a class="anchor" href="#multicast-versus-unicast"></a>Multicast Versus Unicast</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A cluster can be created on Anypoint Management Center from servers that are already registered with the Anypoint Management Center&nbsp;console. While configuring a cluster, you can specify either unicast or multicast options for identifying a node within the cluster:</p> 
+   <p>A cluster can be created on Anypoint Management Center from servers that are already registered with the Anypoint Runtime Manager console. While configuring a cluster, you can specify either unicast or multicast options for identifying a node within the cluster:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><strong>Unicast</strong>.&nbsp;A unicast cluster requires that you configure the IP addresses of which nodes to associate together. No special network configuration is necessary other than to indicate which the server IP addresses make up the cluster.&nbsp;Each server needs to be in Running status when it is added to a unicast cluster in CloudHub. Mule relies on the IP address as the unique handle for identifying a server, which means it is impossible to have IP addresses dynamically assigned using DHCP for servers in a unicast cluster. If a server has multiple interfaces, use the internal IP, the one that allows a node to have a direct communication with other nodes. Clustering across different subnets is not supported.&nbsp;If a server restarts and it uses DHCP to get a new IP address, it needs to be rejoined with the cluster using its new IP address.</p> </li> 
+    <li> <p><strong>Unicast</strong>.&nbsp;A unicast cluster requires that you configure the IP addresses of which nodes to associate together. No special network configuration is necessary other than to indicate which are the server IP addresses that make up the cluster. Each server needs to be in Running status when it is added to a unicast cluster. If a server has multiple interfaces, use the internal IP, the one that allows a node to have a direct communication with other nodes. Clustering across different subnets is not supported.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> Mule relies on the IP address as the unique handle for identifying a server, which means it is impossible to have IP addresses dynamically assigned using DHCP for servers on a unicast cluster. If a server is restarted and uses DHCP to get a new IP address, it needs to be rejoined with the cluster using its new IP address. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
     <li> <p><strong>Multicast</strong>.&nbsp;A multicast cluster groups servers that automatically detect each other.&nbsp;Servers that are part of a multicast cluster should be on the same network segment.</p> </li> 
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>One advantage of using multicast is that a server does not need to be running to be configured as a node in a cluster. Another is that you can add nodes to the cluster dynamically without restarting the cluster. <strong>Note</strong>: Check with your network administrator if multicast is allowed in your network, as many networks block multicast.</p> 
+   <p>One advantage of using multicast is that a server does not need to be running to be configured as a node in a cluster. Another is that you can add nodes to the cluster dynamically without restarting the cluster.</p> 
+  </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> Check with your network administrator if multicast is allowed within your network, as many networks block multicast functionalities. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
   </div> 
  </div> 
 </div> 
