@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-platform-for-apis/localhost-behavior-on-the-api-gateway" />
-    <meta name="description" content="If you are responsible for setting API URLs in the Anypoint Platform or deploying APIs or proxies to the API Gateway, you should be aware of the fo..." />
+    <meta name="description" content="The following is only required for API Gateways version 1.2 or older. API Gateway version 1.3 and newer comes configured by default with a shared p..." />
     <meta class="swiftype" name="title" data-type="string" content="Localhost Behavior on the API Gateway" />
 
 </head>
@@ -869,40 +869,31 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-      <td class="content"> Only required for API Gateways version 1.2 or older. API Gateway version 1.3 comes configured by default with a shared port configuration. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If you are responsible for setting API URLs in the Anypoint Platform or deploying APIs or proxies to the API Gateway, you should be aware of the following default behaviors that may require manual adjustments.</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="avoiding-port-conflicts"><a class="anchor" href="#avoiding-port-conflicts"></a>Avoiding Port Conflicts</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>To successfully register an API on the Anypoint Platform for APIs, you must deploy the API (or its proxy) to the API Gateway using a unique endpoint URL. This means that no other APIs that your organization deploys to the gateway can have the same endpoint, which can become a problem if you need to deploy more than one automatically generated proxy to the same server. Automatically generated proxies use the the path <code><a href="http://0.0.0.0:8081" class="bare">http://0.0.0.0:8081</a></code>, and thus deploying more than one of them without modification to an API Gateway (whether the same instance or multiple) on the same machine causes a port conflict.</p> 
-  </div> 
-  <div class="admonitionblock warning"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
       <td class="content"> 
+       <div class="paragraph"> 
+        <p>The following is only required for <strong>API Gateways version 1.2 or older</strong>. API Gateway version 1.3 and newer comes configured by default with a shared port configuration.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>If you are responsible for setting API URLs in the Anypoint Platform or deploying APIs or proxies to the API Gateway, you should be aware of the following default behaviors that may require manual adjustments.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><strong>Avoiding Port Conflicts</strong></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>To successfully register an API on the Anypoint Platform for APIs, you must deploy the API (or its proxy) to the API Gateway using a unique endpoint URL. This means that no other APIs that your organization deploys to the gateway can have the same endpoint, which can become a problem if you need to deploy more than one automatically generated proxy to the same server. Automatically generated proxies use the the path <code><a href="http://0.0.0.0:8081" class="bare">http://0.0.0.0:8081</a></code>, and thus deploying more than one of them without modification to an API Gateway (whether the same instance or multiple) on the same machine causes a port conflict.</p> 
+       </div> 
        <div class="paragraph"> 
         <p>Servers try to expose every interface, privileging the most declarative ones. For example&nbsp;<code>local_ip</code> is privileged against <code>localhost</code>.</p> 
        </div> 
        <div class="paragraph"> 
         <p>If you are using the <a href="/anypoint-platform-for-apis/api-auto-discovery">API auto-discovery</a> feature, your endpoint auto registers using the local IP address. Note that if your IP changes, update your endpoint accordingly.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>To avoid port conflicts, ensure that whenever automatically generated proxies need to be deployed to the same machine, they use different ports. In the case of automatically generated proxies, this means that you need to <a href="/anypoint-platform-for-apis/proxying-your-api">manually modify the proxy files</a> to change the proxy endpoint to use a different port.</p> 
        </div> </td> 
      </tr> 
     </tbody> 
    </table> 
-  </div> 
-  <div class="paragraph"> 
-   <p>To avoid port conflicts, ensure that whenever automatically generated proxies need to be deployed to the same machine, they use different ports. In the case of automatically generated proxies, this means that you need to <a href="/anypoint-platform-for-apis/proxying-your-api">manually modify the proxy files</a> to change the proxy endpoint to use a different port.</p> 
   </div> 
  </div> 
 </div> 
@@ -910,7 +901,7 @@
  <h2 id="deploying-with-shared-resources"><a class="anchor" href="#deploying-with-shared-resources"></a>Deploying with Shared Resources</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Some organizations may wish to consistently use standard ports for exposing their APIs. To achieve this, implement the <a href="/mule-user-guide/v/3.7/shared-resources">shared resources</a> feature. Configuring shared resources allows your APIs to deploy side by side on the same API Gateway, sharing a common port. The domain configuration only needs to specify the shared HTTP(S) connector to which the multiple inbound endpoints should reference. You can also configure this in the same way on automatically generated proxies by modifying the inbound endpoint accordingly. For example, you can configure your domain as follows:</p> 
+   <p>Some organizations may wish to consistently use standard ports for exposing their APIs. To achieve this, implement the <a href="/mule-user-guide/v/3.7/shared-resources">shared resources</a> feature. Configuring shared resources allows your APIs to deploy side by side on the same API Gateway, sharing a common port. The domain configuration only needs to specify the shared HTTP(S) connector to which the multiple HTTP listener endpoints should reference. You can also configure this in the same way on automatically generated proxies by modifying the HTTP Listener accordingly. For example, you can configure your domain as follows:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -926,13 +917,27 @@
 5
 6
 7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain</span><span class="delimiter">"</span></span>
+         <td class="code"><pre><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;mule-domain</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/domain</span><span class="delimiter">"</span></span>
              <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
              <span class="attribute-name">xmlns:http</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/http</span><span class="delimiter">"</span></span>
-             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/domain http://www.mulesoft.org/schema/mule/domain/current/mule-domain.xsd</span>
-               <span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;http:connector</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">SharedHttp</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+             <span class="attribute-name">xmlns:tls</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/tls</span><span class="delimiter">"</span></span>
+             <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd</span>
+                                 <span class="content">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span>
+                                 <span class="content">http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+
+
+    <span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">http-lc-0.0.0.0-8081</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">0.0.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">protocol</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+
 <span class="tag">&lt;/mule-domain&gt;</span></pre></td> 
         </tr> 
        </tbody> 
@@ -940,7 +945,7 @@
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>The inbound endpoint of each proxy might then look like this:</p> 
+   <p>The HTTP Listener endpoint of each proxy might then look like this:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -950,12 +955,8 @@
        <tbody> 
         <tr> 
          <td class="line-numbers"><pre>1
-2
-3
 </pre></td> 
-         <td class="code"><pre><span class="tag">&lt;http:inbound-endpoint</span> <span class="attribute-name">connector-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">SharedHttp</span><span class="delimiter">"</span></span> <span class="attribute-name">exchange-pattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-response</span><span class="delimiter">"</span></span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://0.0.0.0:![p['http.port']]/![p['api.id']]/![p['api.version']]</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">60000</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;api-platform-gw:register-as</span> <span class="attribute-name">api-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">![p['api.id']]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;/http:inbound-endpoint&gt;</span></pre></td> 
+         <td class="code"><pre>       <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">http-lc-0.0.0.0-8081</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">gateway/rest/basicauth/path1/*</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -982,7 +983,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#avoiding-port-conflicts">Avoiding Port Conflicts</a></li><li><a class="scroll-menu-link" href="#deploying-with-shared-resources">Deploying with Shared Resources</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#deploying-with-shared-resources">Deploying with Shared Resources</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
