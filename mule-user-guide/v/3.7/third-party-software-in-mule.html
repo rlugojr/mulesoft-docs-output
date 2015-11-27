@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Installing Extensions // MuleSoft Documentation </title>
+    <title>Third-Party Software in Mule // MuleSoft Documentation </title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/asciidoctor.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
@@ -18,9 +18,9 @@
     <script src="/js/jquery.fancybox.pack.js"></script>
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
-    <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/installing-extensions" />
-    <meta name="description" content="Beyond the out-of-the-box functionality included in the Mule distributions, various plugins, modules, connectors, and runtimes for Studio..." />
-    <meta class="swiftype" name="title" data-type="string" content="Installing Extensions" />
+    <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/third-party-software-in-mule" />
+    <meta name="description" content="Mule Runtime includes third-party software as part of the source code, examples, or as dependencies. Mule Runtime has dependencies on a subset of l..." />
+    <meta class="swiftype" name="title" data-type="string" content="Third-Party Software in Mule" />
 
 </head>
 <body>
@@ -123,7 +123,7 @@
               <a href="#" class="tree-icon glyphicon glyphicon-th-list"><span>Nav</span></a>
           </div>
           <div class="toolbar-dropdown edit-github">
-              <a href="https://github.com/mulesoft/mulesoft-docs/blob/master/mule-user-guide/v/3.7/installing-extensions.adoc" target="_blank"><span>Edit on GitHub</span></a>
+              <a href="https://github.com/mulesoft/mulesoft-docs/blob/master/mule-user-guide/v/3.7/third-party-software-in-mule.adoc" target="_blank"><span>Edit on GitHub</span></a>
           </div>
           <div class="toolbar-dropdown helpful">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-helpful" data-toggle="dropdown" aria-expanded="true">
@@ -181,13 +181,13 @@
 <li><i></i><a href="/mule-fundamentals/v/3.7/flow-architecture-advanced-use-case">Flow Architecture Advanced Use Case</a></li></ul></li>
 <li><i></i><a href="/mule-fundamentals/v/3.7/deploying-mule-applications">Deploying Mule Applications</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/keyboard-shortcuts-in-studio">Keyboard Shortcuts in Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/mule-security">Security in Mule</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/extending-mule">Extending Mule</a></li></ul></li>
 </ul></li>
-<li class="expanded">
+<li>
 <i></i>
-<a href="/mule-user-guide/v/3.7/">Mule User Guide</a><ul style="display: block;">
-<li class="expanded">
+<a href="/mule-user-guide/v/3.7/">Mule User Guide</a><ul>
+<li>
 <i></i>
-<a href="/mule-user-guide/v/3.7/installing">Installing</a><ul style="display: block;">
-<li><i></i><a href="/mule-user-guide/v/3.7/hardware-and-software-requirements">Hardware and Software Requirements</a></li><li><i></i><a href="/mule-user-guide/v/3.7/compatibility">Compatibility</a></li><li><i></i><a href="/mule-user-guide/v/3.7/downloading-and-starting-mule-esb">Downloading and Starting Mule ESB</a></li><li><i></i><a href="/mule-user-guide/v/3.7/adding-community-runtime">Adding Community Runtime</a></li><li><i></i><a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Installing an Enterprise License</a></li><li class="active"><i></i><a href="/mule-user-guide/v/3.7/installing-extensions">Installing Extensions</a></li><li><i></i><a href="/mule-user-guide/v/3.7/studio-update-sites">Studio Update Sites</a></li><li><i></i><a href="/mule-user-guide/v/3.7/studio-in-eclipse">Studio in Eclipse</a></li></ul></li>
+<a href="/mule-user-guide/v/3.7/installing">Installing</a><ul>
+<li><i></i><a href="/mule-user-guide/v/3.7/hardware-and-software-requirements">Hardware and Software Requirements</a></li><li><i></i><a href="/mule-user-guide/v/3.7/compatibility">Compatibility</a></li><li><i></i><a href="/mule-user-guide/v/3.7/downloading-and-starting-mule-esb">Downloading and Starting Mule ESB</a></li><li><i></i><a href="/mule-user-guide/v/3.7/adding-community-runtime">Adding Community Runtime</a></li><li><i></i><a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Installing an Enterprise License</a></li><li><i></i><a href="/mule-user-guide/v/3.7/installing-extensions">Installing Extensions</a></li><li><i></i><a href="/mule-user-guide/v/3.7/studio-update-sites">Studio Update Sites</a></li><li><i></i><a href="/mule-user-guide/v/3.7/studio-in-eclipse">Studio in Eclipse</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/developing">Developing</a><ul>
@@ -861,159 +861,458 @@
         <!-- END older version notification -->
         <!-- START article content -->
         <div class="article-content col-md-7">
-          <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="installing">Installing</a>/<a href="installing-extensions" class="breadcrumb-active-link">Installing Extensions</a></div>
-          <h1>Installing Extensions</h1>
+          
+          <h1>Third-Party Software in Mule</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Beyond the out-of-the-box functionality included in the Mule distributions, various <strong>plugins</strong>, <strong>modules</strong>, <strong>connectors</strong>, and&nbsp;<strong>runtimes&nbsp;for Studio</strong> are made available by download. Complete the following procedure to extend the functionality of your instance of Mule.</p> 
-  </div> 
-  <div class="panel panel-default no-padding"> 
-   <div class="panel-heading no-padding"> 
-    <!-- Nav tabs --> 
-    <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-a1807" role="tab" data-toggle="tab">Studio</a></li> 
-     <li><a href="#standalone-788e4" role="tab" data-toggle="tab">Standalone</a></li> 
-    </ul> 
-   </div> 
-   <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-a1807"> 
-     <div class="olist arabic"> 
-      <ol class="arabic"> 
-       <li> <p>Under the&nbsp;<code>Help</code>&nbsp;menu in&nbsp;Anypoint Studio, select&nbsp;<code>Install New Software</code>.&nbsp;</p> </li> 
-       <li> <p>In the&nbsp;<strong>Work with:</strong>&nbsp;field in the&nbsp;<strong>Install</strong>&nbsp;wizard, enter one of the following:</p> 
-        <div class="olist loweralpha"> 
-         <ol class="loweralpha" type="a"> 
-          <li> <p>Use the drop-down menu to select --All Available Sites-- and browse the plugins and modules available for download into Studio<br></p> </li> 
-          <li> <p>Use the drop-down menu to select a specific plugin or module</p> </li> 
-          <li> <p>Enter a <a href="/mule-user-guide/v/3.7/studio-update-sites">specific update site URL</a> from which you wish to download a plugin, module, or connector</p> </li> 
-         </ol> 
-        </div> </li> 
-       <li> <p>In the table below the filter field (see image below), use the checkboxes to select one or more modules or plugins you wish to install on your instance of Studio (click to expand the folders to select individual items), then click <strong>Next</strong>.&nbsp;</p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/AllAvailableSites.png" alt="AllAvailableSites"></span></p> 
-        </div> </li> 
-       <li> <p>Review the details of the item(s) you selected, then click <strong>Next</strong>.</p> </li> 
-       <li> <p>Click to accept terms and conditions of the product, then click <strong>Finish</strong>.</p> </li> 
-       <li> <p>Click&nbsp;<strong>Restart Now</strong>&nbsp;to complete the installation.&nbsp;</p> </li> 
-      </ol> 
-     </div> 
-     <div class="admonitionblock tip"> 
-      <table> 
-       <tbody> 
-        <tr> 
-         <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-         <td class="content"> 
-          <div class="paragraph"> 
-           <p>The Studio documentation offers more specific instructions for downloading and using the following extensions:</p> 
-          </div> 
-          <div class="ulist"> 
-           <ul> 
-            <li> <p><a href="/mule-user-guide/v/3.7/adding-community-runtime">Mule Community Runtime</a>&nbsp;&nbsp;</p> </li> 
-            <li> <p><a href="/mule-user-guide/v/3.7/installing-anypoint-enterprise-security">Anypoint Enterprise Security</a></p> </li> 
-            <li> <p><a href="/mule-user-guide/v/3.7/installing-connectors">Anypoint Connectors</a></p> </li> 
-            <li> <p><a href="/mule-user-guide/v/3.7/importing-a-maven-project-into-studio">Importing a Maven Project into Studio</a></p> </li> 
-            <li> <p><a href="/mule-user-guide/v/3.7/enabling-maven-support-for-a-studio-project">Enabling Maven Support for a Studio Project</a></p> </li> 
-            <li> <p><a href="/mule-user-guide/v/3.7/using-subversion-with-studio">Using Subversion with Studio</a></p> </li> 
-           </ul> 
-          </div> </td> 
-        </tr> 
-       </tbody> 
-      </table> 
-     </div> 
-     <div class="admonitionblock warning"> 
-      <table> 
-       <tbody> 
-        <tr> 
-         <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-         <td class="content"> 
-          <div class="paragraph"> 
-           <p><strong>Are you behind a firewall?</strong><br></p> 
-          </div> 
-          <div class="paragraph"> 
-           <p>If you are on a network with firewall restrictions, you may find that the Studio update sites are blocked and you are unable to download extensions.</p> 
-          </div> 
-          <div class="paragraph"> 
-           <p>Allow the following sites on your firewall to allow Studio to connect to the update sites:</p> 
-          </div> 
-          <div class="paragraph"> 
-           <p><a href="https://www.mulesoft.com/lp/dl/mule-esb-enterprise" class="bare">https://www.mulesoft.com/lp/dl/mule-esb-enterprise</a></p> 
-          </div> 
-          <div class="paragraph"> 
-           <p><a href="http://repository.mulesoft.org/connectors/releases/" class="bare">http://repository.mulesoft.org/connectors/releases/</a></p> 
-          </div> 
-          <div class="paragraph"> 
-           <p><a href="http://download.eclipse.org/technology/m2e/releases" class="bare">http://download.eclipse.org/technology/m2e/releases</a></p> 
-          </div> 
-          <div class="paragraph"> 
-           <p><a href="http://download.eclipse.org/eclipse/updates" class="bare">http://download.eclipse.org/eclipse/updates</a></p> 
-          </div> 
-          <div class="paragraph"> 
-           <p><a href="http://subclipse.tigris.org/">http://subclipse.tigris.org</a></p> 
-          </div> 
-          <div class="paragraph"> 
-           <p><a href="http://findbugs.cs.umd.edu/eclipse/" class="bare">http://findbugs.cs.umd.edu/eclipse/</a></p> 
-          </div> </td> 
-        </tr> 
-       </tbody> 
-      </table> 
-     </div> 
-    </div> 
-    <div class="tab-pane fade no-padding" id="standalone-788e4"> 
-     <div class="olist arabic"> 
-      <ol class="arabic"> 
-       <li> <p>Visit <a href="https://www.mulesoft.com/exchange#!/?types=connector&amp;sortBy=name">MuleSoft Connectors</a> to browse available extensions for download.</p> </li> 
-       <li> <p>Click to reveal the details of a specific extension, then click <strong>Install for Maven</strong>.</p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/InstallForMaven.png" alt="InstallForMaven"></span></p> 
-        </div> </li> 
-       <li> <p>Click <strong>Documentation</strong> to review relevant details about the various ways to install and use the extension.</p> </li> 
-       <li> <p>For more specific details regarding the installation of plugins, review the explanation of the <a href="/mule-user-guide/v/3.7/classloader-control-in-mule">Classloader Control in Mule</a> and <a href="/mule-user-guide/v/3.7/mule-plugin-format">Mule Plugin Format</a>.</p> </li> 
-      </ol> 
-     </div> 
-    </div> 
-   </div> 
+   <p>Mule Runtime includes third-party software as part of the source code, examples, or as dependencies. Mule Runtime has dependencies on a subset of libraries from the following software:</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="checking-extension-versions"><a class="anchor" href="#checking-extension-versions"></a>Checking Extension Versions</h2> 
+ <h2 id="apache"><a class="anchor" href="#apache"></a>Apache</h2> 
  <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Not sure what version of an extension you have installed? Follow the procedure below to find version information for your extensions.</p> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Abdera Client</p> </li> 
+    <li> <p>Abdera Core</p> </li> 
+    <li> <p>Abdera Parser</p> </li> 
+    <li> <p>Abdera Server</p> </li> 
+    <li> <p>Abdera Spring Integration</p> </li> 
+    <li> <p>Ant-Launcher</p> </li> 
+    <li> <p>Apache Ant</p> </li> 
+    <li> <p>Apache Axiom</p> </li> 
+    <li> <p>Apache Axis</p> </li> 
+    <li> <p>Apache Axis2</p> </li> 
+    <li> <p>Apache Commons</p> </li> 
+    <li> <p>Apache Commons BeanUtils</p> </li> 
+    <li> <p>Apache Commons Collections</p> </li> 
+    <li> <p>Apache Commons DbUtils</p> </li> 
+    <li> <p>Apache Commons Discovery</p> </li> 
+    <li> <p>Apache Commons IO Bundle</p> </li> 
+    <li> <p>Apache Commons JXPath</p> </li> 
+    <li> <p>Apache Commons Lang</p> </li> 
+    <li> <p>Apache Commons Net</p> </li> 
+    <li> <p>Apache Commons Pool</p> </li> 
+    <li> <p>Apache CXF API</p> </li> 
+    <li> <p>Apache CXF Command Line Tools Common</p> </li> 
+    <li> <p>Apache CXF Common Utilities</p> </li> 
+    <li> <p>Apache CXF Runtime Aegis Databinding</p> </li> 
+    <li> <p>Apache CXF Runtime Core</p> </li> 
+    <li> <p>Apache CXF Runtime HTTP Transport</p> </li> 
+    <li> <p>Apache CXF Runtime JAX-WS Frontend</p> </li> 
+    <li> <p>Apache CXF Runtime JAXB DataBinding</p> </li> 
+    <li> <p>Apache CXF Runtime JiBX DataBinding</p> </li> 
+    <li> <p>Apache CXF Runtime Local Transport</p> </li> 
+    <li> <p>Apache CXF Runtime Management</p> </li> 
+    <li> <p>Apache CXF Runtime Simple Frontend</p> </li> 
+    <li> <p>Apache CXF Runtime SOAP Binding</p> </li> 
+    <li> <p>Apache CXF Runtime Transport Common Used Classes</p> </li> 
+    <li> <p>Apache CXF Runtime WS Addressing</p> </li> 
+    <li> <p>Apache CXF Runtime WS Reliable Messaging</p> </li> 
+    <li> <p>Apache CXF Runtime WS Security</p> </li> 
+    <li> <p>Apache CXF Runtime XML Binding</p> </li> 
+    <li> <p>Apache CXF Woodstox/MSV Schema Validation</p> </li> 
+    <li> <p>Apache Geronimo</p> </li> 
+    <li> <p>Apache HTTP Components HTTPClient</p> </li> 
+    <li> <p>Apache HTTP Components HTTPCore</p> </li> 
+    <li> <p>Apache Log4j</p> </li> 
+    <li> <p>Apache Neethi</p> </li> 
+    <li> <p>Apache POI</p> </li> 
+    <li> <p>Apache Sandesha2</p> </li> 
+    <li> <p>Apache Tomcat</p> </li> 
+    <li> <p>Apache WebServices</p> </li> 
+    <li> <p>AsyncHttpClient</p> </li> 
+    <li> <p>Axiom</p> </li> 
+    <li> <p>Axis2 Transport HTTP</p> </li> 
+    <li> <p>Axis2 Transport Local</p> </li> 
+    <li> <p>Code Generation Library</p> </li> 
+    <li> <p>Commons BeanUtils Core</p> </li> 
+    <li> <p>Commons CLI</p> </li> 
+    <li> <p>Commons FileUpload</p> </li> 
+    <li> <p>Commons JXPath</p> </li> 
+    <li> <p>Drools :: API</p> </li> 
+    <li> <p>Drools :: Compiler</p> </li> 
+    <li> <p>Drools :: Core</p> </li> 
+    <li> <p>Expression Language</p> </li> 
+    <li> <p>flatpack</p> </li> 
+    <li> <p>Groovy</p> </li> 
+    <li> <p>Guava</p> </li> 
+    <li> <p>HTTP Client</p> </li> 
+    <li> <p>HttpComponents HttpCore</p> </li> 
+    <li> <p>HttpComponents HttpMime</p> </li> 
+    <li> <p>I18N Libraries</p> </li> 
+    <li> <p>Jackson Databind</p> </li> 
+    <li> <p>Jackson JSON Processor</p> </li> 
+    <li> <p>Jakarta HTTP Client</p> </li> 
+    <li> <p>Java API for JavaServer Pages</p> </li> 
+    <li> <p>Java API for Servlets (Annotations)</p> </li> 
+    <li> <p>Java Unified Expression Language</p> </li> 
+    <li> <p>Java Utility Logging Implementation</p> </li> 
+    <li> <p>jBPM 4 - jPDL</p> </li> 
+    <li> <p>jBPM 4 - Log</p> </li> 
+    <li> <p>jBPM 4 - PVM</p> </li> 
+    <li> <p>JDBM</p> </li> 
+    <li> <p>Jettison</p> </li> 
+    <li> <p>Jetty JRE 1.5 Utilities</p> </li> 
+    <li> <p>Jetty Utilities</p> </li> 
+    <li> <p>JmDNS</p> </li> 
+    <li> <p>Joda-Time</p> </li> 
+    <li> <p>Kryo serializers</p> </li> 
+    <li> <p>Libphonenumber</p> </li> 
+    <li> <p>LiveTribe</p> </li> 
+    <li> <p>LMAX Disruptor</p> </li> 
+    <li> <p>MVEL2</p> </li> 
+    <li> <p>Not-Yet-Commons-SSL</p> </li> 
+    <li> <p>oauth-signpost</p> </li> 
+    <li> <p>Object Graph Navigation Library</p> </li> 
+    <li> <p>objenesis</p> </li> 
+    <li> <p>OpenSAML</p> </li> 
+    <li> <p>Oro</p> </li> 
+    <li> <p>Quartz</p> </li> 
+    <li> <p>ROME</p> </li> 
+    <li> <p>Sardine</p> </li> 
+    <li> <p>Signpost Commons HTTP</p> </li> 
+    <li> <p>Signpost Core</p> </li> 
+    <li> <p>Simple API for XML</p> </li> 
+    <li> <p>Smack</p> </li> 
+    <li> <p>Spring Framework</p> </li> 
+    <li> <p>Spring Security</p> </li> 
+    <li> <p>Stax</p> </li> 
+    <li> <p>StAX reference implementation</p> </li> 
+    <li> <p>Staxon</p> </li> 
+    <li> <p>TrueLicense</p> </li> 
+    <li> <p>Velocity</p> </li> 
+    <li> <p>Woden - API</p> </li> 
+    <li> <p>Woodstox XML-processor</p> </li> 
+    <li> <p>WSS4J</p> </li> 
+    <li> <p>Xalan-Java</p> </li> 
+    <li> <p>Xerces</p> </li> 
+    <li> <p>XML Beans</p> </li> 
+    <li> <p>XML Resolver</p> </li> 
+    <li> <p>XMLPull</p> </li> 
+    <li> <p>XMLSec</p> </li> 
+    <li> <p>XMLTooling</p> </li> 
+    <li> <p>XQJ Api</p> </li> 
+   </ul> 
   </div> 
-  <div class="panel panel-default no-padding"> 
-   <div class="panel-heading no-padding"> 
-    <!-- Nav tabs --> 
-    <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-c70c0" role="tab" data-toggle="tab">Studio</a></li> 
-     <li><a href="#standalone-f5c52" role="tab" data-toggle="tab">Standalone</a></li> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="apache-license-2-0-and-lgpl-2-1"><a class="anchor" href="#apache-license-2-0-and-lgpl-2-1"></a>Apache License 2.0 and LGPL 2.1</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Jackson</p> </li> 
+    <li> <p>Jackson JSON Processor</p> </li> 
+    <li> <p>JSON Schema validation</p> </li> 
+    <li> <p>Msg Simple</p> </li> 
+   </ul> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="apache-license-2-0-and-eclipse-public-license-1-0"><a class="anchor" href="#apache-license-2-0-and-eclipse-public-license-1-0"></a>Apache License 2.0 and Eclipse Public License 1.0</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Jetty</p> </li> 
+     <li> <p>Jetty Utilities</p> </li> 
     </ul> 
    </div> 
-   <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-c70c0"> 
-     <div class="olist arabic"> 
-      <ol class="arabic"> 
-       <li> <p>In Anypoint Studio, open the Anypoint Studio menu, then click <strong>About Anypoint Studio</strong>.&nbsp;</p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/about_studio.png" alt="about_studio"></span></p> 
-        </div> </li> 
-       <li> <p>Click <strong>Installation Details</strong>.</p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/36AboutAnyptStudio.png" alt="36AboutAnyptStudio"></span></p> 
-        </div> </li> 
-       <li> <p>On the Anypoint Studio Installation Details window, the Installed Software tab is open by default, listing all extensions and other software you have installed. Find the extension you are interested in and check the <strong>Version</strong> column to see the version number:<br></p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/36Extensions.png" alt="36Extensions"></span></p> 
-        </div> </li> 
-      </ol> 
-     </div> 
-    </div> 
-    <div class="tab-pane fade no-padding" id="standalone-f5c52"> 
-     <div class="paragraph"> 
-      <p>To identify an extension’s version in Mule Standalone, access your <code>pom.xml</code> file and check the version number associated with the extension in your dependencies.</p> 
-     </div> 
-    </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="apache-license-2-0-with-notice"><a class="anchor" href="#apache-license-2-0-with-notice"></a>Apache License 2.0 with Notice</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Jetty cometd</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="apache-without-acknowledgement-clause"><a class="anchor" href="#apache-without-acknowledgement-clause"></a>Apache Without Acknowledgement Clause</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>JDOM</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="bsd-license"><a class="anchor" href="#bsd-license"></a>BSD License</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>AntLr</p> </li> 
+     <li> <p>ANTLR v3</p> </li> 
+     <li> <p>ASM</p> </li> 
+     <li> <p>ASM commons</p> </li> 
+     <li> <p>ASM Tree class visitor</p> </li> 
+     <li> <p>DNSJava</p> </li> 
+     <li> <p>ESAPI 2.0</p> </li> 
+     <li> <p>Javolution</p> </li> 
+     <li> <p>JDBM</p> </li> 
+     <li> <p>MSV XML Schema Datatype Library</p> </li> 
+     <li> <p>MultiSchema Validator</p> </li> 
+     <li> <p>Stax</p> </li> 
+     <li> <p>Stax2 API</p> </li> 
+     <li> <p>XMLUnit</p> </li> 
+     <li> <p>Xstream</p> </li> 
+     <li> <p>Yourkit</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="bsd-like"><a class="anchor" href="#bsd-like"></a>BSD-Like</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>JiBX extras</p> </li> 
+     <li> <p>JiBX runtime</p> </li> 
+     <li> <p>JiBX schema</p> </li> 
+     <li> <p>Jsch</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="bsd-style"><a class="anchor" href="#bsd-style"></a>BSD Style</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>DOM4J</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="cddl"><a class="anchor" href="#cddl"></a>CDDL</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>JavaBeans Activation Framework (JAF)</p> </li> 
+     <li> <p>JavaMail API</p> </li> 
+     <li> <p>JAX-RS</p> </li> 
+     <li> <p>Project Grizzly</p> </li> 
+     <li> <p>Sxc Core</p> </li> 
+     <li> <p>Sxc Runtime</p> </li> 
+     <li> <p>Sxc Xpath</p> </li> 
+     <li> <p>Tanuki Wrapper</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="cddl-v1-1-and-gplv2-with-classpath-exception"><a class="anchor" href="#cddl-v1-1-and-gplv2-with-classpath-exception"></a>CDDL v1.1 and GPLv2 With Classpath Exception</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>HK2</p> </li> 
+     <li> <p>hk2 Osgi resource locator</p> </li> 
+     <li> <p>Javax</p> </li> 
+     <li> <p>Jersey</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="cddl-v1-1-and-gpl-v2"><a class="anchor" href="#cddl-v1-1-and-gpl-v2"></a>CDDL v1.1 and GPL v2</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Java Transaction API Specification</p> </li> 
+     <li> <p>JAXB</p> </li> 
+     <li> <p>jaxb-api</p> </li> 
+     <li> <p>jaxb-impl</p> </li> 
+     <li> <p>jaxb-xjc</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="commercial"><a class="anchor" href="#commercial"></a>Commercial</h3> 
+   <div class="paragraph"> 
+    <p>CloverETL CPL v1.0</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>JUnit WSDL4J</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="creative-commons-attribution-sharealike-3-0-unported-license"><a class="anchor" href="#creative-commons-attribution-sharealike-3-0-unported-license"></a>Creative Commons Attribution-ShareAlike 3.0 Unported License</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>cometD</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="eclipse-public-license-1-0"><a class="anchor" href="#eclipse-public-license-1-0"></a>Eclipse Public License 1.0</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>AspectJ Runtime Classes</p> </li> 
+     <li> <p>AspectJ Weaver Classes</p> </li> 
+     <li> <p>TrueZIP</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="eclipse-public-license-apache-license-2-0"><a class="anchor" href="#eclipse-public-license-apache-license-2-0"></a>Eclipse Public License, Apache License 2.0</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>c3p0</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="epl-v1-0-gpl-v2-lgpl-v2-1"><a class="anchor" href="#epl-v1-0-gpl-v2-lgpl-v2-1"></a>EPL v1.0, GPL v2, LGPL v2.1</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Jruby</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="epl-gpl-lgpl"><a class="anchor" href="#epl-gpl-lgpl"></a>EPL/GPL/LGPL</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Jruby</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="jaxen-license"><a class="anchor" href="#jaxen-license"></a>Jaxen License</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Jaxen</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="jython-license-2-1"><a class="anchor" href="#jython-license-2-1"></a>Jython License 2.1</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Jython</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="lgpl"><a class="anchor" href="#lgpl"></a>LGPL</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>BTM</p> </li> 
+     <li> <p>Findbugs Annotations</p> </li> 
+     <li> <p>jcifs</p> </li> 
+     <li> <p>JexcelAPI</p> </li> 
+     <li> <p>JfreeChart</p> </li> 
+     <li> <p>JgraphT</p> </li> 
+     <li> <p>XPP3</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="lgpl-v2-1"><a class="anchor" href="#lgpl-v2-1"></a>LGPL v2.1</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Hibernate</p> </li> 
+     <li> <p>Hibernate</p> </li> 
+     <li> <p>JPA API</p> </li> 
+     <li> <p>jcifs</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="lgpl-v3"><a class="anchor" href="#lgpl-v3"></a>LGPL v3</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Jcommon</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="lgplv3-and-apache-2-0"><a class="anchor" href="#lgplv3-and-apache-2-0"></a>LGPLv3 and Apache 2.0</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>BTF</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="mit"><a class="anchor" href="#mit"></a>MIT</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Bouncy Castle</p> </li> 
+     <li> <p>eaio-grabbag</p> </li> 
+     <li> <p>eaio-uuid</p> </li> 
+     <li> <p>ISO-RELAX</p> </li> 
+     <li> <p>Jopt-Simple</p> </li> 
+     <li> <p>SLF4J</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="mozilla-public-license-1-0"><a class="anchor" href="#mozilla-public-license-1-0"></a>Mozilla Public License 1.0</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Saxon-B</p> </li> 
+     <li> <p>Saxon-Dom</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="mozilla-public-license-2-0"><a class="anchor" href="#mozilla-public-license-2-0"></a>Mozilla Public License 2.0</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Rhino</p> </li> 
+     <li> <p>Saxon-HE</p> </li> 
+     <li> <p>Saxon-HE</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="mpl-lgpl-or-apache-license"><a class="anchor" href="#mpl-lgpl-or-apache-license"></a>MPL, LGPL, or Apache License</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Javassist</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="new-bsd-license"><a class="anchor" href="#new-bsd-license"></a>New BSD License</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Hamcrest Core</p> </li> 
+     <li> <p>Kryo</p> </li> 
+     <li> <p>Minlog</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="no-restrictions"><a class="anchor" href="#no-restrictions"></a>No Restrictions</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>JSON Java</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="nonrestrictive-os"><a class="anchor" href="#nonrestrictive-os"></a>Nonrestrictive OS</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>ICU for Java Module</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="opensymphony-software-license-1-1"><a class="anchor" href="#opensymphony-software-license-1-1"></a>OpenSymphony Software License 1.1</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>OpenSymphony</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="propietary"><a class="anchor" href="#propietary"></a>Propietary</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Java Service Wrapper</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="public-domain"><a class="anchor" href="#public-domain"></a>Public Domain</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>AOP Alliance</p> </li> 
+     <li> <p>Java Tar</p> </li> 
+     <li> <p>JCIP Annotations</p> </li> 
+    </ul> 
    </div> 
   </div> 
  </div> 
@@ -1023,7 +1322,11 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Want to create your own Mule extension? Access the&nbsp;<a href="/anypoint-connector-devkit/v/3.7">Anypoint Connector DevKit</a>&nbsp;documentation for details.</p> </li> 
+    <li> <p><a href="https://developer.mulesoft.com/anypoint-platform">Mule Community Edition</a></p> </li> 
+    <li> <p><a href="https://www.mulesoft.com/platform/studio">Anypoint Studio</a></p> </li> 
+    <li> <p><a href="http://forums.mulesoft.com">MuleSoft’s Forums</a></p> </li> 
+    <li> <p><a href="https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription">MuleSoft Support</a></p> </li> 
+    <li> <p><a href="mailto:support@mulesoft.com">Contact MuleSoft</a></p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1032,7 +1335,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#checking-extension-versions">Checking Extension Versions</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#apache">Apache</a></li><li><a class="scroll-menu-link" href="#apache-license-2-0-and-lgpl-2-1">Apache License 2.0 and LGPL 2.1</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
