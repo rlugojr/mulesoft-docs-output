@@ -911,6 +911,95 @@
   <div class="paragraph"> 
    <p>The implementation of this feature for new connectors is pretty straightforward. It consists of applying slight modifications to the connector such that all bulk operations return a <code>BulkOperationResult</code>. BulkOperationResult allows the Batch module to understand all types of bulk operations results.</p> 
   </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="java">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong>30</strong>
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td> 
+         <td class="code"><pre>
+<span class="comment">/**
+ * This class is used to provide item level information about a bulk operation. This
+ * master entity represents the bulk operation as a whole, while the detail entity
+ * {@link BulkItem} represents the operation status for each individual data piece.
+ * The {@link #items} list defines a contract in which the ordering of those items
+ * needs to match the ordering of the original objects. For example, if the bulk
+ * operation consisted of 10 person objects in which number X corresponded to the
+ * person 'John Doe', then the Xth item in the {@link #items} list must reference to
+ * the result of processing the same 'John Doe'
+ */</span>
+<span class="directive">public</span> <span class="directive">final</span> <span class="type">class</span> <span class="class">BulkOperationResult</span>&lt;T&gt; <span class="directive">implements</span> <span class="predefined-type">Serializable</span>
+{
+    <span class="comment">/**
+     * The operation ID
+     */</span>
+    <span class="directive">public</span> <span class="predefined-type">Serializable</span> getId();
+
+    <span class="comment">/**
+     * Whether or not the operation was successful. Should be &lt;code&gt;true&lt;/code&gt; if
+     * and only if all the child {@link BulkItem} entities were also successful
+     */</span>
+    <span class="directive">public</span> <span class="type">boolean</span> isSuccessful();
+
+    <span class="comment">/**
+     * An ordered list of {@link BulkItem}, one per each item in the original
+     * operation, no matter if the record was successful or not
+     */</span>
+    <span class="directive">public</span> <span class="predefined-type">List</span>&lt;BulkItem&lt;T&gt;&gt; getItems();
+
+    <span class="comment">/**
+     * A custom property stored under the given key
+     *
+     * @param key the key of the custom property
+     * @return a {@link Serializable} value
+     */</span>
+    <span class="directive">public</span> <span class="predefined-type">Serializable</span> getCustomProperty(<span class="predefined-type">String</span> key);
+}</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
   <div class="paragraph"> 
    <p>Basically, the above class is a Master-Detail relationship in which:</p> 
   </div> 
@@ -921,6 +1010,111 @@
     <li> <p>Both classes are immutable.</p> </li> 
     <li> <p>There’s an ordering relationship between the master and the detail. The first item in the <code>BulkItem</code> list has to correspond to the first record in the original bulk. The second has to correspond to the second one, and so forth.</p> </li> 
    </ul> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="java">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong>30</strong>
+31
+32
+33
+34
+35
+36
+37
+38
+39
+<strong>40</strong>
+41
+42
+43
+44
+45
+46
+</pre></td> 
+         <td class="code"><pre><span class="comment">/**
+ * This class represents an individual data piece in the context of a bulk operation
+ */</span>
+<span class="directive">public</span> <span class="directive">final</span> <span class="type">class</span> <span class="class">BulkItem</span>&lt;T&gt; <span class="directive">implements</span> <span class="predefined-type">Serializable</span>
+{
+    <span class="comment">/**
+     * The item ID
+     */</span>
+    <span class="directive">public</span> <span class="predefined-type">Serializable</span> getId();
+
+    <span class="comment">/**
+     * Wether or not it was successful. Notice that this should be &lt;code&gt;false&lt;/code&gt;
+     * if {@link #exception} is not &lt;code&gt;null&lt;/code&gt;, however there might not be an
+     * exception but the item could still not be successful for other reasons.
+     */</span>
+    <span class="directive">public</span> <span class="type">boolean</span> isSuccessful();
+
+    <span class="comment">/**
+     * Message to add context on this item. Could be an error description, a warning
+     * or simply some info related to the operation
+     */</span>
+    <span class="directive">public</span> <span class="predefined-type">String</span> getMessage();
+
+    <span class="comment">/**
+     * An optional status code
+     */</span>
+    <span class="directive">public</span> <span class="predefined-type">String</span> getStatusCode();
+
+    <span class="comment">/**
+     * An exception if the item was failed
+     */</span>
+    <span class="directive">public</span> <span class="exception">Exception</span> getException();
+
+    <span class="comment">/**
+     * The actual data this entity represents
+     */</span>
+    <span class="directive">public</span> T getPayload();
+
+    <span class="comment">/**
+     * A custom property stored under the given key
+     *
+     * @param key the key of the custom property
+     * @return a {@link Serializable} value
+     */</span>
+    <span class="directive">public</span> <span class="predefined-type">Serializable</span> getCustomProperty(<span class="predefined-type">String</span> key);
+}</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -933,8 +1127,119 @@
   <div class="paragraph"> 
    <p>Each connector needs to translate its own bulk operation representation to a <code>BulkOperationResult</code> object. This translation differs from one connector to the other, given the different API implementations.</p> 
   </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="java">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+</pre></td> 
+         <td class="code"><pre><span class="directive">public</span> <span class="predefined-type">List</span>&lt;BatchResult&gt; batchContacts(<span class="predefined-type">String</span> batchId, <span class="predefined-type">List</span>&lt;NestedProcessor&gt; operations) <span class="directive">throws</span> <span class="exception">Exception</span>;</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
   <div class="paragraph"> 
    <p>In the above snippet, notice that the operation returns a list of <code>BatchResult</code> objects. Thus, the transformer has to transform <code>BatchResults</code> objects to <code>BulkOperationResult</code>.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="java">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+         <td class="code"><pre><span class="annotation">@Start</span>
+<span class="directive">public</span> <span class="type">void</span> init() {
+ <span class="local-variable">this</span>.muleContext.getRegistry().registerTransformer(<span class="keyword">new</span> BatchResultToBulkOperationTransformer());
+}</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="java">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+<strong>30</strong>
+31
+</pre></td> 
+         <td class="code"><pre>
+<span class="directive">public</span> <span class="type">class</span> <span class="class">BatchResultToBulkOperationTransformer</span> <span class="directive">extends</span> AbstractDiscoverableTransformer {
+
+    <span class="directive">public</span> BatchResultToBulkOperationTransformer() {
+        <span class="local-variable">this</span>.registerSourceType(DataTypeFactory.create(<span class="predefined-type">List</span>.class, BatchResult.class, <span class="predefined-constant">null</span>));
+        <span class="local-variable">this</span>.setReturnDataType(DataTypeFactory.create(BulkOperationResult.class));
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="directive">protected</span> <span class="predefined-type">Object</span> doTransform(<span class="predefined-type">Object</span> src, <span class="predefined-type">String</span> enc) <span class="directive">throws</span> <span class="exception">TransformerException</span> {
+        <span class="predefined-type">List</span>&lt;BatchResult&gt; results = (<span class="predefined-type">List</span>&lt;BatchResult&gt;) src;
+
+        BulkOperationResultBuilder&lt;BaseEntry&lt;?&gt;&gt; builder = BulkOperationResult.&lt;BaseEntry&lt;?&gt;&gt;builder();
+
+        <span class="keyword">if</span> (results != <span class="predefined-constant">null</span>) {
+            <span class="keyword">for</span> (BatchResult result : results) {
+                BatchStatus status = result.getStatus();
+                <span class="type">int</span> code = status.getCode();
+
+                builder.addItem(BulkItem.&lt;BaseEntry&lt;?&gt;&gt;builder()
+                        .setRecordId(result.getId())
+                        .setPayload(result.getEntry())
+                        .setMessage(status.getContent())
+                        .setStatusCode(<span class="predefined-type">String</span>.format(<span class="string"><span class="delimiter">"</span><span class="content">%d - %s</span><span class="delimiter">"</span></span>, code, status.getReason()))
+                        .setSuccessful(code == <span class="integer">200</span> || code == <span class="integer">201</span> || code == <span class="integer">204</span>)
+                    );
+            }
+        }
+
+        <span class="keyword">return</span> builder.build();
+    }</pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
   </div> 
   <div class="paragraph"> 
    <p>There are some important things to notice about the above transformer:</p> 
