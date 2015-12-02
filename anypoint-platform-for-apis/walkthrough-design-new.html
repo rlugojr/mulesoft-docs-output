@@ -882,7 +882,7 @@
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
       <td class="content"> 
        <div class="paragraph"> 
-        <p>This page is part of the Anypoint Platform for APIs walkthrough. If you landed here by mistake and you’re not sure where to start, go to the <a href="/anypoint-platform-for-apis/anypoint-platform-for-apis-walkthrough">walkthough introduction</a> to learn more.</p> 
+        <p>This page is part of the Anypoint Platform for APIs walkthrough. If you landed here by mistake and you’re not sure where to start, go to the <a href="/anypoint-platform-for-apis/anypoint-platform-for-apis-walkthrough">walkthrough introduction</a> to learn more.</p> 
        </div> 
        <div class="paragraph"> 
         <p>Looking for a user guide for building APIs in the Anypoint Platform? See <a href="/anypoint-platform-for-apis/designing-your-api">Designing Your API</a>.</p> 
@@ -897,10 +897,16 @@
  <h2 id="before-you-begin"><a class="anchor" href="#before-you-begin"></a>Before You Begin</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This walkthrough assumes that you have already created an API version details page for the T-Shirt Service API, which we covered with&nbsp;<a href="/anypoint-platform-for-apis/walkthrough-intro-create">Create an API</a>. You have clicked <strong>Define API</strong> and landed in the API Designer, which looks like this:</p> 
+   <p>This walkthrough assumes that you have already created an API version details page for the T-Shirt Service API, which we covered in&nbsp;<a href="/anypoint-platform-for-apis/walkthrough-intro-create">Create an API</a>. After logging into <a href="https://anypoint.mulesoft.com">Anypoint Platform</a>, you clicked your project, and have clicked <strong>Define API in API designer</strong>:</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/Screenshot+2014-07-02+15.09.57.png" alt="Screenshot+2014-07-02+15.09.57"></span></p> 
+   <p><span class="image"><img src="./_images/api-gw-define-api-link.png" alt="api-gw-define-api-link"></span></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The API Designer looks like this:</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/api-gw-api-designer.png" alt="api-gw-api-designer"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -908,10 +914,19 @@
  <h2 id="about-raml"><a class="anchor" href="#about-raml"></a>About RAML</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><a href="http://raml.org/index.html">RAML</a> (RESTful API Modeling Language) is a simple and very practical language for describing APIs. RAML encourages reuse, enables discovery and pattern-sharing, and aims for merit-based emergence of best practices. RAML is built on broadly-used standards such as YAML and JSON and is a non-proprietary, vendor-neutral open spec.</p> 
+   <p><a href="http://raml.org/">RAML</a> (RESTful API Modeling Language) is a simple and very practical language for describing APIs. RAML encourages reuse, enables discovery and pattern-sharing, and aims for merit-based emergence of best practices. RAML is built on broadly-used standards such as YAML and JSON and is a non-proprietary, vendor-neutral open specification.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>In short, RAML makes it easier for you to write your API, and enables a series of online tools that make it easier for developers to engage with your API.</p> 
+   <p>For more information, see:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="http://raml.org/developers/document-your-api">Documentation</a> and <a href="http://raml.org/developers/raml-100-tutorial">Tutorials</a></p> </li> 
+    <li> <p><a href="http://raml.org/projects/projects">RAML Projects</a></p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>RAML makes it easier for you to write your API, and provides a series of online tools that make it easier for developers to engage with your API.</p> 
   </div> 
   <div class="paragraph"> 
    <p>A RAML file includes the following elements:</p> 
@@ -924,9 +939,6 @@
     <li> <p>Methods</p> </li> 
     <li> <p>Pattern-based, reusable elements</p> </li> 
    </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>For more information on defining a RAML API definition, please visit <a href="http://www.raml.org">RAML.org</a></p> 
   </div> 
   <div class="admonitionblock tip"> 
    <table> 
@@ -1003,57 +1015,50 @@
           </tbody> 
          </table></code></pre> 
       </div> 
-     </div> 
-     <div class="paragraph"> 
-      <p>Next, look at the Shelf at the bottom of the Designer. The Shelf is context aware: it always displays a list of the components you can enter at that point in the hierarchy of your API. These components are arranged into categories that appear when relevant: Root, Docs, Parameters, Security, Resources, Methods, &nbsp;Traits and Types, Schemas, Body, and Responses.</p> 
-     </div> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/api-designer-shelf.png" alt="shelf"></span><br></p> 
      </div> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Instead of typing each of these components in, you can click what you want to add and it will be placed into your RAML definition. As you enter a component, it disappears from the Shelf. For example, if you select a <code>GET</code>&nbsp;method from the list of Methods, it disappears from the Shelf because you cannot have two <code>GET</code> methods on the same resource. This API consists of a series of operations that users of your API can call. Each operation maps to a resource. All the operations in this API relate to one of the following resources:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ * <strong><code>/products</code></strong> (mostly t-shirts) * <strong><code>/orders</code></strong> (t-shirt orders, of course) * orders each have a nested <strong><code>{orderId}/status</code></strong>, which is considered a sub-resource of&nbsp;<code>orders</code>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ You can do things the classic way and type these resources into the RAML definition, but the API Designer offers you an easier way: place the cursor on a new line and click the&nbsp;<code>New Resource</code> component on the Shelf. This automatically adds lines of skeleton code at your cursor position, saving you from the pain of stressing over syntax considerations.&nbsp;</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ <span class="image"><img src="./_images/new+resource.png" alt="new+resource"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ Then, just replace the text in the resource title and in its child element’s&nbsp;<code>displayName</code>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+</p> 
-  </div> 
-  <div class="admonitionblock warning"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-      <td class="content"> Keep in mind that the elements that API Designer suggests in the shelf depend contextually upon where you place the cursor: the shelf only offers you the option of placing elements that make sense in that particular position within the RAML tree structure. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ Here’s what your RAML should look like so far:</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="yaml">
-         
-      <table class="CodeRay"> 
+    <li> <p>Look at the Shelf at the bottom of the Designer. The Shelf is context aware: it always displays a list of the components you can enter at that point in the hierarchy of your API. These components are arranged into categories that appear when relevant: Root, Docs, Parameters, Security, Resources, Methods, Traits and Types, Schemas, Body, and Responses.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/api_designer_shelf.png" alt="API Designer Shelf"></span></p> 
+     </div> </li> 
+    <li> <p>Instead of typing in each of these components, you can click what you want to add and it’s placed in your RAML definition. As you enter a component, it disappears from the Shelf. For example, if you select a <code>GET</code>&nbsp;method from the list of Methods, it disappears from the Shelf because you cannot have two <code>GET</code> methods on the same resource. This API consists of a series of operations that users of your API can call.</p> 
+     <div class="paragraph"> 
+      <p>Each operation maps to a resource. All the operations in this API relate to one of the following resources:</p> 
+     </div> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><code>/products</code> (mostly t-shirts)</p> </li> 
+       <li> <p><code>/orders</code> (t-shirt orders, of course)</p> </li> 
+       <li> <p>orders each have a nested <code>{orderId}/status</code>, which is considered a sub-resource of&nbsp;<code>orders</code>.</p> 
+        <div class="paragraph"> 
+         <p>You can do things the classic way and type these resources into the RAML definition, but the API Designer offers you an easier way: place the cursor on a new line and click the&nbsp;<code>New Resource</code> component on the Shelf. This automatically adds lines of skeleton code at your cursor position, saving you from the pain of stressing over syntax considerations.&nbsp;</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p><span class="image"><img src="./_images/new+resource.png" alt="new+resource"></span></p> 
+        </div> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p>Then, just replace the text in the resource title and in its child element’s&nbsp;<code>displayName</code>.</p> 
+     <div class="admonitionblock warning"> 
+      <table> 
        <tbody> 
         <tr> 
-         <td class="line-numbers"><pre>1
+         <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
+         <td class="content"> Keep in mind that the elements that API Designer suggests in the shelf depend contextually upon where you place the cursor: the shelf only offers you the option of placing elements that make sense in that particular position within the RAML tree structure. </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="paragraph"> 
+      <p>Here’s what your RAML should look like so far:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="yaml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1064,7 +1069,7 @@
 9
 <strong>10</strong>
 </pre></td> 
-         <td class="code"><pre><span class="comment">#%RAML 0.8</span>
+            <td class="code"><pre><span class="comment">#%RAML 0.8</span>
 <span class="key">title</span>: <span class="string"><span class="content">T-Shirt Ordering Service</span></span>
 <span class="key">version</span>: <span class="string"><span class="content">1.0.development</span></span>
 <span class="key">baseUri</span>: <span class="string"><span class="content">http://www.tshirt.com/api</span></span>
@@ -1074,39 +1079,35 @@
 <span class="error">&nbsp;&nbsp;displayName</span>: <span class="error">Orders</span>
 <span class="error">&nbsp;&nbsp;/{orderId}/status</span>:
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;displayName</span>: <span class="error">Status</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ Notice that the API Console, displayed to the right of the editor, now actually contains something. Awesome! Developers who want to engage with your API can view this same console and immediately know what resources are available on your API, and how to access them.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>+ <span class="image"><img src="./_images/basic+console.png" alt="basic+console"></span></p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>Notice that the API Console, displayed to the right of the editor, now actually contains something. Awesome! Developers who want to engage with your API can view this same console and immediately know what resources are available on your API, and how to access them.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/basic+console.png" alt="basic+console"></span></p> 
+     </div> </li> 
     <li> <p>A resource isn’t of any use until it has an associated method. Time to brainstorm what would be appropriate:</p> 
      <div class="ulist"> 
       <ul> 
        <li> <p>Users of the API should be able to read information about products, but of course not post new products (that wouldn’t really make any sense) so for the <code>products</code> resource, only add a <code>GET</code>&nbsp;method.</p> </li> 
        <li> <p>Users should be able to place orders, so give the /<code>orders</code> resource a&nbsp;<code>POST</code>&nbsp;method.</p> </li> 
-       <li> <p>Users should be able to check an order’s status, so give the&nbsp;<code>status</code> resource a&nbsp;<code>GET</code> method.</p> 
-        <div class="paragraph"> 
-         <p>Instead of typing these in, you can place the cursor in a new line right beneath the <code>displayName</code> of a resource and use the corresponding method element from the shelf (below the editor) to automatically obtain a skeleton structure to fill in. Then add a valid description for each of the methods you add:</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/methods.png" alt="methods"></span></p> 
-        </div> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="yaml">
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
+       <li> <p>Users should be able to check an order’s status, so give the&nbsp;<code>status</code> resource a&nbsp;<code>GET</code> method.</p> </li> 
+      </ul> 
+     </div> </li> 
+    <li> <p>Instead of typing these in, you can place the cursor in a new line right beneath the <code>displayName</code> of a resource and use the corresponding method element from the shelf (below the editor) to automatically obtain a skeleton structure to fill in. Then add a valid description for each of the methods you add:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/methods.png" alt="methods"></span></p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="yaml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1123,7 +1124,7 @@
 15
 16
 </pre></td> 
-               <td class="code"><pre><span class="comment">#%RAML 0.8</span>
+            <td class="code"><pre><span class="comment">#%RAML 0.8</span>
 <span class="key">title</span>: <span class="string"><span class="content">T-Shirt Ordering Service</span></span>
 <span class="key">version</span>: <span class="string"><span class="content">1.0.development</span></span>
 <span class="key">baseUri</span>: <span class="string"><span class="content">http://www.tshirt.com/api</span></span>
@@ -1139,20 +1140,22 @@
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;displayName</span>: <span class="error">Status</span>
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;get</span>:
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description</span>: <span class="error">Get the status of an existing order</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> 
-        <div class="paragraph"> 
-         <p>Notice that on the API Console, which displays on the right of the editor, you can now see that the resources each have a corresponding set of methods (actually only one method each, in our case). You can now click these methods to read the descriptions you just added.</p> 
-        </div> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/full+console.png" alt="full+console"></span></p> 
-        </div> </li> 
-      </ul> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
      </div> </li> 
-    <li> <p>Next, it’s time to decide what possible <code>responses</code> are valid for each of these methods. All of them should have a&nbsp;<code>200</code> (OK) response, that’s a no brainer. In the&nbsp;<code>POST order</code> method let’s also include a&nbsp;<code>500</code> (server error) response in case something fails on the server side, and in the&nbsp;<code>GET status</code> resource let’s also include a&nbsp;<code>400</code> (client error) response, in case the user requests a nonexistent order.<br> Don’t forget, you can either use the <code>responses</code> component on the Shelf or just type in the necessary lines.<br> In the case of this API, the service behind the API constructs the actual response that a user receives. &nbsp;Nevertheless, it’s a good practice to provide a response example in the API RAML. With these examples in place, developers can then use the API Console to preview the structure of the response and build their consuming application accordingly.</p> 
+    <li> <p>Notice that on the API Console (on the right of the editor), you can now see that the resources each have a corresponding set of methods (actually only one method each, in our case). You can now click these methods to read the descriptions you just added.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/full+console.png" alt="full+console"></span></p> 
+     </div> </li> 
+    <li> <p>Next, it’s time to decide what possible <code>responses</code> are valid for each of these methods. All of them should have a&nbsp;<code>200</code> (OK) response, that’s a no brainer. In the&nbsp;<code>POST order</code> method let’s also include a&nbsp;<code>500</code> (server error) response in case something fails on the server side, and in the&nbsp;<code>GET status</code> resource let’s also include a&nbsp;<code>400</code> (client error) response, in case the user requests a nonexistent order.</p> 
+     <div class="paragraph"> 
+      <p>Don’t forget, you can either use the <code>responses</code> component on the Shelf or just type in the necessary lines.</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>In the case of this API, the service behind the API constructs the actual response that a user receives. &nbsp;Nevertheless, it’s a good practice to provide a response example in the API RAML. With these examples in place, developers can then use the API Console to preview the structure of the response and build their consuming application accordingly.</p> 
+     </div> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="yaml">
@@ -1302,7 +1305,7 @@
          </table></code></pre> 
       </div> 
      </div> </li> 
-    <li> <p>To ensure that&nbsp;<code>POST</code> requests sent to the <strong><code>/order</code></strong> resource are valid, you can enforce that they all follow a given structure. You can provide a schema to match for incoming requests to ensure their validity. To help developers that are trying to understand what input your API requires, you can also add an example message, which will not only be readable in the RAML code, but that will be visibly exposed if the API is looked at in the API Console. Add both these elements into the&nbsp;<code>post</code> method of the <code>/orders</code> resource, placing them within&nbsp;<code>body – application/json</code>.</p> 
+    <li> <p>To ensure that&nbsp;<code>POST</code> requests sent to the <strong><code>/order</code></strong> resource are valid, you can enforce that they all follow a given structure. You can provide a schema to match for incoming requests to ensure their validity. To help developers that are trying to understand what input your API requires, you can also add an example message, which is not only readable in the RAML code, but that is visible if the API is looked at in the API Console. Add both these elements into the&nbsp;<code>post</code> method of the <code>/orders</code> resource, placing them within&nbsp;<code>body – application/json</code>.</p> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="yaml">
@@ -1392,8 +1395,8 @@
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;example</span>: <span class="error">|</span>
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span>
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"size"</span>: <span class="error">"M",</span>
-<span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email"</span>: <span class="error">"robin@mail.com",</span>
-<span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name"</span>: <span class="error">"Robin Pille",</span>
+<span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email"</span>: <span class="error">"polly@mail.com",</span>
+<span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name"</span>: <span class="error">"Polly Hedra",</span>
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"address1"</span>: <span class="error">"77 Geary St.",</span>
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"address2"</span>: <span class="error">"Apt 7",</span>
 <span class="error">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"city"</span>: <span class="error">"San Francisco",</span>
@@ -1510,7 +1513,7 @@
       <p>Whoa. What happened here? The <code>baseUri</code> that you provided when declaring your basic information at the root has been commented out and supplanted by a new URI. &nbsp;With this one simple action, you’ve effectively published your API and it is now ready to receive live calls. You’ve provided example responses, right? You can make live calls in the API Console OR your browser, and it returns data that you’ve provided in your RAML API definition. You can see what your API consumers see when they make calls to the API, and fully test APX.&nbsp;</p> 
      </div> 
      <div class="paragraph"> 
-      <p>Let’s test that theory in the API console by making a&nbsp;<strong><code>GET</code></strong>&nbsp;request on the status of a particular order.<br></p> 
+      <p>Let’s test that theory in the API console by making a&nbsp;<code>GET</code>&nbsp;request on the status of a particular order.</p> 
      </div> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/Screenshot+2014-07-03+14.49.46.png" alt="Screenshot+2014-07-03+14.49.46"></span></p> 
