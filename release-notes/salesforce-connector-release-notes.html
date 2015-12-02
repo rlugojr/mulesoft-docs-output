@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/release-notes/salesforce-connector-release-notes" />
-    <meta name="description" content="Select Connector Guide: Salesforce Connector The Version 6.2.1 Salesforce connector is compatible with: Mule Runtime 3.5.2 and newer Salesforce v31..." />
+    <meta name="description" content="Select Connector Guide: Salesforce Connector The Version 7.0.0 Salesforce connector is compatible with: Mule Runtime Mule Enterprise Edition 3.5.2 ..." />
     <meta class="swiftype" name="title" data-type="string" content="Salesforce Connector Release Notes" />
 
 </head>
@@ -874,6 +874,211 @@
   <div class="paragraph"> 
    <p><strong>Connector Guide</strong>: <a href="/mule-user-guide/v/3.7/salesforce-connector">Salesforce Connector</a></p> 
   </div> 
+  <div class="admonitionblock important"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
+      <td class="content"> Starting with v.7.0.0, the Salesforce Connector is licensed commercially with Anypoint Platform as with other Select connectors. Prior versions will remain freely available to the community. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="salesforce-connector-7-0-0-december-1-2015"><a class="anchor" href="#salesforce-connector-7-0-0-december-1-2015"></a>Salesforce Connector 7.0.0 - December 1, 2015</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-0-compatibility"><a class="anchor" href="#version-7-0-0-compatibility"></a>Version 7.0.0 Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>The Version 7.0.0 Salesforce connector is compatible with:</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Application/Service</th> 
+      <th class="tableblock halign-left valign-top">Version</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Mule Runtime</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Mule Enterprise Edition 3.5.2 and newer</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Anypoint Studio</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Only works with Studio 5.4.0 and newer</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Salesforce</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>v32.0 to v34.0</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p>This is a <strong>major version</strong> change, hence the connector <strong>might break backward compatibility</strong> for some existing flows. It uses DevKit 3.7 and its new features (like multi-level Datasense for invokeApexSoapMethod and invokeApexRestMethod) and dates are no longer passed as String, but as Dates and Calendars.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="migrating-from-older-versions-of-the-connector-to-version-7-0-0"><a class="anchor" href="#migrating-from-older-versions-of-the-connector-to-version-7-0-0"></a>Migrating From Older Versions of the Connector to Version 7.0.0</h3> 
+   <div class="paragraph"> 
+    <p>If you’re using an older version of the connector, a small popup appears in the bottom right corner of Anypoint Studio that says "Updates Available".</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Click that popup and check for available updates.</p> </li> 
+     <li> <p>Click the Salesforce Connector version 7.0.0 checkbox, click <strong>Next</strong> and follow the instructions provided by the user interface.</p> </li> 
+     <li> <p>Restart Studio.</p> </li> 
+     <li> <p>After the restart, when creating a flow and using the Salesforce Connector, if you have several versions of the connector installed, you might be asked which version you would like to use. Choose the version you would like to use.</p> </li> 
+     <li> <p>Keep Mule and Studio updated.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If updating the connector causes issues then simply uninstall the old version and install the new one:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Anypoint Studio: <strong>Help</strong> &gt; <strong>Installation Details</strong> &gt; <strong>Installed Software</strong>:</p> 
+      <div class="olist loweralpha"> 
+       <ol class="loweralpha" type="a"> 
+        <li> <p>Find the Salesforce connector, select it and then click the <strong>Uninstall</strong> button</p> </li> 
+       </ol> 
+      </div> </li> 
+     <li> <p>Anypoint Studio: <strong>Help</strong> &gt; <strong>Install New Software</strong>:</p> 
+      <div class="olist loweralpha"> 
+       <ol class="loweralpha" type="a"> 
+        <li> <p>Select "Anypoint Connectors Update Site" from the dropdown .. Type "Salesforce" in the bar above the dropdown</p> </li> 
+        <li> <p>Under "Select" you will find version 7.0.0 of the connector .. Select its checkbox and then click <strong>Next</strong> to begin the installation process.</p> </li> 
+       </ol> 
+      </div> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-0-features"><a class="anchor" href="#version-7-0-0-features"></a>Version 7.0.0 Features</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>The connector now supports versions 32.0 to 34.0 of the Salesforce API.</p> </li> 
+     <li> <p><strong>get-session-id</strong></p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Added an extra optional input parameter to this operation, that forces the session validation.</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>describe-global</strong> and <strong>describe-sobject</strong></p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Added an extra optional parameter to these operations in order to add Salesforce SOAP headers on the requests.</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>invoke-apex-rest-method</strong></p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Added support for Custom Types and Apex Custom Types</p> </li> 
+        <li> <p>Added multilevel Datasense</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>invoke-apex-soap-method</strong></p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Added multilevel Datasense</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p>Changed <strong>Test Connection</strong> to <strong>Validate Configuration</strong> and added a validation for Apex Classes and Proxy configurations if these are set in the connector configuration.</p> </li> 
+     <li> <p><strong>merge</strong></p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>This is a new operation to support merging of accounts.</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p><strong>reset-password</strong></p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>This is a new operation to offer support to users wanting to reset their password through the connector.</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p>Added the ability to use external IDs in metadata (DataMapper or DataWeave).</p> </li> 
+     <li> <p>Added support for List&lt;String&gt; for fieldsToNull.</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-0-fixed-in-this-release"><a class="anchor" href="#version-7-0-0-fixed-in-this-release"></a>Version 7.0.0 Fixed in this Release</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Changed the creation of the URLs used for Apex SOAP and Apex REST requests, in order to support reverse proxies.</p> </li> 
+     <li> <p>Modified some Java documentation that incorrectly appeared as explanations in Studio elements like configurations.</p> </li> 
+     <li> <p>Corrected the parsing of dates from Apex REST invocation responses.</p> </li> 
+     <li> <p>Added validation for the existence of IDs when using the <strong>retrieve</strong> operation, to avoid possible exception thrown when it is called.</p> </li> 
+     <li> <p>Dates are now returned as Calendars rather than Strings, for easier use (comparison or alteration).</p> </li> 
+     <li> <p>Fixed issue with Apex REST URL not supporting certain characters like period ('.').</p> </li> 
+     <li> <p>Improved overall performance for Apex REST invocation by avoiding the download and parsing of the Apex REST class at every invocation; instead we are relying on the information obtained during Datasense and settings in the metadata key id.</p> </li> 
+     <li> <p>Removed default proxy port from the configuration as it is confusing.</p> </li> 
+     <li> <p>Handle the Salesforce Address type as an object in metadata rather than a String, as before.</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-0-known-issues"><a class="anchor" href="#version-7-0-0-known-issues"></a>Version 7.0.0 Known Issues</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>This version of the connector breaks backward compatibility:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>the way some metadata key ids are created was changed when the multi-level Datasense was introduced (invokeApexSoapMethod and invokeApexRestMethod are affected by this).</p> </li> 
+        <li> <p>the way the connector works with Dates has been changed: dates are no longer expected/returned as Strings; they are used as Dates or Calendars, for easier use (comparison and calculations), depending on their types.</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p>Salesforce has a know issue with creating correct WSDLs for the Apex SOAP classes created under version 34.0 and 35.0 of the API. As a workaround Salesforce suggested that the Apex SOAP classes should be created under version 32.0 to be able to use them.</p> </li> 
+     <li> <p>Connector v7.0.0 does not work with versions v28.0, v29.0, v30.0 and v31.0 of the Salesforce API.</p> </li> 
+     <li> <p>Connector v7.0.0 does not support for Apex Rest the following data types:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>Lists of Lists or Maps</p> </li> 
+        <li> <p>Maps of Lists or Maps</p> </li> 
+        <li> <p>Object (not able to perform DataSense on it)</p> </li> 
+        <li> <p>Blob (not supported by Salesforce Rest methods as input/output)</p> </li> 
+       </ul> 
+      </div> </li> 
+     <li> <p>For versions v28.0, v29.0 of the Salesforce API use version v5.4.12 of the connector.</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -962,7 +1167,7 @@
    <div class="olist arabic"> 
     <ol class="arabic"> 
      <li> <p>Click that popup and check for available updates.</p> </li> 
-     <li> <p>Click the Salesforce Connector version 6.2.1 check-box, click Next, and follow the instructions provided by the user interface.</p> </li> 
+     <li> <p>Click the Salesforce Connector version 6.2.1 checkbox, click Next, and follow the instructions provided by the user interface.</p> </li> 
      <li> <p>Restart Studio.</p> </li> 
      <li> <p>After the restart, when creating a flow and using the Salesforce Connector, if you have several versions of the connector installed, you might be asked which version you would like to use. Choose the version you would like to use.</p> </li> 
      <li> <p>Keep Mule and Studio updated.</p> </li> 
@@ -1332,7 +1537,7 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Added NonPaginatedQuery operation for backwards compatibility since</p> </li> 
+    <li> <p>Added NonPaginatedQuery operation for backward compatibility since</p> </li> 
     <li> <p>Query uses Mule 3.5 AutoPaging</p> </li> 
     <li> <p>Added batchSize for queries</p> </li> 
     <li> <p>DevKit 3.5.0</p> </li> 
@@ -1496,7 +1701,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-3-july-23-2015">Salesforce Connector 6.2.3 - July 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-2-july-22-2015">Salesforce Connector 6.2.2 - July 22, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-1-june-19-2015">Salesforce Connector 6.2.1 - June 19, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-0-june-9-2015">Salesforce Connector 6.2.0 - June 9, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-1-0-march-31-2015">Salesforce Connector 6.1.0 - March 31, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-1-february-25-2015">Salesforce Connector 6.0.1 - February 25, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-0-february-23-2015">Salesforce Connector 6.0.0 - February 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-12-march-11-2015">Salesforce Connector 5.4.12 - March 11, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-10-october-28-2014">Salesforce Connector 5.4.10 - October 28, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-9-september-18-2014">Salesforce Connector 5.4.9 - September 18, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-7">Salesforce Connector 5.4.7</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-6">Salesforce Connector 5.4.6</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-4">Salesforce Connector 5.4.4</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-3">Salesforce Connector 5.4.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-2">Salesforce Connector 5.4.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-1">Salesforce Connector 5.4.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-0">Salesforce Connector 5.4.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-1">Salesforce Connector 5.3.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-0">Salesforce Connector 5.3.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-2-0">Salesforce Connector 5.2.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-3">Salesforce Connector 5.1.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-2">Salesforce Connector 5.1.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-1">Salesforce Connector 5.1.1</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#salesforce-connector-7-0-0-december-1-2015">Salesforce Connector 7.0.0 - December 1, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-3-july-23-2015">Salesforce Connector 6.2.3 - July 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-2-july-22-2015">Salesforce Connector 6.2.2 - July 22, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-1-june-19-2015">Salesforce Connector 6.2.1 - June 19, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-0-june-9-2015">Salesforce Connector 6.2.0 - June 9, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-1-0-march-31-2015">Salesforce Connector 6.1.0 - March 31, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-1-february-25-2015">Salesforce Connector 6.0.1 - February 25, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-0-february-23-2015">Salesforce Connector 6.0.0 - February 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-12-march-11-2015">Salesforce Connector 5.4.12 - March 11, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-10-october-28-2014">Salesforce Connector 5.4.10 - October 28, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-9-september-18-2014">Salesforce Connector 5.4.9 - September 18, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-7">Salesforce Connector 5.4.7</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-6">Salesforce Connector 5.4.6</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-4">Salesforce Connector 5.4.4</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-3">Salesforce Connector 5.4.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-2">Salesforce Connector 5.4.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-1">Salesforce Connector 5.4.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-0">Salesforce Connector 5.4.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-1">Salesforce Connector 5.3.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-0">Salesforce Connector 5.3.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-2-0">Salesforce Connector 5.2.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-3">Salesforce Connector 5.1.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-2">Salesforce Connector 5.1.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-1">Salesforce Connector 5.1.1</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

@@ -871,6 +871,16 @@
   <div class="paragraph"> 
    <p>This page describes how to obtain an auto-generated proxy for your API version, optionally modify it with additional code, and deploy the proxy application to your API Gateway. The API Gateway registers a proxy endpoint with the Anypoint Platform for APIs and allows you to govern your API by applying runtime policies to it. This page also describes the architecture of a proxy application, in case you want to build your own.</p> 
   </div> 
+  <div class="admonitionblock note"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+      <td class="content"> See also <a href="/anypoint-platform-for-apis/api-gateway-domain">API Gateway Domain</a> for the API Gateway 2.0.n and newer API Gateway domain feature. </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -963,13 +973,13 @@
     <div class="panel-heading no-padding"> 
      <!-- Nav tabs --> 
      <ul class="nav nav-tabs" role="tablist"> 
-      <li class="active"><a href="#cloudhub-automatic-dbdb5" role="tab" data-toggle="tab">CloudHub - Automatic</a></li> 
-      <li><a href="#manual-on-premises-or-cloudhub-76a85" role="tab" data-toggle="tab">Manual- On Premises or CloudHub</a></li> 
-      <li><a href="#automatic-on-premises-7fe6a" role="tab" data-toggle="tab">Automatic - On-Premises</a></li> 
+      <li class="active"><a href="#cloudhub-automatic-2bdf3" role="tab" data-toggle="tab">CloudHub - Automatic</a></li> 
+      <li><a href="#manual-on-premises-or-cloudhub-47c57" role="tab" data-toggle="tab">Manual- On Premises or CloudHub</a></li> 
+      <li><a href="#automatic-on-premises-31928" role="tab" data-toggle="tab">Automatic - On-Premises</a></li> 
      </ul> 
     </div> 
     <div class="panel-body tab-content no-padding"> 
-     <div class="tab-pane in active fade no-padding" id="cloudhub-automatic-dbdb5"> 
+     <div class="tab-pane in active fade no-padding" id="cloudhub-automatic-2bdf3"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>In the API Status section of the API version page, click <strong>Deploy proxy</strong> to deploy your proxy application to CloudHub.</p> 
@@ -1000,7 +1010,7 @@
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="manual-on-premises-or-cloudhub-76a85"> 
+     <div class="tab-pane fade no-padding" id="manual-on-premises-or-cloudhub-47c57"> 
       <div class="olist arabic"> 
        <ol class="arabic"> 
         <li> <p>Click <strong>API Status</strong> &gt; <strong>Download proxy</strong>. Your API downloads by your browser as a .zip file. This .zip file is a deployable proxy application with all of the settings you have configured for your proxy. You can download the zip file for the latest or an earlier API Gateway version:</p> 
@@ -1008,7 +1018,7 @@
           <p><span class="image"><img src="./_images/DownloadProxy20qa.png" alt="DownloadProxy20qa"></span></p> 
          </div> </li> 
         <li> <p>If needed, modify this zip file to adjust for port conflicts, use shared connector resources, or include custom code for logic that you wish to add to the proxy.</p> </li> 
-        <li> <p>Now it’s time to <a href="/anypoint-platform-for-apis/deploying-your-api-or-proxy">deploy your proxy applicatio</a>n to the API Gateway.</p> 
+        <li> <p>Now it’s time to <a href="/anypoint-platform-for-apis/deploying-your-api-or-proxy">deploy your proxy application</a> to the API Gateway.</p> 
          <div class="admonitionblock tip"> 
           <table> 
            <tbody> 
@@ -1025,7 +1035,7 @@
        </ol> 
       </div> 
      </div> 
-     <div class="tab-pane fade no-padding" id="automatic-on-premises-7fe6a"> 
+     <div class="tab-pane fade no-padding" id="automatic-on-premises-31928"> 
       <div class="admonitionblock note"> 
        <table> 
         <tbody> 
@@ -1836,71 +1846,6 @@ raml.location=api.raml</pre></td>
   </div> 
   <div class="paragraph"> 
    <p>When you’re done, you can export your project and then deploy it either on premises or to CloudHub. Keep in mind that you are only exporting and deploying your proxy app, not the domain project that is linked to it. When deployed to production, your app relies on the domain that exists in that environment.</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="proxy-domain-in-studio"><a class="anchor" href="#proxy-domain-in-studio"></a>Proxy Domain in Studio</h3> 
-   <div class="paragraph"> 
-    <p>Mule&nbsp;domains are a useful abstraction for <a href="/mule-user-guide/v/3.7/shared-resources">sharing resources</a> between apps. All API Gateway proxy apps, both those deployed to CloudHub and those deployed to the standalone API Gateway, rely on a domain that includes sevaral common configuration parameters. When importing your proxy application into Studio, notice that your project is linked to a <strong>domain</strong> project named <code>api-gateway</code> (which is automatically created in studio if not already present). This domain project is identical to the domain that exists in Cloudhub and in your standalone API Gateway On Premise by default. This domain necessary for being able to deploy your app to the Anypoing Studio server under the same conditions as when deployed to production.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/domain_project.png" alt="domain_project"></span></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>You can check that this domain is associated to your project by viewing the <code>mule-project.xml</code> file of your project.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/gateway_domain_associated.png" alt="gateway_domain_associated"></span></p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>You can modify this domain in Studio freely, keep in mind though, that when exporting your proxy project out of Studio you are only exporting the proxy itself, not the domain it’s linked to. In production, the proxy relies on the domain that exists in that environment. This has different implications depending on where you want to deploy to:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><strong>Standalone API Gateway On Premise</strong>: If you modified your domain in Studio, you must also modify the actual domain that exists in the API Gateway to match these changes.</p> </li> 
-     <li> <p><strong>CloudHub</strong>: You cannot modify the domain that exists in the cloud, so you must build your proxy apps in such a way that they are compatible with the default domain.</p> </li> 
-    </ul> 
-   </div> 
-   <div class="admonitionblock tip"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> 
-        <div class="paragraph"> 
-         <p>If you already had a proxy project in Studio that you imported prior to September 2015 and you want to link it to a Domain project, you can easily do so by left clicking on your project in the package explorer and selecting <code>Domains &gt; Associate with API Gateway Domain</code> <span class="image"><img src="./_images/add_gateway_domain.png" alt="add domain"></span></p> 
-        </div> </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The Domain project contains the <code>&lt;http:listener-config</code> statement that listens on port 8081 that the Mule flow requires:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="xml">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre><span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">http-lc-0.0.0.0-8081</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">0.0.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">protocol</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
-   </div> 
-   <div class="admonitionblock tip"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> If you want to include HTTPS support, you may have to include a second HTTP listener config that supports HTTPS and listens on port 8082, depending on where you want to deploy to. See <a href="#using-https">Using HTTPS</a> for more details. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
   </div> 
  </div> 
 </div> 
