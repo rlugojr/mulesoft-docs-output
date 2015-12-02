@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Connector Connection Strategies // MuleSoft Documentation </title>
+    <title>Connector Configs // MuleSoft Documentation </title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/asciidoctor.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
@@ -20,7 +20,7 @@
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-connector-devkit/v/3.7/connector-connection-strategies" />
     <meta name="description" content="Since Devkit 3.6, connections are no longer supported at the @Connector level (excluding OAuth V1), but now are defined in another component and in..." />
-    <meta class="swiftype" name="title" data-type="string" content="Connector Connection Strategies" />
+    <meta class="swiftype" name="title" data-type="string" content="Connector Configs" />
 
 </head>
 <body>
@@ -870,14 +870,14 @@
         <!-- START article content -->
         <div class="article-content col-md-7">
           <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Anypoint Connector DevKit</a>/<a href="authentication">Authentication</a>/<a href="connector-connection-strategies" class="breadcrumb-active-link">Connector Connection Strategies</a></div>
-          <h1>Connector Connection Strategies</h1>
+          <h1>Connector Configs</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Since Devkit 3.6, connections are no longer supported at the <code>@Connector</code> level (excluding OAuth V1), but now are defined in another component and injected to the <code>@Connector</code> by annotating a field with <code>@ConnectionStrategy</code>. This provides a better environment for developing a connector and the easiest way to create multiple authentication types.</p> 
+   <p>Since Devkit 3.6, connections are no longer supported at the <code>@Connector</code> level (excluding OAuth V1), but now are defined in another component and injected to the <code>@Connector</code> by annotating a field with <code>@Config</code>. This provides a better environment for developing a connector and the easiest way to create multiple authentication types.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><strong>Note</strong>:&nbsp;OAuth V1 is not supported as a <code>@ConnectionStrategy</code>.</p> 
+   <p><strong>Note</strong>:&nbsp;OAuth V1 is <strong>not</strong> supported as a <code>@Config</code>.</p> 
   </div> 
  </div> 
 </div> 
@@ -890,17 +890,17 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="adding-a-connectionstrategy-to-a-connector"><a class="anchor" href="#adding-a-connectionstrategy-to-a-connector"></a>Adding a @ConnectionStrategy to a @Connector</h2> 
+ <h2 id="adding-a-config-to-a-connector"><a class="anchor" href="#adding-a-config-to-a-connector"></a>Adding a @Config to a @Connector</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To add&nbsp;a <code>@ConnectionStrategy</code>:</p> 
+   <p>To add&nbsp;a <code>@Config</code>:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Create a new Java class for the connection strategy.</p> </li> 
     <li> <p>Annotate the class with the one of the DevKit authentication methods. In the example we are using <code>@ConnectionManagement</code>.</p> </li> 
     <li> <p>Develop your authentication logic or connection management.</p> </li> 
-    <li> <p>Finally, set <code>@Connector</code> to reference the connection strategy class by creating a <code>@ConnectionStrategy</code> field with the reference to the new strategy. The <code>@Connector</code> is then detached from how it connects with the service.</p> </li> 
+    <li> <p>Finally, set <code>@Connector</code> to reference the connection strategy class by creating a <code>@Config</code> field with the reference to the new strategy. The <code>@Connector</code> is then detached from how it connects with the service.</p> </li> 
    </ol> 
   </div> 
  </div> 
@@ -909,7 +909,7 @@
  <h2 id="examples"><a class="anchor" href="#examples"></a>Examples</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The following example shows the&nbsp;<code>@Connector</code> and&nbsp;<code>@ConnectionStrategy</code> blocks in a connector:</p> 
+   <p>The following example shows the&nbsp;<code>@Connector</code> and&nbsp;<code>@Config</code> blocks in a connector:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -939,7 +939,7 @@
          <td class="code"><pre><span class="annotation">@Connector</span>(name=<span class="string"><span class="delimiter">"</span><span class="content">myconnector</span><span class="delimiter">"</span></span>, schemaVersion=<span class="string"><span class="delimiter">"</span><span class="content">1.0</span><span class="delimiter">"</span></span>, friendlyName=<span class="string"><span class="delimiter">"</span><span class="content">Connector</span><span class="delimiter">"</span></span>)
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MyConnector</span>
 {
-    <span class="annotation">@ConnectionStrategy</span>
+    <span class="annotation">@Config</span>
     <span class="directive">private</span> ConnectionManagementStrategy strategy;
 
     <span class="directive">public</span> <span class="type">void</span> setMyProperty(ConnectionManagementStrategy strategy)
@@ -1060,7 +1060,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#adding-a-connectionstrategy-to-a-connector">Adding a @ConnectionStrategy to a @Connector</a></li><li><a class="scroll-menu-link" href="#examples">Examples</a></li><li><a class="scroll-menu-link" href="#supporting-multiple-authentication-models-in-one-connector">Supporting Multiple Authentication Models in One Connector</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#adding-a-config-to-a-connector">Adding a @Config to a @Connector</a></li><li><a class="scroll-menu-link" href="#examples">Examples</a></li><li><a class="scroll-menu-link" href="#supporting-multiple-authentication-models-in-one-connector">Supporting Multiple Authentication Models in One Connector</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

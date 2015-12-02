@@ -906,7 +906,7 @@
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>For the purpose of this documentation, we’ll assume we are testing the following Mule code:</p> 
+   <p>For the purpose of this documentation, we assume we are testing the following Mule code:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="title">
@@ -933,7 +933,7 @@
   <div class="sect2"> 
    <h3 id="define"><a class="anchor" href="#define"></a>Defining the Message Processor to Mock</h3> 
    <div class="paragraph"> 
-    <p>When defining a mock we make use of the <code>when</code> message processor, as shown below.</p> 
+    <p>When defining a mock, we make use of the <code>when</code> message processor, as shown below.</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1011,7 +1011,7 @@
   <div class="sect2"> 
    <h3 id="matchers"><a class="anchor" href="#matchers"></a>Defining Mocked Behavior Using Message Processor Attributes</h3> 
    <div class="paragraph"> 
-    <p>A mock definition is based on <em>matchers</em>, i.e. parameters that match features of the desired message processor. Defining a mock solely on the name of the message processor largely limits your scope and actions regarding the mock. For this reason, MUnit allows you to define a mock by defining matchers over the value of a message processor’s attributes.</p> 
+    <p>A mock definition is based on <em>matchers</em>, that is, parameters that match features of the desired message processor. Defining a mock solely on the name of the message processor largely limits your scope and actions regarding the mock. For this reason, MUnit allows you to define a mock by defining matchers over the value of a message processor’s attributes.</p> 
    </div> 
    <div class="listingblock"> 
     <div class="title">
@@ -1297,6 +1297,14 @@
       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>payload</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the contents of the mocked payload.</p></td> 
      </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>encoding</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the encoding of the message. This attribute is optional.</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mimeType</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the MIME type of the message. This attribute is optional.</p></td> 
+     </tr> 
     </tbody> 
    </table> 
    <div class="sect3"> 
@@ -1483,7 +1491,6 @@
 <strong>10</strong>
 11
 12
-13
 </pre></td> 
            <td class="code"><pre><span class="tag">&lt;script</span><span class="attribute-name">:script</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">groovyScriptPayloadGenerator</span><span class="delimiter">"</span></span> <span class="attribute-name">engine</span>=<span class="string"><span class="delimiter">"</span><span class="content">groovy</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="inline">&lt;![CDATA[  <i class="conum" data-value="1"></i><b>(1)</b>
   List&lt;String&gt; lists = <span class="keyword">new</span> ArrayList&lt;String&gt;();
@@ -1493,7 +1500,7 @@
 
   <span class="keyword">return</span> lists;]]&gt;
 &lt;<span class="regexp"><span class="delimiter">/</span><span class="content">script:script&gt; ... &lt;mock:then-return payload="#[resultOfScript('groovyScriptPayloadGenerator')]"</span><span class="delimiter">/</span></span>&gt; <i class="conum" data-value="2"></i><b>(2)</b>
-...</span></pre></td> 
+  ...</span></pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
@@ -1570,6 +1577,14 @@
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock"><code>value</code></p></td> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the value the property should contain. It accepts MEL expressions. If left as a literal, it assumes a string value.</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>encoding</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the encoding of the message. This attribute is optional.</p></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mimeType</code></p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the MIME type of the message. This attribute is optional.</p></td> 
      </tr> 
     </tbody> 
    </table> 
