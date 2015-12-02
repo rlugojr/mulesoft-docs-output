@@ -840,7 +840,11 @@
 <i></i>
 <a href="/release-notes/cloudhub-release-notes">CloudHub Release Notes</a><ul>
 <li><i></i><a href="/release-notes/cloudhub-r40-migration-guide">CloudHub R40 Migration Guide</a></li></ul></li>
-<li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.1-release-notes">Mule Maven Plugin 2.1 Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.0-release-notes">Mule Maven Plugin 2.0 Release Notes</a></li><li>
+<li>
+<i></i>
+<a href="/release-notes/munit-release-notes">MUnit Release Notes</a><ul>
+<li><i></i><a href="/release-notes/munit-1.1.0-release-notes">MUnit 1.1.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-migration-guide">MUnit 1.0-RC Migration Guide</a></li></ul></li>
+<li><i></i><a href="/release-notes/mule-maven-plugin-2.1-release-notes">Mule Maven Plugin 2.1 Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.0-release-notes">Mule Maven Plugin 2.0 Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/deprecated-products">Deprecated Products</a><ul>
 <li>
@@ -1256,20 +1260,50 @@
   </div> 
   <div class="sect2"> 
    <h3 id="skip-munit-tests"><a class="anchor" href="#skip-munit-tests"></a>Skip MUnit Tests</h3> 
-   <div class="paragraph"> 
-    <p>When building your application, you may want to prevent a test from running. MUnit leverages the same mechanism as Maven, so if you wish to skip tests you can make use of the parameter <code>skipTests</code>.</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="title">
-      Skipping MUnit Tests example 
+   <div class="sect3"> 
+    <h4 id="skipping-all-tests"><a class="anchor" href="#skipping-all-tests"></a>Skipping All Tests</h4> 
+    <div class="paragraph"> 
+     <p>When building your application, you may want to prevent a test from running. MUnit leverages the same mechanism as Maven, so if you wish to skip tests you can make use of the parameter <code>skipTests</code>.</p> 
     </div> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="console">mvn clean package -DskipTests</code></pre> 
+    <div class="listingblock"> 
+     <div class="title">
+       Skipping Tests example 
+     </div> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="console">mvn clean package -DskipTests</code></pre> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="skipping-only-munit-tests"><a class="anchor" href="#skipping-only-munit-tests"></a>Skipping Only MUnit Tests</h4> 
+    <div class="paragraph"> 
+     <p>MUnit also comes with another property that will only prevent MUnit tests from running. While at the same time allowing any other test, like JUnit tests, to keep running.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>If you wish to skip only MUnit tests you can make use of the parameter <code>skipMunitTests</code>.</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="title">
+       Skipping MUnit Tests example 
+     </div> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="console">mvn clean package -DskipMunitTests</code></pre> 
+     </div> 
+    </div> 
+    <div class="admonitionblock tip"> 
+     <table> 
+      <tbody> 
+       <tr> 
+        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+        <td class="content"> The property <code>skipMunitTests</code> applies only to the XML based MUnit tests. </td> 
+       </tr> 
+      </tbody> 
+     </table> 
     </div> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="munit-maven-plugin-configurations"><a class="anchor" href="#munit-maven-plugin-configurations"></a>MUnit Maven Plugin Configurations</h3> 
+   <h3 id="general-configurations"><a class="anchor" href="#general-configurations"></a>General Configurations</h3> 
    <div class="paragraph"> 
     <p>The MUnit Maven Plugin offers a minor set of configurations.</p> 
    </div> 
@@ -1410,6 +1444,517 @@
        </tr> 
       </tbody> 
      </table> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="dynamic-ports"><a class="anchor" href="#dynamic-ports"></a>Dynamic Ports</h3> 
+   <div class="paragraph"> 
+    <p>When trying to test a Mule Application in a continous integration (CI) environment the following scenario is not uncommon:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><code>Your application tries to open a specific port. The port is already in use. The application fails with a port binding exception.</code></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>This is bound to happen and the easy solution to this problem is to have your application using a free port. The MUnit Maven Plugin comes with a build in feature to do just that.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><code>MUnit Dynamic Ports</code> instructs the MUnit Maven Plugin to look for unbind ports and reserve them, before the tests over the Mule Application start running. Each port selected will be placed in a system property under the name indicated in the configuration. Afterwards the number of the port can be acquire by the application by the use of placeholders.</p> 
+   </div> 
+   <div class="admonitionblock tip"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+       <td class="content"> The Ports to be selected by the plugin are taken from the following range: <code>[40000,50000)</code> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> Dynamic Ports feature is only available as part of the MUnit Maven Plugin, thus you can not expect this feature to work when running tests from inside Anypoint Studio. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="enabling-dynamic-ports"><a class="anchor" href="#enabling-dynamic-ports"></a>Enabling Dynamic Ports</h4> 
+    <div class="paragraph"> 
+     <p>In order to enable the feature you need to add the following code to the <code>configuration</code> section of the MUnit Maven Plugin</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="title">
+       Dynamic Ports Configuration 
+     </div> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;dynamicPorts&gt;</span>
+  <span class="tag">&lt;dynamicPort&gt;</span>a.dynamic.port<span class="tag">&lt;/dynamicPort&gt;</span>
+<span class="tag">&lt;/dynamicPorts&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>If you have the following placeholder in your application: <code>${http.port}</code> The configuration will look something like:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="title">
+       Example 
+     </div> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;dynamicPorts&gt;</span>
+  <span class="tag">&lt;dynamicPort&gt;</span>http.port<span class="tag">&lt;/dynamicPort&gt;</span>
+<span class="tag">&lt;/dynamicPorts&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="preparing-your-application"><a class="anchor" href="#preparing-your-application"></a>Preparing Your Application</h4> 
+    <div class="paragraph"> 
+     <p>Of course all this comes with a trade off. The part of the application trying to make use of a port must be parametrized by use of a placeholder. For instance, you may want to have your Mule application listening for HTTP traffic. In order to do that you should provide the following configuration:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="title">
+       HTTP Simple Application 
+     </div> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">0.0.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">httpFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Now this application will always listen in port <code>8081</code>. To make it dynamic you need to change it to:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="title">
+       HTTP Simple Application with dynamic port 
+     </div> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">0.0.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">${http.port}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">httpFlow</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+    <div class="colist arabic"> 
+     <table> 
+      <tbody> 
+       <tr> 
+        <td><i class="conum" data-value="1"></i><b>1</b></td> 
+        <td>Notice the place holder <code>${http.port}</code>.</td> 
+       </tr> 
+      </tbody> 
+     </table> 
+    </div> 
+    <div class="paragraph"> 
+     <p>With the application coded in this way, and the configuration of Dynamic Ports in place your application will start each run listening in a different port.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="coverage"><a class="anchor" href="#coverage"></a>Coverage</h3> 
+   <div class="paragraph"> 
+    <p>MUnit used to have a basic coverage feature only abailable from Anypoint Studio. Since MUnit version <code>1.1.0</code> this feature is also available from the command line by use of the MUnit Maven Plugin.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="objective"><a class="anchor" href="#objective"></a>Objective</h4> 
+    <div class="paragraph"> 
+     <p>The MUnit Coverage feature, main goal is to provide a metric on how much of a Mule Application has been executed by a set of MUnit tests. Thus allowing the users to obtain a quality metric of the application. If you wish to know more about the coverage concept you can check <a href="https://en.wikipedia.org/wiki/Code_coverage">this Wikipedia Article</a>.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>It’s worth noticing, MUnit Coverage is based on the amount of message processors executed. MUnit Coverage will provide metrics regarding:</p> 
+    </div> 
+    <div class="ulist"> 
+     <ul> 
+      <li> <p><strong>Application overall coverage</strong>: It’s an average of the items bellow</p> </li> 
+      <li> <p><strong>Resource coverage</strong>: It refers to each Mule configuration file under <code>src/main/app</code>. Each of them is considered a resource by MUnit Coverage.</p> </li> 
+      <li> <p><strong>Flow coverage</strong>: It refers to any of the following <code>Flows, Sub-flows, Batch jobs</code></p> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h4> 
+    <div class="paragraph"> 
+     <p>The following section will cover how to configure MUnit Coverage.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Currently you have a basic set of Coverage related features from Anypoint Studio. But it’s worth noticing that the full set of features is only available when running from Maven. Thus all of the configuration is done through the <code>pom.xml</code> file.</p> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="enabling-coverage"><a class="anchor" href="#enabling-coverage"></a>Enabling Coverage</h5> 
+     <div class="paragraph"> 
+      <p>To enable MUnit Coverage it’s enough with adding the following configuration to the MUnit Plugin:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="title">
+        MUnit Coverage - Minimal Configuration 
+      </div> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;plugin&gt;</span>
+  <span class="tag">&lt;groupId&gt;</span>com.mulesoft.munit.tools<span class="tag">&lt;/groupId&gt;</span>
+  <span class="tag">&lt;artifactId&gt;</span>munit-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+  <span class="tag">&lt;version&gt;</span>${project.version}<span class="tag">&lt;/version&gt;</span>
+  ...
+  <span class="tag">&lt;configuration&gt;</span>
+    <span class="tag">&lt;coverage&gt;</span>
+      <span class="tag">&lt;runCoverage&gt;</span>true<span class="tag">&lt;/runCoverage&gt;</span>   <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="tag">&lt;/coverage&gt;</span>
+  <span class="tag">&lt;/configuration&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+     <div class="colist arabic"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td><i class="conum" data-value="1"></i><b>1</b></td> 
+         <td>This will enable the coverage feature</td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="paragraph"> 
+      <p>When enabling MUnit Coverage you will only see a summary report in the console. By default no other action will be taken so it’s merely informative.</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>This is how a summary report looks like:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="console">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+            <td class="code"><pre>[INFO] [CoverageManager] Printing Coverage Report...
+[INFO] ===============================================================================
+[INFO] MUnit Coverage Summary
+[INFO] ===============================================================================
+[INFO]  * Resources: 3 - Flows: 6 - Message Processors: 7
+[INFO]  * Application Coverage: 71.43%</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="failing-build"><a class="anchor" href="#failing-build"></a>Failing Build</h5> 
+     <div class="paragraph"> 
+      <p>One of the features of MUnit Coverage is to fail the build is a certain coverage level is not reached.</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>To make the build fail is enough to add the following line to the configuration.</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="title">
+        MUnit Coverage - Fail Build 
+      </div> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;coverage&gt;</span>
+  <span class="tag">&lt;runCoverage&gt;</span>true<span class="tag">&lt;/runCoverage&gt;</span>
+  <span class="tag">&lt;failBuild&gt;</span>true<span class="tag">&lt;/failBuild&gt;</span>       <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="tag">&lt;/coverage&gt;</span></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+     <div class="colist arabic"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td><i class="conum" data-value="1"></i><b>1</b></td> 
+         <td>Enable <strong>Fail Build Feature</strong></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="paragraph"> 
+      <p>Now, the next logical step is to define those coverage levels. MUnit Coverage handles three different levels:</p> 
+     </div> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Application</p> </li> 
+       <li> <p>Resource</p> </li> 
+       <li> <p>Flow</p> </li> 
+      </ul> 
+     </div> 
+     <div class="paragraph"> 
+      <p>Here is how to define the require coverage level:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="title">
+        MUnit Coverage - Require Coverage 
+      </div> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;coverage&gt;</span>
+  <span class="tag">&lt;runCoverage&gt;</span>true<span class="tag">&lt;/runCoverage&gt;</span>
+  <span class="tag">&lt;failBuild&gt;</span>true<span class="tag">&lt;/failBuild&gt;</span>
+
+  <span class="tag">&lt;requiredApplicationCoverage&gt;</span>20<span class="tag">&lt;/requiredApplicationCoverage&gt;</span>
+  <span class="tag">&lt;requiredResourceCoverage&gt;</span>10<span class="tag">&lt;/requiredResourceCoverage&gt;</span>
+  <span class="tag">&lt;requiredFlowCoverage&gt;</span>5<span class="tag">&lt;/requiredFlowCoverage&gt;</span>
+<span class="tag">&lt;/coverage&gt;</span></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+     <div class="admonitionblock tip"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+         <td class="content"> Each value represents a percentage. </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="paragraph"> 
+      <p>In the even that you define coverage levels but set the property <code>failBuild</code> to <strong>false</strong>, if the levels are not reached a warring will be shown in MUnit Coverage summary. Something like this:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="console">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+            <td class="code"><pre>INFO] [CoverageManager] Printing Coverage Report...
+[INFO] ===============================================================================
+[INFO] MUnit Coverage Summary
+[INFO] ===============================================================================
+[INFO]  * Resources: 3 - Flows: 6 - Message Processors: 7
+[INFO]  * Application Coverage: 71.43%
+[INFO]
+[WARNING] ----------------------------- WARNING --------------------------------------
+[WARNING]  * Application coverage is below defined limit. Required: 100.0% - Current: 71.43%  <i class="conum" data-value="1"></i><b>(1)</b></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+     <div class="colist arabic"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td><i class="conum" data-value="1"></i><b>1</b></td> 
+         <td>Warning detailing which coverage level wasn’t meet</td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="admonitionblock tip"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+         <td class="content"> If no level is defined the -1 is assumed. Thus the build won’t fail due to lack of coverage. </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="reports"><a class="anchor" href="#reports"></a>Reports</h5> 
+     <div class="paragraph"> 
+      <p>As we’ve showed before by default MUnit Coverage shows summary report in the console. But that’s is no the only option. MUnit Coverage offers, currently, two types of reports:</p> 
+     </div> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>Console</p> </li> 
+       <li> <p>HTML</p> </li> 
+      </ul> 
+     </div> 
+     <div class="paragraph"> 
+      <p>The <strong>Console</strong> report, it’s printed in the console. It works in a complementary manner to the summary report. It shows a detail of each resource, flow/sub-flow/batch, and it’s coverage level.</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>The <strong>HTML</strong> report, shows the same information but in such a way that it can be show in any web browser. To access the <strong>HTML</strong> report you need to browse you application folder structure:</p> 
+     </div> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p><code>${application.path}/target/munit-reports/coverage</code></p> </li> 
+      </ul> 
+     </div> 
+     <div class="paragraph"> 
+      <p>In there locate the file <strong><code>summary.html</code></strong>, this is the starting point of the report and it will allow you to navigate through all the data.</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>To enable the reports you need to add the following configuration:</p> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="title">
+        MUnit Coverage - Report Configuration 
+      </div> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="console">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+            <td class="code"><pre>&lt;coverage&gt;
+  &lt;runCoverage&gt;true&lt;/runCoverage&gt;
+
+  &lt;formats&gt;
+    &lt;format&gt;console&lt;/format&gt;  <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;format&gt;html&lt;/format&gt;     <i class="conum" data-value="2"></i><b>(2)</b>
+  &lt;/formats&gt;
+&lt;/coverage&gt;</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> 
+     <div class="colist arabic"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td><i class="conum" data-value="1"></i><b>1</b></td> 
+         <td>Console report</td> 
+        </tr> 
+        <tr> 
+         <td><i class="conum" data-value="2"></i><b>2</b></td> 
+         <td>HTML report</td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
+     <div class="admonitionblock tip"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+         <td class="content"> You can have none, one, or all the report types added to your configuration. </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> 
     </div> 
    </div> 
   </div> 

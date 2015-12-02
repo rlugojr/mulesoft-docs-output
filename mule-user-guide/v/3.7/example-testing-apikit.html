@@ -840,7 +840,11 @@
 <i></i>
 <a href="/release-notes/cloudhub-release-notes">CloudHub Release Notes</a><ul>
 <li><i></i><a href="/release-notes/cloudhub-r40-migration-guide">CloudHub R40 Migration Guide</a></li></ul></li>
-<li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.1-release-notes">Mule Maven Plugin 2.1 Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.0-release-notes">Mule Maven Plugin 2.0 Release Notes</a></li><li>
+<li>
+<i></i>
+<a href="/release-notes/munit-release-notes">MUnit Release Notes</a><ul>
+<li><i></i><a href="/release-notes/munit-1.1.0-release-notes">MUnit 1.1.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-migration-guide">MUnit 1.0-RC Migration Guide</a></li></ul></li>
+<li><i></i><a href="/release-notes/mule-maven-plugin-2.1-release-notes">Mule Maven Plugin 2.1 Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.0-release-notes">Mule Maven Plugin 2.0 Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/deprecated-products">Deprecated Products</a><ul>
 <li>
@@ -1267,12 +1271,26 @@ title: Sample API
    <p>This example shows how to trigger hits to the endpoint exposed by APIKit, and why it is important to test the endpoint in this manner. As always, you can make your test as sophisticated as you deem necessary by using the tools that MUnit offers: <a href="/mule-user-guide/v/3.7/the-mock-message-processor">Mock</a>, <a href="/mule-user-guide/v/3.7/the-spy-message-processor">Spy</a>, <a href="/mule-user-guide/v/3.7/the-verify-message-processor">Verification</a>, <a href="/mule-user-guide/v/3.7/the-assertion-message-processor">Assertion</a>, etc.</p> 
   </div> 
  </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="last-minute-comment"><a class="anchor" href="#last-minute-comment"></a>Last Minute Comment</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>APIKit can be used in both, plain old Mule ESB and in API Gateway. Now in the newer versions of API Gateway they choose the use of Share Domains.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>MUnit does not yet support Share Domains</strong> thus, your test cerated for APIKit based application running on API Gateway may fail.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If such thing happen, it’s probably by the fact that the global configurations defined in the Domain are not visible for MUnit during the run of the test. To make your tests work it’ll be enough with duplicating those global configurations inside you MUnit Test Suite file.</p> 
+  </div> 
+ </div> 
 </div>
         </div>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#scenario">Overview</a></li><li><a class="scroll-menu-link" href="#hands-on">Example Test</a></li><li><a class="scroll-menu-link" href="#conclusion">Conclusion</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#scenario">Overview</a></li><li><a class="scroll-menu-link" href="#hands-on">Example Test</a></li><li><a class="scroll-menu-link" href="#conclusion">Conclusion</a></li><li><a class="scroll-menu-link" href="#last-minute-comment">Last Minute Comment</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

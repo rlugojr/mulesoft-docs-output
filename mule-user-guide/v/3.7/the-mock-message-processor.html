@@ -840,7 +840,11 @@
 <i></i>
 <a href="/release-notes/cloudhub-release-notes">CloudHub Release Notes</a><ul>
 <li><i></i><a href="/release-notes/cloudhub-r40-migration-guide">CloudHub R40 Migration Guide</a></li></ul></li>
-<li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.1-release-notes">Mule Maven Plugin 2.1 Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.0-release-notes">Mule Maven Plugin 2.0 Release Notes</a></li><li>
+<li>
+<i></i>
+<a href="/release-notes/munit-release-notes">MUnit Release Notes</a><ul>
+<li><i></i><a href="/release-notes/munit-1.1.0-release-notes">MUnit 1.1.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0.0-release-notes">MUnit 1.0.0 Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-release-notes">MUnit 1.0-RC Release Notes</a></li><li><i></i><a href="/release-notes/munit-1.0-rc-migration-guide">MUnit 1.0-RC Migration Guide</a></li></ul></li>
+<li><i></i><a href="/release-notes/mule-maven-plugin-2.1-release-notes">Mule Maven Plugin 2.1 Release Notes</a></li><li><i></i><a href="/release-notes/mule-maven-plugin-2.0-release-notes">Mule Maven Plugin 2.0 Release Notes</a></li><li>
 <i></i>
 <a href="/release-notes/deprecated-products">Deprecated Products</a><ul>
 <li>
@@ -1295,6 +1299,97 @@
      </tr> 
     </tbody> 
    </table> 
+   <div class="sect3"> 
+    <h4 id="returning-the-original-payload"><a class="anchor" href="#returning-the-original-payload"></a>Returning the original payload</h4> 
+    <div class="paragraph"> 
+     <p>If you don’t want to mock the payload of the message processor and want to return the original payload, you can use the function <code>samePayload()</code>.</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;mock:when</span> <span class="attribute-name">messageProcessor</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule:set-payload</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;mock:with-attributes&gt;</span>
+    <span class="tag">&lt;mock:with-attribute</span> <span class="attribute-name">whereValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">#['Real Set Payload']</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">doc:name</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/mock:with-attributes&gt;</span>
+  <span class="tag">&lt;mock:then-return</span> <span class="attribute-name">payload</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[samePayload()]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> (1)
+<span class="tag">&lt;/mock:when&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+    <div class="colist arabic"> 
+     <table> 
+      <tbody> 
+       <tr> 
+        <td><i class="conum" data-value="1"></i><b>1</b></td> 
+        <td>Return the same payload</td> 
+       </tr> 
+      </tbody> 
+     </table> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Omitting the <code>mock:then-return</code> property also returns the original payload but if you want to return the original payload and mock message properties you can use the <code>samePayload</code> function to achieve this.</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;mock:when</span> <span class="attribute-name">messageProcessor</span>=<span class="string"><span class="delimiter">"</span><span class="content">mule:set-payload</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;mock:with-attributes&gt;</span>
+    <span class="tag">&lt;mock:with-attribute</span> <span class="attribute-name">whereValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">#['Real Set Payload']</span><span class="delimiter">"</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">doc:name</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/mock:with-attributes&gt;</span>
+  <span class="tag">&lt;mock:then-return</span> <span class="attribute-name">payload</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[samePayload()]</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> (1)
+    <span class="tag">&lt;mock:inbound-properties&gt;</span>
+      <span class="tag">&lt;mock:inbound-property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">property</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#['propertyValue']</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> (2)
+    <span class="tag">&lt;/mock:inbound-properties&gt;</span>
+  <span class="tag">&lt;/mock:then-return&gt;</span>
+<span class="tag">&lt;/mock:when&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+    <div class="colist arabic"> 
+     <table> 
+      <tbody> 
+       <tr> 
+        <td><i class="conum" data-value="1"></i><b>1</b></td> 
+        <td>Return the same payload</td> 
+       </tr> 
+       <tr> 
+        <td><i class="conum" data-value="2"></i><b>2</b></td> 
+        <td>Mock message property</td> 
+       </tr> 
+      </tbody> 
+     </table> 
+    </div> 
+   </div> 
    <div class="sect3"> 
     <h4 id="loading-payloads-from-files-and-scripts"><a class="anchor" href="#loading-payloads-from-files-and-scripts"></a>Loading Payloads From Files and Scripts</h4> 
     <div class="paragraph"> 
