@@ -906,25 +906,24 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>In Anypoint Platform, click <strong>MQ</strong> &gt; <strong>Client Apps</strong>.</p> </li> 
-    <li> <p>Create a client app.</p> </li> 
-    <li> <p>In Anypoint Studio, create a new Mule Project.</p> </li> 
-    <li> <p>In Anypoint Studio, search for "transform" and drag the <strong>Transform Message</strong> icon to the canvas. You can rename Transform Message to a new value by right-clicking the icon and selecting <strong>Rename</strong>. For the example flow, rename the icon to "Create Customer".</p> </li> 
-    <li> <p>Use the DataWeave syntax to specify firstname, lastname, and company values:</p> 
+    <li> <p>In Anypoint Platform, click <strong>MQ</strong> &gt; <strong>Client Apps</strong>:</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-dataweave.png" alt="mq-dataweave"></span></p> 
+      <p><span class="image"><img src="./_images/mq-client-apps-in-nav.png" alt="mq-client-apps-in-nav"></span></p> 
      </div> </li> 
-    <li> <p>Search for "mq" and drag the Anypoint MQ connector icon to the canvas.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-connector-visual-flow.png" alt="mq-connector-visual-flow"></span></p> 
-     </div> </li> 
+    <li> <p>Create a client app. Note the Client ID and Client Secret values. We use these later when we configure the Anypoint MQ connector in Anypoint Studio.</p> </li> 
+    <li> <p>In Studio, click <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Mule Project</strong>.</p> </li> 
+    <li> <p>Search for "http" and drag the <strong>HTTP</strong> connector to the Studio Canvas. Click the HTTP connector, and click the green plus sign to the right of <strong>Connector Configuration</strong>. Click <strong>OK</strong> to accept the defaults.</p> </li> 
+    <li> <p>Search for "mq" and drag the <strong>Anypoint MQ</strong> connector to the canvas.</p> </li> 
     <li> <p>Click the green plus sign to the right of <strong>Connector Configuration</strong>.</p> </li> 
     <li> <p>In the Global Element Properties window:</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
        <li> <p>Copy the <strong>Anypoint Platform</strong> &gt; <strong>MQ</strong> &gt; <strong>Client App</strong> &gt; <strong>Client App ID</strong> value to Studio’s <strong>Client ID</strong> field.</p> </li> 
-       <li> <p>Copy the <strong>Client App</strong> &gt; <strong>Client Secret</strong> value to Studio’s <strong>Client Secret</strong> field.</p> </li> 
-       <li> <p>Click OK.</p> </li> 
+       <li> <p>Copy the <strong>Client App</strong> &gt; <strong>Client Secret</strong> value to Studio’s <strong>Client Secret</strong> field.</p> 
+        <div class="paragraph"> 
+         <p>You can ignore the remaining fields.</p> 
+        </div> </li> 
+       <li> <p>Click <strong>OK</strong>.</p> </li> 
       </ol> 
      </div> </li> 
     <li> <p>Click the <strong>Operation</strong> field and specify an operation such as Publish or Consume.</p> </li> 
