@@ -1063,7 +1063,6 @@
 75
 76
 77
-78
 </pre></td> 
             <td class="code"><pre><span class="comment">/**
  * (c) 2003-2014 MuleSoft, Inc. The software in this package is published
@@ -1071,12 +1070,11 @@
  * included with this distribution in the LICENSE.md file.
  */</span>
 <span class="keyword">package</span> <span class="namespace">org.mule.modules.barn</span>;
-<span class="keyword">import</span> <span class="include">org.mule.api.annotations.ConnectionStrategy</span>;
+<span class="keyword">import</span> <span class="include">org.mule.api.annotations.Config</span>;
 <span class="keyword">import</span> <span class="include">org.mule.api.annotations.Connector</span>;
 <span class="keyword">import</span> <span class="include">org.mule.api.annotations.Configurable</span>;
 <span class="keyword">import</span> <span class="include">org.mule.api.annotations.Processor</span>;
 <span class="keyword">import</span> <span class="include">org.mule.api.annotations.param.Default</span>;
-<span class="keyword">import</span> <span class="include">org.mule.modules.myproject.strategy.ConnectorConnectionStrategy</span>;
 <span class="comment">/**
  * Anypoint Connector
  *
@@ -1091,8 +1089,8 @@
     <span class="annotation">@Configurable</span>
     <span class="annotation">@Default</span>(<span class="string"><span class="delimiter">"</span><span class="content">value</span><span class="delimiter">"</span></span>)
     <span class="directive">private</span> <span class="predefined-type">String</span> myProperty;
-    <span class="annotation">@ConnectionStrategy</span>
-    ConnectorConnectionStrategy connectionStrategy;
+    <span class="annotation">@Config</span>
+    ConnectorConfig config;
 
     <span class="comment">/**
      * Custom processor
@@ -1135,12 +1133,12 @@
     <span class="directive">public</span> <span class="predefined-type">String</span> getMyProperty() {
         <span class="keyword">return</span> <span class="local-variable">this</span>.myProperty;
     }
-    <span class="directive">public</span> ConnectorConnectionStrategy getConnectionStrategy() {
-        <span class="keyword">return</span> connectionStrategy;
+    <span class="directive">public</span> ConnectorConfig getConnectorConfig() {
+        <span class="keyword">return</span> <span class="local-variable">this</span>.config;
     }
-    <span class="directive">public</span> <span class="type">void</span> setConnectionStrategy(ConnectorConnectionStrategy
-     connectionStrategy) {
-        <span class="local-variable">this</span>.connectionStrategy = connectionStrategy;
+    <span class="directive">public</span> <span class="type">void</span> setConnectorConfig(ConnectorConfig
+      connectorConfig) {
+        <span class="local-variable">this</span>.config = connectorConfig;
     }
 }</pre></td> 
            </tr> 
@@ -1148,7 +1146,7 @@
          </table></code></pre> 
       </div> 
      </div> </li> 
-    <li> <p>In Anypoint Studio, select&nbsp;<code>ConnectorConnectionStrategy</code>&nbsp;in the code, and on a Mac press the CMD key, or in Windows, press the Ctrl key. The <code>ConnectorConnectionStrategy.java</code> file opens and you can see the connection management implementation for this connector.&nbsp;</p> </li> 
+    <li> <p>In Anypoint Studio, select&nbsp;<code>ConnectorConfig</code>&nbsp;in the code, and on a Mac press the CMD key, or in Windows, press the Ctrl key. The <code>ConnectorConfig.java</code> file opens and you can see the connection management implementation for this connector.&nbsp;</p> </li> 
    </ol> 
   </div> 
   <div class="sect2"> 
@@ -1256,12 +1254,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-fe6a8" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-c4819" role="tab" data-toggle="tab">XML</a></li> 
+     <li class="active"><a href="#studio-visual-editor-f778d" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-45e64" role="tab" data-toggle="tab">XML</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-fe6a8"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f778d"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Create a simple flow using an <strong>HTTP</strong> connector and your new <strong>Barn Connector</strong>. Use the default values configured in the HTTP endpoint (<strong>port</strong>: <code>8081</code>, <strong>host</strong>: <code>localhost</code>).</p> 
@@ -1316,7 +1314,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-c4819"> 
+    <div class="tab-pane fade no-padding" id="xml-45e64"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Create a simple flow using an HTTP connector and your new <code>barn:config</code>. Configure the parameters of each element according to the code sample below.</p> 
