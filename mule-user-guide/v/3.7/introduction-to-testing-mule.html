@@ -882,7 +882,7 @@
  <h2 id="types-of-testing"><a class="anchor" href="#types-of-testing"></a>Types of Testing</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>There are several types of testing. Likely, you will focus on one or more types depending on your specific needs, such as specific contexts or products.</p> 
+   <p>There are several types of testing. Likely, you focus on one or more types depending on your specific needs, such as specific contexts or products.</p> 
   </div> 
   <div class="paragraph"> 
    <p>From the point of view of a Mule applications developer, it’s fair to say that there are two main types of testing that you should focus on when validating the behavior of your Mule application:</p> 
@@ -915,10 +915,10 @@
     </table> 
    </div> 
    <div class="paragraph"> 
-    <p>The code you test may interact with other units of code or components, and you should take this possibility into account when designing your unit test. A good unit test should ensure the isolation of the unit of code being tested, in order to avoid mistaking failure in other components for failure in the unit of code being tested.</p> 
+    <p>The code you test may interact with other units of code or components, and you should take this possibility into account when designing your unit test. A good unit test should ensure the isolation of the unit of code being tested, to avoid mistaking failure in other components for failure in the unit of code being tested.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>To isolate your target unit of code, you use tools such as the <code>mock</code> message processor provided by MUnit.</p> 
+    <p>To isolate your target unit of code, use tools such as the <code>mock</code> message processor provided by MUnit.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -933,7 +933,7 @@
     <p>Ideally, integration tests should aggregate units of code modules that have already been successfully unit-tested. For this reason, you should run your integration tests <em>after your unit tests</em>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>Depending on the nature of you application, integration tests may require sandboxes, i.e. environments for your application to connect to. When working with sandboxes, take care to ensure that the state of the data in the sandbox is correct for the test to produce the intended result. This check should be performed before and after running the integration test.</p> 
+    <p>Depending on the nature of your application, integration tests may require sandboxes, that is, environments for your application to connect to. When working with sandboxes, take care to ensure that the state of the data in the sandbox is correct for the test to produce the intended result. Perform this before and after running the integration test.</p> 
    </div> 
   </div> 
  </div> 
@@ -942,16 +942,16 @@
  <h2 id="making-your-code-testable"><a class="anchor" href="#making-your-code-testable"></a>Making Your Code Testable</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This sections defines some guidelines for creating flows that are easier to test. Usually, writing testable code implies creating a more configurable, extensible and readable application.</p> 
+   <p>This section defines guidelines for creating flows that are easier to test. Usually, writing testable code implies creating a more configurable, extensible, and readable application.</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><strong><em>Modularize your code:</em></strong> Breaking down your code in different files helps with readability. The usual way to do this is by grouping flows that help to achieve a common goal, or by grouping the code according to specific functional criteria.<br></p> 
+    <li> <p><strong>Modularize your code:</strong> Breaking down your code in different files helps with readability. The usual way to do this is to group flows that help to achieve a common goal, or group code according to specific functional criteria.</p> 
      <div class="paragraph"> 
-      <p>Modularizing your code allows you to load only that portion of code that you actually wish to test, avoiding the need to load unnecessary configuration during your test.</p> 
+      <p>Modularizing your code allows you to load only that portion of code that you actually wish to test, avoiding the need to load unnecessary configurations during your test.</p> 
      </div> </li> 
-    <li> <p><strong><em>Write short flows:</em></strong> Long flows are hard to follow and sometimes even harder to code; certainly they are harder to maintain. From the perspective of unit testing, long flows offer too many scenarios that can be triggered by a single point. Long flows can force you to perform very complex evaluations in order to validate a single scenario and are better avoided.</p> </li> 
-    <li> <p><strong><em>Define execution environments:</em></strong> It is good practice to parameterize your code using placeholders. Normal use cases for this include addresses of outbound endpoints, such as DB or HTTP. Using placeholders allows you to modify the actual address when running tests (either unit or integration), and make it easier to promote your code between environments (DEV/QA/UAT/PROD).</p> </li> 
+    <li> <p><strong>Write short flows:</strong> Long flows are hard to follow and sometimes even harder to code; certainly they are harder to maintain. From the perspective of unit testing, long flows offer too many scenarios that can be triggered by a single point. Long flows can force you to perform very complex evaluations to validate a single scenario and are best avoided.</p> </li> 
+    <li> <p><strong>Define execution environments:</strong> Parameterize your code using placeholders. Normal use cases for this include addresses of outbound endpoints, such as DB or HTTP. Using placeholders allows you to modify the actual address when running tests (either unit or integration), and make it easier to promote your code between environments (DEV/QA/UAT/PROD).</p> </li> 
    </ul> 
   </div> 
   <div class="sect2"> 
@@ -960,7 +960,7 @@
     <p>Just like you make your code testable, you should code your tests to be readable and maintainable.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>One thing that helps is the name you give to the test. Name your test bearing in mind what we should see when the test fails. This rule also applies to the error thrown by the test upon failure — there are few things harder to understand than a wrongly-written or ambiguous error message. As stated earlier, avoid long flows since they are harder to follow. Code your test so that the scenario being covered and the failure conditions are explicit.</p> 
+    <p>One thing that helps is the name you give to the test. Name your test by what to see when the test fails. This rule also applies to the error thrown by the test upon failure. There are few things harder to understand than a wrongly-written or ambiguous error message. As stated earlier, avoid long flows because they are harder to follow. Code your test so that the scenario being covered and the failure conditions are explicit.</p> 
    </div> 
   </div> 
  </div> 
@@ -969,7 +969,7 @@
  <h2 id="munit"><a class="anchor" href="#munit"></a>MUnit</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><a href="/mule-user-guide/v/3.7/munit">MUnit</a> is a Mule testing framework which allows developers to easily automate testing their Mule Applications, using both unit and integration tests. It also provides a set of tools, such as a message processor mocking framework, that allows you to test units of code in actual isolation.</p> 
+   <p><a href="/mule-user-guide/v/3.7/munit">MUnit</a> is a Mule testing framework that lets you easily automate testing Mule applications, using both unit and integration tests. MUnit also provides a set of tools, such as a message processor mocking framework that lets you test units of code in actual isolation.</p> 
   </div> 
  </div> 
 </div> 
@@ -977,7 +977,7 @@
  <h2 id="testing-mule-custom-components-legacy-tools-for-testing"><a class="anchor" href="#testing-mule-custom-components-legacy-tools-for-testing"></a>Testing Mule Custom Components - Legacy Tools for Testing</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Mule ESB provides legacy tools for testing your custom Mule applications using Java code. These tools provide the testing functionality but lack some of the features provided by MUnit, such as <a href="/mule-user-guide/v/3.7/the-mock-message-processor">mocking</a>.</p> 
+   <p>Mule ESB provides legacy tools for testing your custom Mule applications using Java code. These tools provide the testing functionality but lack some features provided by MUnit, such as <a href="/mule-user-guide/v/3.7/the-mock-message-processor">mocking</a>.</p> 
   </div> 
   <div class="paragraph"> 
    <p><a href="/mule-user-guide/v/3.7/functional-testing">Functional Testing</a></p> 
@@ -993,7 +993,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="additional-resources"><a class="anchor" href="#additional-resources"></a>Additional Resources</h2> 
+ <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>For additional details on testing in Mule, see the following pages:</p> 
@@ -1012,7 +1012,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#types-of-testing">Types of Testing</a></li><li><a class="scroll-menu-link" href="#making-your-code-testable">Making Your Code Testable</a></li><li><a class="scroll-menu-link" href="#munit">MUnit</a></li><li><a class="scroll-menu-link" href="#testing-mule-custom-components-legacy-tools-for-testing">Testing Mule Custom Components - Legacy Tools for Testing</a></li><li><a class="scroll-menu-link" href="#additional-resources">Additional Resources</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#types-of-testing">Types of Testing</a></li><li><a class="scroll-menu-link" href="#making-your-code-testable">Making Your Code Testable</a></li><li><a class="scroll-menu-link" href="#munit">MUnit</a></li><li><a class="scroll-menu-link" href="#testing-mule-custom-components-legacy-tools-for-testing">Testing Mule Custom Components - Legacy Tools for Testing</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
