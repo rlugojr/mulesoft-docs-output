@@ -876,25 +876,119 @@
    <p>The Anypoint Platform can be integrated with your organization’s external federated identity system. Opting to use federated identity management for the Anypoint Platform gives your users single sign-on access and facilitates OAuth security for APIs using the same identity management system.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>MuleSoft currently supports <a href="https://www.pingidentity.com/en/products/pingfederate.html">PingFederate</a> and&nbsp;<a href="https://forgerock.org/openam/">OpenAM</a> for external identity management.</p> 
+   <p>The Anypoint Platform supports SAML 2.0 identity providers for user management, the following ones were successfully tested working with the platform:</p> 
   </div> 
-  <div class="paragraph"> 
-   <p>For further information about setup steps, please file a ticket in the support portal by clicking <strong>Support</strong> on the top navigation bar of the Anypoint Platform.</p> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="https://www.pingidentity.com/en/products/pingfederate.html">Ping Federate</a></p> </li> 
+    <li> <p><a href="https://forgerock.org/openam/">OpenAM</a></p> </li> 
+    <li> <p><a href="https://www.okta.com/">Okta</a></p> </li> 
+    <li> <p><a href="https://shibboleth.net/">Shibboleth</a></p> </li> 
+    <li> <p><a href="https://msdn.microsoft.com/en-us/library/bb897402.aspx?f=255&amp;MSPPError=-2147217396">ADFS</a></p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="instructions-for-configuration-of-pingfederate"><a class="anchor" href="#instructions-for-configuration-of-pingfederate"></a>Instructions for Configuration of PingFederate</h2> 
+ <h2 id="instructions-for-saml-configuration"><a class="anchor" href="#instructions-for-saml-configuration"></a>Instructions for SAML Configuration</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The instructions in this document allow you to configure your Anypoint Platform organization with PingFederate so as to federate identity (using SAML 2.0) and use PingFederate as an OAuth 2.0 provider. There are two steps to follow:</p> 
+   <p>The instructions in this document allow you to configure your Anypoint Platform organization with any of the supported SAML 2.0 providers, so as to federate identity. There are two steps to follow:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Configure your PingFederate environment to set up your Anypoint Platform organization as a Service Provider.</p> </li> 
-    <li> <p>Submit the appropriate information about your PingFederate environment and the Service Provider you configured (in the first step) to MuleSoft by completing <a href="https://docs.google.com/a/mulesoft.com/forms/d/16ZQjXcLmuXO8140svkjUxywzkZjv01GTgbf_3kfEebQ/viewform">the following form</a> (for further details, see&nbsp;below).</p> </li> 
-    <li> <p>When your organization is converted to use external identity management, any existing applications that were previously created through the Developer Portal will need to be recreated to work with the PingFederate Access Token Enforcement policy.</p> </li> 
+    <li> <p>Configure your SAML provider to set up your Anypoint Platform organization as your audience.</p> </li> 
+    <li> <p>Set the 'Assertion Consumer Service' to send an HTTP POST request to the following address: <code><a href="https://anypoint.mulesoft.com/accounts/login/receive-id" class="bare">https://anypoint.mulesoft.com/accounts/login/receive-id</a></code></p> </li> 
+    <li> <p>Log in with an administrator account into your Anypoint organization, enter the settings section, and select 'External Identity'. If you haven’t set anything yet, you should see a screen like this:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/new-saml.png" alt="new saml"></span></p> 
+     </div> </li> 
+    <li> <p>Click the link on 'If you would like to configure single sign on with a SAML 2.0 provider you can get started <strong>here</strong>' and then provide the necessary data to set up your account <span class="image"><img src="./_images/federated-form.png" alt="federated identity form"></span></p> 
+     <div class="paragraph"> 
+      <p>You must provide the following information in the form:</p> 
+     </div> </li> 
    </ol> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 50%;"> 
+    <col style="width: 50%;"> 
+   </colgroup> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Field</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Issuer</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the identity provider instance that will send SAML assertions</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Public Key</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Public key provided by the identity provider, used to sign the SAML assertion.</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Audience</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the Anypoint Platform organization to authenticate to</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Username Attribute</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Field name in the SAML repository that maps to username. By default, the 'NameID' attribute in the SAML assertion is used.</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">First Name Attribute</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Field name in the SAML repository that maps to First Name</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Last Name Attribute</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Field name in the SAML repository that maps to Last Name</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Email Attribute</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Field name in the SAML repository that maps to Email</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Group Attribute</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Field name in the SAML repository that maps to Group</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Sign On URL</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">URL where users must sign in</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Sign Out URL</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">URL to redirect sign out requests, so users both sign out of the Anypoint Platform and have their SAML user’s status set to signed out</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="sect2"> 
+   <h3 id="providing-mulesoft-the-information-required-to-configure-your-anypoint-platform-organization"><a class="anchor" href="#providing-mulesoft-the-information-required-to-configure-your-anypoint-platform-organization"></a>Providing MuleSoft the Information Required to Configure Your Anypoint Platform Organization</h3> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> 
+        <div class="paragraph"> 
+         <p>If all you want to use is 'user management', you can register your identity manager manually. If you wish to implement 'client management' then you must provide Mulesoft with more information as explained in this section. If you are using Anypoint Platform on premises, you do not need to provide this information to MuleSoft.</p> 
+        </div> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If you want to use 'client management' and if you’re not using Anypoint Platform on premises, you need to work with your MuleSoft account representative to ensure that we are aware of your needs for configuring your organization with PingFederate. Complete <a href="https://docs.google.com/a/mulesoft.com/forms/d/16ZQjXcLmuXO8140svkjUxywzkZjv01GTgbf_3kfEebQ/viewform">the following form</a>. Once you have completed this form, we will get back to you within 48 hours with either the completion of the configuration or follow-up questions to complete the configuration.</p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> Having a single audience (an Anypoint Platform organization) served by multiple issuers (multiple SAML provider instances) is currently not supported. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="configuring-your-pingfederate-environment"><a class="anchor" href="#configuring-your-pingfederate-environment"></a>Configuring your PingFederate Environment</h3> 
@@ -949,37 +1043,6 @@
       </div> </li> 
     </ol> 
    </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="providing-mulesoft-the-information-required-to-configure-your-anypoint-platform-organization"><a class="anchor" href="#providing-mulesoft-the-information-required-to-configure-your-anypoint-platform-organization"></a>Providing MuleSoft the Information Required to Configure Your Anypoint Platform Organization</h3> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> If you are using Anypoint Platform on premises, you do not need to provide this information to MuleSoft. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Unless you are using Anypoint Platform on premises, you need to work with your MuleSoft account representative to ensure that we are aware of your needs for configuring your organization with PingFederate. Complete <a href="https://docs.google.com/a/mulesoft.com/forms/d/16ZQjXcLmuXO8140svkjUxywzkZjv01GTgbf_3kfEebQ/viewform">the following form</a>. Once you have completed this form, we will get back to you within 48 hours with either the completion of the configuration or follow-up questions to complete the configuration.</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="instructions-for-configuration-of-openam"><a class="anchor" href="#instructions-for-configuration-of-openam"></a>Instructions for Configuration of OpenAM</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>As with PingFederate, configuring your Anypoint Platform organization for use with OpenAM entails two steps:</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Configure your OpenAM environment to set up your Anypoint Platform organization as a Service Provider.</p> </li> 
-    <li> <p>Submit the appropriate information about your OpenAM environment and the Service Provider you configured (in the first step) to MuleSoft by completing <a href="https://docs.google.com/a/mulesoft.com/forms/d/1ZvNUWU3u0lzLk6H5R3lKcEN2Dcyg1zekc1HYtYIcZP0/viewform?edit_requested=true">the following form</a> (for further details, see&nbsp;below). (<strong>Note</strong>: If you are using Anypoint Platform on premises, you do not need to complete this step.)</p> </li> 
-    <li> <p>When your organization is converted to use external identity management, any existing applications that were previously created through the Developer Portal will need to be recreated to work with the OpenAM Access Token Enforcement policy.</p> </li> 
-   </ol> 
   </div> 
   <div class="sect2"> 
    <h3 id="configuring-your-openam-environment"><a class="anchor" href="#configuring-your-openam-environment"></a>Configuring your OpenAM Environment</h3> 
@@ -1056,21 +1119,19 @@
     </ol> 
    </div> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="providing-mulesoft-the-information-required-to-configure-your-anypoint-platform-organization-2"><a class="anchor" href="#providing-mulesoft-the-information-required-to-configure-your-anypoint-platform-organization-2"></a>Providing MuleSoft the Information Required to Configure Your Anypoint Platform Organization</h3> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> If you are using Anypoint Platform on premises, you do not need to provide this information to MuleSoft. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Unless you are using Anypoint Platform on premises, you need to work with your MuleSoft account representative to ensure that we are aware of your needs for configuring your organization with OpenAM. Complete <a href="https://docs.google.com/a/mulesoft.com/forms/d/1ZvNUWU3u0lzLk6H5R3lKcEN2Dcyg1zekc1HYtYIcZP0/viewform?edit_requested=true">the following form</a>. Once you have completed this form, we will get back to you within 48 hours with either the completion of the configuration or follow-up questions to complete the configuration.</p> 
-   </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="role-mapping"><a class="anchor" href="#role-mapping"></a>Role Mapping</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>You can set up your Anypoint Platform organization so that when a SAML user belongs to certain groups, it will automatically grant certain equivalent roles in the your Anypoint Platform organization.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To set this up: . Log into your Anypoint Platform organization with an administrator user . Go to the settings section and then select the 'Roles' tab . Select a role to edit it and then click the 'Set external group mapping'</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>+ <span class="image"><img src="./_images/external-group-mapping.png" alt="external group mapping"></span> . Provide the group names that will be associated with this role</p> 
   </div> 
  </div> 
 </div> 
@@ -1088,7 +1149,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#instructions-for-configuration-of-pingfederate">Instructions for Configuration of PingFederate</a></li><li><a class="scroll-menu-link" href="#instructions-for-configuration-of-openam">Instructions for Configuration of OpenAM</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#instructions-for-saml-configuration">Instructions for SAML Configuration</a></li><li><a class="scroll-menu-link" href="#role-mapping">Role Mapping</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

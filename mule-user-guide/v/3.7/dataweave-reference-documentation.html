@@ -1303,7 +1303,7 @@ patents : payload.items groupBy $.author pluck {
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p>Both sections are delimited by a separator, which is not required if no header is present. The separator consists of three dashes: "---"</p> 
+   <p>The two sections are delimited by a separator, which is not required if no header is present. The separator consists of three dashes: "---"</p> 
   </div> 
   <div class="paragraph"> 
    <p>Below is a taste of what a .dwl file looks like. This code describes a conversion from a JSON input to an XML output:</p> 
@@ -1911,7 +1911,7 @@ myoutput:{
  <h2 id="dataweave-canonical-model"><a class="anchor" href="#dataweave-canonical-model"></a>DataWeave Canonical Model</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>As covered above, DataWeave uses three basic data types: Objects, Arrays and Simple Types, the execution of a DataWeave transformation always produces one of these three types of data. In essence, the body of every DataWeave transformation is a single Expression that defines the structure and contents of one such object. This expression can be built using any of the following elements:</p> 
+   <p>As covered above, DataWeave uses three basic data types: Objects, Arrays and Simple Types, the execution of a DataWeave transformation always produces one of these three types of data. In essence, the body of every DataWeave transformation is a single Expression that defines the structure and contents of one such element (which can be an Object, Array or Simple Literal). This expression can be built using any of the following elements:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
@@ -2433,7 +2433,7 @@ entry: using (firstName = "Annie", lastName = "Point") {
       </tr> 
       <tr> 
        <td><i class="conum" data-value="2"></i><b>2</b></td> 
-       <td>The reference <strong>$gender</strong> is invalid because gender was declared in the <strong>person</strong> object, and this reference exists outside the scope of that object.</td> 
+       <td>The reference <strong>gender</strong> is invalid because gender was declared in the <strong>person</strong> object, and this reference exists outside the scope of that object.</td> 
       </tr> 
      </tbody> 
     </table> 
@@ -2447,7 +2447,7 @@ entry: using (firstName = "Annie", lastName = "Point") {
   <div class="sect2"> 
    <h3 id="value-selector-expressions"><a class="anchor" href="#value-selector-expressions"></a>Value Selector Expressions</h3> 
    <div class="paragraph"> 
-    <p>The complex structure of Objects and Arrays can be navigated using Selector Expressions. Each selector expression returns either an object, an array or a simple type. A selector always operates within a given context, which can be a reference to a variable, an object literal, an array literal or the invocation of a function. As DataWeave processes a selector, a new context is set for further selectors, and so you can navigate through the complex structures of arrays and objects by using chains of selectors, who’s depth is limited only by the depth of the current context. There are 3 types of selector expression:</p> 
+    <p>The complex structure of Objects and Arrays can be navigated using Selector Expressions. Each selector expression returns either an object, an array or a simple type. A selector always operates within a given context, which can be a reference to a variable, an object literal, an array literal or the invocation of a function. As DataWeave processes a selector, a new context is set for further selectors, and so you can navigate through the complex structures of arrays and objects by using chains of selectors, who’s depth is limited only by the depth of the current context. There are 4 types of selector expression:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
@@ -4994,7 +4994,7 @@ myObject: {aa: "a", bb: "b"} - "aa"</pre></td>
      </div> 
     </div> 
     <div class="paragraph"> 
-     <p>The above example removes the key 'aa' from {aa: "a", bb: "b"} ⇒ {bb: "b"}</p> 
+     <p>The above example removes the key value pair that contains the key 'aa' from {aa: "a", bb: "b"} ⇒ {bb: "b"}</p> 
     </div> 
    </div> 
    <div class="sect3"> 
@@ -5568,9 +5568,12 @@ ROOT: payload.root.*order mapObject (
    <div class="sect3"> 
     <h4 id="coerce-to-string"><a class="anchor" href="#coerce-to-string"></a>Coerce to string</h4> 
     <div class="paragraph"> 
-     <p>Any simple types can be coerced to string. If formatting is required (i.e number or date) the format schema property can be used .Transform</p> 
+     <p>Any simple types can be coerced to string. If formatting is required (i.e number or date) the format schema property can be used</p> 
     </div> 
     <div class="listingblock"> 
+     <div class="title">
+       Transform 
+     </div> 
      <div class="content"> 
       <pre class="CodeRay highlight"><code data-lang="DataWeave">
            
@@ -5689,7 +5692,7 @@ ROOT: payload.root.*order mapObject (
     </div> 
    </div> 
    <div class="sect3"> 
-    <h4 id="coerce-to-dates"><a class="anchor" href="#coerce-to-dates"></a>Coerce to dates</h4> 
+    <h4 id="coerce-to-date"><a class="anchor" href="#coerce-to-date"></a>Coerce to date</h4> 
     <div class="paragraph"> 
      <p>Date types can be coerced from string or number</p> 
     </div> 
@@ -7643,7 +7646,7 @@ division : 10 / 2</pre></td>
    <div class="sect3"> 
     <h4 id="now"><a class="anchor" href="#now"></a>Now</h4> 
     <div class="paragraph"> 
-     <p>Returns a time stap</p> 
+     <p>Returns a time stamp</p> 
     </div> 
     <div class="listingblock"> 
      <div class="title">
@@ -7694,14 +7697,24 @@ division : 10 / 2</pre></td>
 5
 </pre></td> 
            <td class="code"><pre>{
-  <span class="key"><span class="delimiter">"</span><span class="content">a</span><span class="delimiter">"</span></span>: <span class="error">|</span><span class="integer">2015</span><span class="integer">-0</span><span class="integer">5</span><span class="integer">-22</span><span class="error">|</span>,
-  <span class="key"><span class="delimiter">"</span><span class="content">b</span><span class="delimiter">"</span></span>: <span class="integer">22</span>,
-  <span class="key"><span class="delimiter">"</span><span class="content">c</span><span class="delimiter">"</span></span>: <span class="integer">57</span>
+  <span class="key"><span class="delimiter">"</span><span class="content">a</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">2015-12-04T18:15:04.091Z</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">b</span><span class="delimiter">"</span></span>: <span class="integer">4</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">c</span><span class="delimiter">"</span></span>: <span class="integer">15</span>
 }</pre></td> 
           </tr> 
          </tbody> 
         </table></code></pre> 
      </div> 
+    </div> 
+    <div class="admonitionblock tip"> 
+     <table> 
+      <tbody> 
+       <tr> 
+        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+        <td class="content"> See <a href="#Acessors">Accessors</a> for a list of possible selectors to use here. </td> 
+       </tr> 
+      </tbody> 
+     </table> 
     </div> 
    </div> 
    <div class="sect3"> 
@@ -9149,67 +9162,8 @@ books: payload.items.*item map
         </table></code></pre> 
      </div> 
     </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="separator"><a class="anchor" href="#separator"></a>Separator</h4> 
     <div class="paragraph"> 
-     <p>The metadata 'separator' key is used for splitting and joining arrays into strings and viceversa.</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="title">
-       Transform 
-     </div> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="DataWeave">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-2
-3
-4
-5
-</pre></td> 
-           <td class="code"><pre>%dw 1.0
-%output application/json
-%type myList = :array {separator: ","}
----
-books: "name,last name,address" as :array</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
-     </div> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="title">
-       Output 
-     </div> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="json">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-</pre></td> 
-           <td class="code"><pre>{
-  <span class="key"><span class="delimiter">"</span><span class="content">books</span><span class="delimiter">"</span></span>: [
-    <span class="string"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>,
-    <span class="string"><span class="delimiter">"</span><span class="content">last name</span><span class="delimiter">"</span></span>,
-    <span class="string"><span class="delimiter">"</span><span class="content">address</span><span class="delimiter">"</span></span>
-  ]
-}</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
-     </div> 
+     <p>In Anypoint Studio, you can define several more values, like separators, quote caracters and escape characters. See <a href="/mule-user-guide/v/3.7/using-dataweave-in-studio#configuring-the-csv-reader">Using DataWeave in Studio</a></p> 
     </div> 
    </div> 
   </div> 

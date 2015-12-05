@@ -1036,7 +1036,7 @@
       <p>Cloud Extender is an agent that opens a connection to Data Gateway, which Data Gateway can use for subsequent communications. Cloud Extender relays data between Data Gateway and the data source within the private network. Cloud Extender needs access to the data source, that is, network connectivity and valid user credentials. The advantage of Cloud Extender is that it eliminates the need to open ports in your firewall.</p> 
      </div> 
      <div class="paragraph"> 
-      <p>Cloud Extender tunnels socket connections via SSH over HTTP. It configures itself automatically — all you have to do is run it.</p> 
+      <p>Cloud Extender tunnels socket connections via SSH over HTTP, it can even handle connections that run over a proxy. It configures itself automatically — all you have to do is run it.</p> 
      </div> 
     </div> 
     <div class="sect4"> 
@@ -1085,24 +1085,66 @@
      </div> 
     </div> 
     <div class="sect4"> 
-     <h5 id="installing-and-running-cloud-extender"><a class="anchor" href="#installing-and-running-cloud-extender"></a>Installing and Running Cloud Extender</h5> 
+     <h5 id="installing-cloud-extender-windows-and-mac"><a class="anchor" href="#installing-cloud-extender-windows-and-mac"></a>Installing Cloud Extender (Windows and Mac)</h5> 
      <div class="paragraph"> 
-      <p>Install Cloud Extender according to the normal procedure installing software on your operating system. Once installed, run the application. The first time it runs, Cloud Extender requests the authorization code provided by the wizard during the gateway configuration process (see&nbsp;above).</p> 
+      <p>Install Cloud Extender according to the normal procedure installing software on your operating system. Once installed, run the application.</p> 
      </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="installing-cloud-extender-ubuntu"><a class="anchor" href="#installing-cloud-extender-ubuntu"></a>Installing Cloud Extender (Ubuntu)</h5> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/cloudext_auth_code-1.2.png" alt="cloudext_auth_code-1.2"></span></p> 
+      <p>To Install Cloud Extender in Red Hat use the following command 'sudo dpkg -i mule-cloud-extender_1.0.0_all.deb' and finally 'mule-cloud-extender' to run it.</p> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="installing-cloud-extender-redhat"><a class="anchor" href="#installing-cloud-extender-redhat"></a>Installing Cloud Extender (RedHat)</h5> 
+     <div class="paragraph"> 
+      <p>To Install Cloud Extender in RedHat use the following command: 'sudo rpm -ivh mule-cloud-extender-1.0.0-1.noarch.rpm' and finally 'mule-cloud-extender' to run it.</p> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="running-cloud-extender"><a class="anchor" href="#running-cloud-extender"></a>Running Cloud Extender</h5> 
+     <div class="paragraph"> 
+      <p>The first time it runs, Cloud Extender requests the authorization code provided by the wizard during the gateway configuration process (see&nbsp;above).</p> 
      </div> 
      <div class="paragraph"> 
       <p>Enter the authorization code you were given, then click <strong>OK</strong>.</p> 
      </div> 
+     <div class="paragraph"> 
+      <p>+ <span class="image"><img src="./_images/cloudext_auth_code-1.2.png" alt="cloudext_auth_code-1.2"></span></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>If the agent can’t reach the server, a new window is displayed asking if the agent is behind a proxy, and then asking for the proxy details.</p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>+ <span class="image"><img src="./_images/cloud-externder-proxy1.png" alt="proxy question"></span></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>+ <span class="image"><img src="./_images/cloud-externder-proxy2.png" alt="proxy question"></span></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>Once the proxy is configured, the connection is retested and if it works this time around, the wizard will close on its own. This wizard only runs the first time the Cloud Extender is executed.</p> 
+     </div> 
     </div> 
     <div class="sect4"> 
-     <h5 id="removing-cloud-extender"><a class="anchor" href="#removing-cloud-extender"></a>Removing Cloud Extender</h5> 
+     <h5 id="removing-cloud-extender-mac-and-windows"><a class="anchor" href="#removing-cloud-extender-mac-and-windows"></a>Removing Cloud Extender (Mac and Windows)</h5> 
      <div class="paragraph"> 
       <p>You remove Cloud Extender like any other piece of software on your machine. You can also remove the Cloud Extender <em>connection</em> from Data Gateway itself, without the need to remove Cloud Extender from the machine where it is installed. If you do this, Data Gateway ceases to accept connections from the Cloud Extender instance installed on the machine listed in the connection. Communication with the data source on that network become lost.</p> 
      </div> 
      <div class="paragraph"> 
       <p>For details on removing a Cloud Extender connection, see the <strong>Cloud Extender</strong> section in <a href="/anypoint-data-gateway/v/1.1.0/managing-gateways">Managing Gateways</a>.</p> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="removing-cloud-extender-ubuntu"><a class="anchor" href="#removing-cloud-extender-ubuntu"></a>Removing Cloud Extender (Ubuntu)</h5> 
+     <div class="paragraph"> 
+      <p>To remove Cloud Extender from Ubuntu, you must run the following command: 'sudo apt-get remove mule-cloud-extender'</p> 
+     </div> 
+    </div> 
+    <div class="sect4"> 
+     <h5 id="removing-cloud-extender-redhat"><a class="anchor" href="#removing-cloud-extender-redhat"></a>Removing Cloud Extender (RedHat)</h5> 
+     <div class="paragraph"> 
+      <p>To remove Cloud Extender from RedHat, you must run the following command: 'sudo rpm -e mule-cloud-extender'</p> 
      </div> 
     </div> 
    </div> 
