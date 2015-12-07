@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/mel-cheat-sheet" />
-    <meta name="description" content="The following document reproduces the content from the original Mule Expression Language (MEL) Reference card.  Overview of the global context..." />
+    <meta name="description" content="The following document reproduces the content from the original Mule Expression Language (MEL) Reference card.  See also Mule Expression Langu..." />
     <meta class="swiftype" name="title" data-type="string" content="MEL Cheat Sheet" />
 
 </head>
@@ -874,7 +874,15 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The following document reproduces the content from the original <a href="_attachments/refcard-mel.pdf">Mule Expression Language (MEL) Reference card</a>.&nbsp;</p> 
+   <p>The following document reproduces the content from the original <a href="_attachments/refcard-mel.pdf">Mule Expression Language (MEL) Reference card</a>.&nbsp; See also <a href="/mule-user-guide/v/3.7/mule-expression-language-reference">Mule Expression Language Reference</a>.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>This document assumes you are familiar with <a href="/mule-user-guide/v/3.7/mule-expression-language-mel">Mule Expression Language (MEL)</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1018,6 +1026,79 @@
       </table></code></pre> 
    </div> 
   </div> 
+  <div class="paragraph"> 
+   <p>Set the username and password for an HTTP request at runtime based on inbound message properties:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="xml">
+         
+      <table class="CodeRay"> 
+       <tbody> 
+        <tr> 
+         <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td> 
+         <td class="code"><pre><span class="tag">&lt;http:request-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Request_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">api.acme.com/v1</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;http:basic-authentication</span> <span class="attribute-name">username</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.username]</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.password]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/http:request-config&gt;</span>
+
+  <span class="tag">&lt;flow&gt;</span>
+    ...
+    <span class="tag">&lt;http:request</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">request-config</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">users</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Connector</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    ...
+  <span class="tag">&lt;/flow&gt;</span></pre></td> 
+        </tr> 
+       </tbody> 
+      </table></code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="variables-integers-and-strings"><a class="anchor" href="#variables-integers-and-strings"></a>Variables, Integers, and Strings</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>As a shortcut, Mule accepts an expression such as&nbsp;<code>#[payload]</code>, rather than&nbsp; <code>#[message.payload]</code> because it knows to automatically evaluate the expression for the message context object. This shortcut only applies with the&nbsp;<code>payload</code>&nbsp;field.</p> </li> 
+    <li> <p>Mule assumes that any unquoted string contained in a Mule Expression is a flow variable. To set the value of flow variable 'foo' to 'bar', the expression&nbsp;<code>#[foo == bar]</code> actually evaluates as:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[flowVars.foo == flowVars.bar]</code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>To access the flow variable, use one of the following expressions:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[flowVars.foo]</code></pre> 
+      </div> 
+     </div> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[foo]</code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>To create an integer:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[12]</code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>To create a string:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#['mystring']</code></pre> 
+      </div> 
+     </div> </li> 
+   </ul> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
@@ -1111,11 +1192,11 @@
  <h2 id="regex-support"><a class="anchor" href="#regex-support"></a>Regex Support</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Regular expression helper functions retrieve <code>null</code>, a single value or an array of values, depending on matches. The forms that take a melExpression argument apply the regex to the result of its evaluation instead of <code>message.payload</code>. For more information, see <a href="/mule-user-guide/v/3.7/mule-expression-language-reference#regex">MEL Regex</a>.</p> 
+   <p>Regular expression helper functions retrieve <code>null</code>, a single value or an array of values, depending on matches. The forms that take a <code>melExpression</code> argument apply the regex to the result of its evaluation instead of <code>message.payload</code>. For more information, see <a href="/mule-user-guide/v/3.7/mule-expression-language-reference#regex">MEL Regex</a>.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">regex(regularExpression [, melExpression [, matchFlags]])</code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">#[regex(regularExpression [, melExpression [, matchFlags]])]</code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -1123,7 +1204,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">regex('^(To|From|Cc):')</code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">#[regex('^(To|From|Cc):')]</code></pre> 
    </div> 
   </div> 
  </div> 
@@ -1132,7 +1213,7 @@
  <h2 id="xpath3-support"><a class="anchor" href="#xpath3-support"></a>XPath3 Support</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>XPath3 helper functions can return a DOM Node, or collection of DOM Nodes, or text. For more information, see <a href="/mule-user-guide/v/3.7/xpath">XPath</a> and mule-expression-language-reference#xpath[MEL XPath] By default the XPath3 expression is evaluated on message.payload unless an xmlElement is specified:</p> 
+   <p>XPath3 helper functions can return a DOM Node, or collection of DOM Nodes, or text. For more information, see <a href="/mule-user-guide/v/3.7/xpath">XPath</a> and <a href="/mule-user-guide/v/3.7/mule-expression-language-reference#xpath">MEL XPath</a>. By default the XPath3 expression is evaluated on <code>message.payload</code> unless an <code>xmlElement</code> is specified:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1165,7 +1246,18 @@
  <h2 id="json-processing"><a class="anchor" href="#json-processing"></a>JSON Processing</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>MEL has no direct support for JSON. The <code>json-to-object-transformer</code> can turn a JSON payload into a hierarchy of simple data structures that are easily parsed with MEL. For example, the following uses a filtered projection to build the equivalent of the $..[? (@.title=='Moby Dick')].price JSON path expression:</p> 
+   <p>MEL has no direct support for JSON. The <code>json-to-object-transformer</code> can turn a JSON payload into a hierarchy of simple data structures that are easily parsed with MEL.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>For the equivalent of this JSON path expression:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="code">$..[? (@.title=='Moby Dick')].price</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The following uses a filtered projection:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1189,65 +1281,82 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="more-mvel-goodness"><a class="anchor" href="#more-mvel-goodness"></a>More MVEL Goodness</h2> 
+ <h2 id="tests"><a class="anchor" href="#tests"></a>Tests</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Return <code>true</code> if the&nbsp;<code>lastname</code> query string parameter from an HTTP listener is not <code>null</code>:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[message.inboundProperties.'http.query.params'.lastname != null]</code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>Return the number of elements in&nbsp;<code>http.method</code>:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[message.inboundProperties.'http.query.params'.size()]</code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>Return&nbsp;<code>true</code>&nbsp;if the number of elements in the map&nbsp;<code>http.query.params</code>&nbsp;is greater than 50:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[message.inboundProperties.'http.query.params'.size() &gt; 50]</code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p><strong>Testing for Emptiness</strong>:&nbsp;The special literal&nbsp;<code>empty</code>&nbsp;tests the emptiness of a value. It returns an empty value depending on context.&nbsp;<code>empty</code>&nbsp;evaluates to:<br></p> 
+     <div class="ulist"> 
+      <ul> 
+       <li> <p>null</p> </li> 
+       <li> <p>boolean <code>false</code></p> </li> 
+       <li> <p>empty strings or strings containing only white space</p> </li> 
+       <li> <p>zero</p> </li> 
+       <li> <p>empty collections</p> 
+        <div class="paragraph"> 
+         <p>The expression&nbsp;<code>#[foo == empty]</code>&nbsp;evaluates to true if the value if&nbsp;<code>foo</code>&nbsp;satisfies any of the requirements for emptiness.<br> <br></p> 
+        </div> </li> 
+       <li> <p><strong>Testing for NullPayload</strong>:&nbsp;Return true if message payload is null:</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="code">#[payload == null]</code></pre> 
+         </div> 
+        </div> </li> 
+      </ul> 
+     </div> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="chained-elements"><a class="anchor" href="#chained-elements"></a>Chained Elements</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Quick access to the MVEL 2.0 Documentation: <a href="https://github.com/mvel/mvel">MVEL in Git</a> and <a href="https://en.wikisource.org/wiki/MVEL_Language_Guide">MVEL Wikisource</a>.</p> 
+   <p>For chained methods or properties, the expression&nbsp;<code>#[[a.b.c] == 'foo']</code>&nbsp;evaluates correctly even in the case that <code>c</code> is a null value. However, if <code>b</code> is a null value, the expression throws a <code>NullPointerException</code>.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><em>Java interoperability</em>, for example to create a random UUID and use it as an XSL-T parameter:</p> 
+   <p>In this example, if a field named address is null, the expression throws a <code>NullPointerException</code>.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;mulexml:context-property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">transactionId</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>      <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[java.util.UUID.randomUUID().toString()]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">#[payload.address.zipcode]</code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p><em>Safe bean property navigation,</em> for example to retrieve <code>fullName</code> only if the <code>name</code> object is not null:</p> 
+   <p>To make this same expression <code>null</code> safe, use the .? operator.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">fullName</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.payload.?name.fullName]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">#[payload.address.?zipcode]</code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p><em>Local variable assignment,</em> as in this splitter expression that splits a multi-line payload in rows and drops the first row:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-</pre></td> 
-         <td class="code"><pre>splitter expression='#[rows=StringUtils.split(message.payload,'\n\r');
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ArrayUtil.subarray(rows,1,rows.size())]" /&gt;</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
+   <p>Using this operator avoids a <code>NullPointerException</code> if address is an empty value, instead it returns <code>null</code>.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
-   <p><em>"Elvis" operator,</em> to return the first non-null value of a list of values:</p> 
+   <p>If you’d like the expression to return a different value if no address is defined, you can use a chained <code>or</code> operator.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">#[message.payload.userName or message.payload.userId]</code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">#[payload.address.?zipcode or 'Zipcode not set']</code></pre> 
    </div> 
   </div> 
  </div> 
@@ -1296,6 +1405,233 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="advanced-tips"><a class="anchor" href="#advanced-tips"></a>Advanced Tips</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="accessing-the-cache"><a class="anchor" href="#accessing-the-cache"></a>Accessing the Cache</h3> 
+   <div class="paragraph"> 
+    <p>You can access the&nbsp;<a href="/mule-user-guide/v/3.7/cache-scope">Mule cache</a>&nbsp;through the object store that serves as the cache repository. Depending on the nature of the object store, you can count, list, remove, or perform other operations on entries.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The code below shows the XML representation of a cache scope that uses a custom object store class.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;ee:object-store-caching-strategy</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">CachingStrategy</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;custom-object-storeclass</span><span class="error">=</span><span class="error">"</span><span class="attribute-name">org.mule.util.store.SimpleMemoryObjectStore</span><span class="error">"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/ee:object-store-caching-strategy&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The object store above is an implementation of a <code>ListableObjectStore</code>, which allows you to obtain lists of the entries it contains. You can access the contents of the cache by invoking the&nbsp;<code>getStore</code>&nbsp;method on the&nbsp;<code>CachingStrategy</code>&nbsp;property of&nbsp;<code>app.registry</code>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The expression below obtains the size of the cache by invoking&nbsp;<code>allKeys()</code>, which returns an iterable list.</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="code">#[app.registry.CachingStrategy.getStore().allKeys().size()]"</code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>If you need to manipulate the registry in a Java class, you can access it through&nbsp;<code>muleContext.getRegistry()</code>.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="boolean-operations-gotchas"><a class="anchor" href="#boolean-operations-gotchas"></a>Boolean Operations Gotchas</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Boolean evaluations sometimes return unexpected responses, particularly when the value of a variable contains "garbage." See tables below.</p> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 34%;"> 
+        <col style="width: 33%;"> 
+        <col style="width: 33%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top"><strong>Expression</strong></th> 
+         <th class="tableblock halign-left valign-top"><strong>When value of <code>var1</code> is…​</strong></th> 
+         <th class="tableblock halign-left valign-top"><strong>…​ The expression evaluates to…​</strong></th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><code>#[var1 == true]</code></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>'true'</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><code>#[var1 == true]</code></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>'True'</code> <code>'false'</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><code>#[var1 == true]</code></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>'u5hsmg930'</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 25%;"> 
+        <col style="width: 25%;"> 
+        <col style="width: 25%;"> 
+        <col style="width: 25%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top"><strong>Expression</strong></th> 
+         <th class="tableblock halign-left valign-top"><strong>When the value of <code>something</code> is…​</strong></th> 
+         <th class="tableblock halign-left valign-top"><strong>…​ And the value of <code>abc</code> is…​</strong></th> 
+         <th class="tableblock halign-left valign-top"><strong>…​ MEL successfully evaluates the expression.</strong></th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.something.abc == 'b']</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>'something'</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>'null'</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock">✔</p></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.something.abc == 'b']</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>'null'</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>'abc'</code></p></td> 
+         <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>X</strong><br> Produces a NullPointer exception</p></td> 
+        </tr> 
+       </tbody> 
+      </table> 
+      <div class="paragraph"> 
+       <p>Note also that, if given the expression&nbsp;<code>#[flowVars.abc.toString()]</code> and the value of ‘abc’ is <code>null</code>, Mule throws a <code>NullPointerException</code>.</p> 
+      </div> </li> 
+    </ul> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="miscellaneous-operations"><a class="anchor" href="#miscellaneous-operations"></a>Miscellaneous Operations</h2> 
+ <div class="sectionbody"> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Assign to variable&nbsp;<code>lastname</code>&nbsp;the value of the message inbound property&nbsp;<code>lastname</code>:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[lastname = message.inboundProperties.lastname]</code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>Append a string to the message payload:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[message.payload + 'mystring']</code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>Call a static method:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[java.net.URLEncoder.encode()]</code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>Create a hash map:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[new java.util.HashMap()]</code></pre> 
+      </div> 
+     </div> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="more-mvel-goodness"><a class="anchor" href="#more-mvel-goodness"></a>More MVEL Goodness</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Quick access to the MVEL 2.0 Documentation: <a href="https://github.com/mvel/mvel">MVEL in Git</a> and <a href="https://en.wikisource.org/wiki/MVEL_Language_Guide">MVEL Wikisource</a>.</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><strong>Java interoperability</strong> - Creates a random UUID and use it as an XSL-T parameter:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+</pre></td> 
+            <td class="code"><pre><span class="tag">&lt;mulexml:context-property</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">transactionId</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span>      <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[java.util.UUID.randomUUID().toString()]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p><strong>Safe bean property navigation</strong> - Retrieves <code>fullName</code> only if the <code>name</code> object is not null:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">fullName</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.payload.?name.fullName]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p><strong>Local variable assignment</strong> - Works to split a multi-line payload into rows and drops the first row, as in this splitter expression:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
+2
+</pre></td> 
+            <td class="code"><pre>splitter expression='#[rows=StringUtils.split(message.payload,'\n\r');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ArrayUtil.subarray(rows,1,rows.size())]" /&gt;</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p><strong>Elvis operator</strong> - Returns the first non-null value of a list of values:</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">#[message.payload.userName or message.payload.userId]</code></pre> 
+      </div> 
+     </div> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="ulist"> 
@@ -1313,7 +1649,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#server-mule-application-and-message-variables">Server, Mule, Application, and Message Variables</a></li><li><a class="scroll-menu-link" href="#flow-variables">Flow Variables</a></li><li><a class="scroll-menu-link" href="#payload-and-attachments">Payload and Attachments</a></li><li><a class="scroll-menu-link" href="#regex-support">Regex Support</a></li><li><a class="scroll-menu-link" href="#xpath3-support">XPath3 Support</a></li><li><a class="scroll-menu-link" href="#json-processing">JSON Processing</a></li><li><a class="scroll-menu-link" href="#more-mvel-goodness">More MVEL Goodness</a></li><li><a class="scroll-menu-link" href="#global-configuration">Global Configuration</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#server-mule-application-and-message-variables">Server, Mule, Application, and Message Variables</a></li><li><a class="scroll-menu-link" href="#variables-integers-and-strings">Variables, Integers, and Strings</a></li><li><a class="scroll-menu-link" href="#flow-variables">Flow Variables</a></li><li><a class="scroll-menu-link" href="#payload-and-attachments">Payload and Attachments</a></li><li><a class="scroll-menu-link" href="#regex-support">Regex Support</a></li><li><a class="scroll-menu-link" href="#xpath3-support">XPath3 Support</a></li><li><a class="scroll-menu-link" href="#json-processing">JSON Processing</a></li><li><a class="scroll-menu-link" href="#tests">Tests</a></li><li><a class="scroll-menu-link" href="#chained-elements">Chained Elements</a></li><li><a class="scroll-menu-link" href="#global-configuration">Global Configuration</a></li><li><a class="scroll-menu-link" href="#advanced-tips">Advanced Tips</a></li><li><a class="scroll-menu-link" href="#miscellaneous-operations">Miscellaneous Operations</a></li><li><a class="scroll-menu-link" href="#more-mvel-goodness">More MVEL Goodness</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
