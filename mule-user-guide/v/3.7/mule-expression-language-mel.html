@@ -879,7 +879,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This document assumes that you are familiar with Mule ESB and its <a href="/mule-fundamentals/v/3.7/mule-concepts">basic concepts</a>. Consider reading the chapter, <a href="/mule-fundamentals/v/3.7/first-30-minutes-with-mule">First 30 Minutes with Mule</a> to gain familiarity before proceeding.&nbsp;</p> 
@@ -900,17 +900,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">The value in my first variable is #[flowVars.myVar1]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">The value in my first variable is #[flowVars.myVar1]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre> 
    </div> 
   </div> 
   <div class="admonitionblock note"> 
@@ -933,26 +923,26 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p><strong>extract</strong> information that it can use to process the current message; this can be useful when set inside an expression component or expression transformer:&nbsp;</p> 
+    <li> <p><strong>Extract</strong> information that it can use to process the current message; this can be useful when set inside an expression component or expression transformer:&nbsp;</p> 
      <div class="ulist"> 
       <ul> 
        <li> <p><code>#[payload]</code></p> </li> 
        <li> <p><code>#[message.inboundProperties.'propertyName']</code></p> </li> 
-       <li> <p><code>#[payload.methodCall(parameters)]&nbsp;</code></p> </li> 
-       <li> <p><code>#[xpath3('//root/element1')]&nbsp;</code>&nbsp;<br> <br> ``</p> </li> 
+       <li> <p><code>#[payload.methodCall(parameters)]</code></p> </li> 
+       <li> <p><code>#[xpath3('//root/element1')]</code>&nbsp;</p> </li> 
       </ul> 
      </div> </li> 
-    <li> <p><strong>evaluate conditions</strong> using the contents of the current message; this can be extremely useful to filter messages from being processed:</p> 
+    <li> <p><strong>Evaluate conditions</strong> using the contents of the current message; this can be extremely useful to filter messages from being processed:</p> 
      <div class="ulist"> 
       <ul> 
        <li> <p><code>#[payload.age &gt; 21]</code></p> </li> 
        <li> <p><code>#[message.inboundProperties.'locale'&nbsp; == &nbsp;'en_us']</code></p> </li> 
       </ul> 
      </div> </li> 
-    <li> <p><strong>define a target</strong>, other than the message payload, in which to store the result of an expression evaluation; typically, this is helpful when set inside a message enricher</p> 
+    <li> <p><strong>Define a target</strong>, other than the message payload, in which to store the result of an expression evaluation; typically, this is helpful when set inside a message enricher</p> 
      <div class="ulist"> 
       <ul> 
-       <li> <p><code>#[flowVars.output]</code><br></p> </li> 
+       <li> <p><code>#[flowVars.output]</code></p> </li> 
       </ul> 
      </div> </li> 
    </ul> 
@@ -967,7 +957,7 @@
         <p><strong>Shortcut</strong></p> 
        </div> 
        <div class="paragraph"> 
-        <p>Mule accepts the expression` <mark>[payload]` as a shortcut for <code></code></mark><code>[message.payload]</code>. This shortcut only applies with the payload field.</p> 
+        <p>Mule accepts the expression <code><mark>[payload]</mark></code> as a shortcut for <code>[message.payload]</code>. This shortcut only applies to the payload field.</p> 
        </div> </td> 
      </tr> 
     </tbody> 
@@ -978,7 +968,7 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Use an expression to <strong>extract data</strong> in order to&nbsp;decide&nbsp;on a course of action based on the contents, properties, or properties of a message. For example, a router (a.k.a. flow control) can route purchase orders for different types of products to different JMS queues.&nbsp;In the example below, a message carries information about purchases from an online store which can be either a hardcopy book or an mp3 file. The following code classifies the messages into different queues based on the type of purchase.</p> 
+    <li> <p>Use an expression to <strong>extract data</strong> to&nbsp;decide&nbsp;on a course of action based on the contents, properties, or properties of a message. For example, a router (a.k.a. flow control) can route purchase orders for different types of products to different JMS queues.&nbsp;In the example below, a message carries information about purchases from an online store which can be either a hardcopy book or an mp3 file. The following code classifies the messages into different queues based on the type of purchase.</p> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="xml">
@@ -996,21 +986,16 @@
 8
 </pre></td> 
             <td class="code"><pre><span class="tag">&lt;choice&gt;</span>
-     <span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.getPurchaseType() == 'book']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-          <span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">bookPurchases</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-      <span class="tag">&lt;/when&gt;</span>
-     <span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.getPurchaseType() == 'mp3']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-          <span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">songPurchases</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-      <span class="tag">&lt;/when&gt;</span>
+   <span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.getPurchaseType() == 'book']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">bookPurchases</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/when&gt;</span>
+   <span class="tag">&lt;when</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.getPurchaseType() == 'mp3']</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;jms:outbound-endpoint</span> <span class="attribute-name">queue</span>=<span class="string"><span class="delimiter">"</span><span class="content">songPurchases</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/when&gt;</span>
  <span class="tag">&lt;/choice&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
-      </div> 
-     </div> 
-     <div class="literalblock"> 
-      <div class="content"> 
-       <pre>&nbsp; &nbsp;</pre> 
       </div> 
      </div> </li> 
     <li> <p>Use an expression to&nbsp;<strong>extract</strong>&nbsp;a value from the payload, properties, or context of a message and its variables or attachments. For example, a connector might extract a specific piece of information from the the current message to use as an argument.&nbsp;In the example below, expressions extract information from a message and pass each piece to the SMTP endpoint.</p> 
@@ -1023,7 +1008,7 @@
            <tr> 
             <td class="line-numbers"><pre>1
 </pre></td> 
-            <td class="code"><pre><span class="tag">&lt;smtp:outbound-endpoint</span> <span class="attribute-name">from</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.from]</span><span class="delimiter">"</span></span> <span class="attribute-name">to</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.to]</span><span class="delimiter">"</span></span>  <span class="attribute-name">subject</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.subjectLine]</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">SMTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+            <td class="code"><pre><span class="tag">&lt;smtp:outbound-endpoint</span> <span class="attribute-name">from</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.from]</span><span class="delimiter">"</span></span> <span class="attribute-name">to</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.to]</span><span class="delimiter">"</span></span> <span class="attribute-name">subject</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.subjectLine]</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">SMTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -1032,17 +1017,7 @@
     <li> <p>Use an expression to&nbsp;<strong>extract</strong>&nbsp;information, then use it to replace a token with an actual value. For example, a logger can extract information from the payload contents and place it into a logging message, as shown below.</p> 
      <div class="listingblock"> 
       <div class="content"> 
-       <pre class="CodeRay highlight"><code data-lang="xml">
-            
-         <table class="CodeRay"> 
-          <tbody> 
-           <tr> 
-            <td class="line-numbers"><pre>1
-</pre></td> 
-            <td class="code"><pre><span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
-           </tr> 
-          </tbody> 
-         </table></code></pre> 
+       <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
       </div> 
      </div> </li> 
    </ol> 
@@ -1052,17 +1027,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.getLoggingInformation()]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.getLoggingInformation()]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></code></pre> 
    </div> 
   </div> 
  </div> 
@@ -1085,16 +1050,16 @@
  <h2 id="learning-mel"><a class="anchor" href="#learning-mel"></a>Learning MEL</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>If you’re already familiar with Java, learning MEL will likely not be difficult. That said, it’s important to comprehend some Mule-specific details <em>before</em> you learn how to apply MEL expressions in your application.</p> 
+   <p>If you’re already familiar with Java, learning MEL is not difficult. That said, it’s important to comprehend some Mule-specific details <em>before</em> you learn how to apply MEL expressions in your application.</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p><strong>Understand the Mule message structure.</strong> Because you use MEL to act upon the contents of a Mule message object (payload, properties and variables), you first need to understand the basic structure of the message. If you are not already familiar with it, read about the <a href="/mule-fundamentals/v/3.7/mule-message-structure">Mule message structure</a>.</p> </li> 
-    <li> <p><strong>Understand how to see the contents of the Mule message.</strong> In order to be able to act upon it, you need to be able to figure out what type of data the message contains. Is the payload an array? Does the message contain a flow variable? What inbound properties exist? The <a href="/mule-fundamentals/v/3.7/mule-message-tutorial">Mule Message Tutorial</a>&nbsp;document describes the tools you can use to see inside the message, so that you know how to use MEL expressions to manipulate the data.</p> </li> 
+    <li> <p><strong>Understand how to see the contents of the Mule message.</strong> To be able to act upon it, you need to be able to figure out what type of data the message contains. Is the payload an array? Does the message contain a flow variable? What inbound properties exist? The <a href="/mule-fundamentals/v/3.7/mule-message-tutorial">Mule Message Tutorial</a> describes the tools you can use to see inside the message, so that you know how to use MEL expressions to manipulate the data.</p> </li> 
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p>After having absorbed this material, you will be ready and able to begin learning about MEL basic syntax, and start using expressions in your application.&nbsp;</p> 
+   <p>After having absorbed this material, you are ready to begin learning about MEL basic syntax, and start using expressions in your application.&nbsp;</p> 
   </div> 
  </div> 
 </div> 
@@ -1114,7 +1079,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#benefits-of-using-mel">Benefits of Using MEL</a></li><li><a class="scroll-menu-link" href="#using-mel">Using MEL</a></li><li><a class="scroll-menu-link" href="#expressions-in-mule">Expressions in Mule</a></li><li><a class="scroll-menu-link" href="#learning-mel">Learning MEL</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#benefits-of-using-mel">Benefits of Using MEL</a></li><li><a class="scroll-menu-link" href="#using-mel">Using MEL</a></li><li><a class="scroll-menu-link" href="#expressions-in-mule">Expressions in Mule</a></li><li><a class="scroll-menu-link" href="#learning-mel">Learning MEL</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

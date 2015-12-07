@@ -879,10 +879,10 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes you are familiar with <a href="http://www.mulesoft.org/documentation/display/current/Mule+Expression+Language+MEL">Mule Expression Language (MEL)</a>.</p> 
+   <p>This document assumes you are familiar with <a href="/mule-user-guide/v/3.7/mule-expression-language-mel">Mule Expression Language (MEL)</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -900,269 +900,1021 @@
    <div class="paragraph"> 
     <p>Context objects provide logical groupings for the fields of the Mule message and its environment. More than just another expression language, the context objects make MEL Mule-centric. MEL has four context objects:</p> 
    </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><strong>server</strong>: this object provides access to the fields for the hardware, operating system, user, and network interface.</p> </li> 
-     <li> <p><strong>mule</strong>: this object provides access to the fields for your Mule instance.</p> </li> 
-     <li> <p><strong>app</strong>: this object provides access to the fields of your Mule application.</p> </li> 
-     <li> <p><strong>message</strong>:&nbsp;this object provides access to the fields of the Mule message.</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>In MEL, you combine a context object with a field to form an expression. The simplest expressions take the form&nbsp;<code>contextobject.field</code>. For example, &nbsp;<code>#[message.inboundProperties]</code>&nbsp;is a simple expression. The table below describes the context objects and the fields to which they have access.</p> 
-   </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 15%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 15%;"> 
-     <col style="width: 15%;"> 
      <col style="width: 30%;"> 
+     <col style="width: 70%;"> 
     </colgroup> 
     <thead> 
      <tr> 
       <th class="tableblock halign-left valign-top">Context Object</th> 
-      <th class="tableblock halign-left valign-top"><strong>Field</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>read-only Access</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>read-write Access</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>Field Description</strong></th> 
+      <th class="tableblock halign-left valign-top">Provides access to the fields for</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-center valign-top" rowspan="18"><p class="tableblock"><strong><code>server</code></strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dateTime</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">date or time</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#serverobj">Server</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Hardware, operating system, user, and network interface.</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>env</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">environment</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#muleobj">Mule</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Your Mule instance.</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>fileSeparator</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">character that separates components of a file path ( "/" on UNIX and "\" on Windows)</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#appobj">App</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Your Mule application.</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>host</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">fully-qualified domain name of the server</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ip</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">IP address of the server</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>locale</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">default locale (of type java.util.Locale) of the JRE (can access server.locale.language and server.locale.country)</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>javaVersion</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">JRE version</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>javaVendor</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">JRE vendor name</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nanoSeconds</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">measure of nanoseconds</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>osName</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">operating system name</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>osArch</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">operating system architecture</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>osVersion</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">operating system version</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>systemProperties</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">map of Java system properties</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>timeZone</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">default TimeZone (java.util.TimeZone) of the JRE</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>tmpDir</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">temporary directory for use by the JRE</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>userName</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">user name</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>userHome</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">user home directory</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>userDir</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">user working directory</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-center valign-top" rowspan="4"><p class="tableblock"><strong><code>mule</code></strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clusterId</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">cluster ID</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>home</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">file system path to the home directory of the mule server installation</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>nodeId</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">cluster node ID</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>version</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule version</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-center valign-top" rowspan="5"><p class="tableblock"><strong><code>app</code></strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>encoding</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">application default encoding</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">application name</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standalone</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">evaluates to true if Mule is running standalone</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>workdir</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">application work directory</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>registry</code></p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">map representing the Mule registry</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-center valign-top" rowspan="12"><p class="tableblock"><strong><code>message</code></strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">unique identifier of Mule message</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rootId</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">root ID of Mule message</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>correlationId</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>correlationSequence</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>correlationGroupSize</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>replyTo</code></p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dataType</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">data type of payload</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>payload</code></p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Mule message’s payload</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>inboundProperties</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">map representing the message’s immutable inbound properties</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>inboundAttachments</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">map representing the message’s inbound attachments</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>outboundProperties</code></p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">map representing the message’s mutable outbound properties</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>outboundAttachments</code></p></td> 
-      <td class="tableblock halign-left valign-top"></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">map representing the message’s outbound attachments</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="#messageobj">Message</a></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Mule message.</p> 
+        </div> 
+       </div></td> 
      </tr> 
     </tbody> 
    </table> 
+   <div class="paragraph"> 
+    <p>In MEL, you combine a context object with a field to form an expression. The simplest expressions take the form&nbsp;<code>contextobject.field</code>. For example, <code>#[message.inboundProperties]</code>&nbsp;is a simple expression. The sections below describe each context object and the fields to which they have access.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="serverobj"><a class="anchor" href="#serverobj"></a>Server Context Object</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 15%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Field</th> 
+       <th class="tableblock halign-left valign-top">Read-only Access</th> 
+       <th class="tableblock halign-left valign-top">Read-write Access</th> 
+       <th class="tableblock halign-left valign-top">Field Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>dateTime</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Date or time</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>env</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Environment</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>fileSeparator</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Character that separates components of a file path ( "/" on UNIX and "\" on Windows)</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>host</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Fully-qualified domain name of a server</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>ip</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>IP address of a server</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>locale</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Default locale (of type java.util.Locale) of the JRE (can access server.locale.language and server.locale.country)</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>javaVersion</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>JRE version</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>javaVendor</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>JRE vendor name</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>nanoSeconds</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Measure of nanoseconds</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>osName</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Operating system name</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>osArch</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Operating system architecture</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>osVersion</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Operating system version</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>systemProperties</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Map of Java system properties</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>timeZone</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Default TimeZone (java.util.TimeZone) of the JRE</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>tmpDir</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Temporary directory for use by the JRE</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>userName</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>User name</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>userHome</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>User home directory</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>userDir</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>User working directory</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="muleobj"><a class="anchor" href="#muleobj"></a>Mule Context Object</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 15%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Field</th> 
+       <th class="tableblock halign-left valign-top">Read-only Access</th> 
+       <th class="tableblock halign-left valign-top">Read-write Access</th> 
+       <th class="tableblock halign-left valign-top">Field Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>clusterId</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Cluster ID</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>home</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>File system path to the home directory of the Mule server installation</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>nodeId</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Cluster node ID</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>version</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Mule version</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="appobj"><a class="anchor" href="#appobj"></a>App Context Object</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 15%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Field</th> 
+       <th class="tableblock halign-left valign-top">Read-only Access</th> 
+       <th class="tableblock halign-left valign-top">Read-write Access</th> 
+       <th class="tableblock halign-left valign-top">Field Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>encoding</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Application default encoding</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>name</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Application name</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>registry</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Map representing the Mule registry</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>standalone</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Evaluates to true if Mule is running standalone</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>workdir</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Application work directory</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="messageobj"><a class="anchor" href="#messageobj"></a>Message Context Object</h4> 
+    <table class="tableblock frame-all grid-all spread"> 
+     <colgroup> 
+      <col style="width: 15%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 15%;"> 
+      <col style="width: 55%;"> 
+     </colgroup> 
+     <thead> 
+      <tr> 
+       <th class="tableblock halign-left valign-top">Field</th> 
+       <th class="tableblock halign-left valign-top">Read-only Access</th> 
+       <th class="tableblock halign-left valign-top">Read-write Access</th> 
+       <th class="tableblock halign-left valign-top">Field Description</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>id</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Unique identifier of Mule message</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>rootId</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Root ID of Mule message</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>correlationId</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Correlation ID</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>correlationSequence</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Correlation sequence</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>correlationGroupSize</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Correlation group size</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>replyTo</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Reply to</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>dataType</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Data type of payload</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>payload</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Mule message payload</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>inboundProperties</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Map representing the message’s immutable inbound properties</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>inboundAttachments</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Map representing the message’s inbound attachments</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>outboundProperties</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Map representing the message’s mutable outbound properties</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+      <tr> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p><code>outboundAttachments</code></p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div></div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>x</p> 
+         </div> 
+        </div></td> 
+       <td class="tableblock halign-left valign-top"> 
+        <div> 
+         <div class="paragraph"> 
+          <p>Map representing the message’s outbound attachments</p> 
+         </div> 
+        </div></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="variables"><a class="anchor" href="#variables"></a>Variables</h3> 
@@ -1177,8 +1929,8 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p><strong><code>flowVars</code></strong>&nbsp;retain their values as control passes from one message processor to another within a single flow. Thus, you can set them in one message processor, then access them in another message processor using a MEL expression.</p> </li> 
-     <li> <p><strong><code>sessionVars</code></strong>&nbsp;that retain their values as control passes from one flow to another within an application. Thus, you can set them in one flow, then access them in another using a MEL expression.</p> </li> 
+     <li> <p><code>flowVars</code>&nbsp;- Retain their values as control passes from one message processor to another within a single flow. Thus, you can set them in one message processor, then access them in another message processor using a MEL expression.</p> </li> 
+     <li> <p><code>sessionVars</code> - Retain their values as control passes from one flow to another within an application. Thus, you can set them in one flow, and access them in another using a MEL expression.</p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
@@ -1186,17 +1938,7 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>#[flowVars.foo = sessionVars.bar]</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="code">#[flowVars.foo = sessionVars.bar]</code></pre> 
     </div> 
    </div> 
    <div class="admonitionblock tip"> 
@@ -1209,28 +1951,18 @@
          <p><strong>Shortcut</strong></p> 
         </div> 
         <div class="paragraph"> 
-         <p>As a shortcut, you can eliminate the <code>flowVars</code> in your expression simply use the variable name in a MEL expression. The example above could be written as follows:</p> 
+         <p>As a shortcut, you can eliminate the <code>flowVars</code> in your expression and simply use the variable name in a MEL expression. The example above could be rewritten as follows:</p> 
         </div> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="code">
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre>#[foo = bar]</pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
+          <pre class="CodeRay highlight"><code data-lang="code">#[foo = bar]</code></pre> 
          </div> 
         </div> 
         <div class="paragraph"> 
          <p>Mule assumes that it is a <code>flowVars</code> and, when MEL evaluates the expression, looks for a variable by that name. If Mule cannot find a <code>flowVars</code> by that name, it looks for a `sessionVars `by that name before failing.</p> 
         </div> 
         <div class="paragraph"> 
-         <p>If you wish to disable this auto-resolution of variables by name, include the following configuration xml configuration file:</p> 
+         <p>If you wish to disable this auto-resolution of variables by name, include the following configuration XML configuration file:</p> 
         </div> 
         <div class="listingblock"> 
          <div class="content"> 
@@ -1244,7 +1976,7 @@
 3
 </pre></td> 
                <td class="code"><pre><span class="tag">&lt;configuration&gt;</span>
-        <span class="tag">&lt;expression-language</span> <span class="attribute-name">autoResolveVariables</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;expression-language</span> <span class="attribute-name">autoResolveVariables</span>=<span class="string"><span class="delimiter">"</span><span class="content">false</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 <span class="tag">&lt;/configuration&gt;</span></pre></td> 
               </tr> 
              </tbody> 
@@ -1268,17 +2000,7 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-</pre></td> 
-           <td class="code"><pre>#[message.payload.item]</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="code">#[message.payload.item]</code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1289,17 +2011,7 @@
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="code">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-</pre></td> 
-           <td class="code"><pre>#[contextObject.?fieldA.objectB]</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
+      <pre class="CodeRay highlight"><code data-lang="code">#[contextObject.?fieldA.objectB]</code></pre> 
      </div> 
     </div> 
    </div> 
@@ -1357,93 +2069,47 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="xpath-and-regex"><a class="anchor" href="#xpath-and-regex"></a>Xpath and Regex</h2> 
+ <h2 id="xpath-and-regex"><a class="anchor" href="#xpath-and-regex"></a>XPath and Regex</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>A MEL expression in Mule always resolves to a single value. You can use&nbsp;<strong>xpath3</strong> and <strong>regex</strong>&nbsp;functions to extract information which doesn’t already exist as a single value.&nbsp;</p> 
   </div> 
-  <div class="sect3"> 
-   <h4 id="xpath"><a class="anchor" href="#xpath"></a>Xpath</h4> 
+  <div class="sect2"> 
+   <h3 id="xpath"><a class="anchor" href="#xpath"></a>XPath</h3> 
    <div class="paragraph"> 
-    <p><a href="http://www.w3.org/TR/xpath/">Xpath</a> is a language for addressing parts of an XML document. The MEL <strong>xpath3</strong> function allows you to evaluate XPath expressions.&nbsp;</p> 
+    <p><a href="http://www.w3.org/TR/xpath/">XPath</a> is a language for addressing parts of an XML document. The MEL <strong>xpath3</strong> function allows you to evaluate XPath expressions.&nbsp;</p> 
    </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-     <col style="width: %;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Structure</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-      <th class="tableblock halign-left valign-top">Example</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[xpath3(xPathExpression)]</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Applies the XPath expression to the message payload (an XML document) and returns the specified content. The example returns the first order from the message payload.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xpath3('/orders/order[0]')</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[xpath3(xPathExpression, xmlElement)]</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Applies the XPath expression to the XML element specified by the MEL expression appearing as the second argument, and returns the specified content. The example returns the first order from the order element in the current message’s inbound attachment map.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>xpath3('/orders/order[0]', message.inboundAttachments.order)</code></p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><code>#[xpath3(xPathExpression)]</code><br> Applies the XPath expression to the message payload (an XML document) and returns the specified content. The example returns the first order from the message payload.<br> <strong>Example</strong>: <code>xpath3('/orders/order[0]')</code></p> </li> 
+     <li> <p><code>#[xpath3(xPathExpression, xmlElement)]</code><br> Applies the XPath expression to the XML element specified by the MEL expression appearing as the second argument, and returns the specified content. The example returns the first order from the order element in the current message’s inbound attachment map.<br> <strong>Example</strong>: <code>xpath3('/orders/order[0]', message.inboundAttachments.order)</code></p> </li> 
+    </ul> 
+   </div> 
   </div> 
-  <div class="sect3"> 
-   <h4 id="regex"><a class="anchor" href="#regex"></a>Regex</h4> 
+  <div class="sect2"> 
+   <h3 id="regex"><a class="anchor" href="#regex"></a>Regex</h3> 
    <div class="paragraph"> 
     <p>Regular expressions provide a means of specifying patterns to look for in a stream of text, and actions to take upon the patterns when found.&nbsp;The regex function enables you to use regular expressions from within MEL.&nbsp;Regular expressions in MEL use the syntax recognized by the <code>java.util.regex</code> package.&nbsp;</p> 
    </div> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Structure</th> 
-      <th class="tableblock halign-left valign-top">Description</th> 
-      <th class="tableblock halign-left valign-top">Example</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[regex(regularExpression)]</code></p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Applies the regular expression to the message payload. MEL processes as follows:<br></p> 
-        </div> 
-        <div class="olist arabic"> 
-         <ol class="arabic"> 
-          <li> <p>Creates a <code>java.util.regex.Matcher</code> using a compiled version of the regular expression and a string representing the payload.</p> </li> 
-          <li> <p>If there are no matches, return null.<br> Else if there is one match, return the match.&nbsp;<br> Else if there are multiple matches, return matches in an array.</p> </li> 
-         </ol> 
-        </div> 
-        <div class="paragraph"> 
-         <p>The example returns all lines of the payload that begin with To:, From:, or Cc:</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">regex('^(To|From|Cc):')</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[regex(regularExpression, melExpression)]</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Applies the regular expression to the value of the MEL expression, rather than the payload. Any string-valued MEL expression can appear as the second argument, using the same process as described above.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[regex(regularExpression, melExpression,&nbsp;matchFlags)]</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Applies the regular expression to the value of the MEL expression, but uses the&nbsp;<code>matchFlags</code>&nbsp;bit mask as described in the Java documentation for <code>java.util.regex.Pattern</code>.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">&nbsp;</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><code>#[regex(regularExpression)]</code><br> Applies the regular expression to the message payload. MEL processes as follows:</p> 
+      <div class="olist arabic"> 
+       <ol class="arabic"> 
+        <li> <p>Creates a <code>java.util.regex.Matcher</code> using a compiled version of the regular expression and a string representing the payload.</p> </li> 
+        <li> <p>If there are no matches, return null.<br> Else if there is one match, return the match.&nbsp;<br> Else if there are multiple matches, return matches in an array.</p> 
+         <div class="paragraph"> 
+          <p>The example returns all lines of the payload that begin with To:, From:, or Cc:</p> 
+         </div> 
+         <div class="paragraph"> 
+          <p>Example: <code>regex('^(To\|From\|Cc):')</code></p> 
+         </div> </li> 
+       </ol> 
+      </div> </li> 
+     <li> <p><code>#[regex(regularExpression, melExpression)]</code><br> Applies the regular expression to the value of the MEL expression, rather than the payload. Any string-valued MEL expression can appear as the second argument, using the same process as described above.</p> </li> 
+     <li> <p><code>#[regex(regularExpression, melExpression,&nbsp;matchFlags)]</code> + Applies the regular expression to the value of the MEL expression, but uses the&nbsp;<code>matchFlags</code>&nbsp;bit mask as described in the Java documentation for <code>java.util.regex.Pattern</code>.</p> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1453,34 +2119,41 @@
   <div class="paragraph"> 
    <p>MEL operators follow standard Java syntax, but operands are evaluated by value, not by reference. For example, <code>'A' == 'A'</code> evaluates to true in MEL, whereas the same expression evaluates to false in Java.</p> 
   </div> 
-  <div class="sect3"> 
-   <h4 id="arithmetic-operators"><a class="anchor" href="#arithmetic-operators"></a>Arithmetic Operators</h4> 
+  <div class="sect2"> 
+   <h3 id="arithmetic-operators"><a class="anchor" href="#arithmetic-operators"></a>Arithmetic Operators</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
+     <col style="width: 12%;"> 
+     <col style="width: 31%;"> 
+     <col style="width: 37%;"> 
+     <col style="width: 18%;"> 
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-top"><strong>Symbol</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>Definition</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>Example</strong></th> 
+      <th class="tableblock halign-left valign-top">Symbol</th> 
+      <th class="tableblock halign-left valign-top">Definition</th> 
+      <th class="tableblock halign-left valign-top">Example</th> 
       <th class="tableblock halign-left valign-top">Return Value</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>+</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Plus. For numbers, the value is the sum of the values of the operands. For strings, the value is the string formed by concatenating the values of the operands.</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>`#[2 + 4] `</p> 
+         <p><strong>+</strong></p> 
         </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
         <div class="paragraph"> 
-         <p><code>#['fu' + 'bar']</code></p> 
+         <p>Plus. For numbers, the value is the sum of the values of the operands.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[2 + 4]</code></p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1488,236 +2161,496 @@
         <div class="paragraph"> 
          <p><code>6</code></p> 
         </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
         <div class="paragraph"> 
-         <p>The string` "fubar"`</p> 
+         <p>For strings, the value is the string formed by concatenating the values of the operands.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#['fu' + 'bar']</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>The string <code>"fubar"</code></p> 
         </div> 
        </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>-</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Minus. The value is the value of the first operand minus the value of the second.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[`2 - 4]<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">` -2`</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>-</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Minus. The value is the value of the first operand minus the value of the second.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[2 - 4]</code><br></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>-2</code></p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>/</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Over. The value is the value of the first operand divided by the value of the second.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[`2 / 4</code>]`</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0.5</code></p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>/</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Over. The value is the value of the first operand divided by the value of the second.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[2 / 4]</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>0.5</code></p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>*</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Times. The value is the product of the values of the operands.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[`2 * 4]<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">` 8`</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>*</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Times. The value is the product of the values of the operands.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[2 * 4]</code><br></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>8</code></p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>%</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Modulo. The value is the remainder after dividing the value of the first operand by the value of the second.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[`9 % 4]<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">` 1`</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>%</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Modulo. The value is the remainder after dividing the value of the first operand by the value of the second.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[9 % 4]</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>1</code></p> 
+        </div> 
+       </div></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
-  <div class="sect3"> 
-   <h4 id="comparison-operators"><a class="anchor" href="#comparison-operators"></a>Comparison Operators</h4> 
+  <div class="sect2"> 
+   <h3 id="comparison-operators"><a class="anchor" href="#comparison-operators"></a>Comparison Operators</h3> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
+     <col style="width: 15%;"> 
+     <col style="width: 50%;"> 
      <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
+     <col style="width: 10%;"> 
     </colgroup> 
     <thead> 
      <tr> 
-      <th class="tableblock halign-left valign-top"><strong>Symbol</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>Definition</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>Example</strong></th> 
+      <th class="tableblock halign-left valign-top">Symbol</th> 
+      <th class="tableblock halign-left valign-top">Definition</th> 
+      <th class="tableblock halign-left valign-top">Example</th> 
       <th class="tableblock halign-left valign-top">Return Value</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>==</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Equal. True if and only if the values of the operands are equal.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[’A' == 'A']<br> <br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>!=</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Not equal. True if the values of the operands are unequal.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[’A' != 'B']<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&gt;</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Greater than. True if the value on the left is greater than the value on the right.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[`7 &gt; 5]<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&lt;</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Less than. True if the value on the left is less than the value on the right</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[`5 &lt; 5]<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&gt;=</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Greater than or equal. True if the value on the left is greater than or equal to the value on the right.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[`5 &gt;= 7]<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>⇐</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Less than or equal. True if the value on the left is less than or equal to the value on the right.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[`5 ⇐ 5]<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>contains</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Contains. True if the string on the right is a substring of the string on the left.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[’fubar' contains 'bar']<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>is, instance of</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Is an instance of. True if the object on the left is an instance of the class on the right.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[’fubar' is String]<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>strsim</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Degree of similarity. The value of the expression is a number between 0 and 1 representing the degree of similarity between the two string arguments.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code><mark>[’foo' strsim 'foo']<br> 1.0<br> `</mark>[</code>‘foobar’ strsim ‘foo’<code>]</code><br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0.5</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>soundslike</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Sounds like. True if the two string arguments sound alike according to a Soundex comparison.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[’Robert' soundslike 'Rupert']<br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Wildcard</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Matches a value (the message palyoad, by default) against a wildcard pattern, these use the metacharacters '?' to represent any single character and '*' for a repetition of any character. It’s case sensitive by default. See more</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[wildcard('Hello*')]</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect3"> 
-   <h4 id="logical-operators"><a class="anchor" href="#logical-operators"></a>Logical Operators</h4> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top"><strong>Symbol</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>Definition</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>Example</strong></th> 
-      <th class="tableblock halign-left valign-top">Value</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&amp;&amp;</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Logical AND. True if both operands are true. (Do not use <strong>and</strong>.)</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[</code>(a == b) &amp;&amp; (c != d)]</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code> if a =b and c ≠ d</p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>||</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Logical OR. True if at least one operand is true.</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">`#[`true ||anything ]<br> <br></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">always <code>true</code></p></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>or</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Chained OR. Scans left to right and returns the value of the first non-empty item</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>#[payload.address or 'No address'</code>]</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">either the address stored as an object on the payload, or the string 'No address'</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect3"> 
-   <h4 id="ternary-condition-operators"><a class="anchor" href="#ternary-condition-operators"></a>Ternary Condition Operators</h4> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-     <col style="width: 25%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top">Structure</th> 
-      <th class="tableblock halign-left valign-top">Definition</th> 
-      <th class="tableblock halign-left valign-top">Example</th> 
-      <th class="tableblock halign-left valign-top">Value</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre>condition ? true value : false value</pre> 
-         </div> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Conditional operand (ternary statement)</p></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre>#[lastname = (name == 'Smith') ? 'Smith' : 'Unknown']</pre> 
-         </div> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Sets the value of variable&nbsp;<code>lastname</code>&nbsp;to the string “Smith” if the value of name is “Smith”. It sets the value of the variable to the string “Unknown” if the value of name is not “Smith”.</p></td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="sect3"> 
-   <h4 id="line-delimiters"><a class="anchor" href="#line-delimiters"></a>Line Delimiters</h4> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 34%;"> 
-     <col style="width: 33%;"> 
-     <col style="width: 33%;"> 
-    </colgroup> 
-    <thead> 
-     <tr> 
-      <th class="tableblock halign-left valign-top"><strong>Symbol</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>Definition</strong></th> 
-      <th class="tableblock halign-left valign-top"><strong>Example</strong></th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>;</strong></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">You can write multi-line expressions, each line must be delimited by a ;</p></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><code>#[calendar = Calendar.getInstance();</code></p> 
+         <p><strong>==</strong></p> 
         </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
         <div class="paragraph"> 
-         <p><code>message.payload = ``new</code> <code>org.mule.el.datetime.DateTime(calendar);]</code></p> 
+         <p>Equal. True if and only if the values of the operands are equal.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#['A' == 'A']</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>true</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>!=</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Not equal. True if the values of the operands are unequal.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#['A' != 'B']</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>true</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>&gt;</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Greater than. True if the value on the left is greater than the value on the right.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[7 &gt; 5]</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>true</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>&lt;</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Less than. True if the value on the left is less than the value on the right</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[5 &lt; 5]</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>false</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>&gt;=</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Greater than or equal. True if the value on the left is greater than or equal to the value on the right.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[5 &gt;= 7]</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>false</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>⇐</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Less than or equal. True if the value on the left is less than or equal to the value on the right.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[5 ⇐ 5]</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>true</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>contains</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Contains. True if the string on the right is a substring of the string on the left.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#['fubar' contains 'bar']</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>true</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>is, instance of</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Is an instance of. True if the object on the left is an instance of the class on the right.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#['fubar' is String]</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>true</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>strsim</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Degree of similarity. The value of the expression is a number between 0 and 1 representing the degree of similarity between the two string arguments.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code><mark>['foo' strsim 'foo'] + 1.0</mark></code><br> <code>[‘foobar’ strsim ‘foo’]</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>0.5</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>soundslike</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Sounds like. True if the two string arguments sound alike according to a Soundex comparison.</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#['Robert' soundslike 'Rupert']</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>true</code></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><strong>Wildcard</strong></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Matches a value (the message payload, by default) against a wildcard pattern, these use the metacharacters '?' to represent any single character and '*' for a repetition of any character. It is case sensitive by default. See more</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>#[wildcard('Hello*')]</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>true</code></p> 
         </div> 
        </div></td> 
      </tr> 
     </tbody> 
    </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="logical-operators"><a class="anchor" href="#logical-operators"></a>Logical Operators</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><strong>&amp;&amp;</strong> - Logical AND. True if both operands are true. (Do not use <strong>and</strong>.)<br> Example: <code>#[(a == b) &amp;&amp; (c != d)]</code><br> Result: True if a = b and c ≠ d</p> </li> 
+     <li> <p><strong>||</strong> - Logical OR. True if at least one operand is true.<br> Example: <code>#[true || anything ]</code><br> Result: Always <code>true</code></p> </li> 
+     <li> <p><strong>or</strong> - Chained OR. Scans left to right and returns the value of the first non-empty item.<br> Example: <code>#[payload.address or 'No address']</code><br> Result: Either the address stored as an object on the payload, or the string 'No address'.</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="ternary-condition-operator"><a class="anchor" href="#ternary-condition-operator"></a>Ternary Condition Operator</h3> 
+   <div class="paragraph"> 
+    <p>Conditional operand (ternary statement):<br> <code>condition ? true value : false value</code></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Example:<br> <code>#[lastname = (name == 'Smith') ? 'Smith' : 'Unknown']</code><br></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Sets the value of variable&nbsp;<code>lastname</code>&nbsp;to the string <code>Smith</code> if the value of name is <code>Smith</code>. Sets the value of the variable to the string <code>Unknown</code> if the value of name is not <code>Smith</code>.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="line-delimiter"><a class="anchor" href="#line-delimiter"></a>Line Delimiter</h3> 
+   <div class="paragraph"> 
+    <p>Symbol: Semicolon (<strong>;</strong>)</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>You can write multi-line expressions, each line must be delimited by a ;</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Example:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="code">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre>#[calendar = Calendar.getInstance();
+
+message.payload = new org.mule.el.datetime.DateTime(calendar);]</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1725,10 +2658,10 @@
  <h2 id="literals"><a class="anchor" href="#literals"></a>Literals</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Literals in MEL can be strings, numbers, Boolean values, types, and nulls. The <a href="#Maps">Lists, and Arrays</a> section shows how you can provide data structures as literals as well.</p> 
+   <p>Literals in MEL can be strings, numbers, Boolean values, types, and nulls. The <a href="#mapslistsarrays">Maps, Lists, and Arrays</a> section shows how you can provide data structures as literals as well.</p> 
   </div> 
-  <div class="sect3"> 
-   <h4 id="numeric-literals"><a class="anchor" href="#numeric-literals"></a>Numeric Literals</h4> 
+  <div class="sect2"> 
+   <h3 id="numeric-literals"><a class="anchor" href="#numeric-literals"></a>Numeric Literals</h3> 
    <div class="paragraph"> 
     <p>Numeric literals are integers and floating point numbers, with the same ranges of values as the underlying Java system.</p> 
    </div> 
@@ -1740,7 +2673,7 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>` d` to represent double</p> </li> 
+     <li> <p><code>d</code> to represent double</p> </li> 
      <li> <p><code>f</code> to represent float</p> </li> 
      <li> <p><code>B</code> to represent BigDecimal.</p> </li> 
     </ul> 
@@ -1750,24 +2683,24 @@
    </div> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>` 255`</p> </li> 
+     <li> <p><code>255</code></p> </li> 
      <li> <p><code>0377</code></p> </li> 
-     <li> <p><code>0xff&nbsp;</code></p> </li> 
-     <li> <p><code>3.14159&nbsp;</code></p> </li> 
+     <li> <p><code>0xff</code></p> </li> 
+     <li> <p><code>3.14159</code></p> </li> 
      <li> <p><code>3.14159f</code></p> </li> 
-     <li> <p><code>3.14159265358979d&nbsp;</code></p> </li> 
+     <li> <p><code>3.14159265358979d</code></p> </li> 
     </ul> 
    </div> 
   </div> 
-  <div class="sect3"> 
-   <h4 id="string-literals"><a class="anchor" href="#string-literals"></a>String Literals</h4> 
+  <div class="sect2"> 
+   <h3 id="string-literals"><a class="anchor" href="#string-literals"></a>String Literals</h3> 
    <div class="paragraph"> 
     <p>String literals are sequences of characters enclosed in single quotes.&nbsp;Within String literals you can use the following escape sequences to represent non-printable characters, Unicode characters, and the escape character.</p> 
    </div> 
    <table class="tableblock frame-all grid-all spread"> 
     <colgroup> 
-     <col style="width: 50%;"> 
-     <col style="width: 50%;"> 
+     <col style="width: 20%;"> 
+     <col style="width: 80%;"> 
     </colgroup> 
     <thead> 
      <tr> 
@@ -1777,24 +2710,74 @@
     </thead> 
     <tbody> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>\ \</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">\</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>\ \</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>\</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>\n</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Newline character</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>\n</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Newline character</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>\r</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Return character</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>\r</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Return character</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>\xxx</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">ASCII character represented by the octal number xxx</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>\xxx</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>ASCII character represented by the octal number xxx</p> 
+        </div> 
+       </div></td> 
      </tr> 
      <tr> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock"><code>\uyyyy</code></p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">Unicode character represented by the hexadecimal number yyyy</p></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><code>\uyyyy</code></p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Unicode character represented by the hexadecimal number yyyy</p> 
+        </div> 
+       </div></td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1809,33 +2792,33 @@
         </div> 
         <div class="ulist"> 
          <ul> 
-          <li> <p>use single quotes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<code>'expression'</code>)</p> </li> 
-          <li> <p>escape quotes with "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<code>"expression"</code>)</p> </li> 
-          <li> <p>escape quotes with \u0027&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<code>\u0027expression\u0027</code>)</p> </li> 
+          <li> <p>Use single quotes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<code>'expression'</code>)</p> </li> 
+          <li> <p>Escape quotes with "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<code>"expression"</code>)</p> </li> 
+          <li> <p>Escape quotes with \u0027&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<code>\u0027expression\u0027</code>)</p> </li> 
          </ul> 
         </div> 
         <div class="paragraph"> 
-         <p>If you’re writing on Studio’s visual editor, double quotes will be transformed into escaped quotes` ("`) in the XML view.</p> 
+         <p>If you’re writing on Studio’s visual editor, double quotes transform into escaped quotes (<code>"</code>) in the XML view.</p> 
         </div> </td> 
       </tr> 
      </tbody> 
     </table> 
    </div> 
   </div> 
-  <div class="sect3"> 
-   <h4 id="boolean-literals"><a class="anchor" href="#boolean-literals"></a>Boolean Literals</h4> 
+  <div class="sect2"> 
+   <h3 id="boolean-literals"><a class="anchor" href="#boolean-literals"></a>Boolean Literals</h3> 
    <div class="paragraph"> 
     <p>Boolean literals are the values <code>true</code> and <code>false</code>. These are case sensitive.</p> 
    </div> 
   </div> 
-  <div class="sect3"> 
-   <h4 id="null-literals"><a class="anchor" href="#null-literals"></a>Null Literals</h4> 
+  <div class="sect2"> 
+   <h3 id="null-literals"><a class="anchor" href="#null-literals"></a>Null Literals</h3> 
    <div class="paragraph"> 
     <p>A null literal takes the form <code>null</code> or <code>nil</code>. These are case sensitive.</p> 
    </div> 
   </div> 
-  <div class="sect3"> 
-   <h4 id="type-literals"><a class="anchor" href="#type-literals"></a>Type Literals</h4> 
+  <div class="sect2"> 
+   <h3 id="type-literals"><a class="anchor" href="#type-literals"></a>Type Literals</h3> 
    <div class="paragraph"> 
     <p>You can refer to any Java class by its fully qualified name or if it is one of the classes in the automatically-imported Java classes, by its unqualified name. References use the same dot notation as in Java, except that you must use <code>$</code> rather than a dot to refer to a nested class.</p> 
    </div> 
@@ -1861,7 +2844,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="maps-lists-and-arrays"><a class="anchor" href="#maps-lists-and-arrays"></a>Maps, Lists, and Arrays</h2> 
+ <h2 id="mapslistsarrays"><a class="anchor" href="#mapslistsarrays"></a>Maps, Lists, and Arrays</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>Mule Expression Language&nbsp;uses a convenient syntax for maps and other data structures.&nbsp;Rather than constructing a map, list or array with a new statement, and then using its put method to populate it, you can simply them inline within an expression (see examples below). Use this literal form wherever you would otherwise use a map by name, including as a method argument.&nbsp;</p> 
@@ -1899,17 +2882,7 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>#[message.inboundProperties['foo']]</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="code">#[message.inboundProperties['foo']]</code></pre> 
     </div> 
    </div> 
    <div class="admonitionblock tip"> 
@@ -1926,17 +2899,7 @@
         </div> 
         <div class="listingblock"> 
          <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="code">
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-</pre></td> 
-               <td class="code"><pre>#[message.inboundProperties.foo]</pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
+          <pre class="CodeRay highlight"><code data-lang="code">#[message.inboundProperties.foo]</code></pre> 
          </div> 
         </div> 
         <div class="paragraph"> 
@@ -1951,17 +2914,7 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>#[message.outboundProperties['key'] ='value']</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="code">#[message.outboundProperties['key'] ='value']</code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
@@ -1969,17 +2922,7 @@
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="code">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-</pre></td> 
-          <td class="code"><pre>#[message.outboundProperties.remove('key')]</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
+     <pre class="CodeRay highlight"><code data-lang="code">#[message.outboundProperties.remove('key')]</code></pre> 
     </div> 
    </div> 
   </div> 
@@ -2088,7 +3031,7 @@ wildcard("*world",message.inboundProperties['foo'], true) // returns true</pre><
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#context-objects-variables-and-fields">Context Objects, Variables, and Fields</a></li><li><a class="scroll-menu-link" href="#xpath-and-regex">Xpath and Regex</a></li><li><a class="scroll-menu-link" href="#operators">Operators</a></li><li><a class="scroll-menu-link" href="#literals">Literals</a></li><li><a class="scroll-menu-link" href="#maps-lists-and-arrays">Maps, Lists, and Arrays</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#context-objects-variables-and-fields">Context Objects, Variables, and Fields</a></li><li><a class="scroll-menu-link" href="#xpath-and-regex">XPath and Regex</a></li><li><a class="scroll-menu-link" href="#operators">Operators</a></li><li><a class="scroll-menu-link" href="#literals">Literals</a></li><li><a class="scroll-menu-link" href="#mapslistsarrays">Maps, Lists, and Arrays</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

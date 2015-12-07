@@ -1111,7 +1111,7 @@
  <h2 id="regex-support"><a class="anchor" href="#regex-support"></a>Regex Support</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Regular expression helper functions retrieve <code>null</code>, a single value or an array of values, depending on matches. The forms that take a melExpression argument apply the regex to the result of its evaluation instead of <code>message.payload</code>.</p> 
+   <p>Regular expression helper functions retrieve <code>null</code>, a single value or an array of values, depending on matches. The forms that take a melExpression argument apply the regex to the result of its evaluation instead of <code>message.payload</code>. For more information, see <a href="/mule-user-guide/v/3.7/mule-expression-language-reference#regex">MEL Regex</a>.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1132,7 +1132,7 @@
  <h2 id="xpath3-support"><a class="anchor" href="#xpath3-support"></a>XPath3 Support</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>XPath3 helper functions return DOM4J nodes. By default the XPath3 expression is evaluated on message.payload unless an xmlElement is specified:</p> 
+   <p>XPath3 helper functions can return a DOM Node, or collection of DOM Nodes, or text. For more information, see <a href="/mule-user-guide/v/3.7/xpath">XPath</a> and mule-expression-language-reference#xpath[MEL XPath] By default the XPath3 expression is evaluated on message.payload unless an xmlElement is specified:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -1256,7 +1256,7 @@
  <h2 id="global-configuration"><a class="anchor" href="#global-configuration"></a>Global Configuration</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Define global imports, aliases and global functions in the global configuration element. Global functions can be loaded from the file system, a URL, or a classpath resource (see extraFunctions.mvel below). Flow variables auto-binding can be turned off via the autoResolveVariables attribute.</p> 
+   <p>Define global imports, aliases and global functions in the global configuration element. Global functions can be loaded from the file system, a URL, or a classpath resource (see extraFunctions.mvel in line 6 below). Flow variables auto-binding can be turned off via the autoResolveVariables attribute in line 2.</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
