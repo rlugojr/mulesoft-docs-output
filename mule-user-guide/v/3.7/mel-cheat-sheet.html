@@ -1018,51 +1018,13 @@
       </table></code></pre> 
    </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>Set the username and password for an HTTP endpoint at runtime based on inbound message properties:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;https:outbound-endpoint</span> <span class="attribute-name">address</span>=<span class="string"><span class="delimiter">"</span><span class="content">https://#[message.inboundProperties.username]:&nbsp;&nbsp;&nbsp;&nbsp; #[message.inboundProperties.password]@api.acme.com/v1/users</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="flow-and-session-variables"><a class="anchor" href="#flow-and-session-variables"></a>Flow and Session Variables</h2> 
+ <h2 id="flow-variables"><a class="anchor" href="#flow-variables"></a>Flow Variables</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Flow variables are available in the flowVars context or directly as top level variables (unless autoResolveVariables is false or their name violates the MVEL naming conventions). Session variables are available in the sessionVars context.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>To create a session variable named sessionId whose value is the concatenation of the current message ID, "@" and the Mule instance node ID, use either set-session-variable or MEL code, both shown hereafter:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-2
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;set-session-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">sessionId</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.id+'@'+mule.nodeId]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;expression-component&gt;</span>sessionVars.sessionId = message.id+'@'+mule.nodeId;<span class="tag">&lt;/expression-component&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
+   <p>Flow variables are available in the flowVars context or directly as top level variables (unless autoResolveVariables is false or their name violates the MVEL naming conventions).</p> 
   </div> 
   <div class="paragraph"> 
    <p>The following shows how a bean can be dynamically retrieved from the registry, based on a name created by taking a value from a bean payload with a getTargetService() accessor:</p> 
@@ -1103,7 +1065,7 @@
 2
 </pre></td> 
          <td class="code"><pre><span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">originalPayload</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.payload]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[originalPayload]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars['originalPayload']]</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1167,14 +1129,14 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="xpath-support"><a class="anchor" href="#xpath-support"></a>XPath Support</h2> 
+ <h2 id="xpath3-support"><a class="anchor" href="#xpath3-support"></a>XPath3 Support</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>XPath helper functions return DOM4J nodes. By default the XPath expression is evaluated on message.payload unless an xmlElement is specified:</p> 
+   <p>XPath3 helper functions return DOM4J nodes. By default the XPath3 expression is evaluated on message.payload unless an xmlElement is specified:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">xpath(xPathExpression [, xmlElement])</code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">xpath3(xPathExpression [, xmlElement])</code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -1190,8 +1152,8 @@
          <td class="line-numbers"><pre>1
 2
 </pre></td> 
-         <td class="code"><pre>#[xpath('//title').text]
-#[xpath('//title/@id').value]</pre></td> 
+         <td class="code"><pre>#[xpath3('//title').text]
+#[xpath3('//title/@id').value]</pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1230,7 +1192,7 @@
  <h2 id="more-mvel-goodness"><a class="anchor" href="#more-mvel-goodness"></a>More MVEL Goodness</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Quick access to the MVEL 2.0 Documentation: <a href="http://goo.gl/AjceB" class="bare">http://goo.gl/AjceB</a></p> 
+   <p>Quick access to the MVEL 2.0 Documentation: <a href="https://github.com/mvel/mvel">MVEL in Git</a> and <a href="https://en.wikisource.org/wiki/MVEL_Language_Guide">MVEL Wikisource</a>.</p> 
   </div> 
   <div class="paragraph"> 
    <p><em>Java interoperability</em>, for example to create a random UUID and use it as an XSL-T parameter:</p> 
@@ -1351,7 +1313,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#server-mule-application-and-message-variables">Server, Mule, Application, and Message Variables</a></li><li><a class="scroll-menu-link" href="#flow-and-session-variables">Flow and Session Variables</a></li><li><a class="scroll-menu-link" href="#payload-and-attachments">Payload and Attachments</a></li><li><a class="scroll-menu-link" href="#regex-support">Regex Support</a></li><li><a class="scroll-menu-link" href="#xpath-support">XPath Support</a></li><li><a class="scroll-menu-link" href="#json-processing">JSON Processing</a></li><li><a class="scroll-menu-link" href="#more-mvel-goodness">More MVEL Goodness</a></li><li><a class="scroll-menu-link" href="#global-configuration">Global Configuration</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#server-mule-application-and-message-variables">Server, Mule, Application, and Message Variables</a></li><li><a class="scroll-menu-link" href="#flow-variables">Flow Variables</a></li><li><a class="scroll-menu-link" href="#payload-and-attachments">Payload and Attachments</a></li><li><a class="scroll-menu-link" href="#regex-support">Regex Support</a></li><li><a class="scroll-menu-link" href="#xpath3-support">XPath3 Support</a></li><li><a class="scroll-menu-link" href="#json-processing">JSON Processing</a></li><li><a class="scroll-menu-link" href="#more-mvel-goodness">More MVEL Goodness</a></li><li><a class="scroll-menu-link" href="#global-configuration">Global Configuration</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
