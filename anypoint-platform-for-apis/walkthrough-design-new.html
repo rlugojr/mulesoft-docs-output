@@ -956,7 +956,7 @@
  <h2 id="the-api-designer"><a class="anchor" href="#the-api-designer"></a>The API Designer</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>While you <em>may</em> write your RAML file in any text editor, we recommend you check out the API Designer. The web-based API Designer allows you to design your API quickly, efficiently, and consistently. API Designer consists of a RAML editor with an embedded RAML API console, and proactively provides suggestions, error feedback, and a built in live testing environment.<br></p> 
+   <p>While you <em>may</em> write your RAML file in any text editor, we recommend you check out the API Designer. The web-based API Designer allows you to design your API quickly, efficiently, and consistently. API Designer consists of a RAML editor with an embedded RAML API console, and proactively provides suggestions, error feedback, and a built in live testing environment.</p> 
   </div> 
  </div> 
 </div> 
@@ -991,10 +991,8 @@
           </tbody> 
          </table></code></pre> 
       </div> 
-     </div> 
-     <div class="paragraph"> 
-      <p>At this time, also add a placeholder for a baseUri. &nbsp;The placeholder helps you visualize what your final URL looks like with resources appended to it. The placeholder is useful when you test your newly-designed API.&nbsp;</p> 
-     </div> 
+     </div> </li> 
+    <li> <p>At this time, also add a placeholder for a <code>baseUri</code>. &nbsp;This placeholder helps you visualize what your final URL looks like with resources appended to it. This placeholder is useful when you test your newly-designed API.&nbsp;Specify <code>baseUri</code> as: <code><a href="http://www.tshirt.com/api" class="bare">http://www.tshirt.com/api</a></code></p> 
      <div class="listingblock"> 
       <div class="content"> 
        <pre class="CodeRay highlight"><code data-lang="yaml">
@@ -1034,10 +1032,38 @@
         </div> 
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/new+resource.png" alt="new+resource"></span></p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>The lines you need to add using the Shelf’s &gt; <strong>Resources</strong> &gt; <strong>New Resource</strong> are:</p> 
+        </div> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="yaml">
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td> 
+               <td class="code"><pre><span class="key">/products</span>:
+<span class="error">&nbsp;&nbsp;displayName</span>: <span class="error">Products</span>
+<span class="key">/orders</span>:
+<span class="error">&nbsp;&nbsp;displayName</span>: <span class="error">Orders</span>
+<span class="error">&nbsp;&nbsp;/{orderId}/status</span>:
+<span class="error">&nbsp;&nbsp;&nbsp;&nbsp;displayName</span>: <span class="error">Status</span></pre></td> 
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
         </div> </li> 
       </ul> 
      </div> </li> 
-    <li> <p>Then, just replace the text in the resource title and in its child element’s&nbsp;<code>displayName</code>.</p> 
+    <li> <p>Just replace the text in the resource title and in its child element’s&nbsp;<code>displayName</code>.</p> 
      <div class="admonitionblock warning"> 
       <table> 
        <tbody> 
@@ -1092,11 +1118,14 @@
      <div class="ulist"> 
       <ul> 
        <li> <p>Users of the API should be able to read information about products, but of course not post new products (that wouldn’t really make any sense) so for the <code>products</code> resource, only add a <code>GET</code>&nbsp;method.</p> </li> 
-       <li> <p>Users should be able to place orders, so give the /<code>orders</code> resource a&nbsp;<code>POST</code>&nbsp;method.</p> </li> 
+       <li> <p>Users should be able to place orders, so give the <code>/orders</code> resource a&nbsp;<code>POST</code>&nbsp;method.</p> </li> 
        <li> <p>Users should be able to check an order’s status, so give the&nbsp;<code>status</code> resource a&nbsp;<code>GET</code> method.</p> </li> 
       </ul> 
      </div> </li> 
-    <li> <p>Instead of typing these in, you can place the cursor in a new line right beneath the <code>displayName</code> of a resource and use the corresponding method element from the shelf (below the editor) to automatically obtain a skeleton structure to fill in. Then add a valid description for each of the methods you add:</p> 
+    <li> <p>Instead of typing these in, you can place the cursor in a new line right beneath the <code>displayName</code> of a resource and use the corresponding method element from the shelf (below the editor) to automatically obtain a skeleton structure to fill in. Then add a valid description for each of the methods you add.</p> 
+     <div class="paragraph"> 
+      <p><strong>Note</strong>: You can copy and paste from this document to the API Designer to save time.</p> 
+     </div> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/methods.png" alt="methods"></span></p> 
      </div> 
@@ -1147,11 +1176,11 @@
      </div> </li> 
     <li> <p>Notice that on the API Console (on the right of the editor), you can now see that the resources each have a corresponding set of methods (actually only one method each, in our case). You can now click these methods to read the descriptions you just added.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/full+console.png" alt="full+console"></span></p> 
+      <p><span class="image"><img src="./_images/api-designer-resources.png" alt="api-designer-resources"></span></p> 
      </div> </li> 
     <li> <p>Next, it’s time to decide what possible <code>responses</code> are valid for each of these methods. All of them should have a&nbsp;<code>200</code> (OK) response, that’s a no brainer. In the&nbsp;<code>POST order</code> method let’s also include a&nbsp;<code>500</code> (server error) response in case something fails on the server side, and in the&nbsp;<code>GET status</code> resource let’s also include a&nbsp;<code>400</code> (client error) response, in case the user requests a nonexistent order.</p> 
      <div class="paragraph"> 
-      <p>Don’t forget, you can either use the <code>responses</code> component on the Shelf or just type in the necessary lines.</p> 
+      <p>Don’t forget, you can either use the <code>responses</code> component on the Shelf or just type in the necessary lines. (Or copy and paste from these examples directly into API Designer.)</p> 
      </div> 
      <div class="paragraph"> 
       <p>In the case of this API, the service behind the API constructs the actual response that a user receives. &nbsp;Nevertheless, it’s a good practice to provide a response example in the API RAML. With these examples in place, developers can then use the API Console to preview the structure of the response and build their consuming application accordingly.</p> 

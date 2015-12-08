@@ -873,10 +873,10 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>An API Notebook is both&nbsp;an ideal tool for building interactive tutorials and examples to present to users of your API, and a handy way to execute sequences of calls to an API for testing or other purposes. It is a a web-based, persistent, JavaScript scripting workspace that enables live testing and exploring of APIs. An API Notebook can generate an API client based on a RAML API definition, and through it perform authenticated live calls on a real server or on just an empty API interface. You can save an API Notebook as a gist in your GitHub account, making it versionable, forkable, shareable and embeddable anywhere as markdown text.</p> 
+   <p>An API Notebook is both&nbsp;an ideal tool for building interactive tutorials and examples to present to users of your API, and a handy way to execute sequences of calls to an API for testing or other purposes. It is a a web-based, persistent, JavaScript scripting workspace that enables live testing and exploring of APIs. An API Notebook can generate an API client based on a RAML API definition, and through it perform authenticated live calls on a real server or on just an empty API interface. You can save an API Notebook as a gist in your GitHub account, making it versionable, forkable, shareable, and embeddable anywhere as markdown text.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Notebooks are composed of cells, these come in two types: <strong>text</strong> and <strong>code</strong>. Code cells are executable blocks of JavaScript and text cells provide a neat way to display explanations and documentation to go with these. Any Markdown is valid in text cells, so you can format your text to make it clear and readable.&nbsp;Any JavaScript is valid in code cells, you can even import JavaScript libraries and use functions from external libraries.<br></p> 
+   <p>Notebooks are composed of cells, these come in two types: <strong>text</strong> and <strong>code</strong>. Code cells are executable blocks of JavaScript and text cells provide a neat way to display explanations and documentation to go with these. Any Markdown is valid in text cells, so you can format your text to make it clear and readable.&nbsp;Any JavaScript is valid in code cells, you can even import JavaScript libraries and use functions from external libraries.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The design of the API Notebook follows the <a href="https://en.wikipedia.org/wiki/Literate_programming">literate programming</a> paradigm, that states that the same code is meant to be human readable as well as executable.</p> 
@@ -884,7 +884,7 @@
   <div class="exampleblock"> 
    <div class="content"> 
     <div class="paragraph"> 
-     <p>This is a live Notebook, embedded into the Doc, you can execute the code in it and modify it at will</p> 
+     <p>This is a live Notebook, embedded into the Doc, you can execute the code in it and modify it as needed.</p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
@@ -898,7 +898,7 @@
 3
 4
 </pre></td> 
-           <td class="code"><pre><span class="comment">// Run this code by pushing the play button on the right, or by selecting it and pressing ENTER</span>
+           <td class="code"><pre><span class="comment">// Run this code by pushing the play button on the right, or by selecting it, and pressing ENTER</span>
 <span class="comment">// You can also edit it</span>
 demo = [<span class="string"><span class="delimiter">'</span><span class="content">great</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">interactive</span><span class="delimiter">'</span></span>];
 <span class="string"><span class="delimiter">'</span><span class="content">Notebooks are a </span><span class="delimiter">'</span></span> + demo[<span class="integer">0</span>] + <span class="string"><span class="delimiter">'</span><span class="content"> way to create </span><span class="delimiter">'</span></span> + demo[<span class="integer">1</span>] + <span class="string"><span class="delimiter">'</span><span class="content"> tutorials.</span><span class="delimiter">'</span></span>;</pre></td> 
@@ -956,7 +956,7 @@ songs.s</pre></td>
  <h2 id="before-you-begin"><a class="anchor" href="#before-you-begin"></a>Before You Begin</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This doc will lead you through the creation of a basic API Notebook to contact a simple API, it is part of a larger <a href="/anypoint-platform-for-apis/anypoint-platform-for-apis-walkthrough">Walkthrough</a> that covers all you can do in the Anypoint Platform for APIs.</p> 
+   <p>This document leads you through the creation of a basic API Notebook to contact a simple API, it is part of a larger <a href="/anypoint-platform-for-apis/anypoint-platform-for-apis-walkthrough">Walkthrough</a> that covers all you can do in the Anypoint Platform for APIs.</p> 
   </div> 
   <div class="paragraph"> 
    <p>The same steps shown here apply to building an API Notebook out of any other existing API that has a RAML interface. If the API you wish to interface with does not have a RAML file, you can&nbsp;<a href="/anypoint-platform-for-apis/walkthrough-proxy">create a proxy for it</a>.</p> 
@@ -1015,7 +1015,7 @@ songs.s</pre></td>
       </div> 
      </div> 
      <div class="paragraph"> 
-      <p>As you type this method, the API Notebook will offer suggestions. These are the attributes you can use in it:</p> 
+      <p>As you type this method, the API Notebook offers suggestions. These are the attributes you can use in it:</p> 
      </div> 
      <table class="tableblock frame-all grid-all spread"> 
       <colgroup> 
@@ -1033,7 +1033,7 @@ songs.s</pre></td>
       <tbody> 
        <tr> 
         <td class="tableblock halign-left valign-top"><p class="tableblock"><code>alias</code></p></td> 
-        <td class="tableblock halign-left valign-top"><p class="tableblock">The name with which you will call this client from now on</p></td> 
+        <td class="tableblock halign-left valign-top"><p class="tableblock">The name with which you call this client from now on</p></td> 
         <td class="tableblock halign-left valign-top"><p class="tableblock">Required</p></td> 
        </tr> 
        <tr> 
@@ -1059,12 +1059,12 @@ songs.s</pre></td>
     <li> <p>If the API you wish to connect to is registered in the Anypoint Platform for APIs, you can simply select it out of a list:</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
-       <li> <p>Hover over the gray circle under an empty cell, it will display a few options, click on <strong>Insert API Client</strong></p> 
+       <li> <p>Hover over the gray circle under an empty cell, it displays a few options, click <strong>Insert API Client</strong></p> 
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/create+API+Client.png" alt="create+API+Client"></span></p> 
         </div> </li> 
        <li> <p>Select the API you want</p> </li> 
-       <li> <p>The Cell will be automatically populated with the necessary code for creating the API Client you selected. You can edit the arguments of the method to change the alias or add optional parameters.</p> </li> 
+       <li> <p>The Cell automatically populates with the necessary code for creating the API Client you selected. You can edit the arguments of the method to change the alias or add optional parameters.</p> </li> 
       </ol> 
      </div> </li> 
    </ol> 
@@ -1078,10 +1078,10 @@ songs.s</pre></td>
  <h2 id="step-3-push-play-to-instance-an-api-client"><a class="anchor" href="#step-3-push-play-to-instance-an-api-client"></a>Step 3: Push play to Instance an API Client</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Writing the necessary code is not enough, you still have to execute this code to retrieve the metadata from the API, which will help you write the rest of your Notebook.</p> 
+   <p>Writing the necessary code is not enough, you still have to execute this code to retrieve the metadata from the API, which helps you write the rest of your Notebook.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Execute a code cell by either pressing the <strong>Enter</strong> key wile it’s selected, or by opening the Cell Menu and selecting <strong>Execute.</strong></p> 
+   <p>Execute a code cell by either pressing the <strong>Enter</strong> key while it’s selected, or by opening the Cell Menu, and selecting <strong>Execute.</strong></p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/execute.png" alt="execute"></span></p> 
@@ -1102,7 +1102,7 @@ songs.s</pre></td>
  <h2 id="step-4-call-any-method-in-your-api"><a class="anchor" href="#step-4-call-any-method-in-your-api"></a>Step 4: Call any method in your API</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Once you have instanced an API Client, the Notebook will be able to predictively suggest code and display reference material about method parameters, etc.</p> 
+   <p>Once you have instanced an API Client, the Notebook predictively suggests code and displays reference material about method parameters, etc.</p> 
   </div> 
   <div class="paragraph"> 
    <p>If your Notebook is intended to be a tutorial for users of your API, it is recommended that you write one JavaScript command per cell, and document each with a corresponding text cell. Walk your users through the typical operations they may want to perform with your API, then invite them to change the parameters around and explore the various options.</p> 
@@ -1126,7 +1126,7 @@ songs.s</pre></td>
    <p><span class="image"><img src="./_images/play.png" alt="play"></span></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Execute individual code cells by either pressing the <strong>Enter</strong> key wile selecting one, or by opening the Cell Menu and selecting <strong>Execute.</strong></p> 
+   <p>Execute individual code cells by either pressing the <strong>Enter</strong> key while selecting one, or by opening the Cell Menu and selecting <strong>Execute.</strong></p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/execute.png" alt="execute"></span></p> 
@@ -1147,13 +1147,13 @@ songs.s</pre></td>
  <h2 id="step-6-save-and-share"><a class="anchor" href="#step-6-save-and-share"></a>Step 6: Save and Share</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Notebooks are saved to GitHub as gists. To save a gist, you must first log in to your GitHub account and authorize this application to write to it. Then just click on the <strong>save</strong> icon.</p> 
+   <p>Notebooks are saved to GitHub as gists. To save a gist, you must first log in to your GitHub account and authorize this application to write to it. Then just click the <strong>save</strong> icon.</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/save.png" alt="save"></span></p> 
   </div> 
   <div class="paragraph"> 
-   <p>To share of embed your Notebook, click the <strong>share</strong> icon. You will be offered two links, one for sharing the URL, the other for embedding the Notebook into any site.</p> 
+   <p>To share or embed your Notebook, click the <strong>share</strong> icon. You are offered two links, one for sharing the URL, the other for embedding the Notebook into any site.</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/share.png" alt="share"></span></p> 
@@ -1161,7 +1161,7 @@ songs.s</pre></td>
   <div class="exampleblock"> 
    <div class="content"> 
     <div class="paragraph"> 
-     <p>This is a live Notebook, embedded into the Doc, you can execute the code in it and modify it at will</p> 
+     <p>This is a live Notebook, embedded into the Doc, you can execute the code in it and modify it as needed.</p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
