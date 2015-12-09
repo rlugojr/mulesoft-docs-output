@@ -926,6 +926,9 @@
   <div class="paragraph"> 
    <p>Each MUnit suite is meant to test a particular set of Mule flows. To do that, you need to tell MUnit where those flows are defined in your application structure. For this we use <em>imports</em>, which are in fact <em>spring imports</em>.</p> 
   </div> 
+  <div class="paragraph"> 
+   <p><strong>Note</strong>: MUnit does not support Mule Domains.</p> 
+  </div> 
   <div class="listingblock"> 
    <div class="title">
      Spring Import Example 
@@ -992,17 +995,17 @@
     <p>The MUnit Before Suite is a scope. It can contain code that is meant to be executed <strong><em>before</em></strong> the whole suite.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>For instance, let’s suppose you have an MUnit Test Suite file with four tests. The code inside an MUnit Before Suite will run just once, before your four tests.</p> 
+    <p>For instance, let’s suppose you have an MUnit Test Suite file with four tests. The code inside an MUnit Before Suite runs just once, before your four tests.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The MUnit Before Suite is a <em>top level scope</em>, so you can have as many Before Suites as you need. They will all follow the same execution rule: <em>Run before the tests, just once</em>.</p> 
+    <p>The MUnit Before Suite is a <em>top level scope</em>, so you can have as many Before Suites as you need. They all follow the same execution rule: <em>Run before the tests, just once</em>.</p> 
    </div> 
    <div class="admonitionblock warning"> 
     <table> 
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-       <td class="content"> If there is more than one Before Suite, MUnit does not guarantee the order in which the Before Suites will run amongst themselves. </td> 
+       <td class="content"> If there is more than one Before Suite, MUnit does not guarantee the order in which the Before Suites run amongst themselves. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1078,17 +1081,17 @@
     <p>The MUnit After Suite is a scope. It can contain code that is meant to be executed <em>after</em> the whole suite.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>For instance, let’s suppose you have an MUnit Test Suite File with four tests. The code inside an MUnit After Suite, <em>will run just once, after all your tests</em>.</p> 
+    <p>For instance, let’s suppose you have an MUnit Test Suite File with four tests. The code inside an MUnit After Suite, <em>runs just once, after all your tests</em>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The MUnit After Suite is a <em>top level scope</em>, thus you can have as many After Suites as you need. They will all follow the same execution rule: <em>Run after the tests, just once</em>.</p> 
+    <p>The MUnit After Suite is a <em>top level scope</em>, thus you can have as many After Suites as you need. They all follow the same execution rule: <em>Run after the tests, just once</em>.</p> 
    </div> 
    <div class="admonitionblock warning"> 
     <table> 
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-       <td class="content"> If there is more than one After Suite, MUnit does not guarantee the order in which the After Suites will run amongst themselves. </td> 
+       <td class="content"> If there is more than one After Suite, MUnit does not guarantee the order in which the After Suites run amongst themselves. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1172,17 +1175,17 @@
     <p>The MUnit Before Test is a scope. It can contain code that is meant to be executed <em>before each</em> test.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>For instance, let’s suppose you have an MUnit Test Suite file with four tests. The code inside an MUnit Before test <em>will run before <strong>each</strong> of your four tests</em>; it will run four times.</p> 
+    <p>For instance, let’s suppose you have an MUnit Test Suite file with four tests. The code inside an MUnit Before test <em>runs before <strong>each</strong> of your four tests</em>; it runs four times.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The MUnit Before Test is a <em>top-level scope</em>, thus you can have as many Before tests as you need. They will all follow the same execution rule: <em>Run before each test</em>.</p> 
+    <p>The MUnit Before Test is a <em>top-level scope</em>, thus you can have as many Before tests as you need. They all follow the same execution rule: <em>Run before each test</em>.</p> 
    </div> 
    <div class="admonitionblock warning"> 
     <table> 
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-       <td class="content"> If there is more than one Before test, MUnit does not guarantee the order in which the Before tests will run amongst themselves. </td> 
+       <td class="content"> If there is more than one Before test, MUnit does not guarantee the order in which the Before tests run amongst themselves. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1258,17 +1261,17 @@
     <p>The MUnit After Test is a scope. It can contain code that is meant to be executed <em>after each</em> test.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>For instance, let’s suppose you have an MUnit Test Suite file with four tests. The code inside an MUnit After Test <em>will run after <strong>each</strong> of your four tests</em>; it will run four times.</p> 
+    <p>For instance, let’s suppose you have an MUnit Test Suite file with four tests. The code inside an MUnit After Test <em>runs after <strong>each</strong> of your four tests</em>; it runs four times.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The MUnit After Test is a <em>top level scope</em>, so you can have as many After Tests as you need. They will all follow the same execution rule: <em>Run after each test</em>.</p> 
+    <p>The MUnit After Test is a <em>top level scope</em>, so you can have as many After Tests as you need. They all follow the same execution rule: <em>Run after each test</em>.</p> 
    </div> 
    <div class="admonitionblock warning"> 
     <table> 
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-       <td class="content"> If there is more than one After test, MUnit does not guarantee the order in which the After Tests will run amongst themselves. </td> 
+       <td class="content"> If there is more than one After test, MUnit does not guarantee the order in which the After Tests run amongst themselves. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1402,10 +1405,10 @@
   <div class="sect2"> 
    <h3 id="defining-an-munit-test-description"><a class="anchor" href="#defining-an-munit-test-description"></a>Defining an MUnit Test Description</h3> 
    <div class="paragraph"> 
-    <p>In MUnit, it’s mandatory that you write a description in your test, i.e. the <code>description</code> attribute is mandatory.</p> 
+    <p>In MUnit, it’s mandatory that you write a description in your test, that is, the <code>description</code> attribute is mandatory.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>Ideally, you should write a useful, representative description of the scenario you are testing. This description will be displayed in the test console before running the test, and also in the reports.</p> 
+    <p>Ideally, you should write a useful, representative description of the scenario you are testing. This description displays in the test console before running the test, and also in the reports.</p> 
    </div> 
    <div class="admonitionblock tip"> 
     <table> 
@@ -1554,19 +1557,19 @@
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>If you define that your test expects an exception and none is thrown, the test will fail immediately.</p> 
+    <p>If you define that your test expects an exception and none is thrown, the test fails immediately.</p> 
    </div> 
    <div class="sect3"> 
     <h4 id="code-expectexception-code-literal-value"><a class="anchor" href="#code-expectexception-code-literal-value"></a><code>expectException</code> - Literal Value</h4> 
     <div class="paragraph"> 
-     <p>When you provide a literal value, it should take the form of the <em>canonical class name</em> of the exception that is expected. In these cases, Mule will always throw a <code>MuleMessagingException</code>. MUnit will validae the provided classname if the underlying cause of the <code>MuleMessagingException</code> thrown is of the exact same type.</p> 
+     <p>When you provide a literal value, it should take the form of the <em>canonical class name</em> of the exception that is expected. In these cases, Mule always throws a <code>MuleMessagingException</code>. MUnit validates the provided classname if the underlying cause of the <code>MuleMessagingException</code> thrown is of the exact same type.</p> 
     </div> 
     <div class="admonitionblock tip"> 
      <table> 
       <tbody> 
        <tr> 
         <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-        <td class="content"> When providing exceptions in this way, a subclass of the provided exception will not pass the validation — MUnit looks for the exact same type. </td> 
+        <td class="content"> When providing exceptions in this way, a subclass of the provided exception does not pass the validation — MUnit looks for the exact same type. </td> 
        </tr> 
       </tbody> 
      </table> 
@@ -1620,7 +1623,7 @@
      <p>If the MEL expression returns something that cannot be cast to a Boolean value, the test fails.</p> 
     </div> 
     <div class="paragraph"> 
-     <p>All MEL expression shortcuts, such as <code>message</code> or <code>payload</code>, are valid. Just bear in mind that if an exception is thrown, the original payload will most likely be lost.</p> 
+     <p>All MEL expression shortcuts, such as <code>message</code> or <code>payload</code>, are valid. Just bear in mind that if an exception is thrown, the original payload most likely is lost.</p> 
     </div> 
    </div> 
   </div> 
