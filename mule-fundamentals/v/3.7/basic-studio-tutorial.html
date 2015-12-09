@@ -1088,7 +1088,7 @@
      </div> </li> 
     <li> <p>For the Set Payload, in the <strong>Value</strong> field, erase the <code>#[]</code> value and add a statement such as <code>Hello MuleSoft</code>:</p> 
      <div class="paragraph"> 
-      <p>image:basic-t-set-payload</p> 
+      <p><span class="image"><img src="./_images/basic-t-set-payload.png" alt="set payload"></span></p> 
      </div> 
      <div class="paragraph"> 
       <p>With just a few clicks, you have created (also known as modeled) an application on the Studio canvas.</p> 
@@ -1257,22 +1257,21 @@
       <p><span class="image"><img src="./_images/canvas_tabs_flow.png" alt="canvas_tabs_flow"></span>&nbsp;&nbsp;</p> 
      </div> </li> 
     <li> <p>Click the <strong>Logger</strong> building block to switch the Properties Editor&nbsp;to the Logger component.</p> </li> 
-    <li> <p>In the <strong>Message</strong> field, enter: <code>Current path is <mark>[message.inboundProperties.'http.request.path']</mark></code>.&nbsp; Notice how a menu with suggestions pops open as soon as you type <code></code>, and narrows down its suggestions as you keep typing.</p> 
+    <li> <p>In the <strong>Message</strong> field, enter: <code>Current&nbsp;path&nbsp;is&nbsp;<mark>[message.inboundProperties.'http.request.path']</mark></code>. Notice how a menu with suggestions pops open as soon as you type <code></code>, and narrows down its suggestions as you keep typing.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/logger+for+path.png" alt="logger+for+path"></span></p> 
      </div> 
      <div class="paragraph"> 
       <p>The String <code>#[message.inboundProperties.'http.request.path']</code> is a simple <a href="/mule-user-guide/v/3.7/mule-expression-language-mel">Mule expression</a> which evaluates to the requested property of the message as it passes this point in the flow. Including this message here instructs Mule to log this information in the application log files, which can be useful in more complex use cases, when you need to track the payload at different points in your flow.</p> 
      </div> </li> 
-    <li> <p>Click the <strong>Set Payload</strong> building block to switch the Properties Editor to the Set Payload transformer.</p> </li> 
-    <li> <p>Notice that the Value field contains these characters:&nbsp;<strong>#[]</strong></p> 
+    <li> <p>Click the <strong>Set Payload</strong> building block to switch the Properties Editor to the Set Payload transformer.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/set+payload1.png" alt="set+payload1"></span><br></p> 
      </div> 
      <div class="paragraph"> 
-      <p>This field supports&nbsp;<a href="/mule-user-guide/v/3.7/mule-expression-language-mel">Mule expressions</a>, which take the form of a string enclosed with <code>#[]</code>. If you enter a Mule expression here, Mule evaluates it at runtime and returns or uses the results for further processing. Note that this field also accepts literals, so you can enter any string here to instruct Mule to set that string as your new payload. In this tutorial, however, you use an expression to create a dynamic message.</p> 
+      <p>Previously, you set this field to a simple literal by simply entering a string, this instructs Mule to set that string as your new payload. This field also supports&nbsp;<a href="/mule-user-guide/v/3.7/mule-expression-language-mel">Mule expressions</a>, which take the form of a string enclosed with <code>#[]</code>. If you enter a Mule expression here, Mule evaluates it at runtime and returns or uses the results for further processing.</p> 
      </div> </li> 
-    <li> <p>In the <strong>Value</strong> field, enter the following:<br></p> 
+    <li> <p>In the <strong>Value</strong> field, enter the following dynamic expression:<br></p> 
      <div class="paragraph"> 
       <p><code>#['Hello, ' + message.inboundProperties.'http.request.path' + '. Today is ' + server.dateTime.format('dd/MM/yy') + '.' ]</code></p> 
      </div> 
@@ -1377,7 +1376,7 @@
    <p><strong>How do I name a text file using the message ID?</strong></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Fill in the <strong>Output Pattern</strong> field in the File Endpoint to tell Mule how to name the file and what file type to use. Note that you can use the same Mule expression here that you used to log the message ID.</p> 
+   <p>Fill in the <strong>File Name/Pattern</strong> field in the File Endpoint to tell Mule how to name the file and what file type to use. Note that you can use the same Mule expression here that you used to log the message ID.</p> 
   </div> 
   <div class="paragraph"> 
    <p><span class="image"><img src="./_images/icon-checkmark-blue-big.png" alt="icon-checkmark-blue-big" width="50"></span>&nbsp;<strong>Answer</strong></p> 
@@ -1402,8 +1401,8 @@
       <p><span class="image"><img src="./_images/add+file.png" alt="add+file"></span></p> 
      </div> </li> 
     <li> <p>Click the <strong>File Endpoint</strong> to open the Properties editor.</p> </li> 
-    <li> <p>Enter a <strong>Path</strong> where you want Mule to create a file. For example: <code>/Applications/anypointStudio/examples/BasicTutorial</code></p> </li> 
-    <li> <p>Enter an File Name/Pattern that defines the file name and type, as follows:</p> 
+    <li> <p>Enter a <strong>Path</strong> where you want Mule to create a file. For example: <code>/Users/mulesoft/Downloads</code></p> </li> 
+    <li> <p>Enter a <strong>File Name/Pattern</strong> that defines the file name and type, as follows:</p> 
      <div class="paragraph"> 
       <p><code>#[message.id].txt</code></p> 
      </div> 
@@ -1453,7 +1452,7 @@
         <span class="tag">&lt;expression-filter</span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload != '/favicon.ico']</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Expression</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;logger</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Current path is #[message.inboundProperties.'http.request.path']</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         <span class="tag">&lt;set-payload</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Payload</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#['Hello, ' + message.inboundProperties.'http.request.path' + '. Today is ' + server.dateTime.format('dd/MM/yy') + '.' ]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/Applications/anypointStudio/examples/BasicTutorial</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.id].txt</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;file:outbound-endpoint</span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/Users/mulesoft/Downloads</span><span class="delimiter">"</span></span> <span class="attribute-name">outputPattern</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.id].txt</span><span class="delimiter">"</span></span> <span class="attribute-name">responseTimeout</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">File</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/flow&gt;</span>
 <span class="tag">&lt;/mule&gt;</span></pre></td> 
            </tr> 
