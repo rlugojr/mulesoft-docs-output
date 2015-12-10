@@ -933,7 +933,7 @@
  <h2 id="about-clustering"><a class="anchor" href="#about-clustering"></a>About Clustering</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A Mule ESB <strong>Cluster</strong> consists of two to eight Mule ESB server instances, or <strong>nodes</strong>, grouped together and treated as a single unit. Thus, you can deploy, monitor, or stop all the nodes in a cluster as if they were a single Mule server.</p> 
+   <p>With out of box configurations it is recommended that you scale a cluster to no more than eight Mule ESB nodes. These group together to form a single unit. Thus, you can deploy, monitor, or stop all the nodes in a cluster as if they were a single Mule server. If you need more nodes than eight, contact <a href="https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription">MuleSoft Support</a>.</p> 
   </div> 
   <div class="paragraph"> 
    <p>All the nodes in a cluster share memory, as illustrated below:</p> 
@@ -1215,7 +1215,7 @@
    <ul> 
     <li> <p>As much as possible, organize your application into a series of steps where each step moves the message from one transactional store to another.</p> </li> 
     <li> <p>If your application processes messages from a non-transactional transport, use a <a href="/mule-management-console/v/3.7/reliability-patterns">reliability pattern</a> to move them to a transactional store such as a VM or JMS store.</p> </li> 
-    <li> <p>Use transactions to process messages from a transactional transport. This ensures that if an error is encountered, the message will be reprocessed.</p> </li> 
+    <li> <p>Use transactions to process messages from a transactional transport. This ensures that if an error is encountered, the message reprocesses.</p> </li> 
     <li> <p>Use distributed stores such as those used with the VM or JMS transport – these stores are available to an entire cluster. This is preferable to the non-distributed stores used with transports such as File, FTP, and JDBC – these stores are read by a single node at a time.</p> </li> 
     <li> <p>Use the VM transport to get optimal performance. Use the JMS transport for applications where data needs to be saved after the entire cluster exits.</p> </li> 
     <li> <p>Create the number of nodes within a cluster that best meets your needs.</p> </li> 
@@ -1229,7 +1229,7 @@
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Currently you can create a cluster consisting of at least two servers and up to a maximum of eight. However, each server must run in a different physical (or virtual) machine.</p> </li> 
+    <li> <p>With out of box configurations it is recommended that you scale a cluster to no more than eight Mule ESB nodes. If you need more nodes than eight, contact <a href="https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription">MuleSoft Support</a>. You can have at least two servers in a cluster, each of which must run in a different physical (or virtual) machine.</p> </li> 
     <li> <p>To maintain synchronization between the nodes in the cluster, Mule HA requires a reliable network connection between servers.</p> </li> 
     <li> <p>You must keep the following ports open in order to set up a Mule cluster: port 5701 and port 54327.</p> </li> 
     <li> <p>Because new cluster member discovery is performed using multicast, you need to enable the multicast IP: 224.2.2.3</p> </li> 
