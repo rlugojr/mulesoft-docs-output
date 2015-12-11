@@ -955,42 +955,7 @@
     </tbody> 
    </table> 
    <div class="paragraph"> 
-    <p>This is a <strong>major version</strong> change, hence the connector <strong>might break backward compatibility</strong> for some existing flows. It uses DevKit 3.7 and its new features (like multi-level Datasense for invokeApexSoapMethod and invokeApexRestMethod) and dates are no longer passed as String, but as Dates and Calendars.</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="migrating-from-older-versions-of-the-connector-to-version-7-0-0"><a class="anchor" href="#migrating-from-older-versions-of-the-connector-to-version-7-0-0"></a>Migrating From Older Versions of the Connector to Version 7.0.0</h3> 
-   <div class="paragraph"> 
-    <p>If you’re using an older version of the connector, a small popup appears in the bottom right corner of Anypoint Studio that says "Updates Available".</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Click that popup and check for available updates.</p> </li> 
-     <li> <p>Click the Salesforce Connector version 7.0.0 checkbox, click <strong>Next</strong> and follow the instructions provided by the user interface.</p> </li> 
-     <li> <p>Restart Studio.</p> </li> 
-     <li> <p>After the restart, when creating a flow and using the Salesforce Connector, if you have several versions of the connector installed, you might be asked which version you would like to use. Choose the version you would like to use.</p> </li> 
-     <li> <p>Keep Mule and Studio updated.</p> </li> 
-    </ol> 
-   </div> 
-   <div class="paragraph"> 
-    <p>If updating the connector causes issues then simply uninstall the old version and install the new one:</p> 
-   </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Anypoint Studio: <strong>Help</strong> &gt; <strong>Installation Details</strong> &gt; <strong>Installed Software</strong>:</p> 
-      <div class="olist loweralpha"> 
-       <ol class="loweralpha" type="a"> 
-        <li> <p>Find the Salesforce connector, select it and then click the <strong>Uninstall</strong> button</p> </li> 
-       </ol> 
-      </div> </li> 
-     <li> <p>Anypoint Studio: <strong>Help</strong> &gt; <strong>Install New Software</strong>:</p> 
-      <div class="olist loweralpha"> 
-       <ol class="loweralpha" type="a"> 
-        <li> <p>Select "Anypoint Connectors Update Site" from the dropdown .. Type "Salesforce" in the bar above the dropdown</p> </li> 
-        <li> <p>Under "Select" you will find version 7.0.0 of the connector .. Select its checkbox and then click <strong>Next</strong> to begin the installation process.</p> </li> 
-       </ol> 
-      </div> </li> 
-    </ol> 
+    <p>This is a <strong>major version</strong> change, hence the connector <strong>might break backward compatibility</strong> for some existing flows. It uses DevKit 3.7 and its new features (like multi-level Datasense for invokeApexSoapMethod and invokeApexRestMethod) and dates are no longer passed as String, but as Dates and Calendars. To see how the new metadata key ids are formed for invokeApexSoapMethod and invokeApexRestMethod please read below.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
@@ -1014,13 +979,34 @@
       <div class="ulist"> 
        <ul> 
         <li> <p>Added support for Custom Types and Apex Custom Types</p> </li> 
-        <li> <p>Added multilevel Datasense</p> </li> 
+        <li> <p>Added multilevel Datasense (the user has to choose the Apex Class first and then in a following parameter, the user must choose a Method Name from the ones available for that class)</p> </li> 
+        <li> <p>The resulting metadata key id will have the following format: 'apexClassName||apexMethodName^resourceUrl^httpMethod^outputType^inputParameters' where</p> 
+         <div class="ulist"> 
+          <ul> 
+           <li> <p>apexClassName is the value chosen by the user for the "Apex Class" parameter under the General Category;</p> </li> 
+           <li> <p>apexMethodName is the value chosen by the user for the "Method Name" parameter under the General Category;</p> </li> 
+           <li> <p>resourceUrl is the value of urlMapping attribute from the '@RestResource' annotation of the apex class;</p> </li> 
+           <li> <p>httpMethod is the http method annotation of the Apex Rest resource (e.g. @HttpGet, @HttpPost) without the '@' symbol;</p> </li> 
+           <li> <p>outputType is the method output type (e.g. 'List&lt;Account&gt;');</p> </li> 
+           <li> <p>inputParameters is a comma separated list of input parameters (their name and their type - e.g. 'account=Account, someParameter=String');</p> </li> 
+           <li> <p>'||' is a separator used between the class name and the method name;</p> </li> 
+           <li> <p>'^' is a separator for the method details.</p> </li> 
+          </ul> 
+         </div> </li> 
        </ul> 
       </div> </li> 
      <li> <p><strong>invoke-apex-soap-method</strong></p> 
       <div class="ulist"> 
        <ul> 
-        <li> <p>Added multilevel Datasense</p> </li> 
+        <li> <p>Added multilevel Datasense (the user has to choose the Apex Class first and then in a following parameter, the user must choose a Method Name from the ones available for that class)</p> </li> 
+        <li> <p>The resulting metadata key id will have the following format: 'apexClassName||apexMethodName' where:</p> 
+         <div class="ulist"> 
+          <ul> 
+           <li> <p>apexClassName is the value chosen by the user for the "Apex Class" parameter under the General Category;</p> </li> 
+           <li> <p>apexMethodName is the value chosen by the user for the "Method Name" parameter under the General Category;</p> </li> 
+           <li> <p>'||' is a separator used between the class name and the method name.</p> </li> 
+          </ul> 
+         </div> </li> 
        </ul> 
       </div> </li> 
      <li> <p>Changed <strong>Test Connection</strong> to <strong>Validate Configuration</strong> and added a validation for Apex Classes and Proxy configurations if these are set in the connector configuration.</p> </li> 
@@ -1064,21 +1050,11 @@
      <li> <p>This version of the connector breaks backward compatibility:</p> 
       <div class="ulist"> 
        <ul> 
-        <li> <p>the way some metadata key ids are created was changed when the multi-level Datasense was introduced (invokeApexSoapMethod and invokeApexRestMethod are affected by this).</p> </li> 
+        <li> <p>the way some metadata key ids are created was changed due to some performance enhancements (invokeApexSoapMethod and invokeApexRestMethod are affected by this).</p> </li> 
         <li> <p>the way the connector works with Dates has been changed: dates are no longer expected/returned as Strings; they are used as Dates or Calendars, for easier use (comparison and calculations), depending on their types.</p> </li> 
        </ul> 
       </div> </li> 
      <li> <p>Salesforce has a know issue with creating correct WSDLs for the Apex SOAP classes created under version 34.0 and 35.0 of the API. As a workaround Salesforce suggested that the Apex SOAP classes should be created under version 32.0 to be able to use them.</p> </li> 
-     <li> <p>Connector v7.0.0 does not work with versions v28.0, v29.0, v30.0 and v31.0 of the Salesforce API.</p> </li> 
-     <li> <p>Connector v7.0.0 does not support for Apex Rest the following data types:</p> 
-      <div class="ulist"> 
-       <ul> 
-        <li> <p>Lists of Lists or Maps</p> </li> 
-        <li> <p>Maps of Lists or Maps</p> </li> 
-        <li> <p>Object (not able to perform DataSense on it)</p> </li> 
-        <li> <p>Blob (not supported by Salesforce Rest methods as input/output)</p> </li> 
-       </ul> 
-      </div> </li> 
      <li> <p>For versions v28.0, v29.0 of the Salesforce API use version v5.4.12 of the connector.</p> </li> 
     </ul> 
    </div> 
