@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/release-notes/netsuite-connector-release-notes" />
-    <meta name="description" content="Select Guide: NetSuite Connector The Anypoint Connector for NetSuite synchronizes data and automates business processes between NetSuite and third ..." />
+    <meta name="description" content="Select Guide: NetSuite Connector The Anypoint Connector for NetSuite synchronizes data and automates business processes between NetSuite and thir..." />
     <meta class="swiftype" name="title" data-type="string" content="NetSuite Connector Release Notes " />
 
 </head>
@@ -879,7 +879,398 @@
    <p><strong>Guide</strong>: <a href="/mule-user-guide/v/3.7/netsuite-connector">NetSuite Connector</a></p> 
   </div> 
   <div class="paragraph"> 
-   <p>The Anypoint Connector for NetSuite synchronizes data and automates business processes between NetSuite and third party applications, either on-premise or in the cloud.</p> 
+   <p>The Anypoint Connector for NetSuite synchronizes data and automates business processes between NetSuite and third-party applications, either on-premise or in the cloud.</p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="version-7-0-0-december-11-2015"><a class="anchor" href="#version-7-0-0-december-11-2015"></a>Version 7.0.0 - December 11, 2015</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-0-compatibility"><a class="anchor" href="#version-7-0-0-compatibility"></a>Version 7.0.0 Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>The NetSuite connector 7.0.0 is compatible with:</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Application/Service</th> 
+      <th class="tableblock halign-left valign-top">Version</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Mule Runtime</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>3.5 and later</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>API</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>SuiteTalk 2015.2</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-0-features"><a class="anchor" href="#version-7-0-0-features"></a>Version 7.0.0 Features</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Upgraded the connector to use SuiteTalk API version 2015.2</p> </li> 
+     <li> <p>Added pagination support to <code>search</code> (removed other search processors, see Migration below)</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-0-fixes"><a class="anchor" href="#version-7-0-0-fixes"></a>Version 7.0.0 Fixes</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>DataSense for <code>getRecord</code> and <code>getCustomRecord</code> has been introduced</p> </li> 
+     <li> <p>Metadata for the custom fields has been further improved. Also, support for <code>OtherCustomFields</code> has been added. Record types with noticeable changes to custom field placement are:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>ACCOUNT</p> </li> 
+        <li> <p>BIN</p> </li> 
+        <li> <p>CASH_SALE</p> </li> 
+        <li> <p>CLASSIFICATION</p> </li> 
+        <li> <p>CUSTOMER</p> </li> 
+        <li> <p>DEPOSIT</p> </li> 
+        <li> <p>ESTIMATE</p> </li> 
+        <li> <p>EXPENSE_CATEGORY</p> </li> 
+        <li> <p>EXPENSE_REPORT</p> </li> 
+        <li> <p>INVOICE</p> </li> 
+        <li> <p>ITEM_DEMAND_PLAN</p> </li> 
+        <li> <p>ITEM_FULFILLMENT</p> </li> 
+        <li> <p>ITEM_RECEIPT</p> </li> 
+        <li> <p>ITEM_SUPPLY_PLAN</p> </li> 
+        <li> <p>JOURNAL_ENTRY</p> </li> 
+        <li> <p>LOCATION</p> </li> 
+        <li> <p>MANUFACTURING_COST_TEMPLATE</p> </li> 
+        <li> <p>MANUFACTURING_ROUTING</p> </li> 
+        <li> <p>NOTE</p> </li> 
+        <li> <p>PROMOTION_CODE</p> </li> 
+        <li> <p>PURCHASE_REQUISITION</p> </li> 
+        <li> <p>SUBSIDIARY</p> </li> 
+        <li> <p>VENDOR_BILL</p> </li> 
+        <li> <p>VENDOR_CREDIT</p> </li> 
+        <li> <p>VENDOR_PAYMENT</p> </li> 
+        <li> <p>VENDOR_RETURN_AUTHORIZATION</p> </li> 
+       </ul> 
+      </div> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-0-known-issues"><a class="anchor" href="#version-7-0-0-known-issues"></a>Version 7.0.0 Known Issues</h3> 
+   <div class="paragraph"> 
+    <p>None.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="migrating-from-an-older-version-to-version-7-0-0"><a class="anchor" href="#migrating-from-an-older-version-to-version-7-0-0"></a>Migrating From an Older Version to Version 7.0.0</h3> 
+   <div class="paragraph"> 
+    <p>More changes have been made to metadata, thus when you upgrade to NetSuite Connector 7.0.0, reload metadata during design time.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>In this release we now use SuiteTalk API version 2015.2 for our web services. In this version NetSuite introduced a new concept called an "Integration Record". This requires the use of an application Id. Hence all three connection strategy configurations now have a new parameter called <code>applicationId</code>. The Integration Record containing an application Id can be set up from within your NetSuite environment by navigating to <strong>Setup</strong> &gt; <strong>Integration</strong> &gt; <strong>Manage Integrations</strong>. The global elements will now look as follows:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>New Global Configurations (from version 7.0.0):</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;netsuite:config-login-authentication</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite</span><span class="delimiter">"</span></span> <span class="attribute-name">email</span>=<span class="string"><span class="delimiter">"</span><span class="content">${email}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${password}</span><span class="delimiter">"</span></span> <span class="attribute-name">account</span>=<span class="string"><span class="delimiter">"</span><span class="content">${account}</span><span class="delimiter">"</span></span> <span class="attribute-name">roleId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${roleId}</span><span class="delimiter">"</span></span> <span class="attribute-name">applicationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${applicationId}</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+
+<span class="tag">&lt;netsuite:config-request-level-authentication</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite</span><span class="delimiter">"</span></span> <span class="attribute-name">email</span>=<span class="string"><span class="delimiter">"</span><span class="content">${email}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${password}</span><span class="delimiter">"</span></span> <span class="attribute-name">account</span>=<span class="string"><span class="delimiter">"</span><span class="content">${account}</span><span class="delimiter">"</span></span> <span class="attribute-name">roleId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${roleId}</span><span class="delimiter">"</span></span> <span class="attribute-name">applicationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${applicationId}</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+
+<span class="tag">&lt;netsuite:config-sso-login-authentication</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite</span><span class="delimiter">"</span></span> <span class="attribute-name">email</span>=<span class="string"><span class="delimiter">"</span><span class="content">${email}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${password}</span><span class="delimiter">"</span></span> <span class="attribute-name">account</span>=<span class="string"><span class="delimiter">"</span><span class="content">${account}</span><span class="delimiter">"</span></span> <span class="attribute-name">roleId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${roleId}</span><span class="delimiter">"</span></span> <span class="attribute-name">applicationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${applicationId}</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Configuration for <code>getRecord</code> and <code>getCustomRecord</code> has slightly changed due to the DataSense introduction. Also, the <code>@Default</code> is now set on the <code>internalId</code> with a default value of <code>#[payload]</code>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Configuration prior to 7.0.0:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;netsuite:get-record</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;netsuite:record-ref</span> <span class="attribute-name">internalId</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="attribute-name">externalId</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/netsuite:get-record&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>New configuration (from version 7.0.0):</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;netsuite:get-record</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="attribute-name">internalId</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="attribute-name">externalId</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Due to the addition of pagination to search we have removed the now redundant processors <code>searchNext</code>, <code>searchMore</code> and <code>searchMoreWithId</code>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Furthermore, we would like to unify search functionality under just one processor and we feel that with the improvements made so far and the growing use of DataWeave, <strong><code>search</code></strong> should be the go-to operation. Moreover, <code>searchWithExpression</code> and <code>query</code> operations are limited when it comes to certain complexities. Hence we have decided to remove the processors <code>searchWithExpression</code>, <code>queryAsNativeResult</code> and <code>queryRecords</code>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong><code>search</code></strong> will now always return the whole set of results rather than just the first page. This is will be retrieved in the form of a List of Maps that represent all the records found that match your criteria. A new parameter fetchSize can be set to control the page size used by pagination support.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Here is an example of how the configuration for <code>search</code> will look:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;netsuite:search</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">searchRecord</span>=<span class="string"><span class="delimiter">"</span><span class="content">EMPLOYEE_BASIC</span><span class="delimiter">"</span></span> <span class="attribute-name">criteria-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span> <span class="attribute-name">fetchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">5</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Here are some examples if you are switching from <code>searchWithExpression</code> or <code>query</code>. The criteria for search can easily be constructed using DataWeave, generating the script for you and requiring you only to fill in the values (you can also use a Java component or DataMapper should you prefer).</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><code>searchWithExpression</code> to <code>search</code>:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+</pre></td> 
+             <td class="code"><pre><span class="tag">&lt;netsuite:search-with-expression</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">searchRecord</span>=<span class="string"><span class="delimiter">"</span><span class="content">EMPLOYEE_BASIC</span><span class="delimiter">"</span></span> <span class="attribute-name">expression</span>=<span class="string"><span class="delimiter">"</span><span class="content">is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+19
+<strong>20</strong>
+21
+22
+</pre></td> 
+             <td class="code"><pre><span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform Message</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
+%output application/java
+---
+{
+        email: {
+                operator: "IS",
+                searchValue: payload.email
+        } as :object {
+                class : "com.netsuite.webservices.platform.core.SearchStringField"
+        }
+        address: {
+                operator: "CONTAINS",
+                searchValue: payload.address
+        } as :object {
+                class : "com.netsuite.webservices.platform.core.SearchStringField"
+        }
+} as :object {
+        class : "com.netsuite.webservices.platform.common.EmployeeSearchBasic"
+}<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
+<span class="tag">&lt;/dw:transform-message&gt;</span>
+<span class="tag">&lt;netsuite:search</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">searchRecord</span>=<span class="string"><span class="delimiter">"</span><span class="content">EMPLOYEE_BASIC</span><span class="delimiter">"</span></span> <span class="attribute-name">fetchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">50</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> </li> 
+     <li> <p><code>query</code> to <code>search</code>:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+</pre></td> 
+             <td class="code"><pre><span class="tag">&lt;netsuite:query-records</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">query</span>=<span class="string"><span class="delimiter">"</span><span class="content">dsql:SELECT * FROM EMPLOYEE WHERE firstName=#[message.inboundProperties.'http.query.params'.firstName]</span><span class="delimiter">"</span></span> <span class="attribute-name">fetchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">50</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Query EMPLOYEE record</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="xml">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+</pre></td> 
+             <td class="code"><pre><span class="tag">&lt;dw:transform-message</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Transform Message</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;dw:set-payload&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>%dw 1.0
+%output application/java
+---
+{
+        firstName: {
+                operator: "IS",
+                searchValue: inboundProperties.'http.query.params'.firstName
+        } as :object {
+                class : "com.netsuite.webservices.platform.core.SearchStringField"
+        }
+} as :object {
+        class : "com.netsuite.webservices.platform.common.EmployeeSearchBasic"
+}<span class="inline-delimiter">]]&gt;</span><span class="tag">&lt;/dw:set-payload&gt;</span>
+<span class="tag">&lt;/dw:transform-message&gt;</span>
+<span class="tag">&lt;netsuite:search</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">searchRecord</span>=<span class="string"><span class="delimiter">"</span><span class="content">EMPLOYEE_BASIC</span><span class="delimiter">"</span></span> <span class="attribute-name">fetchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">50</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Finally, <code>getDeletedRecords</code> has also been reworked. This operation will now expect a <code>SearchDateField</code> on the payload as its <code>@Default</code> value, together with a pageIndex and type as before. The <code>SearchDateField</code> can also be manually defined. Here are some examples:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="xml">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+</pre></td> 
+          <td class="code"><pre><span class="tag">&lt;netsuite:get-deleted-records</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">ACCOUNT</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;netsuite:deleted-date</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/netsuite:get-deleted-records&gt;</span>
+
+<span class="tag">&lt;netsuite:get-deleted-records</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">EMPLOYEE</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;netsuite:deleted-date</span> <span class="attribute-name">operator</span>=<span class="string"><span class="delimiter">"</span><span class="content">ON</span><span class="delimiter">"</span></span> <span class="attribute-name">searchValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[java.util.Calendar calendar = new GregorianCalendar(); calendar.set(2015, 10, 01); return calendar;]</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/netsuite:get-deleted-records&gt;</span>
+
+<span class="tag">&lt;netsuite:get-deleted-records</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">"</span><span class="content">CUSTOMER</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;netsuite:deleted-date</span> <span class="attribute-name">operator</span>=<span class="string"><span class="delimiter">"</span><span class="content">BEFORE</span><span class="delimiter">"</span></span> <span class="attribute-name">predefinedSearchValue</span>=<span class="string"><span class="delimiter">"</span><span class="content">THIS_MONTH</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/netsuite:get-deleted-records&gt;</span></pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -927,7 +1318,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>SuiteTalks 2015_1</p> 
+         <p>SuiteTalk 2015_1</p> 
         </div> 
        </div></td> 
      </tr> 
@@ -1054,17 +1445,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>SuiteTalks 2015_1</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div></div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>SuiteTalks 2015_2</p> 
+         <p>SuiteTalk 2015_1</p> 
         </div> 
        </div></td> 
      </tr> 
@@ -1098,7 +1479,7 @@
         <li> <p>ITEM_FULFILLMENT</p> </li> 
         <li> <p>ITEM_RECEIPT</p> </li> 
         <li> <p>JOURNAL_ENTRY</p> </li> 
-        <li> <p>LES_ORDER</p> </li> 
+        <li> <p>SALES_ORDER</p> </li> 
         <li> <p>OPPORTUNITY</p> </li> 
         <li> <p>PURCHASE_ORDER</p> </li> 
         <li> <p>TRANSFER_ORDER</p> </li> 
@@ -1196,7 +1577,7 @@
      </tr> 
      <tr> 
       <td class="tableblock halign-left valign-top"><p class="tableblock">API</p></td> 
-      <td class="tableblock halign-left valign-top"><p class="tableblock">SuiteTalks 2015_1</p></td> 
+      <td class="tableblock halign-left valign-top"><p class="tableblock">SuiteTalk 2015_1</p></td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1205,7 +1586,7 @@
    <h3 id="version-5-0-0-features"><a class="anchor" href="#version-5-0-0-features"></a>Version 5.0.0 Features</h3> 
    <div class="ulist"> 
     <ul> 
-     <li> <p>Upgraded the connector to SuiteTalks API&nbsp;version 2015_1.&nbsp;</p> </li> 
+     <li> <p>Upgraded the connector to SuiteTalk API&nbsp;version 2015_1.&nbsp;</p> </li> 
      <li> <p>The <code>get-deleted-records</code>&nbsp;operation no longer has any limit on the number of records to retrieve. This operation now makes use of a page index as per the new changes to the SuiteTalks API.</p> </li> 
     </ul> 
    </div> 
@@ -1315,8 +1696,8 @@
   <div class="ulist"> 
    <ul> 
     <li> <p>Learn how to&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-exchange">Install Anypoint Connectors</a>&nbsp;using Anypoint Exchange.</p> </li> 
-    <li> <p>Access MuleSoft’s&nbsp;http://forum.mulesoft.org/mulesoft[Forum]&nbsp;to pose questions and get help from Mule’s broad community of users.</p> </li> 
-    <li> <p>To access MuleSoft’s expert support team,&nbsp;http://www.mulesoft.com/mule-esb-subscription[subscribe]&nbsp;to Mule ESB Enterprise and log into MuleSoft’s&nbsp;http://www.mulesoft.com/support-login[Customer Portal].</p> </li> 
+    <li> <p>Access MuleSoft’s&nbsp;<a href="http://forum.mulesoft.org/mulesoft">Forum</a>&nbsp;to pose questions and get help from Mule’s broad community of users.</p> </li> 
+    <li> <p>To access MuleSoft’s expert support team,&nbsp;<a href="http://www.mulesoft.com/mule-esb-subscription">subscribe</a>&nbsp;to Mule ESB Enterprise and log into MuleSoft’s&nbsp;<a href="http://www.mulesoft.com/support-login">Customer Portal</a>.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1325,7 +1706,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#version-6-0-1-july-30-2015">Version 6.0.1 - July 30, 2015</a></li><li><a class="scroll-menu-link" href="#version-6-0-0-july-10-2015">Version 6.0.0 - July 10, 2015</a></li><li><a class="scroll-menu-link" href="#version-5-0-0-april-15-2015">Version 5.0.0 - April 15, 2015</a></li><li><a class="scroll-menu-link" href="#version-4-0-11-november-28-2014">Version 4.0.11 - November 28, 2014</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#version-7-0-0-december-11-2015">Version 7.0.0 - December 11, 2015</a></li><li><a class="scroll-menu-link" href="#version-6-0-1-july-30-2015">Version 6.0.1 - July 30, 2015</a></li><li><a class="scroll-menu-link" href="#version-6-0-0-july-10-2015">Version 6.0.0 - July 10, 2015</a></li><li><a class="scroll-menu-link" href="#version-5-0-0-april-15-2015">Version 5.0.0 - April 15, 2015</a></li><li><a class="scroll-menu-link" href="#version-4-0-11-november-28-2014">Version 4.0.11 - November 28, 2014</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

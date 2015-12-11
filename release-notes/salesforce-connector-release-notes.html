@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/release-notes/salesforce-connector-release-notes" />
-    <meta name="description" content="Select Connector Guide: Salesforce Connector The Version 7.0.0 Salesforce connector is compatible with: Mule Runtime Mule Enterprise Edition 3.5.2 ..." />
+    <meta name="description" content="Select Connector Guide: Salesforce Connector The Version 7.0.1 Salesforce connector is compatible with: Mule Runtime Mule Enterprise Edition 3.5.2 ..." />
     <meta class="swiftype" name="title" data-type="string" content="Salesforce Connector Release Notes" />
 
 </head>
@@ -891,6 +891,92 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="salesforce-connector-7-0-1-december-9-2015"><a class="anchor" href="#salesforce-connector-7-0-1-december-9-2015"></a>Salesforce Connector 7.0.1 - December 9, 2015</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-1-compatibility"><a class="anchor" href="#version-7-0-1-compatibility"></a>Version 7.0.1 Compatibility</h3> 
+   <div class="paragraph"> 
+    <p>The Version 7.0.1 Salesforce connector is compatible with:</p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Application/Service</th> 
+      <th class="tableblock halign-left valign-top">Version</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Mule Runtime</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Mule Enterprise Edition 3.5.2 and newer</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Anypoint Studio</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Only works with Studio 5.4.0 and newer</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Salesforce</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>v32.0 to v34.0</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-1-fixed-in-this-release"><a class="anchor" href="#version-7-0-1-fixed-in-this-release"></a>Version 7.0.1 - Fixed in This Release</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Fixed the way query results are returned. Exceptions related to "No converter found!" are no longer thrown for inner selects (for child relationships).</p> </li> 
+     <li> <p>Because the converters introduced a huge impact on production performance it was decided that all fields are to be returned as Strings, and DataWeave will be used for data transformation.</p> </li> 
+     <li> <p>Batch Operation Results are reported correctly now if the Batch Commit component is used. Before, the connector had problems reporting how many records were successful, and how many failed (all the records were reported as successful).</p> </li> 
+     <li> <p>Invocation of Apex Rest methods that are void no longer fails.</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="version-7-0-1-known-issues"><a class="anchor" href="#version-7-0-1-known-issues"></a>Version 7.0.1 Known Issues</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>Batch Operation Results report all records as successful when the Batch Commit component is not used (that is, when only the Batch Step component is used).</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="salesforce-connector-7-0-0-december-1-2015"><a class="anchor" href="#salesforce-connector-7-0-0-december-1-2015"></a>Salesforce Connector 7.0.0 - December 1, 2015</h2> 
  <div class="sectionbody"> 
   <div class="sect2"> 
@@ -1681,7 +1767,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#salesforce-connector-7-0-0-december-1-2015">Salesforce Connector 7.0.0 - December 1, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-3-july-23-2015">Salesforce Connector 6.2.3 - July 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-2-july-22-2015">Salesforce Connector 6.2.2 - July 22, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-1-june-19-2015">Salesforce Connector 6.2.1 - June 19, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-0-june-9-2015">Salesforce Connector 6.2.0 - June 9, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-1-0-march-31-2015">Salesforce Connector 6.1.0 - March 31, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-1-february-25-2015">Salesforce Connector 6.0.1 - February 25, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-0-february-23-2015">Salesforce Connector 6.0.0 - February 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-12-march-11-2015">Salesforce Connector 5.4.12 - March 11, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-10-october-28-2014">Salesforce Connector 5.4.10 - October 28, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-9-september-18-2014">Salesforce Connector 5.4.9 - September 18, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-7">Salesforce Connector 5.4.7</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-6">Salesforce Connector 5.4.6</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-4">Salesforce Connector 5.4.4</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-3">Salesforce Connector 5.4.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-2">Salesforce Connector 5.4.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-1">Salesforce Connector 5.4.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-0">Salesforce Connector 5.4.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-1">Salesforce Connector 5.3.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-0">Salesforce Connector 5.3.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-2-0">Salesforce Connector 5.2.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-3">Salesforce Connector 5.1.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-2">Salesforce Connector 5.1.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-1">Salesforce Connector 5.1.1</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#salesforce-connector-7-0-1-december-9-2015">Salesforce Connector 7.0.1 - December 9, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-7-0-0-december-1-2015">Salesforce Connector 7.0.0 - December 1, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-3-july-23-2015">Salesforce Connector 6.2.3 - July 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-2-july-22-2015">Salesforce Connector 6.2.2 - July 22, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-1-june-19-2015">Salesforce Connector 6.2.1 - June 19, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-2-0-june-9-2015">Salesforce Connector 6.2.0 - June 9, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-1-0-march-31-2015">Salesforce Connector 6.1.0 - March 31, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-1-february-25-2015">Salesforce Connector 6.0.1 - February 25, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-6-0-0-february-23-2015">Salesforce Connector 6.0.0 - February 23, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-12-march-11-2015">Salesforce Connector 5.4.12 - March 11, 2015</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-10-october-28-2014">Salesforce Connector 5.4.10 - October 28, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-9-september-18-2014">Salesforce Connector 5.4.9 - September 18, 2014</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-7">Salesforce Connector 5.4.7</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-6">Salesforce Connector 5.4.6</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-4">Salesforce Connector 5.4.4</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-3">Salesforce Connector 5.4.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-2">Salesforce Connector 5.4.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-1">Salesforce Connector 5.4.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-4-0">Salesforce Connector 5.4.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-1">Salesforce Connector 5.3.1</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-3-0">Salesforce Connector 5.3.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-2-0">Salesforce Connector 5.2.0</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-3">Salesforce Connector 5.1.3</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-2">Salesforce Connector 5.1.2</a></li><li><a class="scroll-menu-link" href="#salesforce-connector-5-1-1">Salesforce Connector 5.1.1</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
