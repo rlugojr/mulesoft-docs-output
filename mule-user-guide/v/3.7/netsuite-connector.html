@@ -910,7 +910,7 @@
  <h2 id="compatibility"><a class="anchor" href="#compatibility"></a>Compatibility</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The NetSuite connector v6.0.0 is compatible with:</p> 
+   <p>The NetSuite connector v7.0.0 is compatible with:</p> 
   </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
@@ -930,7 +930,7 @@
     </tr> 
     <tr> 
      <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>API</strong></p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">SuiteTalks 2015_1</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">SuiteTalks 2015_2</p></td> 
     </tr> 
    </tbody> 
   </table> 
@@ -986,7 +986,7 @@
    <p>To use the NetSuite connector&nbsp;in your Mule application,&nbsp;you must configure&nbsp;a global NetSuite element that can be used by all the NetSuite connectors in the application (read more about <a href="/mule-fundamentals/v/3.7/global-elements">global elements</a>).</p> 
   </div> 
   <div class="paragraph"> 
-   <p>In this release, we have upgraded the NetSuite connector to DevKit 3.6.1 and have introduced Connection Strategies. You are now presented with a number of different Global Elements, each representing a different way of authenticating to NetSuite. The following connection strategies are supported now:</p> 
+   <p>In this release, we have upgraded the NetSuite connector to DevKit 3.7.2. As in the previous release we use Connection Strategies. Not much has changed on this front, and as before (v6.0.0) you are presented with a number of different Global Elements, each representing a different way of authenticating to NetSuite. The following connection strategies are supported now:</p> 
   </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
@@ -1021,17 +1021,17 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-91a6f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-6efa2" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-f0553" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-b57d2" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-91a6f"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-f0553"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Click the&nbsp;<strong>Global Elements</strong>&nbsp;tab at the base of the canvas.</p> </li> 
        <li> <p>On the Global Mule Configuration Elements screen, click&nbsp;<strong>Create</strong>.</p> </li> 
-       <li> <p>In the Choose Global Type wizard, expand&nbsp;&nbsp;<strong>Connector Configuration,</strong> and then select&nbsp; <strong>NetSuite: Login Authentication,</strong> or&nbsp;<strong>NetSuite: Request Level Authentication, NetSuite: SSO Login Authentication,</strong> depending on your NetSuite authentication.</p> 
+       <li> <p>In the Choose Global Type wizard, expand&nbsp;&nbsp;<strong>Connector Configuration,</strong> and then select&nbsp; <strong>NetSuite: Login Authentication, NetSuite: Request Level Authentication,</strong> or <strong>NetSuite: SSO Login Authentication,</strong> depending on your NetSuite authentication.</p> 
         <div class="paragraph"> 
          <p><span class="image"><img src="./_images/netsuite_global_configuration.jpg" alt="netsuite_global_configuration"></span></p> 
         </div> </li> 
@@ -1071,6 +1071,10 @@
              <tr> 
               <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Role Id</strong></p></td> 
               <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the role ID for the user in SuiteTalk, which determines the Processor privileges.</p></td> 
+             </tr> 
+             <tr> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Application Id</strong></p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the application ID corresponding to the Integration record to be used (<strong>New in NetSuite Connector version 7.0.0</strong>).</p></td> 
              </tr> 
              <tr> 
               <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Timeout</strong></p></td> 
@@ -1194,6 +1198,10 @@
               <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the&nbsp;<strong>privateKey</strong>&nbsp;file name to pick up from the project. This file should be the&nbsp;<strong>.der</strong> file generated as per NetSuite’s specifications. This is used to encrypt the company ID and user ID into a token for&nbsp;<strong>ssoLogin</strong>.</p></td> 
              </tr> 
              <tr> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Application Id</strong></p></td> 
+              <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the application ID corresponding to the Integration record to be used (<strong>New in NetSuite Connector version 7.0.0</strong>).</p></td> 
+             </tr> 
+             <tr> 
               <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Connection Timeout</strong></p></td> 
               <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the amount of time, in milliseconds, that the client must attempt to establish a connection before timing out.</p></td> 
              </tr> 
@@ -1224,7 +1232,7 @@
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-6efa2"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-b57d2"> 
      <div class="olist arabic"> 
       <ol class="arabic"> 
        <li> <p>Ensure that you include the NetSuite namespaces in your configuration file.</p> 
@@ -1261,7 +1269,7 @@
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>netsuite:config-sso-login-authentication name="Netsuite_SSO_Login_Auth" partnerId="Your NetSuite partnerId"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;partnerAccount="Your Netsuite account id" companyId="Your companyId" userId="Your userId"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyFile="The name of the privateKey file" doc:name="Netsuite"<span class="entity">&amp;gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyFile="The name of the privateKey file" doc:name="Netsuite" applicationId="Your integration record applicationId"<span class="entity">&amp;gt;</span>
 <span class="entity">&amp;lt;</span>/mule<span class="entity">&amp;gt;</span></pre></td> 
               </tr> 
              </tbody> 
@@ -1279,7 +1287,7 @@
               <tr> 
                <td class="line-numbers"><pre>1
 </pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>netsuite:config-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" /<span class="entity">&amp;gt;</span></pre></td> 
+               <td class="code"><pre><span class="entity">&amp;lt;</span>netsuite:config-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" applicationId="${applicationId}"/<span class="entity">&amp;gt;</span></pre></td> 
               </tr> 
              </tbody> 
             </table></code></pre> 
@@ -1295,7 +1303,7 @@
               <tr> 
                <td class="line-numbers"><pre>1
 </pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>netsuite:config-request-level-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" /<span class="entity">&amp;gt;</span></pre></td> 
+               <td class="code"><pre><span class="entity">&amp;lt;</span>netsuite:config-request-level-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" applicationId="${applicationId}"/<span class="entity">&amp;gt;</span></pre></td> 
               </tr> 
              </tbody> 
             </table></code></pre> 
@@ -1311,7 +1319,7 @@
               <tr> 
                <td class="line-numbers"><pre>1
 </pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>netsuite:config-sso-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" /<span class="entity">&amp;gt;</span></pre></td> 
+               <td class="code"><pre><span class="entity">&amp;lt;</span>netsuite:config-sso-login-authentication name="NetSuite" email="${email}" password="${password}" account="${account}" roleId="${roleId}" applicationId="${applicationId}"/<span class="entity">&amp;gt;</span></pre></td> 
               </tr> 
              </tbody> 
             </table></code></pre> 
@@ -1328,7 +1336,7 @@
  <h2 id="using-the-connector"><a class="anchor" href="#using-the-connector"></a>Using the Connector</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>NetSuite connector is an operation based connector, which means that when you add the connector to your flow, you need to configure a specific web service for the connector to perform. The NetSuite connector v5.0 supports 56 operations.</p> 
+   <p>NetSuite connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific web service for the connector to perform. The NetSuite connector v7.0.0 supports 50 operations.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="adding-to-a-flow"><a class="anchor" href="#adding-to-a-flow"></a>Adding to a Flow</h3> 
@@ -1370,6 +1378,448 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="custom-field-datasense"><a class="anchor" href="#custom-field-datasense"></a>Custom Field DataSense</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>In NetSuite one can add different types of custom fields and have these customizations apply to different record types. NetSuite Connector DataSense is able to retrieve and show these fields. Note however that we do not fully support all the customization types that NetSuite users are able to define. The following lists outline what fields we do and do not handle, and where they currently appear in relation to the record type’s attributes. For the most part you can see that customizations are usually present within a list field called <em>customFieldList</em>, but in some cases these might reside elsewhere.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong><em>Entity Fields</em></strong></p> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 50%;"> 
+    <col style="width: 50%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Record Type</th> 
+     <th class="tableblock halign-left valign-top">Custom Field Placement</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CONTACT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Contact &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CUSTOMER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Customer &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EMPLOYEE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Employee &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ENTITY_GROUP</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">EntityGroup &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PARTNER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Partner &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PROJECT_TASK</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ProjectTask &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VENDOR</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Vendor &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="paragraph"> 
+   <p><strong><em>Item Fields</em></strong></p> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 50%;"> 
+    <col style="width: 50%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Record Type</th> 
+     <th class="tableblock halign-left valign-top">Custom Field Placement</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ASSEMBLY_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">AssemblyItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ENTITY_GROUP</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">EntityGroup &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>INVENTORY_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">InventoryItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>KIT_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">KitItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NON_INVENTORY_PURCHASE_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">NonInventoryPurchaseItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NON_INVENTORY_RESALE_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">NonInventoryResaleItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NON_INVENTORY_SALE_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">NonInventorySaleItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTHER_CHARGE_PURCHASE_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">OtherChargePurchaseItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTHER_CHARGE_RESALE_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">OtherChargeResaleItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTHER_CHARGE_SALE_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">OtherChargeSaleItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SERVICE_PURCHASE_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ServicePurchaseItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SERVICE_RESALE_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ServiceResaleItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SERVICE_SALE_ITEM</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ServiceSaleItem &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="paragraph"> 
+   <p><strong><em>CRM Fields</em></strong></p> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 50%;"> 
+    <col style="width: 50%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Record Type</th> 
+     <th class="tableblock halign-left valign-top">Custom Field Placement</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CALENDAR_EVENT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">CalendarEvent &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CAMPAIGN</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Campaign &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ISSUE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Issue &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MANUFACTURING_OPERATION_TASK</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ManufacturingOperationTask &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PHONE_CALL</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">PhoneCall &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PROJECT_TASK</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ProjectTask &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOLUTION</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Solution &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SUPPORT_CASE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">SupportCase &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>TASK</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Task &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="paragraph"> 
+   <p><strong><em>Transaction Body Fields</em></strong></p> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 50%;"> 
+    <col style="width: 50%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Record Type</th> 
+     <th class="tableblock halign-left valign-top">Custom Field Placement</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ASSEMBLY_BUILD</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">AssemblyBuild &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CASH_SALE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">CashSale &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CUSTOMER_PAYMENT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">CustomerPayment &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DEPOSIT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Deposit &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ESTIMATE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Estimate &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EXPENSE_REPORT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ExpenseReport &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>INVENTORY_ADJUSTMENT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">InventoryAdjustment &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>INVOICE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Invoice &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ITEM_FULFILLMENT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ItemFulfillment &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ITEM_RECEIPT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ItemReceipt &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>JOURNAL_ENTRY</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">JournalEntry &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OPPORTUNITY</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Opportunity &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PURCHASE_ORDER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">PurchaseOrder &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PURCHASE_REQUISITION</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">PurchaseRequisition &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SALES_ORDER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">SalesOrder &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>TRANSFER_ORDER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">TransferOrder &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VENDOR_BILL</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">VendorBill &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VENDOR_CREDIT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">VendorCredit &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VENDOR_PAYMENT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">VendorPayment &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VENDOR_RETURN_AUTHORIZATION</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">VendorReturnAuthorization &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>WORK_ORDER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">WorkOrder &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="paragraph"> 
+   <p><strong><em>Transaction Column Fields</em></strong></p> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 50%;"> 
+    <col style="width: 50%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Record Type</th> 
+     <th class="tableblock halign-left valign-top">Custom Field Placement</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CASH_SALE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">CashSale &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ESTIMATE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Estimate &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EXPENSE_REPORT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ExpenseReport &gt; expenseList &gt; expense &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>INVOICE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Invoice &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ITEM_FULFILLMENT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ItemFulfillment &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ITEM_RECEIPT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ItemReceipt &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>JOURNAL_ENTRY</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">JournalEntry &gt; lineList &gt; line &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OPPORTUNITY</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Opportunity &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PURCHASE_ORDER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">PurchaseOrder &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PURCHASE_REQUISITION</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">PurchaseRequisition &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SALES_ORDER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">SalesOrder &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>TIME_BILL</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">TimeBill &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>TRANSFER_ORDER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">TransferOrder &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VENDOR_BILL</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">VendorBill &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VENDOR_CREDIT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">VendorCredit &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VENDOR_PAYMENT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">VendorPayment &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VENDOR_RETURN_AUTHORIZATION</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">VendorReturnAuthorization &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>WORK_ORDER</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">WorkOrder &gt; itemList &gt; item &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="paragraph"> 
+   <p><strong><em>Transaction Item Options</em></strong></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Currently these are not handled by NetSuite Connector’s DataSense.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong><em>Item Number Fields</em></strong></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Currently these are not handled by NetSuite Connector’s DataSense.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong><em>Other Custom Fields</em></strong></p> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: 50%;"> 
+    <col style="width: 50%;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Record Type</th> 
+     <th class="tableblock halign-left valign-top">Custom Field Placement</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ACCOUNT</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Account &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BIN</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Bin &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CLASSIFICATION</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Classification &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EXPENSE_CATEGORY</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ExpenseCategory &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ITEM_DEMAND_PLAN</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ItemDemandPlan &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ITEM_SUPPLY_PLAN</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ItemSupplyPlan &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>LOCATION</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Location &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MANUFACTURING_COST_TEMPLATE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ManufacturingCostTemplate &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MANUFACTURING_ROUTING</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">ManufacturingRouting &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>NOTE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Note &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PROMOTION_CODE</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">PromotionCode &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SUBSIDIARY</strong></p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Subsidiary &gt; customFieldList &gt; customField</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="example-use-case"><a class="anchor" href="#example-use-case"></a>Example Use Case</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -1379,12 +1829,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-4dbcd" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#xml-editor-5f2d1" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-1910a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-16842" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-4dbcd"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-1910a"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/NetSuiteDemoFlow.png" alt="NetSuiteDemoFlow"></span></p> 
      </div> 
@@ -1484,6 +1934,10 @@
            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Role Id</strong></p></td> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the ID of the role you use to login in SuiteTalk, which determines the Processor privileges.</p></td> 
           </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Application Id</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the application ID corresponding to the Integration record to be used (<strong>New in NetSuite Connector version 7.0.0</strong>).</p></td> 
+          </tr> 
          </tbody> 
         </table> </li> 
        <li> <p>In the properties editor of the NetSuite connector, configure the remaining parameters:</p> 
@@ -1564,12 +2018,12 @@
         </div> </li> 
        <li> <p>Add a <strong>Object to Json</strong> transformer onto the flow to capture the response from the NetSuite connector and display it as a HTTP response.&nbsp;</p> </li> 
        <li> <p>Run the project as a Mule Application (right-click project name, then select <strong>Run As &gt; Mule Application</strong> ).&nbsp;</p> </li> 
-       <li> <p>From a browser, e nter the employee’s e-mail address, externalId, lastname, and name in the form of the following query parameters:&nbsp; <code><a href="http://localhost:8081/accountWithCustomFields?" class="bare">http://localhost:8081/accountWithCustomFields?</a> email&nbsp; =&lt;employee’s email address&gt; &amp;externalId=&lt;employee’s externalId&gt; &amp;lname= &lt;employee’s last name&gt;&amp;name=&lt;employee’s firstname&gt;</code>&nbsp;</p> </li> 
+       <li> <p>From a browser, enter the employee’s e-mail address, externalId, lastname, and name in the form of the following query parameters:&nbsp; <code><a href="http://localhost:8081/accountWithCustomFields?" class="bare">http://localhost:8081/accountWithCustomFields?</a> email&nbsp; =&lt;employee’s email address&gt; &amp;externalId=&lt;employee’s externalId&gt; &amp;lname= &lt;employee’s last name&gt;&amp;name=&lt;employee’s firstname&gt;</code>&nbsp;</p> </li> 
        <li> <p>Mule conducts the query, and adds the Employee record to NetSuite.</p> </li> 
       </ol> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-5f2d1"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-16842"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/NetSuiteDemoFlow.png" alt="NetSuiteDemoFlow"></span></p> 
      </div> 
@@ -1590,7 +2044,7 @@
 </pre></td> 
                <td class="code"><pre><span class="entity">&amp;lt;</span>netsuite:config-login-authentication name="NetSuite" email="email@youremail.com"
 &nbsp;&nbsp;&nbsp;&nbsp;password="netsuite_password" account="netsuite_account" roleId="netsuite_role"
-&nbsp;&nbsp;&nbsp;&nbsp;doc:name="Netsuite"/<span class="entity">&amp;gt;</span></pre></td> 
+&nbsp;&nbsp;&nbsp;&nbsp;applicationId="netsuite_applicationId" doc:name="Netsuite"/<span class="entity">&amp;gt;</span></pre></td> 
               </tr> 
              </tbody> 
             </table></code></pre> 
@@ -1622,11 +2076,15 @@
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>account</strong></p></td> 
-           <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Your NetSuite account&gt; (It looks similiar to TSTDRVXXXXXX.)</p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Your NetSuite account&gt;</p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>roleId</strong></p></td> 
            <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the ID of the role you use to login in SuiteTalk, which determines the Processor privileges.</p></td> 
+          </tr> 
+          <tr> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Application Id</strong></p></td> 
+           <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the application ID corresponding to the Integration record to be used (<strong>New in NetSuite Connector version 7.0.0</strong>).</p></td> 
           </tr> 
           <tr> 
            <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>doc:name</strong></p></td> 
@@ -1823,6 +2281,7 @@
          <li> <p>Password</p> </li> 
          <li> <p>Account</p> </li> 
          <li> <p>Role ID</p> </li> 
+         <li> <p>Application ID</p> </li> 
         </ul> 
        </div> </td> 
      </tr> 
@@ -1883,7 +2342,7 @@
 <span class="content">http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:config-login-authentication</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite</span><span class="delimiter">"</span></span> <span class="attribute-name">email</span>=<span class="string"><span class="delimiter">"</span><span class="content">email@youremail.com</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">netsuite_password</span><span class="delimiter">"</span></span> <span class="attribute-name">account</span>=<span class="string"><span class="delimiter">"</span><span class="content">netsuite_account</span><span class="delimiter">"</span></span> <span class="attribute-name">roleId</span>=<span class="string"><span class="delimiter">"</span><span class="content">netsuite_role</span><span class="delimiter">"</span></span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Netsuite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">applicationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">netsuite_applicationId</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Netsuite</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">JSON_To___customRecordType__21____customrecord21</span><span class="delimiter">"</span></span> <span class="attribute-name">transformationGraphPath</span>=<span class="string"><span class="delimiter">"</span><span class="content">json_to___customrecordtype__21____customrecord21.grf</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">JSON_To___customRecordType__21____customrecord21</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;data-mapper:config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Map_To_EMPLOYEE</span><span class="delimiter">"</span></span> <span class="attribute-name">transformationGraphPath</span>=<span class="string"><span class="delimiter">"</span><span class="content">map_to_employee.grf</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Map_To_EMPLOYEE</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
@@ -1933,6 +2392,7 @@
           <li> <p>password</p> </li> 
           <li> <p>account</p> </li> 
           <li> <p>roleId</p> </li> 
+          <li> <p>applicationId</p> </li> 
          </ul> 
         </div> </td> 
       </tr> 
@@ -2011,12 +2471,12 @@
 </pre></td> 
           <td class="code"><pre><span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">0.0.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;
-<span class="tag">&lt;netsuite:config-login-authentication</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">email</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.email}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">account</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.account}</span><span class="delimiter">"</span></span> <span class="attribute-name">roleId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.roleId}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite: Login Authentication</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> (1)
+<span class="tag">&lt;netsuite:config-login-authentication</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">email</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.email}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">account</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.account}</span><span class="delimiter">"</span></span> <span class="attribute-name">roleId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.roleId}</span><span class="delimiter">"</span></span> <span class="attribute-name">applicationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.applicationId}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite: Login Authentication</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> (1)
 &nbsp;
 <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">asyncAddList</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">async_add_list</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/asyncAddList</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> (2)
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Process Started ...</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:async-add-list</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Netsuite</span><span class="delimiter">"</span></span> <span class="attribute-name">recordType</span>=<span class="string"><span class="delimiter">"</span><span class="content">__customRecordType__customrecordcustomaccount__22</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Async Add List</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> (3)
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:async-add-list</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">recordType</span>=<span class="string"><span class="delimiter">"</span><span class="content">__customRecordType__customrecordcustomaccount__22</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Async Add List</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> (3)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:records-attributes&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:records-attribute&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:inner-records-attribute</span> <span class="attribute-name">key</span>=<span class="string"><span class="delimiter">"</span><span class="content">externalId</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>addListExt1<span class="tag">&lt;/netsuite:inner-records-attribute&gt;</span>
@@ -2036,7 +2496,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">===== Checking status for jobId: #[flowVars.jobId] =====</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;until-successful</span> <span class="attribute-name">maxRetries</span>=<span class="string"><span class="delimiter">"</span><span class="content">180</span><span class="delimiter">"</span></span> <span class="attribute-name">failureExpression</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.getStatus() == com.netsuite.webservices.platform.core.types.AsyncStatusType.PENDING || payload.getStatus() == com.netsuite.webservices.platform.core.types.AsyncStatusType.PROCESSING]</span><span class="delimiter">"</span></span> <span class="attribute-name">synchronous</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Until Successful</span><span class="delimiter">"</span></span> <span class="attribute-name">millisBetweenRetries</span>=<span class="string"><span class="delimiter">"</span><span class="content">10000</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> (6)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;processor-chain</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Processor Chain</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:check-async-status</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Netsuite</span><span class="delimiter">"</span></span> <span class="attribute-name">jobId</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.jobId]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Check Async Status</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:check-async-status</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">jobId</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.jobId]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Check Async Status</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Status is: #[payload.getStatus()]</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Status</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/processor-chain&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/until-successful&gt;</span>
@@ -2054,7 +2514,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/getAsyncResult</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> (10)
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-variable</span> <span class="attribute-name">variableName</span>=<span class="string"><span class="delimiter">"</span><span class="content">jobId</span><span class="delimiter">"</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[message.inboundProperties.'http.query.params'.jobId]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Set Variable: jobId</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">===== Results for jobId: #[flowVars.jobId] =====</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Logger</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:get-async-result</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">Netsuite</span><span class="delimiter">"</span></span> <span class="attribute-name">jobId</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.jobId]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Get Async Result</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> (11)
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:get-async-result</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">jobId</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[flowVars.jobId]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Get Async Result</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> (11)
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;set-payload</span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">"</span><span class="content">#[payload.getWriteResponseList().getWriteResponse()]</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Get Response List</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> (12)
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;foreach</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">For Each</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> (13)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;logger</span> <span class="attribute-name">message</span>=<span class="string"><span class="delimiter">"</span><span class="content">Custom record with externalId: #[payload.getBaseRef().getExternalId()] and typeId: #[payload.getBaseRef().getTypeId()] ... Deleting it!</span><span class="delimiter">"</span></span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">"</span><span class="content">INFO</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Result Info</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
@@ -2134,13 +2594,43 @@
     <p>This also applies for the asynchronous equivalent of search, the <code>asyncSearch</code>&nbsp;operation.</p> 
    </div> 
    <div class="sect3"> 
+    <h4 id="search-pagination-support"><a class="anchor" href="#search-pagination-support"></a>Search Pagination Support</h4> 
+    <div class="paragraph"> 
+     <p>In NetSuite Connector version 7.0.0 we added pagination support to <code>search</code>.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>We agreed to unify searching under just one operation and remove all the other search-related processors. Thus, <code>search</code> will always retrieve the whole set of results. Therefore users will not need to work with <code>searchNext</code> or <code>searchMore</code> in order to get the rest of the records from subsequent pages. The return type is also different; the processor will output a List of Maps representing each and every record obtained by your search criteria.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>An important aspect to note is that pagination could not be applied to the asynchronous equivalent of <code>search</code> (<code>asyncSearch</code>). This is due to the fact that the actual pagination would have to be applied to the <code>getAsyncResult</code> operation. This would mean that only the first page would end up being retrieved asynchronously. Furthermore, <code>getAsyncResult</code> is common to all async operations. Hence we cannot even apply pagination here since the return type of this operation depends on what async operation was invoked.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Regarding the new <strong>search</strong> configuration, the connector is the same apart from a new attribute called <code>fetchSize</code>:</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code data-lang="xml">
+           
+        <table class="CodeRay"> 
+         <tbody> 
+          <tr> 
+           <td class="line-numbers"><pre>1
+</pre></td> 
+           <td class="code"><pre><span class="tag">&lt;netsuite:paged-search</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">searchRecord</span>=<span class="string"><span class="delimiter">"</span><span class="content">CUSTOMER_BASIC</span><span class="delimiter">"</span></span> <span class="attribute-name">fetchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">5</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Customer Basic Search</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></pre></td> 
+          </tr> 
+         </tbody> 
+        </table></code></pre> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
     <h4 id="example-of-basic-search"><a class="anchor" href="#example-of-basic-search"></a>Example of Basic Search</h4> 
     <div class="paragraph"> 
-     <p>For this example, we set up a basic search for Customers (CustomerSearchBasic) with the criteria below:</p> 
+     <p>For this example, we set up a basic search operation for Customers (<code>CustomerSearchBasic</code>) with the criteria below:</p> 
     </div> 
     <div class="ulist"> 
      <ul> 
-      <li> <p>The companyName starts with "A".</p> </li> 
+      <li> <p><code>companyName</code> starts with "A".</p> </li> 
       <li> <p>The customer is not an individual.</p> </li> 
       <li> <p>The customer has a priority of 50, which is handled by a customField.</p> </li> 
      </ul> 
@@ -2171,12 +2661,12 @@
 </pre></td> 
            <td class="code"><pre><span class="tag">&lt;http:listener-config</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">host</span>=<span class="string"><span class="delimiter">"</span><span class="content">0.0.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">port</span>=<span class="string"><span class="delimiter">"</span><span class="content">8081</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP Listener Configuration</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;
-<span class="tag">&lt;netsuite:config-login-authentication</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">email</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.email}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">account</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.account}</span><span class="delimiter">"</span></span> <span class="attribute-name">roleId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.roleId}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite: Login Authentication</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;netsuite:config-login-authentication</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">email</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.email}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.password}</span><span class="delimiter">"</span></span> <span class="attribute-name">account</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.account}</span><span class="delimiter">"</span></span> <span class="attribute-name">roleId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.roleId}</span><span class="delimiter">"</span></span> <span class="attribute-name">applicationId</span>=<span class="string"><span class="delimiter">"</span><span class="content">${netsuite.applicationId}</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite: Login Authentication</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;
 <span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">customer-basic-search</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;http:listener</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP_Listener_Configuration</span><span class="delimiter">"</span></span> <span class="attribute-name">path</span>=<span class="string"><span class="delimiter">"</span><span class="content">/basicSearch</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">HTTP</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;component</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">"</span><span class="content">CustomerBasicSearchComponent</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Create Customer Search Basic criteria</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:search</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">searchRecord</span>=<span class="string"><span class="delimiter">"</span><span class="content">CUSTOMER_BASIC</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Customer Basic Search</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;netsuite:search</span> <span class="attribute-name">config-ref</span>=<span class="string"><span class="delimiter">"</span><span class="content">NetSuite__Login_Authentication</span><span class="delimiter">"</span></span> <span class="attribute-name">searchRecord</span>=<span class="string"><span class="delimiter">"</span><span class="content">CUSTOMER_BASIC</span><span class="delimiter">"</span></span> <span class="attribute-name">fetchSize</span>=<span class="string"><span class="delimiter">"</span><span class="content">5</span><span class="delimiter">"</span></span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Customer Basic Search</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;json:object-to-json-transformer</span> <span class="attribute-name">doc:name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Object to JSON</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/flow&gt;</span></pre></td> 
           </tr> 
@@ -2619,7 +3109,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#installing-and-configuring">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#configuring-the-netsuite-connector-global-element">Configuring the NetSuite Connector Global Element</a></li><li><a class="scroll-menu-link" href="#using-the-connector">Using the Connector</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#other-code-examples">Other Code Examples</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#compatibility">Compatibility</a></li><li><a class="scroll-menu-link" href="#installing-and-configuring">Installing and Configuring</a></li><li><a class="scroll-menu-link" href="#configuring-the-netsuite-connector-global-element">Configuring the NetSuite Connector Global Element</a></li><li><a class="scroll-menu-link" href="#using-the-connector">Using the Connector</a></li><li><a class="scroll-menu-link" href="#custom-field-datasense">Custom Field DataSense</a></li><li><a class="scroll-menu-link" href="#example-use-case">Example Use Case</a></li><li><a class="scroll-menu-link" href="#other-code-examples">Other Code Examples</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
