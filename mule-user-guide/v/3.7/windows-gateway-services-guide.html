@@ -904,7 +904,7 @@
  <h3 id="installing-the-windows-gateway-services"><a class="anchor" href="#installing-the-windows-gateway-services"></a>Installing the Windows Gateway Services</h3> 
  <div class="olist arabic"> 
   <ol class="arabic"> 
-   <li> <p>Download the Windows Gateway Services installer from&nbsp;<a href="https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/modules/anypoint-windows-gateway-service/1.6.0/anypoint-windows-gateway-service-1.6.0.zip">here</a>. Unzip the software distribution.</p> </li> 
+   <li> <p>Download the Windows Gateway Services installer from&nbsp;<a href="https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/modules/anypoint-windows-gateway-service/1.8.5/anypoint-windows-gateway-service-1.8.5.zip">here</a>. Unzip the software distribution.</p> </li> 
    <li> <p>Double-click the&nbsp;<code>AnyPoint-Windows-Gateway-Service.exe</code>&nbsp;file. &nbsp;</p> </li> 
    <li> <p>Click&nbsp;<strong>Options</strong>&nbsp;to change the installation location, or click&nbsp;<strong>Install</strong>&nbsp;to start the installation.&nbsp;</p> </li> 
    <li> <p>Copy the Authentication Token that displays for use when you configure the connection to the Gateway Service from Anypoint Studio.. For more information, see the&nbsp;<a href="/mule-user-guide/v/3.7/windows-powershell-connector-guide">Windows PowerShell Connector Guide.</a> After you copy the token, click <strong>Install</strong>.</p> </li> 
@@ -988,16 +988,7 @@
 <div class="sect2"> 
  <h3 id="load-balanced-configuration"><a class="anchor" href="#load-balanced-configuration"></a>Load-balanced configuration</h3> 
  <div class="paragraph"> 
-  <p>Windows Gateway Services supports running in a load-balanced configuration to allow for fault tolerance. When running multiple gateway services instances, each member should be configured to perform MSMQ background jobs at a non-overlapping interval.</p> 
- </div> 
- <div class="paragraph"> 
-  <p>MSMQ background job processing is by default performed at zero minutes past the hour, but to prevent overlap when multiple service instances are running, a configuration property called cleanup-delay should be set on each gateway instance. The recommended value to use for this on each machine is (60 / instanceCount) * (instanceNumber - 1) where instanceNumber is an integer value 1..n.</p> 
- </div> 
- <div class="paragraph"> 
-  <p>For example, a cluster of 2 machines would use cleanup-delay of 0 on machine 1, 30 on machine 2. A cluster of 3 machines would use backgroundJobInterval of 0 on machine 1, 20 on machine 2, and 40 on machine 3.</p> 
- </div> 
- <div class="paragraph"> 
-  <p>This setting is found in the Mule.SelfHost.config file:</p> 
+  <p>Windows Gateway Services supports running in a load-balanced configuration to allow for fault tolerance. When running multiple gateway services instances, each member should be configured to perform MSMQ background jobs at a non-overlapping interval. MSMQ background job processing is by default performed every 10 minutes starting at zero minutes past the hour. To prevent multiple gateway instances simultaneously attempting to perform cleanup on the queues when running in load-balanced configuration, a setting called cleanup-delay should be specified on each gateway instance. The recommended value to use for this on each machine is (10 / instanceCount) * (instanceNumber - 1) where instanceNumber is an integer value 1..n. For example, a cluster of 2 machines would use cleanup-delay of 0 on machine 1, 5 on machine 2. A cluster of 3 machines would use cleanup-delay of 0 on machine 1, 3 on machine 2, and 6 on machine 3. Machine clocks should be synchronized by NTP or equivalent mechanism to ensure this offset is applied correctly. The cleanup-delay setting is found in the Mule.SelfHost.config file:</p> 
  </div> 
  <div class="listingblock"> 
   <div class="content"> 
