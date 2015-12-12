@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-platform-on-premises/v/1.0/installing-anypoint-on-premises" />
-    <meta name="description" content="This page assumes you have at least a basic understanding of Unix-based systems and networking, and are familiar with the command line. Anypoint Pl..." />
+    <meta name="description" content="This page assumes you have at least a basic understanding of Unix-based systems and networking, and are familiar with the command line. You should ..." />
     <meta class="swiftype" name="title" data-type="string" content="Installing Anypoint Platform On Premises Edition" />
 
 </head>
@@ -535,8 +535,8 @@
 </ul></li>
 <li>
 <i></i>
-<a href="/mule-agent/v/1.2.0/">Mule Agent</a><ul>
-<li><i></i><a href="/mule-agent/v/1.2.0/installing-mule-agent">Installing the Mule Agent</a></li><li><i></i><a href="/mule-agent/v/1.2.0/mule-agent-architecture">Mule Agent Architecture</a></li><li><i></i><a href="/mule-agent/v/1.2.0/administration-service">Administration Service</a></li><li><i></i><a href="/mule-agent/v/1.2.0/managing-applications-and-domains">Managing Applications and Domains</a></li><li><i></i><a href="/mule-agent/v/1.2.0/event-tracking">Event Tracking</a></li><li><i></i><a href="/mule-agent/v/1.2.0/jmx-service">JMX Service</a></li><li><i></i><a href="/mule-agent/v/1.2.0/mule-agent-notifications">Mule Agent Notifications</a></li><li><i></i><a href="/mule-agent/v/1.2.0/extending-the-mule-agent">Extending the Mule Agent</a></li><li><i></i><a href="/mule-agent/v/1.2.0/internal-handler-buffering">Internal Handler Buffering</a></li><li><i></i><a href="/mule-agent/v/1.2.0/configuring-a-proxy-for-the-mule-agent">Configuring a Proxy for the Mule Agent</a></li></ul></li>
+<a href="/mule-agent/v/1.3.0/">Mule Agent</a><ul>
+<li><i></i><a href="/mule-agent/v/1.3.0/installing-mule-agent">Installing the Mule Agent</a></li><li><i></i><a href="/mule-agent/v/1.3.0/mule-agent-architecture">Mule Agent Architecture</a></li><li><i></i><a href="/mule-agent/v/1.3.0/administration-service">Administration Service</a></li><li><i></i><a href="/mule-agent/v/1.3.0/managing-applications-and-domains">Managing Applications and Domains</a></li><li><i></i><a href="/mule-agent/v/1.3.0/event-tracking">Event Tracking</a></li><li><i></i><a href="/mule-agent/v/1.3.0/jmx-service">JMX Service</a></li><li><i></i><a href="/mule-agent/v/1.3.0/mule-agent-notifications">Mule Agent Notifications</a></li><li><i></i><a href="/mule-agent/v/1.3.0/extending-the-mule-agent">Extending the Mule Agent</a></li><li><i></i><a href="/mule-agent/v/1.3.0/internal-handler-buffering">Internal Handler Buffering</a></li><li><i></i><a href="/mule-agent/v/1.3.0/configuring-a-proxy-for-the-mule-agent">Configuring a Proxy for the Mule Agent</a></li></ul></li>
 <li>
 <i></i>
 <a href="/mule-management-console/v/3.7/">Mule Management Console</a><ul>
@@ -879,7 +879,7 @@
  <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This page assumes you have at least a basic understanding of Unix-based systems and networking, and are familiar with the command line.</p> 
+   <p>This page assumes you have at least a basic understanding of Unix-based systems and networking, and are familiar with the command line. You should also be familiar with <a href="http://rancher.com/rancher/">Rancher</a> and <a href="https://docs.docker.com/installation/">Docker</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -887,7 +887,7 @@
  <h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Anypoint Platform is available to download and install on premise by obtaining the installation ZIP file from MuleSoft. Currently, Anypoint Platform on-premises Edition is run via <a href="https://docs.docker.com/installation/">Docker</a>, an open-source virtualization platform. Docker uses <em>containers</em> to wrap applications in a complete filesystem with everything needed to run, including runtime and configuration data. MuleSoft provides Docker images that contain the different components of Anypoint Platform on-premises Edition – complete with configuration – which you can run on Docker.</p> 
+   <p>Anypoint Platform is available to download and install on premise by obtaining the installation ZIP file from MuleSoft. Currently, Anypoint Platform on-premises Edition is run via <a href="https://docs.docker.com/installation/">Docker</a>, an open-source virtualization platform, and <a href="http://rancher.com/rancher/">Rancher</a> is also used to run Docker containers in production. Docker uses <em>containers</em> to wrap applications in a complete filesystem with everything needed to run, including runtime and configuration data. MuleSoft provides Docker images that contain the different components of Anypoint Platform on-premises Edition – complete with configuration – which you can run on Docker.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Docker runs natively on Linux, but you can use it on OS X and Windows via a Linux virtual machine. You can create your own virtual machine with a Linux distribution supported by Docker, or download and use Docker Toolbox, which contains both Docker Machine and Docker Compose. Docker Machine works as a wrapper around a virtual Linux machine on which Docker runs.</p> 
@@ -895,118 +895,70 @@
   <div class="paragraph"> 
    <p>This document contains a brief section to provide orientation on installing Docker on your operating system, and complete instructions for downloading and running the Anypoint Platform on your Docker container.</p> 
   </div> 
+  <div class="paragraph"> 
+   <p>With Rancher you have the ability to run as many copies of each stateless service as you want and Rancher will automatically balance them between registered hosts. That being said, you will only want to have 1 instance of the singleton services (databases, objectstore, mcm). For example, if you have 3 hosts registered and you want to run 2 copies of each service, then Rancher will automatically determine which hosts should run each service.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><span class="image"><img src="./_images/rancher-struct.png" alt="rancher struct"></span></p> 
+  </div> 
   <div class="sect2"> 
    <h3 id="system-requirements"><a class="anchor" href="#system-requirements"></a>System Requirements</h3> 
-   <table class="tableblock frame-all grid-all spread"> 
-    <colgroup> 
-     <col style="width: 50%;"> 
-     <col style="width: 50%;"> 
-    </colgroup> 
-    <tbody> 
-     <tr> 
-      <td class="tableblock halign-left valign-top" rowspan="2"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Operating system</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>RHEL 7.1 or greater</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>CentOS 7.1 or greater</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top" rowspan="2"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Storage</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>20 GB for <code>var/lib/docker</code></p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>1 GB for home directory</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top" rowspan="2"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Docker</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Docker engine 1.6.2 or later</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Docker Compose 1.3.1 or later</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top" rowspan="2"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Identity management provider</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>OpenAM 11.0 or later</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>LDAP v3</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-     <tr> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>Network ports</p> 
-        </div> 
-       </div></td> 
-      <td class="tableblock halign-left valign-top"> 
-       <div> 
-        <div class="paragraph"> 
-         <p>80, 8080, 8081, 443, 8443</p> 
-        </div> 
-       </div></td> 
-     </tr> 
-    </tbody> 
-   </table> 
+   <div class="paragraph"> 
+    <p><strong>Disk space</strong>: &gt; 30GB free disk space on every host that will run MuleSoft software</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong>OS Requirements</strong>: Ubuntu is recommended, as it has been tested extensively. Redhat and CentOS have not been tested yet, but are believed to work as well.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong>Server vs Agent Hosts</strong>: In theory you can run the Rancher Server, Rancher Agent, and all MuleSoft images on the same machine. However, we have run into some issues such as port conflicts, exceeding the number of AUFS mounted layers, etc. To be safe we recommend installing the Rancher Server on one host and then the Rancher Agent and MuleSoft images on other hosts.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong>Ports</strong>: Rancher and the MuleSoft software make use of the following ports, so verify that they are open:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><strong>UDP</strong>: 500, 4500</p> </li> 
+     <li> <p><strong>TCP</strong>: 80, 443, 8080, 8443</p> </li> 
+    </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong>You will need to install the following components on each host</strong>:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>docker engine</p> </li> 
+     <li> <p>docker-compose</p> </li> 
+     <li> <p>rancher-compose (cli for working with rancher tools)</p> </li> 
+    </ul> 
+   </div> 
+   <div class="admonitionblock warning"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
+       <td class="content"> You need to have Docker version 1.8.x. Docker 1.9.X isn’t currently compatible with this installation. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Follow the docker installation instructions that are appropriate for your system. <a href="https://docs.docker.com/installation/" class="bare">https://docs.docker.com/installation/</a></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="dowload-script-bundle"><a class="anchor" href="#dowload-script-bundle"></a>Dowload Script Bundle</h3> 
+   <div class="paragraph"> 
+    <p>Depending on what you wish to install, download one of the following two bundles of configuration files and scripts:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><a href="_attachments/anypoint-platform.zip">Anypoint Platform On Premsies</a>: For installing the entire functionality of the Anypoint Platform, including API administration tools.</p> </li> 
+     <li> <p><a href="_attachments/anypoint-runtime-manager.zip">Anypoint Runtime Manager On Premsies</a>: For installing the reduced verison of the Anypoint Platform, limited only to the Runtime Manager, which manages your deployed applications.</p> </li> 
+    </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p>These .zip files contain all of the configuration and installation scripts needed to run Anypoint Platform or Anypoint Runtime Management.</p> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="architecture-of-anypoint-platform-on-docker"><a class="anchor" href="#architecture-of-anypoint-platform-on-docker"></a>Architecture of&nbsp;Anypoint Platform on Docker</h3> 
@@ -1046,7 +998,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="downloading-and-installing-docker"><a class="anchor" href="#downloading-and-installing-docker"></a>Downloading and Installing Docker</h2> 
+ <h2 id="installing-docker-and-rancher"><a class="anchor" href="#installing-docker-and-rancher"></a>Installing Docker and Rancher</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p><a href="http://www.docker.com">Docker</a> runs natively on Linux, including Debian, Ubuntu, Red Hat, CentOS, Oracle and others.</p> 
@@ -1075,600 +1027,1769 @@
   <div class="sect2"> 
    <h3 id="installing-docker-compose"><a class="anchor" href="#installing-docker-compose"></a>Installing Docker Compose</h3> 
    <div class="paragraph"> 
-    <p>Once you have Docker running, login as root to the Docker host machine, then run the following commands to install Docker Compose:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>curl -L https://github.com/docker/compose/releases/download/1.3.3/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The above commands download Docker Compose to&nbsp;<code>/usr/local/bin</code>, then make the&nbsp;<code>docker-compose</code> binary executable.</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="setting-up-connectivity-for-anypoint-platform"><a class="anchor" href="#setting-up-connectivity-for-anypoint-platform"></a>Setting Up Connectivity for Anypoint Platform</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>This section details connection parameters and recommended settings for connecting to your&nbsp;Anypoint Platform on-premises Edition installation. You can complete the steps in this section before or after installing Anypoint Platform, or you can use your own custom network configuration.</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="network-parameters"><a class="anchor" href="#network-parameters"></a>Network Parameters</h3> 
-   <div class="sect3"> 
-    <h4 id="ports"><a class="anchor" href="#ports"></a>Ports</h4> 
-    <div class="paragraph"> 
-     <p>Anypoint Platform&nbsp;listens for connections on the following ports:</p> 
-    </div> 
-    <div class="ulist"> 
-     <ul> 
-      <li> <p>80</p> </li> 
-      <li> <p>443</p> </li> 
-      <li> <p>8080</p> </li> 
-      <li> <p>8081</p> </li> 
-      <li> <p>8443</p> </li> 
-     </ul> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Ports 80 and 443 are for the Web interface; ports 8080 and 8443 are used to register Mule servers. These ports must be open for incoming TCP connections on the machine where your&nbsp;Anypoint Platform installation resides.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Additionally, you must give the&nbsp;Anypoint Platform host IP address a DNS entry for <code>anypoint.mulesoft.local</code>, which is the default domain name for the installation (this can be changed if desired).</p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="host-name-running-natively"><a class="anchor" href="#host-name-running-natively"></a>Host Name (Running Natively)</h3> 
-   <div class="paragraph"> 
-    <p>If you are running Docker natively, you will connect to&nbsp;Anypoint Platform via&nbsp;<code>localhost</code>. You do need to ensure that the&nbsp;Anypoint Platform ports are open, and that client possess the&nbsp;Anypoint Platform host’s IP address or network host name as described above.</p> 
-   </div> 
-   <div class="admonitionblock tip"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> For details on how Docker handles networking on the host OS, see the Docker <a href="https://docs.docker.com/articles/networking/">Network Configuration</a> page. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Other clients on your network can connect to your on-premise&nbsp;Anypoint Platform installation using the network address of the host where&nbsp;Anypoint Platform resides.</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="host"><a class="anchor" href="#host"></a>Host Name (Running on a Virtual Machine)</h3> 
-   <div class="paragraph"> 
-    <p>If you are running Docker on a virtual machine (as you do when using Docker Machine),&nbsp;you need to obtain the virtual machine’s IP address. This is the IP address that you will use to connect to the&nbsp;Anypoint Platform instance that you will install on the virtual machine.</p> 
+    <p>Please follow the instructions listed on <a href="https://docs.docker.com/compose/install/">Docker Compose install</a></p> 
    </div> 
    <div class="sect3"> 
-    <h4 id="using-docker-machine"><a class="anchor" href="#using-docker-machine"></a>Using Docker Machine</h4> 
+    <h4 id="copy-platform-config-files-to-code-opt-config-code"><a class="anchor" href="#copy-platform-config-files-to-code-opt-config-code"></a>Copy platform config files to <code>/opt/config</code></h4> 
     <div class="paragraph"> 
-     <p>If you are using Docker Machine, you must find out the name and IP address of your virtual machine. To obtain the machine name, open a terminal on your host machine and run:</p> 
+     <p>The Anypoint platform configuration files must be in a predictable location on each host machine because Rancher dynamically launches services on any available host. This means that it won’t have the benefit of finding config files from a current working directory the same way docker-compose would. <code>/opt/config</code> has been chosen as the default directory to store platform configuration files, so what you need to do is download the link:[I STILL NEED THE FILE TO PUT HERE] and copy the config directory into the <code>/opt</code> folder. Repeat this procedure on every host you register to Rancher.</p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre>docker-machine ls</pre> 
+      <pre class="CodeRay highlight"><code>&gt; cd anypoint-platform
+&gt; sudo cp -r config /opt/.</code></pre> 
      </div> 
     </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="rancher-server-installation"><a class="anchor" href="#rancher-server-installation"></a>Rancher Server Installation:</h4> 
     <div class="paragraph"> 
-     <p>The above comand will list all of your virtual machines. By default you should see one machine named <strong>default</strong>. Once you know your machine’s name, you can run:</p> 
+     <p>Run the rancher server on the machine you designate to host it. It occupies a single docker container.</p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre>docker-machine ip default</pre> 
+      <pre class="CodeRay highlight"><code>&gt; sudo docker run -v /opt/anypoint-platform/config/logos/:/usr/share/cattle/war/assets/images/logos -d --restart=always -p 9999:8080 rancher/server</code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
-     <p>This should return the IP address of a virtual machine named <code>default</code>.</p> 
+     <p>After a few minutes, the server will be running and will allow you to access the UI on your browser of choice vía HTTP: <code><a href="http://$SERVER_IP:9999" class="bare">http://$SERVER_IP:9999</a></code></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/rancher-welcome.png" alt="rancher welcome"></span></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>You now have the server up and running with the Rancher UI. From here onwards, this tutorial will make use of the Rancher UI instead of the terminal to manage the installation.</p> 
     </div> 
    </div> 
    <div class="sect3"> 
-    <h4 id="using-a-custom-virtual-machine"><a class="anchor" href="#using-a-custom-virtual-machine"></a>Using a Custom Virtual Machine</h4> 
+    <h4 id="register-a-host-with-the-rancher-server"><a class="anchor" href="#register-a-host-with-the-rancher-server"></a>Register a host with the rancher server:</h4> 
     <div class="paragraph"> 
-     <p>If your Docker installation resides on a virtual machine that isn’t created through Docker Machine (for example, you have created your own virtual machine with a Linux OS), you will probably need to login to the virtual machine to find out the IP address. If the virtual machine does not have a network interface facing the host OS, you need to create one.</p> 
+     <p>Follow the Docker instructions above on a separate machine. This machine will be used as a host to run MuleSoft software. Open a terminal on this machine.</p> 
     </div> 
     <div class="paragraph"> 
-     <p>For example, if you are using VirtualBox, it is possible that your virtual machine has a single network interface, used for NAT. NAT stands for Network Address Translation, which allows your virtual machine to access the Internet using the network interface on your host OS. But you need another network interface on your local machine, to enable direct network communications between the host OS and the virtual machine. After you set up this interface, you will use it to connect to your on-premise Anypoint Platform.</p> 
+     <p>Back on the first machine, where you installed Rancher, from the UI top nav bar click on <strong>INFRASTRUCTURE</strong> and then <strong>HOSTS</strong>. You will see a screen that shows all registered host machines. At this point, you won’t see any registered machines.</p> 
     </div> 
     <div class="paragraph"> 
-     <p>There are several possible ways to set up host OS-virtual OS network communication, which are beyond the scope of this document. The example below describes how to set up network communications when using the <a href="https://www.virtualbox.org/">VirtualBox</a> virtual machine emulator.</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="example-using-virtualbox"><a class="anchor" href="#example-using-virtualbox"></a>Example Using VirtualBox</h4> 
-    <div class="paragraph"> 
-     <p>If you created a virtual machine in VirtualBox, by default it will have only one network interface, used for NAT. To see whether this is the case, perform the following steps:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>In VirtualBox Manager, click the virtual machine in the left-hand list, then select <strong>Network</strong> from the settings.</p> </li> 
-      <li> <p>VirtualBox Manager displays a list of interfaces. <strong>Adapter 1</strong> is probably dedicated to NAT. Check if there is another active interface, and if it is attached to a <strong>Host-only Adapter</strong>. If this is the case, you can skip to step 6.</p> </li> 
-      <li> <p>If no active interfaces are attached to a Host-only Adapter, select and inactive interface, for example by clicking <strong>Adapter 2</strong> if it is not in use (if the virtual machine is running, you need to shut it down first).</p> </li> 
-      <li> <p>In the menu for the adapter that you are going to activate, select <strong>Host-only Adapter</strong> in the&nbsp;<strong>Attached to:</strong> drop-down menu.</p> </li> 
-      <li> <p>Click <strong>OK</strong>, then start your virtual machine. VirtualBox should create a private network on the 192.168.* range and assign an IP to your virtual machine.</p> </li> 
-      <li> <p>Login to your virtual machine, and check its network interfaces for the "host-only" address. For example, run:</p> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre>ifconfig -a | grep 192</pre> 
-        </div> 
-       </div> 
-       <div class="paragraph"> 
-        <p>Output should be similar to the following:</p> 
-       </div> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre>inet addr:192.168.56.103  Bcast:192.168.56.255  Mask:255.255.255.0</pre> 
-        </div> 
-       </div> 
-       <div class="paragraph"> 
-        <p>In this example, the address for your virtual machine is 192.168.56.103.</p> 
-       </div> </li> 
-     </ol> 
+     <p><span class="image"><img src="./_images/add-host.png" alt="add host"></span></p> 
     </div> 
     <div class="paragraph"> 
-     <p>When you install Anypoint Platform, you can connect to&nbsp;it from your host machine using this address. We recommend, however, that you set up a host name for the IP address, as explained below.</p> 
+     <p>Click on the ADD HOST button to add a host. On the next page, the Rancher UI will require that you provide a base URL that the hosts should use to connect to the server. By default it will use the URL that your browser is currently at, which should be fine, so hit <strong>Save</strong> to move on to the next page.</p> 
     </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="setting-up-a-host-name-for-your-docker-machine"><a class="anchor" href="#setting-up-a-host-name-for-your-docker-machine"></a>Setting Up a Host Name for Your Docker Machine</h4> 
     <div class="paragraph"> 
-     <p>On your host system (OS X or Windows), open the&nbsp;<code>hosts</code> file and add the following line:</p> 
+     <p><span class="image"><img src="./_images/add-host2.png" alt="add host2"></span></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>There are several ways to auto-provision hosts from different cloud providers. We will not use any of these since you have already provisioned your own server. Click on the CUSTOM icon which will give you a command to run on the host machine. Copy and paste this into your terminal to register the host with the server (this will run the Rancher agent Docker image on the host machine). Click on <strong>close</strong>. Wait for a minute and go back to the host’s screen and you will see that the host has been registered with the server and that it’s ready to receive commands.</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/add-host3.png" alt="add host 3"></span></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/add-host4.png" alt="add host 4"></span></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>One of the hosts you are adding to your cluster needs to be designated as the “database” host, which will ensure correct container placement for failover scenarios. Pick your designated host and open its dropdown menu by clicking on the down arrow, select “Edit” and add the following label:</p> 
     </div> 
     <div class="listingblock"> 
      <div class="content"> 
-      <pre>&lt;IP address&gt; anypoint.mulesoft.local</pre> 
+      <pre class="CodeRay highlight"><code>“database” = “true”</code></pre> 
      </div> 
     </div> 
     <div class="paragraph"> 
-     <p>This maps the Docker virtual machine’s IP address to the URL&nbsp;<code>anypoint.mulesoft.local</code>.</p> 
+     <p><span class="image"><img src="./_images/rancher-assign-db1.png" alt="assign db"></span></p> 
     </div> 
-    <div class="admonitionblock tip"> 
-     <table> 
-      <tbody> 
-       <tr> 
-        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-        <td class="content"> On OS X, the hosts file is&nbsp;<code>/etc/hosts</code>; on Windows, <code>C:\Windows\System32\Drivers\etc\hosts</code>. </td> 
-       </tr> 
-      </tbody> 
-     </table> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/rancher-assign-db2.png" alt="assign db2"></span></p> 
+    </div> 
+    <div class="paragraph"> 
+     <p>You can verify that the host now displays this label when viewed on the Hosts screen.</p> 
     </div> 
     <div class="admonitionblock note"> 
      <table> 
       <tbody> 
        <tr> 
         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-        <td class="content"> Modifying your OS’s&nbsp;<code>hosts</code> file only provides a network address for your virtual machine on the host OS, i.e. the OS where the&nbsp;<code>hosts</code> file resides. To allow other clients to connect to your&nbsp;Anypoint Platform installation, you should set up name resolution for your network using DNS. </td> 
-       </tr> 
-      </tbody> 
-     </table> 
-    </div> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="installing-anypoint-platform"><a class="anchor" href="#installing-anypoint-platform"></a>Installing Anypoint Platform</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Once you have Docker and Compose installed, you need to perform the following steps:</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Download the Anypoint Docker Setup package</p> </li> 
-    <li> <p>Login</p> </li> 
-    <li> <p>Run the Docker Compose script to start the system</p> </li> 
-   </ul> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="downloading-the-anypoint-docker-setup-package"><a class="anchor" href="#downloading-the-anypoint-docker-setup-package"></a>Downloading the Anypoint Docker Setup Package</h3> 
-   <div class="paragraph"> 
-    <p>The package is a .zip file that contains all of the configuration and installation scripts needed to run Anypoint Platform.</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Obtain the the installation ZIP file for&nbsp;Anypoint Docker Setup <a href="http://anypoint-on-prem.s3-website-us-east-1.amazonaws.com/anypoint-platform/anypoint-platform.zip">here</a></p> </li> 
-    </ul> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="downloading-the-anypoint-platform-docker-images"><a class="anchor" href="#downloading-the-anypoint-platform-docker-images"></a>Downloading the&nbsp;Anypoint Platform Docker Images</h3> 
-   <div class="sect3"> 
-    <h4 id="the-docker-user"><a class="anchor" href="#the-docker-user"></a>The Docker User</h4> 
-    <div class="admonitionblock tip"> 
-     <table> 
-      <tbody> 
-       <tr> 
-        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-        <td class="content"> In these instructions, the "Docker machine" is the Linux host your Docker installation resides on. </td> 
+        <td class="content"> Make sure that exactly <strong>one</strong> single host has this label attached. </td> 
        </tr> 
       </tbody> 
      </table> 
     </div> 
     <div class="paragraph"> 
-     <p>Log in to your Docker machine as the root user, or as a user authorized to run Docker commands. In this machine, user&nbsp;<code>docker</code> is authorized to run Docker commands. The default password for the user is&nbsp;<code>tcuser</code>.</p> 
-    </div> 
-    <div class="admonitionblock tip"> 
-     <table> 
-      <tbody> 
-       <tr> 
-        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-        <td class="content"> 
-         <div class="paragraph"> 
-          <p>In virtual machines you can run Docker commands as a non-root user by adding the user to the&nbsp;<code>docker</code> group. To add a user to the&nbsp;<code>docker</code> group, run (as root):</p> 
-         </div> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre>usermod -a -G docker &lt;user&gt;</pre> 
-          </div> 
-         </div> 
-         <div class="paragraph"> 
-          <p>Then log out and back in for the setting to take effect.</p> 
-         </div> </td> 
-       </tr> 
-      </tbody> 
-     </table> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Running Docker commands as a non-root user is recommended for the commands for logging into Docker Hub and downloading the Docker images.</p> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="downloading-the-images"><a class="anchor" href="#downloading-the-images"></a>Downloading the Images</h4> 
-    <div class="paragraph"> 
-     <p>On your Docker machine, login to your Docker Hub account.</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre>docker login -e &lt;email&gt; -p &lt;password&gt; -u &lt;username&gt; docker.mulesoft.com</pre> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>This creates a file with your credentials in <code>~/.docker/config.json</code> (Docker 1.7) or&nbsp;<code>~/.dockercfg</code> (Docker 1.6).</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Uncompress the Anypoint Docker Setup .zip file to your Docker machine. The contents expand to a directory,&nbsp;<code>full-anypoint-platform</code>.</p> 
-    </div> 
-    <div class="admonitionblock tip"> 
-     <table> 
-      <tbody> 
-       <tr> 
-        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-        <td class="content"> 
-         <div class="paragraph"> 
-          <p>Docker Machine is set up to use VirtualBox&nbsp;https://www.virtualbox.org/manual/ch04.html#sharedfolders[shared folders] to enable file transfers between your host OS and the Docker machine. In a normal Docker Machine installation, your home folder should be shared by default to <code>docker-machine</code>, and you should see it on the Docker machine by running the&nbsp;<code>df</code> command. The output below shows the OS X folder&nbsp;<code>/Users</code> mounted on a&nbsp;docker-machine virtual machine.</p> 
-         </div> 
-         <div class="listingblock"> 
-          <div class="content"> 
-           <pre>Filesystem                Size      Used Available Use% Mounted on
-tmpfs                     1.8G    115.3M      1.6G   6% /
-tmpfs                  1001.3M      2.6M    998.7M   0% /dev/shm
-/dev/sda1                18.2G      8.1G      9.2G  47% /mnt/sda1
-cgroup                 1001.3M         0   1001.3M   0% /sys/fs/cgroup
-none                    111.0G     97.3G     13.7G  88% /Users
-/dev/sda1                18.2G      8.1G      9.2G  47% /mnt/sda1/var/lib/docker/aufs</pre> 
-          </div> 
-         </div> 
-         <div class="paragraph"> 
-          <p>In this case, if the setup file resides on the host OS path&nbsp;<code>/Users/mary/anypoint-docker-setup.zip</code>, simply run <code>unzip /Users/mary/anypoint-docker-setup.zip</code>.</p> 
-         </div> 
-         <div class="paragraph"> 
-          <p>Another option is to copy the setup file to the Docker machine using <code>scp</code> or, if on Windows,&nbsp;<code>scp.exe</code> (included in Git for Windows) or&nbsp;https://winscp.net/[WinSCP]. In this case, login as user <code>docker</code>, password&nbsp;<code>tcuser</code>.</p> 
-         </div> </td> 
-       </tr> 
-      </tbody> 
-     </table> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Using a terminal, navigate to the&nbsp;<code>full-anypoint-platform</code> directory. Here you will run the script that downloads the MuleSoft&nbsp;Anypoint Platform images. The script is&nbsp;<code>pull-docker-images.sh</code>.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Run the script as root:</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre>./pull-docker-images.sh</pre> 
-     </div> 
-    </div> 
-    <div class="admonitionblock tip"> 
-     <table> 
-      <tbody> 
-       <tr> 
-        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-        <td class="content"> <code>pull-docker-images.sh</code> is a <a href="http://www.gnu.org/software/bash/">Bash</a> script. If your Linux installation does not have Bash, open the script with a text editor and modify the first line, from&nbsp;<code><mark>!/bin/bash</mark></code> to&nbsp;<code>!/bin/sh</code>. </td> 
-       </tr> 
-      </tbody> 
-     </table> 
-    </div> 
-    <div class="paragraph"> 
-     <p>The script should begin downloading the appropriate images. The&nbsp;Anypoint Platform installation weighs approximately 6 GB, so it may take a while to download.</p> 
+     <p><span class="image"><img src="./_images/rancher-assign-db-confirm.png" alt="confirm active"></span></p> 
     </div> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="running-docker-compose"><a class="anchor" href="#running-docker-compose"></a>Running Docker Compose</h3> 
+   <h3 id="docker-registry-setup"><a class="anchor" href="#docker-registry-setup"></a>Docker Registry Setup</h3> 
    <div class="paragraph"> 
-    <p>After downloading is finished, from&nbsp;<code>full-anypoint-platform</code> directory run:</p> 
+    <p>Although docker registries can be manually added on every host which is managed by Rancher, it’s better to add “docker.mulesoft.com” to the platform to make sure this registry exists on all nodes under Rancher control. This way Rancher will be able to pull MuleSoft images by itself on any host without user intervention.</p> 
    </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>docker-compose up -d</pre> 
-    </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>In the Rancher UI, click on the icon at the top right corner of the UI and then select <strong>Registries</strong></p> </li> 
+    </ol> 
    </div> 
    <div class="paragraph"> 
-    <p>This starts up Docker Compose and the&nbsp;Anypoint Platform containers. Startup can take a few minutes, during which your terminal displays startup messages. Once Docker Compose is up and running, it will occupy the terminal foreground.</p> 
+    <p><span class="image"><img src="./_images/add-registry1.png" alt="Select Registries"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/add-registry2.png" alt="Select Registries"></span></p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Create a new “custom” registry. You should enter Anypoint credentials that have proper permissions to pull images.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/add-registry3.png" alt="Custom"></span></p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Verify that the new registry you created is now active</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/add-registry3.png" alt="Verify"></span></p> 
+      </div> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To add docker registries on every host, login in each host and pull the MuleSoft images using the command line. The script <code>pull-docker-images.sh</code> included in the distribution helps to pull all images.</p> 
    </div> 
    <div class="admonitionblock note"> 
     <table> 
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> You need to disable SELinux and iptables if they are enabled on your host OS. </td> 
+       <td class="content"> 
+        <div class="paragraph"> 
+         <p>We use our own internal docker registry. To download these images you will need to have the appropriate permissions added to your Anypoint account. If you do not already have these, please contact <a href="mailto:salesops@mulesoft.com">salesops@mulesoft.com</a>. You will be notified when you have been given access.</p> 
+        </div> </td> 
       </tr> 
      </tbody> 
     </table> 
    </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="populating-the-anypoint-platform-database"><a class="anchor" href="#populating-the-anypoint-platform-database"></a>Populating the&nbsp;Anypoint Platform Database</h3> 
-   <div class="paragraph"> 
-    <p>After startup completes, you need to seed the platform database with an initial set of users.On the Docker machine, open another terminal and run the following command while in the Anypoint Platform folder:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>./seed-database.sh</pre> 
+   <div class="sect3"> 
+    <h4 id="optional-regenerate-certificates-keys-and-keystores-in-the-platform-config"><a class="anchor" href="#optional-regenerate-certificates-keys-and-keystores-in-the-platform-config"></a>OPTIONAL: Regenerate certificates, keys and keystores in the platform config</h4> 
+    <div class="paragraph"> 
+     <p>Included with both zip files available for download in this document, there’s a default sent of encryption keys, self-signed certificates, and keystores that are used by the platform for security purposes such as signing certificates during mule/gateway runtime registration with the runtime manager. Out of the box, the platform works fine using these default files, but if you wish to replace them with newly generated ones for increased security we have included a script to automate this process.</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code>&gt; cd anypoint-platform
+&gt; keystore-generation.sh</code></pre> 
+     </div> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Follow the on-screen prompts. Notice that once executed a new file will be generated from this process named <code>truststore.jks)</code>. This file is required by <a href="/mule-agent/v/1.1.1/index">the Mule Agent</a> for all runtimes you wish to register to the console because the agent uses 2-way SSL validation. Before registering a runtime, you must copy this file to the <code>conf/</code> folder of that runtime.</p> 
     </div> 
    </div> 
+   <div class="sect3"> 
+    <h4 id="copy-platform-config-files-to-code-opt-config-code-2"><a class="anchor" href="#copy-platform-config-files-to-code-opt-config-code-2"></a>Copy platform config files to <code>/opt/config</code></h4> 
+    <div class="paragraph"> 
+     <p>The Anypoint platform configuration files must be in a predictable location on each host machine because Rancher dynamically launches services on any available host. This means that it won’t have the benefit of finding config files from a current working directory the same way docker-compose would. <code>/opt/config</code> has been chosen as the default directory to store platform configuration files, so what you need to do is download the link:[I STILL NEED THE FILE TO PUT HERE] and copy the config directory into the <code>/opt</code> folder. Repeat this procedure on every host you register to Rancher.</p> 
+    </div> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code>&gt; cd anypoint-platform
+&gt; sudo cp -r config /opt/.</code></pre> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="upload-ssl-certificate"><a class="anchor" href="#upload-ssl-certificate"></a>Upload SSL certificate</h3> 
    <div class="paragraph"> 
-    <p>At this point,&nbsp;Anypoint Platform on premise should be up and running.</p> 
+    <p>The Anypoint platform creates a load balancer which makes SSL termination. By default, the Rancher configuration files rely on an existing SSL certificate named “mulesoft-demo”. To upload its key and certificate, on Rancher open INFRASTRUCTURE → CERTIFICATES and click the <strong>Add Certificate</strong> button. Then upload or insert the key and certificates.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/rancher-add-certificate.png" alt="add certificate"></span></p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> 
+        <div class="paragraph"> 
+         <p>If the name of your certificate is not “mulesoft-demo”, you need to modify the following line in rancher-compose.yml file:</p> 
+        </div> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">nginx-ssl-lb</span>:
+  <span class="key">scale</span>: <span class="string"><span class="content">1</span></span>
+  <span class="key">default_cert</span>: <span class="string"><span class="content">mulesoft-demo</span></span></code></pre> 
+         </div> 
+        </div> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/rancher-add-certificate2.png" alt="add certificate"></span></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="run-the-platform-via-the-rancher-ui"><a class="anchor" href="#run-the-platform-via-the-rancher-ui"></a>Run the platform via the Rancher UI</h3> 
+   <div class="paragraph"> 
+    <p>There are two ways of running the platform using Rancher. One of them is to use a command-line utility called <code>rancher-compose</code> (that is very similar to <code>docker-compose</code>, in case you have used it before). This method works, but requires more steps and is more error-prone than the alternative. We recommend the second way of launching the platform, which relies entirely on the Rancher UI. To start, click on the <strong>Applications</strong> link on the top nav bar and then click the <strong>Add Stack</strong> button.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/rancher-add-stack.png" alt="add stack"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Give the newly created stack a name (as a suggestion, name it <code>anypoint-platform</code>) and load the <code>docker-compose.yml</code> and <code>rancher-compose.yml</code> files available as part of either of the two .zip bundles attached at the start of this document. It’s the equivalent of “rancher-compose create” command.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/rancher-add-stack2.png" alt="add stack 2"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>After you do this, you can go back to the Stacks screen and you’ll be able to see all the images of the Anypoint Platform created under the stack name that you used. These images are not running yet, but the stack has been created with the information you provided. To run the platform, click on the <strong>Options</strong> icon for the stack and then select <strong>Start Services</strong>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/rancher-start-services.png" alt="start services"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>It will take several minutes for the services to come online. The icons will slowly turn green as the services start and become ready.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/rancher-start-services2.png" alt="start services 2"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Once the images are all active, your Stacks screen will look like in the image below:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/rancher-start-services3.png" alt="start services 3"></span></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="migrate-and-seed-databases"><a class="anchor" href="#migrate-and-seed-databases"></a>Migrate and Seed databases</h3> 
+   <div class="paragraph"> 
+    <p>Now that all the services are up and running, you can run the migration and seed the authentication, object-store, and api-platform DBs. There are two ways to do this:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>The easiest way is running the <code>seed-database.sh</code> script, available in both of the two bundle .zip files that you can download. This script runs all 3 migrations in sequence.</p> 
+      <div class="admonitionblock note"> 
+       <table> 
+        <tbody> 
+         <tr> 
+          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+          <td class="content"> This script will only work if all the services are running on 1 host. </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> </li> 
+     <li> <p>If the services are running on different hosts, then you should use the manual method described below.</p> </li> 
+    </ol> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="using-seed-database-sh"><a class="anchor" href="#using-seed-database-sh"></a>Using seed-database.sh</h4> 
+    <div class="paragraph"> 
+     <p>In both .zip bundle files, there is a file named <code>seed-database.sh</code>. Copy this file to the host machine running all the services and run it from the terminal. It performs all necessary migrations in sequence.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="manual-database-migration-and-seeding"><a class="anchor" href="#manual-database-migration-and-seeding"></a>Manual database migration and seeding</h4> 
+    <div class="paragraph"> 
+     <p>Rancher makes it easy to open a terminal window to any container via the UI, you can do that to execute the migration commands manually.</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Among your active services, find the <strong>authentication</strong> service. Mouse over the running container and click the icon for the drop down menu. Then click on <strong>Execute Shell</strong> to open a terminal inside the container.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/rancher-execute-shell.png" alt="execute shell"></span></p> 
+       </div> </li> 
+      <li> <p>In the terminal window, run the following command to migrate and seed the database. It will notify you when it’s done and report any errors.</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code>&gt; npm run grunt -- seedprem</code></pre> 
+        </div> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/rancher-shell1.png" alt="shell1"></span></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/rancher-shell2.png" alt="shell2"></span></p> 
+       </div> </li> 
+      <li> <p>Repeat these steps with the <strong>objectstore</strong> service, but this time run the following command instead:</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code>&gt; npm run knex -- migrate:latest</code></pre> 
+        </div> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/rancher-shell3.png" alt="shell3"></span></p> 
+       </div> </li> 
+      <li> <p>Repeat the same steps with the <strong>api-platform</strong> service and run the same command as you did with the objectstore service:</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code>&gt; npm run knex -- migrate:latest</code></pre> 
+        </div> 
+       </div> </li> 
+      <li> <p>Repeat the same steps with the <strong>exchange</strong> service and run the same command as you did with the objectstore service:</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code>&gt; npm run gulp -- migrate-latest</code></pre> 
+        </div> 
+       </div> </li> 
+      <li> <p>Repeat the same steps with the <strong>hybrid-rest</strong> service to open a terminal and run this command below to seed it’s database. Do not be alarmed if the service is marked as <strong>degraded</strong> since that just means the database the service uses is not yet ready.</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code>&gt; /usr/local/bin/migrate.sh</code></pre> 
+        </div> 
+       </div> </li> 
+      <li> <p>The last step is to restart the hybrid-rest service after migration so that it can validate the schema on startup and properly initialize itself. To accomplish this, navigate the rancher ui back to the <strong>hybridrest</strong> service and click the <strong>stop</strong> button at the top to stop this service. Once the service stops the button will change into a <strong>start</strong> button that you can use to restart the service. It should come up as green and running.</p> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p>Congratulations! You have now installed the Anypoint Platform running on top of Docker. You can open the service using your browser (make sure to use HTTPS) and create an organization by going to <a href="https://$HOST-IP/accounts/#/setup" class="bare">https://$HOST-IP/accounts/#/setup</a></p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="extending-to-more-than-1-host"><a class="anchor" href="#extending-to-more-than-1-host"></a>Extending to more than 1 host</h3> 
+   <div class="paragraph"> 
+    <p>Rancher allows you to distribute containers between multiple hosts and make it absolutely transparent for clients. Scaling is quite simple: . Make sure that you have more than 1 host for your infrastructure - you can see an example below. You can view this by accessing <strong>Infrastructure</strong> → <strong>Hosts</strong></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>+ <span class="image"><img src="./_images/rancher-multi-host.png" alt="multi host"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>+</p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> If you have only one host, scaling is still technically possible, but not very practical. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Make sure that all configuration files for the platform exist on all hosts. You can either copy them, or preferably put on NAS and mount the share into the <code>/opt</code> folder on all hosts.</p> </li> 
+     <li> <p>Go to <strong>Applications</strong> → <strong>Stacks</strong> and choose the service you want to scale.</p> 
+      <div class="admonitionblock note"> 
+       <table> 
+        <tbody> 
+         <tr> 
+          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+          <td class="content"> 
+           <div class="paragraph"> 
+            <p>Currently not all services can be scaled. Below is a list of services you can easily multiply:</p> 
+           </div> 
+           <div class="ulist"> 
+            <ul> 
+             <li> <p>apiplatform</p> </li> 
+             <li> <p>authentication</p> </li> 
+             <li> <p>nginx</p> </li> 
+            </ul> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> </li> 
+     <li> <p>If you need to scale the “authentication” service, as an example, you can either</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p>click on its “Scale Up” button:</p> 
+         <div class="paragraph"> 
+          <p><span class="image"><img src="./_images/rancher-scal-service.png" alt="scale service"></span></p> 
+         </div> </li> 
+        <li> <p>Or access its <code>Edit</code> menu:</p> </li> 
+       </ul> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/rancher-scal-service2.png" alt="scale service 2"></span></p> 
+      </div> </li> 
+     <li> <p>Then use the slider to specify how many instances of the service you need:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/rancher-scal-service3.png" alt="scale service 3"></span></p> 
+      </div> </li> 
+     <li> <p>From the remaining list of eligible hosts, the container will be scheduled on to the one with the least number of containers on it.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="ssl-termination-on-an-external-device"><a class="anchor" href="#ssl-termination-on-an-external-device"></a>SSL termination on an external device:</h3> 
+   <div class="paragraph"> 
+    <p>If you want to make SSL encryption for Anypoint Platform traffic on an external device and don’t need an HTTPS entry point (<code>nginx-ssl-lb</code> - a default SSL load balancer) you can create an additional load balancer without SSL encryption.</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>On Rancher open <strong>APPLICATION</strong> → <strong>STACK</strong> and click the <code>Add Stack</code> button</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/rancher-applications-add-stack.png" alt="add stack"></span></p> 
+      </div> </li> 
+     <li> <p>Type name for this stack, for instance “ExternalSSL” and click <strong>Create</strong></p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/rancher-application-add-stack2.png" alt="add stack"></span></p> 
+      </div> </li> 
+     <li> <p>Click on the right part of <strong>Add Service</strong> menu and select <strong>Add Load Balancer</strong></p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/rancher-application-add-stack3.png" alt="add stack3"></span></p> 
+      </div> </li> 
+     <li> <p>Configure it for plain HTTP load balancing, like in the following example:</p> 
+      <table class="tableblock frame-all grid-all spread"> 
+       <colgroup> 
+        <col style="width: 50%;"> 
+        <col style="width: 50%;"> 
+       </colgroup> 
+       <thead> 
+        <tr> 
+         <th class="tableblock halign-left valign-top"><strong>Scale</strong></th> 
+         <th class="tableblock halign-left valign-top">Always run one instance of this container on every host (* recommended option)</th> 
+        </tr> 
+       </thead> 
+       <tbody> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>Name</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>http-lb</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>Description</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>plain http load balancer for Anypoint Platform (* optional)</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>Source Port</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>80</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>Protocol</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>tcp</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>Default Target Port</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>80</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>Access</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>Public</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+        <tr> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p><strong>Target Service</strong></p> 
+           </div> 
+          </div></td> 
+         <td class="tableblock halign-left valign-top"> 
+          <div> 
+           <div class="paragraph"> 
+            <p>nginx</p> 
+           </div> 
+          </div></td> 
+        </tr> 
+       </tbody> 
+      </table> </li> 
+     <li> <p>then click <strong>Save</strong></p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/rancher-add-load-balancer.png" alt="load balancer"></span></p> 
+      </div> </li> 
+     <li> <p>Verify that the service is active (it may take a few minutes)</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/rancher-add-load-balancer2.png" alt="load balancer"></span></p> 
+      </div> </li> 
+    </ol> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="logging-into-anypoint-platform"><a class="anchor" href="#logging-into-anypoint-platform"></a>Logging Into Anypoint Platform</h2> 
+ <h2 id="hybrid-server-registration"><a class="anchor" href="#hybrid-server-registration"></a>Hybrid Server Registration</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To log in to&nbsp;Anypoint Platform for the first time, point your browser to the following URL:</p> 
+   <p>Add a server by placing the <code>agent-setup-onPrem.jar</code> into the bin folder of mule and running the following command. Make sure to replace the token with the one from the console and also substitute the IP/DNS addresses with where your docker is running</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre>https://anypoint.mulesoft.local/accounts/#/setup</pre> 
+    <pre class="CodeRay highlight"><code>&gt; java -jar agent-setup.jar -A http://$DOCKER_IP_ADDRESS:8080/hybrid/api/v1 -W "wss://$DOCKER_IP_ADDRESS:8443/mule" -C https://$DOCKER_IP_ADDRESS/accounts -H  11111111-1111-1111-1111-111111111111---1 DESIRED_MULE_SERVER_NAME</code></pre> 
    </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>Ensure to use&nbsp;<code>https</code> instead of&nbsp;<code>http</code>, or login will not work.</p> 
-  </div> 
-  <div class="admonitionblock note"> 
-   <table> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="identity-management-configuration"><a class="anchor" href="#identity-management-configuration"></a>Identity Management Configuration</h2> 
+ <div class="sectionbody"> 
+  <div class="sect2"> 
+   <h3 id="openam-configuration-version-12"><a class="anchor" href="#openam-configuration-version-12"></a>OpenAM Configuration (Version 12)</h3> 
+   <div class="paragraph"> 
+    <p>Below is an OpenAM configuration for running docker-compose locally (on <a href="https://anypoint.mulesoft.local" class="bare">https://anypoint.mulesoft.local</a>)</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong>Identity Federation Service Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">sign on url</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/saml2/jsp/idpSSOInit.jsp?spEntityID=anypoint.mulesoft.local&amp;metaAlias=/idp" class="bare">https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/saml2/jsp/idpSSOInit.jsp?spEntityID=anypoint.mulesoft.local&amp;metaAlias=/idp</a></th> 
+     </tr> 
+    </thead> 
     <tbody> 
      <tr> 
-      <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> For the above address to work, you need to have set up a DNS entry with this address. For details on how to find out the IP address and set up a network host name, see <a href="#host">above</a>. </td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>sign out url</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/saml2/jsp/spSingleLogoutInit.jsp?binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&amp;idpEntityID=anypoint.mulesoft.local&amp;metaAlias=/idp&amp;RelayState=http://mulesoft.com" class="bare">https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/saml2/jsp/spSingleLogoutInit.jsp?binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&amp;idpEntityID=anypoint.mulesoft.local&amp;metaAlias=/idp&amp;RelayState=http://mulesoft.com</a></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>Admin Token Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">create url</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/json/authenticate" class="bare">https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/json/authenticate</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>username</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>admin</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>password</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>11111</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Authorization Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Authorize URL</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/oauth2/authorize" class="bare">https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/oauth2/authorize</a></th> 
+     </tr> 
+    </thead> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Token Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Create URL</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/oauth2/access_token" class="bare">https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/oauth2/access_token</a></th> 
+     </tr> 
+    </thead> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Token Validation Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Validate URL</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/oauth2/tokeninfo" class="bare">https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/oauth2/tokeninfo</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Username Token Mapping</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Client Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Create Url</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/frrest/oauth2/client/?_action=create" class="bare">https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/frrest/oauth2/client/?_action=create</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Delete Url</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/frrest/oauth2/client/{{client_id}}" class="bare">https://ec2-52-10-207-37.us-west-2.compute.amazonaws.com:8443/openam/frrest/oauth2/client/{{client_id}}</a></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Scopes</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>cn, sn, mail, uid, givenName</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Default Scopes</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>cn, sn, mail, uid, givenName</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>SAML 2.0</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Issuer</th> 
+      <th class="tableblock halign-left valign-top">test.openam</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Public key</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>asdfasdfasdfasdfasdfasdfasfasdfasdfasdfsfas</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Audience</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>anypoint.mulesoft.local</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Bypass Expiration</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>unchecked</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Group Attribute</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>SSO with an example user</strong></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Go to <code><a href="https://anypoint.mulesoft.local/accounts/login/<domain>`" class="bare">https://anypoint.mulesoft.local/accounts/login/&lt;domain&gt;`</a></code> (you can find the domain by clicking the ‘gear’ icon, then the <strong>Organization</strong> tab, and then clicking on the master organization). Then sign in to OpenAM with your username and password.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="openam-configuration-version-11"><a class="anchor" href="#openam-configuration-version-11"></a>OpenAM Configuration (Version 11)</h3> 
+   <div class="paragraph"> 
+    <p>Below is OpenAM configuration for running docker-compose locally (on <a href="https://anypoint.mulesoft.local" class="bare">https://anypoint.mulesoft.local</a>)</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong>Identity Federation Service Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">sign on url</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/saml2/jsp/idpSSOInit.jsp?spEntityID=anypoint.mulesoft.local&amp;metaAlias=/idp" class="bare">https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/saml2/jsp/idpSSOInit.jsp?spEntityID=anypoint.mulesoft.local&amp;metaAlias=/idp</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>sign out url</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/saml2/jsp/spSingleLogoutInit.jsp?binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&amp;idpEntityID=anypoint.mulesoft.local&amp;metaAlias=/idp&amp;RelayState=http://mulesoft.com" class="bare">https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/saml2/jsp/spSingleLogoutInit.jsp?binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&amp;idpEntityID=anypoint.mulesoft.local&amp;metaAlias=/idp&amp;RelayState=http://mulesoft.com</a></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>Admin Token Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">create url</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/json/authenticate" class="bare">https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/json/authenticate</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>username</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>admin</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>password</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>111111</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Authorization Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Authorize URL</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/oauth2/authorize" class="bare">https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/oauth2/authorize</a></th> 
+     </tr> 
+    </thead> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Token Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Create URL</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/oauth2/access_token" class="bare">https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/oauth2/access_token</a></th> 
+     </tr> 
+    </thead> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Token Validation Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Validate URL</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/oauth2/tokeninfo" class="bare">https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/oauth2/tokeninfo</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Username Token Mapping</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Client Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Create Url</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/frrest/oauth2/client/?_action=create" class="bare">https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/frrest/oauth2/client/?_action=create</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Delete Url</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/frrest/oauth2/client/{{client_id}}" class="bare">https://ec2-54-149-141-104.us-west-2.compute.amazonaws.com:8443/openam/frrest/oauth2/client/{{client_id}}</a></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Scopes</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>cn, sn, mail, uid, givenName</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Default Scopes</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>cn, sn, mail, uid, givenName</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>SAML 2.0</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Issuer</th> 
+      <th class="tableblock halign-left valign-top">test.openam</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Public key</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>asdfasdfasdfasdfasdfasdfasfasdfasdfasdfsfas</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Audience</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>anypoint.mulesoft.local</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Bypass Expiration</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>unchecked</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Group Attribute</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>SSO with an example user</strong> Go to <code><a href="https://anypoint.mulesoft.local/accounts/login/<domain>`" class="bare">https://anypoint.mulesoft.local/accounts/login/&lt;domain&gt;`</a></code> (you can find the domain by clicking the ‘gear’ icon, then the <strong>Organization</strong> tab, and then clicking on the master organization). Then sign in to OpenAM with your username and password.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="ping-federate-configuration-version-6-10"><a class="anchor" href="#ping-federate-configuration-version-6-10"></a>Ping Federate Configuration (Version 6.10)</h3> 
+   <div class="paragraph"> 
+    <p>Below is a PingFederate configuration for running docker-compose locally (on <a href="https://anypoint.mulesoft.local" class="bare">https://anypoint.mulesoft.local</a>)</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong>Identity Federation Service Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Sign on url</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/idp/startSSO.ping?PartnerSpId=anypoint.mulesoft.local" class="bare">https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/idp/startSSO.ping?PartnerSpId=anypoint.mulesoft.local</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Sign out url</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/idp/SLO.saml2" class="bare">https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/idp/SLO.saml2</a></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Authorization Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Authorize URL</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/as/authorization.oauth2" class="bare">https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/as/authorization.oauth2</a></th> 
+     </tr> 
+    </thead> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Token Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Create URL</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/as/token.oauth2" class="bare">https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/as/token.oauth2</a></th> 
+     </tr> 
+    </thead> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Token Validation Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Validate URL</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/as/token.oauth2" class="bare">https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/as/token.oauth2</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Username Token Mapping</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div></div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>OAuth2 Client Provider</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Create Url</th> 
+      <th class="tableblock halign-left valign-top"><a href="https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/pf-ws/rest/oauth/clients" class="bare">https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/pf-ws/rest/oauth/clients</a></th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Delete Url</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p><a href="https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/pf-ws/rest/oauth/clients/{{client_id}}" class="bare">https://ec2-54-69-143-165.us-west-2.compute.amazonaws.com:9031/pf-ws/rest/oauth/clients/{{client_id}}</a></p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Username</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>admin</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Password</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>11111</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>SAML 2.0</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">Issuer</th> 
+      <th class="tableblock halign-left valign-top">dev.mulesoft.com</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Public key</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>asdfasdfasdfasdfasdfasdfasfasdfasdfasdfsfas</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Audience</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>anypoint.mulesoft.local</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Bypass Expiration</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>unchecked</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Group Attribute</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>memberOf</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>SSO with an example user</strong> Go to <code><a href="https://anypoint.mulesoft.local/accounts/login/<domain>`" class="bare">https://anypoint.mulesoft.local/accounts/login/&lt;domain&gt;`</a></code> (you can find the domain by clicking the ‘gear’ icon, then the <strong>Organization</strong> tab, and then clicking on the master organization). Then sign in to OpenAM with your username and password.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="ldap-configuration"><a class="anchor" href="#ldap-configuration"></a>LDAP Configuration</h3> 
+   <div class="paragraph"> 
+    <p>Below is an LDAP configuration for running docker-compose. You can use any ldap that you want since it is now fully configurable.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><strong>Connection</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">host</th> 
+      <th class="tableblock halign-left valign-top">ldap://qa2-ldap-core-services-1671615769.us-east-1.elb.amazonaws.com</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>port</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>3389</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Bind DN</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>cn=Manager,dc=muleforge,dc=org</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>Password</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>examplepass</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>connectTimeoutSeconds</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>10</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>operationTimeoutMs</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>30000</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>Search Bases</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">user</th> 
+      <th class="tableblock halign-left valign-top">ou=people,dc=muleforge,dc=org</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>group</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>ou=groups,dc=muleforge,dc=org</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>DNs</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">user</th> 
+      <th class="tableblock halign-left valign-top">uid={{username}},ou=people,dc=muleforge,dc=org</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>group</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>cn={{groupName}},ou=groups,dc=muleforge,dc=org</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>Filters</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">userByUsername</th> 
+      <th class="tableblock halign-left valign-top">(&amp;(objectClass=inetOrgPerson)(uid={{username}}))</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>userByEmail</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>(&amp;(objectClass=inetOrgPerson)(mail={{email}}))</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>groupByGroupName</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>(&amp;(objectClass=groupOfUniqueNames)(cn={{groupName}}))</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>groupsByUsername</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>(&amp;(objectClass=groupOfUniqueNames)(uniqueMember=uid={{username}},ou=people,dc=muleforge,dc=org))</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>User Field Mappings</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">username</th> 
+      <th class="tableblock halign-left valign-top">uid</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>email</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>mail</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>firstName</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>givenName</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>lastName</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>sn</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>id</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>entryUUID</p> 
+        </div> 
+       </div></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+   <div class="paragraph"> 
+    <p><strong>Group Field Mappings</strong></p> 
+   </div> 
+   <table class="tableblock frame-all grid-all spread"> 
+    <colgroup> 
+     <col style="width: 50%;"> 
+     <col style="width: 50%;"> 
+    </colgroup> 
+    <thead> 
+     <tr> 
+      <th class="tableblock halign-left valign-top">groupName</th> 
+      <th class="tableblock halign-left valign-top">cn</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>id</p> 
+        </div> 
+       </div></td> 
+      <td class="tableblock halign-left valign-top"> 
+       <div> 
+        <div class="paragraph"> 
+         <p>entryUUID</p> 
+        </div> 
+       </div></td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
-  <div class="paragraph"> 
-   <p>When you login to&nbsp;Anypoint Platform for the first time,&nbsp;Anypoint Platform prompts you to create an organization and user.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>After you create an organization and user, to log in to&nbsp;Anypoint Platform you will be prompted to login using the user account you just created.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Subsequently, to login to&nbsp;Anypoint Platform you can go to&nbsp;<code><a href="https://anypoint.mulesoft.local" class="bare">https://anypoint.mulesoft.local</a></code>.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>At this point you can begin creating organizations, adding servers, inviting users, etc.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>For details on managing API Platform, see <a href="/anypoint-platform-administration/index">Anypoint Platform Administration</a>.</p> 
-  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="adding-a-server-to-your-anypoint-platform-on-prem"><a class="anchor" href="#adding-a-server-to-your-anypoint-platform-on-prem"></a>Adding a Server to Your&nbsp;Anypoint Platform On-Prem</h2> 
+ <h2 id="installation-notes"><a class="anchor" href="#installation-notes"></a>Installation Notes</h2> 
  <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Insecure properties/configuration in <code>authentication-server</code> that should be customized:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>session.secret (used to sign the session cookie)</p> </li> 
+    <li> <p>crypto.password (used to encrypt client’s client_secret)</p> </li> 
+    <li> <p>admin.client.client_secret (used for loading seed data)</p> </li> 
+    <li> <p>auth.saml_private_pem (used to sign saml LogoutRequest/LogoutResponse for SLO)</p> </li> 
+    <li> <p>https.key &amp; https.cert (the server uses this for listening on https)</p> </li> 
+   </ul> 
+  </div> 
   <div class="sect2"> 
-   <h3 id="download_agent"><a class="anchor" href="#download_agent"></a>Downloading Mule Agent for&nbsp;Anypoint Platform On-Prem</h3> 
-   <div class="paragraph"> 
-    <p>To add a server to your on-premise Anypoint Platform, you need to <a href="http://mule-agent.s3.amazonaws.com/1.2.0/mule-agent-1.2.0.zip">download</a> and install the agent.</p> 
-   </div> 
+   <h3 id="resetting-the-admin-user-s-password"><a class="anchor" href="#resetting-the-admin-user-s-password"></a>Resetting the Admin User’s Password</h3> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Unzip the ` mule-agent-[VERSION].zip` to the <code>$MULE_HOME/bin</code> folder.</p> 
-      <div class="exampleblock"> 
+     <li> <p>Add a password reset token into the database. For simplicity, we’ll set the value of the code to the user’s name. Please change admin to the actual username of the admin user that you created in the setup steps. Execute the following on your database host:</p> 
+      <div class="listingblock"> 
        <div class="content"> 
-        <div class="paragraph"> 
-         <p>The agent zip file contains these 3 files - the <code>amc_setup</code> files install the Mule agent plugin.</p> 
-        </div> 
-        <div class="ulist"> 
-         <ul> 
-          <li> <p><code>amc_setup</code> - Mac and Linux installation file</p> </li> 
-          <li> <p><code>amc_setup.bat</code> - Windows installation file</p> </li> 
-          <li> <p><code>agent-setup-&lt;version&gt;.jar</code> - Called by the installation files</p> </li> 
-         </ul> 
-        </div> 
+        <pre class="CodeRay highlight"><code>&gt; docker exec -it $(docker-compose ps -q authdb | head -n 1) psql -Udocker ms_authentication -c "insert into recover_codes (user_id, recover_code) (select id, username from users where username='admin');"</code></pre> 
        </div> 
       </div> </li> 
+     <li> <p>Enter a new password by navigating to the following link. Please change the host to the hostname you’re using for your installation. Change admin to the username of the admin user that you created in the setup steps. <code><a href="https://anypoint.mulesoft.local/accounts/#/new-password?code=admin" class="bare">https://anypoint.mulesoft.local/accounts/#/new-password?code=admin</a></code></p> </li> 
     </ol> 
    </div> 
-   <div class="paragraph"> 
-    <p>You must then run it from this location after completing the required steps in API Platform, as described below.</p> 
-   </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="obtaining-the-token-for-your-server"><a class="anchor" href="#obtaining-the-token-for-your-server"></a>Obtaining the Token for Your Server</h3> 
+   <h3 id="creating-a-backup-and-restoring"><a class="anchor" href="#creating-a-backup-and-restoring"></a>Creating a Backup and Restoring</h3> 
    <div class="paragraph"> 
-    <p>For a full description of the steps outlined in this section, see the <strong>Add a Server</strong> section in <a href="/cloudhub/managing-applications-and-servers-in-the-cloud-and-on-premises">Managing Applications and Servers in the Cloud and On Premises</a>.</p> 
+    <p>You can backup the Postgres databases used by the Anypoint Platform. Database directories are automatically created, using an external storage mounted on <code>/opt/dbs</code> on all hosts where the database container can run.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>In your&nbsp;Anypoint Platform on-premises Edition installation, click <strong>Applications</strong> in the navigation bar and select your environment. Then, select <strong>Servers</strong> in the left-hand menu.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>Anypoint Platform provides you with a generic command to install Mule agent on a Mule server and pair the server with Anypoint Platform. This command includes a token, indicated with the&nbsp;<code>-H</code> parameter.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>A sample command looks like:</p> 
+    <p>To begin dumping data to these databases, run the following command:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre>./amc_setup -H 9658e868-[redacted]-d84e1116b585---1 server-name</pre> 
+     <pre class="CodeRay highlight"><code>$pg_dumpall -c -h $i -U username &gt; DATABASE.dump</code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>Copy the command to your clipboard. On the machine where your Mule server resides open a terminal and go to&nbsp;<code>$MULE_HOME/bin</code>. Here you should have placed your copy of the Mule agent installer (see <a href="#download_agent">above</a>).</p> 
+    <p>Here you must replace username by your actual user name and DATABASE.dump by file where data will be stored.</p> 
+   </div> 
+   <div class="admonitionblock tip"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+       <td class="content"> For a complete overview of the 'pg_dump' command, see <a href="http://www.enterprisedb.com/docs/en/8.4/pg/app-pgdump.html">PostgreSQL’s documentation</a>. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
    <div class="paragraph"> 
-    <p>In the&nbsp;<code>$MULE_HOME/bin</code> directory, paste the given command and append the following parameters:</p> 
+    <p>If you ever need to restore your databases from your backups, run the following command:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre>./amc_setup -H &lt;token&gt; &lt;server name&gt; -A http://$DOCKER_IP_ADDRESS:8080/hybrid/api/v1 -W "wss://&lt;Anypoint Platform host&gt;:8443/mule" -C https://&lt;AnypointPlatform host&gt;/accounts -F https://&lt;Anypoint Platform host&gt;/apiplatform</pre> 
+     <pre class="CodeRay highlight"><code>pg_resore -U username DATABASE.dump</code></pre> 
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>Where:</p> 
+    <p>Here you must replace username by your actual user name and DATABASE.dump by file where data will be stored.</p> 
    </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p><code>&lt;Anypoint Platform host&gt;</code>: The IP address or network host name of the machine where&nbsp;Anypoint Platform resides</p> </li> 
-     <li> <p><code>&lt;token&gt;</code>: The token provided by&nbsp;Anypoint Platform for your server</p> </li> 
-     <li> <p><code>&lt;server name&gt;</code>: The desired name for your server on the&nbsp;Anypoint Platform platform</p> </li> 
-    </ul> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="basic-admin-operations-with-anypoint-platform"><a class="anchor" href="#basic-admin-operations-with-anypoint-platform"></a>Basic Admin Operations with Anypoint Platform</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>These commands are run on the Docker machine, as root or as a user authorized to run Docker commands. On Docker Machine, user&nbsp;<code>docker</code> is authorized to run Docker commands (for details, see <a href="#the-docker-user">above</a>).</p> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="starting-and-stopping-anypoint-platform-on-prem"><a class="anchor" href="#starting-and-stopping-anypoint-platform-on-prem"></a>Starting and Stopping&nbsp;Anypoint Platform On-Prem</h3> 
-   <div class="paragraph"> 
-    <p>On the Docker machine, go to the&nbsp;<code>full-anypoint-platform</code> directory, which contains the configuration file for&nbsp;Anypoint Platform on premise,&nbsp;<code>docker-compose.yml</code>. From this directory, run:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>docker-compose stop</pre> 
-    </div> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>docker@docker-machine:/home/docker/full-anypoint-platform# docker-compose stop
-Stopping fullanypointplatform_mcm_1...
-Stopping fullanypointplatform_nginx_1...
-Stopping fullanypointplatform_apiplatform_1...
-Stopping fullanypointplatform_hybridrest_1...
-Stopping fullanypointplatform_hybriddb_1...
-...</pre> 
-    </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> When executing a restore, be very careful with where you restore to, and do so following any policies your organization has in regards to backup restoring. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
    </div> 
    <div class="paragraph"> 
-    <p>This command sends a SIGTERM to all running containers. There is a timeout of ten seconds, after which the SIGKILL signal is sent to any remaining running containers. You can modify the timeout value with the&nbsp;<code>-t</code> parameter:</p> 
+    <p>To open the contents of one of these databases, you can use the following command:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
-     <pre>docker-compose stop -t 30</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To start all&nbsp;Anypoint Platform containers, use&nbsp;<code>docker-compose start</code>.</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="checking-status-of-docker-containers"><a class="anchor" href="#checking-status-of-docker-containers"></a>Checking Status of Docker Containers</h3> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>docker ps -a</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The output below shows the listing for a full running&nbsp;Anypoint Platform on-premises Edition installation (only the first five columns are displayed).</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>CONTAINER ID        IMAGE                                  COMMAND                CREATED             STATUS
-4ce947f1da77        mulesoft/mcm                           "catalina.sh run"      2 days ago          Up 2 days
-016733805c63        mulesoft/nginx:0.0.4                   "nginx -g 'daemon of   2 days ago          Up 2 days
-e236e8814e56        mulesoft/api-platform:0.0.4            "/bin/sh -c 'npm run   2 days ago          Up 2 days
-38f21e928e38        mulesoft/hybrid-rest                   "catalina.sh run"      2 days ago          Up 2 days
-e7c82f3c2d0a        mulesoft/hybrid-db                     "/docker-entrypoint.   2 days ago          Up 2 days
-155f1f630ae0        cogniteev/echo                         "/bin/echo -n"         2 days ago          Exited (0) 2 days ago
-d07280c13367        mulesoft/cs-ui:0.0.2                   "/bin/sh -c 'cd dist   2 days ago          Up 2 days
-c6a4404d8a7c        mulesoft/authentication-server:0.0.1   "/bin/sh -c 'npm sta   2 days ago          Up 2 days
-e141cd747a74        kiyoto/docker-fluentd                  "/usr/local/bin/flue   2 days ago          Up 2 days
-f28f7aa1bfba        mulesoft/authentication-db:0.0.1       "/docker-entrypoint.   2 days ago          Up 2 days
-8b61593ba351        cogniteev/echo                         "/bin/echo -n"         2 days ago          Exited (0) 2 days ago
-a7e85de09521        postgres:9.3                           "/docker-entrypoint.   2 days ago          Up 2 days
-ad4384954a6d        mulesoft/object-store                  "npm start"            2 days ago          Up 2 days
-dc4fa6ee2ac0        cogniteev/echo                         "/bin/echo -n"         2 days ago          Exited (0) 2 days ago
-f285234e8209        mulesoft/mulesoft-shared-ng:0.0.1      "/bin/sh -c 'cd dist   2 days ago          Up 2 days
-50deb5cd6763        mulesoft/object-store-db               "/docker-entrypoint.   2 days ago          Up 2 days
-2cb910cc6d21        cogniteev/echo                         "/bin/echo -n"         2 days ago          Exited (0) 2 days ago
-25876b80a972        cpuguy83/docker-grand-ambassador       "/usr/bin/grand-amba   2 days ago          Up 2 days</pre> 
+     <pre class="CodeRay highlight"><code>cat $DIR/DATABASE.dump | psql -U username -d DATABASE</code></pre> 
     </div> 
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="viewing-logs"><a class="anchor" href="#viewing-logs"></a>Viewing Logs</h3> 
+   <h3 id="api-keys"><a class="anchor" href="#api-keys"></a>API Keys</h3> 
    <div class="paragraph"> 
-    <p>Docker stores logs in the directory <code>&lt;Docker user’s home&gt;/dockerlogs</code>, where <code>&lt;Docker user’s home&gt;</code> is the home directory of the user who runs Docker commands. If you are running Docker commands as user&nbsp;<code>docker</code> on docker-machine, the home directory is&nbsp;<code>/home/docker</code>.</p> 
+    <p>To run the rancher-compose CLI you will need to obtain API keys from the Rancher server. Click on the icon in the top-right corner of the UI and then select <strong>API &amp; KEYS</strong>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>Docker log files begin with the date they were created.</p> 
+    <p><span class="image"><img src="./_images/rancher-api-setup.png" alt="api setup"></span></p> 
    </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>docker@docker-machine:~/dockerlog# ls -l
-total 1200
--rw-r--r--    1 root     root        252592 Aug  5 00:10 20150804_0.log
--rw-r--r--    1 root     root        588542 Aug  6 17:37 20150805_0.log
--rw-r--r--    1 root     root        381747 Aug  7 16:30 20150807.b51cbaf472f07e28d.log</pre> 
+   <div class="paragraph"> 
+    <p>On the next page, click on <strong>Add API Key</strong>. You will then be able to see your API access key and secret key. Copy these values somewhere safe, keep in mind that you won’t be able to see the API’s secret again. After clicking <strong>Close</strong> you will see that you have an active API key that you can use to run rancher-compose. Also take note of the Endpoint URL, which will be of use later as well.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/rancher-api-secret.png" alt="secret"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/rancher-api-active.png" alt="active api"></span></p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="run-the-platform-with-rancher-compose"><a class="anchor" href="#run-the-platform-with-rancher-compose"></a>Run the platform with rancher-compose</h4> 
+    <div class="paragraph"> 
+     <p>After having registered your API, created API keys, copied the setup files to the host, and downloaded the docker images you are now ready to run rancher-compose to get the platform up and running.</p> 
     </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To view the files, you can use a terminal pager such as&nbsp;<code>less</code>:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>less 0150807.b51cbaf472f07e28d.log</pre> 
+    <div class="listingblock"> 
+     <div class="content"> 
+      <pre class="CodeRay highlight"><code>&gt; cd anypoint-platform
+&gt; rancher-compose --url $URL --access-key $ACCESS_KEY --secret-key $SECRET_KEY up</code></pre> 
+     </div> 
     </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>(Hit &lt;Tab&gt; after typing the first characters of the log filename for auto-completion.)</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>To search in the log, use&nbsp;<code>/&lt;string&gt;</code>. To scroll, use the arrows; to exit, pres <code>q</code>. Other commands are available; check this basic <a href="http://www.mcsr.olemiss.edu/unixhelp/tasks/display1.3.1.html">online reference</a> for details.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The&nbsp;<code>dockerlogs</code> directory contains logs of startup, shutdown and other events including user operations such as accessing different pages of the&nbsp;Anypoint Platform Web interface.</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="obtaining-help-with-docker-commands"><a class="anchor" href="#obtaining-help-with-docker-commands"></a>Obtaining Help With Docker Commands</h3> 
-   <div class="paragraph"> 
-    <p>Running <code>docker</code> without parameters prints a help message with options and commands.</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>docker@docker-machine:~$ docker
-Usage: docker [OPTIONS] COMMAND [arg...]
-A self-sufficient runtime for linux containers.
-Options:
-  --api-cors-header=                   Set CORS headers in the remote API
-  -b, --bridge=                        Attach containers to a network bridge
-  --bip=                               Specify network bridge IP
-...</pre> 
+    <div class="admonitionblock note"> 
+     <table> 
+      <tbody> 
+       <tr> 
+        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+        <td class="content"> The URL, access key, and secret key are set to $URL, $ACCESS_KEY, $SECRET_KEY respectively </td> 
+       </tr> 
+      </tbody> 
+     </table> 
     </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>For further details on running and handling Docker containers, see the&nbsp;http://docs.docker.com[Docker documentation].</p> 
+    <div class="paragraph"> 
+     <p>Go back to the rancher UI and click on the application’s link at the top. You will see that there is a new “Stack” of software called <code>anypoint-platform</code> and that the services are starting up.</p> 
+    </div> 
    </div> 
   </div> 
  </div> 
@@ -1677,7 +2798,7 @@ Options:
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#downloading-and-installing-docker">Downloading and Installing Docker</a></li><li><a class="scroll-menu-link" href="#setting-up-connectivity-for-anypoint-platform">Setting Up Connectivity for Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#installing-anypoint-platform">Installing Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#logging-into-anypoint-platform">Logging Into Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#adding-a-server-to-your-anypoint-platform-on-prem">Adding a Server to Your Anypoint Platform On-Prem</a></li><li><a class="scroll-menu-link" href="#basic-admin-operations-with-anypoint-platform">Basic Admin Operations with Anypoint Platform</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#installing-docker-and-rancher">Installing Docker and Rancher</a></li><li><a class="scroll-menu-link" href="#hybrid-server-registration">Hybrid Server Registration</a></li><li><a class="scroll-menu-link" href="#identity-management-configuration">Identity Management Configuration</a></li><li><a class="scroll-menu-link" href="#installation-notes">Installation Notes</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
