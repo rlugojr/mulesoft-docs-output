@@ -898,20 +898,50 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> <strong>Note</strong>: If you are using Anypoint Studio, the log output appears in the <code>.mule</code> directory of your Studio workspace. For example on a Mac, for an application called <code>Basic Tutorial</code>, the log output is in this file: </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p><strong>Note</strong>: To view Anypoint Studio logs:</p> 
+       </div> 
+       <div class="ulist"> 
+        <ul> 
+         <li> <p><strong>View Error Log Command:</strong></p> 
+          <div class="paragraph"> 
+           <p>You can view logs in Studio by clicking: <strong>Anypoint Studio</strong> &gt; <strong>About Anypoint Studio</strong> &gt; <strong>Installation Details</strong> &gt; <strong>Configuration</strong> tab &gt; <strong>View Error Log</strong></p> 
+          </div> 
+          <div class="paragraph"> 
+           <p><span class="image"><img src="./_images/logging-in-mule-view-error-log.png" alt="View Error Log"></span></p> 
+          </div> 
+          <div class="paragraph"> 
+           <p>In the file menu, double-click <strong>log</strong> and a new window opens to let you read the log details.</p> 
+          </div> </li> 
+         <li> <p><strong>Workspace Log:</strong></p> 
+          <div class="paragraph"> 
+           <p>The output from View Error Log is in the workspace’s <code>.metadata/.log</code> file, for example:</p> 
+          </div> 
+          <div class="listingblock"> 
+           <div class="content"> 
+            <pre class="CodeRay highlight"><code data-lang="code">/Users/me/AnypointStudio/workspace/.metadata/.log</code></pre> 
+           </div> 
+          </div> </li> 
+         <li> <p><strong>Project Log:</strong></p> 
+          <div class="paragraph"> 
+           <p>After you run your Mule application, the log output is in the workspace’s <code>.mule/logs/&lt;project&gt;.log</code> file. For example, for project <code>abcd</code>:</p> 
+          </div> 
+          <div class="listingblock"> 
+           <div class="content"> 
+            <pre class="CodeRay highlight"><code data-lang="code">/Users/me/AnypointStudio/workspace/.mule/logs/abcd.log</code></pre> 
+           </div> 
+          </div> </li> 
+        </ul> 
+       </div> </td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">/Users/me/AnypointStudio/workspace/.mule/logs/basic_tutorial.log</code></pre> 
-   </div> 
-  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="synchronous-vs-asynchronous-logging"><a class="anchor" href="#synchronous-vs-asynchronous-logging"></a>Synchronous vs Asynchronous Logging</h2> 
+ <h2 id="synchronous-versus-asynchronous-logging"><a class="anchor" href="#synchronous-versus-asynchronous-logging"></a>Synchronous Versus Asynchronous Logging</h2> 
  <div class="sectionbody"> 
   <div class="admonitionblock note"> 
    <table> 
@@ -948,13 +978,13 @@
    <p>To appreciate the impact in performance between synchronous and asynchronous logging, consider the test results shown below. We ran performance tests with an application that logs about one million messages, using an increasingly higher amount of threads on each run (these threads were responsible for generating messages; the more threads, the more concurrent messages).</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/Screen+Shot+2014-10-09+at+11.32.14.png" alt="Screen+Shot+2014-10-09+at+11.32.14"></span></p> 
+   <p><span class="image"><img src="./_images/logging-latency-vs-concurrency.png" alt="logging-latency-vs-concurrency.png"></span></p> 
   </div> 
   <div class="paragraph"> 
    <p>The above chart shows how much latency increased as we added more concurrent messages. Notice that the results of logging asynchronously are almost indistinguishable from those of not logging anything at all. The below diagram shows similar results when measuring transactions per second. Note that each transaction implied logging 500 messages.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/Screen+Shot+2014-10-09+at+11.31.55.png" alt="Screen+Shot+2014-10-09+at+11.31.55"></span></p> 
+   <p><span class="image"><img src="./_images/logging-thruput-vs-concurrency.png" alt="logging-thruput-vs-concurrency"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -1067,7 +1097,7 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-      <td class="content"> For more information on how to build this configuration file, refer to thehttp://logging.apache.org/log4j/2.x/manual/configuration.html[&nbsp;Log4j2 configuration guide]<br> </td> 
+      <td class="content"> For more information on how to build this configuration file, refer to the <a href="http://logging.apache.org/log4j/2.x/manual/configuration.html">Log4j2 configuration guide</a> </td> 
      </tr> 
     </tbody> 
    </table> 
@@ -1194,7 +1224,7 @@
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-       <td class="content"> If you have issues updating your configuration files, please find more information on the <a href="http://logging.apache.org/log4j/2.x/manual/configuration.html">Log4j2 configuration guide</a>&nbsp;or contact our support. </td> 
+       <td class="content"> If you have issues updating your configuration files, you can find more information in the <a href="http://logging.apache.org/log4j/2.x/manual/configuration.html">Log4j2 configuration guide</a>&nbsp;or contact <a href="https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription">MuleSoft Support</a>. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1235,7 +1265,7 @@
   <div class="sect2"> 
    <h3 id="controlling-logging-from-jmx"><a class="anchor" href="#controlling-logging-from-jmx"></a>Controlling Logging from JMX</h3> 
    <div class="paragraph"> 
-    <p>You can expose a manager’s logging configuration over JMX by configuring a Log4J2 Jmx agent in your Mule configuration file. See <a href="/mule-user-guide/v/3.7/jmx-management">JMX Management</a> for more information.</p> 
+    <p>You can expose a manager’s logging configuration over JMX by configuring a Log4J2 JMX agent in your Mule configuration file. See <a href="/mule-user-guide/v/3.7/jmx-management">JMX Management</a> for more information.</p> 
    </div> 
   </div> 
  </div> 
@@ -1243,25 +1273,25 @@
 <div class="sect1"> 
  <h2 id="troubleshooting-logging"><a class="anchor" href="#troubleshooting-logging"></a>Troubleshooting Logging</h2> 
  <div class="sectionbody"> 
-  <div class="sect2"> 
-   <h3 id="i-don-t-see-any-logging-output"><a class="anchor" href="#i-don-t-see-any-logging-output"></a>I don’t see any logging output</h3> 
-   <div class="paragraph"> 
-    <p>A <code>log4j2.xml</code> file must be at the root of your classpath. For more information about configuring Log4J2, see their <a href="http://logging.apache.org/log4j/2.x/">website</a>.</p> 
+  <div class="paragraph"> 
+   <p><strong>I don’t see any logging output</strong></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>A <code>log4j2.xml</code> file must be at the root of your classpath. For more information about configuring Log4J2, see their <a href="http://logging.apache.org/log4j/2.x/">website</a>.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p><strong>I reconfigured Log4J2, but nothing happened</strong></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>This happens because there is another&nbsp;<code>log4j2.xml</code> file on your classpath that is getting picked up before your modified one. To find out which configuration file Log4J2 is using, add the following switch when starting Mule (or container startup script if you are embedding Mule):</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>-M-Dlog4j.debug=true</pre> 
    </div> 
   </div> 
-  <div class="sect2"> 
-   <h3 id="i-reconfigured-log4j2-but-nothing-happened"><a class="anchor" href="#i-reconfigured-log4j2-but-nothing-happened"></a>I reconfigured Log4J2, but nothing happened</h3> 
-   <div class="paragraph"> 
-    <p>This happens because there is another&nbsp;<code>log4j2.xml</code> file on your classpath that is getting picked up before your modified one. To find out which configuration file Log4J2 is using, add the following switch when starting Mule (or container startup script if you are embedding Mule):</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre>-M-Dlog4j.debug=true</pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>This parameter writes the Log4j2 startup information, including the location of the configuration file being used, to <code>stdout</code>. You must remove that configuration file before your modified configuration can work.</p> 
-   </div> 
+  <div class="paragraph"> 
+   <p>This parameter writes the Log4j2 startup information, including the location of the configuration file being used, to <code>stdout</code>. You must remove that configuration file before your modified configuration can work.</p> 
   </div> 
  </div> 
 </div>
@@ -1269,7 +1299,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#synchronous-vs-asynchronous-logging">Synchronous vs Asynchronous Logging</a></li><li><a class="scroll-menu-link" href="#configuring-custom-logging-settings">Configuring Custom Logging Settings</a></li><li><a class="scroll-menu-link" href="#troubleshooting-logging">Troubleshooting Logging</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#synchronous-versus-asynchronous-logging">Synchronous Versus Asynchronous Logging</a></li><li><a class="scroll-menu-link" href="#configuring-custom-logging-settings">Configuring Custom Logging Settings</a></li><li><a class="scroll-menu-link" href="#troubleshooting-logging">Troubleshooting Logging</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

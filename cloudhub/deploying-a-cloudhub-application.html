@@ -886,7 +886,7 @@
   <div class="ulist"> 
    <ul> 
     <li> <p><strong>Anypoint Studio</strong> - Right-click your project and click&nbsp;<strong>Deploy to Anypoint Platform</strong> → <strong>Cloud</strong>.&nbsp;For an example of deploying to CloudHub directly from Anypoint Studio, see&nbsp;<a href="/cloudhub/hello-world-on-cloudhub">Hello World on CloudHub</a>.</p> </li> 
-    <li> <p><strong>CloudHub</strong> - From the Applcations tab, click the <strong>Deploy application</strong> button. This page describes the options on the Deploy Application page.</p> </li> 
+    <li> <p><strong>CloudHub</strong> - From the Applications tab, click the <strong>Deploy application</strong> button. This page describes the options on the Deploy Application page.</p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -930,7 +930,7 @@
     <p>Every application requires a unique application domain name. The application domain identifies your application in CloudHub and also provides you with a public URL, <code><a href="http://myapplicationdomain.cloudhub.io" class="bare">http://myapplicationdomain.cloudhub.io</a></code>, for accessing the application if it exposes any inbound endpoints.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>To deploy an application, click <strong>Deploy application</strong>&nbsp;on the CloudHub console. in the&nbsp;<strong>Deploy Application</strong> dialog,&nbsp;enter a unique application name. The Application Name also becomes the cloudhub.io domain name that you use to access your application; for example the Application Name, abcde is accessible at http. Valid names contain alphanumeric characters and dashes, and contain at most 40 characters. If the name is valid, CloudHub alerts you whether it is available or already reserved by another user.</p> 
+    <p>To deploy an application, click <strong>Deploy application</strong>&nbsp;on the CloudHub console. in the&nbsp;<strong>Deploy Application</strong> dialog,&nbsp;enter a unique application name. The Application Name also becomes the <code>cloudhub.io</code> domain name that you use to access your application; for example the Application Name, <code>abcde</code> is accessible at <code><a href="http://abcde.cloudhub.io" class="bare">http://abcde.cloudhub.io</a></code>. Valid names contain alphanumeric characters and dashes, and contain at most 40 characters. If the name is valid, CloudHub alerts you whether it is available or already reserved by another user.</p> 
    </div> 
    <div class="paragraph"> 
     <p><span class="image"><img src="./_images/DeployAppName.png" alt="DeployAppName"></span></p> 
@@ -1119,7 +1119,7 @@
     <p>You can also optionally specify properties that your application requires. This allows you to externalize important pieces of configuration which may switch depending on the environment in which you’re deploying. For example, if you’re using a Mule application locally, you might configure your database host to be localhost. But if you’re using CloudHub, you might configure it to be an Amazon RDS server.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>To create an application property, click the <strong>Properties</strong> tab and set the variable by either using a text&nbsp; <code>key=value</code> &nbsp;format or by using the list format with two text boxes. After you’ve made the change, click&nbsp; <strong>Apply Changes</strong> .&nbsp;</p> 
+    <p>To create an application property, click the <strong>Properties</strong> tab and set the variable by either using a text&nbsp; <code>key=value</code> format or by using the list format with two text boxes. After you’ve made the change, click <strong>Apply Changes</strong>.&nbsp;</p> 
    </div> 
    <div class="paragraph"> 
     <p><span class="image"><img src="./_images/PropertiesTab.png" alt="PropertiesTab"></span></p> 
@@ -1167,7 +1167,7 @@
   <div class="sect2"> 
    <h3 id="logging-tab"><a class="anchor" href="#logging-tab"></a>Logging Tab</h3> 
    <div class="paragraph"> 
-    <p>The Logging tab lets you change the logging setting (INFO, DEBUG, WARN, or ERROR). For more information, see Viewing Log Data_OLD.</p> 
+    <p>The Logging tab lets you change the logging setting (INFO, DEBUG, WARN, or ERROR). For more information, see <a href="/cloudhub/viewing-log-data">Viewing Log Data</a>.</p> 
    </div> 
    <div class="paragraph"> 
     <p><span class="image"><img src="./_images/CHLoggingTab.png" alt="CHLoggingTab"></span></p> 
@@ -1176,13 +1176,13 @@
   <div class="sect2"> 
    <h3 id="static-ips-tab"><a class="anchor" href="#static-ips-tab"></a>Static IPs Tab</h3> 
    <div class="paragraph"> 
-    <p>To enable a static IP for your application, go to the <strong>Static IPs</strong> tab, then check the <strong>Use Static IP</strong> checkbox.</p> 
+    <p>To enable a static IP address for your application, go to the <strong>Static IPs</strong> tab, then check the <strong>Use Static IP</strong> checkbox.</p> 
    </div> 
    <div class="paragraph"> 
     <p><span class="image"><img src="./_images/static-ip-tab.png" alt="Static IP tab"></span></p> 
    </div> 
    <div class="paragraph"> 
-    <p>To pre-allocate static IPs for your application, select a region from the <strong>Region</strong> dropdown menu, then click <strong>Allocate Static IP</strong> to allocate a static IP for the chosen region. The static IP will be allocated when the application is deployed to that region. If the application is already running, applying the static IP change will trigger a restart of the application with the newly-applied static IP.</p> 
+    <p>To pre-allocate static IPs for your application, select a region from the <strong>Region</strong> dropdown menu, then click <strong>Allocate Static IP</strong> to allocate a static IP for the chosen region. The static IP address is allocated when the application is deployed to that region. If the application is already running, applying the static IP change triggers a restart of the application with the newly-applied static IP.</p> 
    </div> 
    <div class="paragraph"> 
     <p><span class="image"><img src="./_images/static-ip-regions.png" alt="Static IPs by region"></span></p> 
@@ -1191,10 +1191,10 @@
     <p>Applications with static IPs can only have one instance.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>By default, the number of static IPs allocated to your organization is equal to twice the number of Production vCores in your subscription. This number is displayed under the <strong>Use Static IP</strong> checkbox. If you need to increase this quota, please contact MuleSoft Support.</p> 
+    <p>By default, the number of static IPs allocated to your organization is equal to twice the number of Production vCores in your subscription. This number is displayed under the <strong>Use Static IP</strong> checkbox. If you need to increase this quota, you can contact <a href="https://www.mulesoft.com/support-and-services/mule-esb-support-license-subscription">MuleSoft Support</a>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>If an application has static IPs reserved in multiple regions, it will pick up the IP from whichever region it is deployed to. This allows you to pre-configure IP rules for multiple regions, for disaster recovery (DR) scenario.</p> 
+    <p>If an application has static IPs reserved in multiple regions, it picks up the IP from whichever region it is deployed to. This allows you to pre-configure IP rules for multiple regions, for disaster recovery (DR) scenario.</p> 
    </div> 
    <div class="paragraph"> 
     <p>If you need to free up some of your overall static IP allocation, you can release a static IP that is currently allocated to an application.</p> 
@@ -1213,17 +1213,7 @@
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre>Successfully deployed [mule application name]</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="code">Successfully deployed [mule application name]</code></pre> 
    </div> 
   </div> 
  </div> 
@@ -1244,10 +1234,10 @@
    <p><span class="image"><img src="./_images/studio-to-cloudhub3.png" alt="studio to cloudhub3"></span></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Once you have signed in, the Deploy to CloudHub menu opens. Choose a unique domain to deploy the application to, the sub organization under which you will deploy, an environment and a Mule Version, you can also assign environment variables.</p> 
+   <p>Once you have signed in, the Deploy to CloudHub menu opens. Choose a unique domain to deploy the application to, the sub organization under which you deploy, an environment, and a Mule Version. You can also assign environment variables.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/deploy-from-studio.jpg" alt="studio+to+cloudhub2"></span></p> 
+   <p><span class="image"><img src="./_images/deploy-from-studio.jpg" alt="deploy-from-studio"></span></p> 
   </div> 
  </div> 
 </div> 
@@ -1255,7 +1245,7 @@
  <h2 id="automatically-deploying-a-proxy-from-the-anypoint-platform-for-apis"><a class="anchor" href="#automatically-deploying-a-proxy-from-the-anypoint-platform-for-apis"></a>Automatically Deploying a Proxy from the Anypoint Platform for APIs</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>If you’ve registered an API in the Anypoint Platform, you can easily run it through an auto generated proxy to track its usage and implement policies. You can deploy this proxy to CloudHub without ever needing to go into the CloudHub section of the Anypoint platform. From a menu in the API version page, you can trigger the deployment of your proxy and set up the application name in CloudHub, the CloudHub environment and the Gateway version to use. Then, you can optionally access the CloudHub deployment menu for this proxy and configure advanced settings. <a href="/anypoint-platform-for-apis/proxying-your-api">Read More</a>.</p> 
+   <p>If you’ve registered an API in the Anypoint Platform, you can easily run it through an auto generated proxy to track its usage and implement policies. You can deploy this proxy to CloudHub without ever needing to go into the CloudHub section of the Anypoint platform. From a menu in the API version page, you can trigger the deployment of your proxy and set up the application name in CloudHub, the CloudHub environment and the Gateway version to use. Then, you can optionally access the CloudHub deployment menu for this proxy and configure advanced settings. See <a href="/anypoint-platform-for-apis/proxying-your-api">Proxying Your API</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1263,7 +1253,7 @@
  <h2 id="deployment-errors"><a class="anchor" href="#deployment-errors"></a>Deployment Errors</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>If an error occurs and the application cannot be deployed, the application status indicator changes to red. You are alerted in the status area that an error occurred. Please check the log details for any application deployment errors. You need to correct the error, upload the application, and deploy again.</p> 
+   <p>If an error occurs and the application cannot be deployed, the application status indicator changes to red. You are alerted in the status area that an error occurred. Check the log details for any application deployment errors. You need to correct the error, upload the application, and deploy again.</p> 
   </div> 
  </div> 
 </div> 
