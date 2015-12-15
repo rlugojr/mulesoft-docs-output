@@ -751,7 +751,7 @@
 <li>
 <i></i>
 <a href="/anypoint-connector-devkit/v/3.8/extending-connector-functionality">Extending Connector Functionality</a><ul>
-<li><i></i><a href="/anypoint-connector-devkit/v/3.8/adding-datasense">Adding DataSense</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/multiple-level-datasense-support">Multiple Level DataSense Support</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/adding-datasense-query-language">Adding DataSense Query Language</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/caching-metadata">Caching Metadata</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/adding-query-pagination-support">Adding Query Pagination Support</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/building-a-batch-enabled-connector">Building a Batch Enabled Connector</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/shading-libraries">Shading Libraries</a></li></ul></li>
+<li><i></i><a href="/anypoint-connector-devkit/v/3.8/adding-datasense">Adding DataSense</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/multiple-level-datasense-support">Multiple Level DataSense Support</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/adding-datasense-query-language">Adding DataSense Query Language</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/adding-query-pagination-support">Adding Query Pagination Support</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/building-a-batch-enabled-connector">Building a Batch Enabled Connector</a></li><li><i></i><a href="/anypoint-connector-devkit/v/3.8/shading-libraries">Shading Libraries</a></li></ul></li>
 <li>
 <i></i>
 <a href="/anypoint-connector-devkit/v/3.8/developing-devkit-connector-tests">Developing DevKit Connector Tests</a><ul>
@@ -882,7 +882,7 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To support SOAP-based connector development, DevKit 3.8.0 comes equipped with the option for the connector developer to define a session token for managing SOAP service connections, SOAP sessions and service operations requiring a token.</p> 
+   <p>To support SOAP-based connector development, <strong>DevKit 3.8.0</strong> comes equipped with the option for the connector developer to define a <strong>session token</strong> for managing SOAP service connections, SOAP sessions or any service operations requiring a token.</p> 
   </div> 
  </div> 
 </div> 
@@ -890,13 +890,13 @@
  <h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Session management for SOAP Connect offers you as the developer to create a session token from your connector code within the <code>@Connect</code> method, and utilize it according to any operations the SOAP service requires.</p> 
+   <p>Create a session token from your connector code within the <code>@Connect</code> method, and utilize it according to any operations the SOAP service requires.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Use the session token as a means to manage user access to the service through the connector. For more information on session token placement inside the body see <a href="/anypoint-connector-devkit/v/3.8/soap-connect-session-management#enriching-soap-body-with-session-token">Enriching SOAP Body with Session Token</a>.</p> 
+   <p>This is a means to managing user access to the service through the connector. For more information on session token placement inside the body see <a href="/anypoint-connector-devkit/v/3.8/soap-connect-session-management#enriching-soap-body-with-session-token">Enriching SOAP Body with Session Token</a>.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Session management allows you, the developer to:</p> 
+   <p>Session management allows you to:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
@@ -921,7 +921,7 @@
    <p>To enable session management for your connector, the <code>Config</code> class must be annotated with <code>@WsdlProvider</code> and <code>@ConnectionManagement</code>, which require implementation of the following methods, respectively:</p> 
   </div> 
   <div class="paragraph"> 
-   <p>For WSDL management:</p> 
+   <p>For WSDL Management:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
@@ -940,7 +940,7 @@
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>See the stub for the session management-enabled Config class in the &lt;&lt;@WsdlProvider with Session Management,@WsdlProvider with Session Management&gt;&gt; section.</p> 
+   <p>See the stub for the session management-enabled Config class in the <a href="/anypoint-connector-devkit/v/3.8/soap-connect-session-management#wsdlprovider-with-session-management">@WsdlProvider with Session Management</a> section below.</p> 
   </div> 
  </div> 
 </div> 
@@ -951,7 +951,7 @@
    <p>The lifecycle of the connector will be modified by "session control", during both fetching of metadata and operation invocation. Before fetching metadata and invoking operations, a connector instance is retrieved from or created in the pool, and then the <code>@Connect</code> method would be invoked to initialize the connection.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Connection pooling works like the current <code>@ConnectionManagement</code> mechanism; by using the same kind of pool configuration for the connector instances available via a connector configuration tab. The configuration of existing connector instances or creation of new ones is handled by the user from there.</p> 
+   <p>Connection pooling works like the current <a href="/anypoint-connector-devkit/v/3.8/connection-management#about-connection-management">Connection Management</a> mechanism; by using the same kind of pool configuration for the connector instances available via a connector configuration tab. Configuration of existing connector instances or creation of new ones is handled by the user from there.</p> 
   </div> 
   <div class="paragraph"> 
    <p>Since the <code>@Connect</code> method is invoked before any of the common <code>@WsdlProvider</code> methods, all the required parameters for connection must be provided via a <code>@Configurable</code> field or <code>@Connect</code> parameter. Initialization may take place inside the <code>@Connect</code> method in order to save results like session tokens.</p> 
@@ -1080,7 +1080,7 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="enriching-soap-body-with-session-token"><a class="anchor" href="#enriching-soap-body-with-session-token"></a>Enriching SOAP Body With Session Token</h2> 
+ <h2 id="enriching-the-soap-body-with-session-token"><a class="anchor" href="#enriching-the-soap-body-with-session-token"></a>Enriching the SOAP Body With Session Token</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>With the release of DevKit 3.8.0 the <code>@WsdlBodyEnricher</code> can be used to inject the session token into the SOAP body.</p> 
@@ -1088,7 +1088,7 @@
   <div class="sect2"> 
    <h3 id="wsdlbodyenricher"><a class="anchor" href="#wsdlbodyenricher"></a>@WsdlBodyEnricher</h3> 
    <div class="paragraph"> 
-    <p>The method marked as <code>@WsdlBodyEnricher</code> should receive an object representing the message payload, and return it modified with the session token.</p> 
+    <p>The method marked <code>@WsdlBodyEnricher</code> should receive an object representing the message payload, and return it modified with the session token.</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1129,7 +1129,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#requirements">Requirements</a></li><li><a class="scroll-menu-link" href="#connector-lifecycle-with-session-management">Connector Lifecycle with Session Management</a></li><li><a class="scroll-menu-link" href="#wsdlprovider-with-session-management">@WsdlProvider with Session Management</a></li><li><a class="scroll-menu-link" href="#enriching-soap-body-with-session-token">Enriching SOAP Body With Session Token</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#introduction">Introduction</a></li><li><a class="scroll-menu-link" href="#requirements">Requirements</a></li><li><a class="scroll-menu-link" href="#connector-lifecycle-with-session-management">Connector Lifecycle with Session Management</a></li><li><a class="scroll-menu-link" href="#wsdlprovider-with-session-management">@WsdlProvider with Session Management</a></li><li><a class="scroll-menu-link" href="#enriching-the-soap-body-with-session-token">Enriching the SOAP Body With Session Token</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
