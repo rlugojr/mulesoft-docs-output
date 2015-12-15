@@ -895,10 +895,10 @@
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>integrating data sets, small or large, streaming or not, to parallel process records</p> </li> 
-    <li> <p>synchronizing data sets between business applications, such as syncing contacts between Netsuite and Salesforce, effecting "near real-time"data integration</p> </li> 
-    <li> <p>extracting, transforming and loading (ETL) information into a target system, such as uploading data from a flat file (CSV) to Hadoop</p> </li> 
-    <li> <p>handling large quantities of incoming data from an API into a legacy system</p> </li> 
+    <li> <p>Integrating data sets, small or large, streaming or not, to parallel process records.</p> </li> 
+    <li> <p>Synchronizing data sets between business applications, such as syncing contacts between Netsuite and Salesforce, effecting "near real-time"data integration.</p> </li> 
+    <li> <p>Extracting, transforming and loading (ETL) information into a target system, such as uploading data from a flat file (CSV) to Hadoop.</p> </li> 
+    <li> <p>Handling large quantities of incoming data from an API into a legacy system.</p> </li> 
    </ul> 
   </div> 
   <div class="admonitionblock note"> 
@@ -920,10 +920,20 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you are familiar with Anypoint Studio; review the&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a>&nbsp;chapter to learn more about developing with Mule ESB’s graphical user interface. This document also assumes you are familiar&nbsp;with&nbsp;<a href="http://www.mulesoft.org/documentation/display/current/Anypoint+Connectors">Anypoint Connectors</a>, and the&nbsp;<a href="http://www.mulesoft.org/documentation/display/current/Datamapper+User+Guide+and+Reference">Anypoint DataMapper</a>&nbsp;transformer that you can use in applications in Studio. Further, this document references&nbsp;<a href="http://www.mulesoft.org/documentation/display/current/Understand+Global+Mule+Elements">Global Elements</a>,&nbsp;<a href="/mule-user-guide/v/3.7/datasense">DataSense</a>&nbsp;and&nbsp;<a href="/mule-user-guide/v/3.7/poll-reference">Polls</a>.&nbsp;</p> 
+   <p>This document assumes that you are familiar with:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>Anypoint Studio.&nbsp;See <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio Essentials</a>&nbsp;chapter to learn more about developing with Mule ESB’s graphical user interface.</p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>.</p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.7/datamapper-user-guide-and-reference">Anypoint DataMapper User Guide and Reference</a> transformer that you can use in applications in Studio. Note: DataMapper has been replaced by <a href="/mule-user-guide/v/3.7/dataweave">DataWeave</a>.</p> </li> 
+    <li> <p><a href="/mule-fundamentals/v/3.7/global-elements">Global Elements</a>.&nbsp;</p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.7/datasense">DataSense</a>.</p> </li> 
+    <li> <p><a href="/mule-user-guide/v/3.7/poll-reference">Polls</a>.&nbsp;</p> </li> 
+   </ul> 
   </div> 
  </div> 
 </div> 
@@ -963,7 +973,7 @@
         <p>A batch job contains one or more <strong>batch steps</strong> which, in turn, contain any number of message processors that act upon records as they move through the batch job. During batch processing, you can use <strong>record-level variables</strong> (<code>recordVars</code>) and MEL expressions to enrich, route or otherwise act upon records.</p> 
        </div> 
        <div class="paragraph"> 
-        <p>A batch job executes when triggered by either a <strong>batch executor</strong> in a Mule flow or a <strong>message source</strong> in a batch-accepting input; when triggered, Mule creates a new <strong>batch job instance</strong>. When all records have passed through all batch steps, the batch job instance ends and the <strong>batch job result</strong> can be summarized in a report to indicate which records succeeded and which failed during processing.</p> 
+        <p>A batch job executes when triggered by either a <strong>batch executor</strong> in a Mule flow or a <strong>message source</strong> in a batch-accepting input; when triggered, Mule creates a new <strong>batch job instance</strong>. When all records have passed through all batch steps, the batch job instance ends and the <strong>batch job result</strong> is summarized in a report to indicate which records succeeded and which failed during processing.</p> 
        </div> 
        <div class="paragraph"> 
         <p>Access <a href="/mule-user-guide/v/3.7/batch-processing-reference">Batch Processing Reference</a> for more information.</p> 
@@ -1073,9 +1083,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/batch:step&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/batch:process-records&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/batch:job&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowOne</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/flow&gt;</span></pre></td> 
+<span class="tag">&lt;flow</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">flowOne</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;...
+<span class="tag">&lt;/flow&gt;</span></pre></td> 
         </tr> 
        </tbody> 
       </table></code></pre> 
@@ -1139,19 +1149,19 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-3a04a" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-       <li><a href="#xml-editor-37410" role="tab" data-toggle="tab">XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-2a32b" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-4153f" role="tab" data-toggle="tab">XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-3a04a"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-2a32b"> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/input_phas.png" alt="input_phas"></span></p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="xml-editor-37410"> 
+      <div class="tab-pane fade no-padding" id="xml-editor-4153f"> 
        <div class="paragraph"> 
-        <p>Note that details in code snippet are abbreviated so as to highlight batch phases, jobs and steps. See <a href="#Complete Code Example">[Complete Code Example]</a>&nbsp; for more detail.</p> 
+        <p>Note that details in code snippet are abbreviated so as to highlight batch phases, jobs and steps. See <a href="#Complete Code Example">[Complete Code Example]</a>&nbsp;for more detail.</p> 
        </div> 
        <div class="listingblock"> 
         <div class="content"> 
@@ -1223,26 +1233,26 @@
     </div> 
     <div class="ulist"> 
      <ul> 
-      <li> <p>you can set <strong>record variables</strong> on records and pass them from step to step (<a href="/mule-user-guide/v/3.7/record-variable">read more</a>)</p> </li> 
-      <li> <p>you can apply filters by adding <strong>accept expressions</strong> within each batch step to prevent the step from processing certain records; for example, you can set a filter to prevent a step from processing any records which failed processing in the preceding step (<a href="/mule-user-guide/v/3.7/batch-filters-and-batch-commit">read more</a>)</p> </li> 
-      <li> <p>you can <strong>commit</strong>&nbsp;records in groups, sending them as bulk upserts to external sources or services.&nbsp;(<a href="/mule-user-guide/v/3.7/batch-filters-and-batch-commit">read more</a>)</p> </li> 
+      <li> <p>You can set <strong>record variables</strong> on records and pass them from step to step (<a href="/mule-user-guide/v/3.7/record-variable">read more</a>)</p> </li> 
+      <li> <p>You can apply filters by adding <strong>accept expressions</strong> within each batch step to prevent the step from processing certain records; for example, you can set a filter to prevent a step from processing any records which failed processing in the preceding step (<a href="/mule-user-guide/v/3.7/batch-filters-and-batch-commit">read more</a>)</p> </li> 
+      <li> <p>You can <strong>commit</strong>&nbsp;records in groups, sending them as bulk upserts to external sources or services.&nbsp;(<a href="/mule-user-guide/v/3.7/batch-filters-and-batch-commit">read more</a>)</p> </li> 
      </ul> 
     </div> 
     <div class="panel panel-default no-padding"> 
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-0e7be" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-       <li><a href="#studio-xml-9b75d" role="tab" data-toggle="tab">STUDIO XML</a></li> 
+       <li class="active"><a href="#studio-visual-editor-65dd4" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-6cc91" role="tab" data-toggle="tab">XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-0e7be"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-65dd4"> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/process-phase.png" alt="process-phase"></span></p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="studio-xml-9b75d"> 
+      <div class="tab-pane fade no-padding" id="xml-editor-6cc91"> 
        <div class="paragraph"> 
         <p>Note that details in code snippet are abbreviated so as to highlight batch phases, jobs and steps. See <a href="#Complete Code Example">[Complete Code Example]</a>&nbsp; for more detail.</p> 
        </div> 
@@ -1290,7 +1300,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:request/<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/batch:step<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/batch:process-records<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span></pre></td> 
+<span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span></pre></td> 
              </tr> 
             </tbody> 
            </table></code></pre> 
@@ -1309,17 +1319,17 @@
      <div class="panel-heading no-padding"> 
       <!-- Nav tabs --> 
       <ul class="nav nav-tabs" role="tablist"> 
-       <li class="active"><a href="#studio-visual-editor-5e225" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-       <li><a href="#xml-editor-3e202" role="tab" data-toggle="tab">XML Editor</a></li> 
+       <li class="active"><a href="#studio-visual-editor-b24a2" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+       <li><a href="#xml-editor-5ca23" role="tab" data-toggle="tab">XML Editor</a></li> 
       </ul> 
      </div> 
      <div class="panel-body tab-content no-padding"> 
-      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-5e225"> 
+      <div class="tab-pane in active fade no-padding" id="studio-visual-editor-b24a2"> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/on-complete_phase.png" alt="on-complete_phase"></span></p> 
        </div> 
       </div> 
-      <div class="tab-pane fade no-padding" id="xml-editor-3e202"> 
+      <div class="tab-pane fade no-padding" id="xml-editor-5ca23"> 
        <div class="paragraph"> 
         <p>Note that details in code snippet are abbreviated so as to highlight batch phases, jobs and steps. See <a href="#Complete Code Example">[Complete Code Example]</a> for more detail.</p> 
        </div> 
@@ -1373,7 +1383,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>batch:on-complete<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger/<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/batch:on-complete<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span></pre></td> 
+<span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span></pre></td> 
              </tr> 
             </tbody> 
            </table></code></pre> 
@@ -1383,12 +1393,12 @@
      </div> 
     </div> 
     <div class="paragraph"> 
-     <p>After Mule has executed the entire batch job, the output becomes a <strong>batch job result object</strong> (<code>BatchJobResult</code>).&nbsp;Because Mule processes a batch job as an asynchronous, one-way flow, the results of batch processing do not feed back into the flow which may have triggered it, nor do the results return as a response to a caller (indeed, any message source which feeds data into a batch job MUST be one-way, not request-response). Instead, you have two options for working with the output:</p> 
+     <p>After Mule executes the entire batch job, the output becomes a <strong>batch job result object</strong> (<code>BatchJobResult</code>).&nbsp;Because Mule processes a batch job as an asynchronous, one-way flow, the results of batch processing do not feed back into the flow which may have triggered it, nor do the results return as a response to a caller (indeed, any message source which feeds data into a batch job MUST be one-way, not request-response). Instead, you have two options for working with the output:</p> 
     </div> 
     <div class="ulist"> 
      <ul> 
-      <li> <p><strong>create a report</strong> in the On Complete phase, using MEL expressions to capture the number of failed records and successfully processed records, and in which step any errors might have occurred</p> </li> 
-      <li> <p><strong>reference the batch job result object</strong> elsewhere in the Mule application to capture and use batch metadata, such as the number of records which failed to process in a particular batch job instance</p> </li> 
+      <li> <p><strong>Create a report</strong> in the On Complete phase, using MEL expressions to capture the number of failed records and successfully processed records, and in which step any errors might have occurred.</p> </li> 
+      <li> <p><strong>Reference the batch job result object</strong> elsewhere in the Mule application to capture and use batch metadata, such as the number of records which failed to process in a particular batch job instance.</p> </li> 
      </ul> 
     </div> 
     <div class="paragraph"> 
@@ -1401,7 +1411,7 @@
         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
         <td class="content"> 
          <div class="paragraph"> 
-          <p><strong>Batch Job vs. Batch Job Instance</strong><br></p> 
+          <p><strong>Batch Job vs. Batch Job Instance</strong></p> 
          </div> 
          <div class="paragraph"> 
           <p>Though defined in context above, it’s worth elaborating upon the terms&nbsp;<strong>batch job</strong>&nbsp;and&nbsp;<strong>batch job instance</strong>&nbsp;as they relate to each other.</p> 
@@ -1428,34 +1438,34 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>via a&nbsp;<strong>batch reference&nbsp;message processor</strong>&nbsp;to reference the batch job from within a Mule flow in the same application</p> 
+    <li> <p>Via a&nbsp;<strong>batch reference&nbsp;message processor</strong>&nbsp;to reference the batch job from within a Mule flow in the same application. In Anypoint Studio, this processor is the <strong>Batch Execute</strong> building block.</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/batch_main.png" alt="batch_main"></span></p> 
      </div> </li> 
-    <li> <p>via an&nbsp;<strong>inbound, one-way message source</strong>&nbsp;placed at the beginning of the batch job (cannot be request-response inbound message source)</p> 
+    <li> <p>Via an&nbsp;<strong>inbound, one-way message source</strong>&nbsp;placed at the beginning of the batch job (cannot be request-response inbound message source)</p> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/batch_main3.png" alt="batch_main3"></span></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>Use a&nbsp;<strong>batch reference message processor</strong>&nbsp;(<code>batch:execute</code>) in your Mule flow to reference a batch job that you defined in your application. Refer to the example below. When the flow receives a message, the batch message processor instructs Mule to process the input in batches.&nbsp;Each time a Mule flow triggers the execution of a batch job, Mule runs a fresh batch job&nbsp;instance. The instance exists for as long as it takes to process each record in a batch, and results in a a batch job result object. Mule can run multiple batch job&nbsp;instances at the same time and can continue processing a batch even if one or more of its records is faulty. This "continue processing" functionality ensures that fewer batch jobs fall victim to a single point of failure. (Refer to the&nbsp;<a href="#handling-failures-during-batch-processing">Handling Failures During Batch Processing</a>&nbsp;for more detail on error handling during batch processing; refer to section further below for more detail on customizing the name of batch job&nbsp;instances.)</p> 
      </div> </li> 
    </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p>Use a&nbsp;<strong>batch reference message processor</strong>&nbsp;(<code>batch:execute</code>) in your Mule flow to reference a batch job that you defined in your application. Refer to the example below. When the flow receives a message, the batch message processor instructs Mule to process the input in batches.&nbsp;Each time a Mule flow triggers the execution of a batch job, Mule runs a fresh batch job&nbsp;instance. The instance exists for as long as it takes to process each record in a batch, and results in a a batch job result object. Mule can run multiple batch job&nbsp;instances at the same time and can continue processing a batch even if one or more of its records is faulty. This "continue processing" functionality ensures that fewer batch jobs fall victim to a single point of failure. (Refer to the&nbsp;<a href="#handling-failures-during-batch-processing">Handling Failures During Batch Processing</a>&nbsp;for more detail on error handling during batch processing; refer to section further below for more detail on customizing the name of batch job&nbsp;instances.)</p> 
   </div> 
   <div class="panel panel-default no-padding"> 
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-fdd20" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-e3a5f" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-1151a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-c55aa" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-fdd20"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-1151a"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/trigger_ref1.png" alt="trigger_ref1"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-e3a5f"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-c55aa"> 
      <div class="paragraph"> 
       <p>Note that details in code snippet are abbreviated so as to highlight batch phases, jobs and steps. See <a href="#Complete Code Example">[Complete Code Example]</a>&nbsp;for more detail.</p> 
      </div> 
@@ -1502,12 +1512,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>batch:on-complete<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger level="INFO" doc:name="Logger"/<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/batch:on-complete<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>flow name="batchtest1Flow1"<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span>
+<span class="entity">&amp;lt;</span>flow name="batchtest1Flow1"<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>http:listener/<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:transform/<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>batch:execute name="Batch2"/<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
+<span class="entity">&amp;lt;</span>/flow<span class="entity">&amp;gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -1523,17 +1533,17 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-88f1f" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-dff74" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-d1cf8" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-4a0c9" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-88f1f"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d1cf8"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/trigger_source.png" alt="trigger_source"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-dff74"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-4a0c9"> 
      <div class="paragraph"> 
       <p>Note that details in code snippet are abbreviated so as to highlight batch phases, jobs and steps. See <a href="#Complete Code Example">[Complete Code Example]</a>&nbsp;for more detail.</p> 
      </div> 
@@ -1585,7 +1595,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>batch:on-complete<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>logger/<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/batch:on-complete<span class="entity">&amp;gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span></pre></td> 
+<span class="entity">&amp;lt;</span>/batch:job<span class="entity">&amp;gt;</span></pre></td> 
            </tr> 
           </tbody> 
          </table></code></pre> 
@@ -1604,9 +1614,9 @@
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p><strong>stop processing</strong> the entire batch, skip any remaining batch steps and push all records to the On Complete phase (where, ideally, you have designed a report to notify you of failed records)</p> </li> 
-    <li> <p><strong>continue processing</strong> the batch regardless of any failed records, using <a href="/mule-user-guide/v/3.7/batch-filters-and-batch-commit">filters</a> to instruct subsequent batch steps how to handle failed records</p> </li> 
-    <li> <p><strong>continue processing</strong> the batch&nbsp;regardless of any failed records (using&nbsp;<a href="/mule-user-guide/v/3.7/batch-filters-and-batch-commit">filters</a>&nbsp;to instruct subsequent batch steps how to handle failed records),&nbsp;until the batch job accumulates a <strong>maximum number of failed records</strong>&nbsp;at which point Mule&nbsp;pushes all records to the On Complete phase (where, ideally, you have designed a report to notify you of failed records)</p> </li> 
+    <li> <p><strong>Stop processing</strong> the entire batch, skip any remaining batch steps and push all records to the On Complete phase (where, ideally, you have designed a report to notify you of failed records)</p> </li> 
+    <li> <p><strong>Continue processing</strong> the batch regardless of any failed records, using <a href="/mule-user-guide/v/3.7/batch-filters-and-batch-commit">filters</a> to instruct subsequent batch steps how to handle failed records</p> </li> 
+    <li> <p><strong>Continue processing</strong> the batch&nbsp;regardless of any failed records (using&nbsp;<a href="/mule-user-guide/v/3.7/batch-filters-and-batch-commit">filters</a>&nbsp;to instruct subsequent batch steps how to handle failed records),&nbsp;until the batch job accumulates a <strong>maximum number of failed records</strong>&nbsp;at which point Mule&nbsp;pushes all records to the On Complete phase (where, ideally, you have designed a report to notify you of failed records)</p> </li> 
    </ol> 
   </div> 
   <div class="paragraph"> 
@@ -1649,17 +1659,7 @@
   </table> 
   <div class="listingblock"> 
    <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="xml">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
-</pre></td> 
-         <td class="code"><pre><span class="tag">&lt;batch:job</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Batch1</span><span class="delimiter">"</span></span> <span class="attribute-name">max-failed-records</span>=<span class="string"><span class="delimiter">"</span><span class="content">0</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
+    <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;batch:job</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">Batch1</span><span class="delimiter">"</span></span> <span class="attribute-name">max-failed-records</span>=<span class="string"><span class="delimiter">"</span><span class="content">0</span><span class="delimiter">"</span></span><span class="tag">&gt;</span></code></pre> 
    </div> 
   </div> 
   <div class="paragraph"> 
@@ -1702,17 +1702,17 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-a9f4b" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-c3d61" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-de1f5" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-ee8ff" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a9f4b"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-de1f5"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/example_batch.png" alt="example_batch"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-c3d61"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-ee8ff"> 
      <div class="admonitionblock tip"> 
       <table> 
        <tbody> 
@@ -1720,22 +1720,22 @@
          <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
          <td class="content"> 
           <div class="paragraph"> 
-           <p>If you copy + paste the code into your instance of Studio, be sure to enter your own values for the the <strong>global Salesforce connector</strong>:</p> 
+           <p>If you copy and paste the code into your instance of Studio, be sure to enter your own values for the <strong>global Salesforce connector</strong>:</p> 
           </div> 
           <div class="ulist"> 
            <ul> 
-            <li> <p>username</p> </li> 
-            <li> <p>password</p> </li> 
-            <li> <p>security token</p> </li> 
+            <li> <p>Username</p> </li> 
+            <li> <p>Password</p> </li> 
+            <li> <p>Security token</p> </li> 
            </ul> 
           </div> 
           <div class="paragraph"> 
-           <p>How do I get a Salesforce security token?</p> 
+           <p><strong>How do I get a Salesforce security token?</strong></p> 
           </div> 
           <div class="olist arabic"> 
            <ol class="arabic"> 
             <li> <p>Log in to your Salesforce account. From your account menu (your account is labeled with your name), select&nbsp;<strong>Setup</strong>.</p> </li> 
-            <li> <p>In the left navigation bar, under the&nbsp;<strong>My Settings</strong>&nbsp;heading, click to expand the&nbsp;<strong>Personal&nbsp;</strong>folder.&nbsp;</p> </li> 
+            <li> <p>In the left navigation bar, under the&nbsp;<strong>My Settings</strong>&nbsp;heading, click to expand the&nbsp;<strong>Personal</strong> folder.&nbsp;</p> </li> 
             <li> <p>Click&nbsp;<strong>Reset My Security Token</strong>. Salesforce resets the token and emails you the new one.</p> </li> 
             <li> <p>Access the email that Salesforce sent and copy the new token onto your local clipboard.</p> </li> 
             <li> <p>In the application in your instance of Anypoint Studio, click the&nbsp;<strong>Global Elements</strong>&nbsp;tab.&nbsp;</p> </li> 
@@ -1802,40 +1802,22 @@
 46
 47
 48
-49
-<strong>50</strong>
-51
-52
-53
-54
-55
-56
-57
 </pre></td> 
             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 &nbsp;
-<span class="entity">&amp;lt;</span>mule xmlns:batch="http://www.mulesoft.org/schema/mule/batch" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.5.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
-&nbsp;
+<span class="entity">&amp;lt;</span>mule xmlns:batch="http://www.mulesoft.org/schema/mule/batch" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.7.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-&nbsp;
 http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
-&nbsp;
 http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/batch/current/mule-batch.xsd
-&nbsp;
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
-&nbsp;
 http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd"<span class="entity">&amp;gt;</span>
-&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sfdc:config name="Salesforce" username="username" password="password" securityToken="SpBdsf98af9tTR3m3YVcm4Y5q0y0R" doc:name="Salesforce"<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sfdc:connection-pooling-profile initialisationPolicy="INITIALISE_ONE" exhaustedAction="WHEN_EXHAUSTED_GROW"/<span class="entity">&amp;gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sfdc:config<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="new_mapping_grf" transformationGraphPath="new_mapping.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
-&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="new_mapping_1_grf" transformationGraphPath="new_mapping_1.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
-&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="leads_grf" transformationGraphPath="leads.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
-&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="csv_to_lead_grf" transformationGraphPath="csv-to-lead.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>batch:job max-failed-records="1000" name="Create Leads" doc:name="Create Leads"<span class="entity">&amp;gt;</span>
@@ -1901,11 +1883,11 @@ http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfd
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic" start="3"> 
-    <li> <p>Mule begins processing each lead as a record. The first batch step, <strong><code>lead-check</code></strong>, uses a <strong>Salesforce Connector</strong> wrapped with a&nbsp;<a href="/mule-user-guide/v/3.7/message-enricher">Message Enricher</a> to:<br></p> 
+    <li> <p>Mule begins processing each lead as a record. The first batch step, <code>lead-check</code>, uses a <strong>Salesforce Connector</strong> wrapped with a&nbsp;<a href="/mule-user-guide/v/3.7/message-enricher">Message Enricher</a> to:</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
-       <li> <p>query Salesforce to find out if a lead already exists: because the message is now the record, the application uses a MEL expression to extract the email address from the payload, then uses it to query Salesforce to find out if the lead exists</p> </li> 
-       <li> <p>enrich the message with a record variable to indicate that the record (i.e. lead) already exists in the Salesforce account<br></p> </li> 
+       <li> <p>Query Salesforce to find out if a lead already exists: because the message is now the record, the application uses a MEL expression to extract the email address from the payload, then uses it to query Salesforce to find out if the lead exists.</p> </li> 
+       <li> <p>Enrich the message with a record variable to indicate that the record (i.e. lead) already exists in the Salesforce account.</p> </li> 
       </ol> 
      </div> </li> 
    </ol> 
@@ -1914,17 +1896,17 @@ http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfd
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-9018a" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-51e16" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-ab210" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-55bbb" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-9018a"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-ab210"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/example_query3.png" alt="example_query3"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-51e16"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-55bbb"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/query4.png" alt="query4"></span></p> 
      </div> 
@@ -1933,26 +1915,26 @@ http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfd
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic" start="4"> 
-    <li> <p>The second batch step, <strong><code>insert-lead</code></strong>, uses a filter that only accepts records for which leads don’t already exist. It does so using an <strong>Accept Expression</strong>&nbsp;attribute on the batch step, indicating that any record that has&nbsp;been enriched with the record variable ‘exists’ should not be excluded for processing by this batch step.</p> </li> 
+    <li> <p>The second batch step, <code>insert-lead</code>, uses a filter that only accepts records for which leads don’t already exist. It does so using an <strong>Accept Expression</strong>&nbsp;attribute on the batch step, indicating that any record that has&nbsp;been enriched with the record variable <code>exists</code> should not be excluded for processing by this batch step.</p> </li> 
    </ol> 
   </div> 
   <div class="panel panel-default no-padding"> 
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-a3841" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-e3542" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-cfe9f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-c76e9" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-a3841"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-cfe9f"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/example_filter3.png" alt="example_filter3"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-e3542"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-c76e9"> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/example_filter4+%281%29.png" alt="example_filter4+%281%29"></span></p> 
+      <p><span class="image"><img src="./_images/png batch-example-filter.png" alt="png batch-example-filter.png"></span></p> 
      </div> 
     </div> 
    </div> 
@@ -1967,17 +1949,17 @@ http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfd
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-d6a54" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-0b2b5" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-698c9" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-4d90c" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d6a54"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-698c9"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/example_insert1.png" alt="example_insert1"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-0b2b5"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-4d90c"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/example_insert2.png" alt="example_insert2"></span></p> 
      </div> 
@@ -2056,7 +2038,7 @@ http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfd
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#basic-anatomy">Basic Anatomy</a></li><li><a class="scroll-menu-link" href="#triggering-batch-jobs">Triggering Batch Jobs</a></li><li><a class="scroll-menu-link" href="#handling-failures-during-batch-processing">Handling Failures During Batch Processing</a></li><li><a class="scroll-menu-link" href="#complete-code-example">Complete Code Example</a></li><li><a class="scroll-menu-link" href="#limitations">Limitations</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#overview">Overview</a></li><li><a class="scroll-menu-link" href="#basic-anatomy">Basic Anatomy</a></li><li><a class="scroll-menu-link" href="#triggering-batch-jobs">Triggering Batch Jobs</a></li><li><a class="scroll-menu-link" href="#handling-failures-during-batch-processing">Handling Failures During Batch Processing</a></li><li><a class="scroll-menu-link" href="#complete-code-example">Complete Code Example</a></li><li><a class="scroll-menu-link" href="#limitations">Limitations</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
