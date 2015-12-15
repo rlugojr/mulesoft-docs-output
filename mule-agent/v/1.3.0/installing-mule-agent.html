@@ -909,7 +909,7 @@
  <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>The Mule agent continues to be available with the Mule and API Gateway software distributions; however, you should use the new zip version to update your Mule agent to the latest version..</p> 
+   <p>The Mule agent continues to be available with the Mule and API Gateway software distributions; however, you should use the new zip version to update your Mule agent to the latest version.</p> 
   </div> 
   <div class="paragraph"> 
    <p>This document assumes that your enterprise license is current. See <a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Installing an Enterprise License</a> for information on obtaining and installing an enterprise license.</p> 
@@ -933,7 +933,7 @@
  <h2 id="download-the-latest-version-of-the-agent"><a class="anchor" href="#download-the-latest-version-of-the-agent"></a>Download the Latest Version of the Agent</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><a href="http://mule-agent.s3.amazonaws.com/1.3.0/mule-agent-1.3.0.zip">Mule Agent zip file</a></p> 
+   <p>Download the <a href="http://mule-agent.s3.amazonaws.com/1.3.0/mule-agent-1.3.0.zip">Mule Agent zip file</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -942,26 +942,32 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Unzip the ` mule-agent-[VERSION].zip` to the <code>$MULE_HOME/bin</code> folder.</p> 
-     <div class="exampleblock"> 
-      <div class="content"> 
-       <div class="paragraph"> 
-        <p>The agent zip file contains these 3 files - the <code>amc_setup</code> files install the Mule agent plugin.</p> 
-       </div> 
-       <div class="ulist"> 
-        <ul> 
-         <li> <p><code>amc_setup</code> - Mac and Linux installation file</p> </li> 
-         <li> <p><code>amc_setup.bat</code> - Windows installation file</p> </li> 
-         <li> <p><code>agent-setup-&lt;version&gt;.jar</code> - Called by the installation files</p> </li> 
-        </ul> 
-       </div> 
-      </div> 
+    <li> <p>Unzip the <code>mule-agent-[VERSION].zip</code> file to the <code>$MULE_HOME/bin</code> Mule software distribution folder.</p> 
+     <div class="admonitionblock tip"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+         <td class="content"> 
+          <div class="paragraph"> 
+           <p>The agent zip file contains these 3 files - the <code>amc_setup</code> files install the Mule agent plugin.</p> 
+          </div> 
+          <div class="ulist"> 
+           <ul> 
+            <li> <p><code>amc_setup</code> - Mac and Linux installation file</p> </li> 
+            <li> <p><code>amc_setup.bat</code> - Windows installation file</p> </li> 
+            <li> <p><code>agent-setup-&lt;version&gt;.jar</code> - Called by the installation files</p> </li> 
+           </ul> 
+          </div> </td> 
+        </tr> 
+       </tbody> 
+      </table> 
      </div> </li> 
-    <li> <p>Run the installation file that matches your OS via the command line</p> </li> 
+    <li> <p>Run the installation file that matches your OS via the command line.</p> </li> 
    </ol> 
   </div> 
   <div class="paragraph"> 
-   <p>The installed Mule agent works correctly with Mule and GW runtimes versions that include the agent in the distribution.</p> 
+   <p>The installed Mule agent works correctly with Mule and API Gateway runtimes versions that include the agent in the distribution.</p> 
   </div> 
  </div> 
 </div> 
@@ -1161,8 +1167,14 @@
 6
 7
 8
+9
+<strong>10</strong>
+11
 </pre></td> 
-          <td class="code"><pre><span class="error">The communication channel for the agent will be encrypted using public/private key certificates. In the following steps you will be asked to provide the keystore and truststore. Both keystore and truststore format must be JKS.</span>
+          <td class="code"><pre><span class="error">The communication channel for the agent will be encrypted using</span>
+<span class="error">public/private key certificates. In the following steps you</span>
+<span class="error">will be asked to provide the keystore and truststore.</span>
+<span class="error">Both keystore and truststore format must be JKS.</span>
 
 <span class="error">Keystore location (?):</span>
 <span class="error">Truststore location (?):</span>
@@ -1215,7 +1227,7 @@
   <div class="sect2"> 
    <h3 id="hybrid-management"><a class="anchor" href="#hybrid-management"></a>Hybrid Management</h3> 
    <div class="paragraph"> 
-    <p>Configures the Mule agent to connect to the Anypoint Management Center (AMC). This option requires a token (provided by the AMC console and an instance name. For further information, <a href="http://www.mulesoft.com/support-login">contact us</a>.</p> 
+    <p>Configures the Mule agent to connect to the Anypoint Management Center (AMC). This option requires a token (provided by the AMC console) and an instance name. For details, see the <strong>Add a Server</strong> section in <a href="/cloudhub/managing-applications-and-servers-in-the-cloud-and-on-premises">Managing Applications and Servers in the Cloud and On Premises</a>.</p> 
    </div> 
   </div> 
   <div class="sect2"> 
