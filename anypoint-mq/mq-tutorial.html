@@ -1155,7 +1155,7 @@
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/mq-click-msg-sender.png" alt="mq-click-msg-sender"></span></p> 
        </div> </li> 
-      <li> <p>Type text in the <strong>Payload</strong>:</p> 
+      <li> <p>Type text in the <strong>Payload</strong> such as <code>Hello Mules</code>:</p> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/mq-msg-sender-text-payload.png" alt="mq-msg-sender-text-payload"></span></p> 
        </div> </li> 
@@ -1164,12 +1164,53 @@
     </div> 
    </div> 
    <div class="sect3"> 
+    <h4 id="verify-the-message-in-the-queue"><a class="anchor" href="#verify-the-message-in-the-queue"></a>Verify the Message in the Queue</h4> 
+    <div class="paragraph"> 
+     <p>To verify that the message arrived in the queue:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Click <strong>Destinations</strong>:</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-click-destinations.png" alt="mq-click-destinations" width="173"></span></p> 
+       </div> </li> 
+      <li> <p>Click the queue to see the queue detail. The detail shows that a message is in the queue:</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-msgs-in-queue.png" alt="mq-msgs-in-queue"></span></p> 
+       </div> </li> 
+     </ol> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
     <h4 id="get-a-message-from-a-queue"><a class="anchor" href="#get-a-message-from-a-queue"></a>Get a Message From a Queue</h4> 
     <div class="paragraph"> 
-     <p>This section builds on the last. To get a message from a queue, follow the directions in <a href="#send-a-message-to-the-queue">Send a Message to the Queue</a> and advance to Step 6, except click <strong>Message Browser</strong>:</p> 
+     <p>To get a message from a queue:</p> 
     </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/mq-click-msg-browser.png" alt="mq-click-msg-browser"></span></p> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Follow the directions in <a href="#send-a-message-to-the-queue">Send a Message to the Queue</a> and advance to Step 6, except click <strong>Message Browser</strong>:</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-click-msg-browser.png" alt="mq-click-msg-browser"></span></p> 
+       </div> </li> 
+      <li> <p>Click <strong>Get Messages</strong>.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-get-messages.png" alt="mq-get-messages"></span></p> 
+       </div> </li> 
+      <li> <p>Click the message ID value to view the message.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-click-id.png" alt="mq-click-id"></span></p> 
+       </div> </li> 
+      <li> <p>If you want to return the message to the queue, such as if other applications may also want to read the message, click the <strong>Return Messages</strong> icon - this is the default condition. If you switch screens back to the Message Sender or to Destinations, messages automatically return to the queue. In Anypoint MQ, returning the messages to the queue is known as <code>nack</code> - the message is not altered. However, the time to live (TTL) value you set when you created your queue determines how long the message is available before Anypoint MQ deletes it.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-click-retmsgs.png" alt="mq-click-retmsgs" width="75"></span></p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>Alternatively, you can delete the message by clicking the trash can icon. In Anypoint MQ, deleting a message is called an <code>ack</code>:</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-message-delete-trash-can-icon.png" alt="mq-message-delete-trash-can-icon" width="393"></span></p> 
+       </div> </li> 
+     </ol> 
     </div> 
    </div> 
   </div> 
