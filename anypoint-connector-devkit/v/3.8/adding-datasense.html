@@ -901,7 +901,7 @@
  <h2 id="connectors-with-datasense"><a class="anchor" href="#connectors-with-datasense"></a>Connectors with DataSense&nbsp;</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Integration developers often spend great amounts of time simply trying to determine the parameters and types of data to pass to or are returned by a Web service. Having to resort to each API’s documentation to find out what these parameters are is an inefficient, fallible, and often frustrating experience. Thanks to DataSense, this information can be readily available within Anypoint Studio at design-time.&nbsp;</p> 
+   <p>Integration developers often spend great amounts of time simply trying to determine the parameters and types of data to pass to a web service or are returned by a web service. Having to resort to each API’s documentation to find out what these parameters are is an inefficient, fallible, and often frustrating experience. Thanks to DataSense, this information can be readily available within Anypoint Studio at design-time.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
    <p>DataSense provides entities and their internal structure to Studio, which, in turn, presents this information to users employing the connector. DataSense also works with other Anypoint Studio features to:</p> 
@@ -917,18 +917,18 @@
     <tbody> 
      <tr> 
       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-      <td class="content"> Learn more about <a href="/mule-user-guide/v/3.7/datasense">DataSense</a>. </td> 
+      <td class="content"> The <strong>fundamental advantage of DataSense</strong> is the ability to extract metadata from the data model exposed by an application through the connector. Learn more about <a href="/mule-user-guide/v/3.7/datasense">DataSense</a>. </td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
   <div class="paragraph"> 
-   <p>The fundamental advantage of DataSense is the ability to extract metadata from the data model exposed by an application through the connector. The two key steps to implementing DataSense: &nbsp;</p> 
+   <p>The two key steps to implementing DataSense are: &nbsp;</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p><strong>Configure metadata retrieval</strong>&nbsp;–&nbsp;Obtains the metadata from the service and provides an implementation of the connector to supply this information.</p> </li> 
-    <li> <p><strong>Configure metadata awareness</strong>&nbsp;– Defines&nbsp;how the operations are annotated so that Anypoint Studio is aware of the DataSense implementation and provides information about it to end users of the connector.</p> </li> 
+    <li> <p><strong>Configuring metadata retrieval</strong>&nbsp;–&nbsp;Obtains the metadata from the service and provides an implementation of the connector to supply this information.</p> </li> 
+    <li> <p><strong>Configuring metadata awareness</strong>&nbsp;– Defines&nbsp;how the operations are annotated so that Anypoint Studio is aware of the DataSense implementation and provides information about it to end users of the connector.</p> </li> 
    </ol> 
   </div> 
  </div> 
@@ -937,10 +937,10 @@
  <h2 id="static-data-model"><a class="anchor" href="#static-data-model"></a>Static Data Model</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A connector is considered to have a Static data model (also known as a "strongly typed" data model) when it exposes its entities as a POJO.&nbsp;For example, if you make use of an SDK with a certain set of classes, these are resolved and known at compile time.&nbsp;</p> 
+   <p>A connector is considered to have a <strong>static data model</strong> (also known as a "strongly typed" data model) when it exposes its entities as a <strong>POJO</strong>.&nbsp;For example, if you make use of an SDK with a certain set of classes, these are resolved and known at compile time.&nbsp;</p> 
   </div> 
   <div class="paragraph"> 
-   <p>In this case, metadata retrieval&nbsp;is straight forward: the POJO entity class definitions can be referenced and they can provide all the metadata needed in Java, available using introspection.&nbsp;Awareness is already implied by the strongly typed parameter in the processor.</p> 
+   <p>In this case, metadata retrieval&nbsp;is straightforward: the POJO entity class definitions can be referenced and they can provide all the metadata needed in Java, available using introspection.&nbsp;Awareness is already implied by the strongly typed parameter in the processor.</p> 
   </div> 
   <div class="admonitionblock note"> 
    <table> 
@@ -952,18 +952,278 @@
     </tbody> 
    </table> 
   </div> 
+  <div class="sect2"> 
+   <h3 id="static-metadata-retrieval"><a class="anchor" href="#static-metadata-retrieval"></a>Static Metadata Retrieval</h3> 
+   <div class="paragraph"> 
+    <p>To retrieve static metadata, obtain it from the connector. Because it is not likely to change, you don’t need to make a call to the web service to gather it. Rather you can just <strong>hard-code the information into the connector</strong>.</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Inside your connector class, add a new method annotated with <code>@MetaDataKeyRetriever</code>:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td> 
+             <td class="code"><pre><span class="annotation">@MetaDataKeyRetriever</span>
+    <span class="directive">public</span> <span class="predefined-type">List</span>&lt;MetaDataKey&gt; getEntities() <span class="directive">throws</span> <span class="exception">Exception</span> {
+        <span class="predefined-type">List</span>&lt;MetaDataKey&gt; entities = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;MetaDataKey&gt;();
+        entities.add(<span class="keyword">new</span> DefaultMetaDataKey(<span class="string"><span class="delimiter">"</span><span class="content">Book_id</span><span class="delimiter">"</span></span>,<span class="string"><span class="delimiter">"</span><span class="content">Book</span><span class="delimiter">"</span></span>));
+        entities.add(<span class="keyword">new</span> DefaultMetaDataKey(<span class="string"><span class="delimiter">"</span><span class="content">Author_id</span><span class="delimiter">"</span></span>,<span class="string"><span class="delimiter">"</span><span class="content">Author</span><span class="delimiter">"</span></span>));
+        entities.add(<span class="keyword">new</span> DefaultMetaDataKey(<span class="string"><span class="delimiter">"</span><span class="content">BookList_id</span><span class="delimiter">"</span></span>,<span class="string"><span class="delimiter">"</span><span class="content">BookList</span><span class="delimiter">"</span></span>));
+        <span class="keyword">return</span> entities;
+    }</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+      <div class="paragraph"> 
+       <p>This method&nbsp;returns a list of the entity’s names. In this case, it retrieves a list with three keys: Book, Author, and BookList.</p> 
+      </div> </li> 
+     <li> <p>Implement a <code>@MetaDataRetriever</code> method, which obtains a description of each of the entities returned by the previous <code>@MetaDataKeyRetriever</code> method.</p> 
+      <div class="admonitionblock note"> 
+       <table> 
+        <tbody> 
+         <tr> 
+          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+          <td class="content"> The return type of the <code>@MetaDataRetriever</code>-annotated Java&nbsp;method <em>must be</em> <code>MetaData</code> and it <em>must receive</em> one <code>MetaDataKey</code> parameter. </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+      </div> 
+      <div class="paragraph"> 
+       <p>In this example, assume that the entity classes of the service exist locally. <code>Book.class</code> and <code>Author.class</code> can then be directly referenced in your code. You can call the interface <code>DefaultMetaDataBuilder</code>, provided by DevKit, to easily build a POJO.</p> 
+      </div> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+</pre></td> 
+             <td class="code"><pre><span class="annotation">@MetaDataRetriever</span>
+<span class="directive">public</span> MetaData describeEntity(MetaDataKey entityKey) <span class="directive">throws</span> <span class="exception">Exception</span> {
+    <span class="comment">//Here we describe the entity depending on the entity key</span>
+    <span class="keyword">if</span> (<span class="string"><span class="delimiter">"</span><span class="content">Author_id</span><span class="delimiter">"</span></span>.equals(entityKey.getId())) {
+        MetaDataModel authorModel =  <span class="keyword">new</span> DefaultMetaDataBuilder().createPojo(Author.class).build();
+        <span class="keyword">return</span> <span class="keyword">new</span> DefaultMetaData(authorModel);
+    }
+    <span class="keyword">if</span> (<span class="string"><span class="delimiter">"</span><span class="content">Book_id</span><span class="delimiter">"</span></span>.equals(entityKey.getId())) {
+        MetaDataModel bookModel =  <span class="keyword">new</span> DefaultMetaDataBuilder().createPojo(<span class="predefined-type">Book</span>.class).build();
+        <span class="keyword">return</span> <span class="keyword">new</span> DefaultMetaData(bookModel);
+    }
+    <span class="keyword">if</span> (<span class="string"><span class="delimiter">"</span><span class="content">BookList_id</span><span class="delimiter">"</span></span>.equals(entityKey.getId())) {
+        MetaDataModel bookListModel =  <span class="keyword">new</span> DefaultMetaDataBuilder().createList().ofPojo(<span class="predefined-type">Book</span>.class).build();
+        <span class="keyword">return</span> <span class="keyword">new</span> DefaultMetaData(bookListModel);
+    }
+    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="predefined-type">String</span>.format(<span class="string"><span class="delimiter">"</span><span class="content">This entity %s is not supported</span><span class="delimiter">"</span></span>,entityKey.getId()));
+}</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+      <div class="paragraph"> 
+       <p>This method automatically describes Book, BookList and Author with all the public fields exposed by them.</p> 
+      </div> </li> 
+    </ol> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> 
+        <div class="paragraph"> 
+         <p>Using <strong>two different operations</strong> is ideal for retrieving metadata from an external service.</p> 
+        </div> 
+        <div class="paragraph"> 
+         <p>The reason to use two different operations where one obtains the entities, and another obtains the descriptions is that <strong>describing all the entities through a single method can result in an excessive number of API calls</strong> (you probably need one API call per entity).&nbsp;</p> 
+        </div> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="static-metadata-awareness"><a class="anchor" href="#static-metadata-awareness"></a>Static Metadata&nbsp;Awareness</h3> 
+   <div class="paragraph"> 
+    <p>So far we have implemented the description mechanism for all of the entities in the service we aim to connect. Now, make this information accessible to the message processors.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The method receives the operation’s type as a parameter annotated with <code>@MetaDataKeyParam</code>.&nbsp;The method also receives the entity data that was returned by <code>@MetaDataRetriever</code> on a parameter annotated as <code>@Default("#[payload]")</code>.</p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> The types of data expected and generated by this method vary depending on whether your metadata is <em>static</em> or <em>dynamic</em>. If your metadata is <em>static</em>, then the entity data is an <code>Object</code>: </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@Processor</span>
+<span class="directive">public</span> <span class="predefined-type">Object</span> create(<span class="annotation">@MetaDataKeyParam</span>(affects = MetaDataKeyParamAffectsType.BOTH) <span class="predefined-type">String</span> entityType, <span class="annotation">@Default</span>(<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span>) <span class="predefined-type">Object</span> entityData) {
+    <span class="keyword">if</span> (entityData <span class="keyword">instanceof</span> <span class="predefined-type">Book</span>) {
+        <span class="keyword">return</span> createBook((<span class="predefined-type">Book</span>) entityData));
+    }
+    <span class="keyword">if</span> (entityData <span class="keyword">instanceof</span> Author) {
+        <span class="keyword">return</span> createAuthor((Author) entityData));
+    }
+    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">"</span><span class="content">Entity not recognized</span><span class="delimiter">"</span></span>);
+}
+<span class="directive">private</span> <span class="predefined-type">Object</span> createAuthor(Author entityData) {
+    <span class="comment">//CODE FOR CREATING NEW AUTHOR GOES HERE</span>
+    <span class="keyword">return</span> <span class="predefined-constant">null</span>;
+}
+<span class="directive">private</span> <span class="predefined-type">Object</span> createBook(<span class="predefined-type">Book</span> entityData) {
+    <span class="comment">//CODE FOR CREATING A NEW BOOK GOES HERE</span>
+    <span class="keyword">return</span> <span class="predefined-constant">null</span>;
+}</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+</pre></td> 
+          <td class="code"><pre><span class="annotation">@Processor</span>
+<span class="directive">public</span> <span class="predefined-type">Object</span> create(<span class="annotation">@MetaDataKeyParam</span> <span class="predefined-type">String</span> entityType, <span class="annotation">@Default</span>(<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span>) <span class="predefined-type">Object</span> entityData) {
+    }</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The output metadata changes according to the entity type selected in Studio. This is especially useful when used in conjuction with DataMapper or DataWeave (the Transform Message component).&nbsp;Because of this method, all the entities returned by <code>@MetaDataRetriever</code> display in a dropdown in Studio.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/DSimage.png" alt="DSimage"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Also, the metadata about the entity can then be passed on to other Mule elements such as DataMapper or DataWeave (the Transform Message component).</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/image2.png" alt="image2"></span></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="example-using-static-metadata"><a class="anchor" href="#example-using-static-metadata"></a>Example Using Static Metadata</h3> 
+   <div class="paragraph"> 
+    <p>The following section demonstrates how to build a connector that draws data from a Web service using a static data model.</p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> Download a full working example of this static metadata connector from <a href="https://github.com/mulesoft-labs/example-connector/tree/master/static-metadata-example">GitHub</a>. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="paragraph"> 
+    <p>In this example, the connector connects to a library Web service.&nbsp;The Web service contains two types of elements: <strong>book</strong>&nbsp;and <strong>author</strong>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The <strong>book</strong> element contains the following fields:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>title</p> </li> 
+     <li> <p>synopsis</p> </li> 
+     <li> <p>author</p> </li> 
+    </ul> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The <strong>author</strong>&nbsp;element contains the following fields:</p> 
+   </div> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p>firstName</p> </li> 
+     <li> <p>lastName</p> </li> 
+    </ul> 
+   </div> 
+  </div> 
  </div> 
 </div> 
 <div class="sect1"> 
  <h2 id="dynamic-data-model"><a class="anchor" href="#dynamic-data-model"></a>Dynamic Data Model</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>When the connector has a dynamic data model (also known as "weakly typed") the metadata for a certain type is not immediately available, a certain <code>MetaDataKey</code> represents metadata that resolves at design or run-time. To support DataSense functionality for connectors with dynamic data models, you must implement additional functionality to create the metadata based on data provided from the application.</p> 
+   <p>When the connector has a dynamic data model (also known as "weakly typed" data model) the metadata for a certain type is not immediately available. A certain <code>MetaDataKey</code> represents metadata that resolves at design or run-time, rather than compile time as with the static data model. To support DataSense functionality for connectors with dynamic data models, you must implement additional functionality to create the metadata based on data provided from the application.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="metadata-retrieval"><a class="anchor" href="#metadata-retrieval"></a>Metadata Retrieval</h3> 
+   <h3 id="dynamic-metadata-retrieval"><a class="anchor" href="#dynamic-metadata-retrieval"></a>Dynamic Metadata Retrieval</h3> 
    <div class="paragraph"> 
-    <p>Dynamic metadata retrieval requires that you include two annotated metadata-related methods in a <code>MetaDataCategory</code> referenced by your connector&nbsp;which generate DataSense metadata for a dynamic schema.</p> 
+    <p>Dynamic metadata retrieval requires that you include two annotated metadata-related methods which generate DataSense metadata for a dynamic schema in a <code>@MetaDataCategory</code> referenced by your connector.</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
@@ -1007,7 +1267,7 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="metadata-awareness"><a class="anchor" href="#metadata-awareness"></a>Metadata&nbsp;Awareness</h3> 
+   <h3 id="dynamic-metadata-awareness"><a class="anchor" href="#dynamic-metadata-awareness"></a>Dynamic Metadata&nbsp;Awareness</h3> 
    <div class="paragraph"> 
     <p>This step makes the captured metadata accessible to the message processors. When implemented, a dropdown in the connector’s properties editor in Studio displays all the entities returned by <code>@MetaDataKeyRetriever</code>;&nbsp;each of these is coupled with the properties returned by <code>@MetaDataRetriever</code>.</p> 
    </div> 
@@ -1018,30 +1278,7 @@
     <p>For this to happen, the message processor must include a method that receives the entity type as a parameter annotated with <code>@MetaDataKeyParam</code>. This method must also receive the entity data (that was returned by <code>@MetaDataRetriever</code>) on a parameter that is annotated as <code>@Payload</code> or&nbsp;<code>@Default ("#[payload]")</code>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The types of data expected and generated by this method vary depending on if your metadata is <strong>static</strong> or <strong>dynamic</strong>.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>If your metadata is <strong>static</strong>, then the entity data is an <code>Object</code>:</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-2
-</pre></td> 
-          <td class="code"><pre><span class="directive">public</span> <span class="predefined-type">Object</span> create(<span class="annotation">@MetaDataKeyParam</span> <span class="predefined-type">String</span> entityType, <span class="annotation">@Default</span>(<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span>) <span class="predefined-type">Object</span> entityData) {
-    }</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
-   </div> 
-   <div class="paragraph"> 
-    <p>If your metadata is <strong>dynamic</strong>, the entity data is a <code>Map&lt;String,Object&gt;</code>:</p> 
+    <p>If your metadata is <em>dynamic</em>, the entity data is a <code>Map&lt;String,Object&gt;</code>:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1084,25 +1321,25 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="adding-datasense-support-to-your-connector-for-dynamic-data-model"><a class="anchor" href="#adding-datasense-support-to-your-connector-for-dynamic-data-model"></a>Adding DataSense Support To Your Connector for Dynamic Data Model</h2> 
+ <h2 id="adding-datasense-support-to-your-connector-s-dynamic-data-model"><a class="anchor" href="#adding-datasense-support-to-your-connector-s-dynamic-data-model"></a>Adding DataSense Support To Your Connector’s Dynamic Data Model</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>To implement DataSense in your connector, first create a <code>@MetaDataCategory</code> and bind it to the connector using&nbsp;<code>@MetaDataScope</code>.</p> 
   </div> 
   <div class="sect2"> 
-   <h3 id="metadata-categories"><a class="anchor" href="#metadata-categories"></a>Metadata Categories</h3> 
+   <h3 id="metadatacategory-and-metadatascope"><a class="anchor" href="#metadatacategory-and-metadatascope"></a>@MetaDataCategory and @MetaDataScope</h3> 
    <div class="paragraph"> 
-    <p>To group DataSense resolvers, DevKit provides the annotation&nbsp;<code>@MetaDataCategory</code> that you can apply to a Java class. Within this Java&nbsp;class, define the metadata retrieving mechanism, that is, the methods annotated with&nbsp;<code>@MetaDataKeyRetriever</code> and&nbsp; <code>@MetaDataRetriever</code>, as a <code>MetaDataScope</code>.</p> 
+    <p>To group DataSense resolvers, DevKit provides the annotation&nbsp;<code>@MetaDataCategory</code> that you can apply to a Java class. Within this Java&nbsp;class, define the metadata retrieving mechanism, that is, the methods annotated with&nbsp;<code>@MetaDataKeyRetriever</code> and <code>@MetaDataRetriever</code>, as a <code>@MetaDataScope</code>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>For example, suppose you wish to offer a regular message processor and, additionally, a special message processor that provides access to a secret field on the Author entity named "books" that represents the Author’s written books.&nbsp;You can use metadata categories to bundle several distinct message processors into one connector, and display different groups of entities in each.&nbsp;</p> 
+    <p>For example, suppose you wish to offer a regular message processor with an additional special message processor that provides access to a secret field on the Author entity named "books", representing the author’s written books.&nbsp;You can use metadata categories to bundle several distinct message processors into one connector, and display different groups of entities in each.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The example below displays a&nbsp;<code>@MetaDataCategory</code>&nbsp;class that contains both methods, and resides in a separate Java&nbsp;file. We then dig into the annotated methods.&nbsp;You may establish a link between this class and your connector module. The most common way of doing this is to use&nbsp;<code>@Inject</code>&nbsp;in your connector class as shown below.</p> 
+    <p>The example below displays a&nbsp;<code>@MetaDataCategory</code>&nbsp;class that contains both <code>@MetaDataKeyRetriever</code> and <code>@MetaDataRetriever</code> methods, and resides in a separate Java&nbsp;file. We then dig into the annotated methods.&nbsp;You may establish a link between this class and your connector module. The most common way of doing this is to use&nbsp;<code>@Inject</code> to inject the connector class into the <code>@MetaDataCategory</code> class, as shown below.</p> 
    </div> 
    <div class="olist arabic"> 
     <ol class="arabic"> 
-     <li> <p>Create the <code>MetaDataCategory</code> class:</p> 
+     <li> <p>Create the <code>@MetaDataCategory</code> class:</p> 
       <div class="listingblock"> 
        <div class="content"> 
         <pre class="CodeRay highlight"><code data-lang="java">
@@ -1169,9 +1406,9 @@
      <li> <p>Examine the imports:&nbsp;</p> 
       <div class="ulist"> 
        <ul> 
-        <li> <p>The <code>org.mule.common.metadata.*</code> classes include the Mule classes for representing and managing metadata.</p> </li> 
-        <li> <p>The <code>org.mule.common.metadata.builder</code> classes construct metadata representations (sets of objects that can be quite complex).</p> </li> 
-        <li> <p>The <code>org.mule.common.metadata.datatype.DataType</code> class represents different object field datatypes and their properties.</p> </li> 
+        <li> <p><code>org.mule.common.metadata.*</code> classes include the Mule classes for representing and managing metadata.</p> </li> 
+        <li> <p><code>org.mule.common.metadata.builder</code> classes construct metadata representations (sets of objects that can be quite complex).</p> </li> 
+        <li> <p>the <code>org.mule.common.metadata.datatype.DataType</code> class represents different object field datatypes and their properties.</p> </li> 
        </ul> 
       </div> </li> 
      <li> <p>Bind this category to a <code>@Connector</code> or a <code>@Processor</code> using <code>@MetaDataScope</code>:</p> 
@@ -1200,7 +1437,7 @@
 16
 </pre></td> 
              <td class="code"><pre><span class="comment">/**
- * DataSense enabled Connector with multiple Categories
+ * DataSense-enabled Connector with multiple categories
  *
  * @author Mulesoft, inc.
  */</span>
@@ -1224,58 +1461,31 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="example-with-static-metadata"><a class="anchor" href="#example-with-static-metadata"></a>Example with Static Metadata</h3> 
+   <h3 id="dynamic-metadata-retrieval-2"><a class="anchor" href="#dynamic-metadata-retrieval-2"></a>Dynamic Metadata Retrieval</h3> 
    <div class="paragraph"> 
-    <p>The following section demonstrates how to build a connector that draws data from a Web service with a static data model.</p> 
+    <p>Since you don’t have direct access to a POJO with the type structure, you must obtain this structure from the web service itself. Use <code>Map&lt;String,Object&gt;</code> to represent the dynamic entities.</p> 
    </div> 
    <div class="admonitionblock note"> 
     <table> 
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> Download a full working example of this static-metadata connector from <a href="https://github.com/mulesoft-labs/example-connector/tree/master/static-metadata-example">GitHub</a>. </td> 
+       <td class="content"> If you obtain the metadata dynamically through an API call, the <code>@Connect</code> method executes before the <code>@MetaDataKeyRetriever</code> method. This implies that end-users must first resolve any connection issues before gaining access to the metadata. </td> 
       </tr> 
      </tbody> 
     </table> 
    </div> 
-   <div class="paragraph"> 
-    <p>In this example, the Web service to which the connector connects is a library Web service.&nbsp;The Web service contains two types of elements: <strong>book</strong>&nbsp;and <strong>author</strong>.</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The <strong>book</strong> element contains the following fields:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>title</p> </li> 
-     <li> <p>synopsis</p> </li> 
-     <li> <p>author</p> </li> 
-    </ul> 
-   </div> 
-   <div class="paragraph"> 
-    <p>The <strong>author</strong>&nbsp;element contains the following fields:</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>firstName</p> </li> 
-     <li> <p>lastName</p> </li> 
-    </ul> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="static-metadata-retrieval"><a class="anchor" href="#static-metadata-retrieval"></a>Static Metadata Retrieval</h4> 
-    <div class="paragraph"> 
-     <p>To retrieve static metadata:</p> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Obtain the metadata from the connector. Because the metadata is static, you don’t need to make a call to the web service to obtain it, you can just hard-code the information in the connector.&nbsp;Inside your connector class, add a new method annotated with <code>@MetaDataKeyRetriever</code>:</p> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="java">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Inside your connector class, add a new method annotated with <code>@MetaDataKeyRetriever</code>.&nbsp;(This method is no different from the one implemented with static metadata.)</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1284,7 +1494,7 @@
 7
 8
 </pre></td> 
-              <td class="code"><pre><span class="annotation">@MetaDataKeyRetriever</span>
+             <td class="code"><pre><span class="annotation">@MetaDataKeyRetriever</span>
     <span class="directive">public</span> <span class="predefined-type">List</span>&lt;MetaDataKey&gt; getEntities() <span class="directive">throws</span> <span class="exception">Exception</span> {
         <span class="predefined-type">List</span>&lt;MetaDataKey&gt; entities = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;MetaDataKey&gt;();
         entities.add(<span class="keyword">new</span> DefaultMetaDataKey(<span class="string"><span class="delimiter">"</span><span class="content">Book_id</span><span class="delimiter">"</span></span>,<span class="string"><span class="delimiter">"</span><span class="content">Book</span><span class="delimiter">"</span></span>));
@@ -1292,229 +1502,20 @@
         entities.add(<span class="keyword">new</span> DefaultMetaDataKey(<span class="string"><span class="delimiter">"</span><span class="content">BookList_id</span><span class="delimiter">"</span></span>,<span class="string"><span class="delimiter">"</span><span class="content">BookList</span><span class="delimiter">"</span></span>));
         <span class="keyword">return</span> entities;
     }</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
        </div> 
-       <div class="paragraph"> 
-        <p>This method&nbsp;returns a list of the entity’s names. In this case, it retrieves a list with three keys: Book, Author, and BookList.</p> 
-       </div> </li> 
-      <li> <p>Implement a <code>@MetaDataRetriever</code> method, which obtains a description of each of the entities returned by the previous method. The return type of this Java&nbsp;method <em>must be</em> MetaData and it <em>must receive</em> one <code>MetaDataKey</code> parameter. In this example, assume that the entity classes of the service exist locally. <code>Book.class</code> and <code>Author.class</code> can then be directly referenced in your code when describing them. You can call the interface <code>DefaultMetaDataBuilder</code>, provided by DevKit, to easily build a POJO.</p> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="java">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-13
-14
-15
-16
-17
-</pre></td> 
-              <td class="code"><pre><span class="annotation">@MetaDataRetriever</span>
-<span class="directive">public</span> MetaData describeEntity(MetaDataKey entityKey) <span class="directive">throws</span> <span class="exception">Exception</span> {
-    <span class="comment">//Here we describe the entity depending on the entity key</span>
-    <span class="keyword">if</span> (<span class="string"><span class="delimiter">"</span><span class="content">Author_id</span><span class="delimiter">"</span></span>.equals(entityKey.getId())) {
-        MetaDataModel authorModel =  <span class="keyword">new</span> DefaultMetaDataBuilder().createPojo(Author.class).build();
-        <span class="keyword">return</span> <span class="keyword">new</span> DefaultMetaData(authorModel);
-    }
-    <span class="keyword">if</span> (<span class="string"><span class="delimiter">"</span><span class="content">Book_id</span><span class="delimiter">"</span></span>.equals(entityKey.getId())) {
-        MetaDataModel bookModel =  <span class="keyword">new</span> DefaultMetaDataBuilder().createPojo(<span class="predefined-type">Book</span>.class).build();
-        <span class="keyword">return</span> <span class="keyword">new</span> DefaultMetaData(bookModel);
-    }
-    <span class="keyword">if</span> (<span class="string"><span class="delimiter">"</span><span class="content">BookList_id</span><span class="delimiter">"</span></span>.equals(entityKey.getId())) {
-        MetaDataModel bookListModel =  <span class="keyword">new</span> DefaultMetaDataBuilder().createList().ofPojo(<span class="predefined-type">Book</span>.class).build();
-        <span class="keyword">return</span> <span class="keyword">new</span> DefaultMetaData(bookListModel);
-    }
-    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="predefined-type">String</span>.format(<span class="string"><span class="delimiter">"</span><span class="content">This entity %s is not supported</span><span class="delimiter">"</span></span>,entityKey.getId()));
-}</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> 
-       <div class="paragraph"> 
-        <p>This method automatically describes Book, BookList and Author with all the public fields exposed by them.</p> 
-       </div> </li> 
-     </ol> 
-    </div> 
-    <div class="admonitionblock note"> 
-     <table> 
-      <tbody> 
-       <tr> 
-        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-        <td class="content"> 
-         <div class="paragraph"> 
-          <p>The reason we use two different operations where one obtains the entities, and another obtains a description is that describing all the entities through a single method can result in an excessive number of API calls (you probably need one API call per entity).&nbsp;</p> 
-         </div> 
-         <div class="paragraph"> 
-          <p>Using two different operations is ideal for retrieving metadata from an external service.</p> 
-         </div> </td> 
-       </tr> 
-      </tbody> 
-     </table> 
-    </div> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="static-metadata-awareness"><a class="anchor" href="#static-metadata-awareness"></a>Static Metadata&nbsp;Awareness</h4> 
-    <div class="paragraph"> 
-     <p>So far we have implemented the describing mechanism for all of the entities in the service we aim to connect. Now, make this information accessible to the message processors.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>The method receives the operation’s type as a parameter annotated with <code>@MetaDataKeyParam</code>.&nbsp;The method also receives the entity data that was returned by <code>@MetaDataRetriever</code> on a parameter annotated as <code>@Default("#[payload]")</code>.</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-13
-14
-15
-16
-17
-18
-</pre></td> 
-           <td class="code"><pre><span class="annotation">@Processor</span>
-<span class="directive">public</span> <span class="predefined-type">Object</span> create(<span class="annotation">@MetaDataKeyParam</span>(affects = MetaDataKeyParamAffectsType.BOTH) <span class="predefined-type">String</span> entityType, <span class="annotation">@Default</span>(<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span>) <span class="predefined-type">Object</span> entityData) {
-    <span class="keyword">if</span> (entityData <span class="keyword">instanceof</span> <span class="predefined-type">Book</span>) {
-        <span class="keyword">return</span> createBook((<span class="predefined-type">Book</span>) entityData));
-    }
-    <span class="keyword">if</span> (entityData <span class="keyword">instanceof</span> Author) {
-        <span class="keyword">return</span> createAuthor((Author) entityData));
-    }
-    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="string"><span class="delimiter">"</span><span class="content">Entity not recognized</span><span class="delimiter">"</span></span>);
-}
-<span class="directive">private</span> <span class="predefined-type">Object</span> createAuthor(Author entityData) {
-    <span class="comment">//CODE FOR CREATING NEW AUTHOR GOES HERE</span>
-    <span class="keyword">return</span> <span class="predefined-constant">null</span>;
-}
-<span class="directive">private</span> <span class="predefined-type">Object</span> createBook(<span class="predefined-type">Book</span> entityData) {
-    <span class="comment">//CODE FOR CREATING A NEW BOOK GOES HERE</span>
-    <span class="keyword">return</span> <span class="predefined-constant">null</span>;
-}</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
-     </div> 
-    </div> 
-    <div class="paragraph"> 
-     <p>The output metadata changes according to the entity type selected in Studio. This is especially useful when used in conjuction with DataMapper or DataWeave (the Transform Message component).&nbsp;Because of this method, all the entities returned by <code>@MetaDataRetriever</code> display in a dropdown in Studio.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/DSimage.png" alt="DSimage"></span></p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Also, the metadata about the entity can then be passed on to other Mule elements such as DataMapper or DataWeave (the Transform Message component).</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/image2.png" alt="image2"></span></p> 
-    </div> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="example-with-dynamic-metadata"><a class="anchor" href="#example-with-dynamic-metadata"></a>Example with&nbsp;Dynamic Metadata</h3> 
-   <div class="paragraph"> 
-    <p>The following section demonstrates how to build a connector that draws data from a Web service with a dynamic data model. The&nbsp;most practical way to implement metadata is always dynamically. Doing things this way, if the entity’s attributes in the service you connect to vary over time, your connector effortlessly adapts to the changes.</p> 
-   </div> 
-   <div class="admonitionblock note"> 
-    <table> 
-     <tbody> 
-      <tr> 
-       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> Download a full working example of this dynamic-metadata connector from <a href="https://github.com/mulesoft-labs/example-connector/tree/master/dynamic-metadata-example">GitHub</a>. </td> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-   <div class="paragraph"> 
-    <p>In this example, as in the one above, the Web service to which the connector connects a book database. It contains two types of elements: books and authors, both contain the same fields as in the previous example.</p> 
-   </div> 
-   <div class="sect3"> 
-    <h4 id="dynamic-metadata-retrieval"><a class="anchor" href="#dynamic-metadata-retrieval"></a>Dynamic Metadata Retrieval</h4> 
-    <div class="paragraph"> 
-     <p>In this example, because you don’t have direct access to a POJO with the type structure, you must obtain this structure from the Web service itself. Use <code>Map&lt;String,Object&gt;</code> to represent the dynamic entities.</p> 
-    </div> 
-    <div class="admonitionblock note"> 
-     <table> 
-      <tbody> 
-       <tr> 
-        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-        <td class="content"> If you obtain the metadata dynamically through an API call, the <code>@Connect</code> method executes before the <code>@MetaDataKeyRetriever</code> method. This implies that end-users must first resolve any connection issues before gaining access to the metadata. </td> 
-       </tr> 
-      </tbody> 
-     </table> 
-    </div> 
-    <div class="olist arabic"> 
-     <ol class="arabic"> 
-      <li> <p>Inside your connector class, add a new method annotated with <code>@MetaDataKeyRetriever.</code>&nbsp;(This method is no different from the one implemented with static metadata.)</p> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="java">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-</pre></td> 
-              <td class="code"><pre><span class="annotation">@MetaDataKeyRetriever</span>
-    <span class="directive">public</span> <span class="predefined-type">List</span>&lt;MetaDataKey&gt; getEntities() <span class="directive">throws</span> <span class="exception">Exception</span> {
-        <span class="predefined-type">List</span>&lt;MetaDataKey&gt; entities = <span class="keyword">new</span> <span class="predefined-type">ArrayList</span>&lt;MetaDataKey&gt;();
-        entities.add(<span class="keyword">new</span> DefaultMetaDataKey(<span class="string"><span class="delimiter">"</span><span class="content">Book_id</span><span class="delimiter">"</span></span>,<span class="string"><span class="delimiter">"</span><span class="content">Book</span><span class="delimiter">"</span></span>));
-        entities.add(<span class="keyword">new</span> DefaultMetaDataKey(<span class="string"><span class="delimiter">"</span><span class="content">Author_id</span><span class="delimiter">"</span></span>,<span class="string"><span class="delimiter">"</span><span class="content">Author</span><span class="delimiter">"</span></span>));
-        entities.add(<span class="keyword">new</span> DefaultMetaDataKey(<span class="string"><span class="delimiter">"</span><span class="content">BookList_id</span><span class="delimiter">"</span></span>,<span class="string"><span class="delimiter">"</span><span class="content">BookList</span><span class="delimiter">"</span></span>));
-        <span class="keyword">return</span> entities;
-    }</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> </li> 
-      <li> <p>Implement a <code>@MetaDataRetriever</code> method. This obtains a description of each of the entities returned by the previous method. As in the previous example, this method uses the interface <code>DefaultMetaDataBuilder</code>, but this time it is called to build dynamic objects instead of POJOs.</p> 
-       <div class="listingblock"> 
-        <div class="content"> 
-         <pre class="CodeRay highlight"><code data-lang="java">
-              
-           <table class="CodeRay"> 
-            <tbody> 
-             <tr> 
-              <td class="line-numbers"><pre>1
+      </div> </li> 
+     <li> <p>Implement a <code>@MetaDataRetriever</code> method. This obtains a description of each of the entities returned by the previous method. As in the previous example, this method uses the interface <code>DefaultMetaDataBuilder</code>, but this time it is called to build dynamic objects instead of POJOs.</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="java">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1542,7 +1543,7 @@
 26
 27
 </pre></td> 
-              <td class="code"><pre><span class="annotation">@MetaDataRetriever</span>
+             <td class="code"><pre><span class="annotation">@MetaDataRetriever</span>
 <span class="directive">public</span> MetaData describeEntity(MetaDataKey entityKey) <span class="directive">throws</span> <span class="exception">Exception</span> {
     <span class="comment">//Here we describe the entity depending on the entity key</span>
     <span class="keyword">if</span> (<span class="string"><span class="delimiter">"</span><span class="content">Author_id</span><span class="delimiter">"</span></span>.equals(entityKey.getId())) {
@@ -1569,30 +1570,30 @@
     }
     <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">RuntimeException</span>(<span class="predefined-type">String</span>.format(<span class="string"><span class="delimiter">"</span><span class="content">This entity %s is not supported</span><span class="delimiter">"</span></span>,entityKey.getId()));
 }</pre></td> 
-             </tr> 
-            </tbody> 
-           </table></code></pre> 
-        </div> 
-       </div> </li> 
-     </ol> 
-    </div> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> </li> 
+    </ol> 
    </div> 
-   <div class="sect3"> 
-    <h4 id="dynamic-metadata-awareness"><a class="anchor" href="#dynamic-metadata-awareness"></a>Dynamic Metadata&nbsp;Awareness</h4> 
-    <div class="paragraph"> 
-     <p>Thus far, you have implemented the describing mechanism for all of the entities in the service you aim to connect. Now you must make this information accessible to the message&nbsp;processors.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>The message processor must receive the operation’s type as a parameter annotated with <code>@MetaDataKeyParam</code>. (Studio displays the operations in a dropdown with all the entities returned by <code>@MetaDataRetriever</code>.) The message processor must also receive the entity data (returned by <code>@MetaDataRetriever</code>) as a <code>Map&lt;String,Object&gt;</code> parameter, annotated as <code>@Default("#[payload]")</code>.&nbsp;</p> 
-    </div> 
-    <div class="listingblock"> 
-     <div class="content"> 
-      <pre class="CodeRay highlight"><code data-lang="java">
-           
-        <table class="CodeRay"> 
-         <tbody> 
-          <tr> 
-           <td class="line-numbers"><pre>1
+  </div> 
+  <div class="sect2"> 
+   <h3 id="dynamic-metadata-awareness-2"><a class="anchor" href="#dynamic-metadata-awareness-2"></a>Dynamic Metadata&nbsp;Awareness</h3> 
+   <div class="paragraph"> 
+    <p>Thus far, you have implemented the description mechanism for all of the entities in the service you aim to connect. Now you must make this information accessible to the message&nbsp;processors.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The message processor must receive the operation’s type as a parameter annotated with <code>@MetaDataKeyParam</code>. (Studio displays the operations in a dropdown with all the entities returned by <code>@MetaDataRetriever</code>.) The message processor must also receive the entity data (returned by <code>@MetaDataRetriever</code>) as a <code>Map&lt;String,Object&gt;</code> parameter, annotated as <code>@Default("#[payload]")</code>.&nbsp;</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1611,7 +1612,7 @@
 17
 18
 </pre></td> 
-           <td class="code"><pre><span class="annotation">@Processor</span>
+          <td class="code"><pre><span class="annotation">@Processor</span>
 <span class="directive">public</span> <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>,<span class="predefined-type">Object</span>&gt; create(<span class="annotation">@MetaDataKeyParam</span> <span class="predefined-type">String</span> entityType, <span class="annotation">@Default</span>(<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span>) <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>,<span class="predefined-type">Object</span>&gt; entityData) {
     <span class="keyword">if</span> (<span class="string"><span class="delimiter">"</span><span class="content">Book_id</span><span class="delimiter">"</span></span>.equals(entityType)) {
         <span class="keyword">return</span> createBook(entityData);
@@ -1629,23 +1630,41 @@
     <span class="comment">//CODE TO CREATE AUTHOR GOES HERE</span>
     <span class="keyword">return</span> entityData;
 }</pre></td> 
-          </tr> 
-         </tbody> 
-        </table></code></pre> 
-     </div> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
     </div> 
-    <div class="paragraph"> 
-     <p>In this method, Studio displays all the entities returned by <code>@MetaDataRetriever</code>&nbsp;as items in a dropdown field.</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/image3.png" alt="image3"></span></p> 
-    </div> 
-    <div class="paragraph"> 
-     <p>Also, the metadata about the entity can then be passed on to other Mule elements such as DataMapper or DataWeave (the Transform Message component).</p> 
-    </div> 
-    <div class="paragraph"> 
-     <p><span class="image"><img src="./_images/image4.png" alt="image4"></span></p> 
-    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>In this method, Studio displays all the entities returned by <code>@MetaDataRetriever</code>&nbsp;as items in a dropdown field.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/image3.png" alt="image3"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>Also, the metadata about the entity can then be passed on to other Mule elements such as DataMapper or DataWeave (the Transform Message component).</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/image4.png" alt="image4"></span></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="example-using-dynamic-metadata"><a class="anchor" href="#example-using-dynamic-metadata"></a>Example Using&nbsp;Dynamic Metadata</h3> 
+   <div class="paragraph"> 
+    <p>The following section demonstrates how to build a connector that draws data from a web service using a dynamic data model. The&nbsp;most practical way to implement metadata is always to do so dynamically. Doing things this way, if the entity’s attributes in the service you connect to vary over time, your connector effortlessly adapts to the changes.</p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> Download a full working example of this dynamic-metadata connector from <a href="https://github.com/mulesoft-labs/example-connector/tree/master/dynamic-metadata-example">GitHub</a>. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="paragraph"> 
+    <p>In this example, as in the <a href="#example-using-static-metadata">static model example</a>, the web service the connector connects to is a book database. It contains two types of elements: books and authors, both contain the same fields as in the previous example.</p> 
    </div> 
   </div> 
  </div> 
@@ -1659,7 +1678,7 @@
   <div class="sect2"> 
    <h3 id="required-annotations-metadatacategory-and-metadatacache"><a class="anchor" href="#required-annotations-metadatacategory-and-metadatacache"></a>Required Annotations @MetaDataCategory and @MetaDataCache</h3> 
    <div class="paragraph"> 
-    <p>To ensure an initialized cache is injected every time the metadata methods are invoked, the DevKit developer has to place <code>@MetaDataCategory</code> on your cache management/resolution class and declare the <code>@MetaDataCache</code> inside this class. After the <code>@MetaDataCache</code> cache is declared, the cache is persisted by DevKit.</p> 
+    <p>To ensure an initialized cache is injected every time the metadata methods are invoked, the DevKit developer has to place <code>@MetaDataCategory</code> on the cache management/resolution class and declare the <code>@MetaDataCache</code> inside this class. After the <code>@MetaDataCache</code> cache is declared, the cache is persisted by DevKit.</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1699,7 +1718,7 @@
     </div> 
    </div> 
    <div class="paragraph"> 
-    <p>The developer should make use of this cache internally when fetching metadata, and to handle some level of consistency between the cache and the service.</p> 
+    <p>The developer should make use of this cache internally when fetching metadata, and handle some level of consistency between the cache and the service.</p> 
    </div> 
    <div class="admonitionblock important"> 
     <table> 
@@ -1919,7 +1938,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#connectors-with-datasense">Connectors with DataSense </a></li><li><a class="scroll-menu-link" href="#static-data-model">Static Data Model</a></li><li><a class="scroll-menu-link" href="#dynamic-data-model">Dynamic Data Model</a></li><li><a class="scroll-menu-link" href="#adding-datasense-support-to-your-connector-for-dynamic-data-model">Adding DataSense Support To Your Connector for Dynamic Data Model</a></li><li><a class="scroll-menu-link" href="#caching-metadata">Caching Metadata</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#connectors-with-datasense">Connectors with DataSense </a></li><li><a class="scroll-menu-link" href="#static-data-model">Static Data Model</a></li><li><a class="scroll-menu-link" href="#dynamic-data-model">Dynamic Data Model</a></li><li><a class="scroll-menu-link" href="#adding-datasense-support-to-your-connector-s-dynamic-data-model">Adding DataSense Support To Your Connector’s Dynamic Data Model</a></li><li><a class="scroll-menu-link" href="#caching-metadata">Caching Metadata</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->

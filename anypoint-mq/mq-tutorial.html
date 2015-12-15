@@ -938,8 +938,9 @@
         <ol class="loweralpha" type="a"> 
          <li> <p><a href="#assign-user-permissions">Assign User Permissions</a> - Give yourself permission to view the user interface - Good model for when you add users in your organization to MQ.</p> </li> 
          <li> <p><a href="#create-an-admin-role">Create an Admin Role</a> - Create an admin’s role for all permissions - Helps you define who in your organization should administer MQ versus have lesser permissions.</p> </li> 
-         <li> <p><a href="#create-a-queue">Create a Queue</a> - Create a queue where MQ messages are published and consumed by applications.</p> </li> 
-         <li> <p><a href="#register-a-client-application">Register a Client Application</a> - Register an application at the MQ server so that the application can publish messages and consume messages. The MQ server provides a client ID and client secret that you use with Anypoint Studio.</p> </li> 
+         <li> <p><a href="#create-a-queue-and-an-exchange">Create a Queue and an Exchange</a> - Create a queue where MQ messages are published and consumed by applications.</p> </li> 
+         <li> <p><a href="#send-and-receive-a-message-for-a-queue">Send and Receive a Message for a Queue</a> - Send the demo queue a message and then get the message.</p> </li> 
+         <li> <p><a href="#send-a-message-to-an-exchange">Send a Message to an Exchange</a> - Send the demo exchange a message and then get the message from the demo queue.</p> </li> 
         </ol> 
        </div> 
       </div></td> 
@@ -960,7 +961,7 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p>Obtain the MQ connector and create a flow for publishing or consuming messages, and run the Mule Application to ensure your application works and to serve HTTP requests on your localhost.</p> 
+        <p>Use Anypoint Platform to register a client application and get values for the Client ID and Client Secret. Then in Anypoint Studio, get the MQ connector and create a flow for publishing or consuming messages, and run the Mule Application to ensure your application works and to serve HTTP requests at your localhost.</p> 
        </div> 
       </div></td> 
     </tr> 
@@ -1079,28 +1080,117 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="create-a-queue"><a class="anchor" href="#create-a-queue"></a>Create a Queue</h3> 
+   <h3 id="create-a-queue-and-an-exchange"><a class="anchor" href="#create-a-queue-and-an-exchange"></a>Create a Queue and an Exchange</h3> 
    <div class="paragraph"> 
     <p>A queue provides a temporary stack for holding messages. Applications push messages to the queue and other applications consume the messages. An application that intends to consume messages either acks (acknowledges) the message acquires the message contents, or nacks (negative acknowledgement) the message to indicate that the application does not want to consume that message. When an application acks a message, MQ locks the message for a limited duration so only the application can consume it, and then removes the message after the application consumes the message.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>To create a queue:</p> 
+    <p>An exchange is a collection of one or more queues. An exchange lets you send one message that can appear on multiple queues. Exchanges let you organize queues within your organization, or to use exchanges to send specific types of messages.</p> 
    </div> 
-   <div class="olist arabic"> 
-    <ol class="arabic"> 
-     <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
-     <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
-     <li> <p>Click <strong>Destinations</strong>.</p> </li> 
-     <li> <p>Click the blue plus circle.</p> </li> 
-     <li> <p>Specify the queue name <code>MyDemoQueue</code>. For this tutorial, you can leave the time-to-live (TTL) durations as shown, and leave the queue unencrypted.</p> </li> 
-     <li> <p>Click the queue name to list its details. After we create applications in Anypoint Studio, we return to the queue detail screen to see which messages are available and which are in flight.</p> </li> 
-    </ol> 
+   <div class="sect3"> 
+    <h4 id="create-a-queue"><a class="anchor" href="#create-a-queue"></a>Create a Queue</h4> 
+    <div class="paragraph"> 
+     <p>To create a queue:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
+      <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
+      <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+      <li> <p>Click the blue plus circle.</p> </li> 
+      <li> <p>Click <strong>Queue</strong>.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-create-demo-queue.png" alt="mq-create-demo-queue" width="400"></span></p> 
+       </div> </li> 
+      <li> <p>Specify the name <code>MyDemoQueue</code>. For this tutorial, you can leave the time-to-live (TTL) durations as shown, and leave the queue unencrypted.</p> </li> 
+      <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
+      <li> <p>In the Destinations screen. click the queue name to list its details.</p> </li> 
+     </ol> 
+    </div> 
    </div> 
+   <div class="sect3"> 
+    <h4 id="create-an-exchange"><a class="anchor" href="#create-an-exchange"></a>Create an Exchange</h4> 
+    <div class="paragraph"> 
+     <p>To create an exchange:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
+      <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
+      <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+      <li> <p>Click the blue plus circle.</p> </li> 
+      <li> <p>Click <strong>Exchange</strong>.</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-create-demo-exchange.png" alt="mq-create-demo-exchange" width="400"></span></p> 
+       </div> </li> 
+      <li> <p>Specify the name <code>MyDemoExchange</code>.</p> </li> 
+      <li> <p>Click the checkbox to bind MyDemoQueue to this exchange.</p> </li> 
+      <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
+      <li> <p>In the Destinations screen. click the exchange name to list its details.</p> </li> 
+     </ol> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="send-and-receive-a-message-for-a-queue"><a class="anchor" href="#send-and-receive-a-message-for-a-queue"></a>Send and Receive a Message for a Queue</h3> 
+   <div class="paragraph"> 
+    <p>Anypoint Platform lets you access a feature where you can send messages to a queue and then view them. The messages content can be text, JSON, or CSV.</p> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="send-a-message-to-the-queue"><a class="anchor" href="#send-a-message-to-the-queue"></a>Send a Message to the Queue</h4> 
+    <div class="paragraph"> 
+     <p>To send a message to a queue:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
+      <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
+      <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+      <li> <p>Click the MyDemoQueue entry in Destinations to view details about the queue.</p> </li> 
+      <li> <p>Click the queue name in the details to open the Messaging feature:</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-access-messaging.png" alt="mq-access-messaging"></span></p> 
+       </div> </li> 
+      <li> <p>In the settings page, click <strong>Message Sender</strong>:</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-click-msg-sender.png" alt="mq-click-msg-sender"></span></p> 
+       </div> </li> 
+      <li> <p>Type text in the <strong>Payload</strong>:</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-msg-sender-text-payload.png" alt="mq-msg-sender-text-payload"></span></p> 
+       </div> </li> 
+      <li> <p>Click <strong>Send</strong>.</p> </li> 
+     </ol> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="get-a-message-from-a-queue"><a class="anchor" href="#get-a-message-from-a-queue"></a>Get a Message From a Queue</h4> 
+    <div class="paragraph"> 
+     <p>This section builds on the last. To get a message from a queue, follow the directions in <a href="#send-a-message-to-the-queue">Send a Message to the Queue</a> and advance to Step 6, except click <strong>Message Browser</strong>:</p> 
+    </div> 
+    <div class="paragraph"> 
+     <p><span class="image"><img src="./_images/mq-click-msg-browser.png" alt="mq-click-msg-browser"></span></p> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="send-a-message-to-an-exchange"><a class="anchor" href="#send-a-message-to-an-exchange"></a>Send a Message to an Exchange</h3> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="configure-anypoint-studio-for-mq"><a class="anchor" href="#configure-anypoint-studio-for-mq"></a>Configure Anypoint Studio for MQ</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>In this section, we use Anypoint Studio to create a simple application that you can use to publish a message to a queue, or to consume the message, and to ack and nack the message.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>First, return to Anypoint Platform and register an application that we can use in Studio.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="register-a-client-application"><a class="anchor" href="#register-a-client-application"></a>Register a Client Application</h3> 
    <div class="paragraph"> 
-    <p>MQ provides the <strong>Client Application</strong> settings so that you can register each application that you want to communicate through MQ. For each application you register, MQ creates a client ID and a client secret that you plug into your application. These credentials enable MQ to recognize your application when your application publishes a message to a queue or exchange, and when an application consumes a message from a queue.</p> 
+    <p>Anypoint Platform &gt; MQ provides the <strong>Client Application</strong> settings so that you can register each application that you want to communicate through MQ. For each application you register, MQ creates a client ID and a client secret that you plug into your application in Anypoint Studio. These credentials enable the MQ server to recognize your application when your application publishes a message to a queue or exchange, and when an application consumes a message from a queue.</p> 
    </div> 
    <div class="paragraph"> 
     <p>To register a client application:</p> 
@@ -1127,19 +1217,8 @@
     </ol> 
    </div> 
    <div class="paragraph"> 
-    <p><strong>Note</strong>: Leave the Client Apps window open. We need to copy and paste the Client ID and Client Secret into the configuration for Anypoint Studio in the next step.</p> 
+    <p><strong>Note</strong>: Leave the <strong>Client Apps</strong> window open. We need to copy and paste the Client ID and Client Secret into the configuration for Anypoint Studio in the next step.</p> 
    </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="configure-anypoint-studio-for-mq"><a class="anchor" href="#configure-anypoint-studio-for-mq"></a>Configure Anypoint Studio for MQ</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>In this section, we use Anypoint Studio to create a simple application that you can use to publish a message to a queue, or to consume the message, and to ack and nack the message.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>For this section, you need to have the client ID and secret you created in <a href="#register-a-client-application">Register a Client Application</a>, so have <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a> &gt; <strong>MQ</strong> &gt; <strong>Client App</strong> open to copy the information to your Studio application.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="configure-studio-for-the-anypoint-mq-connector-plugin"><a class="anchor" href="#configure-studio-for-the-anypoint-mq-connector-plugin"></a>Configure Studio for the Anypoint MQ Connector Plugin</h3> 
