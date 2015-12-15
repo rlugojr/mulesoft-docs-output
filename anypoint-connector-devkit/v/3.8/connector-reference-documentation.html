@@ -958,16 +958,16 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Provides an in-line link pointing to the documentation for the specified package if the fully qualified name is provided, otherwise the text after link is parsed as a string. Format: <code>{@link package.name.Class}</code></p> 
+         <p>Provides an inline link pointing to the documentation for the specified package if the fully qualified name is provided, otherwise the text after link is parsed as a string. Format: <code>{@link package.name.Class}</code></p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p><code>* @param document</code></p> 
+         <p><code>* @param document</code> <code>* a {@link org.bson.Document} instance.</code></p> 
         </div> 
         <div class="paragraph"> 
-         <p><code>* a {@link org.bson.Document} instance.</code> <span class="image"><img src="./_images/javadoc-link-sample.png" alt="javadoc-link"></span></p> 
+         <p><span class="image"><img src="./_images/javadoc-link-sample.png" alt="javadoc-link"></span></p> 
         </div> 
        </div></td> 
      </tr> 
@@ -981,7 +981,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>provides an in-line link to a URL, for example to a page where a related class or method is described</p> 
+         <p>Provides an in-line link to a URL, for example to a page where a related class or method is described</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1044,7 +1044,7 @@
       <td class="tableblock halign-left valign-top"> 
        <div> 
         <div class="paragraph"> 
-         <p>Used underneath the description of a method. <code>@param</code> adds the parameter name and its description to the reference material. The description should be listed on the line below.</p> 
+         <p>Used underneath the description of a method. <code>@param</code> adds the parameter name and its description to the reference material. The description should be listed on the line below</p> 
         </div> 
        </div></td> 
       <td class="tableblock halign-left valign-top"> 
@@ -1231,23 +1231,35 @@
     </div> 
    </div> 
    <div class="paragraph"> 
+    <p>The above comments populate the attribute table like so:</p> 
+   </div> 
+   <div class="paragraph"> 
     <p><span class="image"><img src="./_images/host-attr.png" alt="host-attr"></span></p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="documenting-connection-strategies"><a class="anchor" href="#documenting-connection-strategies"></a>Documenting Connection Strategies</h3> 
+   <div class="paragraph"> 
+    <p>With version 3.8.0 of DevKit, it is possible to generate documentation for as many connection strategies as are supported by the connector, and will appear under the <strong>Configs</strong> heading:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/multiple-configs.png" alt="multiple-configs"></span></p> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="documenting-processor-methods-and-parameters"><a class="anchor" href="#documenting-processor-methods-and-parameters"></a>Documenting&nbsp;@Processor&nbsp;Methods and Parameters</h3> 
    <div class="paragraph"> 
-    <p>Each method annotated with&nbsp;@Processor&nbsp;or&nbsp;@Source&nbsp;(for streaming APIs) should have a Javadoc comment that includes the following:</p> 
+    <p>Each method annotated with&nbsp;<code>@Processor</code>&nbsp;or&nbsp;<code>@Source</code>&nbsp;(for streaming APIs) should have a Javadoc comment that includes the following:</p> 
    </div> 
    <div class="ulist"> 
     <ul> 
      <li> <p>A description of the use of the method</p> </li> 
-     <li> <p>A pointer to an XML code sample for the element in Mule (described below)</p> </li> 
      <li> <p>For each parameter of the method, a Javadoc&nbsp;<code>@param</code>&nbsp;tag, with a description of the parameter</p> </li> 
+     <li> <p>If the method has a return type other than&nbsp;<code>void</code>, a Javadoc&nbsp;<code>@return</code>&nbsp;tag with a description of the return value</p> </li> 
     </ul> 
    </div> 
    <div class="paragraph"> 
-    <p>If the method has a return type other than&nbsp;<code>void</code>, a Javadoc&nbsp;<code>@return</code>&nbsp;tag with a description of the return value.</p> 
+    <p>See this code sample, which includes examples of the above:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1296,62 +1308,12 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="documenting-connection-strategies"><a class="anchor" href="#documenting-connection-strategies"></a>Documenting Connection Strategies</h3> 
-   <div class="paragraph"> 
-    <p>With version 3.8.0 of DevKit, it is possible to generate documentation for as many connection strategies as are provided by the developer, and will appear under the "Configs" heading:</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/multiple-configs.png" alt="multiple-configs"></span></p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
    <h3 id="linking-to-external-javadoc-resources"><a class="anchor" href="#linking-to-external-javadoc-resources"></a>Linking to External Javadoc Resources</h3> 
    <div class="paragraph"> 
-    <p>To embed a link in your documentation to external Javadoc reference material, you may use a <code>@link</code> placeholder within your comments provided that the fully qualified name of the class be specified, for example, <code>{@link org.bson.Document}</code> <strong>and</strong> the reference to the external third-party Javadoc resource after the <code>@javadoc.url</code> tag above the connector class as described in <a href="#Annotation for Non-Java Data Types">Annotation for Non-Java Data Types</a>, otherwise the URL will not be created because the package for that type will not be found.</p> 
-   </div> 
-   <div class="listingblock"> 
-    <div class="content"> 
-     <pre class="CodeRay highlight"><code data-lang="java">
-          
-       <table class="CodeRay"> 
-        <tbody> 
-         <tr> 
-          <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-</pre></td> 
-          <td class="code"><pre><span class="comment">/**
- * Returns a CMIS object from the repository and puts it into the cache.
- * &lt;p/&gt;
- *
- * @param path Path of the object to retrieve
- * @return a {@link CmisObject} instance
- */</span>
-<span class="annotation">@Processor</span>
-<span class="directive">public</span> CmisObject getObjectByPath(<span class="annotation">@NotNull</span> <span class="predefined-type">String</span> path) {
-    <span class="keyword">return</span> facade.getObjectByPath(path);
-}</pre></td> 
-         </tr> 
-        </tbody> 
-       </table></code></pre> 
-    </div> 
+    <p>To support linking from your documentation to a third-party Javadoc resource, reference the URL once by annotating the <strong>connector class</strong> with the Javadoc tag <code>@javadoc.url</code>.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>The base URL to the reference material for an extension’s data type must be created by annotating the <strong>connector class</strong> with the Javadoc tag <code>@javadoc.url</code>.</p> 
-   </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Then add a space, and enter the name of the Java package, for example, <code>org.bson</code>.</p> </li> 
-     <li> <p>Finally, put the Java extension’s URL between brackets <strong>[ ]</strong>. This URL <strong>must</strong> be a Javadoc URL. See the following example from the MongoDB connector:</p> </li> 
-    </ul> 
+    <p>Use the format <code>@javadoc.url package.name[<a href="https://javadocurl/" class="bare">https://javadocurl/</a>];</code> as in this example:</p> 
    </div> 
    <div class="listingblock"> 
     <div class="content"> 
@@ -1376,6 +1338,61 @@
 * @javadoc.url com.mongodb[https://api.mongodb.org/java/3.1/];
 */</span>
 <span class="directive">public</span> <span class="type">class</span> <span class="class">MongoCloudConnector</span> {
+...</pre></td> 
+         </tr> 
+        </tbody> 
+       </table></code></pre> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="using-link-for-external-javadoc"><a class="anchor" href="#using-link-for-external-javadoc"></a>Using @link for External Javadoc</h3> 
+   <div class="paragraph"> 
+    <p>Once the <code>@javadoc.url</code> tag is in place and you confirm the package and URL are specified using the proper syntax, you use the <code>@link</code> tag as desired, to create functioning links from within your comments.</p> 
+   </div> 
+   <div class="admonitionblock note"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+       <td class="content"> The <strong>fully qualified name of the class</strong> must be specified after <code>@link</code> to create a functioning URL, for example, <code>{@link org.bson.Document}</code>. Otherwise, the package for the datatype in question will not be found. </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre class="CodeRay highlight"><code data-lang="java">
+          
+       <table class="CodeRay"> 
+        <tbody> 
+         <tr> 
+          <td class="line-numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+<strong>10</strong>
+11
+12
+13
+</pre></td> 
+          <td class="code"><pre><span class="comment">/**
+ * Inserts a document in a collection, setting its id if necessary.
+ * @see &lt;a href="http://example.com"&gt;http://example.com&lt;/a&gt;
+ *
+ * @param collection
+ *            the name of the collection where to insert the given document.
+ * @param document
+ *            a {@link org.bson.Document} instance.
+ * @return the id that was just inserted
+ */</span>
+<span class="annotation">@Processor</span>
+<span class="directive">public</span> <span class="predefined-type">String</span> insertDocument(<span class="directive">final</span> <span class="predefined-type">String</span> collection, <span class="annotation">@RefOnly</span> <span class="annotation">@Default</span>(<span class="string"><span class="delimiter">"</span><span class="content">#[payload]</span><span class="delimiter">"</span></span>) <span class="directive">final</span> <span class="predefined-type">Document</span> document) {
 ...</pre></td> 
          </tr> 
         </tbody> 
@@ -1451,7 +1468,7 @@
      <tbody> 
       <tr> 
        <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-       <td class="content"> The DevKit ApiDoc can generate more than one example from the <code>xml.sample</code> file for the same connector operation. Of course, the example must follow the same "_INCLUDE" tag structure above. As of DevKit 3.8.0, the <code>@sample.xml</code> tag is <strong>NOT</strong> supported. </td> 
+       <td class="content"> DevKit APIDoc can generate more than one example from the <code>xml.sample</code> file for the same connector operation. Of course, the example must follow the same "_INCLUDE" tag structure above. As of DevKit 3.8.0, the <code>@sample.xml</code> tag is <strong>NOT</strong> supported. </td> 
       </tr> 
      </tbody> 
     </table> 
@@ -1478,22 +1495,31 @@
   <div class="paragraph"> 
    <p>When you generate documentation for your connector (<strong>Project</strong> &gt; <strong>Generate Javadoc</strong>), DevKit automatically creates both an <strong>HTML</strong> file and an <a href="http://asciidoctor.org/docs/what-is-asciidoc/#what-is-asciidoc">AsciiDoc</a> file that serve as a user-friendly reference for the Javadoc comments you have added within your code explaining connector methods and attributes.</p> 
   </div> 
-  <div class="paragraph"> 
-   <p>Alternatively, you can navigate to the connector’s root directory and execute the following Maven command to generate the documentation:</p> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre>mvn clean compile -DgenerateApidocs</pre> 
+  <div class="sect2"> 
+   <h3 id="using-a-maven-command"><a class="anchor" href="#using-a-maven-command"></a>Using a Maven Command</h3> 
+   <div class="paragraph"> 
+    <p>Alternatively, you can navigate to the connector’s root directory and execute the following Maven command to generate the documentation:</p> 
+   </div> 
+   <div class="listingblock"> 
+    <div class="content"> 
+     <pre>mvn clean compile -DgenerateApidocs</pre> 
+    </div> 
+   </div> 
+   <div class="paragraph"> 
+    <p>The generated documentation should have been created in a new&nbsp;<code>target/apidocs</code>&nbsp;directory in your connector folder. Open the file&nbsp;<code>connectorname-apidoc.html</code>&nbsp;to show the fully generated documentation in the browser.</p> 
    </div> 
   </div> 
-  <div class="paragraph"> 
-   <p>The generated documentation can be found in the&nbsp;<code>target/apidocs</code>&nbsp;directory in your connector folder. Open the file&nbsp;<code>connectorname-apidoc.html</code>&nbsp;to show the fully generated documentation in the browser. The same Javadoc comments are also consumed by DevKit to provide contextual help for the user within Studio at design time.</p> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/contextual-help-box.png" alt="contextual help"></span></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>As you build out your connector, perform a review of the generated documentation to ensure that the contents are sane and correct. If you find the generated documentation insufficient, you can always include more detail in the Javadoc comments in your code.</p> 
+  <div class="sect2"> 
+   <h3 id="contextual-help-in-studio"><a class="anchor" href="#contextual-help-in-studio"></a>Contextual Help in Studio</h3> 
+   <div class="paragraph"> 
+    <p>The same Javadoc comments are also consumed by DevKit to provide contextual help for the user within Studio at design time, as shown here:</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p><span class="image"><img src="./_images/contextual-help-box.png" alt="contextual help"></span></p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>As you build out your connector, perform a review of the generated documentation to ensure that the contents are sane and correct. If you find it lacking, you can always include more detail in the Javadoc comments in your code and regenerate the documentation.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1501,7 +1527,7 @@
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>After you add all required operations to your connector and develop tests, move on to <a href="/anypoint-connector-devkit/v/3.8/packaging-your-connector-for-release">packaging your connector for release</a>.</p> 
+   <p>After you add all required operations to your connector and develop tests, move on to <a href="/anypoint-connector-devkit/v/3.8/packaging-your-connector-for-release">Packaging Your Connector For Release</a>.</p> 
   </div> 
  </div> 
 </div>
