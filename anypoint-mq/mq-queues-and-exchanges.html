@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MQ Queues and Exchanges // MuleSoft Documentation </title>
+    <title>Anypoint MQ Queues and Exchanges // MuleSoft Documentation </title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/asciidoctor.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
@@ -20,7 +20,7 @@
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/anypoint-mq/mq-queues-and-exchanges" />
     <meta name="description" content="Anypoint MQ is a messaging broker that lets applications communicate by publishing a Mule Message to a queue so that another application can consum..." />
-    <meta class="swiftype" name="title" data-type="string" content="MQ Queues and Exchanges" />
+    <meta class="swiftype" name="title" data-type="string" content="Anypoint MQ Queues and Exchanges" />
 
 </head>
 <body>
@@ -973,7 +973,7 @@
         <!-- START article content -->
         <div class="article-content col-md-7">
           <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Anypoint MQ</a>/<a href="mq-queues-and-exchanges" class="breadcrumb-active-link">Create destinations or register client apps</a></div>
-          <h1>MQ Queues and Exchanges</h1>
+          <h1>Anypoint MQ Queues and Exchanges</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
@@ -988,25 +988,23 @@
  <h2 id="create-a-queue"><a class="anchor" href="#create-a-queue"></a>Create a Queue</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can use Anypoint Platform to create queues and exchanges.</p> 
+   <p>To create a queue:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
-    <li> <p>Click <strong>MQ</strong> in the taskbar:</p> 
+    <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
+    <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+    <li> <p>Click the blue plus circle.</p> </li> 
+    <li> <p>Click <strong>Queue</strong>.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-in-taskbar.png" alt="MQ appears in the upper AP taskbar"></span></p> 
+      <p><span class="image"><img src="./_images/mq-create-demo-queue.png" alt="mq-create-demo-queue" width="400"></span></p> 
      </div> </li> 
-    <li> <p>Click the blue plus circle and click <strong>Queue</strong> from the drop-down menu:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-click-queue.png" alt="Click the Queue option from the blue circle menu"></span></p> 
-     </div> </li> 
-    <li> <p>In the <strong>Create Queues</strong> window, provide a queue name, and if needed, change the time-to-live default values for how long a message persists before being automatically deleted, and how long you can apply a lock to a message so that an application has exclusive access to the message. The default values you set affect the settings in the <a href="#createapp">client apps</a> you create.</p> </li> 
-    <li> <p>If needed, mark the queue so that any messages that arrive in the queue get encrypted using password-based encryption (PBE) with MD5 and DES. To mark the queue, slide the Encryption slider to the right.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-create-queue.png" alt="Create a queue window"></span></p> 
-     </div> </li> 
+    <li> <p>Specify a name.</p> </li> 
+    <li> <p>If needed, change the time-to-live (TTL) durations.</p> </li> 
+    <li> <p>If wanted, set the queue to encrypted.</p> </li> 
     <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
+    <li> <p>In the Destinations screen. click the queue name to list its details.</p> </li> 
    </ol> 
   </div> 
   <div class="sect2"> 
