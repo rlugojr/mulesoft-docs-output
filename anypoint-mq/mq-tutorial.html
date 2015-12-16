@@ -939,7 +939,7 @@
          <li> <p><a href="#assign-user-permissions">Assign User Permissions</a> - Give yourself permission to view the user interface - Good model for when you add users in your organization to MQ.</p> </li> 
          <li> <p><a href="#create-an-admin-role">Create an Admin Role</a> - Create an admin’s role for all permissions - Helps you define who in your organization should administer MQ versus have lesser permissions.</p> </li> 
          <li> <p><a href="#create-a-queue-and-an-exchange">Create a Queue and an Exchange</a> - Create a queue where MQ messages are published and consumed by applications.</p> </li> 
-         <li> <p><a href="#send-and-receive-a-message-for-a-queue">Send and Receive a Message for a Queue</a> - Send the demo queue a message and then get the message.</p> </li> 
+         <li> <p><a href="#send-and-receive-a-queue-message">Send and Receive a Queue Message</a> - Send the demo queue a message and then get the message.</p> </li> 
          <li> <p><a href="#send-a-message-to-an-exchange">Send a Message to an Exchange</a> - Send the demo exchange a message and then get the message from the demo queue.</p> </li> 
         </ol> 
        </div> 
@@ -975,7 +975,7 @@
      <td class="tableblock halign-left valign-top"> 
       <div> 
        <div class="paragraph"> 
-        <p><a href="#send-and-receive-messages">Send and Receive Messages</a></p> 
+        <p><a href="#Send and Receive Messages">[Send and Receive Messages]</a></p> 
        </div> 
       </div></td> 
      <td class="tableblock halign-left valign-top"> 
@@ -993,12 +993,12 @@
  <h2 id="configure-anypoint-platform"><a class="anchor" href="#configure-anypoint-platform"></a>Configure Anypoint Platform</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>In the sections that follow, we use Anypoint Platform to assign an administrative role, create an application, and create an exchange.</p> 
+   <p>In the sections that follow, we use Anypoint Platform to assign an administrative role, create an application, create a queue and exchange, and send and receive queue messages, and send messages to an exchange.</p> 
   </div> 
   <div class="sect2"> 
    <h3 id="assign-user-permissions"><a class="anchor" href="#assign-user-permissions"></a>Assign User Permissions</h3> 
    <div class="paragraph"> 
-    <p>Assign user permissions to yourself for use with MQ. These permissions let you create client applications, and destinations by creating queues and exchanges. You can use this same information to assign user permissions for others in your organization.</p> 
+    <p>You can use Anypoint Platform to assign user permissions to yourself for use with MQ. These permissions let you create client applications, and destinations by creating queues and exchanges. You can use this same information to assign user permissions for others in your organization.</p> 
    </div> 
    <div class="paragraph"> 
     <p>To assign user permissions:</p> 
@@ -1132,12 +1132,12 @@
    </div> 
   </div> 
   <div class="sect2"> 
-   <h3 id="send-and-receive-a-message-for-a-queue"><a class="anchor" href="#send-and-receive-a-message-for-a-queue"></a>Send and Receive a Message for a Queue</h3> 
+   <h3 id="send-and-receive-a-queue-message"><a class="anchor" href="#send-and-receive-a-queue-message"></a>Send and Receive a Queue Message</h3> 
    <div class="paragraph"> 
-    <p>Anypoint Platform lets you access a feature where you can send messages to a queue and then view them. The messages content can be text, JSON, or CSV.</p> 
+    <p>Anypoint Platform lets you access a feature where you can send messages to a queue and then view them. The messages content can be text, JSON, or CSV (comma-separated values).</p> 
    </div> 
    <div class="sect3"> 
-    <h4 id="send-a-message-to-the-queue"><a class="anchor" href="#send-a-message-to-the-queue"></a>Send a Message to the Queue</h4> 
+    <h4 id="send-a-message-to-a-queue"><a class="anchor" href="#send-a-message-to-a-queue"></a>Send a Message to a Queue</h4> 
     <div class="paragraph"> 
      <p>To send a message to a queue:</p> 
     </div> 
@@ -1155,7 +1155,7 @@
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/mq-click-msg-sender.png" alt="mq-click-msg-sender"></span></p> 
        </div> </li> 
-      <li> <p>Type text in the <strong>Payload</strong> such as <code>Hello Mules</code>:</p> 
+      <li> <p>Type text in the <strong>Payload</strong> such as <code>Hello Mules</code> (leave the <strong>Type</strong> field set to <strong>Text</strong>):</p> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/mq-msg-sender-text-payload.png" alt="mq-msg-sender-text-payload"></span></p> 
        </div> </li> 
@@ -1164,7 +1164,7 @@
     </div> 
    </div> 
    <div class="sect3"> 
-    <h4 id="verify-the-message-in-the-queue"><a class="anchor" href="#verify-the-message-in-the-queue"></a>Verify the Message in the Queue</h4> 
+    <h4 id="verify-the-message-in-a-queue"><a class="anchor" href="#verify-the-message-in-a-queue"></a>Verify the Message in a Queue</h4> 
     <div class="paragraph"> 
      <p>To verify that the message arrived in the queue:</p> 
     </div> 
@@ -1188,7 +1188,7 @@
     </div> 
     <div class="olist arabic"> 
      <ol class="arabic"> 
-      <li> <p>Follow the directions in <a href="#send-a-message-to-the-queue">Send a Message to the Queue</a> and advance to Step 6, except click <strong>Message Browser</strong>:</p> 
+      <li> <p>Follow the directions in <a href="#Send a Message to the Queue">[Send a Message to the Queue]</a> and advance to Step 6, except click <strong>Message Browser</strong>:</p> 
        <div class="paragraph"> 
         <p><span class="image"><img src="./_images/mq-click-msg-browser.png" alt="mq-click-msg-browser"></span></p> 
        </div> </li> 
@@ -1212,10 +1212,106 @@
        </div> </li> 
      </ol> 
     </div> 
+    <div class="paragraph"> 
+     <p>Now you are able to send and receive messages in Anypoint MQ. In the next section, you can try alternate ways of formatting messages.</p> 
+    </div> 
+   </div> 
+   <div class="sect3"> 
+    <h4 id="send-a-csv-or-json-message"><a class="anchor" href="#send-a-csv-or-json-message"></a>Send a CSV or JSON Message</h4> 
+    <div class="paragraph"> 
+     <p>To send a JSON message:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Click <strong>Message Sender</strong>.</p> </li> 
+      <li> <p>Set the <strong>Type</strong> to <strong>JSON</strong>.</p> </li> 
+      <li> <p>Set the <strong>Payload</strong> to:</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="json">
+              
+           <table class="CodeRay"> 
+            <tbody> 
+             <tr> 
+              <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+              <td class="code"><pre>{
+<span class="key"><span class="delimiter">"</span><span class="content">animal that walks</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">dog</span><span class="delimiter">"</span></span>,
+<span class="key"><span class="delimiter">"</span><span class="content">animal that swims</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">fish</span><span class="delimiter">"</span></span>,
+<span class="key"><span class="delimiter">"</span><span class="content">animal that flies</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">parrot</span><span class="delimiter">"</span></span>
+}</pre></td> 
+             </tr> 
+            </tbody> 
+           </table></code></pre> 
+        </div> 
+       </div> 
+       <div class="paragraph"> 
+        <p><strong>Note</strong>: JSON must have a return after every line. If compressed into a single statement, the message browser only shows the message as " " - the same output displays for any invalid JSON text. You can also submit JSON using the <a href="/anypoint-mq/#mqapis">Anypoint MQ APIs</a>.</p> 
+       </div> </li> 
+      <li> <p>Click <strong>Message Browser</strong> and the message ID to view the message:</p> 
+       <div class="paragraph"> 
+        <p><span class="image"><img src="./_images/mq-json-get-msg.png" alt="mq-json-get-msg"></span></p> 
+       </div> </li> 
+     </ol> 
+    </div> 
+    <div class="paragraph"> 
+     <p>To send a CSV message:</p> 
+    </div> 
+    <div class="olist arabic"> 
+     <ol class="arabic"> 
+      <li> <p>Click <strong>Message Sender</strong>.</p> </li> 
+      <li> <p>Set the <strong>Type</strong> to <strong>CSV</strong>.</p> </li> 
+      <li> <p>Set the <strong>Payload</strong> to:</p> 
+       <div class="listingblock"> 
+        <div class="content"> 
+         <pre class="CodeRay highlight"><code data-lang="code">"dog",
+"fish",
+"parrot"</code></pre> 
+        </div> 
+       </div> </li> 
+      <li> <p>Click <strong>Message Browser</strong> and the message ID to view the message.</p> </li> 
+     </ol> 
+    </div> 
    </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="send-a-message-to-an-exchange"><a class="anchor" href="#send-a-message-to-an-exchange"></a>Send a Message to an Exchange</h3> 
+   <div class="paragraph"> 
+    <p>Sending a message to an exchange is very similar to sending a message to a queue. The only difference is that you can get the message from any queue bound to an exchange.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>To send a message to an exchange:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
+     <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
+     <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+     <li> <p>Click the <code>MyDemoExchange</code> entry in Destinations to view details about the exchange.</p> </li> 
+     <li> <p>Click the <strong>MyDemoExchange</strong> link in the details screen to access the Message Sender:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-exchange-msg-access.png" alt="mq-exchange-msg-access"></span></p> 
+      </div> </li> 
+     <li> <p>Click <strong>Message Sender</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-exchange-msg-sender.png" alt="mq-exchange-msg-sender"></span></p> 
+      </div> </li> 
+     <li> <p>Type the contents of the <strong>Payload</strong> and click <strong>Send</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-exchange-payload.png" alt="mq-exchange-payload"></span></p> 
+      </div> </li> 
+    </ol> 
+   </div> 
+   <div class="paragraph"> 
+    <p>You can now use the Message Browser to get the message from the MyDemoQueue as described in <a href="#get-a-message-from-a-queue">Get a Message From a Queue</a>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>You can also send comma-separated value (CSV) or JSON content in the payload by changing the message <strong>Type</strong> value. For more information, see <a href="#send-a-csv-or-json-message">Send a CSV or JSON Message</a>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1493,11 +1589,6 @@ INFO  &lt;date&gt; &lt;time&gt; [WrapperListener_start_runner] org.mule.module.l
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="send-and-receive-messages"><a class="anchor" href="#send-and-receive-messages"></a>Send and Receive Messages</h2> 
- <div class="sectionbody"> 
- </div> 
-</div> 
-<div class="sect1"> 
  <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
  <div class="sectionbody"> 
   <div class="ulist"> 
@@ -1516,7 +1607,7 @@ INFO  &lt;date&gt; &lt;time&gt; [WrapperListener_start_runner] org.mule.module.l
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#tutorial-workflow">Tutorial Workflow</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-platform">Configure Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-studio-for-mq">Configure Anypoint Studio for MQ</a></li><li><a class="scroll-menu-link" href="#start-mule-runtime">Start Mule Runtime</a></li><li><a class="scroll-menu-link" href="#send-and-receive-messages">Send and Receive Messages</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#tutorial-workflow">Tutorial Workflow</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-platform">Configure Anypoint Platform</a></li><li><a class="scroll-menu-link" href="#configure-anypoint-studio-for-mq">Configure Anypoint Studio for MQ</a></li><li><a class="scroll-menu-link" href="#start-mule-runtime">Start Mule Runtime</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
