@@ -901,116 +901,241 @@
   <div class="olist arabic"> 
    <ol class="arabic"> 
     <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
-    <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
-    <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+    <li> <p>In the top task bar, click <strong>MQ</strong>.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-tut-mq-taskbar.png" alt="mq-tut-mq-taskbar"></span></p> 
+     </div> </li> 
+    <li> <p>Click <strong>Destinations</strong>:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-destinations.png" alt="mq-destinations" width="177"></span></p> 
+     </div> </li> 
     <li> <p>Click the blue plus circle.</p> </li> 
     <li> <p>Click <strong>Queue</strong>.</p> 
      <div class="paragraph"> 
+      <p>In the <strong>Create Queue</strong> window:</p> 
+     </div> 
+     <div class="paragraph"> 
       <p><span class="image"><img src="./_images/mq-create-demo-queue.png" alt="mq-create-demo-queue" width="400"></span></p> 
+     </div> 
+     <div class="olist loweralpha"> 
+      <ol class="loweralpha" type="a"> 
+       <li> <p>Specify a name.</p> </li> 
+       <li> <p>(Optional) Change the time-to-live (TTL) durations for the default message TTL - how long messages persist, and for the lock TTL - how long messages are locked for applications to have exclusive access to a message.</p> </li> 
+       <li> <p>(Optional) Set the queue to encrypted. Anypoint MQ uses PBE with MD5 and DES to encrypt messages.</p> </li> 
+       <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
+      </ol> 
      </div> </li> 
-    <li> <p>Specify a name.</p> </li> 
-    <li> <p>If needed, change the time-to-live (TTL) durations.</p> </li> 
-    <li> <p>If wanted, set the queue to encrypted.</p> </li> 
-    <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
-    <li> <p>In the Destinations screen. click the queue name to list its details.</p> </li> 
+    <li> <p>In the Destinations screen, click the queue name to list its details:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-queue-details.png" alt="mq-queue-details"></span></p> 
+     </div> </li> 
    </ol> 
   </div> 
+  <div class="paragraph"> 
+   <p>The next section describes how Anypoint Platform lets you send messages to a queue and view, return the messages to the queue, or delete the messages. Message content (called a payload) can be text, JSON, or CSV (comma-separated values).</p> 
+  </div> 
   <div class="sect2"> 
-   <h3 id="queue-details"><a class="anchor" href="#queue-details"></a>Queue Details</h3> 
+   <h3 id="send-a-message-to-a-queue"><a class="anchor" href="#send-a-message-to-a-queue"></a>Send a Message to a Queue</h3> 
    <div class="paragraph"> 
-    <p>Review the destination details screen:</p> 
+    <p>To send a message to a queue:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
+     <li> <p>In the top task bar, click <strong>MQ</strong>.</p> </li> 
+     <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+     <li> <p>Click the queue entry in Destinations to view details about the queue.</p> </li> 
+     <li> <p>Click the queue name in the details to open the Messaging feature:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-access-messaging.png" alt="mq-access-messaging"></span></p> 
+      </div> </li> 
+     <li> <p>In the settings page, click <strong>Message Sender</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-click-msg-sender.png" alt="mq-click-msg-sender"></span></p> 
+      </div> </li> 
+     <li> <p>Type text in the <strong>Payload</strong> such as <code>Hello Mules</code> (leave the <strong>Type</strong> field set to <strong>Text</strong>):</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-msg-sender-text-payload.png" alt="mq-msg-sender-text-payload"></span></p> 
+      </div> </li> 
+     <li> <p>Click <strong>Send</strong>.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="verify-the-message-in-a-queue"><a class="anchor" href="#verify-the-message-in-a-queue"></a>Verify the Message in a Queue</h3> 
+   <div class="paragraph"> 
+    <p>To verify that the message arrived in the queue:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Click <strong>Destinations</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-click-destinations.png" alt="mq-click-destinations" width="173"></span></p> 
+      </div> </li> 
+     <li> <p>Click the queue to see the queue detail. The detail shows that a message is in the queue:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-msgs-in-queue.png" alt="mq-msgs-in-queue"></span></p> 
+      </div> </li> 
+    </ol> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="get-a-message-from-a-queue"><a class="anchor" href="#get-a-message-from-a-queue"></a>Get a Message From a Queue</h3> 
+   <div class="paragraph"> 
+    <p>To get a message from a queue:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Follow the directions in <a href="#Send a Message to the Queue">[Send a Message to the Queue]</a> and advance to Step 6, except click <strong>Message Browser</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-click-msg-browser.png" alt="mq-click-msg-browser"></span></p> 
+      </div> </li> 
+     <li> <p>Click <strong>Get Messages</strong>.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-get-messages.png" alt="mq-get-messages"></span></p> 
+      </div> </li> 
+     <li> <p>Click the message ID value to view the message.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-click-id.png" alt="mq-click-id"></span></p> 
+      </div> </li> 
+     <li> <p>If you want to return the message to the queue, such as if other applications may also want to read the message, click the <strong>Return Messages</strong> icon - this is the default condition. If you switch screens back to the Message Sender or to Destinations, messages automatically return to the queue. In Anypoint MQ, returning the messages to the queue is known as <code>nack</code> - the message is not altered. However, the time to live (TTL) value you set when you created your queue determines how long the message is available before Anypoint MQ deletes it.</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-click-retmsgs.png" alt="mq-click-retmsgs" width="75"></span></p> 
+      </div> 
+      <div class="paragraph"> 
+       <p>Alternatively, you can delete the message by clicking the trash can icon. In Anypoint MQ, deleting a message is called an <code>ack</code>:</p> 
+      </div> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-message-delete-trash-can-icon.png" alt="mq-message-delete-trash-can-icon" width="393"></span></p> 
+      </div> </li> 
+    </ol> 
    </div> 
    <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/mq-queue-details.png" alt="Queue Details to the right of the queue entry"></span></p> 
+    <p>Now you are able to send and receive messages in Anypoint MQ. In the next section, you can try alternate ways of formatting messages.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="send-a-csv-or-json-message"><a class="anchor" href="#send-a-csv-or-json-message"></a>Send a CSV or JSON Message</h3> 
+   <div class="paragraph"> 
+    <p>To send a JSON message:</p> 
+   </div> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Click <strong>Message Sender</strong>.</p> </li> 
+     <li> <p>Set the <strong>Type</strong> to <strong>JSON</strong>.</p> </li> 
+     <li> <p>Set the <strong>Payload</strong> to:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="json">
+             
+          <table class="CodeRay"> 
+           <tbody> 
+            <tr> 
+             <td class="line-numbers"><pre>1
+2
+3
+4
+5
+</pre></td> 
+             <td class="code"><pre>{
+<span class="key"><span class="delimiter">"</span><span class="content">animal that walks</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">dog</span><span class="delimiter">"</span></span>,
+<span class="key"><span class="delimiter">"</span><span class="content">animal that swims</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">fish</span><span class="delimiter">"</span></span>,
+<span class="key"><span class="delimiter">"</span><span class="content">animal that flies</span><span class="delimiter">"</span></span>:<span class="string"><span class="delimiter">"</span><span class="content">parrot</span><span class="delimiter">"</span></span>
+}</pre></td> 
+            </tr> 
+           </tbody> 
+          </table></code></pre> 
+       </div> 
+      </div> 
+      <div class="paragraph"> 
+       <p><strong>Note</strong>: JSON must have a return after every line. If compressed into a single statement, the message browser only shows the message as " " - the same output displays for any invalid JSON text. You can also submit JSON using the <a href="/anypoint-mq/#mqapis">Anypoint MQ APIs</a>.</p> 
+      </div> </li> 
+     <li> <p>Click <strong>Message Browser</strong> and the message ID to view the message:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-json-get-msg.png" alt="mq-json-get-msg"></span></p> 
+      </div> </li> 
+    </ol> 
    </div> 
    <div class="paragraph"> 
-    <p>You can use the details display to:</p> 
+    <p>To send a CSV message:</p> 
    </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Purge messages</p> </li> 
-     <li> <p>Delete a queue</p> </li> 
-     <li> <p>View queued messages</p> </li> 
-     <li> <p>View in-flight messages</p> </li> 
-     <li> <p>View exchanges to which the queue is bound</p> </li> 
-    </ul> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Click <strong>Message Sender</strong>.</p> </li> 
+     <li> <p>Set the <strong>Type</strong> to <strong>CSV</strong>.</p> </li> 
+     <li> <p>Set the <strong>Payload</strong> to:</p> 
+      <div class="listingblock"> 
+       <div class="content"> 
+        <pre class="CodeRay highlight"><code data-lang="code">"dog",
+"fish",
+"parrot"</code></pre> 
+       </div> 
+      </div> </li> 
+     <li> <p>Click <strong>Message Browser</strong> and the message ID to view the message.</p> </li> 
+    </ol> 
    </div> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="create-a-message-exchange"><a class="anchor" href="#create-a-message-exchange"></a>Create a Message Exchange</h2> 
+ <h2 id="create-an-exchange"><a class="anchor" href="#create-an-exchange"></a>Create an Exchange</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>A message exchange is made up of one or more queues that are bound to the exchange.</p> 
+   <p>To create an exchange:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Click the blue plus circle and click <strong>Exchange</strong>:</p> 
+    <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
+    <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
+    <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+    <li> <p>Click the blue plus circle.</p> </li> 
+    <li> <p>Click <strong>Exchange</strong>.</p> 
      <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-click-exchange.png" alt="From the blue circle drop down click Exchange"></span></p> 
-     </div> 
-     <div class="paragraph"> 
-      <p>In the <strong>Create Exchange</strong> window, provide an exchange name, and click which queues to bind to the exchange. If needed, mark the exchange so that any messages that arrive in each queue gets encrypted (using PBE with MD5 and DES). To mark the exchange, slide the Encryption slider to the right.</p> 
-     </div> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-create-exchange.png" alt="Create an exchange window"></span></p> 
+      <p><span class="image"><img src="./_images/mq-create-demo-exchange.png" alt="mq-create-demo-exchange" width="400"></span></p> 
      </div> </li> 
+    <li> <p>Specify the name <code>MyDemoExchange</code>.</p> </li> 
+    <li> <p>Click the checkbox to bind MyDemoQueue to this exchange.</p> </li> 
     <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
+    <li> <p>In the Destinations screen. click the exchange name to list its details:</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mq-exchange-details.png" alt="mq-exchange-details"></span></p> 
+     </div> </li> 
    </ol> 
   </div> 
   <div class="sect2"> 
-   <h3 id="message-exchange-details"><a class="anchor" href="#message-exchange-details"></a>Message Exchange Details</h3> 
+   <h3 id="send-a-message-to-an-exchange"><a class="anchor" href="#send-a-message-to-an-exchange"></a>Send a Message to an Exchange</h3> 
    <div class="paragraph"> 
-    <p>The message exchange details appear to the right of the exchange entry:</p> 
-   </div> 
-   <div class="paragraph"> 
-    <p><span class="image"><img src="./_images/mq-exchange-details.png" alt="Exchange details to the right of the entry"></span></p> 
+    <p>Sending a message to an exchange is very similar to sending a message to a queue. The only difference is that you can get the message from any queue bound to an exchange.</p> 
    </div> 
    <div class="paragraph"> 
-    <p>You can use the details display to:</p> 
+    <p>To send a message to an exchange:</p> 
    </div> 
-   <div class="ulist"> 
-    <ul> 
-     <li> <p>Delete the exchange</p> </li> 
-     <li> <p>Monitor exchange throughput</p> </li> 
-     <li> <p>View which queues are bound to the exchange</p> </li> 
-    </ul> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Log into <a href="https://anypoint.mulesoft.com/#/signin">Anypoint Platform</a>.</p> </li> 
+     <li> <p>In the top taskbar, click <strong>MQ</strong>.</p> </li> 
+     <li> <p>Click <strong>Destinations</strong>.</p> </li> 
+     <li> <p>Click the <code>MyDemoExchange</code> entry in Destinations to view details about the exchange.</p> </li> 
+     <li> <p>Click the <strong>MyDemoExchange</strong> link in the details screen to access the Message Sender:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-exchange-msg-access.png" alt="mq-exchange-msg-access"></span></p> 
+      </div> </li> 
+     <li> <p>Click <strong>Message Sender</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-exchange-msg-sender.png" alt="mq-exchange-msg-sender"></span></p> 
+      </div> </li> 
+     <li> <p>Type the contents of the <strong>Payload</strong> and click <strong>Send</strong>:</p> 
+      <div class="paragraph"> 
+       <p><span class="image"><img src="./_images/mq-exchange-payload.png" alt="mq-exchange-payload"></span></p> 
+      </div> </li> 
+    </ol> 
    </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="createapp"><a class="anchor" href="#createapp"></a>Create a Client App</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Creating a client app provides the client ID and client secret you can use to register an app as either an MQ publisher or subscriber.</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>In Anypoint Platform, click <strong>MQ</strong>.</p> </li> 
-    <li> <p>Click <strong>Client Apps</strong> from the left nav bar:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-client-apps-in-nav.png" alt="Click Client Apps in left nav bar"></span>.</p> 
-     </div> </li> 
-    <li> <p>Click the blue plus circle:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-blue-plus-circle.png" alt="Create client app circle button about two-thirds to the right below the taskbar"></span></p> 
-     </div> </li> 
-    <li> <p>Specify the name of the client application.</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-create-client-app-window.png" alt="mq-create-client-app-window"></span></p> 
-     </div> </li> 
-    <li> <p>Click <strong>Save Changes</strong>.</p> </li> 
-    <li> <p>Click the client app entry to view the client ID and secret values:</p> 
-     <div class="paragraph"> 
-      <p><span class="image"><img src="./_images/mq-client-app-details.png" alt="Client app details appears to the right of the client entry"></span></p> 
-     </div> </li> 
-    <li> <p>Click the Copy button for the ID or secret to copy the value to your computer’s clipboard.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p><strong>Note</strong>: If using the Chrome browser and the Copy buttons don’t function, click <strong>Settings</strong> &gt; <strong>Show advanced settings</strong> &gt; <strong>Privacy</strong> &gt; <strong>Content settings</strong> &gt; <strong>Plugins</strong> &gt; <strong>Detect and run important plugin content</strong>.</p> 
+   <div class="paragraph"> 
+    <p>You can now use the Message Browser to get the message from the MyDemoQueue as described in <a href="#get-a-message-from-a-queue">Get a Message From a Queue</a>.</p> 
+   </div> 
+   <div class="paragraph"> 
+    <p>You can also send comma-separated value (CSV) or JSON content in the payload by changing the message <strong>Type</strong> value. For more information, see <a href="#send-a-csv-or-json-message">Send a CSV or JSON Message</a>.</p> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -1033,7 +1158,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#create-a-queue">Create a Queue</a></li><li><a class="scroll-menu-link" href="#create-a-message-exchange">Create a Message Exchange</a></li><li><a class="scroll-menu-link" href="#createapp">Create a Client App</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#create-a-queue">Create a Queue</a></li><li><a class="scroll-menu-link" href="#create-an-exchange">Create an Exchange</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
