@@ -990,12 +990,12 @@
    </ul> 
   </div> 
   <div class="paragraph"> 
-   <p>This document outlines how and when to use batch filters and the batch commit wrapper.&nbsp;</p> 
+   <p>This document outlines how and when to use batch filters and the batch commit wrapper.</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
    <p>This document assumes that you are familiar with <a href="/mule-fundamentals/v/3.7/anypoint-studio-essentials">Anypoint Studio</a> and have reviewed the overview and basic anatomy of <a href="/mule-user-guide/v/3.7/batch-processing">Batch Processing</a>, and that you understand how batch jobs handle <a href="/mule-user-guide/v/3.7/batch-processing">records which fail processing</a>.&nbsp;</p> 
@@ -1021,17 +1021,17 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-db76a" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-88d61" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-09a5f" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-bb659" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-db76a"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-09a5f"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/accept_expression.png" alt="accept_expression"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-88d61"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-bb659"> 
      <div class="paragraph"> 
       <p>Note that details in code snippet are abbreviated so as to highlight batch step attributes.</p> 
      </div> 
@@ -1087,17 +1087,17 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-d0248" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-74313" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-fcb27" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-7b6ce" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-d0248"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-fcb27"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/accept_policy.png" alt="accept_policy"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-74313"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-7b6ce"> 
      <div class="paragraph"> 
       <p>Note that details in code snippet are abbreviated so as to highlight batch step attributes.</p> 
      </div> 
@@ -1153,12 +1153,12 @@
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-fba6c" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-a79fe" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-52aa4" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-b8865" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-fba6c"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-52aa4"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/aggregator.png" alt="aggregator"></span></p> 
      </div> 
@@ -1166,7 +1166,7 @@
       <p><span class="image"><img src="./_images/batch_commit.png" alt="batch_commit"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-a79fe"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-b8865"> 
      <div class="paragraph"> 
       <p>Note that details in code snippet are abbreviated so as to highlight batch commit and its attributes.</p> 
      </div> 
@@ -1225,26 +1225,35 @@
  <h2 id="example"><a class="anchor" href="#example"></a>Example</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This example uses batch processing to address a use case in which the contents of a comma-separated value file (CSV) of leads – comprised of names, birthdays and email addresses – must be uploaded to Salesforce. To avoid duplicating any leads, the batch job checks to see if a lead exists before uploading data to Salesforce. See <a href="/mule-user-guide/v/3.7/batch-processing">Batch Processing</a> for a full description of the steps the batch job takes in each phase of processing</p> 
+   <p>This example uses batch processing to address a use case in which the contents of a comma-separated value file (CSV) of leads – comprised of names, birthdays and email addresses – must be uploaded to Salesforce. To avoid duplicating any leads, the batch job checks to see if a lead exists before uploading data to Salesforce.</p> 
   </div> 
   <div class="paragraph"> 
-   <p>Meanwhile, the <code>insert-lead</code> batch step employs both an <strong>Accept Expression</strong> and <strong>Batch Commit</strong> (see below).</p> 
+   <p>For more information, see:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p><a href="/mule-user-guide/v/3.7/batch-processing">Batch Processing</a> for a full description of the steps the batch job takes in each phase of processing.</p> </li> 
+    <li> <p><a href="https://www.mulesoft.com/exchange#!/import-leads-into-salesforce">Example: Import Leads Into Salesforce</a>.</p> </li> 
+   </ul> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The <code>insert-lead</code> batch step employs both an <strong>Accept Expression</strong> and <strong>Batch Commit</strong> (see below).</p> 
   </div> 
   <div class="panel panel-default no-padding"> 
    <div class="panel-heading no-padding"> 
     <!-- Nav tabs --> 
     <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-7ecc4" role="tab" data-toggle="tab">STUDIO Visual Editor</a></li> 
-     <li><a href="#xml-editor-90c01" role="tab" data-toggle="tab">XML Editor</a></li> 
+     <li class="active"><a href="#studio-visual-editor-15f2a" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
+     <li><a href="#xml-editor-8a71e" role="tab" data-toggle="tab">XML Editor</a></li> 
     </ul> 
    </div> 
    <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-7ecc4"> 
+    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-15f2a"> 
      <div class="paragraph"> 
       <p><span class="image"><img src="./_images/example_batch.png" alt="example_batch"></span></p> 
      </div> 
     </div> 
-    <div class="tab-pane fade no-padding" id="xml-editor-90c01"> 
+    <div class="tab-pane fade no-padding" id="xml-editor-8a71e"> 
      <div class="admonitionblock note"> 
       <table> 
        <tbody> 
@@ -1252,22 +1261,22 @@
          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
          <td class="content"> 
           <div class="paragraph"> 
-           <p>If you copy + paste the code into your instance of Studio, be sure to enter your own values for the <strong>global Salesforce connector</strong>:</p> 
+           <p>If you copy and paste the code into your instance of Studio, be sure to enter your own values for the <strong>global Salesforce connector</strong>:</p> 
           </div> 
           <div class="ulist"> 
            <ul> 
-            <li> <p>username</p> </li> 
-            <li> <p>password</p> </li> 
-            <li> <p>security token</p> </li> 
+            <li> <p>Username</p> </li> 
+            <li> <p>Password</p> </li> 
+            <li> <p>Security token</p> </li> 
            </ul> 
           </div> 
           <div class="paragraph"> 
-           <p>How do I get a Salesforce security token?</p> 
+           <p><strong>How do I get a Salesforce security token?</strong></p> 
           </div> 
           <div class="olist arabic"> 
            <ol class="arabic"> 
             <li> <p>Log in to your Salesforce account. From your account menu (your account is labeled with your name), select&nbsp;<strong>Setup</strong>.</p> </li> 
-            <li> <p>In the left navigation bar, under the&nbsp;<strong>My Settings</strong>&nbsp;heading, click to expand the&nbsp;<strong>Personal&nbsp;</strong>folder.&nbsp;</p> </li> 
+            <li> <p>In the left navigation bar, under the&nbsp;<strong>My Settings</strong>&nbsp;heading, click to expand the&nbsp;<strong>Personal</strong> folder.&nbsp;</p> </li> 
             <li> <p>Click&nbsp;<strong>Reset My Security Token</strong>. Salesforce resets the token and emails you the new one.</p> </li> 
             <li> <p>Access the email that Salesforce sent and copy the new token onto your local clipboard.</p> </li> 
             <li> <p>In the application in your instance of Anypoint Studio, click the&nbsp;<strong>Global Elements</strong>&nbsp;tab.&nbsp;</p> </li> 
@@ -1335,27 +1344,14 @@
 47
 48
 49
-<strong>50</strong>
-51
-52
-53
-54
-55
-56
-57
 </pre></td> 
             <td class="code"><pre><span class="entity">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span class="entity">&amp;gt;</span>
 &nbsp;
-<span class="entity">&amp;lt;</span>mule xmlns:batch="http://www.mulesoft.org/schema/mule/batch" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.5.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
-&nbsp;
+<span class="entity">&amp;lt;</span>mule xmlns:batch="http://www.mulesoft.org/schema/mule/batch" xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.7.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-&nbsp;
 http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
-&nbsp;
 http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/batch/current/mule-batch.xsd
-&nbsp;
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
-&nbsp;
 http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd"<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>sfdc:config name="Salesforce" username="username" password="password" securityToken="SpBdsf98af9tTR3m3YVcm4Y5q0y0R" doc:name="Salesforce"<span class="entity">&amp;gt;</span>
@@ -1363,11 +1359,8 @@ http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfd
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>/sfdc:config<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="new_mapping_grf" transformationGraphPath="new_mapping.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
-&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="new_mapping_1_grf" transformationGraphPath="new_mapping_1.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
-&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="leads_grf" transformationGraphPath="leads.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
-&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>data-mapper:config name="csv_to_lead_grf" transformationGraphPath="csv-to-lead.grf" doc:name="DataMapper"/<span class="entity">&amp;gt;</span>
 &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="entity">&amp;lt;</span>batch:job max-failed-records="1000" name="Create Leads" doc:name="Create Leads"<span class="entity">&amp;gt;</span>
@@ -1428,7 +1421,7 @@ http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfd
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#filters">Filters</a></li><li><a class="scroll-menu-link" href="#batch-commit">Batch Commit</a></li><li><a class="scroll-menu-link" href="#example">Example</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#filters">Filters</a></li><li><a class="scroll-menu-link" href="#batch-commit">Batch Commit</a></li><li><a class="scroll-menu-link" href="#example">Example</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
