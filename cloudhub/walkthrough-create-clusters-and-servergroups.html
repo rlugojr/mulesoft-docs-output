@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Installing Connectors // MuleSoft Documentation </title>
+    <title>Walkthrough Create Clusters and Server Groups // MuleSoft Documentation </title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/asciidoctor.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
@@ -18,9 +18,9 @@
     <script src="/js/jquery.fancybox.pack.js"></script>
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
-    <link rel="canonical" href="https://docs.mulesoft.com/mule-user-guide/v/3.7/installing-connectors" />
-    <meta name="description" content="This page explains how to install connectors, uninstall connectors, and work with connector dependencies in both Anypoint Studio and Maven. Yo..." />
-    <meta class="swiftype" name="title" data-type="string" content="Installing Connectors" />
+    <link rel="canonical" href="https://docs.mulesoft.com/cloudhub/walkthrough-create-clusters-and-servergroups" />
+    <meta name="description" content="diagram -Description of Scenario + Purpose of it. -Pre-requisites for Scenario -Some preliminary - troubleshooting steps when to use cluster / serv..." />
+    <meta class="swiftype" name="title" data-type="string" content="Walkthrough Create Clusters and Server Groups" />
 
 </head>
 <body>
@@ -123,7 +123,7 @@
               <a href="#" class="tree-icon glyphicon glyphicon-th-list"><span>Nav</span></a>
           </div>
           <div class="toolbar-dropdown edit-github">
-              <a href="https://github.com/mulesoft/mulesoft-docs/blob/master/mule-user-guide/v/3.7/installing-connectors.adoc" target="_blank"><span>Edit on GitHub</span></a>
+              <a href="https://github.com/mulesoft/mulesoft-docs/blob/master/cloudhub/v/latest/walkthrough-create-clusters-and-servergroups.adoc" target="_blank"><span>Edit on GitHub</span></a>
           </div>
           <div class="toolbar-dropdown helpful">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-helpful" data-toggle="dropdown" aria-expanded="true">
@@ -147,8 +147,7 @@
           </div>
       </div>
       <div class="version-selector col-md-5 col-xs-12">
-          <label for="version-selector">Mule User Guide Version</label><select onChange="window.location.href=this.value" id="version-selector"><option value="/mule-user-guide/v/3.7">3.7 (Latest)</option><option value="/mule-user-guide/v/3.6">3.6</option><option value="/mule-user-guide/v/3.5">3.5</option><option value="/mule-user-guide/v/3.4">3.4</option><option value="/mule-user-guide/v/3.3">3.3</option><option value="/mule-user-guide/v/3.2">3.2</option></select>
-
+          
       </div>
     </div>
     <div class="row">
@@ -181,23 +180,23 @@
 <li><i></i><a href="/mule-fundamentals/v/3.7/flow-architecture-advanced-use-case">Flow Architecture Advanced Use Case</a></li></ul></li>
 <li><i></i><a href="/mule-fundamentals/v/3.7/deploying-mule-applications">Deploying Mule Applications</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/keyboard-shortcuts-in-studio">Keyboard Shortcuts in Studio</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/mule-security">Security in Mule</a></li><li><i></i><a href="/mule-fundamentals/v/3.7/extending-mule">Extending Mule</a></li></ul></li>
 </ul></li>
-<li class="expanded">
+<li>
 <i></i>
-<a href="/mule-user-guide/v/3.7/">Mule User Guide</a><ul style="display: block;">
+<a href="/mule-user-guide/v/3.7/">Mule User Guide</a><ul>
 <li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/installing">Installing</a><ul>
 <li><i></i><a href="/mule-user-guide/v/3.7/hardware-and-software-requirements">Hardware and Software Requirements</a></li><li><i></i><a href="/mule-user-guide/v/3.7/compatibility">Compatibility</a></li><li><i></i><a href="/mule-user-guide/v/3.7/downloading-and-starting-mule-esb">Downloading and Starting Mule ESB</a></li><li><i></i><a href="/mule-user-guide/v/3.7/adding-community-runtime">Adding Community Runtime</a></li><li><i></i><a href="/mule-user-guide/v/3.7/installing-an-enterprise-license">Installing an Enterprise License</a></li><li><i></i><a href="/mule-user-guide/v/3.7/installing-extensions">Installing Extensions</a></li><li><i></i><a href="/mule-user-guide/v/3.7/studio-update-sites">Studio Update Sites</a></li><li><i></i><a href="/mule-user-guide/v/3.7/studio-in-eclipse">Studio in Eclipse</a></li><li><i></i><a href="/mule-user-guide/v/3.7/third-party-software-in-mule">Third Party Software in Mule</a></li></ul></li>
-<li class="expanded">
+<li>
 <i></i>
-<a href="/mule-user-guide/v/3.7/developing">Developing</a><ul style="display: block;">
-<li class="expanded">
+<a href="/mule-user-guide/v/3.7/developing">Developing</a><ul>
+<li>
 <i></i>
-<a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a><ul style="display: block;">
-<li class="expanded">
+<a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a><ul>
+<li>
 <i></i>
-<a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul style="display: block;">
-<li class="active"><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
+<a href="/mule-user-guide/v/3.7/connectors-user-guide">Connectors User Guide</a><ul>
+<li><i></i><a href="/mule-user-guide/v/3.7/installing-connectors">Installing Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/connector-configuration-reference">Connector Configuration Reference</a></li><li><i></i><a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">Working with Multiple Versions of Connectors</a></li><li><i></i><a href="/mule-user-guide/v/3.7/using-a-connector-to-access-an-oauth-api">Using a Connector to Access an OAuth API</a></li><li><i></i><a href="/mule-user-guide/v/3.7/auto-paging-in-anypoint-connectors">Auto-Paging in Anypoint Connectors</a></li></ul></li>
 <li><i></i><a href="/mule-user-guide/v/3.7/ajax-connector">Ajax Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-s3-connector">Amazon S3 Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sns-connector">Amazon SNS Connector</a></li><li><i></i><a href="/mule-user-guide/v/3.7/amazon-sqs-connector">Amazon SQS Connector</a></li><li>
 <i></i>
 <a href="/mule-user-guide/v/3.7/amqp-connector">AMQP Connector</a><ul>
@@ -881,273 +880,228 @@
         <!-- END older version notification -->
         <!-- START article content -->
         <div class="article-content col-md-7">
-          <div class="breadcrumb-section" data-swiftype-index='false'><a href="./">Mule User Guide</a>/<a href="developing">Developing</a>/<a href="anypoint-connectors">Anypoint Connectors</a>/<a href="connectors-user-guide">Connectors User Guide</a>/<a href="installing-connectors" class="breadcrumb-active-link">Installing Connectors</a></div>
-          <h1>Installing Connectors</h1>
+          
+          <h1>Walkthrough Create Clusters and Server Groups</h1>
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This page explains how to install connectors, uninstall connectors, and work with connector dependencies in both Anypoint&nbsp;Studio and Maven.</p> 
+   <p>diagram</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>-Description of Scenario + Purpose of it. -Pre-requisites for Scenario -Some preliminary - troubleshooting steps</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>when to use cluster / server group</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="installing-connectors"><a class="anchor" href="#installing-connectors"></a>Installing Connectors</h2> 
+ <h2 id="configure-a-server"><a class="anchor" href="#configure-a-server"></a>Configure a Server</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You can install a connector in Anypoint Studio using the instructions in&nbsp;<a href="/mule-fundamentals/v/3.7/anypoint-exchange#installing-a-connector-from-anypoint-exchange">Installing a Connector from Anypoint Exchange</a>. &nbsp;</p> 
+   <p>diagram</p> 
   </div> 
   <div class="paragraph"> 
-   <p>If a connector or connector version is not in Anypoint Exchange, you can install the connector using Anypoint Studio:</p> 
+   <p>The steps below should be carried out for every server that you wish to use. In this walkthrough, we’ll run these steps on five different servers.</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Verify if a connector is already installed by clicking <strong>Help</strong> &gt; <strong>Installation Details</strong> and searching for the connector. Click <strong>Close</strong>.</p> </li> 
-    <li> <p>Click <strong>Help</strong> &gt; <strong>Install New Software</strong>.</p> </li> 
-    <li> <p>Set <strong>Work with</strong> to <strong>Anypoint Connectors Update Site</strong>.</p> </li> 
-    <li> <p>Expand a category and click the checkbox for the connector you want to install.</p> </li> 
-    <li> <p>Click <strong>Next</strong>, <strong>Next</strong>, <strong>I accept the terms of the license agreement</strong>, <strong>Finish</strong>, and restart Studio when prompted.</p> </li> 
-    <li> <p>From a Mule Project in Studio, search for the connector and drag it to the Canvas.</p> </li> 
+    <li> <p>Download the latest version of Mule ESB and unzip it in your hard drive</p> </li> 
+    <li> <p>Download the compatible version of the <a href="/cloudhub/the-mule-agent">Mule Agent</a></p> </li> 
+    <li> <p>Copy and paste all of the files from the Mule Agent into the Mule ESB '{MULE-HOME}/bin' folder</p> 
+     <div class="admonitionblock note"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+         <td class="content"> While copying and pasting, if prompted select <code>replace all</code> </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> </li> 
+    <li> <p>Log in to your account on the Anypoint Platform</p> </li> 
+    <li> <p>Navigate to Cloudhub and then the Servers tab, then click <strong>Add Server</strong></p> 
+     <div class="paragraph"> 
+      <p>image</p> 
+     </div> </li> 
+    <li> <p>Click <strong>Copy</strong> to select the configuration</p> 
+     <div class="paragraph"> 
+      <p>image</p> 
+     </div> </li> 
+    <li> <p>Open <strong>prompt</strong> to open a command line window. cd into the Mule <code>/bin</code> folder, then hit <strong>Enter</strong></p> 
+     <div class="paragraph"> 
+      <p>image</p> 
+     </div> </li> 
+    <li> <p>At this point you should see a succes message. If you get any errors, check the troubleshooting section below</p> </li> 
+   </ol> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="troubleshooting"><a class="anchor" href="#troubleshooting"></a>Troubleshooting</h3> 
+   <div class="olist arabic"> 
+    <ol class="arabic"> 
+     <li> <p>Check to make sure your Mule instance on the server is running. Type <code>./mule</code> on the command line. If so, you should see a stream of messages</p> 
+      <div class="paragraph"> 
+       <p>screenshot</p> 
+      </div> </li> 
+     <li> <p>If so hit <code>Ctrl + C</code> to stop the process</p> </li> 
+     <li> <p>Verify that your Mule ESB version is compatible with the Mule Agent version you’re using, check the compatibility matrix. If your versions are compatible, please contact support. If they aren’t, please download the correct versions and follow the steps above once more.</p> </li> 
+    </ol> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="set-up-a-cluster"><a class="anchor" href="#set-up-a-cluster"></a>Set up a Cluster</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>diagram</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>In the <strong>Servers</strong> tab, click <strong>Crate Cluster</strong></p> </li> 
+    <li> <p>Select <strong>Multicast</strong> (because bla bla)</p> </li> 
+    <li> <p>Select the servers you want to include in your cluster</p> 
+     <div class="paragraph"> 
+      <p>image</p> 
+     </div> 
+     <div class="admonitionblock note"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+         <td class="content"> You can only select stand-alone servers (not part of a previous cluster/server group) that are online </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> </li> 
+    <li> <p>Click <strong>Create Cluster</strong></p> 
+     <div class="paragraph"> 
+      <p>image</p> 
+     </div> </li> 
+    <li> <p>Wait for the servers to restart and come online again. You will be prompted with a success message</p> </li> 
+   </ol> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If you have already created a cluster and wish to add additional servers to it, follow the steps below:</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>In the <strong>Servers</strong> tab, click on the cluster you wish to scale up</p> </li> 
+    <li> <p>On the side panel, click <strong>Add Server</strong></p> 
+     <div class="paragraph"> 
+      <p>image</p> 
+     </div> </li> 
+    <li> <p>Select the server you wish to add</p> </li> 
+    <li> <p>Wait for the servers to restart and come online again. You will be prompted with a success message</p> </li> 
    </ol> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="uninstalling-connectors"><a class="anchor" href="#uninstalling-connectors"></a>Uninstalling Connectors</h2> 
+ <h2 id="deploy-an-app-to-a-cluster"><a class="anchor" href="#deploy-an-app-to-a-cluster"></a>Deploy an app to a Cluster</h2> 
  <div class="sectionbody"> 
-  <div class="panel panel-default no-padding"> 
-   <div class="panel-heading no-padding"> 
-    <!-- Nav tabs --> 
-    <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#studio-visual-editor-937c6" role="tab" data-toggle="tab">Studio Visual Editor</a></li> 
-     <li><a href="#maven-a856e" role="tab" data-toggle="tab">Maven</a></li> 
-    </ul> 
-   </div> 
-   <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="studio-visual-editor-937c6"> 
-     <div class="olist arabic"> 
-      <ol class="arabic"> 
-       <li> <p>Under the&nbsp;<strong>Anypoint Studio</strong>&nbsp;menu, select&nbsp;<strong>About Anypoint Studio</strong>.&nbsp;<br> <span class="image"><img src="./_images/AboutAnypointStudio.png" alt="AboutAnypointStudio"></span></p> </li> 
-       <li> <p>In the&nbsp;<strong>About Anypoint Studio</strong>&nbsp;window, click&nbsp;<strong>Installation Details</strong>&nbsp;to display a list of the connectors you have installed on your instance of Anypoint Studio.&nbsp;</p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/AboutAnypointStudioMay2014-ed.png" alt="AboutAnypointStudioMay2014-ed"></span></p> 
-        </div> </li> 
-       <li> <p>In the&nbsp;<strong>Installed Software</strong>&nbsp;tab, select the line item you wish to uninstall, then click&nbsp;<strong>Uninstall…</strong>.&nbsp;</p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/InstalledSoftware.png" alt="InstalledSoftware"></span></p> 
-        </div> 
-        <div class="admonitionblock tip"> 
-         <table> 
-          <tbody> 
-           <tr> 
-            <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-            <td class="content"> To uninstall more than one item, click to select the first line item, then hold down the <code>CRTL</code> key (PC) or <code>command</code> key (Mac) as you click other line items. </td> 
-           </tr> 
-          </tbody> 
-         </table> 
-        </div> </li> 
-       <li> <p>Click&nbsp;<strong>Finish</strong>&nbsp;to uninstall the item(s) you selected.&nbsp;</p> 
-        <div class="paragraph"> 
-         <p><span class="image"><img src="./_images/uninstalldetails.png" alt="uninstalldetails"></span></p> 
-        </div> </li> 
-      </ol> 
-     </div> 
-    </div> 
-    <div class="tab-pane fade no-padding" id="maven-a856e"> 
+  <div class="paragraph"> 
+   <p>diagram</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Navigate to the <strong>Applications</strong> tab</p> </li> 
+    <li> <p>Click <strong>Deploy</strong> to deploy an application</p> </li> 
+    <li> <p>Assign a name to your application and select the target, in this case the cluster you created</p> 
      <div class="paragraph"> 
-      <p>To uninstall a connector, remove the Maven dependency for that connector from your <code>pom.xml</code> file.</p> 
-     </div> 
-    </div> 
-   </div> 
+      <p>image</p> 
+     </div> </li> 
+    <li> <p>Click <strong>Choose file</strong> to select the application you will deploy</p> 
+     <div class="admonitionblock note"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+         <td class="content"> The file you assign must be a Mule .zip file. See how to export these files from studio in <a href="i/mule-user-guide/v/3.7/importing-and-exporting-in-studio">Importing and Exporting in Studio</a>. </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> </li> 
+    <li> <p>Your application should now be deployed and come online</p> </li> 
+   </ol> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="dependencies"><a class="anchor" href="#dependencies"></a>Dependencies</h2> 
+ <h2 id="set-up-a-server-group"><a class="anchor" href="#set-up-a-server-group"></a>Set up a Server Group</h2> 
  <div class="sectionbody"> 
-  <div class="panel panel-default no-padding"> 
-   <div class="panel-heading no-padding"> 
-    <!-- Nav tabs --> 
-    <ul class="nav nav-tabs" role="tablist"> 
-     <li class="active"><a href="#anypoint-studio-cb745" role="tab" data-toggle="tab">Anypoint Studio</a></li> 
-     <li><a href="#maven-f253f" role="tab" data-toggle="tab">Maven</a></li> 
-    </ul> 
-   </div> 
-   <div class="panel-body tab-content no-padding"> 
-    <div class="tab-pane in active fade no-padding" id="anypoint-studio-cb745"> 
-     <div class="sect2"> 
-      <h3 id="automatic-dependency-management"><a class="anchor" href="#automatic-dependency-management"></a>Automatic Dependency Management</h3> 
-      <div class="paragraph"> 
-       <p>In an Anypoint Studio project that does <em>not</em> include Maven support, when you add a connector to your flow, Studio automatically adds all of its dependencies (including&nbsp;<code>.jar</code>&nbsp;files) to your project’s&nbsp;<a href="http://en.wikipedia.org/wiki/Classpath_(Java)">classpath</a>. Mule manages each connector’s dependencies as an Eclipse user library. Because Studio adds a connector’s dependencies to your project’s classpath, you can reference connector classes within other projects in your Anypoint Studio instance.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>In an Anypoint Studio project that is built with Maven support, when you add a connector to your flow, Studio automatically adds the dependency (and the inclusion element to the maven-mule-plugin, if needed) to your pom file. Then, it refreshes your project dependencies based on the new contents of your pom file, and the connector (and its transitive dependencies) appears referenced in your project’s "Referenced Libraries" section as a set of references to .jar files in your local m2 repository.</p> 
-      </div> 
-      <div class="paragraph"> 
-       <p>Refer to <a href="/mule-fundamentals/v/3.7/deploying-mule-applications">Deploying Mule Applications</a>&nbsp;for more information on managing your user libraries in Studio.</p> 
-      </div> 
-     </div> 
-     <div class="sect2"> 
-      <h3 id="manually-adding-connector-dependencies"><a class="anchor" href="#manually-adding-connector-dependencies"></a>Manually Adding Connector Dependencies</h3> 
-      <div class="paragraph"> 
-       <p>Complete the following procedure to manually add connector dependencies to your project’s classpath in Studio.</p> 
-      </div> 
-      <div class="olist arabic"> 
-       <ol class="arabic"> 
-        <li> <p>In the&nbsp;<strong>Package Explorer</strong>&nbsp;pane, right-click on your project’s name, then select&nbsp;<strong>Build Path</strong>&nbsp;&gt;&nbsp;<strong>Add Libraries</strong>.</p> </li> 
-        <li> <p>In the&nbsp;<strong>Add Libraries</strong>&nbsp;wizard, select&nbsp;<strong>Anypoint Connector Dependencies</strong>, and click&nbsp;<strong>Next</strong>.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/AddLibrary1.png" alt="AddLibrary1"></span></p> 
-         </div> </li> 
-        <li> <p>Check the boxes associated with the connector dependencies you wish to add to your project’s classpath.</p> 
-         <div class="paragraph"> 
-          <p><span class="image"><img src="./_images/AddLibrary2.png" alt="AddLibrary2"></span></p> 
-         </div> </li> 
-        <li> <p>Click&nbsp;<strong>Finish</strong>&nbsp;to add the dependencies.</p> </li> 
-       </ol> 
-      </div> 
-     </div> 
-    </div> 
-    <div class="tab-pane fade no-padding" id="maven-f253f"> 
+  <div class="paragraph"> 
+   <p>diagram</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>In the <strong>Servers</strong> tab, click <strong>Crate Group</strong></p> </li> 
+    <li> <p>Select the servers you want to include in your group</p> 
      <div class="paragraph"> 
-      <p>If you are installing a connector as a Maven dependency, ensure that you complete the following three steps for each connector:</p> 
+      <p>image</p> 
      </div> 
-     <div class="olist arabic"> 
-      <ol class="arabic"> 
-       <li> <p>To make any connector module available to a Mavenized Mule application, first add the following repositories to your <code>pom.xml</code> file:</p> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-13
-14
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>repositories<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>repository<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>id<span class="entity">&amp;gt;</span>mulesoft-releases<span class="entity">&amp;lt;</span>/id<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>name<span class="entity">&amp;gt;</span>MuleSoft Repository<span class="entity">&amp;lt;</span>/name<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>url<span class="entity">&amp;gt;</span>https://repository.mulesoft.org/releases/<span class="entity">&amp;lt;</span>/url<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>layout<span class="entity">&amp;gt;</span>default<span class="entity">&amp;lt;</span>/layout<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>/repository<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>repository<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>id<span class="entity">&amp;gt;</span>mulesoft-snapshots<span class="entity">&amp;lt;</span>/id<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>name<span class="entity">&amp;gt;</span>MuleSoft Snapshot Repository<span class="entity">&amp;lt;</span>/name<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>url<span class="entity">&amp;gt;</span>https://repository.mulesoft.org/snapshots/<span class="entity">&amp;lt;</span>/url<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>layout<span class="entity">&amp;gt;</span>default<span class="entity">&amp;lt;</span>/layout<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>/repository<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/repositories<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> </li> 
-       <li> <p>Add the module as a dependency to your project, replacing <code>insert-artifactId-here</code> with the artifactId of the specific module you are adding and replacing RELEASE with the version of this module.</p> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-2
-3
-4
-5
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>dependency<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>groupId<span class="entity">&amp;gt;</span>org.mule.modules<span class="entity">&amp;lt;</span>/groupId<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>artifactId<span class="entity">&amp;gt;</span>insert-artifactId-here<span class="entity">&amp;lt;</span>/artifactId<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>version<span class="entity">&amp;gt;</span>RELEASE<span class="entity">&amp;lt;</span>/version<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/dependency<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> </li> 
-       <li> <p>If you plan to use this module inside a Mule application, you need to add it to the packaging process. As such, the final zip file which contains your flows and Java code also contains this module and its dependencies. Add a special inclusion to the configuration of the Mule-Maven plugin for this module, replacing <code>insert-artifactId-here</code> with the artifactId of the specific module you are adding.</p> 
-        <div class="listingblock"> 
-         <div class="content"> 
-          <pre class="CodeRay highlight"><code data-lang="xml">
-       
-               
-            <table class="CodeRay"> 
-             <tbody> 
-              <tr> 
-               <td class="line-numbers"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-<strong>10</strong>
-11
-12
-13
-14
-</pre></td> 
-               <td class="code"><pre><span class="entity">&amp;lt;</span>plugin<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>groupId<span class="entity">&amp;gt;</span>org.mule.tools<span class="entity">&amp;lt;</span>/groupId<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>artifactId<span class="entity">&amp;gt;</span>maven-mule-plugin<span class="entity">&amp;lt;</span>/artifactId<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>extensions<span class="entity">&amp;gt;</span>true<span class="entity">&amp;lt;</span>/extensions<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>configuration<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>excludeMuleDependencies<span class="entity">&amp;gt;</span>false<span class="entity">&amp;lt;</span>/excludeMuleDependencies<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>inclusions<span class="entity">&amp;gt;</span>
-            <span class="entity">&amp;lt;</span>inclusion<span class="entity">&amp;gt;</span>
-                <span class="entity">&amp;lt;</span>groupId<span class="entity">&amp;gt;</span>org.mule.modules<span class="entity">&amp;lt;</span>/groupId<span class="entity">&amp;gt;</span>
-                <span class="entity">&amp;lt;</span>artifactId<span class="entity">&amp;gt;</span>insert-artifactId-here<span class="entity">&amp;lt;</span>/artifactId<span class="entity">&amp;gt;</span>
-            <span class="entity">&amp;lt;</span>/inclusion<span class="entity">&amp;gt;</span>
-        <span class="entity">&amp;lt;</span>/inclusions<span class="entity">&amp;gt;</span>
-    <span class="entity">&amp;lt;</span>/configuration<span class="entity">&amp;gt;</span>
-<span class="entity">&amp;lt;</span>/plugin<span class="entity">&amp;gt;</span></pre></td> 
-              </tr> 
-             </tbody> 
-            </table></code></pre> 
-         </div> 
-        </div> </li> 
-      </ol> 
-     </div> 
-    </div> 
-   </div> 
+     <div class="admonitionblock note"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+         <td class="content"> You can only select stand-alone servers (not part of a previous cluster/server group) that are online </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> </li> 
+    <li> <p>Click <strong>Create Group</strong></p> 
+     <div class="paragraph"> 
+      <p>image</p> 
+     </div> </li> 
+    <li> <p>Wait for the success message</p> </li> 
+   </ol> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="see-also"><a class="anchor" href="#see-also"></a>See Also</h2> 
+ <h2 id="deploy-an-app-to-a-server-group"><a class="anchor" href="#deploy-an-app-to-a-server-group"></a>Deploy an App to a Server Group</h2> 
  <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>Read more about using <a href="/mule-user-guide/v/3.7/anypoint-connectors">Anypoint Connectors</a>.&nbsp;</p> </li> 
-    <li> <p>Learn how to build your own Mule extensions with&nbsp;<a href="/anypoint-connector-devkit/v/3.7">Anypoint Connector DevKit</a>.</p> </li> 
-    <li> <p>Learn how to <a href="/mule-user-guide/v/3.7/working-with-multiple-versions-of-connectors">work with multiple versions of connectors</a>.</p> </li> 
-   </ul> 
+  <div class="paragraph"> 
+   <p>diagram</p> 
   </div> 
+  <div class="paragraph"> 
+   <p>diagram</p> 
+  </div> 
+  <div class="olist arabic"> 
+   <ol class="arabic"> 
+    <li> <p>Navigate to the <strong>Applications</strong> tab</p> </li> 
+    <li> <p>Click <strong>Deploy</strong> to deploy an application</p> </li> 
+    <li> <p>Assign a name to your application and select the target, in this case the server group you created</p> 
+     <div class="paragraph"> 
+      <p>image</p> 
+     </div> </li> 
+    <li> <p>Click <strong>Choose file</strong> to select the application you will deploy</p> 
+     <div class="admonitionblock note"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
+         <td class="content"> The file you assign must be a Mule .zip file. See how to export these files from studio in <a href="i/mule-user-guide/v/3.7/importing-and-exporting-in-studio">Importing and Exporting in Studio</a>. </td> 
+        </tr> 
+       </tbody> 
+      </table> 
+     </div> </li> 
+    <li> <p>Your application should now be deployed and come online</p> </li> 
+   </ol> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="deploy-an-app-to-the-cloud"><a class="anchor" href="#deploy-an-app-to-the-cloud"></a>Deploy an App to the Cloud</h2> 
+ <div class="sectionbody"> 
  </div> 
 </div>
         </div>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#installing-connectors">Installing Connectors</a></li><li><a class="scroll-menu-link" href="#uninstalling-connectors">Uninstalling Connectors</a></li><li><a class="scroll-menu-link" href="#dependencies">Dependencies</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#configure-a-server">Configure a Server</a></li><li><a class="scroll-menu-link" href="#set-up-a-cluster">Set up a Cluster</a></li><li><a class="scroll-menu-link" href="#deploy-an-app-to-a-cluster">Deploy an app to a Cluster</a></li><li><a class="scroll-menu-link" href="#set-up-a-server-group">Set up a Server Group</a></li><li><a class="scroll-menu-link" href="#deploy-an-app-to-a-server-group">Deploy an App to a Server Group</a></li><li><a class="scroll-menu-link" href="#deploy-an-app-to-the-cloud">Deploy an App to the Cloud</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
