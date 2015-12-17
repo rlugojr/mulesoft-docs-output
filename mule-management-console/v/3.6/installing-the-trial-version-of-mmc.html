@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/mule-management-console/v/3.6/installing-the-trial-version-of-mmc" />
-    <meta name="description" content="MuleSoft offers a http://www.mulesoft.com/management-console-mule-esb[trial version of the Mule Management Console] for evaluation. The trial ..." />
+    <meta name="description" content="MuleSoft offers the trial version of the Mule Management Console for evaluation. The trial version is limited in some functionality and is not appr..." />
     <meta class="swiftype" name="title" data-type="string" content="Installing the Trial Version of MMC" />
 
 </head>
@@ -886,15 +886,15 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>MuleSoft offers a&nbsp;http://www.mulesoft.com/management-console-mule-esb[trial version of the Mule Management Console] for evaluation. The trial version is limited in some functionality and is not appropriate for production deployments. For information about installing the production version of MMC, please refer instead to&nbsp;<a href="/mule-management-console/v/3.5/installing-the-production-version-of-mmc">Installing the Production Version of MMC</a>.&nbsp;</p> 
+   <p>MuleSoft offers the <a href="https://www.mulesoft.com/dl/mmc">trial version of the Mule Management Console</a> for evaluation. The trial version is limited in some functionality and is not appropriate for production deployments. For information about installing the production version of MMC, refer instead to&nbsp;<a href="/mule-management-console/v/3.6/installing-the-production-version-of-mmc">Installing the Production Version of MMC</a>.</p> 
   </div> 
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="assumptions"><a class="anchor" href="#assumptions"></a>Assumptions</h2> 
+ <h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>This document assumes that you have downloaded the current version of&nbsp;MuleSoft’s <a href="http://www.mulesoft.com/management-console-mule-esb">bundled runtime download</a> – ESB with Mule Management Console (MMC). (For information about installing the production version of MMC, please refer instead to&nbsp;<a href="/mule-management-console/v/3.5/installing-the-production-version-of-mmc">Installing the Production Version of MMC</a>.)</p> 
+   <p>This document assumes that you have downloaded the current version of MuleSoft’s <a href="https://www.mulesoft.com/dl/mmc">MMC download</a> – ESB with Mule Management Console (MMC). (For information about installing the production version of MMC, refer instead to&nbsp;<a href="/mule-management-console/v/3.6/installing-the-production-version-of-mmc">Installing the Production Version of MMC</a>.)</p> 
   </div> 
  </div> 
 </div> 
@@ -903,87 +903,73 @@
  <div class="sectionbody"> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
-    <li> <p>Go to&nbsp;http://www.mulesoft.com/management-console-mule-esb, then click <strong>Download</strong>.</p> </li> 
+    <li> <p>Go to&nbsp;<a href="https://www.mulesoft.com/dl/mmc">MMC Download</a>, and click <strong>Download</strong>.</p> </li> 
     <li> <p>Fill out the registration form.</p> </li> 
-    <li> <p>On the Enterprise trial page, click the appropriate button to download the Runtime bundle for your operating system.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/muleesb35trial.png" alt="muleesb35trial"></span></p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Extract the file. The file will expand to a directory containing the files and subdirectories listed below.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p><code>mmc.3.5.0</code> <code>mule-enterprise-3.5.0</code> <code>shutdown.bat</code> <code>shutdown.sh</code> <code>startup.bat</code> <code>startup.sh</code> <code>status.sh</code></p> 
-  </div> 
-  <div class="paragraph"> 
-   <p>The first two are directories; the rest are scripts that perform functions that are specified in their filenames.</p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
+    <li> <p>On the Enterprise trial page, click the appropriate button to download the Runtime bundle for your operating system.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/muleesb35trial.png" alt="muleesb35trial"></span></p> 
+     </div> </li> 
+    <li> <p>Extract the file. The file expands to a directory containing the files and subdirectories listed below.</p> 
+     <div class="paragraph"> 
+      <p><code>mmc.3.5.0</code><br> <code>mule-enterprise-3.5.0</code><br> <code>shutdown.bat</code><br> <code>shutdown.sh</code><br> <code>startup.bat</code><br> <code>startup.sh</code><br> <code>status.sh</code><br></p> 
+     </div> 
+     <div class="paragraph"> 
+      <p>The first two are directories; the rest are scripts that perform functions that are specified in their filenames.</p> 
+     </div> </li> 
     <li> <p>To start MMC and Mule ESB, follow these steps:</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
-       <li> <p>Open a terminal, then&nbsp;<code>cd</code> to the unzipped directory where the scripts reside.</p> </li> 
-       <li> <p>Launch the startup script appropriate for your operating system:&nbsp;<code>startup.sh</code> for Unix, Mac or Linux; and&nbsp;<code>startup.bat</code> for Windows.</p> </li> 
-      </ol> 
-     </div> </li> 
-   </ol> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+       <li> <p>Open a terminal, then <code>cd</code> to the unzipped directory where the scripts reside.</p> </li> 
+       <li> <p>Launch the startup script appropriate for your operating system: <code>startup.sh</code> for Unix, Mac or Linux; and <code>startup.bat</code> for Windows.</p> 
+        <div class="listingblock"> 
+         <div class="content"> 
+          <pre class="CodeRay highlight"><code data-lang="code">
+               
+            <table class="CodeRay"> 
+             <tbody> 
+              <tr> 
+               <td class="line-numbers"><pre>1
 2
 </pre></td> 
-         <td class="code"><pre>cd mmc-distribution-mule-console-bundle-&lt;version&gt;
+               <td class="code"><pre>cd mmc-distribution-mule-console-bundle-&lt;version&gt;
 ./startup.sh</pre></td> 
-        </tr> 
-       </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="admonitionblock warning"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
-      <td class="content"> Always run the scripts from the directory they reside on. The scripts contain relative paths and will not work properly if you run them from another directory. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="admonitionblock tip"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
-      <td class="content"> You can also launch the Unix startup scripts with custom parameters, such as special listening ports. For details, see <a href="#script-parameters">Script Parameters</a> below. The Windows script will automatically use port 8585 for Tomcat and 7777 for Mule. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>If on Unix, the startup script will prompt you for the listening port for Mule ESB. Enter the desired port, or press Enter to accept the default, 7777. On Windows, the startup script does not prompt you for the Mule port, since it always uses the default, 7777.</p> </li> 
-    <li> <p>The startup script will launch an embedded Tomcat server (listening on port 8585 by default) and deploy MMC to it. Then, it will start Mule ESB. During startup, your terminal console will fill with startup messages. After startup is complete, the script will finish and you will regain your terminal prompt. The last few messages indicate successful startup.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="listingblock"> 
-   <div class="content"> 
-    <pre class="CodeRay highlight"><code data-lang="code">
-         
-      <table class="CodeRay"> 
-       <tbody> 
-        <tr> 
-         <td class="line-numbers"><pre>1
+              </tr> 
+             </tbody> 
+            </table></code></pre> 
+         </div> 
+        </div> 
+        <div class="admonitionblock warning"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-warning" title="Warning"></i> </td> 
+            <td class="content"> Always run the scripts from the directory they reside on. The scripts contain relative paths and do not work properly if you run them from another directory. </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+        <div class="admonitionblock tip"> 
+         <table> 
+          <tbody> 
+           <tr> 
+            <td class="icon"> <i class="fa icon-tip" title="Tip"></i> </td> 
+            <td class="content"> You can also launch the Unix startup scripts with custom parameters, such as special listening ports. For details, see <a href="#script-parameters">Script Parameters</a> below. The Windows script automatically uses port 8585 for Tomcat and 7777 for Mule. </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> </li> 
+      </ol> 
+     </div> </li> 
+    <li> <p>If on Unix, the startup script prompts you for the listening port for Mule ESB. Enter the desired port, or press Enter to accept the default, 7777. On Windows, the startup script does not prompt you for the Mule port, since it always uses the default, 7777.</p> </li> 
+    <li> <p>The startup script launches an embedded Tomcat server (listening on port 8585 by default) and deploy MMC to it. Then, it will start Mule ESB. During startup, your terminal console fills with startup messages. After startup is complete, the script finishes and you regain your terminal prompt. The last few messages indicate successful startup.</p> 
+     <div class="listingblock"> 
+      <div class="content"> 
+       <pre class="CodeRay highlight"><code data-lang="code">
+            
+         <table class="CodeRay"> 
+          <tbody> 
+           <tr> 
+            <td class="line-numbers"><pre>1
 2
 3
 4
@@ -1010,7 +996,7 @@
 25
 26
 </pre></td> 
-         <td class="code"><pre>$ ./startup.sh
+            <td class="code"><pre>$ ./startup.sh
 Please enter the desired port for Mule [Default 7777]:
 &nbsp;
 Starting MMC, please wait...
@@ -1036,37 +1022,31 @@ Mule Started
 Mule running as PID=23911
 Tomcat and MMC running as PID=23332
 Finished starting Mule and MMC. Please go to http://localhost:8585/mmc-3.5.0</pre></td> 
+           </tr> 
+          </tbody> 
+         </table></code></pre> 
+      </div> 
+     </div> </li> 
+    <li> <p>At this point, Mule ESB and MMC are up and running. To log in to MMC, open a Web browser and go to the URL indicated in the last line of the startup messages. In the example above, this would be <code><a href="http://localhost:8585/mmc-3.5.0" class="bare">http://localhost:8585/mmc-3.5.0</a></code>.</p> </li> 
+    <li> <p>You are greeted by the MMC welcome screen, shown below. Log in with username <code>admin</code>, password&nbsp;<code>admin</code>.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/mmc_welcome_screen.png" alt="mmc_welcome_screen"></span></p> 
+     </div> </li> 
+    <li> <p>Congratulations, you’ve installed and launched the Mule Management Console! See the links in the Go Further section to learn more about MMC.</p> 
+     <div class="paragraph"> 
+      <p><span class="image"><img src="./_images/MMC-landingpage.png" alt="MMC-landingpage"></span></p> 
+     </div> 
+     <div class="admonitionblock caution"> 
+      <table> 
+       <tbody> 
+        <tr> 
+         <td class="icon"> <i class="fa icon-caution" title="Caution"></i> </td> 
+         <td class="content"> Do not move the startup, shutdown, and status scripts from their original location. They contain references to relative paths and do not work if you move them. </td> 
         </tr> 
        </tbody> 
-      </table></code></pre> 
-   </div> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>At this point, Mule ESB and MMC are up and running. To log in to MMC, open a Web browser and go to the URL indicated in the last line of the startup messages. In the example shown above, this would be <code><a href="http://localhost:8585/mmc-3.5.0" class="bare">http://localhost:8585/mmc-3.5.0</a></code>.</p> </li> 
-    <li> <p>You will be greeted by the MMC welcome screen, shown below. Log in with username <code>admin</code>, password&nbsp;<code>admin</code>.</p> </li> 
+      </table> 
+     </div> </li> 
    </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/mmc_welcome_screen.png" alt="mmc_welcome_screen"></span></p> 
-  </div> 
-  <div class="olist arabic"> 
-   <ol class="arabic"> 
-    <li> <p>Congratulations, you’ve installed and launched the Mule Management Console! See the links in the Go Further section to learn more about MMC.</p> </li> 
-   </ol> 
-  </div> 
-  <div class="paragraph"> 
-   <p><span class="image"><img src="./_images/MMC-landingpage.png" alt="MMC-landingpage"></span></p> 
-  </div> 
-  <div class="admonitionblock caution"> 
-   <table> 
-    <tbody> 
-     <tr> 
-      <td class="icon"> <i class="fa icon-caution" title="Caution"></i> </td> 
-      <td class="content"> Do not move the startup, shutdown and status scripts from their original location. They contain references to relative paths and will not work if you move them. </td> 
-     </tr> 
-    </tbody> 
-   </table> 
   </div> 
  </div> 
 </div> 
@@ -1458,8 +1438,8 @@ Mule Enterprise Edition is running as PID=23911.</pre></td>
  <div class="sectionbody"> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>Get familiar with the&nbsp;<a href="/mule-management-console/v/3.5/orientation-to-the-console">MMC console</a></p> </li> 
-    <li> <p>Learn the basics of using MMC with the&nbsp;<a href="/mule-management-console/v/3.5/mmc-walkthrough">MMC Walkthrough</a></p> </li> 
+    <li> <p>Get familiar with the&nbsp;<a href="/mule-management-console/v/3.6/orientation-to-the-console">MMC console</a></p> </li> 
+    <li> <p>Learn the basics of using MMC with the&nbsp;<a href="/mule-management-console/v/3.6/mmc-walkthrough">MMC Walkthrough</a></p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -1468,7 +1448,7 @@ Mule Enterprise Edition is running as PID=23911.</pre></td>
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#assumptions">Assumptions</a></li><li><a class="scroll-menu-link" href="#downloading-the-trial-version-of-mmc">Downloading the Trial Version of MMC</a></li><li><a class="scroll-menu-link" href="#obtaining-help">Obtaining Help</a></li><li><a class="scroll-menu-link" href="#script-parameters">Script Parameters</a></li><li><a class="scroll-menu-link" href="#message-logging">Message Logging</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#prerequisites">Prerequisites</a></li><li><a class="scroll-menu-link" href="#downloading-the-trial-version-of-mmc">Downloading the Trial Version of MMC</a></li><li><a class="scroll-menu-link" href="#obtaining-help">Obtaining Help</a></li><li><a class="scroll-menu-link" href="#script-parameters">Script Parameters</a></li><li><a class="scroll-menu-link" href="#message-logging">Message Logging</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
