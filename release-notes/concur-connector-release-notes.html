@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/release-notes/concur-connector-release-notes" />
-    <meta name="description" content="Standard Concur is a SaaS provider of integrated travel and expense management solutions. Anypoint Connector for Concur operates as a bi-direc..." />
+    <meta name="description" content="Select Concur is a SaaS provider of integrated travel and expense management solutions. The Anypoint Connector for Concur operates as a bi-dir..." />
     <meta class="swiftype" name="title" data-type="string" content="Concur Connector Release Notes" />
 
 </head>
@@ -889,13 +889,99 @@
           <div id="preamble"> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p><em>Standard</em></p> 
+   <p><em>Select</em></p> 
   </div> 
   <div class="paragraph"> 
-   <p>Concur is a SaaS provider of integrated travel and expense management solutions. Anypoint Connector for Concur operates as&nbsp;a bi-directional gateway between instances of Concur and Mule. It’s available for deployment on-premises and in the cloud.</p> 
+   <p>Concur is a SaaS provider of integrated travel and expense management solutions. The Anypoint Connector for Concur operates as&nbsp;a bi-directional gateway between instances of Concur and Mule. It’s available for deployment on-premises and in the cloud.</p> 
   </div> 
   <div class="paragraph"> 
-   <p><strong>Guide</strong>:&nbsp;&nbsp;<a href="/mule-user-guide/v/3.7/concur-connector">Concur Connector</a></p> 
+   <p><strong>Guide</strong>:&nbsp;<a href="/mule-user-guide/v/3.7/concur-connector">Concur Connector</a></p> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="concur-3-0-december-21-2015"><a class="anchor" href="#concur-3-0-december-21-2015"></a>Concur 3.0 - December 21, 2015</h2> 
+ <div class="sectionbody"> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: %;"> 
+    <col style="width: %;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Application/Service</th> 
+     <th class="tableblock halign-left valign-top">Version</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Mule Runtime</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">3.6.1 or above</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Anypoint Studio</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">October 2015</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="admonitionblock important"> 
+   <table> 
+    <tbody> 
+     <tr> 
+      <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
+      <td class="content"> 
+       <div class="paragraph"> 
+        <p>Concur connector supports only a <strong>subset of operations from certain Concur API versions</strong> available in the Concur Developer Sandbox.</p> 
+       </div> 
+       <div class="paragraph"> 
+        <p>See <a href="/mule-user-guide/v/3.7/concur-connector#concur-api-availability">Concur API Availability</a> for complete information on supported operations.</p> 
+       </div> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="features"><a class="anchor" href="#features"></a>Features</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><strong>Get User Profile</strong> allows the retrieval of other user profiles by providing the <strong>loginId</strong> of a <strong>User</strong>.</p> </li> 
+     <li> <p>The following APIs have been migrated to API v3.0:</p> 
+      <div class="ulist"> 
+       <ul> 
+        <li> <p><strong>Expense</strong></p> 
+         <div class="ulist"> 
+          <ul> 
+           <li> <p>Attendees</p> </li> 
+           <li> <p>Entries</p> </li> 
+           <li> <p>Reports</p> </li> 
+           <li> <p>Quick Expense</p> </li> 
+          </ul> 
+         </div> </li> 
+        <li> <p><strong>Image</strong></p> 
+         <div class="ulist"> 
+          <ul> 
+           <li> <p>Receipt Image</p> </li> 
+          </ul> 
+         </div> </li> 
+       </ul> 
+      </div> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="concur-3-0-fixed-in-this-release"><a class="anchor" href="#concur-3-0-fixed-in-this-release"></a>Concur 3.0 Fixed in this Release</h3> 
+   <div class="paragraph"> 
+    <p>There are no bug fixes in this release.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="concur-3-0-known-issues"><a class="anchor" href="#concur-3-0-known-issues"></a>Concur 3.0 Known Issues</h3> 
+   <div class="ulist"> 
+    <ul> 
+     <li> <p><strong>Post Expense Report Submit Request</strong> will not be able to submit reports that have been created with API V3. That is why we have removed this operation, until Concur fixes their issues.</p> </li> 
+     <li> <p>The same occurs with <strong>Update Expense Entry Attendee</strong> and <strong>Delete Expense Entry Attendee</strong>. Both will throw an Internal Server Error due to a Concur known issue.</p> </li> 
+    </ul> 
+   </div> 
   </div> 
  </div> 
 </div> 
@@ -925,10 +1011,6 @@
      <td class="tableblock halign-left valign-top"><p class="tableblock">Anypoint Studio</p></td> 
      <td class="tableblock halign-left valign-top"><p class="tableblock">May 2014</p></td> 
     </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Concur API</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">v1<br> v1.1<br> v2<br> v3</p></td> 
-    </tr> 
    </tbody> 
   </table> 
   <div class="sect2"> 
@@ -946,56 +1028,10 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="concur-1-0-may-16-2014"><a class="anchor" href="#concur-1-0-may-16-2014"></a>Concur 1.0 - May 16, 2014</h2> 
+ <h2 id="concur-connector-1-0-and-2-0-supported-concur-apis-and-operations"><a class="anchor" href="#concur-connector-1-0-and-2-0-supported-concur-apis-and-operations"></a>Concur Connector 1.0 and 2.0 - Supported Concur APIs and Operations</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Concur Connector 1.0 is compatible with the following versions of Mule Runtime and Concur APIs respectively.</p> 
-  </div> 
-  <table class="tableblock frame-all grid-all spread"> 
-   <colgroup> 
-    <col style="width: %;"> 
-    <col style="width: %;"> 
-   </colgroup> 
-   <thead> 
-    <tr> 
-     <th class="tableblock halign-left valign-top">Application/Service</th> 
-     <th class="tableblock halign-left valign-top">Version</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Mule Runtime</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">3.4.X</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Anypoint Studio</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">May 2014</p></td> 
-    </tr> 
-    <tr> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">Concur API</p></td> 
-     <td class="tableblock halign-left valign-top"><p class="tableblock">v1<br> v1.1<br> v2<br> v3</p></td> 
-    </tr> 
-   </tbody> 
-  </table> 
-  <div class="sect2"> 
-   <h3 id="concur-1-0-fixed-in-this-release"><a class="anchor" href="#concur-1-0-fixed-in-this-release"></a>Concur 1.0 Fixed in this Release</h3> 
-   <div class="paragraph"> 
-    <p>There are no bug fixes in this release.</p> 
-   </div> 
-  </div> 
-  <div class="sect2"> 
-   <h3 id="concur-1-0-known-issues"><a class="anchor" href="#concur-1-0-known-issues"></a>Concur 1.0&nbsp;Known Issues</h3> 
-   <div class="paragraph"> 
-    <p>There are no reported issues that are unresolved in this release.</p> 
-   </div> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="supported-apis-and-operations"><a class="anchor" href="#supported-apis-and-operations"></a>Supported APIs and Operations</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Both Concur connector versions support the following Concur APIs and corresponding operations:</p> 
+   <p>Both Concur connector versions 1.0 and 2.0 support the following Concur APIs and corresponding operations:</p> 
   </div> 
   <table class="tableblock frame-all grid-all spread"> 
    <colgroup> 
@@ -1158,6 +1194,52 @@
  </div> 
 </div> 
 <div class="sect1"> 
+ <h2 id="concur-1-0-may-16-2014"><a class="anchor" href="#concur-1-0-may-16-2014"></a>Concur 1.0 - May 16, 2014</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Concur Connector 1.0 is compatible with the following versions of Mule Runtime and Concur APIs respectively.</p> 
+  </div> 
+  <table class="tableblock frame-all grid-all spread"> 
+   <colgroup> 
+    <col style="width: %;"> 
+    <col style="width: %;"> 
+   </colgroup> 
+   <thead> 
+    <tr> 
+     <th class="tableblock halign-left valign-top">Application/Service</th> 
+     <th class="tableblock halign-left valign-top">Version</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Mule Runtime</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">3.4.X</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Anypoint Studio</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">May 2014</p></td> 
+    </tr> 
+    <tr> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">Concur API</p></td> 
+     <td class="tableblock halign-left valign-top"><p class="tableblock">v1<br> v1.1<br> v2<br> v3</p></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <div class="sect2"> 
+   <h3 id="concur-1-0-fixed-in-this-release"><a class="anchor" href="#concur-1-0-fixed-in-this-release"></a>Concur 1.0 Fixed in this Release</h3> 
+   <div class="paragraph"> 
+    <p>There are no bug fixes in this release.</p> 
+   </div> 
+  </div> 
+  <div class="sect2"> 
+   <h3 id="concur-1-0-known-issues"><a class="anchor" href="#concur-1-0-known-issues"></a>Concur 1.0&nbsp;Known Issues</h3> 
+   <div class="paragraph"> 
+    <p>There are no reported issues that are unresolved in this release.</p> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
  <h2 id="support-resources"><a class="anchor" href="#support-resources"></a>Support Resources</h2> 
  <div class="sectionbody"> 
   <div class="ulist"> 
@@ -1173,7 +1255,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#concur-2-0-july-14-2014">Concur 2.0 - July 14, 2014</a></li><li><a class="scroll-menu-link" href="#concur-1-0-may-16-2014">Concur 1.0 - May 16, 2014</a></li><li><a class="scroll-menu-link" href="#supported-apis-and-operations">Supported APIs and Operations</a></li><li><a class="scroll-menu-link" href="#support-resources">Support Resources</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#concur-3-0-december-21-2015">Concur 3.0 - December 21, 2015</a></li><li><a class="scroll-menu-link" href="#concur-2-0-july-14-2014">Concur 2.0 - July 14, 2014</a></li><li><a class="scroll-menu-link" href="#concur-connector-1-0-and-2-0-supported-concur-apis-and-operations">Concur Connector 1.0 and 2.0 - Supported Concur APIs and Operations</a></li><li><a class="scroll-menu-link" href="#concur-1-0-may-16-2014">Concur 1.0 - May 16, 2014</a></li><li><a class="scroll-menu-link" href="#support-resources">Support Resources</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
