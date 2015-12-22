@@ -1111,6 +1111,16 @@
    <div class="paragraph"> 
     <p>Check this box to enable persistent queues on your application. Persistent queues protect against message loss and allow you to distribute workloads across a set of workers.&nbsp;Before you can take advantage of persistent queueing, your application needs to be set up to use queues. See <a href="/cloudhub/cloudhub-fabric">CloudHub Fabric</a> for more information.</p> 
    </div> 
+   <div class="admonitionblock important"> 
+    <table> 
+     <tbody> 
+      <tr> 
+       <td class="icon"> <i class="fa icon-important" title="Important"></i> </td> 
+       <td class="content"> If your mule application is using <a href="/mule-user-guide/v/3.7/batch-processing">Batch</a> component and persistent queues, then you might see batch record being processed multiple times. All batch records are stored in Amazon SQS and by default the visibility of the message is set to 70 seconds. If your batch process takes longer than 70 seconds, then batch process might see same message again and process it multiple times. To avoid this issue please set 'persistent.queue.min.timeout' system parameter to a reasonable value, for example if your batch process takes 30 minutes to complete then set value to 'persistent.queue.min.timeout=2700000' milliseconds ( 45 Minutes). Maximum value of 43000000 milliseconds (12 hours) is supported. See screen shot below for setting the value in cloudhub <span class="image"><img src="./_images/MuleBatchWithPersistentQueueDuplicationSolution.png" alt="MuleBatchWithPersistentQueues"></span> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
   </div> 
   <div class="sect2"> 
    <h3 id="automatic-restart"><a class="anchor" href="#automatic-restart"></a>Automatic Restart</h3> 
