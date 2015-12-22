@@ -19,7 +19,7 @@
     <script src="/js/scripts.js"></script>
     <meta charset="utf-8">
     <link rel="canonical" href="https://docs.mulesoft.com/cloudhub/walkthrough-create-clusters-and-servergroups" />
-    <meta name="description" content=" -Description of Scenario + Purpose of it. -Pre-requisites for Scenario To create server groups or clusters, all servers must be -Some preliminary ..." />
+    <meta name="description" content=" This document walks you through the steps needed to configure a server in the Runtime Manager, and then add it to a Cluster or a Server Group to t..." />
     <meta class="swiftype" name="title" data-type="string" content="Walkthrough Create Clusters and Server Groups" />
 
 </head>
@@ -726,8 +726,8 @@
 <li><i></i><a href="/anypoint-b2b/b2b-connector">B2B Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector">AS2 Connector</a></li><li><i></i><a href="/anypoint-b2b/as2-connector-2.0.0-rc">AS2 Connector 2.0.0 RC</a></li><li><i></i><a href="/anypoint-b2b/ftps-connector">FTPS Connector</a></li><li><i></i><a href="/anypoint-b2b/edi-x12-order-processing-example">EDI X12 Order Processing Example</a></li><li><i></i><a href="/anypoint-b2b/supported-edi-document-types">Supported EDI Document Types</a></li></ul></li>
 <li>
 <i></i>
-<a href="/anypoint-platform-on-premises/v/1.0/">Anypoint On-Premises</a><ul>
-<li><i></i><a href="/anypoint-platform-on-premises/v/1.0/installing-anypoint-on-premises">Installing Anypoint On-Premises</a></li><li><i></i><a href="/anypoint-platform-on-premises/v/1.0/">Anypoint Platform for APIs</a></li><li><i></i><a href="/anypoint-platform-on-premises/v/1.0/">Anypoint Runtime Manager</a></li><li><i></i><a href="/anypoint-platform-on-premises/v/1.0/">Anypoint Platform Administration</a></li><li><i></i><a href="/anypoint-platform-on-premises/v/1.0/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
+<a href="/anypoint-platform-on-premises/v/1.1.0/">Anypoint On-Premises</a><ul>
+<li><i></i><a href="/anypoint-platform-on-premises/v/1.1.0/installing-anypoint-on-premises">Installing Anypoint On-Premises</a></li><li><i></i><a href="/anypoint-platform-on-premises/v/1.1.0/">Anypoint Platform for APIs</a></li><li><i></i><a href="/anypoint-platform-on-premises/v/1.1.0/">Anypoint Runtime Manager</a></li><li><i></i><a href="/anypoint-platform-on-premises/v/1.1.0/">Anypoint Platform Administration</a></li><li><i></i><a href="/anypoint-platform-on-premises/v/1.1.0/anypoint-exchange">Anypoint Exchange</a></li></ul></li>
 <li>
 <i></i>
 <a href="/anypoint-connector-devkit/v/3.8/">Anypoint Connector DevKit</a><ul>
@@ -892,10 +892,22 @@
    <p><span class="image"><img src="./_images/cluster_high_level.png" alt="diagram"></span></p> 
   </div> 
   <div class="paragraph"> 
-   <p>-Description of Scenario + Purpose of it. -Pre-requisites for Scenario To create server groups or clusters, all servers must be -Some preliminary - troubleshooting steps</p> 
+   <p>This document walks you through the steps needed to configure a server in the Runtime Manager, and then add it to a Cluster or a Server Group to then deploy apps to multiple servers.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>To be able to walk through this scenario you must have the following: * an Anypoint Platform account that enables you to use the runtime manager * five servers on premises that match the <a href="/mule-user-guide/v/3.7/hardware-and-software-requirements">Hardware and Software Requirements</a> to run Mule ESB. None of these servers can belong to existing clusters or server groups.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>-Description of Scenario + Purpose of it.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>-Some preliminary - troubleshooting steps</p> 
   </div> 
   <div class="paragraph"> 
    <p>when to use cluster / server group</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The main difference between a cluster and a server group, is that a server group is stateless whilst a cluster does track server states. The servers in a cluster know what state the other servers are in, and so distribute the work load accordingly. Servers in a server group don’t know what the rest of the machines are up to.</p> 
   </div> 
  </div> 
 </div> 
@@ -912,17 +924,18 @@
    <ol class="arabic"> 
     <li> <p>Download the latest version of Mule ESB and unzip it in your hard drive</p> </li> 
     <li> <p>Download the compatible version of the <a href="/cloudhub/the-mule-agent">Mule Agent</a></p> </li> 
-    <li> <p>Copy and paste all of the files from the Mule Agent into the Mule ESB '{MULE-HOME}/bin' folder</p> 
+    <li> <p>Unzip the <code>mule-agent-[VERSION].zip</code> file to the <code>$MULE_HOME/bin</code> folder.</p> 
      <div class="admonitionblock note"> 
       <table> 
        <tbody> 
         <tr> 
          <td class="icon"> <i class="fa icon-note" title="Note"></i> </td> 
-         <td class="content"> While copying and pasting, if prompted select <code>replace all</code> </td> 
+         <td class="content"> If you happen to have a prior version of the agent installed and are prompted to rename or replace files, select <code>replace all</code> </td> 
         </tr> 
        </tbody> 
       </table> 
      </div> </li> 
+    <li> <p>Open a command line, cd to your <code>$MULE_HOME/bin</code> folder and run <code>./amc_setup -U</code> to update the agent version. If you are using Windows, run: <code>amc_setup.bat -U</code> instead. For more details on how to install the Mule Agent, se <a href="/mule-agent/v/1.3.0/installing-mule-agent">Installing the Mule Agent</a>.</p> </li> 
     <li> <p>Log in to your account on the Anypoint Platform</p> </li> 
     <li> <p>Navigate to Cloudhub and then the Servers tab, then click <strong>Add Server</strong></p> 
      <div class="paragraph"> 
