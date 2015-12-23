@@ -904,25 +904,18 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="setup"><a class="anchor" href="#setup"></a>Setup</h2> 
+ <h2 id="jar-files"><a class="anchor" href="#jar-files"></a>JAR Files</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>Before proceeding, ensure that you have the following .jar files in your project classpath:</p> 
+   <p>The Mule software distribution provides the Spring <code>.jar</code> files you need in the <code>&lt;distribution&gt;/lib/opt</code> directory:</p> 
   </div> 
   <div class="ulist"> 
    <ul> 
-    <li> <p>spring-security-ldap-3.1.2.RELEASE.jar&nbsp;</p> </li> 
-    <li> <p>spring-security-core-3.1.2.RELEASE.jar</p> </li> 
-    <li> <p>spring-ldap-core-1.3.1.RELEASE.jar</p> </li> 
-   </ul> 
-  </div> 
-  <div class="paragraph"> 
-   <p>If you do not already have these files, you can download them here:&nbsp;</p> 
-  </div> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p>link:https://repo.springsource.org/libs-release-local/org/springframework/security/spring-security/3.1.2.RELEASE/spring-security-3.1.2.RELEASE-dist.zip&nbsp;&nbsp;(this link contains spring-security-core-3.1.2.RELEASE.jar and spring-security-ldap-3.1.2.RELEASE under the "dist" directory)</p> </li> 
-    <li> <p><a href="http://s3.amazonaws.com/dist.springframework.org/release/LDAP/spring-ldap-1.3.1.RELEASE-minimal.zip&nbsp;&nbsp;(this" class="bare">http://s3.amazonaws.com/dist.springframework.org/release/LDAP/spring-ldap-1.3.1.RELEASE-minimal.zip&nbsp;&nbsp;(this</a> contains spring-ldap-1.3.1.RELEASE.jar inside the "dist" directoy)<br></p> </li> 
+    <li> <p><code>spring-ldap-core-2.0.2.RELEASE.jar</code></p> </li> 
+    <li> <p><code>spring-security-config-4.0.1.RELEASE.jar</code></p> </li> 
+    <li> <p><code>spring-security-core-4.0.1.RELEASE.jar</code></p> </li> 
+    <li> <p><code>spring-security-ldap-4.0.1.RELEASE.jar</code></p> </li> 
+    <li> <p><code>spring-security-web-4.0.1.RELEASE.jar</code></p> </li> 
    </ul> 
   </div> 
  </div> 
@@ -931,10 +924,10 @@
  <h2 id="declaring-the-beans"><a class="anchor" href="#declaring-the-beans"></a>Declaring the Beans</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>You must set up two beans in Spring, a&nbsp;<a href="http://static.springsource.org/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/ldap/DefaultSpringSecurityContextSource.html">DefaultSpringSecurityContextSource</a> and an <a href="http://static.springframework.org/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/ldap/authentication/LdapAuthenticationProvider.html">LdapAuthenticationProvider</a>. The <code>DefaultSpringSecurityContextSource</code> is the access point for obtaining an LDAP context where the <code>LdapAuthenticationProvider</code> provides integration with the LDAP server. For example:</p> 
+   <p>You must set up two beans in Spring, a&nbsp;<a href="http://static.springsource.org/spring-security/site/docs/4.0.x/apidocs/org/springframework/security/ldap/DefaultSpringSecurityContextSource.html">DefaultSpringSecurityContextSource</a> and an <a href="http://static.springframework.org/spring-security/site/docs/4.0.x/apidocs/org/springframework/security/ldap/authentication/LdapAuthenticationProvider.html">LdapAuthenticationProvider</a>. The <code>DefaultSpringSecurityContextSource</code> is the access point for obtaining an LDAP context where the <code>LdapAuthenticationProvider</code> provides integration with the LDAP server. For example:</p> 
   </div> 
   <div class="paragraph"> 
-   <p>You need to set up an LDAP context source that will be used by the spring security authentication provider to search and authenticate your users. Also, you need to define an authentication manager with an embedded LDAP authentication provider as shown:</p> 
+   <p>Set up an LDAP context source for use by the Spring security authentication provider to search and authenticate your users. Also, you need to define an authentication manager with an embedded LDAP authentication provider as shown:</p> 
   </div> 
   <div class="listingblock"> 
    <div class="content"> 
@@ -971,22 +964,19 @@
 26
 27
 28
-29
-<strong>30</strong>
-31
 </pre></td> 
          <td class="code"><pre><span class="tag">&lt;mule</span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:ss</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/security</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:mule-ss</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.mulesoft.org/schema/mule/spring-security</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xmlns:spring</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.springframework.org/schema/beans</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">...</span>
-<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.3.2</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+<span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">version</span>=<span class="string"><span class="delimiter">"</span><span class="content">EE-3.7.0</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">...</span>
 <span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="error">&nbsp;</span><span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span>
 <span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
 <span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
 <span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.mulesoft.org/schema/mule/spring-security http://www.mulesoft.org/schema/mule/spring-security/current/mule-spring-security.xsd</span>
-<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 ...
 &nbsp;&nbsp;<span class="tag">&lt;spring:beans&gt;</span>
 &nbsp;
@@ -1001,10 +991,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ss:authentication-manager</span> <span class="attribute-name">alias</span>=<span class="string"><span class="delimiter">"</span><span class="content">authenticationManager</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;ss:ldap-authentication-provider</span> <span class="attribute-name">user-search-filter</span>=<span class="string"><span class="delimiter">"</span><span class="content">(uid={0})</span><span class="delimiter">"</span></span> <span class="attribute-name">user-search-base</span>=<span class="string"><span class="delimiter">"</span><span class="content">ou=People</span><span class="delimiter">"</span></span> <span class="attribute-name">group-search-base</span>=<span class="string"><span class="delimiter">"</span><span class="content">ou=Group</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/ss:authentication-manager&gt;</span>
-&nbsp;
-&nbsp;
 &nbsp;&nbsp;<span class="tag">&lt;/spring:beans&gt;</span>
-&nbsp;
 ...</pre></td> 
         </tr> 
        </tbody> 
@@ -1012,7 +999,7 @@
    </div> 
   </div> 
   <div class="paragraph"> 
-   <p>More information about the LDAP authentication provider and the different mechanisms to authenticate users against your LDAP server can be found here:&nbsp;&nbsp;http://static.springsource.org/spring-security/site/docs/3.1.x/reference/ldap.html.</p> 
+   <p>More information about the LDAP authentication provider and the different mechanisms to authenticate users against your LDAP server can be found here:&nbsp;&nbsp;<a href="http://static.springsource.org/spring-security/site/docs/3.1.x/reference/ldap.html">LDAP</a>. See also: <a href="http://docs.spring.io/spring-security/site/docs/4.0.1.RELEASE/reference/html/">Spring Security Reference</a>.</p> 
   </div> 
  </div> 
 </div> 
@@ -1084,7 +1071,7 @@
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#setup">Setup</a></li><li><a class="scroll-menu-link" href="#declaring-the-beans">Declaring the Beans</a></li><li><a class="scroll-menu-link" href="#configuring-the-mule-security-provider">Configuring the Mule Security Provider</a></li><li><a class="scroll-menu-link" href="#configuring-the-methodsecurityinterceptor">Configuring the MethodSecurityInterceptor</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#jar-files">JAR Files</a></li><li><a class="scroll-menu-link" href="#declaring-the-beans">Declaring the Beans</a></li><li><a class="scroll-menu-link" href="#configuring-the-mule-security-provider">Configuring the Mule Security Provider</a></li><li><a class="scroll-menu-link" href="#configuring-the-methodsecurityinterceptor">Configuring the MethodSecurityInterceptor</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
