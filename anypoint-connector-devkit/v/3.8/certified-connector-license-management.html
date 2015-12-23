@@ -916,7 +916,7 @@
     <li> <p>Include the following information for MuleSoft to use before generating a partner key and keystore.</p> 
      <div class="olist loweralpha"> 
       <ol class="loweralpha" type="a"> 
-       <li> <p><strong>Vendor Name</strong>, <strong>Contact Email</strong>, <strong>Contact Message</strong>, <strong>Connector Name</strong></p> </li> 
+       <li> <p><strong>Partner Name</strong> (also known as "Provider Name"), <strong>Contact Email</strong>, <strong>Contact Message</strong>, <strong>Connector Name</strong></p> </li> 
       </ol> 
      </div> </li> 
     <li> <p>Request the key and keystore from MuleSoft which are:</p> 
@@ -965,13 +965,57 @@
       </ol> 
      </div> </li> 
     <li> <p>Put the MuleSoft-provided <code>.key</code> file under <code>src/main/resources</code> or <code>src/main/resources/license</code> in the connector’s project directory.</p> </li> 
-    <li> <p>The partner uses the key and the keystore to produce a license file to send to the connector customer according to detailed instructions provided to you by MuleSoft.</p> </li> 
    </ol> 
   </div> 
   <div class="sect2"> 
    <h3 id="sample-partner-connector"><a class="anchor" href="#sample-partner-connector"></a>Sample Partner Connector</h3> 
    <div class="paragraph"> 
-    <p>You can download and import this <a href="_attachments/licSampleConnector.zip">sample connector</a> in Studio to see how the license management mechanism should be configured in the connector code and where the <code>.lic</code> license file should live in the project (<code>src/main/resources</code>).</p> 
+    <p>You can download and import this <a href="_attachments/licSampleConnector.zip">sample connector</a> in Studio to see how the license management annotations are configured in the connector code, understanding that and where the customer <code>.key</code> license file should live in the connector directory. (<code>src/main/resources</code>).</p> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="producing-a-license-file"><a class="anchor" href="#producing-a-license-file"></a>Producing a License File</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Mulesoft partners use the <code>.jks</code> file, and the license generation plugin to generate a license to send to the connector customer.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>From the command line, where "vendor.keystore" should be replaced with the path to your jks file, execute the command in the same directory where the <code>.jks</code> file is:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="CodeRay highlight"><code data-lang="code">mvn org.mule.tools.devkit:mule-devkit-license:license -Dvendor.keystore=betaprovider-license-demo.jks</code></pre> 
+   </div> 
+  </div> 
+  <div class="paragraph"> 
+   <p>Optionally, you may specify the expiration date of the license by appending this argument onto the above command: <code>-Ddays.to.expire=&lt;days-until-this-license-expires&gt;</code></p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>If the license is successfully created, the output is similar to this:</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- mule-devkit-license:license (default-cli) @ standalone-pom ---
+* Enter the name of the client whom will receive this license: Bob
+* Enter the name of the provider of the Entitlement as it appears in the @RequiresEntitlement annotation: betaprovider
+* Enter the name of the Entitlement as it appears in the @RequiresEntitlement annotation: lic-demo
+* Enter the name of the Connector as it appears in the @Connector "name" attribute: license-demo
+* Enter keystore password:
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 18.151s
+[INFO] Finished at: Thu Dec 10 09:34:41 ART 2015
+[INFO] Final Memory: 6M/287M
+[INFO]</pre> 
    </div> 
   </div> 
  </div> 
@@ -1013,10 +1057,10 @@
  </div> 
 </div> 
 <div class="sect1"> 
- <h2 id="licensed-connector-user-experience"><a class="anchor" href="#licensed-connector-user-experience"></a>Licensed Connector User Experience</h2> 
+ <h2 id="deploying-application-with-licensed-connector"><a class="anchor" href="#deploying-application-with-licensed-connector"></a>Deploying Application with Licensed Connector</h2> 
  <div class="sectionbody"> 
   <div class="paragraph"> 
-   <p>To test the experience of the user based on 1) whether they have properly obtained and stored their license and 2) where they try to deploy their application, follow these steps:</p> 
+   <p>To test the experience of the application developer using a partner connector based on 1) whether they have properly obtained and stored their license and 2) where they try to deploy their application, follow these steps:</p> 
   </div> 
   <div class="olist arabic"> 
    <ol class="arabic"> 
@@ -1065,7 +1109,7 @@ Caused by: org.mule.devkit.3.8.0.internal.lic.exception.InvalidLicenseException:
         <!-- END article-content -->
         <!-- scroll-menu --><div class="col-md-2 scroll-menu-container" data-swiftype-index='false'><div class="scroll-menu">
                 <h4>In this topic:</h4>
-                <ul><li><a class="scroll-menu-link" href="#why-to-use-this-licensing-mechanism">Why to Use This Licensing Mechanism</a></li><li><a class="scroll-menu-link" href="#obtaining-a-key-and-keystore-for-your-connector">Obtaining a Key and Keystore for Your Connector</a></li><li><a class="scroll-menu-link" href="#adjusting-the-connector-code-and-storing-the-public-key">Adjusting the Connector Code and Storing the Public Key</a></li><li><a class="scroll-menu-link" href="#developing-a-mule-application-with-a-licensed-connector">Developing a Mule Application with a Licensed Connector</a></li><li><a class="scroll-menu-link" href="#licensed-connector-user-experience">Licensed Connector User Experience</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
+                <ul><li><a class="scroll-menu-link" href="#why-to-use-this-licensing-mechanism">Why to Use This Licensing Mechanism</a></li><li><a class="scroll-menu-link" href="#obtaining-a-key-and-keystore-for-your-connector">Obtaining a Key and Keystore for Your Connector</a></li><li><a class="scroll-menu-link" href="#adjusting-the-connector-code-and-storing-the-public-key">Adjusting the Connector Code and Storing the Public Key</a></li><li><a class="scroll-menu-link" href="#producing-a-license-file">Producing a License File</a></li><li><a class="scroll-menu-link" href="#developing-a-mule-application-with-a-licensed-connector">Developing a Mule Application with a Licensed Connector</a></li><li><a class="scroll-menu-link" href="#deploying-application-with-licensed-connector">Deploying Application with Licensed Connector</a></li><li><a class="scroll-menu-link" href="#see-also">See Also</a></li></ul></div></div><!-- /scroll-menu -->
       </div>
     </div>
     <!-- START footer -->
